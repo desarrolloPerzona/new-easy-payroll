@@ -16,6 +16,10 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss'),
     ]);
+mix.copy('node_modules/dropzone/dist','public/vendor/dropzone')
+mix.copy('node_modules/@fortawesome/fontawesome-free','public/vendor/fontawesome')
+mix.copy('node_modules/bootstrap/dist','public/vendor/bootstrap')
+mix.copy('node_modules/filepond/','public/vendor/filepond')
 
 if (mix.inProduction()) {
     mix.version();

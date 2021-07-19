@@ -16,6 +16,7 @@ Payroll application with multitenancy
     -JQuery 3.x
     -filepond
     -Fontawesome
+    -AlpineJs
   
 ###Installation
     - UNZIP FILE

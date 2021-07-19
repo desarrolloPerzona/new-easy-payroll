@@ -19,7 +19,7 @@ class AdminSeeder extends Seeder
                 'name' => 'Super',
                 'last_name' => 'Admin',
                 'middle_name' => '2021',
-                'email' => 'admin@test.com',
+                'email' => 'admin@app.test',
                 'role' => 0,
                 'password' => bcrypt('password'),
                 'created_at' => date('Y-m-d H:i:s'),

@@ -1,7 +1,8 @@
 <x-guest-layout>
+    @section('title') {{__('Two factors challenge') }} @endsection
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            {{--<x-jet-authentication-card-logo />--}}
         </x-slot>
 
         <div x-data="{ recovery: false }">

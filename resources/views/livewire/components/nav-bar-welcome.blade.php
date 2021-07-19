@@ -14,7 +14,7 @@
                         <!-- Navigation Links -->
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('landingPage') }}" :active="request()->routeIs('landingPage')">
-                                {{ __('LandingPage') }}
+                                {{ __('Landing page') }}
                             </x-jet-nav-link>
 
                             @if(!Auth::check())

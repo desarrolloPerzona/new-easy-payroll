@@ -17,6 +17,8 @@ Payroll application with multitenancy
     -filepond
     -Fontawesome
     -AlpineJs
+    -Tippy.js
+    -
   
 ###Installation
     - UNZIP FILE
@@ -48,8 +50,8 @@ Payroll application with multitenancy
 
 
 #### ADMIN LOGIN
-    'email' =  admin@test.test
-    'password' = password
+    'email' =  admin@c9sd.com
+    'password' = @password
 
 ###LARAVEL VENDOR
 

@@ -15,6 +15,11 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
+                    @role('superAdmin')
+                    <x-jet-nav-link href="{{ route('adminDashboard') }}" :active="request()->routeIs('adminDashboard')">
+                        {{ __('Admin dashboard') }}
+                    </x-jet-nav-link>
+                    @endrole
                 </div>
             </div>
 

@@ -12,7 +12,6 @@
     @stack('in_page_styles')
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="{{ mix('js/app.js') }}" defer></script>
-    @include('include.common.scripts.vendor-scripts')
 </head>
 <body>
 <livewire:components.nav-bar-welcome/>
@@ -20,6 +19,7 @@
     {{ $slot }}
 </div>
 </body>
+@include('include.common.scripts.vendor-scripts')
 @livewireScripts
 @stack('in_page_scripts')
 </html>

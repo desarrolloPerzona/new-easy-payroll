@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 
+use App\Models\Tenant;
 use Stancl\Tenancy\Database\Models\Domain;
 
 
 return [
-    'tenant_model' => App\Models\Tenant::class,
+    'tenant_model' => Tenant::class,
     'id_generator' => Stancl\Tenancy\UUIDGenerator::class,
     'domain_model' => Domain::class,
 
@@ -17,7 +18,7 @@ return [
      * Only relevant if you're using the domain or subdomain identification middleware.
      */
     'central_domains' => [
-        env('APP_TENANT_URL','localhost'),
+        env('APP_TENANT_URL'),
     ],
 
     /**
@@ -49,22 +50,22 @@ return [
          * Tenant database names are created like this:
          * prefix + tenant_id + suffix.
          */
-        'prefix' => 'tenant',
+        'prefix' => env('APP_TENANT_PREFIX'),
         'suffix' => '',
 
         /**
          * TenantDatabaseManagers are classes that handle the creation & deletion of tenant databases.
          */
         'managers' => [
-            'sqlite' => Stancl\Tenancy\TenantDatabaseManagers\SQLiteDatabaseManager::class,
+            /*'sqlite' => Stancl\Tenancy\TenantDatabaseManagers\SQLiteDatabaseManager::class,
             'mysql' => Stancl\Tenancy\TenantDatabaseManagers\MySQLDatabaseManager::class,
-            'pgsql' => Stancl\Tenancy\TenantDatabaseManagers\PostgreSQLDatabaseManager::class,
+            'pgsql' => Stancl\Tenancy\TenantDatabaseManagers\PostgreSQLDatabaseManager::class,*/
 
         /**
          * Use this database manager for MySQL to have a DB user created for each tenant database.
          * You can customize the grants given to these users by changing the $grants property.
          */
-            // 'mysql' => Stancl\Tenancy\TenantDatabaseManagers\PermissionControlledMySQLDatabaseManager::class,
+             'mysql' => Stancl\Tenancy\TenantDatabaseManagers\PermissionControlledMySQLDatabaseManager::class,
 
         /**
          * Disable the pgsql manager above, and enable the one below if you
@@ -101,7 +102,7 @@ return [
         'disks' => [
             'local',
             'public',
-            // 's3',
+            's3',
         ],
 
         /**
@@ -190,7 +191,7 @@ return [
      * Parameters used by the tenants:seed command.
      */
     'seeder_parameters' => [
-        '--class' => 'DatabaseSeeder', // root seeder class
-        // '--force' => true,
+        '--class' => 'TenantSeeder', // root seeder class
+         '--force' => true,
     ],
 ];

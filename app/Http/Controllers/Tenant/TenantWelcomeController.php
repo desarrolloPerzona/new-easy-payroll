@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tenant;
 
 use App\Models\Tenant\Business;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class TenantWelcomeController extends Controller

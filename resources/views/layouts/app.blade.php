@@ -9,12 +9,15 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+@include('include.common.head.meta')
+@stack('in_page_head')
 
-    <!-- Styles -->
+<!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
 @livewireStyles
 @stack('in_page_styles')
+
 <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
@@ -40,7 +43,7 @@
 </div>
 
 @stack('modals')
-
+@include('include.common.scripts.vendor-scripts')
 @livewireScripts
 @stack('in_page_scripts')
 </body>

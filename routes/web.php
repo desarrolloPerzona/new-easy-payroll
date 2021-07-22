@@ -1,7 +1,10 @@
 <?php
 
 use App\Events\TenantHasSubscribe;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +22,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('landingPage');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth:sanctum', 'verified','universal',InitializeTenancyByDomain::class])->name('dashboard');
+Route::get('/admin-dashboard',[AdminDashboardController::class,'index'])->middleware(['auth:sanctum', 'verified','universal',InitializeTenancyByDomain::class])->name('adminDashboard');

@@ -15,7 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),
-    ]);
+    ]).sass('resources/sass/coreui.scss', 'public/css');
 mix.copy('node_modules/dropzone/dist','public/vendor/dropzone')
 mix.copy('node_modules/@fortawesome/fontawesome-free','public/vendor/fontawesome')
 mix.copy('node_modules/bootstrap/dist','public/vendor/bootstrap')

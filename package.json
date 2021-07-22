@@ -25,6 +25,9 @@
         "postcss": "^8.3.5",
         "postcss-import": "^14.0.1",
         "pusher-js": "^7.0.3",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.35.2",
+        "sass-loader": "^12.1.0",
         "tailwindcss": "^2.2.4"
     },
     "dependencies": {

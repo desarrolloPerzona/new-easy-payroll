@@ -7,6 +7,7 @@ use App\Models\Tenant;
 use App\Models\Tenant\Business;
 use App\Models\Tenant\BusinessBranch;
 use App\Models\User;
+use App\Notifications\NewUserNotification;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -82,11 +83,11 @@ class CreateNewUser implements CreatesNewUsers
                 'name' => $user->name,
                 'last_name' => $user->last_name,
                 'middle_name' => $user->middle_name,
-                'tenancy_domain' =>$user->tenancy_domain,
-                'tenancy_company' =>$user->tenancy_company,
+                'tenancy_domain' => $user->tenancy_domain,
+                'tenancy_company' => $user->tenancy_company,
                 'email' => $user->email,
                 'role' => $user->role,
-                'password' =>  Hash::make($user->password),
+                'password' => Hash::make($user->password),
                 'terms' => 1,
                 'trial_ends_at' => now()->addDays(30),
             ]);
@@ -109,7 +110,9 @@ class CreateNewUser implements CreatesNewUsers
 
         $user->assignRole('tenant');
 
+        $admin = User::find(1);
 
+        $admin->notify(new NewUserNotification($user));
 
         return $user;
     }

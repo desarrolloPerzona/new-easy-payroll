@@ -11,11 +11,9 @@
 
 <!-- CORE UI STYLES -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/coreui.css')}}">
+    <link rel="stylesheet" href="{{asset('css/core_ui.css')}}">
     <!-- app styles -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
-
-
     <!-- APP SCRIPTS -->
     @livewireStyles
     <script src="{{ mix('js/app.js') }}" defer></script>

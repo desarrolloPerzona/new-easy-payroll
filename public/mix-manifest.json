@@ -1,7 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/coreui.css": "/css/coreui.css",
+    "/css/core_ui.css": "/css/core_ui.css",
     "/vendor/dropzone/basic.css": "/vendor/dropzone/basic.css",
     "/vendor/dropzone/dropzone-amd-module.js": "/vendor/dropzone/dropzone-amd-module.js",
     "/vendor/dropzone/dropzone.css": "/vendor/dropzone/dropzone.css",

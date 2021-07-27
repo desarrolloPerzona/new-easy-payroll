@@ -1,2 +1,3 @@
-/*@include form-validation-state("valid", $form-feedback-valid-color, $form-feedback-icon-valid);
-@include form-validation-state("invalid", $form-feedback-invalid-color, $form-feedback-icon-invalid);*/
+:root .c-app {
+  --primary: #ff0000 !important;
+}

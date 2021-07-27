@@ -15,6 +15,7 @@
     <!-- app styles -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
+
     <!-- APP SCRIPTS -->
     @livewireStyles
     <script src="{{ mix('js/app.js') }}" defer></script>

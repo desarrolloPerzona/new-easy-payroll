@@ -23784,10 +23784,10 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/sass/coreui.scss":
-/*!************************************!*\
-  !*** ./resources/sass/coreui.scss ***!
-  \************************************/
+/***/ "./resources/scss/core_ui.scss":
+/*!*************************************!*\
+  !*** ./resources/scss/core_ui.scss ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -28697,7 +28697,7 @@ runtime.setup(pusher_Pusher);
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
-/******/ 			"css/coreui": 0
+/******/ 			"css/core_ui": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -28745,9 +28745,9 @@ runtime.setup(pusher_Pusher);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/coreui"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/coreui"], () => (__webpack_require__("./resources/sass/coreui.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/coreui"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/core_ui"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/core_ui"], () => (__webpack_require__("./resources/scss/core_ui.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/core_ui"], () => (__webpack_require__("./resources/css/app.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

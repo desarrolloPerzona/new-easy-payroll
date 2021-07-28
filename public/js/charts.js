@@ -1,22 +1,16 @@
-/* eslint-disable object-curly-newline */
-
 /* global Chart */
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI Boostrap Admin Template (3.4.0): main.js
+ * CoreUI Boostrap Admin Template (v4.0.0): main.js
  * License (https://coreui.io/pro/license)
  * --------------------------------------------------------------------------
  */
-
-/* eslint-disable no-magic-numbers */
 // random Numbers
-var random = function random() {
-  return Math.round(Math.random() * 100);
-}; // eslint-disable-next-line no-unused-vars
+const random = () => Math.round(Math.random() * 100); // eslint-disable-next-line no-unused-vars
 
 
-var lineChart = new Chart(document.getElementById('canvas-1'), {
+const lineChart = new Chart(document.getElementById('canvas-1'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -41,7 +35,7 @@ var lineChart = new Chart(document.getElementById('canvas-1'), {
   }
 }); // eslint-disable-next-line no-unused-vars
 
-var barChart = new Chart(document.getElementById('canvas-2'), {
+const barChart = new Chart(document.getElementById('canvas-2'), {
   type: 'bar',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -64,7 +58,7 @@ var barChart = new Chart(document.getElementById('canvas-2'), {
   }
 }); // eslint-disable-next-line no-unused-vars
 
-var doughnutChart = new Chart(document.getElementById('canvas-3'), {
+const doughnutChart = new Chart(document.getElementById('canvas-3'), {
   type: 'doughnut',
   data: {
     labels: ['Red', 'Green', 'Yellow'],
@@ -79,7 +73,7 @@ var doughnutChart = new Chart(document.getElementById('canvas-3'), {
   }
 }); // eslint-disable-next-line no-unused-vars
 
-var radarChart = new Chart(document.getElementById('canvas-4'), {
+const radarChart = new Chart(document.getElementById('canvas-4'), {
   type: 'radar',
   data: {
     labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
@@ -108,7 +102,7 @@ var radarChart = new Chart(document.getElementById('canvas-4'), {
   }
 }); // eslint-disable-next-line no-unused-vars
 
-var pieChart = new Chart(document.getElementById('canvas-5'), {
+const pieChart = new Chart(document.getElementById('canvas-5'), {
   type: 'pie',
   data: {
     labels: ['Red', 'Green', 'Yellow'],
@@ -123,7 +117,7 @@ var pieChart = new Chart(document.getElementById('canvas-5'), {
   }
 }); // eslint-disable-next-line no-unused-vars
 
-var polarAreaChart = new Chart(document.getElementById('canvas-6'), {
+const polarAreaChart = new Chart(document.getElementById('canvas-6'), {
   type: 'polarArea',
   data: {
     labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],

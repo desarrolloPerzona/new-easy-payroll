@@ -1,16 +1,27 @@
-/* global coreui.Utils.rgbToHex */
+/* global coreui */
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI Boostrap Admin Template (3.4.0): colors.js
+ * CoreUI Boostrap Admin Template (v4.0.0): colors.js
  * License (https://coreui.io/pro/license)
  * --------------------------------------------------------------------------
  */
-document.querySelectorAll('.theme-color').forEach(function (element) {
-  var color = getComputedStyle(element, null).getPropertyValue('background-color');
-  var table = document.createElement('table');
+document.querySelectorAll('.theme-color').forEach(element => {
+  const color = getComputedStyle(element, null).getPropertyValue('background-color');
+  const table = document.createElement('table');
   table.classList.add('w-100');
-  table.innerHTML = "\n      <table class=\"w-100\">\n        <tr>\n          <td class=\"text-muted\">HEX:</td>\n          <td class=\"font-weight-bold\">" + coreui.Utils.rgbToHex(color) + "</td>\n        </tr>\n        <tr>\n          <td class=\"text-muted\">RGB:</td>\n          <td class=\"font-weight-bold\">" + color + "</td>\n        </tr>\n      </table>\n    ";
+  table.innerHTML = `
+      <table class="w-100">
+        <tr>
+          <td class="text-muted">HEX:</td>
+          <td class="font-weight-bold">${coreui.Utils.rgbToHex(color)}</td>
+        </tr>
+        <tr>
+          <td class="text-muted">RGB:</td>
+          <td class="font-weight-bold">${color}</td>
+        </tr>
+      </table>
+    `;
   element.parentNode.appendChild(table);
 });
 //# sourceMappingURL=colors.js.map

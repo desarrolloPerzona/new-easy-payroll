@@ -18,9 +18,6 @@
 <meta name="twitter:description" content="@yield('twitter-description')"/>
 <meta name="twitter:title" content="@yield('twitter-title')"/>
 <meta name="twitter:image" content="@yield('twitter-image')"/>
-<!-- TITLE -->
-<!-- TITLE -->
-<title>{{ config('app.name', 'PerZona ') }} | @yield('title')</title>
 <!-- FAVICON -->
 <link rel="icon" type="image/png" href="{{env('APP_FAVICON')}}">
 <!-- ICONS -->

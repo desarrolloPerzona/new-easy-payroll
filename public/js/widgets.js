@@ -1,41 +1,20 @@
-/* global Chart, coreui, coreui.Utils.getStyle */
+/* global Chart, coreui */
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI Boostrap Admin Template (3.4.0): main.js
+ * CoreUI Boostrap Admin Template (v4.0.0): main.js
  * License (https://coreui.io/pro/license)
  * --------------------------------------------------------------------------
  */
-
-/* eslint-disable no-magic-numbers */
 // Disable the on-canvas tooltip
-Chart.defaults.global.pointHitDetectionRadius = 1;
-Chart.defaults.global.tooltips.enabled = false;
-Chart.defaults.global.tooltips.mode = 'index';
-Chart.defaults.global.tooltips.position = 'nearest';
-Chart.defaults.global.tooltips.custom = coreui.ChartJS.customTooltips;
-Chart.defaults.global.defaultFontColor = coreui.Utils.getStyle('--color', document.getElementsByClassName('c-app')[0]);
-document.body.addEventListener('classtoggle', function () {
-  cardChart1.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--primary', document.getElementsByClassName('c-app')[0]);
-  cardChart2.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--info', document.getElementsByClassName('c-app')[0]);
-  sparklineChart1.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--primary', document.getElementsByClassName('c-app')[0]);
-  sparklineChart2.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--warning', document.getElementsByClassName('c-app')[0]);
-  sparklineChart3.data.datasets[0].pointBackgroundColor = coreui.Utils.getStyle('--success', document.getElementsByClassName('c-app')[0]);
-  sparklineChart4.data.datasets[0].borderColor = coreui.Utils.getStyle('--info', document.getElementsByClassName('c-app')[0]);
-  sparklineChart5.data.datasets[0].borderColor = coreui.Utils.getStyle('--success', document.getElementsByClassName('c-app')[0]);
-  sparklineChart6.data.datasets[0].borderColor = coreui.Utils.getStyle('--danger', document.getElementsByClassName('c-app')[0]);
-  Chart.defaults.global.defaultFontColor = coreui.Utils.getStyle('--color', document.getElementsByClassName('c-app')[0]);
-  cardChart1.update();
-  cardChart2.update();
-  sparklineChart1.update();
-  sparklineChart2.update();
-  sparklineChart3.update();
-  sparklineChart4.update();
-  sparklineChart5.update();
-  sparklineChart6.update();
-}); // eslint-disable-next-line no-unused-vars
+Chart.defaults.pointHitDetectionRadius = 1;
+Chart.defaults.plugins.tooltip.enabled = false;
+Chart.defaults.plugins.tooltip.mode = 'index';
+Chart.defaults.plugins.tooltip.position = 'nearest';
+Chart.defaults.plugins.tooltip.external = coreui.ChartJS.customTooltips;
+Chart.defaults.defaultFontColor = '#646470'; // eslint-disable-next-line no-unused-vars
 
-var cardChart1 = new Chart(document.getElementById('card-chart1'), {
+const cardChart1 = new Chart(document.getElementById('card-chart1'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -43,38 +22,43 @@ var cardChart1 = new Chart(document.getElementById('card-chart1'), {
       label: 'My First dataset',
       backgroundColor: 'transparent',
       borderColor: 'rgba(255,255,255,.55)',
-      pointBackgroundColor: coreui.Utils.getStyle('--primary', document.getElementsByClassName('c-app')[0]),
+      pointBackgroundColor: coreui.Utils.getStyle('--cui-primary'),
       data: [65, 59, 84, 84, 51, 55, 40]
     }]
   },
   options: {
-    maintainAspectRatio: false,
-    legend: {
-      display: false
+    plugins: {
+      legend: {
+        display: false
+      }
     },
+    maintainAspectRatio: false,
     scales: {
-      xAxes: [{
-        gridLines: {
-          color: 'transparent',
-          zeroLineColor: 'transparent'
+      x: {
+        grid: {
+          display: false,
+          drawBorder: false
         },
         ticks: {
-          fontSize: 2,
-          fontColor: 'transparent'
+          display: false
         }
-      }],
-      yAxes: [{
+      },
+      y: {
+        min: 30,
+        max: 89,
         display: false,
+        grid: {
+          display: false
+        },
         ticks: {
-          display: false,
-          min: 35,
-          max: 89
+          display: false
         }
-      }]
+      }
     },
     elements: {
       line: {
-        borderWidth: 1
+        borderWidth: 1,
+        tension: 0.4
       },
       point: {
         radius: 4,
@@ -85,7 +69,7 @@ var cardChart1 = new Chart(document.getElementById('card-chart1'), {
   }
 }); // eslint-disable-next-line no-unused-vars
 
-var cardChart2 = new Chart(document.getElementById('card-chart2'), {
+const cardChart2 = new Chart(document.getElementById('card-chart2'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -93,38 +77,41 @@ var cardChart2 = new Chart(document.getElementById('card-chart2'), {
       label: 'My First dataset',
       backgroundColor: 'transparent',
       borderColor: 'rgba(255,255,255,.55)',
-      pointBackgroundColor: coreui.Utils.getStyle('--info', document.getElementsByClassName('c-app')[0]),
+      pointBackgroundColor: coreui.Utils.getStyle('--cui-info'),
       data: [1, 18, 9, 17, 34, 22, 11]
     }]
   },
   options: {
-    maintainAspectRatio: false,
-    legend: {
-      display: false
+    plugins: {
+      legend: {
+        display: false
+      }
     },
+    maintainAspectRatio: false,
     scales: {
-      xAxes: [{
-        gridLines: {
-          color: 'transparent',
-          zeroLineColor: 'transparent'
+      x: {
+        grid: {
+          display: false,
+          drawBorder: false
         },
         ticks: {
-          fontSize: 2,
-          fontColor: 'transparent'
+          display: false
         }
-      }],
-      yAxes: [{
+      },
+      y: {
+        min: -9,
+        max: 39,
         display: false,
+        grid: {
+          display: false
+        },
         ticks: {
-          display: false,
-          min: -4,
-          max: 39
+          display: false
         }
-      }]
+      }
     },
     elements: {
       line: {
-        tension: 0.00001,
         borderWidth: 1
       },
       point: {
@@ -136,7 +123,7 @@ var cardChart2 = new Chart(document.getElementById('card-chart2'), {
   }
 }); // eslint-disable-next-line no-unused-vars
 
-var cardChart3 = new Chart(document.getElementById('card-chart3'), {
+const cardChart3 = new Chart(document.getElementById('card-chart3'), {
   type: 'line',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -144,25 +131,29 @@ var cardChart3 = new Chart(document.getElementById('card-chart3'), {
       label: 'My First dataset',
       backgroundColor: 'rgba(255,255,255,.2)',
       borderColor: 'rgba(255,255,255,.55)',
-      data: [78, 81, 80, 45, 34, 12, 40]
+      data: [78, 81, 80, 45, 34, 12, 40],
+      fill: true
     }]
   },
   options: {
-    maintainAspectRatio: false,
-    legend: {
-      display: false
+    plugins: {
+      legend: {
+        display: false
+      }
     },
+    maintainAspectRatio: false,
     scales: {
-      xAxes: [{
+      x: {
         display: false
-      }],
-      yAxes: [{
+      },
+      y: {
         display: false
-      }]
+      }
     },
     elements: {
       line: {
-        borderWidth: 2
+        borderWidth: 2,
+        tension: 0.4
       },
       point: {
         radius: 0,
@@ -173,7 +164,7 @@ var cardChart3 = new Chart(document.getElementById('card-chart3'), {
   }
 }); // eslint-disable-next-line no-unused-vars
 
-var cardChart4 = new Chart(document.getElementById('card-chart4'), {
+const cardChart4 = new Chart(document.getElementById('card-chart4'), {
   type: 'bar',
   data: {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March', 'April'],
@@ -187,31 +178,45 @@ var cardChart4 = new Chart(document.getElementById('card-chart4'), {
   },
   options: {
     maintainAspectRatio: false,
-    legend: {
-      display: false
+    plugins: {
+      legend: {
+        display: false
+      }
     },
     scales: {
-      xAxes: [{
-        display: false
-      }],
-      yAxes: [{
-        display: false
-      }]
+      x: {
+        grid: {
+          display: false,
+          drawTicks: false
+        },
+        ticks: {
+          display: false
+        }
+      },
+      y: {
+        grid: {
+          display: false,
+          drawBorder: false,
+          drawTicks: false
+        },
+        ticks: {
+          display: false
+        }
+      }
     }
   }
 }); // Random Numbers
+// eslint-disable-next-line no-mixed-operators
 
-var random = function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}; // eslint-disable-next-line no-unused-vars
+const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min); // eslint-disable-next-line no-unused-vars
 
 
-var sparklineChart1 = new Chart(document.getElementById('sparkline-chart-1'), {
+const sparklineChart1 = new Chart(document.getElementById('sparkline-chart-1'), {
   type: 'bar',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
     datasets: [{
-      backgroundColor: coreui.Utils.getStyle('--primary', document.getElementsByClassName('c-app')[0]),
+      backgroundColor: coreui.Utils.getStyle('--cui-primary'),
       borderColor: 'transparent',
       borderWidth: 1,
       data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
@@ -219,195 +224,220 @@ var sparklineChart1 = new Chart(document.getElementById('sparkline-chart-1'), {
   },
   options: {
     maintainAspectRatio: false,
-    legend: {
-      display: false
+    plugins: {
+      legend: {
+        display: false
+      }
     },
     scales: {
-      xAxes: [{
+      x: {
         display: false
-      }],
-      yAxes: [{
+      },
+      y: {
         display: false
-      }]
-    }
-  }
-}); // eslint-disable-next-line no-unused-vars
-
-var sparklineChart2 = new Chart(document.getElementById('sparkline-chart-2'), {
-  type: 'bar',
-  data: {
-    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
-    datasets: [{
-      backgroundColor: coreui.Utils.getStyle('--warning', document.getElementsByClassName('c-app')[0]),
-      borderColor: 'transparent',
-      borderWidth: 1,
-      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
-    }]
-  },
-  options: {
-    maintainAspectRatio: false,
-    legend: {
-      display: false
-    },
-    scales: {
-      xAxes: [{
-        display: false
-      }],
-      yAxes: [{
-        display: false
-      }]
-    }
-  }
-}); // eslint-disable-next-line no-unused-vars
-
-var sparklineChart3 = new Chart(document.getElementById('sparkline-chart-3'), {
-  type: 'bar',
-  data: {
-    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
-    datasets: [{
-      backgroundColor: coreui.Utils.getStyle('--success', document.getElementsByClassName('c-app')[0]),
-      borderColor: 'transparent',
-      borderWidth: 1,
-      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
-    }]
-  },
-  options: {
-    maintainAspectRatio: false,
-    legend: {
-      display: false
-    },
-    scales: {
-      xAxes: [{
-        display: false
-      }],
-      yAxes: [{
-        display: false
-      }]
-    }
-  }
-}); // eslint-disable-next-line no-unused-vars
-
-var sparklineChart4 = new Chart(document.getElementById('sparkline-chart-4'), {
-  type: 'line',
-  data: {
-    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    datasets: [{
-      backgroundColor: 'transparent',
-      borderColor: coreui.Utils.getStyle('--info', document.getElementsByClassName('c-app')[0]),
-      borderWidth: 2,
-      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
-    }]
-  },
-  options: {
-    maintainAspectRatio: false,
-    legend: {
-      display: false
-    },
-    scales: {
-      xAxes: [{
-        display: false
-      }],
-      yAxes: [{
-        display: false
-      }]
-    },
-    elements: {
-      point: {
-        radius: 0
       }
     }
   }
 }); // eslint-disable-next-line no-unused-vars
 
-var sparklineChart5 = new Chart(document.getElementById('sparkline-chart-5'), {
-  type: 'line',
+const sparklineChart2 = new Chart(document.getElementById('sparkline-chart-2'), {
+  type: 'bar',
   data: {
-    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
     datasets: [{
-      backgroundColor: 'transparent',
-      borderColor: coreui.Utils.getStyle('--success', document.getElementsByClassName('c-app')[0]),
-      borderWidth: 2,
-      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+      backgroundColor: coreui.Utils.getStyle('--cui-warning'),
+      borderColor: 'transparent',
+      borderWidth: 1,
+      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
     }]
   },
   options: {
     maintainAspectRatio: false,
-    legend: {
-      display: false
+    plugins: {
+      legend: {
+        display: false
+      }
     },
     scales: {
-      xAxes: [{
+      x: {
         display: false
-      }],
-      yAxes: [{
+      },
+      y: {
         display: false
-      }]
-    },
-    elements: {
-      point: {
-        radius: 0
       }
     }
   }
 }); // eslint-disable-next-line no-unused-vars
 
-var sparklineChart6 = new Chart(document.getElementById('sparkline-chart-6'), {
+const sparklineChart3 = new Chart(document.getElementById('sparkline-chart-3'), {
+  type: 'bar',
+  data: {
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S', 'M', 'T', 'W', 'T', 'F', 'S', 'S', 'M'],
+    datasets: [{
+      backgroundColor: coreui.Utils.getStyle('--cui-success'),
+      borderColor: 'transparent',
+      borderWidth: 1,
+      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    scales: {
+      x: {
+        display: false
+      },
+      y: {
+        display: false
+      }
+    }
+  }
+}); // eslint-disable-next-line no-unused-vars
+
+const sparklineChart4 = new Chart(document.getElementById('sparkline-chart-4'), {
   type: 'line',
   data: {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
     datasets: [{
       backgroundColor: 'transparent',
-      borderColor: coreui.Utils.getStyle('--danger', document.getElementsByClassName('c-app')[0]),
+      borderColor: coreui.Utils.getStyle('--cui-info'),
       borderWidth: 2,
       data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
     }]
   },
   options: {
     maintainAspectRatio: false,
-    legend: {
-      display: false
-    },
-    scales: {
-      xAxes: [{
-        display: false
-      }],
-      yAxes: [{
-        display: false
-      }]
-    },
     elements: {
+      line: {
+        tension: 0.4
+      },
       point: {
         radius: 0
+      }
+    },
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    scales: {
+      x: {
+        display: false
+      },
+      y: {
+        display: false
+      }
+    }
+  }
+}); // eslint-disable-next-line no-unused-vars
+
+const sparklineChart5 = new Chart(document.getElementById('sparkline-chart-5'), {
+  type: 'line',
+  data: {
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+    datasets: [{
+      backgroundColor: 'transparent',
+      borderColor: coreui.Utils.getStyle('--cui-success'),
+      borderWidth: 2,
+      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    elements: {
+      line: {
+        tension: 0.4
+      },
+      point: {
+        radius: 0
+      }
+    },
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    scales: {
+      x: {
+        display: false
+      },
+      y: {
+        display: false
+      }
+    }
+  }
+}); // eslint-disable-next-line no-unused-vars
+
+const sparklineChart6 = new Chart(document.getElementById('sparkline-chart-6'), {
+  type: 'line',
+  data: {
+    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+    datasets: [{
+      backgroundColor: 'transparent',
+      borderColor: coreui.Utils.getStyle('--cui-danger'),
+      borderWidth: 2,
+      data: [random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100), random(40, 100)]
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    elements: {
+      line: {
+        tension: 0.4
+      },
+      point: {
+        radius: 0
+      }
+    },
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
+    scales: {
+      x: {
+        display: false
+      },
+      y: {
+        display: false
       }
     }
   }
 });
-var brandBoxChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-var brandBoxChartOptions = {
-  responsive: true,
-  maintainAspectRatio: false,
-  legend: {
-    display: false
-  },
-  scales: {
-    xAxes: [{
-      display: false
-    }],
-    yAxes: [{
-      display: false
-    }]
-  },
+const brandBoxChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const brandBoxChartOptions = {
   elements: {
+    line: {
+      tension: 0.4
+    },
     point: {
       radius: 0,
       hitRadius: 10,
       hoverRadius: 4,
       hoverBorderWidth: 3
     }
+  },
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false
+    }
+  },
+  scales: {
+    x: {
+      display: false
+    },
+    y: {
+      display: false
+    }
   }
 }; // eslint-disable-next-line no-unused-vars
 
-var brandBoxChart1 = new Chart(document.getElementById('social-box-chart-1'), {
+const brandBoxChart1 = new Chart(document.getElementById('social-box-chart-1'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -416,13 +446,14 @@ var brandBoxChart1 = new Chart(document.getElementById('social-box-chart-1'), {
       borderColor: 'rgba(255,255,255,.55)',
       pointHoverBackgroundColor: '#fff',
       borderWidth: 2,
-      data: [65, 59, 84, 84, 51, 55, 40]
+      data: [65, 59, 84, 84, 51, 55, 40],
+      fill: true
     }]
   },
   options: brandBoxChartOptions
 }); // eslint-disable-next-line no-unused-vars
 
-var brandBoxChart2 = new Chart(document.getElementById('social-box-chart-2'), {
+const brandBoxChart2 = new Chart(document.getElementById('social-box-chart-2'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -431,13 +462,14 @@ var brandBoxChart2 = new Chart(document.getElementById('social-box-chart-2'), {
       borderColor: 'rgba(255,255,255,.55)',
       pointHoverBackgroundColor: '#fff',
       borderWidth: 2,
-      data: [1, 13, 9, 17, 34, 41, 38]
+      data: [1, 13, 9, 17, 34, 41, 38],
+      fill: true
     }]
   },
   options: brandBoxChartOptions
 }); // eslint-disable-next-line no-unused-vars
 
-var brandBoxChart3 = new Chart(document.getElementById('social-box-chart-3'), {
+const brandBoxChart3 = new Chart(document.getElementById('social-box-chart-3'), {
   type: 'line',
   data: {
     labels: brandBoxChartLabels,
@@ -446,7 +478,8 @@ var brandBoxChart3 = new Chart(document.getElementById('social-box-chart-3'), {
       borderColor: 'rgba(255,255,255,.55)',
       pointHoverBackgroundColor: '#fff',
       borderWidth: 2,
-      data: [78, 81, 80, 45, 34, 12, 40]
+      data: [78, 81, 80, 45, 34, 12, 40],
+      fill: true
     }]
   },
   options: brandBoxChartOptions

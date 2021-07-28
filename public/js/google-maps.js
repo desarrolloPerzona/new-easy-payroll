@@ -1,15 +1,17 @@
+/* eslint-disable no-unused-vars */
+
 /* global google */
 
 /**
  * --------------------------------------------------------------------------
- * CoreUI Pro Boostrap Admin Template (3.4.0): google-maps.js
+ * CoreUI Boostrap Admin Template (4.0.0): google-maps.js
  * License (https://coreui.io/pro/license)
  * --------------------------------------------------------------------------
  */
 
-/* eslint-disable no-magic-numbers, no-unused-vars */
-var InitMap = function InitMap() {
-  var locations = [{
+/* no-unused-vars */
+const initMap = () => {
+  const locations = [{
     lat: 37.431489,
     lng: -122.163719,
     label: 'S',
@@ -25,7 +27,7 @@ var InitMap = function InitMap() {
     www: 'https://www.tesla.com/'
   }, {
     lat: 37.331681,
-    lng: -122.030100,
+    lng: -122.0301,
     label: 'A',
     draggable: false,
     title: 'Apple',
@@ -38,27 +40,27 @@ var InitMap = function InitMap() {
     title: 'Facebook',
     www: 'https://www.facebook.com/'
   }];
-  var map = new google.maps.Map(document.getElementById('map'), {
+  const map = new google.maps.Map(document.getElementById('map'), {
     center: {
       lat: 37.431489,
       lng: -122.163719
     },
     zoom: 11
   });
-  var markers = locations.map(function (location, i) {
-    var contentString = "<a href=\"" + location.www + "\" target=\"_blank\"><strong>" + location.title + "</strong></a>";
-    var infoWindow = new google.maps.InfoWindow({
+  const markers = locations.map((location, i) => {
+    const contentString = `<a href="${location.www}" target="_blank"><strong>${location.title}</strong></a>`;
+    const infoWindow = new google.maps.InfoWindow({
       content: contentString,
       maxWidth: 200
     });
-    var marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: location,
       label: location.label,
-      map: map,
+      map,
       title: location.title,
-      contentString: contentString
+      contentString
     });
-    marker.addListener('click', function () {
+    marker.addListener('click', () => {
       infoWindow.open(map, marker);
     });
     return marker;
@@ -66,6 +68,6 @@ var InitMap = function InitMap() {
 };
 
 if (window.google && window.google.maps) {
-  InitMap();
+  initMap();
 }
 //# sourceMappingURL=google-maps.js.map

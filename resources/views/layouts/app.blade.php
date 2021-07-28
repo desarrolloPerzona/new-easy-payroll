@@ -29,12 +29,12 @@
 <!-- SIDE BAR RIGHT -->
 <div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
     <!-- HEADER -->
-@include('include.dashboard.headers.admin_header')
+
 <!-- MAIN -->
     <!-- TOP MENU NAV BAR -->
-
+@include('include.dashboard.headers.admin_menu_header')
     <!-- NAV BAR -->
-
+    @include('include.dashboard.headers.admin_header')
     <div class="body flex-grow-1 px-3">
         <!-- BODY -->
         {{$slot}}

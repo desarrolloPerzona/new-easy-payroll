@@ -3,20 +3,20 @@
         <ul class="nav nav-underline nav-underline-primary" role="tablist">
             <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#timeline" role="tab">
                     <svg class="icon">
-                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-list"></use>
+                        <use xlink:href="{{('vendor/@coreui/icons/svg/free.svg#cil-list')}}"></use>
                     </svg></a></li>
             <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#messages" role="tab">
                     <svg class="icon">
-                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speech"></use>
+                        <use xlink:href="{{('vendor/@coreui/icons/svg/free.svg#cil-speech')}}"></use>
                     </svg></a></li>
             <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#settings" role="tab">
                     <svg class="icon">
-                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+                        <use xlink:href="{{('vendor/@coreui/icons/svg/free.svg#cil-settings')}}"></use>
                     </svg></a></li>
         </ul>
         <button class="sidebar-close" type="button" data-coreui-close="sidebar">
             <svg class="icon">
-                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-x"></use>
+                <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-x')}}"></use>
             </svg>
         </button>
     </div>
@@ -29,20 +29,20 @@
                     <div class="avatar avatar-lg float-end"><img class="avatar-img" src="assets/img/avatars/7.jpg" alt="user@email.com"></div>
                     <div>Meeting with <strong>Lucas</strong></div><small class="text-medium-emphasis me-3">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
+                            <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-calendar')}}"></use>
                         </svg> 1 - 3pm</small><small class="text-medium-emphasis">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-location-pin"></use>
+                            <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-location-pin')}}"></use>
                         </svg> Palo Alto, CA</small>
                 </div>
                 <div class="list-group-item border-start-4 border-start-info">
                     <div class="avatar avatar-lg float-end"><img class="avatar-img" src="assets/img/avatars/4.jpg" alt="user@email.com"></div>
                     <div>Skype with <strong>Megan</strong></div><small class="text-medium-emphasis me-3">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
+                            <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-calendar')}}"></use>
                         </svg> 4 - 5pm</small><small class="text-medium-emphasis">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/brand.svg#cib-skype"></use>
+                            <use xlink:href="{{asset('vendor/@coreui/icons/svg/brand.svg#cib-skype')}}"></use>
                         </svg> On-line</small>
                 </div>
                 <div class="list-group-item border-start-4 border-start-secondary bg-light text-center fw-bold text-medium-emphasis text-uppercase small">Tomorrow</div>
@@ -65,19 +65,19 @@
                 <div class="list-group-item border-start-4 border-start-success list-group-item-divider">
                     <div><strong>#10 Startups.Garden</strong> Meetup</div><small class="text-medium-emphasis me-3">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
+                            <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-calendar')}}"></use>
                         </svg> 1 - 3pm</small><small class="text-medium-emphasis">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-location-pin"></use>
+                            <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-location-pin')}}"></use>
                         </svg> Palo Alto, CA</small>
                 </div>
                 <div class="list-group-item border-start-4 border-start-primary list-group-item-divider">
                     <div><strong>Team meeting</strong></div><small class="text-medium-emphasis me-3">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
+                            <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-calendar')}}"></use>
                         </svg> 4 - 6pm</small><small class="text-medium-emphasis">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+                            <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-home')}}"></use>
                         </svg> creativeLabs HQ</small>
                     <div class="avatars-stack mt-2">
                         <div class="avatar avatar-xs"><img class="avatar-img" src="assets/img/avatars/2.jpg" alt="user@email.com"></div>

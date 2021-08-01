@@ -58,6 +58,7 @@ class NewUserNotification extends Notification
     {
         return [
             'id' => $this->user->id,
+            'avatar' => $this->user->profile_photo_path,
             'name' => $this->user->name,
             'last_name' => $this->user->last_name,
             'middle_name' => $this->user->middle_name,

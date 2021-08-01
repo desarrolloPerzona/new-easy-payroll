@@ -1,14 +1,16 @@
-<div class="c-header-nav mfs-auto">
-    <ul>
-        <li class="c-header-nav-item px-3 c-d-legacy-none">
-            <button class="c-class-toggler c-header-nav-btn" type="button" id="header-tooltip" data-target="body" data-class="c-dark-theme" data-toggle="c-tooltip" data-placement="bottom" title="Toggle Light/Dark Mode">
-                <div class="c-icon c-d-dark-none">
-                    <i class="fas fa-moon"></i>
-                </div>
-                <div class="c-icon c-d-default-none">
-                    <i class="fas fa-sun"></i>
-                </div>
-            </button>
-        </li>
-    </ul>
+<div>
+    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+            <input class="btn-check" id="btn-light-theme" type="radio" name="theme-switch" autocomplete="off" value="light" onchange="handleThemeChange(this)">
+            <label class="btn btn-dark" for="btn-light-theme">
+                <svg class="icon">
+                    <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-sun')}}"></use>
+                </svg>
+            </label>
+            <input class="btn-check" id="btn-dark-theme" type="radio" name="theme-switch" autocomplete="off" value="dark" onchange="handleThemeChange(this)">
+            <label class="btn btn-dark" for="btn-dark-theme">
+                <svg class="icon">
+                    <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-moon')}}"></use>
+                </svg>
+            </label>
+        </div>
 </div>

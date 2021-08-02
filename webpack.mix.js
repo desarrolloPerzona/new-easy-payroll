@@ -11,7 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 mix.copy('node_modules/dropzone/dist','public/vendor/dropzone')
-mix.copy('node_modules/@fortawesome/fontawesome-free','public/vendor/fontawesome')
+mix.copy('node_modules/@fortawesome/fontawesome-pro','public/vendor/fontawesome')
 mix.copy('node_modules/bootstrap/dist','public/vendor/bootstrap')
 mix.copy('node_modules/filepond/','public/vendor/filepond')
 mix.copy('node_modules/jquery/dist','public/vendor/jquery')

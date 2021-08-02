@@ -10,31 +10,30 @@
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
         <li class="nav-item">
             <a class="nav-link" href="{{route('dashboard')}}">
-                <svg class="nav-icon">
-                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
-                </svg>{{__('Dashboard')}}
+                <i class="fad fa-tachometer-alt-fastest mr-2"></i> {{__('Dashboard')}}
             <!--<span class="badge bg-info-gradient ms-auto">NEW</span>-->
             </a>
         </li>
-        <li class="nav-title">{{__('Application')}}</li>
-        <li class="nav-item">
-            <a class="nav-link" href="colors.html">
-                <svg class="nav-icon">
-                    <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cis-user')}}"></use>
-                </svg>{{__('Tenants')}}</a></li>
-        <li class="nav-item"><a class="nav-link" href="typography.html">
-                <svg class="nav-icon">
-                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
-                </svg> Typography</a></li>
-        <li class="nav-title">Components</li>
-        <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-                <svg class="nav-icon">
-                    <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-puzzle')}}"></use>
-                </svg> Base</a>
+        {{--<li class="nav-title"><i class="fad fa-browser mr-2"></i> {{__('Application')}}</li>--}}
+        <li class="nav-group">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="fad fa-browser mr-2"></i> {{__('Application variables')}}
+            </a>
             <ul class="nav-group-items">
-                <li class="nav-item"><a class="nav-link" href="base/accordion.html"><span class="nav-icon"></span> Accordion</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fad fa-university mr-2"></i> {{__('Banks')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fad fa-map-marked-alt mr-2"></i> {{__('Zip codes')}}</a>
+                </li>
             </ul>
+        <li class="nav-item"><a class="nav-link" href="index.html">
+                <i class="fad fa-map-marked-alt mr-2"></i>
+            </a>
         </li>
+
     </ul>
     <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
 </div>

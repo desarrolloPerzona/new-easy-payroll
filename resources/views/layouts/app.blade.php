@@ -23,7 +23,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
     @include('include.common.head.vendor-css')
 </head>
-<body>
+<body class="mode-dark">
 <!-- SIDE BAR -->
 @include('include.dashboard.sidebars.admin_sidebar')
 <!-- SIDE BAR RIGHT -->

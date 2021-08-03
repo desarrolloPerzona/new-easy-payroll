@@ -17,5 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call(AdminSeeder::class);
         $this->call(ZipCodeSeeder::class);
         $this->call(RolesAndPermissionsSeeder::class);
+        $this->call(BankSeeder::class);
+        $this->call(IndustriesSeeder::class);
+        $this->call(FiscalRegimeSeeder::class);
     }
 }

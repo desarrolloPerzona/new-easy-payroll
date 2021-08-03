@@ -15,7 +15,6 @@
             </a>
         </li>
         {{--<li class="nav-title"><i class="fad fa-browser mr-2"></i> {{__('Application')}}</li>--}}
-        BOnobo
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
                 <i class="fad fa-browser mr-2"></i> {{__('Application variables')}}
@@ -29,11 +28,12 @@
                     <a class="nav-link" href="#">
                         <i class="fad fa-map-marked-alt mr-2"></i> {{__('Zip codes')}}</a>
                 </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">
+                        <i class="fad fa-map-marked-alt mr-2"></i>{{__('Fiscal Regimes')}}
+                    </a>
+                </li>
             </ul>
-        <li class="nav-item"><a class="nav-link" href="index.html">
-                <i class="fad fa-map-marked-alt mr-2"></i>
-            </a>
-        </li>
+
 
     </ul>
     <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>

@@ -15,6 +15,7 @@
             </a>
         </li>
         {{--<li class="nav-title"><i class="fad fa-browser mr-2"></i> {{__('Application')}}</li>--}}
+        BOnobo
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
                 <i class="fad fa-browser mr-2"></i> {{__('Application variables')}}

@@ -34,9 +34,9 @@
     <!-- NOTIFICATIONS -->
 
     <li class="nav-item dropdown d-md-down-none"><a class="nav-link" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-            <svg class="icon icon-lg my-1 mx-2">
-                <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-bell')}}"></use>
-            </svg>
+            <div class="icon icon-lg my-1 mx-2">
+                @if($user->notifications->count() > 0) <i class="fad fa-bell-on"></i> @else <i class="fad fa-bell"></i> @endif
+            </div>
             <span class="badge rounded-pill position-absolute top-0 end-0 bg-info-gradient">{{$user->notifications->count()}}</span></a>
         <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg pt-0 bg-blue-400">
 

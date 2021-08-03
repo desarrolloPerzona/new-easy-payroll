@@ -29,12 +29,14 @@
                         <i class="fad fa-map-marked-alt mr-2"></i> {{__('Zip codes')}}</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="index.html">
-                        <i class="fad fa-map-marked-alt mr-2"></i>{{__('Fiscal Regimes')}}
+                        <i class="fad fa-warehouse mr-2"></i>{{__('Fiscal Regimes')}}
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">
+                        <i class="fad fa-industry mr-2"></i>{{__('Industries')}}
                     </a>
                 </li>
             </ul>
-
-
     </ul>
     <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
 </div>

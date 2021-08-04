@@ -1,16 +1,17 @@
-<div class="w-75 my-auto">
-    <table class="table table-dark table-striped">
+<div class="w-75 mx-auto">
+    <table class="table table-primary table-striped">
         <tr>
-            @foreach($columns as $column)
-                <th>{{$column}}</th>
+            @foreach($modelTitles as $title)
+                <th>{{__($title)}}</th>
             @endforeach
         </tr>
-        @foreach($models as $title)
+        @foreach($model as $title)
             <tr>
-                <td>{{$title->name}}</td>
+                @foreach($modelItems as $items)
+                    <td>{{$title->$items}}</td>
+                @endforeach
             </tr>
         @endforeach
-
-
     </table>
+    {{ $model->links() }}
 </div>

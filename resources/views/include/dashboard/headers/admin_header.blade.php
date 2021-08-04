@@ -51,14 +51,15 @@
         </ul>
         <!-- HEADER NAV DARK MODE -->
         <nav class="header-nav ms-auto me-4">
-            <livewire:dashboaord.components.user-header-dark-mode/>
+
+            <livewire:dashboard.includes.dark-mode-control/>
         </nav>
         <!-- HEADER RIGHT MENU -->
         <ul class="header-nav me-3">
-            <livewire:dashboaord.components.user-header-notifications/>
+            <livewire:dashboard.includes.notifications-control/>
         </ul>
         <ul class="header-nav me-4">
-            <livewire:dashboaord.components.user-header-menu />
+            <livewire:dashboard.includes.auth-user-control>
         </ul>
         <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#aside')).show()">
             <svg class="icon icon-lg">

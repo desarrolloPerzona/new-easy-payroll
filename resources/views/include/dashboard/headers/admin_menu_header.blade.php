@@ -3,15 +3,15 @@
         <ul class="nav nav-underline nav-underline-primary" role="tablist">
             <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#timeline" role="tab">
                     <svg class="icon">
-                        <use xlink:href="{{('vendor/@coreui/icons/svg/free.svg#cil-list')}}"></use>
+                        <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-list')}}"></use>
                     </svg></a></li>
             <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#messages" role="tab">
                     <svg class="icon">
-                        <use xlink:href="{{('vendor/@coreui/icons/svg/free.svg#cil-speech')}}"></use>
+                        <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-speech')}}"></use>
                     </svg></a></li>
             <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#settings" role="tab">
                     <svg class="icon">
-                        <use xlink:href="{{('vendor/@coreui/icons/svg/free.svg#cil-settings')}}"></use>
+                        <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-settings')}}"></use>
                     </svg></a></li>
         </ul>
         <button class="sidebar-close" type="button" data-coreui-close="sidebar">
@@ -49,10 +49,10 @@
                 <div class="list-group-item border-start-4 border-start-danger list-group-item-divider">
                     <div>New UI Project - <strong>deadline</strong></div><small class="text-medium-emphasis me-3">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
+                            <use xlink:href="vendor/@coreui/icons/svg/free.svg#cil-calendar"></use>
                         </svg> 10 - 11pm</small><small class="text-medium-emphasis">
                         <svg class="icon">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-home"></use>
+                            <use xlink:href="vendor/@coreui/icons/svg/free.svg#cil-home"></use>
                         </svg> creativeLabs HQ</small>
                     <div class="avatars-stack mt-2">
                         <div class="avatar avatar-xs"><img class="avatar-img" src="assets/img/avatars/2.jpg" alt="user@email.com"></div>

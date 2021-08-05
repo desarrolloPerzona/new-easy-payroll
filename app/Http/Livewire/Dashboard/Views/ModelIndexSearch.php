@@ -9,7 +9,7 @@ class ModelIndexSearch extends Component
 {
     use WithPagination;
 
-    /*protected $paginationTheme = 'bootstrap';*/
+    protected $paginationTheme = 'tailwind';
 
     public $modelToView;
     public $modelItems;

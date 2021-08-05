@@ -1,5 +1,5 @@
 <div class="w-75 mx-auto">
-    <table class="table table-primary table-striped">
+    <table class="table dark-theme table-primary table-striped dark:alert-primary">
         <tr>
             @foreach($modelTitles as $title)
                 <th>{{__($title)}}</th>

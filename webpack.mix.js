@@ -21,7 +21,7 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),
-    ]).sass('resources/scss/core_ui.scss', 'public/css');
+    ]).sass('resources/scss-core-ui-pro4/style.scss', 'public/css');
 
 
 if (mix.inProduction()) {

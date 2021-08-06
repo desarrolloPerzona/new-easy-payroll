@@ -5,31 +5,31 @@
 
 // Color system
 
-// $white:     #fff !default;
-// $gray-base: #3c4b64 !default;
-// $gray-100:  #ebedef !default;
-// $gray-200:  #d8dbe0 !default;
-// $gray-300:  #c4c9d0 !default;
-// $gray-400:  #b1b7c1 !default;
-// $gray-500:  #9da5b1 !default;
-// $gray-600:  #8a93a2 !default;
-// $gray-700:  #768192 !default;
-// $gray-800:  #636f83 !default;
-// $gray-900:  #4f5d73 !default;
-// $black:     #000015 !default;
+ $white:     #fff !default;
+ $gray-base: #3c4b64 !default;
+ $gray-100:  #ebedef !default;
+ $gray-200:  #d8dbe0 !default;
+ $gray-300:  #c4c9d0 !default;
+ $gray-400:  #b1b7c1 !default;
+ $gray-500:  #9da5b1 !default;
+ $gray-600:  #8a93a2 !default;
+ $gray-700:  #768192 !default;
+ $gray-800:  #636f83 !default;
+ $gray-900:  #4f5d73 !default;
+ $black:     #000015 !default;
 
 // fusv-disable
-// $grays: (
-//   "100": $gray-100,
-//   "200": $gray-200,
-//   "300": $gray-300,
-//   "400": $gray-400,
-//   "500": $gray-500,
-//   "600": $gray-600,
-//   "700": $gray-700,
-//   "800": $gray-800,
-//   "900": $gray-900
-// ) !default;
+ $grays: (
+   "100": $gray-100,
+   "200": $gray-200,
+   "300": $gray-300,
+   "400": $gray-400,
+   "500": $gray-500,
+   "600": $gray-600,
+   "700": $gray-700,
+   "800": $gray-800,
+   "900": $gray-900
+ ) !default;
 // fusv-enable
 
 // $high-emphasis:            rgba(shift-color($gray-base, +26), .95) !default;
@@ -40,38 +40,38 @@
 // $medium-emphasis-inverse:  rgba($white, .6) !default;
 // $disabled-inverse:         rgba($white, .38) !default;
 
-// $blue:    #0d6efd !default;
-// $indigo:  #6610f2 !default;
-// $purple:  #6f42c1 !default;
-// $pink:    #d63384 !default;
-// $red:     #dc3545 !default;
-// $orange:  #fd7e14 !default;
-// $yellow:  #ffc107 !default;
-// $green:   #198754 !default;
-// $teal:    #20c997 !default;
-// $cyan:    #0dcaf0 !default;
+ $blue:    #0d6efd !default;
+ $indigo:  #6610f2 !default;
+ $purple:  #6f42c1 !default;
+ $pink:    #d63384 !default;
+ $red:     #dc3545 !default;
+ $orange:  #fd7e14 !default;
+ $yellow:  #ffc107 !default;
+ $green:   #198754 !default;
+ $teal:    #20c997 !default;
+ $cyan:    #0dcaf0 !default;
 
-// $colors: (
-//   "blue":       $blue,
-//   "indigo":     $indigo,
-//   "purple":     $purple,
-//   "pink":       $pink,
-//   "red":        $red,
-//   "orange":     $orange,
-//   "yellow":     $yellow,
-//   "green":      $green,
-//   "teal":       $teal,
-//   "cyan":       $cyan,
-//   "white":      $white,
-//   "gray":       $gray-600,
-//   "gray-dark":  $gray-800
-// ) !default;
+ $colors: (
+   "blue":       $blue,
+   "indigo":     $indigo,
+   "purple":     $purple,
+   "pink":       $pink,
+   "red":        $red,
+   "orange":     $orange,
+   "yellow":     $yellow,
+   "green":      $green,
+   "teal":       $teal,
+   "cyan":       $cyan,
+   "white":      $white,
+   "gray":       $gray-600,
+   "gray-dark":  $gray-800
+ ) !default;
 
 // fusv-disable
-// $primary-dark:  #1f1498 !default;
-// $primary-base:  #321fdb !default;
-// $primary-50:    #988fed !default;
-// $primary-25:    #ccc7f6 !default;
+ $primary-dark: #4e45c2 !default;
+ $primary-base: #7169c7 !default;
+ $primary-50:    #988fed !default;
+ $primary-25:    #ccc7f6 !default;
 
 // $secondary-dark:  #212233 !default;
 // $secondary-base:  #9da5b1 !default;

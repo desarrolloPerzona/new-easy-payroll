@@ -12,8 +12,8 @@
 @include('include.common.head.meta')
 
 <!-- CORE UI STYLES -->
-    <link rel="stylesheet" href="{{asset('vendor/simplebar/css/simplebar.css')}}">
-    <link rel="stylesheet" href="{{asset('css/vendor/simplebar.css')}}">
+  {{--  <link rel="stylesheet" href="{{asset('vendor/simplebar/css/simplebar.css')}}">
+    <link rel="stylesheet" href="{{asset('css/vendor/simplebar.css')}}">--}}
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
     <!-- app styles -->

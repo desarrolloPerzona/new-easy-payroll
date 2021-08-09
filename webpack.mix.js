@@ -10,6 +10,7 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+
 mix.copy('node_modules/dropzone/dist','public/vendor/dropzone')
 mix.copy('node_modules/@fortawesome/fontawesome-pro','public/vendor/fontawesome')
 mix.copy('node_modules/bootstrap/dist','public/vendor/bootstrap')

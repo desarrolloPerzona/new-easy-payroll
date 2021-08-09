@@ -1,0 +1,43 @@
+// Utilities
+// stylelint-disable-next-line scss/dollar-variable-default
+$utilities: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$utilities: map-merge(
+  (
+    "color": (
+      property: color,
+      class: text,
+      values: map-merge(
+        $theme-colors,
+        (
+          "white": $white,
+          "body": $body-color-dt,
+          "black-50": rgba($black, .5),
+          "white-50": rgba($white, .5),
+          "reset": inherit,
+          "high-emphasis": $high-emphasis-dt,
+          "medium-emphasis": $medium-emphasis-dt,
+          "disabled": $disabled-dt
+        )
+      ),
+      only-vars: true,
+      theme-prefix: true,
+    ),
+    "background-color": (
+      property: background-color,
+      class: bg,
+      values: map-merge(
+        $theme-colors,
+        (
+          "body": $body-bg,
+          "white": $white,
+          "transparent": transparent
+        )
+      ),
+      only-vars: true,
+      theme-prefix: true,
+    )
+  ),
+  $utilities
+);
+

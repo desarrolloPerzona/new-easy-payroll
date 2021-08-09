@@ -1,0 +1,55 @@
+@import "./../functions";
+@import "./../mixins";
+@import "./../variables";
+@import "./../utilities";
+
+$theme-name: "dark-theme" !default;
+$theme-prefix: "dark" !default;
+
+.#{$theme-name} {
+  @import "dark/variables";
+  @import "dark/utilities";
+
+  // Colors
+  @each $color, $value in $theme-colors-dt {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Gradients
+  @each $color, $map in $theme-gradients-dt {
+    --#{$variable-prefix}#{$color}-start: #{map-get($map, "start")};
+    --#{$variable-prefix}#{$color}-stop: #{map-get($map, "stop")};
+  }
+
+  @include theme($theme-map);
+
+  // Button variants
+
+  @each $state, $variant in $alert-variants-dt {
+    @include alert-variant($state, $variant, true);
+  }
+
+  // Button variants
+
+  @each $state, $variant in $button-variants-dt {
+    @include button-variant($state, $variant, true);
+  }
+
+  @each $state, $variant in $button-outline-ghost-variants-dt {
+    @include button-outline-variant($state, $variant, true);
+  }
+
+  @each $state, $variant in $button-outline-ghost-variants-dt {
+    @include button-ghost-variant($state, $variant, true);
+  }
+
+  // List group variants
+
+  @each $state, $variant in $list-group-variants-dt {
+    @include list-group-item-variant($state, $variant, true);
+  }
+
+  // Utilities
+  // stylelint-disable-next-line no-invalid-position-at-import-rule
+  @import "./../utilities/api";
+}

@@ -4,8 +4,8 @@
             <h2>{{__($modelName)}}</h2>
         </div>
         <div class="card-body">
-            <div class=" p-4 my-4 bg-primary text-white shadow-sm dark:bg-dark rounded">
-                <h2 class="my-2"> {{__('New').' '.__($modelName)}}</h2>
+            <div class=" p-4 my-4 bg-blueSteel text-gray-400 shadow-sm dark:bg-dark rounded">
+                <h2 class="my-2 text-white"> {{__('New').' '.__($modelName)}}</h2>
                 <form action="" class="row">
                     @foreach($modelTitles as $title)
                         <div class="form-group col">
@@ -15,7 +15,7 @@
                         </div>
                     @endforeach
                     <div class="col">
-                        <button class="btn btn-success">{{__('Send')}}</button>
+                        <button class="btn btn-info">{{__('Send')}}</button>
                     </div>
                 </form>
             </div>
@@ -45,7 +45,8 @@
                             <td>{{$title->$items}}</td>
                         @endforeach
                         <td>
-                            {{--                            <div class="btn btn-primary my-1"><i class="fas fa-eye"></i></div>--}}
+                            <div class="btn btn-success my-1"><i class="fas fa-eye"></i></div>
+                            <div class="btn btn-info my-1"><i class="fas fa-eye"></i></div>
 
                             <div class="btn btn-warning my-1"><i class="fas fa-edit"></i></div>
 

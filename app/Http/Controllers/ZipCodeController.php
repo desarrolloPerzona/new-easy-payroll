@@ -14,7 +14,7 @@ class ZipCodeController extends Controller
      */
     public function index()
     {
-        //
+        return view ('admin.zipcodes.index');
     }
 
     /**

@@ -9,41 +9,48 @@
     <!-- TITLE -->
     <title>{{ config('app.name', 'PerZona ') }} | @yield('title')</title>
     <!-- META -->
-@include('include.common.head.meta')
-
-<!-- CORE UI STYLES -->
-  {{--  <link rel="stylesheet" href="{{asset('vendor/simplebar/css/simplebar.css')}}">
-    <link rel="stylesheet" href="{{asset('css/vendor/simplebar.css')}}">--}}
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
-
+    @include('include.common.head.meta')
     <!-- app styles -->
+    @include('include.common.head.vendor-css')
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <!-- CORE UI STYLES -->
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <!-- VENDOR CSS -->
+
     <!-- APP SCRIPTS -->
     @livewireStyles
     <script src="{{ mix('js/app.js') }}" defer></script>
-    @include('include.common.head.vendor-css')
 </head>
-<body class="mode-dark">
+<body class="mode-dark text-sm text-dark">
+
 <!-- SIDE BAR -->
 @include('include.dashboard.sidebars.admin_sidebar')
 <!-- SIDE BAR RIGHT -->
 <div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
     <!-- HEADER -->
 
-<!-- MAIN -->
+    <!-- MAIN -->
     <!-- TOP MENU NAV BAR -->
 @include('include.dashboard.headers.admin_menu_header')
-    <!-- NAV BAR -->
+<!-- NAV BAR -->
     @include('include.dashboard.headers.admin_header')
+
     <div class="body flex-grow-1 px-3">
         <!-- BODY -->
-        {{$slot}}
+        <div class="d-none d-md-block d-sm-block d-xl-none">
+            <p class="text-sm-center">{{__('Only visible on large screens')}}</p>
+        </div>
+        <div class="d-none d-xl-block">
+            {{$slot}}
+        </div>
+
     </div>
     <!-- FOOTER -->
     @include('include.dashboard.footers.admin_footer')
 </div>
 
 <!-- STACKS SCRIPTS & LIVEWIRE -->
+@include('include.common.scripts.vendor-scripts')
 @stack('in_page_scripts')
 @stack('modals')
 @livewireScripts

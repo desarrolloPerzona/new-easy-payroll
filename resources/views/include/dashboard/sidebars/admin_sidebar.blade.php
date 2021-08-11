@@ -25,17 +25,17 @@
                     <a class="nav-link" href="{{route('banks.index')}}">
                         <i class="nav-icon fad fa-university mr-2"></i> {{__('Banks')}}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="nav-icon fad fa-map-marked-alt mr-2"></i> {{__('Zip codes')}}</a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="index.html">
+                <li class="nav-item"><a class="nav-link" href="{{route('fiscal-regimes.index')}}">
                         <i class="nav-icon fad fa-warehouse mr-2"></i>{{__('Fiscal Regimes')}}
                     </a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="index.html">
+                <li class="nav-item"><a class="nav-link" href="{{route('industries.index')}}">
                         <i class="nav-icon fad fa-industry mr-2"></i>{{__('Industries')}}
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('zipcodes.index')}} ">
+                        <i class="nav-icon fad fa-map-marked-alt mr-2"></i> {{__('Zip codes')}}</a>
                 </li>
             </ul>
         </li>

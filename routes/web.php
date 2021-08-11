@@ -4,7 +4,10 @@ use App\Events\TenantHasSubscribe;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FiscalRegimeController;
+use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ZipCodeController;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 
@@ -29,3 +32,6 @@ Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth
 Route::get('/admin-dashboard',[AdminDashboardController::class,'index'])->middleware(['auth:sanctum', 'verified','universal',InitializeTenancyByDomain::class])->name('adminDashboard');
 Route::resource('/user',UserController::class)->middleware(['auth:sanctum', 'verified','universal',InitializeTenancyByDomain::class]);
 route::resource('/banks',BankController::class)->middleware(['auth:sanctum', 'verified','web']);
+route::resource('/fiscal-regimes',FiscalRegimeController::class)->middleware(['auth:sanctum', 'verified','web']);
+route::resource('/industries',IndustryController::class)->middleware(['auth:sanctum', 'verified','web']);
+route::resource('/zipcodes',ZipCodeController::class)->middleware(['auth:sanctum', 'verified','web']);

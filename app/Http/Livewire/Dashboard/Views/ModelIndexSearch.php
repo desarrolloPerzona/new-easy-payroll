@@ -9,15 +9,14 @@ class ModelIndexSearch extends Component
 {
     use WithPagination;
 
-    protected $paginationTheme = 'tailwind';
+    protected $paginationTheme = 'bootstrap';
     /**
      * SORT
      * @var string
      */
-    public $sortColumn = 'name';
+    public $sortColumn;
     public $sortDirection = 'asc';
     public $searchColumns;
-
     public $modelName;
     public $modelToView;
     public $modelItems;
@@ -30,6 +29,7 @@ class ModelIndexSearch extends Component
         $this->modelItems = collect($modelItems);
         $this->modelTitles = $modelTitles;
         $this->searchColumns = $searchColumns;
+        $this->sortColumn = $modelItems[0];
     }
 
     public function sortByColumn($column)
@@ -50,6 +50,7 @@ class ModelIndexSearch extends Component
 
     public function render()
     {
+
         $models = $this->modelToView::orderBy($this->sortColumn, $this->sortDirection);
 
         foreach ($this->searchColumns as $column => $value) {

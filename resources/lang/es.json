@@ -95,6 +95,7 @@
     "Bonaire, Sint Eustatius and Saba": "Bonaire, San Eustaquio y Saba",
     "Bosnia And Herzegovina": "Bosnia y Herzegovina",
     "Botswana": "Botswana",
+    "Borough" : "Colonia",
     "Bouvet Island": "Isla Bouvet",
     "Brazil": "Brasil",
     "British Indian Ocean Territory": "Territorio Británico del Océano Índico",
@@ -656,7 +657,9 @@
     "Managing billing for " : "Manejando la facturación",
     "Hello ": "Hola ",
     "Buttons": "Botones",
-    "Business telephone" : "Teléfono de la empresa"
+    "Business telephone" : "Teléfono de la empresa",
+    "Zip code": "Código postal",
+    "Zip codes": "Código postales"
 }
 
 

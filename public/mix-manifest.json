@@ -1,5 +1,20 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/style.css": "/css/style.css"
+    "/css/style.css": "/css/style.css",
+    "/vendor/dropzone/basic.css": "/vendor/dropzone/basic.css",
+    "/vendor/dropzone/dropzone-amd-module.js": "/vendor/dropzone/dropzone-amd-module.js",
+    "/vendor/dropzone/dropzone.css": "/vendor/dropzone/dropzone.css",
+    "/vendor/dropzone/dropzone.js": "/vendor/dropzone/dropzone.js",
+    "/vendor/fontawesome/LICENSE.txt": "/vendor/fontawesome/LICENSE.txt",
+    "/vendor/fontawesome/attribution.js": "/vendor/fontawesome/attribution.js",
+    "/vendor/fontawesome/package.json": "/vendor/fontawesome/package.json",
+    "/vendor/filepond/README.md": "/vendor/filepond/README.md",
+    "/vendor/filepond/package.json": "/vendor/filepond/package.json",
+    "/vendor/jquery/jquery.js": "/vendor/jquery/jquery.js",
+    "/vendor/jquery/jquery.min.js": "/vendor/jquery/jquery.min.js",
+    "/vendor/jquery/jquery.min.map": "/vendor/jquery/jquery.min.map",
+    "/vendor/jquery/jquery.slim.js": "/vendor/jquery/jquery.slim.js",
+    "/vendor/jquery/jquery.slim.min.js": "/vendor/jquery/jquery.slim.min.js",
+    "/vendor/jquery/jquery.slim.min.map": "/vendor/jquery/jquery.slim.min.map"
 }

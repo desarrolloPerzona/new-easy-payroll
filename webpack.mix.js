@@ -16,6 +16,12 @@ mix.copy('node_modules/@fortawesome/fontawesome-pro','public/vendor/fontawesome'
 mix.copy('node_modules/bootstrap/dist','public/vendor/bootstrap')
 mix.copy('node_modules/filepond/','public/vendor/filepond')
 mix.copy('node_modules/jquery/dist','public/vendor/jquery')
+mix.copy('node_modules/@ckeditor/ckeditor5-build-classic/build','public/vendor/ckeditor5');
+mix.copy('node_modules/select2/dist','public/vendor/select2');
+mix.copy('node_modules/animate.css/animate.*','public/vendor/animate');
+mix.copy('node_modules/pikaday','public/vendor/pikaday');
+mix.copy('node_modules/@popperjs/core/dist','public/vendor/popper-js2');
+
 
 
 mix.js('resources/js/app.js', 'public/js')

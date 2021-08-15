@@ -16,5 +16,14 @@
     "/vendor/jquery/jquery.min.map": "/vendor/jquery/jquery.min.map",
     "/vendor/jquery/jquery.slim.js": "/vendor/jquery/jquery.slim.js",
     "/vendor/jquery/jquery.slim.min.js": "/vendor/jquery/jquery.slim.min.js",
-    "/vendor/jquery/jquery.slim.min.map": "/vendor/jquery/jquery.slim.min.map"
+    "/vendor/jquery/jquery.slim.min.map": "/vendor/jquery/jquery.slim.min.map",
+    "/vendor/ckeditor5/ckeditor.js": "/vendor/ckeditor5/ckeditor.js",
+    "/vendor/ckeditor5/ckeditor.js.map": "/vendor/ckeditor5/ckeditor.js.map",
+    "/vendor/animate/animate.compat.css": "/vendor/animate/animate.compat.css",
+    "/vendor/animate/animate.css": "/vendor/animate/animate.css",
+    "/vendor/animate/animate.min.css": "/vendor/animate/animate.min.css",
+    "/vendor/pikaday/CHANGELOG.md": "/vendor/pikaday/CHANGELOG.md",
+    "/vendor/pikaday/README.md": "/vendor/pikaday/README.md",
+    "/vendor/pikaday/package.json": "/vendor/pikaday/package.json",
+    "/vendor/pikaday/pikaday.js": "/vendor/pikaday/pikaday.js"
 }

@@ -23,7 +23,7 @@ class bankSeeder extends Seeder
         );
         DB::table('banks')->insert(
             array(
-                'name' => 'ACCENDO BANCO',
+                'name' => 'ACENDO BANK',
                 'institutional_key' => '40102',
                 'created_at' => date('Y-m-d H:i:s'),
             )
@@ -51,7 +51,7 @@ class bankSeeder extends Seeder
         );
         DB::table('banks')->insert(
             array(
-                'name' => 'AMERICAN EXPRES',
+                'name' => 'AMERICAN EXPRESS',
                 'institutional_key' => '40103',
                 'created_at' => date('Y-m-d H:i:s'),
             )
@@ -135,14 +135,14 @@ class bankSeeder extends Seeder
         );
         DB::table('banks')->insert(
             array(
-                'name' => 'banksAOOL',
+                'name' => 'BANKAOOL',
                 'institutional_key' => '40147',
                 'created_at' => date('Y-m-d H:i:s'),
             )
         );
         DB::table('banks')->insert(
             array(
-                'name' => 'banks OF AMERICA',
+                'name' => 'BANKS OF AMERICA',
                 'institutional_key' => '40106',
                 'created_at' => date('Y-m-d H:i:s'),
             )
@@ -261,7 +261,7 @@ class bankSeeder extends Seeder
         );
         DB::table('banks')->insert(
             array(
-                'name' => 'CoDi Valida',
+                'name' => 'CoDI VALIDA',
                 'institutional_key' => '90903',
                 'created_at' => date('Y-m-d H:i:s'),
             )

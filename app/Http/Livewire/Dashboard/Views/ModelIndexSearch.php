@@ -55,7 +55,7 @@ class ModelIndexSearch extends Component
 
         foreach ($this->searchColumns as $column => $value) {
             if (!empty($value)) {
-                $models->where($column, 'LIKE', '%' .$value . '%');
+                $models->where($column, 'LIKE', $value . '%');
             }
         }
 

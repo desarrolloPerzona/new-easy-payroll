@@ -10,26 +10,27 @@ class ModelIndexSearch extends Component
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
-    /**
-     * SORT
-     * @var string
-     */
-    public $sortColumn;
-    public $sortDirection = 'asc';
-    public $searchColumns;
-    public $modelName;
-    public $modelToView;
-    public $modelItems;
-    public $modelTitles;
 
 
-    public function mount($modelName,$modelToView, $modelItems, $modelTitles, $searchColumns)
+    public $sortColumn, $sortDirection = 'asc', $searchColumns, $modelName, $modelToView, $modelItems, $modelTitles;
+    public $updateMode = false;
+    public $showModal = false;
+    public $modelItemToEdit;
+    public $name;
+    public $itemId;
+
+
+
+    public function mount($modelName, $modelItems, $modelTitles, $searchColumns)
     {
-        $this->modelToView = "App\Models\\".$modelName;
+        $this->modelToView = "App\Models\\" . $modelName;
         $this->modelItems = collect($modelItems);
         $this->modelTitles = $modelTitles;
         $this->searchColumns = $searchColumns;
         $this->sortColumn = $modelItems[0];
+        $this->modelItemToEdit = collect();
+
+
     }
 
     public function sortByColumn($column)
@@ -50,7 +51,6 @@ class ModelIndexSearch extends Component
 
     public function render()
     {
-
         $models = $this->modelToView::orderBy($this->sortColumn, $this->sortDirection);
 
         foreach ($this->searchColumns as $column => $value) {
@@ -62,6 +62,26 @@ class ModelIndexSearch extends Component
         return view('livewire.dashboard.views.model-index-search', [
             'model' => $models->paginate(10),
         ]);
+    }
+
+
+    public function store()
+    {
+
+        $validatedDate = $this->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
+    }
+
+
+    public function edit($id)
+    {
+        $this->showModal = true;
+
+        $this->modelItemToEdit = $this->modelToView::where('id', $id)->first();
+        $this->name = 'poquerr';
+
     }
 
 

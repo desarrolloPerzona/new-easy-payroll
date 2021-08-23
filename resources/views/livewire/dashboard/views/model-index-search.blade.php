@@ -38,8 +38,9 @@
             <table class="table table-striped table-responsive p-4">
                 {{-- SEARCH AND ORDER--}}
                 <tr>
+                    <p class="uppercase text-sm dark:text-white">{{__('Search and order column')}}</p>
                     @foreach($modelTitles as $title)
-                        <th class="text-sm">
+                        <th class="text-xs">
                             <div wire:click="sortByColumn('{{str_replace(' ','_',strtolower($title))}}')">
                                 {{__($title)}}
                                 @if ($sortColumn == str_replace(' ','_',strtolower($title)))
@@ -53,45 +54,19 @@
                             </div>
                         </th>
                     @endforeach
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
                 </tr>
-                @foreach($model as $title)
+                {{-- SEARCH AND ORDER--}}
+                @foreach($model as $item)
                     <tr>
                         @foreach($modelItems as $items)
-                            <td class="text-sm">{{$title->$items}}</td>
+                            <td class="text-sm">{{$item->$items}}</td>
                         @endforeach
                         <td>
-                            <div class="btn btn-primary my-1 text-xs-center text-white text-xs "><i class="fas fa-eye fa-1x"></i></div>
-                        <td>
-                        <td>
-                            <div class="btn btn-warning my-1 text-xs-center text-white"><i class="fas fa-edit"></i></div>
+                            <div class="btn btn-warning my-1 text-xs-center text-white" wire:click.prevent="edit({{ $item->id }})" data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i></div>
                         </td>
                         <td>
                             <div class="btn btn-danger my-1 text-xs-center text-white"><i class="fas fa-trash"></i></div>
                         </td>
-                    </tr>
-                    <tr>
-                        <td colspan="{{$modelItems->count()+4}}">
-                            <div class="p-4">
-                                <p>{{__('Edit').' '.$title->zip_code}}</p>
-                                <form action="">
-                                    @foreach($modelItems as $items)
-                                        <div class="form-group my-2">
-                                            <lable class="text-sm block uppercase">{{str_replace('_',' ',strtolower($items))}}</lable>
-                                            <input class="form-control-sm" type="text" value="{{$title->$items}}">
-
-                                        </div>
-
-                                    @endforeach
-                                    <button-btn class="btn btn-primary">{{__('Save')}}</button-btn>
-                                </form>
-                            </div>
-                        </td>
-
-
                     </tr>
                 @endforeach
 
@@ -101,3 +76,35 @@
 
     </div>
 </div>
+@push('in_page_scripts')
+    <script>
+
+    </script>
+@endpush
+@push('modals')
+    <div id="editModal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ $modelItemToEdit ? 'Edit Product' : 'Add New Product' }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form wire:submit.prevent="save">
+                        hay algo???? {{$modelItemToEdit}}
+                        <input wire:model="name" class="form-control"/>
+                        @error('product.name')
+                        <div style="font-size: 11px; color: red">{{ $message }}</div>
+                        @enderror
+                        <div class="my-4">
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button class="btn btn-danger text-white" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+@endpush

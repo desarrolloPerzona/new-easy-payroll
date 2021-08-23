@@ -12,14 +12,15 @@
     @include('include.common.head.meta')
     <!-- app styles -->
     @include('include.common.head.vendor-css')
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{mix('css/app.css')}}">
     <!-- CORE UI STYLES -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <!-- VENDOR CSS -->
 
     <!-- APP SCRIPTS -->
-    @livewireStyles
     <script src="{{ mix('js/app.js') }}" defer></script>
+    @livewireStyles
+
 </head>
 <body class="mode-dark text-sm text-dark">
 
@@ -47,12 +48,12 @@
     </div>
     <!-- FOOTER -->
     @include('include.dashboard.footers.admin_footer')
+    @stack('modals')
 </div>
 
 <!-- STACKS SCRIPTS & LIVEWIRE -->
 @include('include.common.scripts.vendor-scripts')
 @stack('in_page_scripts')
-@stack('modals')
 @livewireScripts
 <!-- CORE UI SCRIPTS -->
 <script src="{{asset('vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>

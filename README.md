@@ -24,6 +24,8 @@ Payroll application with multitenancy
     - UNZIP FILE
     
         - Run composer install
+
+        - IMPORTANT Please remove comments form webpack.mix.js to install vendor requirements.
     
         - Run npm install && mpm run dev
     
@@ -36,6 +38,7 @@ Payroll application with multitenancy
         - create database
     
         - run migrations
+
     
         - translations (resources/lang/es and resources/lang/es.json)
     
@@ -47,6 +50,8 @@ Payroll application with multitenancy
 
         - composer global require beyondcode/expose
             - expose share payroll.dev
+
+        
 
 
 #### ADMIN LOGIN

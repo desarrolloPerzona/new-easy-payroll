@@ -12,7 +12,6 @@
             <div class="line"></div>
             <h3>Lorem Ipsum</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione voluptas consequuntur laboriosam quia vero corporis, officiis, dolore natus iste incidunt animi dolor porro accusamus similique aut, facilis architecto quas? Assumenda mollitia error vel blanditiis perferendis quis sequi deleniti repellat laboriosam!</p>
-
         </div>
     </div>
     <!-- wrapper and -->

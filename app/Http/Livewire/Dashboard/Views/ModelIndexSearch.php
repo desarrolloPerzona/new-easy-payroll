@@ -68,10 +68,12 @@ class ModelIndexSearch extends Component
     public function store()
     {
 
-        $validatedDate = $this->validate([
+        /*$validatedDate = $this->validate([
             'name' => 'required',
             'email' => 'required|email',
-        ]);
+        ]);*/
+
+
     }
 
 
@@ -80,7 +82,8 @@ class ModelIndexSearch extends Component
         $this->showModal = true;
 
         $this->modelItemToEdit = $this->modelToView::where('id', $id)->first();
-        $this->name = 'poquerr';
+
+
 
     }
 

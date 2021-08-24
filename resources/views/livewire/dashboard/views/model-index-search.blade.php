@@ -22,6 +22,7 @@
                                         <div class="form-group mx-sm-3 mb-2">
                                             <label for="input-new-item{{$loop->iteration}}" class="sr-only">{{__($title)}}</label>
                                             <input type="text" class="form-control input-group-sm" id="input-new-item{{$loop->iteration}}" placeholder="{{__($title)}}">
+                                            @error(){{$message}} @enderror
                                         </div>
                                     @endforeach
                                     <div class="form-group">
@@ -92,8 +93,8 @@
                 </div>
                 <div class="modal-body">
                     <form wire:submit.prevent="save">
-                        hay algo???? {{$modelItemToEdit}}
-                        <input wire:model="name" class="form-control"/>
+                        {{$modelItemToEdit}}
+                        <input wire:model="modelItemToEdit.name" class="form-control"/>
                         @error('product.name')
                         <div style="font-size: 11px; color: red">{{ $message }}</div>
                         @enderror

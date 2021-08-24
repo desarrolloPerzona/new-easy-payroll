@@ -9,7 +9,7 @@
     <!-- TITLE -->
     <title>{{ config('app.name', 'PerZona ') }} | @yield('title')</title>
     <!-- META -->
-    @include('include.common.head.meta')
+@include('include.common.head.meta')
     <!-- app styles -->
     @include('include.common.head.vendor-css')
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
@@ -17,7 +17,7 @@
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <!-- VENDOR CSS -->
 
-    <!-- APP SCRIPTS -->
+<!-- APP SCRIPTS -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     @livewireStyles
 

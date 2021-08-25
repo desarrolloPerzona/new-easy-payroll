@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Dashboard\Views;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Redirect;
 
 class ModelIndexSearch extends Component
 {
@@ -12,27 +13,26 @@ class ModelIndexSearch extends Component
     protected $paginationTheme = 'bootstrap';
 
 
-    public $sortColumn, $sortDirection = 'asc', $searchColumns, $modelName, $modelToView, $modelItems, $modelTitles;
-    public $updateMode = false;
-    public $showModal = false;
-    public $modelItemToEdit;
-    public $name;
-    public $itemId;
+// SET VARIABLES
+    public $sortColumn, $sortDirection = 'asc', $searchColumns, $modelName, $modelToView, $modelItems, $modelTitles, $validationFields, $modelToEdit, $erasable, $viewable, $editable;
 
+// INITIALIZE VARIABLES
+    /**
+     * @var \Illuminate\Support\Collection
+     */
+    private $modelItemToEdit;
 
-
-    public function mount($modelName, $modelItems, $modelTitles, $searchColumns)
+    public function mount($modelName, $modelItems, $searchColumns)
     {
         $this->modelToView = "App\Models\\" . $modelName;
         $this->modelItems = collect($modelItems);
-        $this->modelTitles = $modelTitles;
+        $this->modelTitles = $this->replaceStrToLowerCollect($this->modelItems);
         $this->searchColumns = $searchColumns;
         $this->sortColumn = $modelItems[0];
         $this->modelItemToEdit = collect();
-
-
     }
 
+//
     public function sortByColumn($column)
     {
         if ($this->sortColumn == $column) {
@@ -43,6 +43,28 @@ class ModelIndexSearch extends Component
         }
     }
 
+    public function rules(): array
+    {
+        $rules = [];
+
+        foreach ($this->modelItems as $item) {
+            $rules[$item] = 'required';
+        }
+
+        return $rules;
+    }
+
+
+    public function replaceStrToLowerCollect($collect)
+    {
+        $collect = $collect->map(function ($item, $key) {
+            return str_replace('_', ' ', strtolower($item));
+        });
+
+        return $collect;
+
+    }
+
     public function updating($value, $name)
     {
         $this->resetPage();
@@ -51,6 +73,7 @@ class ModelIndexSearch extends Component
 
     public function render()
     {
+
         $models = $this->modelToView::orderBy($this->sortColumn, $this->sortDirection);
 
         foreach ($this->searchColumns as $column => $value) {
@@ -60,32 +83,42 @@ class ModelIndexSearch extends Component
         }
 
         return view('livewire.dashboard.views.model-index-search', [
-            'model' => $models->paginate(10),
+            'model' => $models->paginate(15),
         ]);
     }
 
-
-    public function store()
+    public function view()
     {
 
-        /*$validatedDate = $this->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-        ]);*/
+    }
 
+    public function save()
+    {
+
+        $this->validate();
 
     }
 
 
     public function edit($id)
     {
-        $this->showModal = true;
-
-        $this->modelItemToEdit = $this->modelToView::where('id', $id)->first();
+        $this->modelToEdit = $this->modelToView::find($id);
 
 
 
     }
 
+    public function destroy($id, $item)
+    {
+
+
+        $modelItem = $this->modelToView::find($id);
+
+        if ($modelItem) {
+            $modelItem->delete();
+            session()->flash('success', $item . ' ' . __('Item Deleted'));
+            $this->emit('alert_remove');
+        }
+    }
 
 }

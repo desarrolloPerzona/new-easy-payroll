@@ -142,13 +142,6 @@ class FiscalRegimeSeeder extends Seeder
         );
         DB::table('fiscal_regimes')->insert(
             array(
-                'name' => 'Actividades Agrícolas, Ganaderas, Silvícolas y Pesqueras',
-                'code' => '622',
-                'created_at' => date('Y-m-d H:i:s'),
-            )
-        );
-        DB::table('fiscal_regimes')->insert(
-            array(
                 'name' => 'De los Regímenes Fiscales Preferentes y de las Empresas Multinacionales',
                 'code' => '629',
                 'created_at' => date('Y-m-d H:i:s'),

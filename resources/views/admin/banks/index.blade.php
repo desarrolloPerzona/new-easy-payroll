@@ -3,7 +3,10 @@
     <livewire:dashboard.views.model-index-search
         :modelName="'Bank'"
         :modelItems="['name','institutional_key']"
-        :modelTitles="['Name','Institutional Key']"
         :searchColumns="['name'=>'','institutional_key'=>'']"
+        :erasable="true"
+        :editable="true"
+        :viewable="true"
+
     />
 </x-app-layout>

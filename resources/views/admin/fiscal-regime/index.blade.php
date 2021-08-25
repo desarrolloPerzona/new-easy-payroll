@@ -3,7 +3,9 @@
     <livewire:dashboard.views.model-index-search
         :modelName="'FiscalRegime'"
         :modelItems="['name','code']"
-        :modelTitles="['Name','Code']"
         :searchColumns="['name'=>'','code'=>'']"
+        :viewable="false"
+        :editable="true"
+        :erasable="true"
     />
 </x-app-layout>

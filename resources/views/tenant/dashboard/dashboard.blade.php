@@ -1,5 +1,5 @@
 @section('title')  {{Auth::user()->tenancy_domain ?? __('Not logged')}} - Dashboard @endsection
-<x-tenant-dashboard>
+<x-app-tenant>
     <div class="container mx-auto">
         <!-- start wrapper -->
         <h1 class="uppercase">{{__('Dashboard')}}</h1>
@@ -18,4 +18,4 @@
 @push('in_page_scripts')
     <!-- SIDEBAR SCRIPT -->
     @endpush
-</x-tenant-dashboard>
+</x-app-tenant>

@@ -30,8 +30,12 @@ Route::get('/', function () {
 
 Route::get('/dashboard',[DashboardController::class,'index'])->middleware(['auth:sanctum', 'verified','universal',InitializeTenancyByDomain::class])->name('dashboard');
 Route::get('/admin-dashboard',[AdminDashboardController::class,'index'])->middleware(['auth:sanctum', 'verified','universal',InitializeTenancyByDomain::class])->name('adminDashboard');
-Route::resource('/user',UserController::class)->middleware(['auth:sanctum', 'verified','universal',InitializeTenancyByDomain::class]);
-route::resource('/banks',BankController::class)->middleware(['auth:sanctum', 'verified','web']);
-route::resource('/fiscal-regimes',FiscalRegimeController::class)->middleware(['auth:sanctum', 'verified','web']);
-route::resource('/industries',IndustryController::class)->middleware(['auth:sanctum', 'verified','web']);
-route::resource('/zipcodes',ZipCodeController::class)->middleware(['auth:sanctum', 'verified','web']);
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], function () {
+    Route::resource('/user', UserController::class)->middleware(['auth:sanctum', 'verified', 'universal', InitializeTenancyByDomain::class]);
+    route::resource('/banks', BankController::class)->middleware(['auth:sanctum', 'verified', 'web']);
+    route::resource('/fiscal-regimes', FiscalRegimeController::class)->middleware(['auth:sanctum', 'verified', 'web']);
+    route::resource('/industries', IndustryController::class)->middleware(['auth:sanctum', 'verified', 'web']);
+    route::resource('/zipcodes', ZipCodeController::class)->middleware(['auth:sanctum', 'verified', 'web']);
+});
+

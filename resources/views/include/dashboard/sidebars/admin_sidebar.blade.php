@@ -22,8 +22,12 @@
             </a>
             <ul class="nav-group-items">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('banks.index')}}">
-                        <i class="nav-icon fad fa-university mr-2"></i> {{__('Banks')}}</a>
+
+                    @can('access banks')
+                        <a class="nav-link" href="{{route('banks.index')}}">
+                            <i class="nav-icon fad fa-university mr-2"></i> {{__('Banks')}}
+                        </a>
+                    @endcan
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{route('fiscal-regimes.index')}}">
                         <i class="nav-icon fad fa-warehouse mr-2"></i>{{__('Fiscal Regimes')}}

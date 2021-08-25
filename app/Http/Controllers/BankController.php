@@ -3,18 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bank;
+use Gate;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BankController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-return view ('admin.banks.index');
+       //abort_if(Gate::denies('edit bank'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        return view('admin.banks.index');
     }
 
     /**
@@ -30,7 +33,7 @@ return view ('admin.banks.index');
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +44,7 @@ return view ('admin.banks.index');
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Bank  $bank
+     * @param \App\Models\Bank $bank
      * @return \Illuminate\Http\Response
      */
     public function show(Bank $bank)
@@ -52,7 +55,7 @@ return view ('admin.banks.index');
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Bank  $bank
+     * @param \App\Models\Bank $bank
      * @return \Illuminate\Http\Response
      */
     public function edit(Bank $bank)
@@ -63,8 +66,8 @@ return view ('admin.banks.index');
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Bank  $bank
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Bank $bank
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Bank $bank)
@@ -75,7 +78,7 @@ return view ('admin.banks.index');
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Bank  $bank
+     * @param \App\Models\Bank $bank
      * @return \Illuminate\Http\Response
      */
     public function destroy(Bank $bank)

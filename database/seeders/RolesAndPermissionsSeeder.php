@@ -16,13 +16,31 @@ class RolesAndPermissionsSeeder extends Seeder
      */
     public function run()
     {
-        $role1 = Role::create(["name" => "superAdmin"]);
-        $role2 = Role::findOrCreate("tenant");
-        $permission = Permission::create(['name' => 'superAdmin.index']);
-        $permission2 = Permission::create(['name' => 'tenant.index']);
-        $role1->permissions()->attach(1);
-        $role2->permissions()->attach(2);
+
+        // create permissions
+
+        Permission::create(['name' => 'create users']);
+        Permission::create(['name' => 'read users']);
+        Permission::create(['name' => 'update users']);
+        Permission::create(['name' => 'delete users']);
+        Permission::create(['name' => 'access users']);
+
+        Permission::create(['name' => 'create banks']);
+        Permission::create(['name' => 'read banks']);
+        Permission::create(['name' => 'update banks']);
+        Permission::create(['name' => 'delete banks']);
+        Permission::create(['name' => 'access banks']);
+
+        $superAdminRole = Role::create(["name" => "Super Admin"]);
+        $adminRole = Role::create(["name" => "Admin"]);
+        $tenantRole = Role::create(["name" => "Tenant"]);
+
+        $superAdminRole->givePermissionTo(Permission::all());
+        $adminRole->givePermissionTo(Permission::all());
+        $tenantRole->givePermissionTo(['create users','read users','update users','delete users']);
+
         $user = User::find(1);
-        $user->assignRole('superAdmin');
+        $user->assignRole('super Admin');
+
     }
 }

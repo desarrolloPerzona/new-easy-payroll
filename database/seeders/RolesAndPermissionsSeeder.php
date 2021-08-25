@@ -31,6 +31,27 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'delete banks']);
         Permission::create(['name' => 'access banks']);
 
+        Permission::create(['name' => 'create Fiscal Regimes']);
+        Permission::create(['name' => 'read Fiscal Regimes']);
+        Permission::create(['name' => 'update Fiscal Regimes']);
+        Permission::create(['name' => 'delete Fiscal Regimes']);
+        Permission::create(['name' => 'access Fiscal Regimes']);
+
+        Permission::create(['name' => 'create Industries']);
+        Permission::create(['name' => 'read Industries']);
+        Permission::create(['name' => 'update Industries']);
+        Permission::create(['name' => 'delete Industries']);
+        Permission::create(['name' => 'access Industries']);
+
+        Permission::create(['name' => 'create Zipcodes']);
+        Permission::create(['name' => 'read Zipcodes']);
+        Permission::create(['name' => 'update Zipcodes']);
+        Permission::create(['name' => 'delete Zipcodes']);
+        Permission::create(['name' => 'access Zipcodes']);
+
+
+
+
         $superAdminRole = Role::create(["name" => "Super Admin"]);
         $adminRole = Role::create(["name" => "Admin"]);
         $tenantRole = Role::create(["name" => "Tenant"]);
@@ -41,6 +62,10 @@ class RolesAndPermissionsSeeder extends Seeder
 
         $user = User::find(1);
         $user->assignRole('super Admin');
+        $user1 = User::find(2);
+        $user1->assignRole('Admin');
+        $user2 = User::find(3);
+        $user2->assignRole('Tenant');
 
     }
 }

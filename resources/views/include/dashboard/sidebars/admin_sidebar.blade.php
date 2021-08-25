@@ -16,6 +16,7 @@
             </a>
         </li>
         {{--<li class="nav-title"><i class="fad fa-browser mr-2"></i> {{__('Application')}}</li>--}}
+        @hasrole('Super Admin')
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
                 <i class="nav-icon fad fa-browser mr-2"></i> {{__('API variables')}}
@@ -29,10 +30,12 @@
                         </a>
                     @endcan
                 </li>
+
                 <li class="nav-item"><a class="nav-link" href="{{route('fiscal-regimes.index')}}">
                         <i class="nav-icon fad fa-warehouse mr-2"></i>{{__('Fiscal Regimes')}}
                     </a>
                 </li>
+
                 <li class="nav-item"><a class="nav-link" href="{{route('industries.index')}}">
                         <i class="nav-icon fad fa-industry mr-2"></i>{{__('Industries')}}
                     </a>
@@ -43,6 +46,7 @@
                 </li>
             </ul>
         </li>
+        @endhasrole
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
                 <i class="nav-icon fad fa-tools mr-2"></i> {{__('User Administration')}}
@@ -50,7 +54,9 @@
             <ul class="nav-group-items">
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="nav-icon fad fa-users mr-2"></i> {{__('Tenants')}}</a>
+                        <i class="nav-icon fad fa-users mr-2"></i>
+                        {{__('Tenants')}}
+                    </a>
                 </li>
             </ul>
         </li>

@@ -27,5 +27,33 @@ class AdminSeeder extends Seeder
                 'terms' => true,
             )
         );
+
+        DB::table('users')->insert(
+            array(
+                'name' => 'normal',
+                'last_name' => 'Admin',
+                'middle_name' => 'Easy Payroll',
+                'email' => 'sub-admin@c9sd.com',
+                'role' => 1,
+                'password' => bcrypt('@password'),
+                'created_at' => date('Y-m-d H:i:s'),
+                'email_verified_at' => date('Y-m-d H:i:s'),
+                'terms' => true,
+            )
+        );
+
+        DB::table('users')->insert(
+            array(
+                'name' => 'tenant',
+                'last_name' => 'Tenant',
+                'middle_name' => 'Easy Payroll',
+                'email' => 'tenant@c9sd.com',
+                'role' => 1,
+                'password' => bcrypt('@password'),
+                'created_at' => date('Y-m-d H:i:s'),
+                'email_verified_at' => date('Y-m-d H:i:s'),
+                'terms' => true,
+            )
+        );
     }
 }

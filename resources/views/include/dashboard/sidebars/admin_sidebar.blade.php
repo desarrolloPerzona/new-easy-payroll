@@ -30,12 +30,10 @@
                         </a>
                     @endcan
                 </li>
-
                 <li class="nav-item"><a class="nav-link" href="{{route('fiscal-regimes.index')}}">
                         <i class="nav-icon fad fa-warehouse mr-2"></i>{{__('Fiscal Regimes')}}
                     </a>
                 </li>
-
                 <li class="nav-item"><a class="nav-link" href="{{route('industries.index')}}">
                         <i class="nav-icon fad fa-industry mr-2"></i>{{__('Industries')}}
                     </a>

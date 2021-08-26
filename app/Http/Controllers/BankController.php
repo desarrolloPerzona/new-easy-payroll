@@ -16,7 +16,7 @@ class BankController extends Controller
      */
     public function index()
     {
-       //abort_if(Gate::denies('edit bank'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+       abort_if(Gate::denies('Admin'), Response::HTTP_FORBIDDEN, '403 Forbidden');
         return view('admin.banks.index');
     }
 

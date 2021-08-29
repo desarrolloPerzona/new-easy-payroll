@@ -19,35 +19,47 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // create permissions
 
-        Permission::create(['name' => 'create users']);
-        Permission::create(['name' => 'read users']);
-        Permission::create(['name' => 'update users']);
-        Permission::create(['name' => 'delete users']);
-        Permission::create(['name' => 'access users']);
+        Permission::create(['name' => 'user_create']);
+        Permission::create(['name' => 'user_read']);
+        Permission::create(['name' => 'user_update']);
+        Permission::create(['name' => 'user_delete']);
+        Permission::create(['name' => 'user_access']);
 
-        Permission::create(['name' => 'create banks']);
-        Permission::create(['name' => 'read banks']);
-        Permission::create(['name' => 'update banks']);
-        Permission::create(['name' => 'delete banks']);
-        Permission::create(['name' => 'access banks']);
+        Permission::create(['name' => 'bank_create']);
+        Permission::create(['name' => 'bank_read']);
+        Permission::create(['name' => 'bank_update']);
+        Permission::create(['name' => 'bank_delete']);
+        Permission::create(['name' => 'bank_access']);
 
-        Permission::create(['name' => 'create Fiscal Regimes']);
-        Permission::create(['name' => 'read Fiscal Regimes']);
-        Permission::create(['name' => 'update Fiscal Regimes']);
-        Permission::create(['name' => 'delete Fiscal Regimes']);
-        Permission::create(['name' => 'access Fiscal Regimes']);
+        Permission::create(['name' => 'fiscal_regime_create']);
+        Permission::create(['name' => 'fiscal_regime_read']);
+        Permission::create(['name' => 'fiscal_regime_update']);
+        Permission::create(['name' => 'fiscal_regime_delete']);
+        Permission::create(['name' => 'fiscal_regime_access']);
 
-        Permission::create(['name' => 'create Industries']);
-        Permission::create(['name' => 'read Industries']);
-        Permission::create(['name' => 'update Industries']);
-        Permission::create(['name' => 'delete Industries']);
-        Permission::create(['name' => 'access Industries']);
+        Permission::create(['name' => 'industry_create']);
+        Permission::create(['name' => 'industry_read']);
+        Permission::create(['name' => 'industry_update']);
+        Permission::create(['name' => 'industry_delete']);
+        Permission::create(['name' => 'industry_access']);
 
-        Permission::create(['name' => 'create Zipcodes']);
-        Permission::create(['name' => 'read Zipcodes']);
-        Permission::create(['name' => 'update Zipcodes']);
-        Permission::create(['name' => 'delete Zipcodes']);
-        Permission::create(['name' => 'access Zipcodes']);
+        Permission::create(['name' => 'zipcode_create']);
+        Permission::create(['name' => 'zipcode_read']);
+        Permission::create(['name' => 'zipcode_update']);
+        Permission::create(['name' => 'zipcode_delete']);
+        Permission::create(['name' => 'zipcode_access']);
+
+        Permission::create(['name' => 'role_create']);
+        Permission::create(['name' => 'role_read']);
+        Permission::create(['name' => 'role_update']);
+        Permission::create(['name' => 'role_delete']);
+        Permission::create(['name' => 'role_access ']);
+
+        Permission::create(['name' => 'permission_create']);
+        Permission::create(['name' => 'permission_read']);
+        Permission::create(['name' => 'permission_update']);
+        Permission::create(['name' => 'permission_delete']);
+        Permission::create(['name' => 'permission_access']);
 
 
 
@@ -58,7 +70,6 @@ class RolesAndPermissionsSeeder extends Seeder
 
         $superAdminRole->givePermissionTo(Permission::all());
         $adminRole->givePermissionTo(Permission::all());
-        $tenantRole->givePermissionTo(['create users','read users','update users','delete users']);
 
         $user = User::find(1);
         $user->assignRole('super Admin');

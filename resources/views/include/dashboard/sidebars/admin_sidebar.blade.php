@@ -17,6 +17,24 @@
         </li>
         {{--<li class="nav-title"><i class="fad fa-browser mr-2"></i> {{__('Application')}}</li>--}}
         @hasrole('Super Admin')
+        {{-- APP ADMIN--}}
+        <li class="nav-group">
+            <a class="nav-link nav-group-toggle" href="#">
+                <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('APP Administration')}}
+            </a>
+            <ul class="nav-group-items">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{'/permissions'}}">
+                        <i class="nav-icon fad fa-user-crown mr-2"></i> {{__('Permissions')}}
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{{route('roles.index')}}">
+                        <i class="nav-icon fad fa-users-cog mr-2"></i>{{__('Roles')}}
+                    </a>
+                </li>
+            </ul>
+        </li>
+        {{--API ADMIN--}}
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
                 <i class="nav-icon fad fa-browser mr-2"></i> {{__('API variables')}}
@@ -24,11 +42,9 @@
             <ul class="nav-group-items">
                 <li class="nav-item">
 
-                    @can('access banks')
-                        <a class="nav-link" href="{{route('banks.index')}}">
-                            <i class="nav-icon fad fa-university mr-2"></i> {{__('Banks')}}
-                        </a>
-                    @endcan
+                    <a class="nav-link" href="{{route('banks.index')}}">
+                        <i class="nav-icon fad fa-university mr-2"></i> {{__('Banks')}}
+                    </a>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="{{route('fiscal-regimes.index')}}">
                         <i class="nav-icon fad fa-warehouse mr-2"></i>{{__('Fiscal Regimes')}}

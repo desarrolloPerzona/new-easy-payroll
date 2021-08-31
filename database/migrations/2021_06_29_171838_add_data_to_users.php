@@ -19,8 +19,9 @@ class AddDataToUsers extends Migration
             $table->string('middle_name')->after('last_name')->nullable();
             $table->string('tenancy_company')->after('middle_name')->nullable();
             $table->string('tenancy_domain')->after('middle_name')->nullable();
-            $table->integer('role')->after('password')->default(1);
-            $table->boolean('terms')->after('role')->nullable();
+            $table->boolean('is_admin')->after('password')->default(1);
+            $table->boolean('terms')->after('is_admin')->nullable();
+
         });
     }
 
@@ -36,7 +37,7 @@ class AddDataToUsers extends Migration
             $table->string('middle_name');
             $table->string('tenancy_company');
             $table->string('tenancy_domain');
-            $table->integer('role');
+            $table->boolean('is_admin');
             $table->boolean('terms');
         });
     }

@@ -6,9 +6,9 @@
                 <div class="flex">
                     <!-- Logo -->
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="{{ route('dashboard') }}">
+                      {{--  <a href="{{ route('dashboard') }}">
                             <x-jet-application-mark class="block h-9 w-auto"/>
-                        </a>
+                        </a>--}}
                     </div>
 
                     <!-- Navigation Links -->
@@ -23,9 +23,9 @@
                             </x-jet-nav-link>
                         @endguest
                         @auth
-                            <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                           {{-- <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                                 {{ __('Dashboard') }}
-                            </x-jet-nav-link>
+                            </x-jet-nav-link>--}}
                             <form class="flex flex-row" method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <x-jet-nav-link class="inline-block align-middle" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
@@ -162,9 +162,9 @@
         <!-- Responsive Navigation Menu -->
         <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
             <div class="pt-2 pb-3 space-y-1">
-                <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                {{--<x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     {{ __('Dashboard') }}
-                </x-jet-responsive-nav-link>
+                </x-jet-responsive-nav-link>--}}
             </div>
 
             <!-- Responsive Settings Options -->

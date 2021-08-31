@@ -9,7 +9,7 @@
     </div>
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
         <li class="nav-item">
-            <a class="nav-link" href="{{route('dashboard')}}">
+            <a class="nav-link" href="/admin">
                 <i class="nav-icon  fad fa-tachometer-alt-fastest"></i>
             {{__('Dashboard')}}
             <!--<span class="badge bg-info-gradient ms-auto">NEW</span>-->
@@ -28,7 +28,7 @@
                         <i class="nav-icon fad fa-user-crown mr-2"></i> {{__('Permissions')}}
                     </a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{route('roles.index')}}">
+                <li class="nav-item"><a class="nav-link" href="{{route('admin.roles.index')}}">
                         <i class="nav-icon fad fa-users-cog mr-2"></i>{{__('Roles')}}
                     </a>
                 </li>
@@ -42,20 +42,20 @@
             <ul class="nav-group-items">
                 <li class="nav-item">
 
-                    <a class="nav-link" href="{{route('banks.index')}}">
+                    <a class="nav-link" href="{{route('admin.banks.index')}}">
                         <i class="nav-icon fad fa-university mr-2"></i> {{__('Banks')}}
                     </a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{route('fiscal-regimes.index')}}">
+                <li class="nav-item"><a class="nav-link" href="{{route('admin.fiscal-regimes.index')}}">
                         <i class="nav-icon fad fa-warehouse mr-2"></i>{{__('Fiscal Regimes')}}
                     </a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="{{route('industries.index')}}">
+                <li class="nav-item"><a class="nav-link" href="{{route('admin.industries.index')}}">
                         <i class="nav-icon fad fa-industry mr-2"></i>{{__('Industries')}}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('zipcodes.index')}} ">
+                    <a class="nav-link" href="{{route('admin.zipcodes.index')}} ">
                         <i class="nav-icon fad fa-map-marked-alt mr-2"></i> {{__('Zip codes')}}</a>
                 </li>
             </ul>

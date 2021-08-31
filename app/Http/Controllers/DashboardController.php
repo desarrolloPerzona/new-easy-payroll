@@ -21,6 +21,6 @@ class DashboardController extends Controller
         $notifications = $user->unreadNotifications;
 
 
-        return view('dashboard', compact('user', 'trial_ends_at', 'notifications'));
+        return view('client.index', compact('user', 'trial_ends_at', 'notifications'));
     }
 }

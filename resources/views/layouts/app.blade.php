@@ -19,7 +19,6 @@
 
 <!-- APP SCRIPTS -->
     <script src="{{ mix('js/app.js') }}" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
     @livewireStyles
 
 </head>

@@ -30,7 +30,7 @@ class AdminSeeder extends Seeder
 
         DB::table('users')->insert(
             array(
-                'name' => 'normal',
+                'name' => 'Sub',
                 'last_name' => 'Admin',
                 'middle_name' => 'Easy Payroll',
                 'email' => 'sub-admin@c9sd.com',

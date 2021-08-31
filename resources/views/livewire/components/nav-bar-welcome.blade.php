@@ -6,9 +6,9 @@
                 <div class="flex">
                     <!-- Logo -->
                     <div class="flex-shrink-0 flex items-center">
-                      {{--  <a href="{{ route('dashboard') }}">
-                            <x-jet-application-mark class="block h-9 w-auto"/>
-                        </a>--}}
+                        {{--  <a href="{{ route('dashboard') }}">
+                              <x-jet-application-mark class="block h-9 w-auto"/>
+                          </a>--}}
                     </div>
 
                     <!-- Navigation Links -->
@@ -23,9 +23,17 @@
                             </x-jet-nav-link>
                         @endguest
                         @auth
-                           {{-- <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                                {{ __('Dashboard') }}
-                            </x-jet-nav-link>--}}
+
+                            @if(auth()->user()->is_admin)
+                                <x-jet-nav-link href="{{ route('admin.adminDashboard') }}" :active="request()->routeIs('dashboard')">
+                                    {{ __('Dashboard') }}
+                                </x-jet-nav-link>
+                            @else
+                                <x-jet-nav-link href="{{ route('client.clientDashboard') }}" :active="request()->routeIs('dashboard')">
+                                    {{ __('Dashboard') }}
+                                </x-jet-nav-link>
+
+                            @endif
                             <form class="flex flex-row" method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <x-jet-nav-link class="inline-block align-middle" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">

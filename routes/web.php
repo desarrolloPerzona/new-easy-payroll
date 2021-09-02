@@ -54,6 +54,7 @@ Route::group(['middleware' =>  'web'], function () {
 
     });
 
+
     Route::group(['prefix' => 'client', 'as' => 'client.','middleware' => 'is_client'], function () {
         Route::get('/', [ClientDashboardController::class, 'index'])->middleware(['auth:sanctum', 'verified', 'universal', InitializeTenancyByDomain::class])->name('clientDashboard');
     });

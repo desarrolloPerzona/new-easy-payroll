@@ -14,26 +14,25 @@
         </a>
         <!-- MENU ITEMS -->
         <ul class="header-nav d-none d-md-flex">
-            <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{route('landingPage')}}">{{__('Home')}}</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
         </ul>
         <!-- HEADER NAV DARK MODE -->
         <nav class="header-nav ms-auto me-4">
-
             <livewire:dashboard.includes.dark-mode-control/>
         </nav>
         <!-- HEADER RIGHT MENU -->
         <ul class="header-nav me-3">
             <livewire:dashboard.includes.notifications-control/>
         </ul>
+        {{--USER PROFILE LOG OUT--}}
         <ul class="header-nav me-4">
-            <livewire:dashboard.includes.auth-user-control>
+            <livewire:dashboard.includes.auth-user-control/>
         </ul>
-        <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#aside')).show()">
-            <svg class="icon icon-lg">
-                <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-applications-settings')}}"></use>
-            </svg>
-        </button>
+        {{--ASIDE MORE APPLICATION INFO--}}
+        {{--<button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#aside')).show()">
+            <i class="fas fa-tasks-alt"></i>
+        </button>--}}
     </div>
 </header>

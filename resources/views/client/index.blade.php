@@ -1,1 +1,3 @@
-WELCOME CLIENT
+<x-app-client>
+    hello
+</x-app-client>

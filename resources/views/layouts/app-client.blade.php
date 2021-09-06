@@ -25,7 +25,7 @@
 <body class="mode-dark text-sm text-dark">
 
 <!-- SIDE BAR -->
-@include('include.dashboard.sidebars.admin_sidebar')
+@include('include.dashboard.sidebars.client_sidebar')
 <!-- SIDE BAR RIGHT -->
 <div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
     <!-- HEADER -->

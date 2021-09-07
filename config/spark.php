@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'path' => '/client/billing',
+    'path' => 'client/billing',
 
     /*
     |--------------------------------------------------------------------------
@@ -43,10 +43,11 @@ return [
     |
     */
 
-    // 'brand' =>  [
-    //     'logo' => realpath(__DIR__.'/../public/svg/billing-logo.svg'),
-    //     'color' => 'bg-gray-800',
-    // ],
+     'brand' =>  [
+         'logo' => realpath(__DIR__.'/../public/svg/billing-logo.svg'),
+         'color' => 'bg-gray-800',
+         'background-color' => 'red'
+     ],
 
     /*
     |--------------------------------------------------------------------------
@@ -120,7 +121,7 @@ return [
         'user' => [
             'model' => User::class,
 
-            'trial_days' => 30,
+            'trial_days' => 5,
 
             'default_interval' => 'monthly',
 
@@ -136,17 +137,22 @@ return [
                         'Facil de usar',
                     ],
                 ],
+            ],
+            'employee' => [
                 [
-                    'name' => 'Zapato',
+                    'name' => 'Standard',
                     'short_description' => 'This is a short, human friendly description of the plan.',
-                    '_id' => 'price_1JW4rKDt4joe0AK3rl6qA6OP',
+                    'price_id' => 'price_1JX4ZGDt4joe0AK3FoFFPpeG',
+                    'yearly_id' => 'price_1IxIwaDt4joe0AK3uSTwDpA7',
                     'features' => [
                         '10 Empleados',
                         'Multi empresas',
                         'Facil de usar',
                     ],
                 ],
-            ],
+            ]
+
+
         ],
     ]
 ];

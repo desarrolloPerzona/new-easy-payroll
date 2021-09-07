@@ -7,12 +7,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spark\Billable;
+use Spark\Spark;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements  MustVerifyEmail
+
+/*Spark::billable(User::class)->chargePerSeat('employee', function ($billable)
+{
+    return $billable->projects()->count();
+});*/
+
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
@@ -21,6 +28,10 @@ class User extends Authenticatable implements  MustVerifyEmail
     use TwoFactorAuthenticatable;
     use Billable;
     use HasRoles;
+
+
+
+
 
     /**
      * The attributes that are mass assignable.
@@ -68,4 +79,6 @@ class User extends Authenticatable implements  MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
+
 }

@@ -19,7 +19,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "league/flysystem-aws-s3-v3": "~1.0",
-        "laravel/spark-stripe": "^1.1.7",
+        "laravel/spark-stripe": "^1.0",
         "livewire/livewire": "^2.5",
         "pusher/pusher-php-server": "^7.0",
         "spatie/laravel-permission": "^4.2",
@@ -45,6 +45,12 @@
             "Database\\Seeders\\": "database/seeders/"
         }
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://spark.laravel.com"
+        }
+    ],
     "autoload-dev": {
         "files": [
             "App/Helpers/helpers.php"

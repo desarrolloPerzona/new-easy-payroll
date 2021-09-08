@@ -7,6 +7,12 @@
         "laravel"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://spark.laravel.com"
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "ext-intl": "*",
@@ -45,15 +51,9 @@
             "Database\\Seeders\\": "database/seeders/"
         }
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://spark.laravel.com"
-        }
-    ],
     "autoload-dev": {
         "files": [
-            "App/Helpers/helpers.php"
+            "App/Helpers/Helpers.php"
         ],
         "psr-4": {
             "Tests\\": "tests/"

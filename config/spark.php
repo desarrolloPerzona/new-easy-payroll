@@ -126,20 +126,10 @@ return [
 
             'plans' => [
                 [
-                    'name' => 'Standard',
+                    'name' => 'Basic Plan',
                     'short_description' => 'This is a short, human friendly description of the plan.',
-                    'monthly_id' => 'price_1IxIwaDt4joe0AK3GxaCDMkK',
-                    'yearly_id' => 'price_1IxIwaDt4joe0AK3uSTwDpA7',
-                    'features' => [
-                        '10 Empleados',
-                        'Multi empresas',
-                        'Facil de usar',
-                    ],
-                ],
-                [
-                    'name' => 'Zapato',
-                    'short_description' => 'This is a short, human friendly description of the plan.',
-                    '_id' => 'price_1JW4rKDt4joe0AK3rl6qA6OP',
+                    'monthly_id' => 'price_1JXVQGDt4joe0AK36ex7PxY0',
+                    //'yearly_id' => 'price_1JXUoZDt4joe0AK3bh0DpIBK',
                     'features' => [
                         '10 Empleados',
                         'Multi empresas',

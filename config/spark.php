@@ -73,10 +73,10 @@ return [
     */
 
     'features' => [
-        // Features::billingAddressCollection(),
-        // Features::mustAcceptTerms(),
-        // Features::euVatCollection(['home-country' => 'BE']),
-        // Features::receiptEmails(['custom-addresses' => true]),
+         //Features::billingAddressCollection(),
+         Features::mustAcceptTerms(),
+         //Features::euVatCollection(['home-country' => 'MX']),
+         //Features::receiptEmails(['custom-addresses' => true]),
         Features::paymentNotificationEmails(),
     ],
 
@@ -119,17 +119,14 @@ return [
 
         'user' => [
             'model' => User::class,
-
-            'trial_days' => 30,
-
-            'default_interval' => 'monthly',
+            //'trial_days' => 30,
+            //'default_interval' => 'monthly',
 
             'plans' => [
                 [
                     'name' => 'Basic Plan',
                     'short_description' => 'This is a short, human friendly description of the plan.',
-                    'monthly_id' => 'price_1JXVhhDt4joe0AK3wa4DFH0y',
-                    //'yearly_id' => 'price_1JXUoZDt4joe0AK3bh0DpIBK',
+                    'monthly_id' => 'price_1JXcekDt4joe0AK3zAUXCUOs',
                     'features' => [
                         '10 Empleados',
                         'Multi empresas',

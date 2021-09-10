@@ -126,7 +126,7 @@ return [
                 [
                     'name' => 'Basic Plan',
                     'short_description' => 'This is a short, human friendly description of the plan.',
-                    'monthly_id' => 'price_1JXcekDt4joe0AK3zAUXCUOs',
+                    'monthly_id' => 'price_1JXpOSDt4joe0AK3Y0WsRxSz',
                     'features' => [
                         '10 Empleados',
                         'Multi empresas',

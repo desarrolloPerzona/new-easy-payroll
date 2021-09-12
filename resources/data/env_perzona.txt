@@ -1,23 +1,22 @@
 APP_NAME=PerZona
-APP_ENV=local
+APP_ENV=production
 APP_KEY=base64:qrScr60xX+5vaaa4Br8VwntVRSzcWIsEsxofaqU9s2w=
 APP_DEBUG=true
-APP_URL=https://stagingperzona.mx
+APP_URL=https://staging.perzona.mx
 APP_TENANT_URL=staging.perzona.mx
 APP_LOCALE=es
 APP_TIMEZONE=America/Mexico_City
 LOG_CHANNEL=stack
 LOG_LEVEL=debug
+LOG_CHANNEL=stack
 
-NOVA_APP_NAME="PerZona Business"
-
-
-DB_CONNECTION=central
+DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE="perzona_staging_db"
-DB_USERNAME="forge"
+DB_DATABASE=perzona_staging_db
+DB_USERNAME=forge
 DB_PASSWORD="VhghCsq32kP6si86EqPt"
+
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
@@ -35,7 +34,7 @@ CASHIER_CURRENCY=es_MX
 CASHIER_CURRENCY_LOCALE=es_MX
 STRIPE_KEY=pk_test_51IeMUZDt4joe0AK3A40FL1LqobQmVIuh7jNWkFlUCuI5ykdyXPChaYmiXQGnKCU2Mxl2RFDnuKkXWo2EWanxYu6I00v6fX3fhM
 STRIPE_SECRET=sk_test_51IeMUZDt4joe0AK3ChLb6N7LZHL2VrOJSyuTbyo8w9B5N4lmnsDcFKNxk7wTroRTEJrojj2LFc0AFoLkXSI77FV700Qxb5OzqF
-STRIPE_WEBHOOK_SECRET=whsec_PdD9dlVwkCYo3zoQ5aCYY5enCFdi9khe
+STRIPE_WEBHOOK_SECRET=whsec_f2ljbDn2dOEwUkTmc8hVB0MXYdXlo31v
 
 MAIL_MAILER=smtp
 MAIL_HOST=smtp.gmail.com

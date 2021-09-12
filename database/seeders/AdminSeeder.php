@@ -42,18 +42,5 @@ class AdminSeeder extends Seeder
             )
         );
 
-        DB::table('users')->insert(
-            array(
-                'name' => 'tenant',
-                'last_name' => 'Tenant',
-                'middle_name' => 'Easy Payroll',
-                'email' => 'tenant@c9sd.com',
-                'is_admin' => 0,
-                'password' => bcrypt('@password'),
-                'created_at' => date('Y-m-d H:i:s'),
-                'email_verified_at' => date('Y-m-d H:i:s'),
-                'terms' => true,
-            )
-        );
     }
 }

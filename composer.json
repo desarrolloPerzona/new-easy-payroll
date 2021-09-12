@@ -7,25 +7,18 @@
         "laravel"
     ],
     "license": "MIT",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://spark.laravel.com"
-        }
-    ],
     "require": {
         "php": "^7.3|^8.0",
         "ext-intl": "*",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/cashier": "^12.0",
+        "laravel/cashier": "^13.5",
         "laravel/framework": "^8.40",
         "laravel/jetstream": "^2.3",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "league/flysystem-aws-s3-v3": "~1.0",
-        "laravel/spark-stripe": "^1.0",
         "livewire/livewire": "^2.5",
         "pusher/pusher-php-server": "^7.0",
         "spatie/laravel-permission": "^4.2",

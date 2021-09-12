@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ea4aa351a03bd0d7b1ab23f83ccdbc8",
+    "content-hash": "0ac3bac662cf736f46d1d2b4afbb0797",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -114,16 +114,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.193.1",
+            "version": "3.193.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5294e06519479b9f41d6e18a88d077c4837a58ff"
+                "reference": "d5080f7a1bb63569c19b8de06f787808eca70cc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5294e06519479b9f41d6e18a88d077c4837a58ff",
-                "reference": "5294e06519479b9f41d6e18a88d077c4837a58ff",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d5080f7a1bb63569c19b8de06f787808eca70cc6",
+                "reference": "d5080f7a1bb63569c19b8de06f787808eca70cc6",
                 "shasum": ""
             },
             "require": {
@@ -199,9 +199,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.193.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.193.2"
             },
-            "time": "2021-09-09T18:28:04+00:00"
+            "time": "2021-09-10T18:21:27+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",
@@ -1297,74 +1297,6 @@
             "time": "2021-04-26T09:17:50+00:00"
         },
         {
-            "name": "inertiajs/inertia-laravel",
-            "version": "v0.4.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/inertiajs/inertia-laravel.git",
-                "reference": "3a08d87bc8de80f774f889918b696e2d3a2d11f1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/inertiajs/inertia-laravel/zipball/3a08d87bc8de80f774f889918b696e2d3a2d11f1",
-                "reference": "3a08d87bc8de80f774f889918b696e2d3a2d11f1",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "laravel/framework": "^5.4|^6.0|^7.0|^8.0",
-                "php": "^7.2|^8.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^4.0|^5.0|^6.0",
-                "phpunit/phpunit": "^8.0|^9.0",
-                "roave/security-advisories": "dev-master"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Inertia\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Inertia\\": "src"
-                },
-                "files": [
-                    "./helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jonathan Reinink",
-                    "email": "jonathan@reinink.ca",
-                    "homepage": "https://reinink.ca"
-                }
-            ],
-            "description": "The Laravel adapter for Inertia.js.",
-            "keywords": [
-                "inertia",
-                "laravel"
-            ],
-            "support": {
-                "issues": "https://github.com/inertiajs/inertia-laravel/issues",
-                "source": "https://github.com/inertiajs/inertia-laravel/tree/v0.4.4"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/reinink",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-07-30T10:32:53+00:00"
-        },
-        {
             "name": "jaybizzle/crawler-detect",
             "version": "v1.2.106",
             "source": {
@@ -1501,41 +1433,41 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v12.15.0",
+            "version": "v13.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "5eddb87418469e26d5945420b77f87b5eb57609a"
+                "reference": "ddb8311db517b6268d7b2497c95075afb6f40989"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/5eddb87418469e26d5945420b77f87b5eb57609a",
-                "reference": "5eddb87418469e26d5945420b77f87b5eb57609a",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/ddb8311db517b6268d7b2497c95075afb6f40989",
+                "reference": "ddb8311db517b6268d7b2497c95075afb6f40989",
                 "shasum": ""
             },
             "require": {
                 "dompdf/dompdf": "^0.8.6|^1.0.1",
                 "ext-json": "*",
-                "illuminate/console": "^6.0|^7.0|^8.0",
-                "illuminate/contracts": "^6.0|^7.0|^8.0",
-                "illuminate/database": "^6.0|^7.0|^8.0",
-                "illuminate/http": "^6.0|^7.0|^8.0",
-                "illuminate/log": "^6.0|^7.0|^8.0",
-                "illuminate/notifications": "^6.0|^7.0|^8.0",
-                "illuminate/routing": "^6.0|^7.0|^8.0",
-                "illuminate/support": "^6.0|^7.0|^8.0",
-                "illuminate/view": "^6.0|^7.0|^8.0",
+                "illuminate/console": "^8.0",
+                "illuminate/contracts": "^8.0",
+                "illuminate/database": "^8.0",
+                "illuminate/http": "^8.0",
+                "illuminate/log": "^8.0",
+                "illuminate/notifications": "^8.0",
+                "illuminate/routing": "^8.0",
+                "illuminate/support": "^8.0",
+                "illuminate/view": "^8.0",
                 "moneyphp/money": "^3.2",
                 "nesbot/carbon": "^2.0",
-                "php": "^7.2.5|^8.0",
+                "php": "^7.3|^8.0",
                 "stripe/stripe-php": "^7.39",
-                "symfony/http-kernel": "^4.3|^5.0",
+                "symfony/http-kernel": "^5.0",
                 "symfony/polyfill-intl-icu": "^1.22.1"
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^4.0|^5.0|^6.0",
-                "phpunit/phpunit": "^8.0|^9.0"
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
             },
             "suggest": {
                 "ext-intl": "Allows for more locales besides the default \"en\" when formatting money values."
@@ -1543,7 +1475,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "12.x-dev"
+                    "dev-master": "13.x-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1553,7 +1485,8 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Laravel\\Cashier\\": "src/"
+                    "Laravel\\Cashier\\": "src/",
+                    "Laravel\\Cashier\\Database\\Factories\\": "database/factories/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1576,7 +1509,7 @@
                 "issues": "https://github.com/laravel/cashier/issues",
                 "source": "https://github.com/laravel/cashier"
             },
-            "time": "2021-06-22T15:19:19+00:00"
+            "time": "2021-09-01T06:55:15+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -1938,81 +1871,6 @@
                 "source": "https://github.com/laravel/sanctum"
             },
             "time": "2021-06-15T15:56:21+00:00"
-        },
-        {
-            "name": "laravel/spark-stripe",
-            "version": "v1.1.7",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:laravel/spark-stripe.git",
-                "reference": "9dff570d2c4253446944fa9fcc5b99a571c068c3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://spark.laravel.com/dist/laravel/spark-stripe/laravel-spark-stripe-9dff570d2c4253446944fa9fcc5b99a571c068c3-zip-b113bf.zip",
-                "reference": "9dff570d2c4253446944fa9fcc5b99a571c068c3",
-                "shasum": "72c878b812cf4dec4768afab639e50518419dde8"
-            },
-            "require": {
-                "ext-json": "*",
-                "inertiajs/inertia-laravel": "^0.4.1",
-                "laravel/cashier": "^12.0",
-                "mpociot/vat-calculator": "^2.5",
-                "php": "^7.3|^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^6.0",
-                "phpunit/phpunit": "^8.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                },
-                "laravel": {
-                    "providers": [
-                        "Spark\\SparkServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spark\\": "src/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spark\\Tests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "csfix": [
-                    "php-cs-fixer fix src database routes tests --config=.php_cs"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylor@laravel.com"
-                }
-            ],
-            "description": "Laravel Spark provides scaffolding for Laravel SaaS applications.",
-            "keywords": [
-                "billing",
-                "laravel",
-                "saas",
-                "scaffolding",
-                "stripe"
-            ],
-            "support": {
-                "source": "https://github.com/laravel/spark-stripe/tree/v1.1.7",
-                "issues": "https://github.com/laravel/spark-stripe/issues"
-            },
-            "time": "2021-07-22T13:12:43+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2791,86 +2649,6 @@
                 }
             ],
             "time": "2021-07-23T07:42:52+00:00"
-        },
-        {
-            "name": "mpociot/vat-calculator",
-            "version": "2.5.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/driesvints/vat-calculator.git",
-                "reference": "7f953cb37a5728718ecd183996e338906a3ca2e7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/driesvints/vat-calculator/zipball/7f953cb37a5728718ecd183996e338906a3ca2e7",
-                "reference": "7f953cb37a5728718ecd183996e338906a3ca2e7",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-soap": "*",
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "illuminate/contracts": "~5.5|^6.0|^7.0|^8.0",
-                "mockery/mockery": "^1.3.3",
-                "orchestra/testbench": "~3.5|^4.0|^5.0|^6.0",
-                "phpunit/phpunit": "^6.5|^7.5|^8.5|^9.5"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Mpociot\\VatCalculator\\VatCalculatorServiceProvider"
-                    ],
-                    "aliases": {
-                        "VatCalculator": "Mpociot\\VatCalculator\\Facades\\VatCalculator"
-                    }
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "src/controllers/Controller.php"
-                ],
-                "psr-0": {
-                    "Mpociot\\VatCalculator": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marcel Pociot",
-                    "email": "m.pociot@gmail.com"
-                },
-                {
-                    "name": "Dries Vints",
-                    "homepage": "https://driesvints.com"
-                }
-            ],
-            "description": "EU VAT calculation, the way it should be.",
-            "keywords": [
-                "EU Moss",
-                "VAT ID",
-                "cashier",
-                "tax",
-                "tax calculation",
-                "vat",
-                "vat calculation"
-            ],
-            "support": {
-                "issues": "https://github.com/driesvints/vat-calculator/issues",
-                "source": "https://github.com/driesvints/vat-calculator/tree/2.5.2"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/driesvints",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-05-26T10:14:45+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",

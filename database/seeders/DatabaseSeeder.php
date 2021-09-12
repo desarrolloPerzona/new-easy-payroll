@@ -19,9 +19,10 @@ class DatabaseSeeder extends Seeder
             TenantSeeder::class,
             ZipCodeSeeder::class,
             RolesAndPermissionsSeeder::class,
-            bankSeeder::class,
+            BusinessBranchSeeder::class,
             IndustriesSeeder::class,
             FiscalRegimeSeeder::class,
+            BankSeeder::class
         ]);
 
     }

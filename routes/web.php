@@ -3,6 +3,7 @@
 use App\Events\TenantHasSubscribe;
 use App\Http\Controllers\Admin\BankController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\BillingController;
 use App\Http\Controllers\ClientDashboardController;
 use App\Http\Controllers\FiscalRegimeController;
 use App\Http\Controllers\IndustryController;
@@ -49,13 +50,14 @@ Route::group(['middleware' =>  'web'], function () {
         route::resource('/industries', IndustryController::class);
 
         route::resource('/zipcodes', ZipCodeController::class);
-        
+
 
     });
 
 
     Route::group(['prefix' => 'client', 'as' => 'client.','middleware' => 'is_client'], function () {
         Route::get('/', [ClientDashboardController::class, 'index'])->middleware(['auth:sanctum', 'verified', 'universal', InitializeTenancyByDomain::class])->name('clientDashboard');
+        Route::get('billing',[BillingController::class,'index'])->name('billing');
     });
 
 });

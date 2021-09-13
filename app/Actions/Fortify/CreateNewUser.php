@@ -53,8 +53,16 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
             'terms' => true,
             'role' => 2,
+            'is_admin' =>false,
             'trial_ends_at' => now()->addDays(30),
         ]);
+
+
+        /**
+         * GIVE ROLE
+         */
+
+        $user->assignRole('Tenant');
 
         /**
          * CREATE THE TENANT IN
@@ -108,7 +116,7 @@ class CreateNewUser implements CreatesNewUsers
             ]);
         });
 
-        $user->assignRole('tenant');
+
 
         $admin = User::find(1);
 

@@ -16,7 +16,7 @@ class IsClientMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!auth()->check() || auth()->user()->is_admin){
+        if(!auth()->check() || auth()->user()->is_admin == true ){
             abort(code:403);
         }
         return $next($request);

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDocumentTypeTable extends Migration
+class CreateBusinessBranch extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateDocumentTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('document_type', function (Blueprint $table) {
+        Schema::create('business_branch', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('business_id');
             $table->string('name');
+            $table->string('description')->nullable();
+            $table->unsignedInteger('imss_patronal_id')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateDocumentTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('document_type');
+        Schema::dropIfExists('business_branch');
     }
 }

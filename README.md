@@ -6,7 +6,6 @@ Payroll application with multitenancy
 #### DEVELOP ON
     -Laravel 8.x
         - Laravel Cashier
-        - Laraver Spark
         - Jetstream - livewire
         - barryvdh/laravel-debugbar (recomended)
         - Tenancy for laravel

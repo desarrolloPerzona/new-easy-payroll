@@ -73,8 +73,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $user->assignRole('super Admin');
         $user1 = User::find(2);
         $user1->assignRole('Admin');
-        $user2 = User::find(3);
-        $user2->assignRole('Tenant');
+
 
     }
 }

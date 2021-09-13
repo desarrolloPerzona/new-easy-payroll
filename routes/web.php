@@ -49,8 +49,7 @@ Route::group(['middleware' =>  'web'], function () {
         route::resource('/industries', IndustryController::class);
 
         route::resource('/zipcodes', ZipCodeController::class);
-
-        route::resource('/zipcodes', ZipCodeController::class);
+        
 
     });
 

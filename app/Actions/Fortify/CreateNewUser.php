@@ -2,7 +2,6 @@
 
 namespace App\Actions\Fortify;
 
-use App\Events\TenantHasSubscribe;
 use App\Models\Tenant;
 use App\Models\Tenant\Business;
 use App\Models\Tenant\BusinessBranch;
@@ -31,8 +30,6 @@ class CreateNewUser implements CreatesNewUsers
          */
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'middle_name' => ['required', 'string', 'max:255'],
             'tenancy_company' => ['required', 'string', 'max:255'],
             'tenancy_domain' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -43,20 +40,22 @@ class CreateNewUser implements CreatesNewUsers
         /**
          * CREATE USER
          */
+
         $user = User::create([
             'name' => $input['name'],
-            'last_name' => $input['last_name'],
-            'middle_name' => $input['middle_name'],
             'tenancy_company' => $input['tenancy_company'],
             'tenancy_domain' => Str::slug($input['tenancy_domain'], '-'),
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
             'terms' => true,
             'role' => 2,
-            'is_admin' =>false,
-            'trial_ends_at' => now()->addDays(30),
+            'is_admin' => 0,
         ]);
 
+        /**
+         * ADD USER TO STRIPE
+         */
+        $user->createAsStripeCustomer();
 
         /**
          * GIVE ROLE
@@ -67,12 +66,12 @@ class CreateNewUser implements CreatesNewUsers
         /**
          * CREATE THE TENANT IN
          */
-        $tenant = Tenant::create($input + [
-                'user_id' => $user->id,
-                'ready' => false,
-                'tenancy_company' => $user->tenancy_company,
-                'tenancy_domain' => $user->tenancy_domain,
-            ]);
+         $tenant = Tenant::create($input + [
+                 'user_id' => $user->id,
+                 'ready' => false,
+                 'tenancy_company' => $user->tenancy_company,
+                 'tenancy_domain' => $user->tenancy_domain,
+             ]);
 
         /**
          * CREATE THE TENANT DOMAIN
@@ -89,8 +88,6 @@ class CreateNewUser implements CreatesNewUsers
             User::create([
                 'user_id' => $user->id,
                 'name' => $user->name,
-                'last_name' => $user->last_name,
-                'middle_name' => $user->middle_name,
                 'tenancy_domain' => $user->tenancy_domain,
                 'tenancy_company' => $user->tenancy_company,
                 'email' => $user->email,
@@ -101,12 +98,18 @@ class CreateNewUser implements CreatesNewUsers
             ]);
         });
 
+        /**
+         * ADD FIRST BUSINESS
+         */
         $tenant->run(function ($user) {
             Business::create([
                 'name' => $user->tenancy_company,
             ]);
         });
 
+        /**
+         * ADD FIRST BUSINESS - BRANCH
+         */
         $tenant->run(function ($user) {
             BusinessBranch::create([
                 'business_id' => 1,
@@ -116,10 +119,10 @@ class CreateNewUser implements CreatesNewUsers
             ]);
         });
 
-
-
+        /**
+         * NOTIFY SUPER ADMIN
+         */
         $admin = User::find(1);
-
         $admin->notify(new NewUserNotification($user));
 
         return $user;

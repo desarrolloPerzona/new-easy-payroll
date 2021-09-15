@@ -16,9 +16,9 @@
 <body class="font-sans antialiased">
 {{ $slot }}
 
+
+@livewireScripts
 @stack('in_page_scripts')
 @stack('modals')
-@livewireScripts
-
 </body>
 </html>

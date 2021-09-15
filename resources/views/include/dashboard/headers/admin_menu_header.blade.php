@@ -21,7 +21,7 @@
         </button>
     </div>
     <!-- Tab panes-->
-    <div class="tab-content">
+    {{--<div class="tab-content">
         <div class="tab-pane active" id="timeline" role="tabpanel">
             <div class="list-group list-group-flush">
                 <div class="list-group-item border-start-4 border-start-secondary bg-light text-center fw-bold text-medium-emphasis text-uppercase small">Today</div>
@@ -187,5 +187,5 @@
                 <div class="progress-bar bg-success" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
             </div><small class="text-medium-emphasis">25GB/256GB</small>
         </div>
-    </div>
+    </div>--}}
 </div>

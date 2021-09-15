@@ -24,22 +24,11 @@
                 <x-jet-input id="tenancy_domain_slug" class="block mt-1 w-full bg-gray-100 text-gray-400 border-gray-200" type="text" :value="old('tenancy_domain_slug')" name="tenancy_domain_slug" autofocus autocomplete="tenancy_domain_slug" readonly="readonly"/>
                 @error('tenancy_domain') <small class="text-indigo-300">{{ $message }}</small> @enderror
             </div>
+
             <div class="mt-4">
-                <x-jet-label for="name" value="{{ __('Name') }}"/>
+                <x-jet-label for="name" value="{{ __('User Name') }}"/>
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name"/>
                 @error('name') <small class="text-indigo-300">{{ $message }}</small> @enderror
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="last_name" value="{{ __('Last name') }}"/>
-                <x-jet-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" autofocus autocomplete="last_name"/>
-                @error('last_name') <small class="text-indigo-300">{{ $message }}</small> @enderror
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="middle_name" value="{{ __('Middle name') }}"/>
-                <x-jet-input id="middle_name" class="block mt-1 w-full" type="text" name="middle_name" :value="old('middle_name')" autofocus autocomplete="middle_name"/>
-                @error('middle_name') <small class="text-indigo-300">{{ $message }}</small> @enderror
             </div>
 
             <div class="mt-4">

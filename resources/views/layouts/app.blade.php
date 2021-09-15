@@ -10,14 +10,14 @@
     <title>{{ config('app.name', 'PerZona ') }} | @yield('title')</title>
     <!-- META -->
 @include('include.common.head.meta')
-    <!-- app styles -->
+<!-- app styles -->
     @include('include.common.head.vendor-css')
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
     <!-- CORE UI STYLES -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <!-- VENDOR CSS -->
 
-<!-- APP SCRIPTS -->
+    <!-- APP SCRIPTS -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     @livewireStyles
 
@@ -52,9 +52,11 @@
 </div>
 
 <!-- STACKS SCRIPTS & LIVEWIRE -->
-@include('include.common.scripts.vendor-scripts')
-@stack('in_page_scripts')
+
+
 @livewireScripts
+@include('include.common.scripts.vendor-scripts')
+
 <!-- CORE UI SCRIPTS -->
 <script src="{{asset('vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
 <script src="{{asset('vendor/simplebar/js/simplebar.min.js')}}"></script>
@@ -90,6 +92,8 @@
         document.body.dispatchEvent(event);
     }
 </script>
+@stack('in_page_scripts')
+{{$scripts}}
 </body>
 </html>
 

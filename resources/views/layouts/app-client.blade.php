@@ -52,9 +52,10 @@
 </div>
 
 <!-- STACKS SCRIPTS & LIVEWIRE -->
+
+@livewireScripts
 @include('include.common.scripts.vendor-scripts')
 @stack('in_page_scripts')
-@livewireScripts
 <!-- CORE UI SCRIPTS -->
 <script src="{{asset('vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
 <script src="{{asset('vendor/simplebar/js/simplebar.min.js')}}"></script>

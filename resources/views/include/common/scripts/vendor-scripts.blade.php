@@ -15,3 +15,5 @@
 <script src="{{asset('vendor/ckeditor5/translations/es.js')}}"></script>
 {{--PIKADAY--}}
 <script src="{{asset('vendor/pikaday/pikaday.js')}}"></script>
+{{--STRIPE--}}
+<script src="https://js.stripe.com/v3/"></script>

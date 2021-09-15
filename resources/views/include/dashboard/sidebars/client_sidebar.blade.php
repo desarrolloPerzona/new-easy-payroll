@@ -21,10 +21,10 @@
                 <i class="nav-icon fad fa-file-invoice-dollar mr-2"></i></i> {{__('Billing')}}
             </a>
             <ul class="nav-group-items">
-                <li class="nav-item">
+                <li class="sub-nav-item">
                     <a class="nav-link" href="/client/billing">
-                        <i class="nav-icon fad fa-users mr-2"></i>
-                        {{__('Bill')}}
+                        <i class="nav-icon fad fa-credit-card-front mr-2"></i>
+                        {{__('Payment methods')}}
                     </a>
                 </li>
             </ul>

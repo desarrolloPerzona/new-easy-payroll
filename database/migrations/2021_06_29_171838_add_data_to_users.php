@@ -15,11 +15,11 @@ class AddDataToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             /** PERSONAL DATA  */
-            $table->string('last_name')->after('name');
+            $table->string('last_name')->after('name')->nullable();
             $table->string('middle_name')->after('last_name')->nullable();
             $table->string('tenancy_company')->after('middle_name')->nullable();
             $table->string('tenancy_domain')->after('middle_name')->nullable();
-            $table->boolean('is_admin')->after('password')->default(1);
+            $table->boolean('is_admin')->after('password')->default(0);
             $table->boolean('terms')->after('is_admin')->nullable();
 
         });

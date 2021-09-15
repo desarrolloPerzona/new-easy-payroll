@@ -16,9 +16,7 @@ class AdminSeeder extends Seeder
     {
         DB::table('users')->insert(
             array(
-                'name' => 'Super',
-                'last_name' => 'Admin',
-                'middle_name' => 'Easy Payroll',
+                'name' => 'Super Admin',
                 'email' => 'admin@c9sd.com',
                 'is_admin' => 1,
                 'password' => bcrypt('@password'),
@@ -30,9 +28,7 @@ class AdminSeeder extends Seeder
 
         DB::table('users')->insert(
             array(
-                'name' => 'Sub',
-                'last_name' => 'Admin',
-                'middle_name' => 'Easy Payroll',
+                'name' => 'Sub Admin',
                 'email' => 'sub-admin@c9sd.com',
                 'is_admin' => 1,
                 'password' => bcrypt('@password'),

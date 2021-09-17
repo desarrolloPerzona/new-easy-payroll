@@ -93,7 +93,7 @@
     }
 </script>
 @stack('in_page_scripts')
-{{$scripts}}
+
 </body>
 </html>
 

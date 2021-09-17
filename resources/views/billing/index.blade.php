@@ -14,7 +14,7 @@
 
             {{--RETRIEVE PAYMENT METHODS--}}
             <div class="component-item my-4">
-                <livewire:components.payment-method-retrive/>
+                <livewire:components.payment-method-retrieve/>
             </div>
 
 

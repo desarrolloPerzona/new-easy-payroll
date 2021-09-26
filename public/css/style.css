@@ -681,15 +681,15 @@ html:not([dir=rtl]) .list-inline-item:not(:last-child) {
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(var(--cui-gutter-y) * -1);
-  margin-right: calc(var(--cui-gutter-x) * -.5);
-  margin-left: calc(var(--cui-gutter-x) * -.5);
+  margin-right: calc(var(--cui-gutter-x) * -0.5);
+  margin-left: calc(var(--cui-gutter-x) * -0.5);
 }
 .row > * {
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  padding-right: calc(var(--cui-gutter-x) * .5);
-  padding-left: calc(var(--cui-gutter-x) * .5);
+  padding-right: calc(var(--cui-gutter-x) * 0.5);
+  padding-left: calc(var(--cui-gutter-x) * 0.5);
   margin-top: var(--cui-gutter-y);
 }
 
@@ -9019,15 +9019,15 @@ html:not([dir=rtl]) .ratio > * {
 }
 
 .ratio-4x3 {
-  --cui-aspect-ratio: calc(3 / 4 * 100%);
+  --cui-aspect-ratio: 75%;
 }
 
 .ratio-16x9 {
-  --cui-aspect-ratio: calc(9 / 16 * 100%);
+  --cui-aspect-ratio: 56.25%;
 }
 
 .ratio-21x9 {
-  --cui-aspect-ratio: calc(9 / 21 * 100%);
+  --cui-aspect-ratio: 42.8571428571%;
 }
 
 .fixed-top {

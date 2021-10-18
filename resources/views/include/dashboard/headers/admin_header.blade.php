@@ -2,9 +2,7 @@
     <div class="container-fluid">
         <!-- TOGGLE BTN -->
         <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-            <svg class="icon icon-lg">
-                <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-menu')}}"></use>
-            </svg>
+            <i class="fad fa-bars"></i>
         </button>
         <!-- HEADER BRAND -->
         <a class="header-brand d-md-none" href="#">

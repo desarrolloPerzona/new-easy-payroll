@@ -25,9 +25,11 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
+
         /**
          * VALIDATE INPUTS
          */
+
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'tenancy_company' => ['required', 'string', 'max:255'],
@@ -55,6 +57,7 @@ class CreateNewUser implements CreatesNewUsers
         /**
          * ADD USER TO STRIPE
          */
+
         $user->createAsStripeCustomer();
 
         /**
@@ -66,6 +69,7 @@ class CreateNewUser implements CreatesNewUsers
         /**
          * CREATE THE TENANT IN
          */
+
          $tenant = Tenant::create($input + [
                  'user_id' => $user->id,
                  'ready' => false,
@@ -76,6 +80,7 @@ class CreateNewUser implements CreatesNewUsers
         /**
          * CREATE THE TENANT DOMAIN
          */
+
         $tenant->domains()->create([
             'domain' => $tenant->tenancy_domain,
         ]);
@@ -101,6 +106,7 @@ class CreateNewUser implements CreatesNewUsers
         /**
          * ADD FIRST BUSINESS
          */
+
         $tenant->run(function ($user) {
             Business::create([
                 'name' => $user->tenancy_company,
@@ -110,6 +116,7 @@ class CreateNewUser implements CreatesNewUsers
         /**
          * ADD FIRST BUSINESS - BRANCH
          */
+
         $tenant->run(function ($user) {
             BusinessBranch::create([
                 'business_id' => 1,
@@ -122,6 +129,7 @@ class CreateNewUser implements CreatesNewUsers
         /**
          * NOTIFY SUPER ADMIN
          */
+
         $admin = User::find(1);
         $admin->notify(new NewUserNotification($user));
 

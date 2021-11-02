@@ -44,7 +44,14 @@ return [
             'timeout' => null,
             'auth_mode' => null,
         ],
-
+        // FIX ON GOOGLE SSL
+       /* 'stream' => [
+            'ssl' => [
+                'allow_self_signed' => true,
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+            ]
+        ],*/
         'ses' => [
             'transport' => 'ses',
         ],

@@ -1,6 +1,6 @@
 <div>
     <figure>
-        <img class="flex-initial" src="https://nuevecubica-aws.s3.amazonaws.com/assets/logos/perzona/logo_perzona.svg" alt="" width="200">
+        <img class="flex-initial" src="https://perzona-s3-resources.s3.us-west-1.amazonaws.com/web-assets/logo_perzona.svg" alt="" width="200">
     </figure>
     <p class="text-gray-600 dark:text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pulvinar, leo sed dignissim posuere, est justo scelerisque nibh, in lacinia risus justo non dolor. Donec rutrum aliquet ipsum, a interdum leo euismod et. Praesent sodales tortor magna, et euismod urna sagittis ac. Mauris pulvinar, arcu sit amet consequat pellentesque, urna lorem vestibulum mauris, sit amet eleifend nisl dolor et metus. Donec pellentesque dui elementum, vulputate nibh sit amet, scelerisque magna. Vivamus non ultricies elit. Morbi sit amet commodo sem. Sed ornare
         lectus nunc. Sed et feugiat dolor. Praesent eget nulla consequat, maximus sem sed, mollis ipsum. Phasellus mauris risus, condimentum id tempus vitae, sollicitudin eu mauris. Nam bibendum lectus varius ultrices laoreet. Morbi lacus orci, tincidunt vel massa et, facilisis maximus quam. In nec ullamcorper mi.</p>

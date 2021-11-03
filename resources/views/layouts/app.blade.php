@@ -58,8 +58,8 @@
 @include('include.common.scripts.vendor-scripts')
 
 <!-- CORE UI SCRIPTS -->
-<script src="{{asset('vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
-<script src="{{asset('vendor/simplebar/js/simplebar.min.js')}}"></script>
+<script src="{{asset('assets/vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
+<script src="{{asset('assets/vendor/simplebar/js/simplebar.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function (event) {

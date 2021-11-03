@@ -1,23 +1,28 @@
 <div class="sidebar sidebar-light sidebar-lg sidebar-end sidebar-overlaid sidebar-self-hiding-xxl" id="aside">
     <div class="sidebar-header bg-transparent p-0">
         <ul class="nav nav-underline nav-underline-primary" role="tablist">
-            <li class="nav-item"><a class="nav-link active" data-coreui-toggle="tab" href="#timeline" role="tab">
-                    <svg class="icon">
-                        <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-list')}}"></use>
-                    </svg></a></li>
-            <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#messages" role="tab">
-                    <svg class="icon">
-                        <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-speech')}}"></use>
-                    </svg></a></li>
-            <li class="nav-item"><a class="nav-link" data-coreui-toggle="tab" href="#settings" role="tab">
-                    <svg class="icon">
-                        <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-settings')}}"></use>
-                    </svg></a></li>
+            <li class="nav-item">
+                <a class="nav-link active" data-coreui-toggle="tab" href="#timeline" role="tab">
+                    <i class="fad fa-list"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-coreui-toggle="tab" href="#messages" role="tab">
+                    <a class="nav-link active" data-coreui-toggle="tab" href="#timeline" role="tab">
+                        <i class="fad fa-pencil"></i>
+                    </a>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-coreui-toggle="tab" href="#settings" role="tab">
+                    <i class="fad fa-sliders-h-square"></i>
+                </a>
+            </li>
         </ul>
         <button class="sidebar-close" type="button" data-coreui-close="sidebar">
-            <svg class="icon">
-                <use xlink:href="{{asset('vendor/@coreui/icons/svg/free.svg#cil-x')}}"></use>
-            </svg>
+            <a class="nav-link active" data-coreui-toggle="tab" href="#timeline" role="tab">
+                <i class="fad fa-times-square"></i>
+            </a>
         </button>
     </div>
     <!-- Tab panes-->

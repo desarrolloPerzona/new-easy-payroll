@@ -1,10 +1,10 @@
 <div class="sidebar sidebar-dark sidebar-fixed sidebar-self-hiding-xl" id="sidebar">
     <div class="sidebar-brand d-none d-md-flex">
         <div class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-            <img src="https://perzona-resources.s3.amazonaws.com/images/logos/logo_perzona_white.svg" width="180">
+            <img src="https://perzona-s3-resources.s3.us-west-1.amazonaws.com/web-assets/logo_perzona_white.svg" width="180">
         </div>
         <div class="sidebar-brand-narrow" width="40" height="40" alt="CoreUI Logo">
-            <img src="https://perzona-resources.s3.amazonaws.com/images/logos/favicon_perzona_white.svg" width="40">
+            <img src="https://perzona-s3-resources.s3.us-west-1.amazonaws.com/web-assets/favicon_perzona_white.svg" width="40">
         </div>
     </div>
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">

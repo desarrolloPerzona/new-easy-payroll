@@ -41,4 +41,4 @@
 <meta name="theme-color" content="#ffffff">
 
 <!-- manifest -->
-<link rel="manifest" href="{{asset('images/icons/manifest.json')}}">
+{{--<link rel="manifest" href="{{asset('images/icons/manifest.json')}}">--}}

@@ -15,11 +15,16 @@ class CreateBusinessBranch extends Migration
     {
         Schema::create('business_branch', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('business_id');
+            $table->unsignedBigInteger('business_id');
             $table->string('name');
             $table->string('description')->nullable();
-            $table->unsignedInteger('imss_patronal_id')->nullable();
+            $table->unsignedInteger('imss_patronal')->nullable();
+            $table->string('zip_code',5)->nullable();
+            $table->text('borough')->nullable();
+            $table->string('municipality',255)->nullable();
+            $table->string('state',255)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

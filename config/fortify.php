@@ -61,15 +61,7 @@ return [
     |
     */
 
-    //'home' => RouteServiceProvider::HOME,
-
-    'home' => function(){
-        if(auth()->user()->is_admin){
-            return route('admin.adminDashboard');
-        }else{
-            return route('client.clientDashboard');
-        }
-    },
+    'home' => RouteServiceProvider::HOME,
 
 
     /*

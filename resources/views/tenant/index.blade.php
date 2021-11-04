@@ -1,7 +1,6 @@
 @section('title')  {{Auth::user()->tenancy_domain ?? __('Not logged')}} @endsection
 <x-app-tenant>
     <div class="mt-4 ">
-
         {{Tenant()}}
         <div class="bg-white shadow-sm rounded p-4 text-center  max-w-2xl my-4 mx-auto">
 

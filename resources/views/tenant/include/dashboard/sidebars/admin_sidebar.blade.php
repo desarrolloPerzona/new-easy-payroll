@@ -20,6 +20,19 @@
             {{-- BUSINESS --}}
             <li class="nav-group">
                 <a class="nav-link nav-group-toggle" href="#">
+                    <i class="nav-icon fad fa-building mr-2"></i> {{__('Businesses')}}
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('business.index')}}">
+                            <i class="nav-icon fad fa-users mr-2"></i>
+                            {{__('Businesses')}} / {{__('Headquarters')}}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
                     <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('Business')}}
                 </a>
                 <ul class="nav-group-items">

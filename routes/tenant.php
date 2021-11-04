@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\Tenant\TenantDashboardController;
 use App\Http\Controllers\Tenant\TenantWelcomeController;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,6 @@ Route::middleware([
     Route::get('/', [TenantWelcomeController::class, 'index'])->name('tenant.home');
     include('auth.php');
     Route::get('/dashboard',[TenantDashboardController::class,'dashboard'])->middleware('auth:web')->name('tenant.dashboard');
+    /*TENANT BUSINESS*/
+    Route::resource('/business',BusinessController::class)->middleware('auth:web');
 });

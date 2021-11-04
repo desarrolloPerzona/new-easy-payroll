@@ -11,11 +11,10 @@ class NotificationsControl extends Component
     public $user;
 
 
-    public function mount(){
-
+    public function mount()
+    {
         $this->user = Auth::user();
     }
-
 
 
     public function render()

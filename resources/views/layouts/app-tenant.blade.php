@@ -9,16 +9,65 @@
     {{--STYLES--}}
     @include('tenant.include.common.head.vendor-css')
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
+    {{--CORE UI STYLES--}}
+    <link href="css/style.css" rel="stylesheet">
 @livewireStyles
 <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="/js/app.js" defer></script>
 </head>
 <body class="font-sans antialiased">
+@include('tenant.include.dashboard.sidebars.admin_sidebar')
+{{--CORE UI WRAPPER--}}
+<div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
+    {{--TOP NAV BAR--}}
+    @include('tenant.include.dashboard.headers.admin_header')
 {{ $slot }}
+
+
+</div>
+
+{{--STACKS SCRIPTS & LIVEWIRE--}}
 @livewireScripts
-{{--@include('tenant.include.scripts.vendor-scripts')--}}
+@include('tenant.include.common.scripts.vendor-scripts')
+{{--CORE UI SCRIPTS--}}
+<script src="{{asset('vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
+<script src="{{asset('vendor/simplebar/js/simplebar.min.js')}}"></script>
+<script src="js/main.js"></script>
+{{--DARK MODE SCRIPT--}}
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        setTimeout(function () {
+            document.body.classList.remove('c-no-layout-transition')
+        }, 2000);
+    });
+
+    if (document.body.classList.contains('dark-theme')) {
+        var element = document.getElementById('btn-dark-theme');
+        if (typeof (element) != 'undefined' && element != null) {
+            document.getElementById('btn-dark-theme').checked = true;
+        }
+    } else {
+        var element = document.getElementById('btn-light-theme');
+        if (typeof (element) != 'undefined' && element != null) {
+            document.getElementById('btn-light-theme').checked = true;
+        }
+    }
+
+    function handleThemeChange(src) {
+        var event = document.createEvent('Event');
+        event.initEvent('themeChange', true, true);
+
+        if (src.value === 'light') {
+            document.body.classList.remove('dark-theme');
+        }
+        if (src.value === 'dark') {
+            document.body.classList.add('dark-theme');
+        }
+        document.body.dispatchEvent(event);
+    }
+</script>
+{{--IN PAGE SCRIPTS--}}
 @stack('in_page_scripts')
-@stack('modals')
+
 </body>
 </html>

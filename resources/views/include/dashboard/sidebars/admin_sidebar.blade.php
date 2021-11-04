@@ -12,12 +12,12 @@
             <a class="nav-link" href="/admin">
                 <i class="nav-icon  fad fa-tachometer-alt-fastest"></i>
             {{__('Dashboard')}}
-            <!--<span class="badge bg-info-gradient ms-auto">NEW</span>-->
+            {{--<span class="badge bg-info-gradient ms-auto">NEW</span>--}}
             </a>
         </li>
         {{--<li class="nav-title"><i class="fad fa-browser mr-2"></i> {{__('Application')}}</li>--}}
         @hasrole('Super Admin')
-        {{-- APP ADMIN--}}
+        {{-- APP ADMIN PERMISSIONS--}}
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
                 <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('APP Administration')}}
@@ -34,7 +34,7 @@
                 </li>
             </ul>
         </li>
-        {{--API ADMIN--}}
+        {{--API ADMIN VARIABLES--}}
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
                 <i class="nav-icon fad fa-browser mr-2"></i> {{__('API variables')}}

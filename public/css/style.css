@@ -7506,6 +7506,7 @@ html:not([dir=rtl]) .callout-dark {
 }
 
 .footer-sticky {
+  position: -webkit-sticky;
   position: sticky;
   bottom: 0;
   z-index: 1030;
@@ -7563,6 +7564,7 @@ html:not([dir=rtl]) .callout-dark {
   min-height: 2rem;
 }
 .header.header-sticky {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1029;
@@ -7915,6 +7917,7 @@ html:not([dir=rtl]) .sidebar.sidebar-xl.hide.sidebar-end {
 }
 @media (min-width: 768px) {
   .sidebar.sidebar-sticky {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     height: 100vh;
@@ -8878,6 +8881,7 @@ html:not([dir=rtl]) .sidebar:not(.show).sidebar-self-hiding.sidebar-narrow.sideb
 }
 
 .subheader-sticky {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1029;
@@ -9047,6 +9051,7 @@ html:not([dir=rtl]) .ratio > * {
 }
 
 .sticky-top {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1020;
@@ -9054,6 +9059,7 @@ html:not([dir=rtl]) .ratio > * {
 
 @media (min-width: 576px) {
   .sticky-sm-top {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;
@@ -9061,6 +9067,7 @@ html:not([dir=rtl]) .ratio > * {
 }
 @media (min-width: 768px) {
   .sticky-md-top {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;
@@ -9068,6 +9075,7 @@ html:not([dir=rtl]) .ratio > * {
 }
 @media (min-width: 992px) {
   .sticky-lg-top {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;
@@ -9075,6 +9083,7 @@ html:not([dir=rtl]) .ratio > * {
 }
 @media (min-width: 1200px) {
   .sticky-xl-top {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;
@@ -9082,6 +9091,7 @@ html:not([dir=rtl]) .ratio > * {
 }
 @media (min-width: 1400px) {
   .sticky-xxl-top {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;
@@ -9314,6 +9324,7 @@ html:not([dir=rtl]) .float-none {
 }
 
 .position-sticky {
+  position: -webkit-sticky !important;
   position: sticky !important;
 }
 
@@ -15754,4 +15765,8 @@ html:not([dir=rtl]) .wrapper {
 .bg-blueSteel {
   background-color: #435779;
   color: white;
+}
+
+.nav-link {
+  font-size: 0.9em !important;
 }

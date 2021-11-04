@@ -6,61 +6,50 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <!-- TITLE -->
+    {{--TITLE--}}
     <title>{{ config('app.name', 'PerZona ') }} | @yield('title')</title>
-    <!-- META -->
-@include('include.common.head.meta')
-<!-- app styles -->
+    {{-- META TAGS--}}
+    @include('include.common.head.meta')
+    {{--APP STYLES--}}
     @include('include.common.head.vendor-css')
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
-    <!-- CORE UI STYLES -->
+    {{--CORE UI STYLES--}}
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <!-- VENDOR CSS -->
-
-    <!-- APP SCRIPTS -->
+    {{--APP SCRIPT--}}
     <script src="{{ mix('js/app.js') }}" defer></script>
     @livewireStyles
-
 </head>
 <body class="mode-dark text-sm text-dark">
-
-<!-- SIDE BAR -->
+{{--SIDEBAR--}}
 @include('include.dashboard.sidebars.admin_sidebar')
-<!-- SIDE BAR RIGHT -->
+{{--CORE UI WRAPPER--}}
 <div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
-    <!-- HEADER -->
-
-    <!-- MAIN -->
-    <!-- TOP MENU NAV BAR -->
-@include('include.dashboard.headers.admin_menu_header')
-<!-- NAV BAR -->
+    {{--TOP NAV BAR--}}
     @include('include.dashboard.headers.admin_header')
-
+    {{--BODY--}}
     <div class="body flex-grow-1 px-3">
-        <!-- BODY -->
+        {{--ONLY VISIBLE ON DESKTOP--}}
         <div class="d-none d-md-block d-sm-block d-xl-none">
             <p class="text-sm-center">{{__('Only visible on large screens')}}</p>
         </div>
+        {{--MAIN CONTENT--}}
         <div class="d-none d-xl-block">
             {{$slot}}
         </div>
-
     </div>
-    <!-- FOOTER -->
+    {{--FOOTER--}}
     @include('include.dashboard.footers.admin_footer')
     @stack('modals')
 </div>
-
-<!-- STACKS SCRIPTS & LIVEWIRE -->
-
-
+{{--END CORE UI WRAPPER--}}
+{{--STACKS SCRIPTS & LIVEWIRE--}}
 @livewireScripts
 @include('include.common.scripts.vendor-scripts')
-
-<!-- CORE UI SCRIPTS -->
-<script src="{{asset('assets/vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
-<script src="{{asset('assets/vendor/simplebar/js/simplebar.min.js')}}"></script>
+{{--CORE UI SCRIPTS--}}
+<script src="{{asset('tenancy/assets/vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
+<script src="{{asset('tenancy/assets/vendor/simplebar/js/simplebar.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
+{{--DARK MODE SCRIPT--}}
 <script>
     document.addEventListener("DOMContentLoaded", function (event) {
         setTimeout(function () {
@@ -92,6 +81,7 @@
         document.body.dispatchEvent(event);
     }
 </script>
+{{--IN PAGE SCRIPTS--}}
 @stack('in_page_scripts')
 
 </body>

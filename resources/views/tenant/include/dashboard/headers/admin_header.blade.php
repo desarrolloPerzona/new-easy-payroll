@@ -22,7 +22,7 @@
         </nav>
         {{-- HEADER RIGHT MENU--}}
         <ul class="header-nav me-3">
-            <livewire:dashboard.includes.notifications-control/>
+           {{-- <livewire:dashboard.includes.notifications-control/>--}}
         </ul>
         {{--USER PROFILE LOG OUT--}}
         <ul class="header-nav me-4">

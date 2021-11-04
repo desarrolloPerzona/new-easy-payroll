@@ -6,24 +6,23 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <!-- TITLE -->
+    {{--TITLE--}}
     <title>{{ config('app.name', 'PerZona ') }} | @yield('title')</title>
-    <!-- META -->
-@include('include.common.head.meta')
-<!-- app styles -->
+    {{--META--}}
+    @include('include.common.head.meta')
+    {{--APP STYLE--}}
     @include('include.common.head.vendor-css')
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
-    <!-- CORE UI STYLES -->
+    {{--CORE UI STYLES--}}
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <!-- VENDOR CSS -->
+   {{--VENDOR CSS--}}
 
-    <!-- APP SCRIPTS -->
+    {{--APP SCRIPTS--}}
     <script src="{{ mix('js/app.js') }}" defer></script>
     @livewireStyles
 
 </head>
 <body class="mode-dark text-sm text-dark">
-
 <!-- SIDE BAR -->
 @include('include.dashboard.sidebars.client_sidebar')
 <!-- SIDE BAR RIGHT -->
@@ -57,8 +56,8 @@
 @include('include.common.scripts.vendor-scripts')
 @stack('in_page_scripts')
 <!-- CORE UI SCRIPTS -->
-<script src="{{asset('assets/vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
-<script src="{{asset('assets/vendor/simplebar/js/simplebar.min.js')}}"></script>
+<script src="{{asset('tenancy/assets/vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
+<script src="{{asset('tenancy/assets/vendor/simplebar/js/simplebar.min.js')}}"></script>
 <script src="{{asset('js/main.js')}}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function (event) {

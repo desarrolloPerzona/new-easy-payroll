@@ -10,7 +10,7 @@
     @include('tenant.include.common.head.vendor-css')
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     {{--CORE UI STYLES--}}
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 @livewireStyles
 <!-- Scripts -->
     <script src="/js/app.js" defer></script>
@@ -32,7 +32,7 @@
 {{--CORE UI SCRIPTS--}}
 <script src="{{asset('vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
 <script src="{{asset('vendor/simplebar/js/simplebar.min.js')}}"></script>
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 {{--DARK MODE SCRIPT--}}
 <script>
     document.addEventListener("DOMContentLoaded", function (event) {

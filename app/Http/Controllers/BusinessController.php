@@ -15,8 +15,8 @@ class BusinessController extends Controller
     public function index()
     {
 
-
-        return view('tenant.dashboard.business.index');
+        $businesses = Business::all();
+        return view('tenant.dashboard.business.index',compact('businesses'));
     }
 
     /**
@@ -32,7 +32,7 @@ class BusinessController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -43,18 +43,22 @@ class BusinessController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tenant\Business  $business
-     * @return \Illuminate\Http\Response
+     * @param \App\Models\Tenant\Business $business
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Business $business)
     {
-        //
+        $business = Business::find($business->id);
+
+        return view('tenant.dashboard.business.show',compact('business'));
+
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tenant\Business  $business
+     * @param \App\Models\Tenant\Business $business
      * @return \Illuminate\Http\Response
      */
     public function edit(Business $business)
@@ -65,8 +69,8 @@ class BusinessController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tenant\Business  $business
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Tenant\Business $business
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Business $business)
@@ -77,7 +81,7 @@ class BusinessController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tenant\Business  $business
+     * @param \App\Models\Tenant\Business $business
      * @return \Illuminate\Http\Response
      */
     public function destroy(Business $business)

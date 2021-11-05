@@ -15768,5 +15768,18 @@ html:not([dir=rtl]) .wrapper {
 }
 
 .nav-link {
-  font-size: 0.9em !important;
+  font-size: 0.9rem !important;
+}
+
+h2, .h2 {
+  font-size: 1.3rem !important;
+  margin-bottom: 0 !important;
+}
+h2 a, .h2 a {
+  color: white;
+  text-decoration: none;
+}
+h2 a:hover, .h2 a:hover {
+  color: white;
+  opacity: 0.8;
 }

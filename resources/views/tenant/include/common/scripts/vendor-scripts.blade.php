@@ -1,19 +1,19 @@
-JQUERY
+{{--JQUERY--}}
 <script src="{{asset('/vendor/jquery/jquery.js')}}"></script>
-BOOTSTRAP
+{{--BOOTSTRAP--}}
 <script src="{{asset('/vendor/bootstrap/js/bootstrap.js')}}"></script>
-POPPER@2
+{{--POPPER@2--}}
 <script src="{{asset('/vendor/popper-js2/umd/popper.js')}}"></script>
-FONTAWESOME
+{{--FONTAWESOME--}}
 <script src="{{asset('/vendor/fontawesome/js/all.js')}}"></script>
-TIPPY
+{{--TIPPY--}}
 <script src="{{asset('/vendor/tippy/tippy.js/dist/tippy-bundle.umd.js')}}"></script>
-SELECT2
+{{--SELECT2--}}
 <script src="{{asset('/vendor/select2/js/select2.js')}}"></script>
-CKEDITOR5
+{{--CKEDITOR5--}}
 <script src="{{asset('/vendor/ckeditor5/ckeditor.js')}}"></script>
 <script src="{{asset('/vendor/ckeditor5/translations/es.js')}}"></script>
-PIKADAY
+{{--PIKADAY--}}
 <script src="{{asset('/vendor/pikaday/pikaday.js')}}"></script>
-STRIPE
+{{--STRIPE--}}
 <script src="https://js.stripe.com/v3/"></script>

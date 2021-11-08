@@ -9,7 +9,6 @@
         <div class="card-header">
             <h2 class="uppercase text-sm text-dark text-2xl"><i class="fal fa-table"></i> {{__($modelName)}}</h2>
         </div>
-
         <div class="card-body">
             {{-- CREATE NEW ITEM --}}
             <div class="p-4  mb-2 text-white shadow-sm dark:bg-dark rounded">
@@ -27,7 +26,6 @@
                                         <div class="form-group mx-sm-3 mb-2">
                                             <label for="input-new-item{{$loop->iteration}}" class="sr-only">{{__($title)}}</label>
                                             <input type="text" class="form-control input-group-sm" id="input-new-item{{$loop->iteration}}" placeholder="{{__($title)}}">
-
                                         </div>
                                     @endforeach
                                     <div class="form-group">
@@ -66,8 +64,8 @@
                 </tr>
                 {{-- END SEARCH AND ORDER--}}
                 <tr>
-                {{-- DATA --}}
-                @foreach($model as $item)
+                    {{-- DATA --}}
+                    @foreach($model as $item)
 
                         @foreach($modelItems as $items)
                             <td class="text-sm  align-middle">{{$item->$items}}</td>
@@ -85,11 +83,11 @@
                         @if($erasable)
                             <td class="align-middle w-10">
                                 <button class="px-2 py-1 rounded text-white bg-red-400 hover:bg-red-600"
-                                     wire:click.prevent="destroy({{ $item->id}},'{{$item->first()}}')"
-                                     onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"><i class="fas fa-trash"></i></button>
+                                        wire:click.prevent="destroy({{ $item->id}},'{{$item->first()}}')"
+                                        onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"><i class="fas fa-trash"></i></button>
                             </td>
                         @endif
-                    </tr>
+                </tr>
                 @endforeach
 
             </table>
@@ -125,7 +123,8 @@
                             <div class="form-group mx-sm-3 mb-2">
                                 <label for="input-new-item{{$loop->iteration}}" class="sr-only">{{__($item)}}</label>
                                 <input type="text" class="form-control input-group-sm" id="input-new-item{{$loop->iteration}}" wire:model.defer="modelToEdit.$item" placeholder="{{__($item)}}">
-                                @error('$modelToEdit->$item')<div style="font-size: 11px; color: red">{{ $message }}</div> @enderror
+                                @error('$modelToEdit->$item')
+                                <div style="font-size: 11px; color: red">{{ $message }}</div> @enderror
                             </div>
                         @endforeach
                         <div class="my-4">

@@ -23,15 +23,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // PUBLIC ROUTES
-Route::get('/zipcode',[GetZipcodeController::class,'getZipCode']);
-Route::get('/zipcode/search/{name}',[GetZipcodeController::class,'searchZipcode']);
-Route::get('/bank-list',[GetBanksController::class,'getBankList']);
-Route::get('/fiscal-regimes-list',[GetFiscalRegimesController::class,'getFiscalRegimesList']);
-Route::get('/fiscal-industries-list',[GetFiscalIndustriesController::class,'getFiscalIndustriesList']);
+
 
 
 // PROTECTED ROUTES
 Route::group(['middleware' => 'auth:sanctum'], function(){
-
+    Route::get('/zipcode',[GetZipcodeController::class,'getZipCode']);
+    Route::get('/zipcode/search/{name}',[GetZipcodeController::class,'searchZipcode']);
+    Route::get('/bank-list',[GetBanksController::class,'getBankList']);
+    Route::get('/fiscal-regimes-list',[GetFiscalRegimesController::class,'getFiscalRegimesList']);
+    Route::get('/fiscal-industries-list',[GetFiscalIndustriesController::class,'getFiscalIndustriesList']);
 });
 

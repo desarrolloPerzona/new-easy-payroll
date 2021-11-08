@@ -7,6 +7,5 @@
         :viewable="false"
         :editable="true"
         :erasable="true"
-
     />
 </x-app-layout>

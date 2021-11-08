@@ -102,15 +102,13 @@ class ModelIndexSearch extends Component
 
     public function edit($id)
     {
+
         $this->modelToEdit = $this->modelToView::find($id);
-
-
 
     }
 
     public function destroy($id, $item)
     {
-
 
         $modelItem = $this->modelToView::find($id);
 

@@ -62,7 +62,7 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'permission_access']);
 
 
-        $superAdminRole = Role::create(["name" => "Super Admin"]);
+        $superAdminRole = Role::create(["name" => "SuperAdmin"]);
         $adminRole = Role::create(["name" => "Admin"]);
         $tenantRole = Role::create(["name" => "Tenant"]);
 
@@ -70,7 +70,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $adminRole->givePermissionTo(Permission::all());
 
         $user = User::find(1);
-        $user->assignRole('super Admin');
+        $user->assignRole('superAdmin');
         $user1 = User::find(2);
         $user1->assignRole('Admin');
 

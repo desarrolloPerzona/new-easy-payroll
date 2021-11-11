@@ -16,7 +16,7 @@
             </a>
         </li>
         {{--<li class="nav-title"><i class="fad fa-browser mr-2"></i> {{__('Application')}}</li>--}}
-        @if(Tenant()->role === 1)
+        @if(Tenant()->role === 1 && Auth()->user())
             {{-- BUSINESS --}}
             <li class="nav-group">
                 <a class="nav-link nav-group-toggle" href="#">
@@ -77,13 +77,13 @@
 
             <li class="nav-group">
                 <a class="nav-link nav-group-toggle" href="#">
-                    <i class="nav-icon fad fa-building mr-2"></i> {{__('Businesses')}}
+                    <i class="nav-icon fad fa-building mr-2"></i> {{__('otra cosa')}}
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="nav-icon fad fa-users mr-2"></i>
-                            {{__('Businesses')}} / {{__('Headquarters')}}
+                            {{__('cosa')}}
                         </a>
                     </li>
                 </ul>

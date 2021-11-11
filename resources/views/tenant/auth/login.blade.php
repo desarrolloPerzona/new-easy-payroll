@@ -29,13 +29,13 @@
             <div class="block mt-4 bg-perzona1-100 p-2 rounded">
                 <label for="remember_me" class="flex items-center">
                     <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-white">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-sm">{{ __('Remember me') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('tenant.password.request'))
-                    <a class="btn btn-warning" href="{{ route('tenant.password.request') }}">
+                    <a class="btn btn-secondary " href="{{ route('tenant.password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif

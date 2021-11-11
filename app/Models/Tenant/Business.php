@@ -40,4 +40,9 @@ class Business extends Model
     public function branches(){
         return $this->hasMany(BusinessBranch::class,'business_id','id');
     }
+
+    public function banks(){
+        return $this->hasMany(BanksBusiness::class,'business_id','id');
+    }
+
 }

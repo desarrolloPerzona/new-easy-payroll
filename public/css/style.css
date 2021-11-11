@@ -15783,3 +15783,7 @@ h2 a:hover, .h2 a:hover {
   color: white;
   opacity: 0.8;
 }
+
+.accordion-button:focus, .accordion-button:active {
+  background-color: #435779;
+}

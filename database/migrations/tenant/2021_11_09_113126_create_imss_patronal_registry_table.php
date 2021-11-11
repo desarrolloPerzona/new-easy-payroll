@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateImssRegistroPatronalTable extends Migration
+class CreateImssPatronalRegistryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateImssRegistroPatronalTable extends Migration
      */
     public function up()
     {
-        Schema::create('imss_registro_patronal', function (Blueprint $table) {
+        Schema::create('imss_patronal_registry', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('business_branch_id');
             $table->string('name');
@@ -39,6 +39,6 @@ class CreateImssRegistroPatronalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imss_registro_patronal');
+        Schema::dropIfExists('imss_patronal_registry');
     }
 }

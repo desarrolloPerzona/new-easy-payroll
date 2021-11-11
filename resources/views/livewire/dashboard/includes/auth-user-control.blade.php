@@ -102,16 +102,26 @@
                             <div class="border-t border-gray-100"></div>
 
                             <!-- Authentication -->
+                            @if(Tenant())
+                                <form method="POST" action="{{ route('tenant.logout') }}">
+                                    @csrf
+                                    <x-jet-dropdown-link href="{{ route('tenant.logout') }}"
+                                                         onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                        {{ __('Tenant Log Out') }}
+                                    </x-jet-dropdown-link>
+                                </form>
+                        </x-slot>
+                        @else
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
                                                      onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                     {{ __('Log Out') }}
                                 </x-jet-dropdown-link>
                             </form>
-                        </x-slot>
+                        @endif
                     </x-jet-dropdown>
                 </div>
             @endauth

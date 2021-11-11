@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Tenant;
 
+use App\Http\Controllers\Controller;
 use App\Models\Tenant\Business;
 use Illuminate\Http\Request;
 
@@ -49,6 +50,7 @@ class BusinessController extends Controller
     public function show(Business $business)
     {
         $business = Business::find($business->id);
+
 
         return view('tenant.dashboard.business.show',compact('business'));
 

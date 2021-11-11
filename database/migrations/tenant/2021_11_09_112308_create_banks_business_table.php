@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBusinessBranch extends Migration
+class CreateBanksBusinessTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateBusinessBranch extends Migration
      */
     public function up()
     {
-        Schema::create('business_branch', function (Blueprint $table) {
+        Schema::create('banks_business', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('bank_id');
             $table->unsignedBigInteger('business_id');
-            $table->unsignedBigInteger('branch_id');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -29,6 +28,6 @@ class CreateBusinessBranch extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('business_branch');
+        Schema::dropIfExists('banks_business');
     }
 }

@@ -21,6 +21,7 @@ class CreateBusiness extends Migration
             $table->boolean('logo_on_receipt')->nullable();
             $table->string('industry')->nullable();
             $table->string('RFC', 13)->nullable();
+            $table->string('street')->nullable();
             $table->string('zip_code',5)->nullable();
             $table->text('borough')->nullable();
             $table->string('municipality',255)->nullable();

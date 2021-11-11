@@ -5,15 +5,16 @@ namespace App\Models\Tenant;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BusinessBranch extends Model
+class BanksBusiness extends Model
 {
     use HasFactory;
 
-    protected $table = 'business_branch';
+    protected $table = 'banks_business';
 
     protected $fillable = [
         'business_id',
-        'branch_id',
+        'bank_id',
     ];
+
 
 }

@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\Tenant;
+use App\Models\Tenant\Branch;
 use App\Models\Tenant\Business;
 use App\Models\Tenant\BusinessBranch;
 use App\Models\User;
@@ -70,12 +71,12 @@ class CreateNewUser implements CreatesNewUsers
          * CREATE THE TENANT IN
          */
 
-         $tenant = Tenant::create($input + [
-                 'user_id' => $user->id,
-                 'ready' => false,
-                 'tenancy_company' => $user->tenancy_company,
-                 'tenancy_domain' => $user->tenancy_domain,
-             ]);
+        $tenant = Tenant::create($input + [
+                'user_id' => $user->id,
+                'ready' => false,
+                'tenancy_company' => $user->tenancy_company,
+                'tenancy_domain' => $user->tenancy_domain,
+            ]);
 
         /**
          * CREATE THE TENANT DOMAIN
@@ -118,13 +119,16 @@ class CreateNewUser implements CreatesNewUsers
          */
 
         $tenant->run(function ($user) {
-            BusinessBranch::create([
-                'business_id' => 1,
+            Branch::create([
                 'name' => $user->tenancy_company,
                 'business_name' => $user->tenancy_company,
-
+            ]);
+            BusinessBranch::create([
+                'business_id' => 1,
+                'branch_id' => 1
             ]);
         });
+
 
         /**
          * NOTIFY SUPER ADMIN

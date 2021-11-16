@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Tenant\BankController;
 use App\Http\Controllers\Tenant\BusinessController;
+use App\Http\Controllers\Tenant\EmployerRegisterController;
 use App\Http\Controllers\Tenant\PayrollController;
 use App\Http\Controllers\Tenant\PolicyController;
 use App\Http\Controllers\Tenant\TenantDashboardController;
@@ -36,7 +37,8 @@ Route::middleware([
     Route::get('/dashboard',[TenantDashboardController::class,'dashboard'])->middleware('auth:web')->name('tenant.dashboard');
     /*TENANT BUSINESS*/
     Route::resource('/business',BusinessController::class)->middleware('auth:web');
-    Route::resource('/bank',BankController::class)->middleware('auth:web');
+    Route::resource('/banks',BankController::class)->middleware('auth:web');
     Route::resource('/payroll',PayrollController::class)->middleware('auth:web');
     Route::resource('/policies',PolicyController::class)->middleware('auth:web');
+    Route::resource('/employer-register',EmployerRegisterController::class)->middleware('auth:web');
 });

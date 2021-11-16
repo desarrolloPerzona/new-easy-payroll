@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Tenant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PolicyController extends Controller
+class EmployerRegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PolicyController extends Controller
      */
     public function index()
     {
-        return view('tenant.dashboard.policy.index');
+        return view('tenant.dashboard.employer_register.index');
     }
 
     /**

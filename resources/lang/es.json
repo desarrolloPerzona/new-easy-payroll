@@ -665,7 +665,17 @@
     "ZipCode": "Código postal",
     "ZipCodes": "Código postales",
     "Zipcode": "Código postal",
-    "Zipcodes": "Código postales"
+    "Zipcodes": "Código postales",
+    "New Payroll": "Nuevo grupo de nómina",
+    "Employer register": "Registros patronales",
+    "New employer register": "Nuevo registro patronal",
+    "Payroll": "Nóminas",
+    "Policies": "Políticas",
+    "New Policies": "Nueva política",
+    "risk premium": "Prima de riesgo",
+    "subdelegational key": "Clave subdelegacional IMSS",
+    "Bank accounts": "Cuentas bancarias",
+    "New bank account": "Nueva cuenta bancaria"
 }
 
 

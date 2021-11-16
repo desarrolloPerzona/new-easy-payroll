@@ -4,17 +4,7 @@
             <i class="fas  fa-building mr-2"></i>
             <span style="display: inline-flex;">{{ __('Businesses') }}</span>
         </h2>
-        {{--TODO: make bread crumb component parent - child - child active urls business/create-business   --}}
-        {{--<livewire:components.breadcrumb :parent="__('Business').' active'"/>--}}
-        {{--<div class="bg-gradient-to-r from-gray-500 py-2 px-3 text-white">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item mb-0">{{__('Business')}}</li>
-                    <li class="breadcrumb-item active">Library</li>
-                    <li class="breadcrumb-item ">Data</li>
-                </ol>
-            </nav>
-        </div>--}}
+
         <div class="btn-top-holder my-3">
             <a class="btn btn-dark">
                 <i class="fas fa-plus-circle"></i>

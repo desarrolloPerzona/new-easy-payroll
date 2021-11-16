@@ -25,54 +25,46 @@
                 <ul class="nav-group-items">
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('business.index')}}">
-                            <i class="nav-icon fad fa-users mr-2"></i>
+
                             {{__('Businesses')}} / {{__('Headquarters')}}
                         </a>
                     </li>
-                </ul>
-            </li>
-            <li class="nav-group">
-                <a class="nav-link nav-group-toggle" href="#">
-                    <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('Business')}}
-                </a>
-                <ul class="nav-group-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{'/permissions'}}">
-                            <i class="nav-icon fad fa-user-crown mr-2"></i> {{__('Permissions')}}
-                        </a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="{{route('admin.roles.index')}}">
-                            <i class="nav-icon fad fa-users-cog mr-2"></i>{{__('Roles')}}
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            {{--API ADMIN VARIABLES--}}
-            <li class="nav-group">
-                <a class="nav-link nav-group-toggle" href="#">
-                    <i class="nav-icon fad fa-browser mr-2"></i> {{__('API variables')}}
-                </a>
-                <ul class="nav-group-items">
-                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('employer-register.index')}}">
 
-                        <a class="nav-link" href="{{route('admin.banks.index')}}">
-                            <i class="nav-icon fad fa-university mr-2"></i> {{__('Banks')}}
-                        </a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="{{route('admin.fiscal-regimes.index')}}">
-                            <i class="nav-icon fad fa-warehouse mr-2"></i>{{__('Fiscal Regimes')}}
-                        </a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="{{route('admin.industries.index')}}">
-                            <i class="nav-icon fad fa-industry mr-2"></i>{{__('Industries')}}
+                            {{__('Employer register')}}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.zipcodes.index')}} ">
-                            <i class="nav-icon fad fa-map-marked-alt mr-2"></i> {{__('Zip codes')}}</a>
+                        <a class="nav-link" href="{{route('banks.index')}}">
+
+                            {{__('Bank accounts')}}
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('Administration')}}
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('payroll.index')}}">
+
+                            {{__('Payroll')}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('policies.index')}}">
+
+                            {{__('Policies')}}
+                        </a>
                     </li>
                 </ul>
             </li>
+
         @else
 
             <li class="nav-group">

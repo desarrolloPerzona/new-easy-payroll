@@ -71,22 +71,6 @@ class ModelIndexSearch extends Component
     }
 
 
-    public function render()
-    {
-
-        $models = $this->modelToView::orderBy($this->sortColumn, $this->sortDirection);
-
-        foreach ($this->searchColumns as $column => $value) {
-            if (!empty($value)) {
-                $models->where($column, 'LIKE', $value . '%');
-            }
-        }
-
-        return view('livewire.dashboard.views.model-index-search', [
-            'model' => $models->paginate(15),
-        ]);
-    }
-
     public function view()
     {
 
@@ -117,6 +101,22 @@ class ModelIndexSearch extends Component
             session()->flash('success', $item . ' ' . __('Item Deleted'));
             $this->emit('alert_remove');
         }
+    }
+
+    public function render()
+    {
+
+        $models = $this->modelToView::orderBy($this->sortColumn, $this->sortDirection);
+
+        foreach ($this->searchColumns as $column => $value) {
+            if (!empty($value)) {
+                $models->where($column, 'LIKE', $value . '%');
+            }
+        }
+
+        return view('livewire.dashboard.views.model-index-search', [
+            'model' => $models->paginate(15),
+        ]);
     }
 
 }

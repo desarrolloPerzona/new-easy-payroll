@@ -16,7 +16,7 @@
             </a>
         </li>
         {{--<li class="nav-title"><i class="fad fa-browser mr-2"></i> {{__('Application')}}</li>--}}
-        @hasrole('Super Admin')
+        @hasrole('SuperAdmin')
         {{-- APP ADMIN PERMISSIONS--}}
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">

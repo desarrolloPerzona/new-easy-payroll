@@ -24,7 +24,7 @@ class EmployerRegisterController extends Controller
      */
     public function create()
     {
-        //
+        return view('tenant.dashboard.employer_register.create');
     }
 
     /**

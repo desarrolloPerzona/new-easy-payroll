@@ -6,7 +6,7 @@
         </h2>
 
         <div class="btn-top-holder my-3">
-            <a class="btn btn-dark">
+            <a href="{{route('policies.create',1)}}" class="btn btn-dark">
                 <i class="fas fa-plus-circle"></i>
                 {{ __('New Policies') }}
             </a>

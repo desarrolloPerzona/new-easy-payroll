@@ -24,7 +24,7 @@ class BankController extends Controller
      */
     public function create()
     {
-        //
+        return view('tenant.dashboard.banks.create');
     }
 
     /**

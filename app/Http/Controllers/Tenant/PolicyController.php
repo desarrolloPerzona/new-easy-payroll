@@ -24,7 +24,7 @@ class PolicyController extends Controller
      */
     public function create()
     {
-        //
+        return view('tenant.dashboard.policy.create');
     }
 
     /**

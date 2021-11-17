@@ -6,14 +6,14 @@
         </h2>
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
-            <lavel class="font-bold" for="name">Nombre</lavel>
+            <lavel class="font-bold" for="name">{{__('Name')}}</lavel>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name"
                    placeholder="Registro patronal CDMX">
 
-            <lavel class="font-bold" for="name">Prima de riesgo</lavel>
+            <lavel class="font-bold" for="name">{{__('Risk premium')}}</lavel>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="3">
 
-            <lavel class="font-bold" for="name">Clave subdelegfacional IMSS</lavel>
+            <lavel class="font-bold" for="name">{{__('IMSS subdelegational key')}}</lavel>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="123658">
 
 
@@ -29,8 +29,7 @@
                                 <div class="my-3">
                                     <input type="radio" id="huey" name="drone" value="huey"
                                            checked>
-                                    <label class="text-gray-800">Enviar movimientos al IMSS mediante certificado
-                                        IMSS</label>
+                                    <label class="text-gray-800">{{__('Send movements through IMSS certificate')}}</label>
                                 </div>
 
                             </button>
@@ -41,7 +40,7 @@
                                 {{--            IMSS-------------------------------------}}
                                 <div class="flex flex-col flex-grow mb-3">
 
-                                    <label class="my-2 font-bold">Certificado IMSS</label>
+                                    <label class="my-2 font-bold">{{__('IMSS certificate')}}</label>
 
                                     <div x-data="{ files: null }" id="FileUpload"
                                          class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray">
@@ -88,12 +87,12 @@
                                            placeholder="IMSS123658.cer">
                                 </div>
                                 <div>
-                                    <lavel class="font-bold" for="name">Usuario certificado IMSS</lavel>
+                                    <lavel class="font-bold" for="name">{{__('IMSS certified user')}}</lavel>
                                     <input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name"
                                            placeholder="IMSS23695">
                                 </div>
                                 <div>
-                                    <lavel  class="font-bold"for="name">Usuario certificado IMSS</lavel>
+                                    <lavel  class="font-bold"for="name">{{__('IMSS certified password')}}</lavel>
                                     <input class="text-gray-800 rounded my-2 w-full" type="password" id="name" name="Name"
                                            placeholder="••••••••••">
                                 </div>
@@ -108,7 +107,7 @@
 
                                 <div class="my-3">
                                     <input type="radio" id="huey" name="drone" value="huey">
-                                    <label class="text-gray-800" for="huey">Enviar movimientos al IMSS mediante FIEL</label>
+                                    <label class="text-gray-800" for="huey">{{__('Send movements to the IMSS through FIEL')}}</label>
                                 </div>
 
                             </button>
@@ -120,7 +119,7 @@
                                 {{--            FIEL-------------------------------------}}
                                 <div class="flex flex-col flex-grow mb-3">
 
-                                    <label class="my-2 font-bold">Certificado FIEL</label>
+                                    <label class="my-2 font-bold">{{__('FIEL Certificate')}}</label>
 
                                     <div x-data="{ files: null }" id="FileUpload"
                                          class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray">
@@ -169,7 +168,7 @@
 
                                 <div class="flex flex-col flex-grow mb-3">
 
-                                    <label class="my-2 font-bold">Llave privada FIEL</label>
+                                    <label class="my-2 font-bold">{{__('Llave privada FIEL')}}</label>
 
                                     <div x-data="{ files: null }" id="FileUpload"
                                          class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray">
@@ -216,12 +215,12 @@
                                            placeholder="FIEL123658.key">
                                 </div>
                                 <div>
-                                    <lavel class="font-bold" for="name">Usuario certificado IMSS</lavel>
+                                    <lavel class="font-bold" for="name">{{__('IMSS certified user')}}</lavel>
                                     <input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name"
                                            placeholder="IMSS23695">
                                 </div>
                                 <div>
-                                    <lavel class="font-bold" for="name">Contraseña FIEL</lavel>
+                                    <lavel class="font-bold" for="name">{{__('FIEL password')}}</lavel>
                                     <input class="text-gray-800 rounded my-2 w-full" type="password" id="name" name="Name"
                                            placeholder="••••••••••">
                                 </div>

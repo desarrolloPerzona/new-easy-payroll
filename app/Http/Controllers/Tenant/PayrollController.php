@@ -24,7 +24,7 @@ class PayrollController extends Controller
      */
     public function create()
     {
-        //
+        return view('tenant.dashboard.payroll.create');
     }
 
     /**

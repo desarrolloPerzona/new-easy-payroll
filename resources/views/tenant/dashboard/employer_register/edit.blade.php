@@ -81,7 +81,24 @@
                 <input type="radio" id="huey" name="drone" value="huey">
                 <label for="huey">Enviar movimientos al IMSS mediante FIEL</label>
             </div>
-
+            {{--ACCORDION--}}
+            <div class="p-4  mb-2 text-white shadow-sm dark:bg-dark rounded">
+                <div class="accordion" id="newItem">
+                    <div class="accordion-item">
+                        <div class="accordion-header  " id="headingTwo">
+                            <button class="accordion-button collapsed bg-dark dark:bg-light  text-white dark:text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="uppercase "><i class="fas fa-plus-circle"></i> {{__('New').' '}}</span>
+                            </button>
+                        </div>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                            <div class="accordion-body text-dark">
+                                este es un test
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{--ACCORDION--}}
         </div>
     </div>
 

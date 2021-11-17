@@ -24,37 +24,41 @@
 
                 </tr>
                 <tr>
-                    <th>{{__('Registro CDMX')}}</th>
-                    <th class="text-center">{{__('3')}}</th>
-                    <th class="text-center">{{__('123658')}}</th>
-                    <th colspan="3"></th>
-                    <th><i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i></th>
-                    <th><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></th>
-                    <th><i class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></th>
+                    <td>{{__('Registro CDMX')}}</td>
+                    <td class="text-center">{{__('3')}}</td>
+                    <td class="text-center">{{__('123658')}}</td>
+                    <td colspan="3"></td>
+                    <td><i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                    <td><a href="{{route('employer-register.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i></td>
+                    <td><i class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
 
                 </tr>
                 <tr>
-                    <th>{{__('Registro MTY')}}</th>
-                    <th class="text-center">{{__('1')}}</th>
-                    <th class="text-center">{{__('326985')}}</th>
-                    <th colspan="3"></th>
-                    <th><i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i></th>
-                    <th><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></th>
-                    <th><i class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></th>
+                    <td>{{__('Registro MTY')}}</td>
+                    <td class="text-center">{{__('1')}}</td>
+                    <td class="text-center">{{__('326985')}}</td>
+                    <td colspan="3"></td>
+                    <td><i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                    <td><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                    <td><i class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
 
                 </tr>
                 <tr>
-                    <th>{{__('Registro GDL')}}</th>
-                    <th class="text-center">{{__('1')}}</th>
-                    <th class="text-center">{{__('523695')}}</th>
-                    <th colspan="3"></th>
-                    <th><i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i></th>
-                    <th><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></th>
-                    <th><i class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></th>
+                    <td>{{__('Registro GDL')}}</td>
+                    <td class="text-center">{{__('1')}}</td>
+                    <td class="text-center">{{__('523695')}}</td>
+                    <td colspan="3"></td>
+                    <td><i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                    <td><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                    <td><i class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
 
                 </tr>
+
             </table>
+
         </div>
+
+
 
     </div>
 </x-app-tenant>

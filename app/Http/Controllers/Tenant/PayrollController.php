@@ -57,7 +57,7 @@ class PayrollController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('tenant.dashboard.payroll.edit');
     }
 
     /**

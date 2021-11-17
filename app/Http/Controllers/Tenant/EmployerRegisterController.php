@@ -57,7 +57,7 @@ class EmployerRegisterController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('tenant.dashboard.employer_register.edit');
     }
 
     /**

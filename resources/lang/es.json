@@ -725,7 +725,17 @@
     "Calculate employment subsidy in the following way:": "Calcular subsidio al empleo de manera:",
     "Periodic": "Periódica",
     "Daily": "Diaria",
-    "Automatic payroll": "Nómina automática"
+    "Automatic payroll": "Nómina automática",
+    "Economic days:": "Días económicos:",
+    "Pantry vouchers:": "Vales de despensa:",
+    "Pantry vouchers capped:": "Vales de despensa topado:",
+    "Restaurant vouchers capped:": "Vales de restaurante topado:",
+    "Saving Fund:": "Fondo de ahorro:",
+    "Savings fund capped:": "Fondo de ahorro topado:",
+    "Proportional discount seventh day:": "Descuento proporcional séptimo día:",
+    "Fouls are discounted:": "Se descuentan faltas:",
+    "Disabilities are discounted:": "Se descuentan incapacidades:",
+    "Holiday bonus to the anniversary:": "Prima vacacional al aniversario:"
 }
 
 

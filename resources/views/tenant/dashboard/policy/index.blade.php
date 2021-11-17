@@ -19,7 +19,7 @@
                 <h2>Política 1 <a class="text-gray-400 hover:text-gray-700" href="{{route('policies.edit',1)}}"><i class="fas fa-edit"></i></a></h2>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Días económicos:
+                        {{__('Economic days:')}}
                     </div>
                     <div class="flex-1">
                         5 días
@@ -27,7 +27,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Vales de despensa:
+                        {{__('Pantry vouchers:')}}
                     </div>
                     <div class="flex-1">
                         5%
@@ -35,7 +35,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Vale de despensa topado:
+                        {{__('Pantry vouchers capped:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -43,7 +43,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Vales de restaurante:
+                        {{__('Restaurant vouchers:')}}
                     </div>
                     <div class="flex-1">
                         13%
@@ -51,7 +51,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Vales de restaurante topado:
+                        {{__('Restaurant vouchers capped:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -59,7 +59,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Fondo de ahorro:
+                        {{__('Saving Fund:')}}
                     </div>
                     <div class="flex-1">
                        13%
@@ -67,7 +67,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Fondo de ahorro topado:
+                        {{__('Savings fund capped:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -75,7 +75,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Descuento proporcional séptimo día:
+                        {{__('Proportional discount seventh day:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -83,7 +83,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Se descuentan faltas:
+                        {{__('Fouls are discounted:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -91,7 +91,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Se descuentan incapacidades:
+                        {{__('Disabilities are discounted:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -99,7 +99,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Prima vacacional al aniversario:
+                        {{__('Holiday bonus to the anniversary:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -107,10 +107,10 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Cálculo en base a:
+                        {{__('Calculation based on:')}}
                     </div>
                     <div class="flex-1">
-                        Fecha de antigüedad
+                        {{__('Seniority date')}}
                     </div>
                 </div>
 
@@ -120,7 +120,7 @@
                 <h2>Política 2 <a class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Días económicos:
+                         {{__('Economic days:')}}
                     </div>
                     <div class="flex-1">
                         5 días
@@ -128,7 +128,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Vales de despensa:
+                       {{__('Pantry vouchers:')}}
                     </div>
                     <div class="flex-1">
                         0%
@@ -136,7 +136,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Vale de despensa topado:
+                        {{__('Pantry vouchers capped:')}}
                     </div>
                     <div class="flex-1">
                         -
@@ -144,7 +144,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Vales de restaurante:
+                        {{__('Restaurant vouchers:')}}
                     </div>
                     <div class="flex-1">
                         0%
@@ -152,7 +152,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Vales de restaurante topado:
+                       {{__('Restaurant vouchers capped:')}}
                     </div>
                     <div class="flex-1">
                         -
@@ -160,7 +160,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Fondo de ahorro:
+                        {{__('Saving Fund:')}}
                     </div>
                     <div class="flex-1">
                         5%
@@ -168,7 +168,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Fondo de ahorro topado:
+                       {{__('Savings fund capped:')}}
                     </div>
                     <div class="flex-1">
                         -
@@ -176,7 +176,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Descuento proporcional séptimo día:
+                        {{__('Proportional discount seventh day:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -184,7 +184,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Se descuentan faltas:
+                        {{__('Fouls are discounted:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -192,7 +192,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Se descuentan incapacidades:
+                        {{__('Disabilities are discounted:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -200,7 +200,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Prima vacacional al aniversario:
+                        {{__('Holiday bonus to the anniversary:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -208,10 +208,10 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Cálculo en base a:
+                         {{__('Calculation based on:')}}
                     </div>
                     <div class="flex-1">
-                        Fecha de antigüedad
+                        {{__('Seniority date')}}
                     </div>
                 </div>
 
@@ -221,7 +221,7 @@
                 <h2>Política 3 <a class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Días económicos:
+                         {{__('Economic days:')}}
                     </div>
                     <div class="flex-1">
                         7 días
@@ -229,7 +229,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Vales de despensa:
+                        {{__('Pantry vouchers:')}}
                     </div>
                     <div class="flex-1">
                         10%
@@ -237,7 +237,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Vale de despensa topado:
+                        {{__('Pantry vouchers capped:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -245,7 +245,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Vales de restaurante:
+                        {{__('Restaurant vouchers:')}}
                     </div>
                     <div class="flex-1">
                         15%
@@ -253,7 +253,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Vales de restaurante topado:
+                        {{__('Restaurant vouchers capped:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -261,7 +261,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Fondo de ahorro:
+                        {{__('Saving Fund:')}}
                     </div>
                     <div class="flex-1">
                         15%
@@ -269,7 +269,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Fondo de ahorro topado:
+                       {{__('Savings fund capped:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -277,7 +277,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Descuento proporcional séptimo día:
+                        {{__('Proportional discount seventh day:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -285,7 +285,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Se descuentan faltas:
+                        {{__('Fouls are discounted:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -293,7 +293,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Se descuentan incapacidades:
+                        {{__('Disabilities are discounted:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -301,7 +301,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Prima vacacional al aniversario:
+                        {{__('Holiday bonus to the anniversary:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -309,10 +309,10 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Cálculo en base a:
+                         {{__('Calculation based on:')}}
                     </div>
                     <div class="flex-1">
-                        Fecha de antigüedad
+                        {{__('Seniority date')}}
                     </div>
                 </div>
 
@@ -322,7 +322,7 @@
                 <h2>Política 4 <a class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Días económicos:
+                        {{__('Economic days:')}}
                     </div>
                     <div class="flex-1">
                         4 días
@@ -330,7 +330,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Vales de despensa:
+                        {{__('Pantry vouchers:')}}
                     </div>
                     <div class="flex-1">
                         2%
@@ -338,7 +338,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Vale de despensa topado:
+                        {{__('Pantry vouchers capped:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -346,7 +346,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Vales de restaurante:
+                        {{__('Restaurant vouchers:')}}
                     </div>
                     <div class="flex-1">
                         5%
@@ -354,7 +354,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Vales de restaurante topado:
+                        {{__('Restaurant vouchers capped:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -362,7 +362,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Fondo de ahorro:
+                        {{__('Saving Fund:')}}
                     </div>
                     <div class="flex-1">
                         5%
@@ -370,7 +370,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500 ">
-                        Fondo de ahorro topado:
+                        {{__('Savings fund capped:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -378,7 +378,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Descuento proporcional séptimo día:
+                        {{__('Proportional discount seventh day:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -386,7 +386,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Se descuentan faltas:
+                        {{__('Fouls are discounted:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -394,7 +394,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Se descuentan incapacidades:
+                        {{__('Disabilities are discounted:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -402,7 +402,7 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Prima vacacional al aniversario:
+                        {{__('Holiday bonus to the anniversary:')}}
                     </div>
                     <div class="flex-1">
                         Si
@@ -410,10 +410,10 @@
                 </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
-                        Cálculo en base a:
+                        {{__('Calculation based on:')}}
                     </div>
                     <div class="flex-1">
-                        Fecha de antigüedad
+                        {{__('Seniority date')}}
                     </div>
                 </div>
 

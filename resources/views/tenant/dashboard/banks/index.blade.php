@@ -16,7 +16,7 @@
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
 
             <div class="border-bottom-1 border-gray-400 py-3">
-                <h2>Cuenta BBVA 1256 <a class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
+                <h2>Cuenta BBVA 1256 <a href="{{route('banks.edit',1)}}" class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
                         Número de cuenta:

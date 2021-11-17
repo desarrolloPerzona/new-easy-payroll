@@ -57,7 +57,7 @@ class BankController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('tenant.dashboard.banks.edit');
     }
 
     /**

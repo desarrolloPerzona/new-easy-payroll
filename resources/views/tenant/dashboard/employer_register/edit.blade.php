@@ -96,6 +96,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header  " id="headingFiel">
+                            <button class="accordion-button collapsed bg-dark dark:bg-light  text-white dark:text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="uppercase "><i class="fas fa-plus-circle"></i> {{__('New').' '}}</span>
+                            </button>
+                        </div>
+                        <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                            <div class="accordion-body text-dark">
+                                este es un test
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             {{--ACCORDION--}}

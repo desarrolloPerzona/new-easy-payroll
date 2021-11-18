@@ -79,10 +79,17 @@
 
             </div>
 
-            <div class="my-3 pb-4">
+            <div class="my-3 pb-2">
                 <input type="checkbox" id="id" name="drone" value="id"
                        >
                 <label class="text-gray-800">{{__('Savings fund cap')}}</label>
+            </div>
+
+            <label  class="font-bold my-2" for="name">{{__('New concept')}}</label>
+            <div class="btn-top-holder my-3 pb-4">
+                <a href="#" class="btn btn-dark">
+                    {{ __('Add concept') }}
+                </a>
             </div>
 
             {{--Descuento faltas--}}

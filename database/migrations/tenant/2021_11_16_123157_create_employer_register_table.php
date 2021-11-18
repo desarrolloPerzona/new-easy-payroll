@@ -11,6 +11,7 @@ class CreateEmployerRegisterTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
 
@@ -38,6 +39,7 @@ class CreateEmployerRegisterTable extends Migration
      *
      * @return void
      */
+
     public function down()
     {
         Schema::dropIfExists('employer_register');

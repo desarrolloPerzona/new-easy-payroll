@@ -117,7 +117,7 @@
             </div>
 
             <div class="border-bottom-1 border-gray-400 py-3">
-                <h2>Política 2 <a class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
+                <h2>Política 2 <i class="fas fa-edit text-gray-400"></i></h2>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
                          {{__('Economic days:')}}
@@ -218,7 +218,7 @@
             </div>
 
             <div class="border-bottom-1 border-gray-400 py-3">
-                <h2>Política 3 <a class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
+                <h2>Política 3 <i class="fas fa-edit text-gray-400"></i></h2>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
                          {{__('Economic days:')}}
@@ -319,7 +319,7 @@
             </div>
 
             <div class="border-bottom-1 border-gray-400 py-3">
-                <h2>Política 4 <a class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
+                <h2>Política 4 <i class="fas fa-edit text-gray-400"></i></h2>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
                         {{__('Economic days:')}}

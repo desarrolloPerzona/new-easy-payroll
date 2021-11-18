@@ -23,38 +23,198 @@
                     <th></th>
 
                 </tr>
-                <tr>
-                    <td>{{__('Registro CDMX')}}</td>
-                    <td class="text-center">{{__('3')}}</td>
-                    <td class="text-center">{{__('123658')}}</td>
-                    <td colspan="3"></td>
-                    <td><i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                    <td><a href="{{route('employer-register.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i></td>
-                    <td><i class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-
-                </tr>
-                <tr>
-                    <td>{{__('Registro MTY')}}</td>
-                    <td class="text-center">{{__('1')}}</td>
-                    <td class="text-center">{{__('326985')}}</td>
-                    <td colspan="3"></td>
-                    <td><i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                    <td><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                    <td><i class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-
-                </tr>
-                <tr>
-                    <td>{{__('Registro GDL')}}</td>
-                    <td class="text-center">{{__('1')}}</td>
-                    <td class="text-center">{{__('523695')}}</td>
-                    <td colspan="3"></td>
-                    <td><i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                    <td><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                    <td><i class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-
-                </tr>
 
             </table>
+            {{--ACCORDION--}}
+            <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
+                <div class="accordion" id="newItem">
+
+                    {{--CDMX--------------}}
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingOne">
+                            <table class="table">
+
+                                <td style="width: 30%">{{__('Registro CDMX')}}</td>
+                                <td style="width: 30%">{{__('3')}}</td>
+                                <td style="width: 30%">{{__('123658')}}</td>
+                                <td style="width: 1%" colspan="3"></td>
+                                <td style="width: 3%">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseCDMX"
+                                            aria-expanded="false" aria-controls="collapseCDMX">
+                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                    </button>
+                                </td>
+                                <td style="width: 3%"><a href="{{route('employer-register.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i></td>
+                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                            </table>
+                        </div>
+                        <div id="collapseCDMX" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                            <div class="accordion-body text-dark bg-gray-200">
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Registro CDMX</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('risk premium')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">3</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('subdelegational key')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">123658</label></div>
+                                </div>
+
+                                <p class="my-2 font-bold">Enviar movimientos al IMSS mediante certificado IMSS</p>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('IMSS certificate')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">IMSS23695</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('IMSS certified user')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">IMSS23695</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Password')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">••••••••••</label></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    {{--MTY--------------}}
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingFiel">
+
+                            <table class="table">
+
+                                <td style="width: 30%">Registro MTY</td>
+                                <td style="width: 30%">3</td>
+                                <td style="width: 30%">326985</td>
+                                <td style="width: 1%" colspan="3"></td>
+                                <td style="width: 3%">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseMTY"
+                                            aria-expanded="false" aria-controls="collapseCDMX">
+                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                    </button>
+                                </td>
+                                <td style="width: 3%"><i class="fas fa-edit text-gray-400"></i></td>
+                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                            </table>
+
+                        </div>
+                        <div id="collapseMTY" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
+                            <div class="accordion-body text-dark bg-gray-200">
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Registro MTY</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('risk premium')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">1</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('subdelegational key')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">326985</label></div>
+                                </div>
+
+                                <p class="my-2 font-bold">Enviar movimientos al IMSS mediante certificado IMSS</p>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('IMSS certificate')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">IMSS2536</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('IMSS certified user')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">IMSS2536</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Password')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">••••••••••</label></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    {{--GDL--------------}}
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingFiel">
+
+                            <table class="table">
+
+                                <td style="width: 30%">Registro GDL</td>
+                                <td style="width: 30%">1</td>
+                                <td style="width: 30%">523695</td>
+                                <td style="width: 1%" colspan="3"></td>
+                                <td style="width: 3%">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseGDL"
+                                            aria-expanded="false" aria-controls="collapseCDMX">
+                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                    </button>
+                                </td>
+                                <td style="width: 3%"><i class="fas fa-edit text-gray-400"></i></td>
+                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                            </table>
+
+                        </div>
+                        <div id="collapseGDL" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
+                            <div class="accordion-body text-dark bg-gray-200">
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Registro GDL</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('risk premium')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">1</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('subdelegational key')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">523695</label></div>
+                                </div>
+
+                                <p class="my-2 font-bold">Enviar movimientos al IMSS mediante certificado IMSS</p>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('IMSS certificate')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">IMSS52369</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('IMSS certified user')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">IMSS52369</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Password')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">••••••••••</label></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {{--ACCORDION--}}
 
         </div>
 

@@ -737,7 +737,11 @@
     "Disabilities are discounted:": "Se descuentan incapacidades:",
     "Holiday bonus to the anniversary:": "Prima vacacional al aniversario:",
     "Create bank accounts": "Crear cuenta bancaria",
-    "Select": "Selecciona"
+    "Select": "Selecciona",
+    "Create employer register": "Crear registro patronal",
+    "Create payroll group": "Crear grupo de nómina",
+    "Edit policy": "Editar política",
+    "Create policy": "Crear política"
 }
 
 

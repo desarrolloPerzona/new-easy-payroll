@@ -1,18 +1,18 @@
 <x-app-tenant>
     <div class="container mx-auto">
-        <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
+        <h2 class="bg-blueSteel py-2 px-3 mb-4 rounded">
             <i class="fas  fa-building mr-2"></i>
             <span style="display: inline-flex;">{{ __('Edit employer register') }}</span>
         </h2>
-
+            {{--Nombre--------------}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
             <lavel class="font-bold" for="name">{{__('Name')}}</lavel>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name"
                    placeholder="Registro patronal CDMX">
-
+            {{--Prima de riesgo--------------}}
             <lavel class="font-bold" for="name">{{__('Risk premium')}}</lavel>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="3">
-
+            {{--Clave subdelegacional IMSS--------------}}
             <lavel class="font-bold" for="name">{{__('IMSS subdelegational key')}}</lavel>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="123658">
 
@@ -21,23 +21,24 @@
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
                 <div class="accordion" id="newItem">
 
+                    {{--IMSS--------------}}
                     <div class="accordion-item">
-                        <div class="accordion-header" id="headingOne">
+                        <div class="accordion-header mr-4" id="headingOne">
                             <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                     aria-expanded="false" aria-controls="collapseTwo">
 
                                 <div class="my-3">
-                                    <input type="radio" id="huey" name="drone" value="huey"
+                                    <input type="radio" id="id" name="drone" value="id"
                                            checked>
-                                    <label class="text-gray-800">{{__('Send movements through IMSS certificate')}}</label>
                                 </div>
 
                             </button>
+                            <label class="text-gray-800">{{__('Send movements through IMSS certificate')}}</label>
+
                         </div>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
                             <div class="accordion-body text-dark">
 
-                                {{--            IMSS-------------------------------------}}
                                 <div class="flex flex-col flex-grow mb-3">
 
                                     <label class="my-2 font-bold">{{__('IMSS certificate')}}</label>
@@ -101,16 +102,17 @@
                     </div>
 
                     <div class="accordion-item">
-                        <div class="accordion-header" id="headingFiel">
+                        <div class="accordion-header mr-4" id="headingFiel">
                             <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel"
                                     aria-expanded="false" aria-controls="collapseTwo">
 
                                 <div class="my-3">
-                                    <input type="radio" id="huey" name="drone" value="huey">
-                                    <label class="text-gray-800" for="huey">{{__('Send movements to the IMSS through FIEL')}}</label>
+                                    <input type="radio" id="id" name="drone" value="id">
                                 </div>
 
                             </button>
+                            <label class="text-gray-800" for="id">{{__('Send movements to the IMSS through FIEL')}}</label>
+
                         </div>
                         <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">

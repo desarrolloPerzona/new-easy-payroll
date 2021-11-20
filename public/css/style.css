@@ -5401,9 +5401,6 @@ html:not([dir=rtl]) .accordion-button::after {
 .accordion-flush .accordion-collapse {
   border-width: 0;
 }
-.accordion-item{
-    border:none !important;
-}
 .accordion-flush .accordion-item {
   border-right: 0;
   border-left: 0;

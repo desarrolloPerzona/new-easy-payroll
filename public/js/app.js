@@ -2396,8 +2396,9 @@ function getStores() {
 
 // packages/alpinejs/src/clone.js
 var isCloning = false;
-function skipDuringClone(callback) {
-  return (...args) => isCloning || callback(...args);
+function skipDuringClone(callback, fallback = () => {
+}) {
+  return (...args) => isCloning ? fallback(...args) : callback(...args);
 }
 function clone(oldEl, newEl) {
   newEl._x_dataStack = oldEl._x_dataStack;
@@ -2464,10 +2465,11 @@ var Alpine = {
   get raw() {
     return raw;
   },
-  version: "3.5.0",
+  version: "3.5.1",
   flushAndStopDeferringMutations,
   disableEffectScheduling,
   setReactivityEngine,
+  skipDuringClone,
   addRootSelector,
   deferMutations,
   mapAttributes,

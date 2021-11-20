@@ -52,7 +52,7 @@
         </div>
 
             <div class="border-bottom-1 border-gray-400 py-3">
-            <h2>Grupo 2 (Quincenal) <a class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
+            <h2>Grupo 2 (Quincenal) <i class="fas fa-edit text-gray-400"></i></h2>
             <div class="flex pt-2">
                 <div class="flex-1 text-gray-500">
                     Esquema para pago de Nómina:
@@ -88,7 +88,7 @@
             </div>
 
             <div class="border-bottom-1 border-gray-400 py-3">
-                <h2>Grupo 3 (Mensual) <a class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
+                <h2>Grupo 3 (Mensual) <i class="fas fa-edit text-gray-400"></i></h2>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
                         Esquema para pago de Nómina:

@@ -65,7 +65,7 @@ class BusinessController extends Controller
      */
     public function edit(Business $business)
     {
-        //
+        return view('tenant.dashboard.business.edit');
     }
 
     /**

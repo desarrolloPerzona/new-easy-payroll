@@ -6,14 +6,14 @@
         </h2>
             {{--Nombre--------------}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
-            <lavel class="font-bold" for="name">{{__('Name')}}</lavel>
+            <label class="font-bold" for="name">{{__('Name')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name"
                    placeholder="Registro patronal CDMX">
             {{--Prima de riesgo--------------}}
-            <lavel class="font-bold" for="name">{{__('Risk premium')}}</lavel>
+            <label class="font-bold" for="name">{{__('Risk premium')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="3">
             {{--Clave subdelegacional IMSS--------------}}
-            <lavel class="font-bold" for="name">{{__('IMSS subdelegational key')}}</lavel>
+            <label class="font-bold" for="name">{{__('IMSS subdelegational key')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="123658">
 
 
@@ -88,12 +88,12 @@
                                            placeholder="IMSS123658.cer">
                                 </div>
                                 <div>
-                                    <lavel class="font-bold" for="name">{{__('IMSS certified user')}}</lavel>
+                                    <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name"
                                            placeholder="IMSS23695">
                                 </div>
                                 <div>
-                                    <lavel  class="font-bold"for="name">{{__('IMSS certified password')}}</lavel>
+                                    <label  class="font-bold"for="name">{{__('IMSS certified password')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full" type="password" id="name" name="Name"
                                            placeholder="••••••••••">
                                 </div>
@@ -217,12 +217,12 @@
                                            placeholder="FIEL123658.key">
                                 </div>
                                 <div>
-                                    <lavel class="font-bold" for="name">{{__('IMSS certified user')}}</lavel>
+                                    <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name"
                                            placeholder="IMSS23695">
                                 </div>
                                 <div>
-                                    <lavel class="font-bold" for="name">{{__('FIEL password')}}</lavel>
+                                    <label class="font-bold" for="name">{{__('FIEL password')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full" type="password" id="name" name="Name"
                                            placeholder="••••••••••">
                                 </div>
@@ -235,8 +235,8 @@
             </div>
             {{--ACCORDION--}}
 
-            <div class="btn-top-holder my-3">
-                <a href="javascript: history.go(-1)" class="btn btn-dark">
+            <div class="btn-top-holder my-3 flow-root">
+                <a href="javascript: history.go(-1)" class="btn btn-dark float-right">
                     {{ __('Save') }}
                 </a>
             </div>

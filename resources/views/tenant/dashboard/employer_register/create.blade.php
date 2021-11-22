@@ -6,13 +6,13 @@
         </h2>
         {{--Nombre--------------}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
-            <lavel class="font-bold" for="name">{{__('Name')}}</lavel>
+            <label class="font-bold" for="name">{{__('Name')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
             {{--Prima de riesgo--------------}}
-            <lavel class="font-bold" for="name">{{__('Risk premium')}}</lavel>
+            <label class="font-bold" for="name">{{__('Risk premium')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
             {{--Clave subdelegacional IMSS--------------}}
-            <lavel class="font-bold" for="name">{{__('IMSS subdelegational key')}}</lavel>
+            <label class="font-bold" for="name">{{__('IMSS subdelegational key')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
 
@@ -86,11 +86,11 @@
                                            id="IMSScertificate">
                                 </div>
                                 <div>
-                                    <lavel class="font-bold" for="name">{{__('IMSS certified user')}}</lavel>
+                                    <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name">
                                 </div>
                                 <div>
-                                    <lavel class="font-bold" for="name">{{__('IMSS certified password')}}</lavel>
+                                    <label class="font-bold" for="name">{{__('IMSS certified password')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full" type="password" id="name"
                                            name="Name">
                                 </div>
@@ -213,11 +213,11 @@
                                            id="IMSScertificate">
                                 </div>
                                 <div>
-                                    <lavel class="font-bold" for="name">{{__('IMSS certified user')}}</lavel>
+                                    <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name">
                                 </div>
                                 <div>
-                                    <lavel class="font-bold" for="name">{{__('FIEL password')}}</lavel>
+                                    <label class="font-bold" for="name">{{__('FIEL password')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full" type="password" id="name"
                                            name="Name">
                                 </div>

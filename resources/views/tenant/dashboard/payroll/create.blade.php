@@ -6,10 +6,10 @@
         </h2>
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
-            <lavel class="font-bold" for="name">{{__('Payroll group name')}}</lavel>
+            <label class="font-bold" for="name">{{__('Payroll group name')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
-            <lavel class="font-bold my-2" for="name">{{__('Payroll payment scheme')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Payroll payment scheme')}}</label>
             <label>
                 <select class="w-full rounded">
                     <option value="001">{{__('Standard')}}</option>
@@ -18,7 +18,7 @@
                 </select>
             </label>
 
-            <lavel class="font-bold my-2" for="name">{{__('Business name')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Business name')}}</label>
             <label>
                 <select class="w-full rounded">
                     <option value="001">DICC760403IN7</option>
@@ -26,7 +26,7 @@
                 </select>
             </label>
 
-            <lavel class="font-bold my-2" for="name">{{__('Bank account')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Bank account')}}</label>
             <label>
                 <select class="w-full rounded">
                     <option value="001">Cuenta BBVA 1256</option>
@@ -36,7 +36,7 @@
                 </select>
             </label>
 
-            <lavel class="font-bold my-2" for="name">{{__('Payroll period')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Payroll period')}}</label>
             <label>
                 <select class="w-full rounded">
                     <option value="001">Semanal</option>
@@ -47,7 +47,7 @@
                 </select>
             </label>
 
-            <lavel class="font-bold my-2">{{__('Calculate payroll period based on')}}</lavel>
+            <label class="font-bold my-2">{{__('Calculate payroll period based on')}}</label>
             <label>
                 <select class="w-full rounded">
                     <option value="001">30 días</option>
@@ -61,7 +61,7 @@
                 <div class="ml-2"><label>{{__('Calculate income tax for Christmas bonus applying regulation')}}</label></div>
             </div>
 
-            <lavel class="font-bold my-2" for="name">{{__('Calculate employment subsidy in the following way:')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Calculate employment subsidy in the following way:')}}</label>
             <div>
                 <input type="radio" id="Periodica" name="Periodica" value="Periodica" checked>
                 <label for="dewey">{{__('Periodic')}}</label>
@@ -72,7 +72,7 @@
                 <label for="louie">{{__('Daily')}}</label>
             </div>
 
-            <lavel class="font-bold my-2" for="name">{{__('Nómina automática')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Nómina automática')}}</label>
             <div>
                 <input type="radio" id="Si" name="Si" value="Si" checked>
                 <label for="dewey">{{__('Yes')}}</label>

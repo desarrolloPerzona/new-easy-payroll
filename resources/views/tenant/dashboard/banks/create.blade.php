@@ -6,16 +6,16 @@
         </h2>
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
-            <lavel class="font-bold" for="name">{{__('Account name')}}</lavel>
+            <label class="font-bold" for="name">{{__('Account name')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
-            <lavel class="font-bold" for="name">{{__('Account number')}}</lavel>
+            <label class="font-bold" for="name">{{__('Account number')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
-            <lavel class="font-bold" for="name">{{__('Description')}}</lavel>
+            <label class="font-bold" for="name">{{__('Description')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
-            <lavel class="font-bold my-2" for="name">{{__('Bank')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Bank')}}</label>
             <label>
                 <select class="w-full rounded">
                     <option value="40138">{{__('Select')}}</option>
@@ -66,13 +66,13 @@
                 </select>
             </label>
 
-            <lavel class="font-bold" for="name">{{__('Information number')}}</lavel>
+            <label class="font-bold" for="name">{{__('Information number')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" >
 
-            <lavel class="font-bold" for="name">{{__('Branch number')}}</lavel>
+            <label class="font-bold" for="name">{{__('Branch number')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" >
 
-            <lavel class="font-bold" for="name">{{__('CLABE account')}}</lavel>
+            <label class="font-bold" for="name">{{__('CLABE account')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" >
 
             <div class="btn-top-holder my-3">

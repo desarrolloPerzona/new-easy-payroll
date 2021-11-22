@@ -15,7 +15,7 @@ class TableValueController extends Controller
      */
     public function index()
     {
-        //
+        return view('tenant.dashboard.tablevalue.index');
     }
 
     /**

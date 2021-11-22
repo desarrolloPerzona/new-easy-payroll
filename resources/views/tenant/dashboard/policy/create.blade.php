@@ -6,14 +6,14 @@
         </h2>
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
-            <lavel class="font-bold" for="name">{{__('Policy name')}}</lavel>
+            <label class="font-bold" for="name">{{__('Policy name')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
-            <lavel class="font-bold" for="name">{{__('Economic days')}}</lavel>
+            <label class="font-bold" for="name">{{__('Economic days')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
             {{--Vales despensa--}}
-            <lavel class="font-bold my-2" for="name">{{__('Grocery coupon')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Grocery coupon')}}</label>
             <div class="flex">
 
                 <div class="felx-1 mt-2 mr-2 p-0 w-full">
@@ -37,7 +37,7 @@
             </div>
 
             {{--Vales Restaurante--}}
-            <lavel class="font-bold my-2" for="name">{{__('Restaurant voucher')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Restaurant voucher')}}</label>
             <div class="flex">
 
                 <div class="felx-1 mt-2 mr-2 p-0 w-full">
@@ -61,7 +61,7 @@
             </div>
 
             {{--Fondo de ahorro--}}
-            <lavel class="font-bold my-2" for="name">{{__('Saving Fund')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Saving Fund')}}</label>
             <div class="flex">
 
                 <div class="felx-1 mt-2 mr-2 p-0 w-full">
@@ -109,7 +109,7 @@
             </div>
 
             {{--DCalculo base--}}
-            <lavel class="font-bold my-2" for="name">{{__('Calculation based on:')}}</lavel>
+            <label class="font-bold my-2" for="name">{{__('Calculation based on:')}}</label>
 
             <div class="my-2">
                 <input type="radio" id="id" name="name" value="value">

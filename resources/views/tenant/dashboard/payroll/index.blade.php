@@ -15,113 +15,245 @@
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
 
-            <div class="border-bottom-1 border-gray-400 py-3">
-            <h2>Grupo 1 (Semanal) <a class="text-gray-400 hover:text-gray-700" href="{{route('payroll.edit',1)}}"><i class="fas fa-edit"></i></a></h2>
-            <div class="flex pt-2">
-                <div class="flex-1 text-gray-500">
-                    Esquema para pago de Nómina:
-                </div>
-                <div class="flex-1">
-                    Estandar
-                </div>
-            </div>
-            <div class="flex pt-2">
-                <div class="flex-1 text-gray-500">
-                    Cuenta Bancaria:
-                </div>
-                <div class="flex-1">
-                    Cuenta BBVA 12584
-                </div>
-            </div>
-            <div class="flex pt-2">
-                <div class="flex-1 text-gray-500">
-                    Periodo de nómina:
-                </div>
-                <div class="flex-1">
-                   Semanal
-                </div>
-            </div>
-                <div class="flex pt-2">
-                <div class="flex-1 text-gray-500">
-                    Calcular periodo de nómina con base a:
-                </div>
-                <div class="flex-1">
-                   30 días
-                </div>
-            </div>
-        </div>
+            <table class="table">
+                <tr>
+                    <th>{{__('Name')}}</th>
+                    <th class="text-center">{{__('Payroll period')}}</th>
+                    <th class="text-center">{{__('Bank account')}}</th>
+                    <th colspan="3"></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
 
-            <div class="border-bottom-1 border-gray-400 py-3">
-            <h2>Grupo 2 (Quincenal) <i class="fas fa-edit text-gray-400"></i></h2>
-            <div class="flex pt-2">
-                <div class="flex-1 text-gray-500">
-                    Esquema para pago de Nómina:
-                </div>
-                <div class="flex-1">
-                    Estandar
-                </div>
-            </div>
-            <div class="flex pt-2">
-                <div class="flex-1 text-gray-500">
-                    Cuenta Bancaria:
-                </div>
-                <div class="flex-1">
-                    Cuenta BBVA 12584
-                </div>
-            </div>
-            <div class="flex pt-2">
-                <div class="flex-1 text-gray-500">
-                    Periodo de nómina:
-                </div>
-                <div class="flex-1">
-                   Semanal
-                </div>
-            </div>
-                <div class="flex pt-2">
-                    <div class="flex-1 text-gray-500">
-                        Calcular periodo de nómina con base a:
-                    </div>
-                    <div class="flex-1">
-                        30.4 días
-                    </div>
-                </div>
-            </div>
+                </tr>
 
-            <div class="border-bottom-1 border-gray-400 py-3">
-                <h2>Grupo 3 (Mensual) <i class="fas fa-edit text-gray-400"></i></h2>
-                <div class="flex pt-2">
-                    <div class="flex-1 text-gray-500">
-                        Esquema para pago de Nómina:
+            </table>
+            {{--ACCORDION--}}
+            <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
+                <div class="accordion" id="newItem">
+
+                    {{--Semanal 1--------------}}
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingOne">
+                            <table class="table">
+
+                                <td style="width: 30%">Grupo 1 (Semanal)</td>
+                                <td style="width: 35%">Semanal</td>
+                                <td style="width: 25%">BBVA 12584</td>
+                                <td style="width: 1%" colspan=""></td>
+                                <td style="width: 3%">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseS1" aria-expanded="false" aria-controls="collapseS1">
+                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                    </button>
+                                </td>
+                                <td style="width: 3%"><a href="{{route('payroll.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i></td>
+                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                            </table>
+                        </div>
+                        <div id="collapseS1" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                            <div class="accordion-body text-dark bg-gray-200">
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Grupo 1 (Semanal)</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Scheme for payroll')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Estándar</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Business name')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Cuenta 01 BBVA</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Bank account')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Semanal</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Payroll period')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">7 días</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate payroll period based on:')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Periodica</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate employment subsidy in the following way:')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">30 Días</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate income tax for Christmas bonus applying regulation')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Automatic payroll')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex-1">
-                        Estandar
+
+                    {{--Quincenal 2--------------}}
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingFiel">
+
+                            <table class="table">
+
+                                <td style="width: 30%">Grupo 2 (Quincenal)</td>
+                                <td style="width: 35%">Quincenal</td>
+                                <td style="width: 25%">BBVA 12584</td>
+                                <td style="width: 1%" colspan="3"></td>
+                                <td style="width: 3%">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseS2" aria-expanded="false" aria-controls="collapseS1">
+                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                    </button>
+                                </td>
+                                <td style="width: 3%"><i class="fas fa-edit text-gray-400"></i></td>
+                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                            </table>
+
+                        </div>
+                        <div id="collapseS2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                            <div class="accordion-body text-dark bg-gray-200">
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Grupo 2 (Quincenal)</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Scheme for payroll')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Estándar</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Business name')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Cuenta 01 BBVA</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Bank account')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Quincenal</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Payroll period')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">30 días</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate payroll period based on:')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Periodica</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate employment subsidy in the following way:')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">15 Días</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate income tax for Christmas bonus applying regulation')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Automatic payroll')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="flex pt-2">
-                    <div class="flex-1 text-gray-500">
-                        Cuenta Bancaria:
+
+                    {{--Mensual 2--------------}}
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingFiel">
+
+                            <table class="table">
+
+                                <td style="width: 30%">Grupo 3 (Mensual)</td>
+                                <td style="width: 35%">Mensual</td>
+                                <td style="width: 25%">Santander 325698</td>
+                                <td style="width: 1%" colspan="3"></td>
+                                <td style="width: 3%">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseS3" aria-expanded="false" aria-controls="collapseS1">
+                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                    </button>
+                                </td>
+                                <td style="width: 3%"><i class="fas fa-edit text-gray-400"></i></td>
+                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                            </table>
+
+                        </div>
+                        <div id="collapseS3" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                            <div class="accordion-body text-dark bg-gray-200">
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Grupo 3 (Mensual)</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Scheme for payroll')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Estándar</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Business name')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Cuenta Santander 325698</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Bank account')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Mensual</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Payroll period')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">30 días</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate payroll period based on:')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Periodica</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate employment subsidy in the following way:')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">30.4 Días</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate income tax for Christmas bonus applying regulation')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Automatic payroll')}}</label></div>
+                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex-1">
-                        Cuenta Santander 325698
-                    </div>
-                </div>
-                <div class="flex pt-2">
-                    <div class="flex-1 text-gray-500">
-                        Periodo de nómina:
-                    </div>
-                    <div class="flex-1">
-                        Semanal
-                    </div>
-                </div>
-                <div class="flex pt-2">
-                    <div class="flex-1 text-gray-500">
-                        Calcular periodo de nómina con base a:
-                    </div>
-                    <div class="flex-1">
-                        30 días
-                    </div>
+
                 </div>
             </div>
+            {{--ACCORDION--}}
+
+
         </div>
 
 

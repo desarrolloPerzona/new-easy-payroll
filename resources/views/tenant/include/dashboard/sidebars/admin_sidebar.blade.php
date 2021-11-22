@@ -62,6 +62,31 @@
                             {{__('Policies')}}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('areapositions.index')}}">
+
+                            {{__('Areas and positions')}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('workingdayholiday.index')}}">
+
+                            {{__('Working and holiday')}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('concept.index')}}">
+
+                            {{__('Concepts')}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('tablevalue.index')}}">
+
+                            {{__('Table and value')}}
+                        </a>
+                    </li>
+
                 </ul>
             </li>
 

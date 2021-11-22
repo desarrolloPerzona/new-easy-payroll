@@ -3,13 +3,17 @@
 declare(strict_types=1);
 
 
+use App\Http\Controllers\Tenant\AreaPositionController;
 use App\Http\Controllers\Tenant\BankController;
 use App\Http\Controllers\Tenant\BusinessController;
+use App\Http\Controllers\Tenant\ConceptController;
 use App\Http\Controllers\Tenant\EmployerRegisterController;
 use App\Http\Controllers\Tenant\PayrollController;
 use App\Http\Controllers\Tenant\PolicyController;
+use App\Http\Controllers\Tenant\TableValueController;
 use App\Http\Controllers\Tenant\TenantDashboardController;
 use App\Http\Controllers\Tenant\TenantWelcomeController;
+use App\Http\Controllers\Tenant\WorkingDayHolidayController;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
@@ -40,5 +44,9 @@ Route::middleware([
     Route::resource('/banks',BankController::class)->middleware('auth:web');
     Route::resource('/payroll',PayrollController::class)->middleware('auth:web');
     Route::resource('/policies',PolicyController::class)->middleware('auth:web');
+    Route::resource('/areapositions',AreaPositionController::class)->middleware('auth:web');
+    Route::resource('/concept',ConceptController::class)->middleware('auth:web');
+    Route::resource('/tablevalue',TableValueController::class)->middleware('auth:web');
+    Route::resource('/workingdayholiday',WorkingDayHolidayController::class)->middleware('auth:web');
     Route::resource('/employer-register',EmployerRegisterController::class)->middleware('auth:web');
 });

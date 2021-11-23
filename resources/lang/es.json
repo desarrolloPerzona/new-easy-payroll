@@ -774,8 +774,15 @@
     "Automatic STP payment": "Pago STP automático",
     "IMSS worker integrated IMSS employer to salary": "IMSS obrero integrado IMSS patronal al salario",
     "Edit business": "Editar empresa",
-    "Adress": "Dorección",
-    "Add account": "Agregar cuenta"
+    "Address": "Dorección",
+    "Add account": "Agregar cuenta",
+    "SAT code": "Clabe SAT",
+    "Concept type": "Tipo de concepto",
+    "Gravel ISN": "Grava ISN",
+    "Social Security": "Previsión social",
+    "Gravel ISR": "Grava ISR",
+    "IMSS integrate": "Integra IMSS",
+    "Payment type": "Tipo de pago"
 }
 
 

@@ -6,7 +6,7 @@
         </h2>
 
         <div class="btn-top-holder my-3">
-            <a href="{{route('employer-register.create',1)}}" class="btn btn-dark">
+            <a href="{{route('workingdayholiday.create',1)}}" class="btn btn-dark">
                 <i class="fas fa-plus-circle"></i>
                 {{ __('New working day') }}
             </a>
@@ -30,7 +30,7 @@
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
                 <div class="accordion" id="newItem">
 
-                    {{--CDMX--------------}}
+                    {{--J1--------------}}
                     <div class="accordion-item">
                         <div class="accordion-header mr-4" id="headingOne">
                             <table class="table">
@@ -40,7 +40,7 @@
                                 <td style="width: 25%">{{__('8 horas')}}</td>
                                 <td style="width: 2%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseJ1" aria-expanded="false" aria-controls="collapseJ1">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseS1" aria-expanded="false" aria-controls="collapseS1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
@@ -49,7 +49,7 @@
 
                             </table>
                         </div>
-                        <div id="collapseJ1" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                        <div id="collapseS1" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200">
 
                                 <div class="flex">
@@ -84,36 +84,36 @@
 
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Lunes</td>
-                                    <td style="width: 30%">9:00</td>
-                                    <td style="width: 30%">18:00</td>
+                                    <td class="p-0" style="width: 30%">Lunes</td>
+                                    <td class="p-0" style="width: 30%">9:00</td>
+                                    <td class="p-0" style="width: 30%">18:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Martes</td>
-                                    <td style="width: 30%">9:00</td>
-                                    <td style="width: 30%">18:00</td>
+                                    <td class="p-0" style="width: 30%">Martes</td>
+                                    <td class="p-0" style="width: 30%">9:00</td>
+                                    <td class="p-0" style="width: 30%">18:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Miercoles</td>
-                                    <td style="width: 30%">9:00</td>
-                                    <td style="width: 30%">18:00</td>
+                                    <td class="p-0" style="width: 30%">Miercoles</td>
+                                    <td class="p-0" style="width: 30%">9:00</td>
+                                    <td class="p-0" style="width: 30%">18:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Jueves</td>
-                                    <td style="width: 30%">9:00</td>
-                                    <td style="width: 30%">18:00</td>
+                                    <td class="p-0" style="width: 30%">Jueves</td>
+                                    <td class="p-0" style="width: 30%">9:00</td>
+                                    <td class="p-0" style="width: 30%">18:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Viernes</td>
-                                    <td style="width: 30%">9:00</td>
-                                    <td style="width: 30%">18:00</td>
+                                    <td class="p-0" style="width: 30%">Viernes</td>
+                                    <td class="p-0" style="width: 30%">9:00</td>
+                                    <td class="p-0" style="width: 30%">18:00</td>
                                 </table>
                             </div>
                             </div>
                         </div>
-                    </div>
 
-                    {{--MTY--------------}}
+
+                    {{--J2--------------}}
                     <div class="accordion-item">
                         <div class="accordion-header mr-4" id="headingFiel">
 
@@ -124,17 +124,17 @@
                                 <td style="width: 25%">{{__('8 horas')}}</td>
                                 <td style="width: 2%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseJ2" aria-expanded="false" aria-controls="collapseJ2">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseS2" aria-expanded="false" aria-controls="collapseS1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('employer-register.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i></td>
+                                <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
                             </table>
 
                         </div>
-                        <div id="collapseJ2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                        <div id="collapseS2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200">
 
                                 <div class="flex">
@@ -169,35 +169,35 @@
 
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Lunes</td>
-                                    <td style="width: 30%">18:00</td>
-                                    <td style="width: 30%">2:00</td>
+                                    <td class="p-0" style="width: 30%">Lunes</td>
+                                    <td class="p-0" style="width: 30%">18:00</td>
+                                    <td class="p-0" style="width: 30%">2:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Martes</td>
-                                    <td style="width: 30%">18:00</td>
-                                    <td style="width: 30%">2:00</td>
+                                    <td class="p-0" style="width: 30%">Martes</td>
+                                    <td class="p-0" style="width: 30%">18:00</td>
+                                    <td class="p-0" style="width: 30%">2:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Miercoles</td>
-                                    <td style="width: 30%">18:00</td>
-                                    <td style="width: 30%">2:00</td>
+                                    <td class="p-0" style="width: 30%">Miercoles</td>
+                                    <td class="p-0" style="width: 30%">18:00</td>
+                                    <td class="p-0" style="width: 30%">2:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Jueves</td>
-                                    <td style="width: 30%">18:00</td>
-                                    <td style="width: 30%">2:00</td>
+                                    <td class="p-0" style="width: 30%">Jueves</td>
+                                    <td class="p-0" style="width: 30%">18:00</td>
+                                    <td class="p-0" style="width: 30%">2:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Viernes</td>
-                                    <td style="width: 30%">18:00</td>
-                                    <td style="width: 30%">2:00</td>
+                                    <td class="p-0" style="width: 30%">Viernes</td>
+                                    <td class="p-0" style="width: 30%">18:00</td>
+                                    <td class="p-0" style="width: 30%">2:00</td>
                                 </table>
                             </div>
                         </div>
                     </div>
 
-                    {{--GDL--------------}}
+                    {{--J3--------------}}
                     <div class="accordion-item">
                         <div class="accordion-header mr-4" id="headingFiel">
 
@@ -208,17 +208,17 @@
                                 <td style="width: 25%">{{__('6 horas')}}</td>
                                 <td style="width: 2%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseJ3" aria-expanded="false" aria-controls="collapseJ3">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseS3" aria-expanded="false" aria-controls="collapseS1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('employer-register.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i></td>
+                                <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
                             </table>
 
                         </div>
-                        <div id="collapseJ3" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                        <div id="collapseS3" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200">
 
                                 <div class="flex">
@@ -253,29 +253,29 @@
 
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Lunes</td>
-                                    <td style="width: 30%">2:00</td>
-                                    <td style="width: 30%">8:00</td>
+                                    <td class="p-0" style="width: 30%">Lunes</td>
+                                    <td class="p-0" style="width: 30%">2:00</td>
+                                    <td class="p-0" style="width: 30%">8:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Martes</td>
-                                    <td style="width: 30%">2:00</td>
-                                    <td style="width: 30%">8:00</td>
+                                    <td class="p-0" style="width: 30%">Martes</td>
+                                    <td class="p-0" style="width: 30%">2:00</td>
+                                    <td class="p-0" style="width: 30%">8:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Miercoles</td>
-                                    <td style="width: 30%">2:00</td>
-                                    <td style="width: 30%">8:00</td>
+                                    <td class="p-0" style="width: 30%">Miercoles</td>
+                                    <td class="p-0" style="width: 30%">2:00</td>
+                                    <td class="p-0" style="width: 30%">8:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Jueves</td>
-                                    <td style="width: 30%">2:00</td>
-                                    <td style="width: 30%">8:00</td>
+                                    <td class="p-0" style="width: 30%">Jueves</td>
+                                    <td class="p-0" style="width: 30%">2:00</td>
+                                    <td class="p-0" style="width: 30%">8:00</td>
                                 </table>
                                 <table class="table">
-                                    <td style="width: 30%">Viernes</td>
-                                    <td style="width: 30%">2:00</td>
-                                    <td style="width: 30%">8:00</td>
+                                    <td class="p-0" style="width: 30%">Viernes</td>
+                                    <td class="p-0" style="width: 30%">2:00</td>
+                                    <td class="p-0" style="width: 30%">8:00</td>
                                 </table>
                             </div>
                         </div>

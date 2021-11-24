@@ -5,11 +5,50 @@
             <span style="display: inline-flex;">{{ __('Areas and positions') }}</span>
         </h2>
 
-        <div class="btn-top-holder my-3">
-            <a href="{{route('areapositions.create',1)}}" class="btn btn-dark">
-                <i class="fas fa-plus-circle"></i>
-                {{ __('New Areas and positions') }}
-            </a>
+        {{--Nueva puesto ----------------}}
+
+        <div class="accordion btn-top-holder my-3 max-w-6xl m-auto" id="newPosition">
+
+            <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
+                <div class="accordion-header mr-4" id="headingOne">
+
+
+                    <div class="flex">
+                        <div class="flex-1 pb-2">{{__('New Area')}}</div>
+                        <div class="flex-2">
+                            <button type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseP1" aria-expanded="false"
+                                    aria-controls="collapseP1"><i class="fas fa-plus-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div id="collapseP1" class="accordion-collapse collapse"
+                         aria-labelledby="headingTwo" data-bs-parent="#newPosition">
+                        <div class="accordion-body text-dark bg-gray-100 rounded">
+                            <div>
+                            <div><label class="font-bold" for="name">{{__('Area name')}}</label></div>
+                            <div><input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name"></div>
+                        </div>
+
+                            <div type="button" data-bs-toggle="collapse"
+                                 data-bs-target="#collapseP1" aria-expanded="false"
+                                 aria-controls="collapseP1">
+                                <a href="#" class="btn btn-dark">
+                                    <i class="fas fa-plus-circle"></i>
+                                    {{ __('Save') }}
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
         </div>
 
 

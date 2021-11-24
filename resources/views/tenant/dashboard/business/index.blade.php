@@ -188,7 +188,6 @@
 
                             <div class="accordion" id="newBranch">
 
-                                {{--P1--------------}}
                                 <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
                                     <div class="accordion-header mr-4" id="headingOne">
 
@@ -230,7 +229,9 @@
                                                                                    type="text" id="name" name="Name">
                                                         </div>
                                                     </div>
-                                                        <div class="btn-top-holder my-3">
+                                                        <div type="button" data-bs-toggle="collapse"
+                                                             data-bs-target="#collapseP1" aria-expanded="false"
+                                                             aria-controls="collapseP1">
                                                             <a href="#" class="btn btn-dark">
                                                             <i class="fas fa-plus-circle"></i>
                                                             {{ __('Save') }}

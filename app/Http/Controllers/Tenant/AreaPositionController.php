@@ -59,7 +59,7 @@ class AreaPositionController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('tenant.dashboard.areapositions.edit');
     }
 
     /**

@@ -83,6 +83,17 @@
                 <label for="louie">{{__('No')}}</label>
             </div>
 
+            <label class="font-bold my-2" for="name">{{__('Holiday schedule')}}</label>
+            <div>
+                <input type="radio" id="Si" name="Si" value="Si" checked>
+                <label for="dewey">{{__('Yes')}}</label>
+            </div>
+
+            <div>
+                <input type="radio" id="No" name="No" value="No">
+                <label for="louie">{{__('No')}}</label>
+            </div>
+
 
             <div class="btn-top-holder my-3 flow-root">
                 <a href="javascript: history.go(-1)" class="btn btn-dark float-right">

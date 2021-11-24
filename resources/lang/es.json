@@ -786,7 +786,26 @@
     "Payment type": "Tipo de pago",
     "New branch": "Nueva sede",
     "Employer registration": "Registro patronal",
-    "Create business": "Crear empresa"
+    "Create business": "Crear empresa",
+    "Edit areas and positions": "Editar áreas y puestos",
+    "Area name": "Nombre del área",
+    "Area": "Área",
+    "Positions": "Puestos",
+    "New position": "Nuevo puesto",
+    "New Area": "Nueva Área",
+    "Holiday name": "Nuevo día festivo",
+    "Select Date": "Selcciona fecha",
+    "Sun": "Dom",
+    "Mon":"Lun",
+    "Tue": "Mar",
+    "Wed":"Mier",
+    "Thu": "Jue",
+    "Fri":"Vie",
+    "Sat": "Sab",
+    "It works": "Se labora",
+    "Holiday schedule": "Horario día festivo",
+    "All day": "Todo el día",
+    "By schedule": "Por horario"
 
 }
 

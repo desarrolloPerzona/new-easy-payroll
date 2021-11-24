@@ -665,6 +665,46 @@
                                             <input type="radio" id="byschedule" name="No" value="No">
                                             <label for="louie">{{__('By schedule')}}</label>
                                         </div>
+
+                                    </div>
+                                    <div class="flex-1 text-center">
+                                        <div><label class="font-bold my-2" for="name">Horario</label></div>
+                                        <div class="pt-2"><label>
+                                            <select class="w-full rounded">
+                                                <option value="001">00:00</option>
+                                                <option value="002">01:00</option>
+                                                <option value="002">02:00</option>
+                                                <option value="002">03:00</option>
+                                                <option value="002">04:00</option>
+                                                <option value="002">05:00</option>
+                                                <option value="002">06:00</option>
+                                                <option value="002">07:00</option>
+                                                <option value="002">08:00</option>
+                                                <option value="002">09:00</option>
+                                                <option value="002">10:00</option>
+                                                <option value="002">11:00</option>
+                                                <option value="002">12:00</option>
+
+                                            </select>
+                                        </label>
+                                        <label>
+                                            <select class="w-full rounded">
+                                                <option value="001">00:00</option>
+                                                <option value="002">01:00</option>
+                                                <option value="002">02:00</option>
+                                                <option value="002">03:00</option>
+                                                <option value="002">04:00</option>
+                                                <option value="002">05:00</option>
+                                                <option value="002">06:00</option>
+                                                <option value="002">07:00</option>
+                                                <option value="002">08:00</option>
+                                                <option value="002">09:00</option>
+                                                <option value="002">10:00</option>
+                                                <option value="002">11:00</option>
+                                                <option value="002">12:00</option>
+
+                                            </select>
+                                        </label></div>
                                     </div>
 
                                 </div>

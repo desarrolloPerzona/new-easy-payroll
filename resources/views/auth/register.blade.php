@@ -40,6 +40,7 @@
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}"/>
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password"/>
+                <small>{{__('Minimum 8 characters')}}</small>
                 @error('password') <small class="text-indigo-300">{{ $message }}</small> @enderror
             </div>
 

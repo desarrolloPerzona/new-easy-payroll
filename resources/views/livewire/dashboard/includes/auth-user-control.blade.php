@@ -55,7 +55,7 @@
                                         </x-jet-dropdown-link>
                                     </form>
                                     @endrole
-                                    @role('Admin')
+                                    @role('SuperAdmin')
                                     <form method="POST" action="{{ route('tenant.logout') }}">
                                         @csrf
                                         <x-jet-dropdown-link href="{{ route('logout') }}"

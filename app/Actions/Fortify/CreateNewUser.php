@@ -34,7 +34,7 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'tenancy_company' => ['required', 'string', 'max:255'],
-            'tenancy_domain' => ['required', 'string', 'max:255'],
+            'tenancy_domain' => ['required', 'string', 'max:255', 'unique:tenants'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
@@ -123,11 +123,16 @@ class CreateNewUser implements CreatesNewUsers
                 'name' => $user->tenancy_company,
                 'business_name' => $user->tenancy_company,
             ]);
+
             BusinessBranch::create([
                 'business_id' => 1,
                 'branch_id' => 1
             ]);
         });
+
+        /**
+         *
+         */
 
 
         /**

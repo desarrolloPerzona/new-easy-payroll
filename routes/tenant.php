@@ -16,8 +16,10 @@ use App\Http\Controllers\Tenant\TenantWelcomeController;
 use App\Http\Controllers\Tenant\WorkingDayHolidayController;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
+use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
 use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
+use Stancl\Tenancy\Middleware\ScopeSessions;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,8 +35,9 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 Route::middleware([
     'web',
-    \Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain::class,
+    InitializeTenancyByDomainOrSubdomain::class,
     PreventAccessFromCentralDomains::class,
+    ScopeSessions::class
 ])->group(function () {
     Route::get('/', [TenantWelcomeController::class, 'index'])->name('tenant.home');
     include('auth.php');

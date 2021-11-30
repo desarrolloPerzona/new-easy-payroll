@@ -40,7 +40,7 @@
                                     </button>
                                 </td>
                                 <td style="width: 3%"><a href="{{route('business.edit',1)}}"> <i
-                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i>
+                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                                 </td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 

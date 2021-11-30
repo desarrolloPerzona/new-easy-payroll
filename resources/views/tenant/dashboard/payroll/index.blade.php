@@ -46,7 +46,7 @@
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('payroll.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i></td>
+                                <td style="width: 3%"><a href="{{route('payroll.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a></td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
                             </table>

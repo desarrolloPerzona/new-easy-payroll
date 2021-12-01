@@ -4,7 +4,7 @@
             <i class="fas  fa-building mr-2"></i>
             <span style="display: inline-flex;">{{ __('Edit employer register') }}</span>
         </h2>
-            {{--Nombre--------------}}
+        {{--Nombre--------------}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
             <label class="font-bold" for="name">{{__('Name')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name"
@@ -15,9 +15,7 @@
             {{--Clave subdelegacional IMSS--------------}}
             <label class="font-bold" for="name">{{__('IMSS subdelegational key')}}</label>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="123658">
-
-
-          {{--ACCORDION--}}
+            {{--ACCORDION--}}
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
                 <div class="accordion" id="newItem">
 
@@ -93,7 +91,7 @@
                                            placeholder="IMSS23695">
                                 </div>
                                 <div>
-                                    <label  class="font-bold"for="name">{{__('IMSS certified password')}}</label>
+                                    <label class="font-bold" for="name">{{__('IMSS certified password')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full" type="password" id="name" name="Name"
                                            placeholder="••••••••••">
                                 </div>

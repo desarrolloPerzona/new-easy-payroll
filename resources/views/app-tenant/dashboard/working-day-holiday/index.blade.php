@@ -12,7 +12,6 @@
             </a>
         </div>
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
-
             <table class="table">
                 <tr>
                     <th>{{__('Working day')}}</th>
@@ -22,9 +21,7 @@
                     <th></th>
                     <th></th>
                     <th></th>
-
                 </tr>
-
             </table>
             {{--ACCORDION--}}
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">

@@ -54,11 +54,12 @@ class WorkingDayHolidayController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Tenant\WorkingDayHoliday  $workingDayHoliday
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function edit(WorkingDayHoliday $workingDayHoliday)
+    public function edit($id)
     {
-        //
+
+        return view('app-tenant.dashboard.working-day-holiday.edit');
     }
 
     /**

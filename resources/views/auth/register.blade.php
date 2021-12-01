@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-guest>
     @section('title') {{__('Register') }} @endsection
     <x-jet-authentication-card>
         <x-slot name="logo">
@@ -114,4 +114,4 @@
             });
         </script>
     @endpush
-</x-guest-layout>
+</x-app-guest>

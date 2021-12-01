@@ -8,7 +8,7 @@ class FiscalRegimeController extends Controller
 {
     public function index()
     {
-        return view ('admin.fiscal-regime.index');
+        return view ('app-landlord.dashboard.fiscal-regime.index');
     }
 
 }

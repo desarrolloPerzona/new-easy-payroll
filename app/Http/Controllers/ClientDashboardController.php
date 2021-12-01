@@ -16,7 +16,7 @@ class ClientDashboardController extends Controller
     {
 
         $user = Auth::user();
-        return view('client.index',compact('user'));
+        return view('app-client.index',compact('user'));
     }
 
     /**

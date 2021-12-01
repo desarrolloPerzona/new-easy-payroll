@@ -14,7 +14,7 @@ class BankController extends Controller
      */
     public function index()
     {
-        return view('admin.banks.index');
+        return view('app-landlord.dashboard.banks.index');
     }
 
     /**

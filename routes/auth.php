@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/tenant-register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')
                 ->name('tenant.register');
-
 Route::post('/tenant-register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest');
 

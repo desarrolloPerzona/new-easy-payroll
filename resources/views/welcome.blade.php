@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-guest>
     @section('title') {{__('Welcome') }} @endsection
     @section('seo-description')
         'R.R.H.H',
@@ -7,4 +7,4 @@
         <h2>{{__('Welcome to')}} <span class="text-indigo-400">{{env('APP_NAME')}}</span></h2>
     </div>
     <h2{{__('Welcome to').' '.env('APP_NAME')}}></h2>
-</x-guest-layout>
+</x-app-guest>

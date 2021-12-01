@@ -14,17 +14,17 @@ class PayrollController extends Controller
      */
     public function index()
     {
-        return view('tenant.dashboard.payroll.index');
+        return view('app-tenant.dashboard.payroll.index');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        return view('tenant.dashboard.payroll.create');
+        return view('app-tenant.dashboard.payroll.create');
     }
 
     /**
@@ -53,11 +53,11 @@ class PayrollController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($id)
     {
-        return view('tenant.dashboard.payroll.edit');
+        return view('app-tenant.dashboard.payroll.edit');
     }
 
     /**

@@ -14,17 +14,17 @@ class PolicyController extends Controller
      */
     public function index()
     {
-        return view('tenant.dashboard.policy.index');
+        return view('app-tenant.dashboard.policy.index');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        return view('tenant.dashboard.policy.create');
+        return view('app-tenant.dashboard.policy.create');
     }
 
     /**
@@ -53,11 +53,11 @@ class PolicyController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($id)
     {
-        return view('tenant.dashboard.policy.edit');
+        return view('app-tenant.dashboard.policy.edit');
     }
 
     /**

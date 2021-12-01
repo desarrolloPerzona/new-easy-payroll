@@ -13,7 +13,7 @@ class TenantWelcomeController extends Controller
         $business = Business::find(1);
 
 
-        return view('tenant.index',compact('db_name','business'));
+        return view('app-tenant.index',compact('db_name','business'));
     }
 
 

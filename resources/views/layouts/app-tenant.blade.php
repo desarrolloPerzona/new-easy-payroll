@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{--META--}}
-    @include('tenant.include.common.head.meta')
+    @include('app-tenant.includes.common.head.meta')
     {{--STYLES--}}
-    @include('tenant.include.common.head.vendor-css')
+    @include('app-tenant.includes.common.head.vendor-css')
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     {{--CORE UI STYLES--}}
     <link href="/css/style.css" rel="stylesheet">
@@ -16,11 +16,11 @@
     <script src="/js/app.js" defer></script>
 </head>
 <body class="font-sans antialiased">
-@include('tenant.include.dashboard.sidebars.admin_sidebar')
+@include('app-tenant.includes.dashboard.sidebars.admin_sidebar')
 {{--CORE UI WRAPPER--}}
 <div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
     {{--TOP NAV BAR--}}
-    @include('tenant.include.dashboard.headers.admin_header')
+    @include('app-tenant.includes.dashboard.headers.admin_header')
 {{ $slot }}
 
 
@@ -28,7 +28,7 @@
 
 {{--STACKS SCRIPTS & LIVEWIRE--}}
 @livewireScripts
-@include('tenant.include.common.scripts.vendor-scripts')
+@include('app-tenant.includes.common.scripts.vendor-scripts')
 {{--CORE UI SCRIPTS--}}
 <script src="{{asset('vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
 <script src="{{asset('vendor/simplebar/js/simplebar.min.js')}}"></script>

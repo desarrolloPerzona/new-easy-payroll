@@ -7,6 +7,7 @@ use App\Http\Middleware\IsClientMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
+use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
 
 class Kernel extends HttpKernel
 {
@@ -50,7 +51,8 @@ class Kernel extends HttpKernel
         ],
         'tenant' => [
             'web',
-            InitializeTenancyByDomainOrSubdomain::class,
+            //InitializeTenancyByDomainOrSubdomain::class,
+            InitializeTenancyBySubdomain::class,
         ],
         'universal' => [],
     ];

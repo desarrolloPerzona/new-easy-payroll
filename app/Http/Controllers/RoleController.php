@@ -14,7 +14,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return view('admin.role.index');
+        return view('app-landlord.dashboard.role.index');
     }
 
     /**

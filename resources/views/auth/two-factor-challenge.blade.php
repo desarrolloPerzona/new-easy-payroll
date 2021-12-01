@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-guest>
     @section('title') {{__('Two factors challenge') }} @endsection
     <x-jet-authentication-card>
         <x-slot name="logo">
@@ -55,4 +55,4 @@
             </form>
         </div>
     </x-jet-authentication-card>
-</x-guest-layout>
+</x-app-guest>

@@ -14,17 +14,17 @@ class BankController extends Controller
      */
     public function index()
     {
-        return view('tenant.dashboard.banks.index');
+        return view('app-tenant.dashboard.banks.index');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        return view('tenant.dashboard.banks.create');
+        return view('app-tenant.dashboard.banks.create');
     }
 
     /**
@@ -53,11 +53,11 @@ class BankController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($id)
     {
-        return view('tenant.dashboard.banks.edit');
+        return view('app-tenant.dashboard.banks.edit');
     }
 
     /**

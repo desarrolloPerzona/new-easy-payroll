@@ -8,7 +8,7 @@ class BillingController extends Controller
 {
 
     public function index(){
-        return view('billing.index');
+        return view('app-client.dashboard.billing.index');
     }
 
 }

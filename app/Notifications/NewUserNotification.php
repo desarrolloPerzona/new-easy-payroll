@@ -63,7 +63,7 @@ class NewUserNotification extends Notification
             'last_name' => $this->user->last_name,
             'middle_name' => $this->user->middle_name,
             'email' => $this->user->email,
-            'notification' => __("New user has subscribe to ").config('name')
+            'notification' => __("New user has subscribe to ".config('app.name')).config('name')
         ];
     }
 }

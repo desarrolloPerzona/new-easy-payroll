@@ -9,9 +9,9 @@
     {{--TITLE--}}
     <title>{{ config('app.name', 'PerZona ') }} | @yield('title')</title>
     {{--META--}}
-    @include('include.common.head.meta')
+    @include('app-client.includes.common.head.meta')
     {{--APP STYLE--}}
-    @include('include.common.head.vendor-css')
+    @include('app-client.includes.common.head.vendor-css')
     <link rel="stylesheet" href="{{mix('css/app.css')}}">
     {{--CORE UI STYLES--}}
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
@@ -24,16 +24,16 @@
 </head>
 <body class="mode-dark text-sm text-dark">
 <!-- SIDE BAR -->
-@include('include.dashboard.sidebars.client_sidebar')
+@include('app-client.includes.dashboard.sidebars.client_sidebar')
 <!-- SIDE BAR RIGHT -->
 <div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
     <!-- HEADER -->
 
     <!-- MAIN -->
     <!-- TOP MENU NAV BAR -->
-@include('include.dashboard.headers.admin_menu_header')
+@include('app-client.includes.dashboard.headers.client_menu_header')
 <!-- NAV BAR -->
-    @include('include.dashboard.headers.admin_header')
+    @include('app-client.includes.dashboard.headers.client_header')
 
     <div class="body flex-grow-1 px-3">
         <!-- BODY -->
@@ -46,14 +46,14 @@
 
     </div>
     <!-- FOOTER -->
-    @include('include.dashboard.footers.admin_footer')
+    @include('app-client.includes.dashboard.footers.client_footer')
     @stack('modals')
 </div>
 
 <!-- STACKS SCRIPTS & LIVEWIRE -->
 
 @livewireScripts
-@include('include.common.scripts.vendor-scripts')
+@include('app-client.includes.common.scripts.vendor-scripts')
 @stack('in_page_scripts')
 <!-- CORE UI SCRIPTS -->
 <script src="{{asset('tenancy/assets/vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>

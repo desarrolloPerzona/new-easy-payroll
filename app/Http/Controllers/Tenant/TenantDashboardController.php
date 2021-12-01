@@ -20,6 +20,6 @@ class TenantDashboardController extends Controller
         InitializeTenancyByRequestData::$header = null;
         $db_name = $this::getDatabaseName();
 
-        return view('tenant.dashboard.dashboard',compact('db_name','user'));
+        return view('app-tenant.dashboard.index',compact('db_name','user'));
     }
 }

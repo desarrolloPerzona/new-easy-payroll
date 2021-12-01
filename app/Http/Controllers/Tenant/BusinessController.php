@@ -17,17 +17,17 @@ class BusinessController extends Controller
     {
 
         $businesses = Business::all();
-        return view('tenant.dashboard.business.index',compact('businesses'));
+        return view('app-tenant.dashboard.business.index',compact('businesses'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
-        return view('tenant.dashboard.business.create');
+        return view('app-tenant.dashboard.business.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class BusinessController extends Controller
         $business = Business::find($business->id);
 
 
-        return view('tenant.dashboard.business.show',compact('business'));
+        return view('app-tenant.dashboard.business.show',compact('business'));
 
 
     }
@@ -61,11 +61,11 @@ class BusinessController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Models\Tenant\Business $business
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Business $business)
     {
-        return view('tenant.dashboard.business.edit');
+        return view('app-tenant.dashboard.business.edit');
     }
 
     /**

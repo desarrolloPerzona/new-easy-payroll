@@ -10,12 +10,12 @@ class AreaPositionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
         {
-            return view('tenant.dashboard.areapositions.index');
+            return view('app-tenant.dashboard.area-positions.index');
         }
     }
 
@@ -55,11 +55,11 @@ class AreaPositionController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit($id)
     {
-        return view('tenant.dashboard.areapositions.edit');
+        return view('app-tenant.dashboard.area-positions.edit');
     }
 
     /**

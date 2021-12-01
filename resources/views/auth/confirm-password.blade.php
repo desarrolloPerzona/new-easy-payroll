@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-guest>
     @section('title') {{__('Confirm Password') }} @endsection
     <x-jet-authentication-card>
         <x-slot name="logo">
@@ -26,4 +26,4 @@
             </div>
         </form>
     </x-jet-authentication-card>
-</x-guest-layout>
+</x-app-guest>

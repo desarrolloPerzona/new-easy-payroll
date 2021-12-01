@@ -8,11 +8,12 @@
         <div class="btn-top-holder my-3">
             <a href="{{route('concept.create',1)}}" class="btn btn-dark">
                 <i class="fas fa-plus-circle"></i>
-                {{ __('New concept') }}
+                {{ __('New perception') }}
             </a>
         </div>
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+            <h2 class="font-bold" for="name">{{__('Perceptions')}}</h2>
             <table class="table">
                 <tr>
                     <th>{{__('Name')}}</th>
@@ -39,18 +40,20 @@
                                 <td style="width: 35%">Ordinario</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseC1" aria-expanded="false" aria-controls="collapseC1">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseC1"
+                                            aria-expanded="false" aria-controls="collapseC1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('policies.edit',1)}}"> <i
+                                <td style="width: 3%"><a href="{{route('concept.edit',1)}}"> <i
                                             class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                                 </td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
                             </table>
                         </div>
-                        <div id="collapseC1" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                        <div id="collapseC1" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200">
 
                                 <div class="flex pt-2">
@@ -82,7 +85,7 @@
                                         {{__('Social Security')}}:
                                     </div>
                                     <div class="flex-1">
-                                       No
+                                        No
                                     </div>
                                 </div>
                                 <div class="flex pt-2">
@@ -124,18 +127,20 @@
                                 <td style="width: 35%">Extraordinario</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseC2" aria-expanded="false" aria-controls="collapseC1">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseC2"
+                                            aria-expanded="false" aria-controls="collapseC1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('policies.edit',1)}}"> <i
-                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i>
+                                <td style="width: 3%"><i
+                                        class="fas fa-edit text-gray-400 "></i>
                                 </td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
                             </table>
                         </div>
-                        <div id="collapseC2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                        <div id="collapseC2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200">
 
                                 <div class="flex pt-2">
@@ -209,18 +214,20 @@
                                 <td style="width: 35%">Extraordinario</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseC3" aria-expanded="false" aria-controls="collapseC1">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseC3"
+                                            aria-expanded="false" aria-controls="collapseC1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('policies.edit',1)}}"> <i
-                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i>
+                                <td style="width: 3%"><i
+                                        class="fas fa-edit text-gray-400 "></i>
                                 </td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
                             </table>
                         </div>
-                        <div id="collapseC3" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                        <div id="collapseC3" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200">
 
                                 <div class="flex pt-2">
@@ -294,18 +301,20 @@
                                 <td style="width: 35%">Ordinario</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseC4" aria-expanded="false" aria-controls="collapseC1">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseC4"
+                                            aria-expanded="false" aria-controls="collapseC1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('policies.edit',1)}}"> <i
-                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i>
+                                <td style="width: 3%"><i
+                                        class="fas fa-edit text-gray-400"></i>
                                 </td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
                             </table>
                         </div>
-                        <div id="collapseC4" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                        <div id="collapseC4" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200">
 
                                 <div class="flex pt-2">
@@ -379,18 +388,20 @@
                                 <td style="width: 35%">Estraordinario</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseC5" aria-expanded="false" aria-controls="collapseC1">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseC5"
+                                            aria-expanded="false" aria-controls="collapseC1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('policies.edit',1)}}"> <i
-                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></a></i>
+                                <td style="width: 3%"><i
+                                        class="fas fa-edit text-gray-400"></i>
                                 </td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
                             </table>
                         </div>
-                        <div id="collapseC5" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                        <div id="collapseC5" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200">
 
                                 <div class="flex pt-2">
@@ -455,6 +466,129 @@
                     </div>
 
 
+                </div>
+            </div>
+            {{--ACCORDION--}}
+
+        </div>
+
+        <div class="btn-top-holder my-3">
+            <div class="btn btn-dark">
+                <i class="fas fa-plus-circle"></i>
+                {{ __('New deduction') }}
+            </div>
+        </div>
+
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+            <h2 class="font-bold" for="name">{{__('Deductions')}}</h2>
+            <table class="table">
+                <tr>
+                    <th>{{__('Name')}}</th>
+                    <th colspan="3"></th>
+                    <th></th>
+                    <th>{{__('SAT code')}}</th>
+                    <th></th>
+                    <th></th>
+                    <th>{{__('Concept type')}}</th>
+                </tr>
+
+            </table>
+            {{--ACCORDION--}}
+            <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
+                <div class="accordion" id="newItem">
+
+                    {{--C1--------------}}
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingOne">
+                            <table class="table">
+
+                                <td style="width: 30%">IMSS</td>
+                                <td style="width: 45%">Cuotas obrero patronales</td>
+                                <td style="width: 35%">Ordinario</td>
+                                <td style="width: 1%" colspan="3"></td>
+                                <td style="width: 3%">
+
+                                    <i class="fas fa-eye text-gray-400"></i>
+                                </td>
+                                <td style="width: 3%"><i class="fas fa-edit text-gray-400 "></i>
+                                </td>
+                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                    {{--C2--------------}}
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingOne">
+                            <table class="table">
+
+                                <td style="width: 30%">ISR</td>
+                                <td style="width: 45%">ISR</td>
+                                <td style="width: 35%">Ordinario</td>
+                                <td style="width: 1%" colspan="3"></td>
+                                <td style="width: 3%">
+                                    <i class="fas fa-eye text-gray-400"></i>
+
+                                </td>
+                                <td style="width: 3%"><i
+                                        class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                </td>
+                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                    {{--C3--------------}}
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingOne">
+                            <table class="table">
+
+                                <td style="width: 30%">Infonavit</td>
+                                <td style="width: 45%">Préstamos provenientes del Fondo Nacional de Vivienda par los
+                                    Trabajadores
+                                </td>
+                                <td style="width: 35%">Ordinario</td>
+                                <td style="width: 1%" colspan="3"></td>
+                                <td style="width: 3%">
+                                    <i class="fas fa-eye text-gray-400"></i>
+
+                                </td>
+                                <td style="width: 3%"><i
+                                        class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                </td>
+                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                    {{--C4--------------}}
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingOne">
+                            <table class="table">
+
+                                <td style="width: 30%">Infonacot</td>
+                                <td style="width: 45%">Pago de abonos Infonacot</td>
+                                <td style="width: 35%">Ordinario</td>
+                                <td style="width: 1%" colspan="3"></td>
+                                <td style="width: 3%">
+                                    <i class="fas fa-eye text-gray-400"></i>
+
+                                </td>
+                                <td style="width: 3%"><i
+                                        class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                </td>
+                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                            </table>
+                        </div>
+
+                    </div>
 
 
                 </div>

@@ -56,9 +56,9 @@ class WorkingDayHolidayController extends Controller
      * @param  \App\Models\Tenant\WorkingDayHoliday  $workingDayHoliday
      * @return \Illuminate\Http\Response
      */
-    public function edit(WorkingDayHoliday $workingDayHoliday)
+    public function edit($id)
     {
-        //
+        return view('app-tenant.dashboard.working-day-holiday.edit');
     }
 
     /**

@@ -87,6 +87,13 @@
                 <label class="text-gray-800">{{__('Savings fund cap')}}</label>
             </div>
 
+            <label  class="font-bold my-2" for="name">{{__('New concept')}}</label>
+            <div class="btn-top-holder my-3 pb-4">
+                <a href="{{route('concept.create',1)}}" class="btn btn-dark">
+                    {{ __('Add concept') }}
+                </a>
+            </div>
+
             {{--Descuento faltas--}}
             <div class="my-3">
                 <input type="checkbox" id="huey" name="drone" value="huey"

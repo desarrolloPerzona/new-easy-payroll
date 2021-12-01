@@ -25,7 +25,7 @@ class WorkingDayHolidayController extends Controller
      */
     public function create()
     {
-        //
+        return view('app-tenant.dashboard.working-day-holiday.create');
     }
 
     /**

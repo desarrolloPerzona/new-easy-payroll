@@ -7,11 +7,12 @@
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
             <label class="font-bold" for="name">{{__('Name')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="Jornada 1">
+            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
             <label class="font-bold my-2" for="name">{{__('Type of shift')}}</label>
             <label>
                 <select class="w-full rounded">
+                    <option value="001">{{__('Select')}}</option>
                     <option value="001">{{__('Day shift')}}</option>
                     <option value="002">{{__('Night shift')}}</option>
                     <option value="002">{{__('Mixed')}}</option>
@@ -20,7 +21,7 @@
             </label>
             <label class="font-bold my-2" for="name">{{__('Weekdays')}}</label>
             <div class="flex my-1 w-1/2">
-                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
+                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox"></div>
                 <div class="flex-1"><p>{{__('Monday')}}</p></div>
                 <div class="flex-1"><label>
                         <select class="w-full rounded">
@@ -84,7 +85,7 @@
                     </label></div>
             </div>
             <div class="flex my-1 w-1/2">
-                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
+                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox"></div>
                 <div class="flex-1"><p>{{__('Tuesday')}}</p></div>
                 <div class="flex-1"><label>
                         <select class="w-full rounded">
@@ -148,7 +149,7 @@
                     </label></div>
             </div>
             <div class="flex my-1 w-1/2">
-                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
+                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox"></div>
                 <div class="flex-1"><p>{{__('Wednesday')}}</p></div>
                 <div class="flex-1"><label>
                         <select class="w-full rounded">
@@ -212,7 +213,7 @@
                     </label></div>
             </div>
             <div class="flex my-1 w-1/2">
-                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
+                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox"></div>
                 <div class="flex-1"><p>{{__('Thursday')}}</p></div>
                 <div class="flex-1"><label>
                         <select class="w-full rounded">
@@ -276,7 +277,7 @@
                     </label></div>
             </div>
             <div class="flex my-1 w-1/2">
-                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
+                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox"></div>
                 <div class="flex-1"><p>{{__('Friday')}}</p></div>
                 <div class="flex-1"><label>
                         <select class="w-full rounded">
@@ -403,6 +404,7 @@
                         </select>
                     </label></div>
             </div>
+
             <div class="flex my-1 w-1/2">
                 <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox"></div>
                 <div class="flex-1"><p>{{__('Sunday')}}</p></div>
@@ -471,7 +473,7 @@
 
             <label class="font-bold mt-5 mb-2" for="name">{{__('Meal hours')}}</label>
             <div class="flex my-1 w-1/2">
-                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
+                <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox"></div>
                 <div class="flex-1"><p>{{__('Lunch')}}</p></div>
                 <div class="flex-1"><label>
                         <select class="w-full rounded">

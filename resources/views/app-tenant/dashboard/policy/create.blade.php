@@ -87,7 +87,7 @@
 
             <label  class="font-bold my-2" for="name">{{__('New concept')}}</label>
             <div class="btn-top-holder my-3 pb-4">
-                <a href="#" class="btn btn-dark">
+                <a href="{{route('concept.create',1)}}" class="btn btn-dark">
                     {{ __('Add concept') }}
                 </a>
             </div>

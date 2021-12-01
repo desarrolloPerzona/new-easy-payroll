@@ -25,7 +25,7 @@ class ConceptController extends Controller
      */
     public function create()
     {
-        //
+        return view('app-tenant.dashboard.concept.create');
     }
 
     /**
@@ -56,9 +56,9 @@ class ConceptController extends Controller
      * @param  \App\Models\Tenant\Concept  $concept
      * @return \Illuminate\Http\Response
      */
-    public function edit(Concept $concept)
+    public function edit($id)
     {
-        //
+        return view('app-tenant.dashboard.concept.edit');
     }
 
     /**

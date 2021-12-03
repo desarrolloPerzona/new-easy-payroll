@@ -5,13 +5,13 @@
             <span style="display: inline-flex;">{{ __('Edit working day holiday') }}</span>
         </h2>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <label class="font-bold" for="name">{{__('Name')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="Jornada 1">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Jornada 1">
 
             <label class="font-bold my-2" for="name">{{__('Type of shift')}}</label>
             <label>
-                <select class="w-full rounded">
+                <select class="w-full rounded dark:bg-dark dark:text-white">
                     <option value="001">{{__('Day shift')}}</option>
                     <option value="002">{{__('Night shift')}}</option>
                     <option value="002">{{__('Mixed')}}</option>
@@ -23,7 +23,7 @@
                 <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
                 <div class="flex-1"><p>{{__('Monday')}}</p></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -53,7 +53,7 @@
                         </select>
                     </label></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -87,7 +87,7 @@
                 <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
                 <div class="flex-1"><p>{{__('Tuesday')}}</p></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -117,7 +117,7 @@
                         </select>
                     </label></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -151,7 +151,7 @@
                 <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
                 <div class="flex-1"><p>{{__('Wednesday')}}</p></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -181,7 +181,7 @@
                         </select>
                     </label></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -215,7 +215,7 @@
                 <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
                 <div class="flex-1"><p>{{__('Thursday')}}</p></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -245,7 +245,7 @@
                         </select>
                     </label></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -279,7 +279,7 @@
                 <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
                 <div class="flex-1"><p>{{__('Friday')}}</p></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -309,7 +309,7 @@
                         </select>
                     </label></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -343,7 +343,7 @@
                 <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox"></div>
                 <div class="flex-1"><p>{{__('Saturday')}}</p></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -373,7 +373,7 @@
                         </select>
                     </label></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -407,7 +407,7 @@
                 <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox"></div>
                 <div class="flex-1"><p>{{__('Sunday')}}</p></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -437,7 +437,7 @@
                         </select>
                     </label></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -474,7 +474,7 @@
                 <div class="flex-auto mr-4"><input type="checkbox" id="cbox1" value="first_checkbox" checked></div>
                 <div class="flex-1"><p>{{__('Lunch')}}</p></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>
@@ -504,7 +504,7 @@
                         </select>
                     </label></div>
                 <div class="flex-1"><label>
-                        <select class="w-full rounded">
+                        <select class="w-full rounded dark:bg-dark dark:text-white">
                             <option value="001">00:00</option>
                             <option value="002">01:00</option>
                             <option value="002">02:00</option>

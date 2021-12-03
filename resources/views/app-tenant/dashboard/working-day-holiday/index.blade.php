@@ -11,7 +11,7 @@
                 {{ __('New working day') }}
             </a>
         </div>
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <table class="table">
                 <tr>
                     <th>{{__('Working day')}}</th>
@@ -51,7 +51,7 @@
                         </div>
                         <div id="collapseS1" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
@@ -147,7 +147,7 @@
                         </div>
                         <div id="collapseS2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
@@ -242,7 +242,7 @@
                         </div>
                         <div id="collapseS3" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
@@ -347,15 +347,15 @@
 
                         <div id="collapseP1" class="accordion-collapse collapse"
                              aria-labelledby="headingTwo" data-bs-parent="#newPosition">
-                            <div class="accordion-body text-dark bg-gray-100 rounded">
+                            <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
                                 <div>
                                     <div><label class="font-bold" for="name">{{__('Name')}}</label></div>
-                                    <div><input class="text-gray-800 rounded my-2 w-full" type="text" id="name"
+                                    <div><input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name"
                                                 name="Name"></div>
                                 </div>
                                 <div class="flex my-4 m-auto">
                                     {{--Date Picker---------------}}
-                                    <div class="flex-1 items-center justify-center bg-gray-200 h-full">
+                                    <div class="flex-1 items-center justify-center bg-gray-200 h-full dark:bg-dark dark:text-white">
                                         {{--                                <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"/>--}}
                                         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
                                                 defer></script>
@@ -371,7 +371,7 @@
                                                 <div class="container mx-auto px-4 py-2 md:py-10">
                                                     <div class="mb-5">
                                                         <label for="datepicker"
-                                                               class="font-bold mb-1 text-gray-700 block">{{__('Select Date')}}</label
+                                                               class="font-bold mb-1 text-gray-700 block dark:text-white">{{__('Select Date')}}</label
                                                         >
                                                         <div class="relative">
                                                             <input type="hidden" name="date" x-ref="date"/>
@@ -667,7 +667,7 @@
                                     <div class="flex-1 text-center">
                                         <div><label class="font-bold my-2" for="name">Horario</label></div>
                                         <div class="pt-2"><label>
-                                                <select class="w-full rounded">
+                                                <select class="w-full rounded dark:bg-dark dark:text-white">
                                                     <option value="001">00:00</option>
                                                     <option value="002">01:00</option>
                                                     <option value="002">02:00</option>
@@ -685,7 +685,7 @@
                                                 </select>
                                             </label>
                                             <label>
-                                                <select class="w-full rounded">
+                                                <select class="w-full rounded dark:bg-dark dark:text-white">
                                                     <option value="001">00:00</option>
                                                     <option value="002">01:00</option>
                                                     <option value="002">02:00</option>
@@ -725,7 +725,7 @@
             </div>
 
 
-            <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+    <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
                 <div class="border-bottom-1 border-gray-400 py-3">
                     <h2>Festivos oficiales México</h2>

@@ -5,12 +5,12 @@
             <span style="display: inline-flex;">{{ __('Edit policy') }}</span>
         </h2>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <label class="font-bold" for="name">{{__('Policy name')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="Política 1">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Política 1">
 
             <label class="font-bold" for="name">{{__('Economic days')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="5">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="5">
 
 {{--Vales despensa--}}
             <label class="font-bold my-2" for="name">{{__('Grocery coupon')}}</label>
@@ -18,7 +18,7 @@
 
                 <div class="felx-1 mt-2 mr-2 p-0 w-full">
                     <label class="w-full">
-                        <select class="rounded w-full">
+                        <select class="rounded w-full dark:bg-dark dark:text-white">
                             <option value="001">{{__('Percentage')}}</option>
                             <option value="002">{{__('Nominal')}}</option>
 
@@ -26,7 +26,7 @@
                     </label>
                 </div>
                 <div class="flex-2 w-full">
-                    <input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name" placeholder="5">
+                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="5">
                 </div>
 
             </div>
@@ -34,7 +34,7 @@
             <div class="my-3">
                 <input type="checkbox" id="huey" name="drone" value="huey"
                        checked>
-                <label class="text-gray-800">{{__('Top of pantry vouchers')}}</label>
+                <label class="text-gray-800 dark:text-white">{{__('Top of pantry vouchers')}}</label>
             </div>
 
             {{--Vales Restaurante--}}
@@ -43,7 +43,7 @@
 
                 <div class="felx-1 mt-2 mr-2 p-0 w-full">
                     <label class="w-full">
-                        <select class="rounded w-full">
+                        <select class="rounded w-full dark:bg-dark dark:text-white">
                             <option value="001">{{__('Percentage')}}</option>
                             <option value="002">{{__('Nominal')}}</option>
 
@@ -51,7 +51,7 @@
                     </label>
                 </div>
                 <div class="flex-2 w-full">
-                    <input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name" placeholder="13">
+                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="13">
                 </div>
 
             </div>
@@ -59,7 +59,7 @@
             <div class="my-3">
                 <input type="checkbox" id="huey" name="drone" value="huey"
                        checked>
-                <label class="text-gray-800">{{__('Restaurant voucher cap')}}</label>
+                <label class="text-gray-800 dark:text-white">{{__('Restaurant voucher cap')}}</label>
             </div>
 
             {{--Fondo de ahorro--}}
@@ -68,7 +68,7 @@
 
                 <div class="felx-1 mt-2 mr-2 p-0 w-full">
                     <label class="w-full">
-                        <select class="rounded w-full">
+                        <select class="rounded w-full dark:bg-dark dark:text-white">
                             <option value="001">{{__('Percentage')}}</option>
                             <option value="002">{{__('Nominal')}}</option>
 
@@ -76,7 +76,7 @@
                     </label>
                 </div>
                 <div class="flex-2 w-full">
-                    <input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name" placeholder="13">
+                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="13">
                 </div>
 
             </div>
@@ -84,7 +84,7 @@
             <div class="my-3 pb-4">
                 <input type="checkbox" id="huey" name="drone" value="huey"
                        checked>
-                <label class="text-gray-800">{{__('Savings fund cap')}}</label>
+                <label class="text-gray-800 dark:text-white">{{__('Savings fund cap')}}</label>
             </div>
 
             <label  class="font-bold my-2" for="name">{{__('New concept')}}</label>
@@ -98,19 +98,19 @@
             <div class="my-3">
                 <input type="checkbox" id="huey" name="drone" value="huey"
                        checked>
-                <label class="text-gray-800">{{__('Discount for absences')}}</label>
+                <label class="text-gray-800 dark:text-white">{{__('Discount for absences')}}</label>
             </div>
             {{--Descuento Incapacidades--}}
             <div class="my-3">
                 <input type="checkbox" id="huey" name="drone" value="huey"
                        checked>
-                <label class="text-gray-800">{{__('Disability discount')}}</label>
+                <label class="text-gray-800 dark:text-white">{{__('Disability discount')}}</label>
             </div>
             {{--Descuento 7o Dia--}}
             <div class="my-3">
                 <input type="checkbox" id="huey" name="drone" value="huey"
                        checked>
-                <label class="text-gray-800">{{__('Discount proportion 7th day')}}</label>
+                <label class="text-gray-800 dark:text-white">{{__('Discount proportion 7th day')}}</label>
             </div>
 
             {{--DCalculo base--}}

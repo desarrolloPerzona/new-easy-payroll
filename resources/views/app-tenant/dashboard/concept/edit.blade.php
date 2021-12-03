@@ -5,15 +5,15 @@
             <span style="display: inline-flex;">{{ __('Edit concept') }}</span>
         </h2>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <label class="font-bold" for="name">{{__('Concept name')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="Sueldo">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Sueldo">
 
 
             <label class="font-bold my-2" for="name">{{__('SAT Concept')}}</label>
 
             <label class="w-full">
-                <select class="rounded w-full">
+                <select class="rounded w-full dark:bg-dark dark:text-white">
                     <option value="001">001 Sueldos, salarios, rayas y jornales</option>
                     <option value="001">004 Rembolso gastos médicos</option>
                     <option value="002">006 Caja de ahorro</option>
@@ -123,7 +123,7 @@
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Accounting account')}}</label></div>
             <label>
-                <select class="w-full rounded">
+                <select class="w-full rounded dark:bg-dark dark:text-white">
                     <option value="001">Cuenta BBVA 1256</option>
                     <option value="002">Cuenta BBVA 6987</option>
                     <option value="002">Cuenta Santander 4585</option>

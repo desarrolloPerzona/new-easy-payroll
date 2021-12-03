@@ -13,7 +13,7 @@
     </div>
 
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
             <table class="table">
                 <tr>
@@ -52,7 +52,7 @@
                             </table>
                         </div>
                         <div id="collapseS1" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
@@ -125,7 +125,7 @@
 
                         </div>
                         <div id="collapseS2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
@@ -198,7 +198,7 @@
 
                         </div>
                         <div id="collapseS3" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>

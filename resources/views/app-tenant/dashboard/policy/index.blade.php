@@ -12,7 +12,7 @@
             </a>
         </div>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <table class="table">
                 <tr>
                     <th>{{__('Name')}}</th>
@@ -46,7 +46,7 @@
                             </table>
                         </div>
                         <div id="collapseP1" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
@@ -170,7 +170,7 @@
                         </div>
                         <div id="collapseP2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
@@ -294,7 +294,7 @@
                         </div>
                         <div id="collapseP3" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
@@ -419,7 +419,7 @@
                         </div>
                         <div id="collapseP4" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">

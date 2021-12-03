@@ -9,7 +9,7 @@
 
         <div class="accordion btn-top-holder my-3 max-w-6xl m-auto" id="newPosition">
 
-            <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
+            <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded dark:bg-dark dark:text-white">
                 <div class="accordion-header mr-4" id="headingOne">
 
 
@@ -26,10 +26,10 @@
 
                     <div id="collapseP1" class="accordion-collapse collapse"
                          aria-labelledby="headingTwo" data-bs-parent="#newPosition">
-                        <div class="accordion-body text-dark bg-gray-100 rounded">
+                        <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
                             <div>
                             <div><label class="font-bold" for="name">{{__('Area name')}}</label></div>
-                            <div><input class="text-gray-800 rounded my-2 w-full" type="text" id="name" name="Name"></div>
+                            <div><input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name"></div>
                         </div>
 
                             <div type="button" data-bs-toggle="collapse"
@@ -52,7 +52,7 @@
         </div>
 
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
             <div class="border-bottom-1 border-gray-400 py-3">
                 <h2>Dirección <a href="{{route('area-positions.edit',1)}}" class="text-gray-400 hover:text-gray-700"><i class="fas fa-edit"></i></a></h2>

@@ -5,13 +5,13 @@
             <span style="display: inline-flex;">{{ __('Edit payroll') }}</span>
         </h2>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <label class="font-bold" for="name">{{__('Payroll group name')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="Grupo 1 (Semanal)">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Grupo 1 (Semanal)">
 
             <label class="font-bold my-2" for="name">{{__('Payroll payment scheme')}}</label>
             <label>
-                <select class="w-full rounded">
+                <select class="w-full rounded dark:bg-dark dark:text-white">
                     <option value="001">{{__('Standard')}}</option>
                     <option value="002">{{__('Extraordinary')}}</option>
 
@@ -20,7 +20,7 @@
 
             <label class="font-bold my-2" for="name">{{__('Business name')}}</label>
             <label>
-                <select class="w-full rounded">
+                <select class="w-full rounded dark:bg-dark dark:text-white">
                     <option value="001">DICC760403IN7</option>
 
                 </select>
@@ -28,7 +28,7 @@
 
             <label class="font-bold my-2" for="name">{{__('Bank account')}}</label>
             <label>
-                <select class="w-full rounded">
+                <select class="w-full rounded dark:bg-dark dark:text-white">
                     <option value="001">Cuenta BBVA 1256</option>
                     <option value="002">Cuenta BBVA 6987</option>
                     <option value="002">Cuenta Santander 4585</option>
@@ -38,7 +38,7 @@
 
             <label class="font-bold my-2" for="name">{{__('Payroll period')}}</label>
             <label>
-                <select class="w-full rounded">
+                <select class="w-full rounded dark:bg-dark dark:text-white">
                     <option value="001">Semanal</option>
                     <option value="002">Catorcenal</option>
                     <option value="002">Quincenal</option>
@@ -49,7 +49,7 @@
 
             <label class="font-bold my-2">{{__('Calculate payroll period based on')}}</label>
             <label>
-                <select class="w-full rounded">
+                <select class="w-full rounded dark:bg-dark dark:text-white">
                     <option value="001">30 días</option>
                     <option value="002">30.4 días</option>
 

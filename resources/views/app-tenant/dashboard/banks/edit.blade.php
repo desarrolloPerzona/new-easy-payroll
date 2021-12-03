@@ -5,20 +5,20 @@
             <span style="display: inline-flex;">{{ __('Edit bank accounts') }}</span>
         </h2>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <label class="font-bold" for="name">{{__('Account name')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name"
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
                    placeholder="Cuenta BBVA 1256">
 
             <label class="font-bold" for="name">{{__('Account number')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="2361256">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="2361256">
 
             <label class="font-bold" for="name">{{__('Description')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="BBVA 01">
+            <textarea class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="BBVA 01"></textarea>
 
             <label class="font-bold my-2" for="name">{{__('Bank')}}</label>
             <label>
-                <select class="w-full rounded">
+                <select class="w-full rounded dark:bg-dark dark:text-white">
                     <option value="40138">ABC CAPITAL</option>
                     <option value="40102">ACENDO BANK</option>
                     <option value="40133">ACTINVER</option>
@@ -67,13 +67,13 @@
             </label>
 
             <label class="font-bold" for="name">{{__('Information number')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="-">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="-">
 
             <label class="font-bold" for="name">{{__('Branch number')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="2369">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="2369">
 
             <label class="font-bold" for="name">{{__('CLABE account')}}</label>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="4523698531256">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="4523698531256">
 
             <div class="btn-top-holder my-3 flow-root">
                 <a href="javascript: history.go(-1)" class="btn btn-dark float-right">

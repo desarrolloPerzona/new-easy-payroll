@@ -204,11 +204,11 @@
 
                                         <div id="collapseP1" class="accordion-collapse collapse"
                                              aria-labelledby="headingTwo" data-bs-parent="#newBranch">
-                                            <div class="accordion-body text-dark bg-gray-100 rounded">
+                                            <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
                                                 <div>
                                                     <div><label class="font-bold"
                                                                 for="name">{{__('Name')}}</label></div>
-                                                    <div><input class="text-gray-800 rounded my-2 w-full"
+                                                    <div><input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
                                                                 type="text" id="name"
                                                                 name="Name">
                                                     </div>
@@ -217,7 +217,7 @@
                                                     <div><label class="font-bold"
                                                                 for="name">{{__('Description')}}</label>
                                                     </div>
-                                                    <div><input class="text-gray-800 rounded my-2 w-full"
+                                                    <div><input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
                                                                 type="text" id="name" name="Name">
                                                     </div>
                                                 </div>
@@ -225,7 +225,7 @@
                                                     <div><label class="font-bold"
                                                                 for="name">{{__('Employer registration')}}</label>
                                                     </div>
-                                                    <div><input class="text-gray-800 rounded my-2 w-full"
+                                                    <div><input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
                                                                 type="text" id="name" name="Name">
                                                     </div>
                                                 </div>
@@ -247,7 +247,7 @@
 
 
                                 {{--Sede ----------------}}
-                                <div class="accordion-body text-dark bg-gray-200">
+                                <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
                                     <h2 class="py-3">{{__('Branches')}}</h2>
 
                                     <div class="border-b-2 border-gray-400 mb-2">

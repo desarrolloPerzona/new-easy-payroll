@@ -12,7 +12,7 @@
             </a>
         </div>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <h2 class="font-bold" for="name">{{__('Perceptions')}}</h2>
             <table class="table">
                 <tr>
@@ -54,7 +54,7 @@
                         </div>
                         <div id="collapseC1" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
@@ -141,7 +141,7 @@
                         </div>
                         <div id="collapseC2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
@@ -228,7 +228,7 @@
                         </div>
                         <div id="collapseC3" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
@@ -315,7 +315,7 @@
                         </div>
                         <div id="collapseC4" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
@@ -402,7 +402,7 @@
                         </div>
                         <div id="collapseC5" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200">
+                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
@@ -479,7 +479,7 @@
             </div>
         </div>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <h2 class="font-bold" for="name">{{__('Deductions')}}</h2>
             <table class="table">
                 <tr>

@@ -5,7 +5,7 @@
             <span style="display: inline-flex;">{{ __('Table and value') }}</span>
         </h2>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto">
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
                 <div class="flex-1"><h2 class="pb-3">Valores de referencia</h2></div>
 
@@ -58,12 +58,13 @@
 
         </div>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto">
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
                 <div class="flex-1">  <h2 class="pb-3">Retenciones periódicas de ISR:</h2></div>
                 <div class="flex-2"><i class="fas fa-chevron-circle-up"></i></div>
             </div>
-
+            <tab>1</tab>
+            <tab>2</tab>
 
             <div class="flex border-b-2">
                 <div class="flex-1 font-bold pb-2">
@@ -80,7 +81,7 @@
                 </div>
             </div>
 
-            <div class="flex bg-gray-200 p-1">
+            <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
                 <div class="flex-1">
                     0.01
                 </div>
@@ -110,7 +111,7 @@
                 </div>
             </div>
 
-            <div class="flex bg-gray-200 p-1">
+            <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
                 <div class="flex-1">
                     2,519,51
                 </div>
@@ -140,7 +141,7 @@
                 </div>
             </div>
 
-            <div class="flex bg-gray-200 p-1">
+            <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
                 <div class="flex-1">
                     5,147.14
                 </div>
@@ -170,7 +171,7 @@
                 </div>
             </div>
 
-            <div class="flex bg-gray-200 p-1">
+            <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
                 <div class="flex-1">
                     6,162.53
                 </div>
@@ -200,7 +201,7 @@
                 </div>
             </div>
 
-            <div class="flex bg-gray-200 p-1">
+            <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
                 <div class="flex-1">
                     19,589.69
                 </div>
@@ -230,7 +231,7 @@
                 </div>
             </div>
 
-            <div class="flex bg-gray-200 p-1">
+            <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
                 <div class="flex-1">
                     49,866.27
                 </div>
@@ -263,7 +264,7 @@
 
         </div>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto">
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
                 <div class="flex-1">  <h2 class="pb-3">Tablas periódicas a subsidio</h2></div>
                 <div class="flex-2"><i class="fas fa-chevron-circle-down"></i></div>
@@ -271,7 +272,7 @@
 
         </div>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto">
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
                 <div class="flex-1">  <h2 class="pb-3">Tablas de impuesto sobre nómina</h2></div>
                 <div class="flex-2"><i class="fas fa-chevron-circle-down"></i></div>

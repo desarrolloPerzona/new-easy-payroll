@@ -13,7 +13,7 @@
             </a>
         </div>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
+        <div class="card bg-white dark:bg-dark dark:text-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
             <table class="table">
                 <tr>
                 <tr>
@@ -53,7 +53,7 @@
 
                             {{--Empresa ----------------}}
 
-                            <div class="accordion-body mb-3 text-dark bg-gray-200">
+                            <div class="accordion-body mb-3 text-dark bg-gray-200 dark:bg-dark dark:text-white">
                                 <h2 class="py-3">{{__('Business')}}</h2>
 
                                 <div class="flex">

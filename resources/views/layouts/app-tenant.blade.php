@@ -16,14 +16,14 @@
     <script src="/js/app.js" defer></script>
 </head>
 <body class="font-sans antialiased">
-@include('app-tenant.includes.dashboard.sidebars.admin_sidebar')
+@include('app-tenant.includes.dashboard.sidebars.tenant_sidebar')
 {{--CORE UI WRAPPER--}}
 <div class="wrapper d-flex flex-column min-vh-100 bg-light dark:bg-transparent">
     {{--TOP NAV BAR--}}
-    @include('app-tenant.includes.dashboard.headers.admin_header')
+    @include('app-tenant.includes.dashboard.headers.tenant_header')
 {{ $slot }}
 
-
+    @include('app-tenant.includes.dashboard.footers.tenant_footer')
 </div>
 
 {{--STACKS SCRIPTS & LIVEWIRE--}}

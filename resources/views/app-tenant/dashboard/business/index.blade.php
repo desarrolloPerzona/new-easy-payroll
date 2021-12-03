@@ -202,121 +202,120 @@
                                         </div>
 
 
-                                    <div id="collapseP1" class="accordion-collapse collapse"
-                                         aria-labelledby="headingTwo" data-bs-parent="#newBranch">
-                                        <div class="accordion-body text-dark bg-gray-100 rounded">
-                                            <div>
-                                                <div><label class="font-bold"
-                                                                           for="name">{{__('Name')}}</label></div>
-                                                <div><input class="text-gray-800 rounded my-2 w-full"
-                                                                           type="text" id="name"
-                                                                           name="Name">
-                                                </div>
-                                            </div>
+                                        <div id="collapseP1" class="accordion-collapse collapse"
+                                             aria-labelledby="headingTwo" data-bs-parent="#newBranch">
+                                            <div class="accordion-body text-dark bg-gray-100 rounded">
                                                 <div>
                                                     <div><label class="font-bold"
-                                                                               for="name">{{__('Description')}}</label>
+                                                                for="name">{{__('Name')}}</label></div>
+                                                    <div><input class="text-gray-800 rounded my-2 w-full"
+                                                                type="text" id="name"
+                                                                name="Name">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div><label class="font-bold"
+                                                                for="name">{{__('Description')}}</label>
                                                     </div>
                                                     <div><input class="text-gray-800 rounded my-2 w-full"
-                                                                               type="text" id="name" name="Name">
+                                                                type="text" id="name" name="Name">
                                                     </div>
                                                 </div>
-                                                    <div>
-                                                        <div><label class="font-bold"
-                                                                                   for="name">{{__('Employer registration')}}</label>
-                                                        </div>
-                                                        <div><input class="text-gray-800 rounded my-2 w-full"
-                                                                                   type="text" id="name" name="Name">
-                                                        </div>
+                                                <div>
+                                                    <div><label class="font-bold"
+                                                                for="name">{{__('Employer registration')}}</label>
                                                     </div>
-                                                        <div type="button" data-bs-toggle="collapse"
-                                                             data-bs-target="#collapseP1" aria-expanded="false"
-                                                             aria-controls="collapseP1">
-                                                            <a href="#" class="btn btn-dark">
-                                                            <i class="fas fa-plus-circle"></i>
-                                                            {{ __('Save') }}
-                                                            </a>
-                                                        </div>
+                                                    <div><input class="text-gray-800 rounded my-2 w-full"
+                                                                type="text" id="name" name="Name">
+                                                    </div>
+                                                </div>
+                                                <div type="button" data-bs-toggle="collapse"
+                                                     data-bs-target="#collapseP1" aria-expanded="false"
+                                                     aria-controls="collapseP1">
+                                                    <a href="#" class="btn btn-dark">
+                                                        <i class="fas fa-plus-circle"></i>
+                                                        {{ __('Save') }}
+                                                    </a>
+                                                </div>
 
-                                                    </div>
-                                                </div>
                                             </div>
-
-
-                                        </div>
-
-
-                                        {{--Sede ----------------}}
-                                        <div class="accordion-body text-dark bg-gray-200">
-                                            <h2 class="py-3">{{__('Branches')}}</h2>
-
-                                            <div class="border-b-2 border-gray-400 mb-2">
-                                                <div class="flex">
-                                                    <div class="flex-1 text-left w-1/2"><label
-                                                            class="my-2">{{__('Name')}}</label>
-                                                    </div>
-                                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Sede
-                                                            CDMX</label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="flex">
-                                                    <div class="flex-1 text-left w-1/2"><label
-                                                            class="my-2">{{__('Description')}}</label></div>
-                                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Tlatilco,
-                                                            02860 Ciudad de México, CDMX
-                                                        </label></div>
-                                                </div>
-
-                                                <div class="flex">
-                                                    <div class="flex-1 text-left w-1/2"><label
-                                                            class="my-2">{{__('IMSS employer register')}}</label></div>
-                                                    <div class="flrx-2 text-left w-1/2"><label
-                                                            class="my-2 font-bold">987654321</label></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="border-b-2 border-gray-400 mb-2">
-                                                <div class="flex">
-                                                    <div class="flex-1 text-left w-1/2"><label
-                                                            class="my-2">{{__('Name')}}</label>
-                                                    </div>
-                                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Sede
-                                                            Monterey</label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="flex">
-                                                    <div class="flex-1 text-left w-1/2"><label
-                                                            class="my-2">{{__('Description')}}</label></div>
-                                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Gustavo
-                                                            Díaz
-                                                            Ordaz 100, Santa María, 64650 Monterrey, N.L.
-                                                        </label></div>
-                                                </div>
-
-                                                <div class="flex">
-                                                    <div class="flex-1 text-left w-1/2"><label
-                                                            class="my-2">{{__('IMSS employer register')}}</label></div>
-                                                    <div class="flrx-2 text-left w-1/2"><label
-                                                            class="my-2 font-bold">987654321</label></div>
-                                                </div>
-                                            </div>
-
                                         </div>
                                     </div>
+
+
                                 </div>
 
 
+                                {{--Sede ----------------}}
+                                <div class="accordion-body text-dark bg-gray-200">
+                                    <h2 class="py-3">{{__('Branches')}}</h2>
+
+                                    <div class="border-b-2 border-gray-400 mb-2">
+                                        <div class="flex">
+                                            <div class="flex-1 text-left w-1/2"><label
+                                                    class="my-2">{{__('Name')}}</label>
+                                            </div>
+                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Sede
+                                                    CDMX</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex">
+                                            <div class="flex-1 text-left w-1/2"><label
+                                                    class="my-2">{{__('Description')}}</label></div>
+                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Tlatilco,
+                                                    02860 Ciudad de México, CDMX
+                                                </label></div>
+                                        </div>
+
+                                        <div class="flex">
+                                            <div class="flex-1 text-left w-1/2"><label
+                                                    class="my-2">{{__('IMSS employer register')}}</label></div>
+                                            <div class="flrx-2 text-left w-1/2"><label
+                                                    class="my-2 font-bold">987654321</label></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="border-b-2 border-gray-400 mb-2">
+                                        <div class="flex">
+                                            <div class="flex-1 text-left w-1/2"><label
+                                                    class="my-2">{{__('Name')}}</label>
+                                            </div>
+                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Sede
+                                                    Monterey</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex">
+                                            <div class="flex-1 text-left w-1/2"><label
+                                                    class="my-2">{{__('Description')}}</label></div>
+                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Gustavo
+                                                    Díaz
+                                                    Ordaz 100, Santa María, 64650 Monterrey, N.L.
+                                                </label></div>
+                                        </div>
+
+                                        <div class="flex">
+                                            <div class="flex-1 text-left w-1/2"><label
+                                                    class="my-2">{{__('IMSS employer register')}}</label></div>
+                                            <div class="flrx-2 text-left w-1/2"><label
+                                                    class="my-2 font-bold">987654321</label></div>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
 
-                        {{--ACCORDION--}}
 
                     </div>
-
-
                 </div>
+
+                {{--ACCORDION--}}
+
+            </div>
+        </div>
+    </div>
 </x-app-tenant>
 
 

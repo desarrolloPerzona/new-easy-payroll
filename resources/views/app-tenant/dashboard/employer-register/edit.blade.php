@@ -18,7 +18,6 @@
             {{--ACCORDION--}}
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
                 <div class="accordion" id="newItem">
-
                     {{--IMSS--------------}}
                     <div class="accordion-item">
                         <div class="accordion-header mr-4" id="headingOne">

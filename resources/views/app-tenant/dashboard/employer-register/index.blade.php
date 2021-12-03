@@ -217,9 +217,6 @@
             {{--ACCORDION--}}
 
         </div>
-
-
-
     </div>
 </x-app-tenant>
 

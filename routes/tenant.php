@@ -6,6 +6,7 @@ declare(strict_types=1);
 use App\Http\Controllers\Tenant\AreaPositionController;
 use App\Http\Controllers\Tenant\BankController;
 use App\Http\Controllers\Tenant\BusinessController;
+use App\Http\Controllers\Tenant\BusinessPositionController;
 use App\Http\Controllers\Tenant\ConceptController;
 use App\Http\Controllers\Tenant\EmployerRegisterController;
 use App\Http\Controllers\Tenant\PayrollController;
@@ -51,4 +52,5 @@ Route::middleware([
     Route::resource('/table-value',TableValueController::class)->middleware('auth:web');
     Route::resource('/working-day-holiday',WorkingDayHolidayController::class)->middleware('auth:web');
     Route::resource('/employer-register',EmployerRegisterController::class)->middleware('auth:web');
+    Route::resource('/business-positions',BusinessPositionController::class)->middleware('auth:web');
 });

@@ -41,8 +41,6 @@
                             {{__('Bank accounts')}}
                         </a>
                     </li>
-
-
                 </ul>
             </li>
             <li class="nav-group">
@@ -87,6 +85,30 @@
                         </a>
                     </li>
 
+                </ul>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('Work estructure')}}
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('business-positions.index')}}">
+                            {{__('Business positions')}}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('Employees')}}
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('business-positions.index')}}">
+                            {{__('Employees list')}}
+                        </a>
+                    </li>
                 </ul>
             </li>
 

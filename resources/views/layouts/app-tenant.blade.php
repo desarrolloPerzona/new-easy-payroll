@@ -14,8 +14,7 @@
 @livewireStyles
 <!-- Scripts -->
     <script src="/js/app.js" defer></script>
-{{--    FontAwseome peronalizados--}}
-    <script src="https://kit.fontawesome.com/1d35ce8399.js" crossorigin="anonymous"></script>
+
 </head>
 <body class="font-sans antialiased">
 @include('app-tenant.includes.dashboard.sidebars.tenant_sidebar')

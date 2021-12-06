@@ -1,10 +1,12 @@
 <div class="sidebar sidebar-dark sidebar-fixed sidebar-self-hiding-xl" id="sidebar">
     <div class="sidebar-brand d-none d-md-flex">
         <div class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-            <img src="https://perzona-s3-resources.s3.us-west-1.amazonaws.com/web-assets/logo_perzona_white.svg" width="180">
+            <img src="https://perzona-s3-resources.s3.us-west-1.amazonaws.com/web-assets/logo_perzona_white.svg"
+                 width="180">
         </div>
         <div class="sidebar-brand-narrow" width="40" height="40" alt="CoreUI Logo">
-            <img src="https://perzona-s3-resources.s3.us-west-1.amazonaws.com/web-assets/favicon_perzona_white.svg" width="40">
+            <img src="https://perzona-s3-resources.s3.us-west-1.amazonaws.com/web-assets/favicon_perzona_white.svg"
+                 width="40">
         </div>
     </div>
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
@@ -20,8 +22,8 @@
             {{-- BUSINESS --}}
             <li class="nav-group">
                 <a class="nav-link nav-group-toggle" href="#">
-                    <i class="fak fa-empresa-perzona"></i>
-                    <i class="nav-icon fad fa-building mr-2"></i> {{__('Businesses')}}
+                    {{-- <i class="fad fa-building"></i>--}}
+                    <i class="nav-icon fak fa-empresa-perzona mr-2"></i> {{__('Businesses')}}
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
@@ -46,7 +48,8 @@
             </li>
             <li class="nav-group">
                 <a class="nav-link nav-group-toggle" href="#">
-                    <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('Administration')}}
+                    {{-- <i class="fad fa-user-cog"></i>--}}
+                    <i class="nav-icon fak fa-admin-perzona mr-2"></i> {{__('Administration')}}
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
@@ -102,11 +105,12 @@
             </li>
             <li class="nav-group">
                 <a class="nav-link nav-group-toggle" href="#">
-                    <i class="nav-icon fad fa-users-cog mr-2"></i> {{__('Employees')}}
+                    {{-- <i class="fad fa-users-cog"></i>--}}
+                    <i class="nav-icon fak fa-empleados-perzona mr-2"></i> {{__('Employees')}}
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('business-positions.index')}}">
+                        <a class="nav-link" href="#">
                             {{__('Employees list')}}
                         </a>
                     </li>

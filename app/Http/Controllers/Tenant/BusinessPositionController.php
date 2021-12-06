@@ -25,7 +25,7 @@ class BusinessPositionController extends Controller
      */
     public function create()
     {
-        //
+        return view('app-tenant.dashboard.business-positions.create');
     }
 
     /**
@@ -45,9 +45,9 @@ class BusinessPositionController extends Controller
      * @param  \App\Models\Tenant\BusinessPosition  $businessPosition
      * @return \Illuminate\Http\Response
      */
-    public function show(BusinessPosition $businessPosition)
+    public function show($id)
     {
-        //
+        return view('app-tenant.dashboard.business-positions.show');
     }
 
     /**
@@ -56,9 +56,9 @@ class BusinessPositionController extends Controller
      * @param  \App\Models\Tenant\BusinessPosition  $businessPosition
      * @return \Illuminate\Http\Response
      */
-    public function edit(BusinessPosition $businessPosition)
+    public function edit($id)
     {
-        //
+        return view('app-tenant.dashboard.business-positions.edit');
     }
 
     /**

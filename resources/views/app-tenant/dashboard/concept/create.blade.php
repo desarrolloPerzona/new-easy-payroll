@@ -1,7 +1,7 @@
 <x-app-tenant>
     <div class="container">
         <h2 class="bg-blueSteel py-2 px-3 mb-4 rounded">
-            <i class="nav-icon fad fa-user-cog mr-2"></i>
+            <i class="fak fa-admin-perzona mr-2"></i>
             <span style="display: inline-flex;">{{ __('Create concept') }}</span>
         </h2>
 

@@ -20,7 +20,7 @@
         {{-- APP ADMIN PERMISSIONS--}}
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
-                <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('APP Administration')}}
+                <i class="fak fa-admin-perzona mr-2"></i> {{__('APP Administration')}}
             </a>
             <ul class="nav-group-items">
                 <li class="nav-item">

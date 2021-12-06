@@ -5,7 +5,7 @@
 {{--POPPER@2--}}
 <script src="{{asset('/vendor/popper-js2/umd/popper.js')}}"></script>
 {{--FONTAWESOME--}}
-<script src="{{asset('/vendor/fontawesome/js/all.js')}}"></script>
+{{--<script src="{{asset('/vendor/fontawesome/js/all.js')}}"></script>--}}
 {{--TIPPY--}}
 <script src="{{asset('/vendor/tippy/tippy.js/dist/tippy-bundle.umd.js')}}"></script>
 {{--SELECT2--}}

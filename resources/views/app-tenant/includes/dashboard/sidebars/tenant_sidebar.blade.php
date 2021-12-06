@@ -20,6 +20,7 @@
             {{-- BUSINESS --}}
             <li class="nav-group">
                 <a class="nav-link nav-group-toggle" href="#">
+                    <i class="fak fa-empresa-perzona"></i>
                     <i class="nav-icon fad fa-building mr-2"></i> {{__('Businesses')}}
                 </a>
                 <ul class="nav-group-items">

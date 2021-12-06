@@ -25,10 +25,11 @@ class CreateEmployerRegisterTable extends Migration
             $table->string('imss_cert_user')->nullable();
             $table->string('imss_cert_password')->nullable();
             $table->string('imss_cert_file')->nullable();
-            $table->boolean('use_imss_cert_fiel')->default(false);
-            $table->string('imss_cert_fiel_file')->nullable();
-            $table->string('imss_cert_fiel_private_key')->nullable();
-            $table->string('imss_cert_fiel_password')->nullable();
+            $table->boolean('use_shcp_cert_fiel')->default(false);
+            $table->string('shcp_cert_fiel_file')->nullable();
+            $table->string('shcp_cert_fiel_private_key')->nullable();
+            $table->string('shcp_cert_fiel_password')->nullable();
+            $table->unsignedBigInteger('business_id');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -15,6 +15,9 @@ class CreatePayrollTable extends Migration
     {
         Schema::create('payroll', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+
+
             $table->timestamps();
         });
     }

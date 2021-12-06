@@ -6,11 +6,19 @@ use Livewire\Component;
 
 class Breadcrumb extends Component
 {
+    /**
+     * Need to add variables in element
+     * Icon an element of FontAwesome: fas fa-clock
+     * Parent as the name of the url (without the slash /): business
+     * Children as an array of the url (without the slash /): ['create','']
+     */
 
-    public $parent;
+    public $icon, $parent , $children;
 
-    public function mount($parent){
+    public function mount($parent, $children){
         $this->parent = $parent;
+        $this->children = $children;
+
     }
 
     public function render()

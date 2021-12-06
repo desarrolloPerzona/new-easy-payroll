@@ -6,6 +6,15 @@
         </h2>
         {{--Nombre--------------}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+
+            <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
+            <label>
+                <select class="w-full rounded dark:bg-dark dark:text-white my-2">
+                    <option value="001">Perzona</option>
+                    <option value="001">DSSD</option>
+                </select>
+            </label>
+
             <label class="font-bold" for="name">{{__('Name')}}</label>
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
             {{--Prima de riesgo--------------}}
@@ -31,7 +40,8 @@
                                 </div>
 
                             </button>
-                            <label class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
+                            <label
+                                class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
 
                         </div>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
@@ -82,16 +92,19 @@
                                         </template>
 
                                     </div>
-                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text"
+                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
+                                           type="text"
                                            id="IMSScertificate">
                                 </div>
                                 <div>
                                     <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                           type="text" id="name" name="Name">
                                 </div>
                                 <div>
                                     <label class="font-bold" for="name">{{__('IMSS certified password')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="password" id="name"
+                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                           type="password" id="name"
                                            name="Name">
                                 </div>
                             </div>
@@ -161,7 +174,8 @@
                                         </template>
 
                                     </div>
-                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text"
+                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
+                                           type="text"
                                            id="IMSScertificate">
                                 </div>
 
@@ -209,16 +223,19 @@
                                         </template>
 
                                     </div>
-                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text"
+                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
+                                           type="text"
                                            id="IMSScertificate">
                                 </div>
                                 <div>
                                     <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                           type="text" id="name" name="Name">
                                 </div>
                                 <div>
                                     <label class="font-bold" for="name">{{__('FIEL password')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="password" id="name"
+                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                           type="password" id="name"
                                            name="Name">
                                 </div>
 

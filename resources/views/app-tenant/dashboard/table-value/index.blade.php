@@ -63,8 +63,35 @@
                 <div class="flex-1">  <h2 class="pb-3">Retenciones periódicas de ISR:</h2></div>
                 <div class="flex-2"><i class="fas fa-chevron-circle-up"></i></div>
             </div>
-            <tab>1</tab>
-            <tab>2</tab>
+
+            <ul class="nav nav-tabs w-full mb-4" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
+                        <i class="now-ui-icons objects_umbrella-13"></i> Diaria
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
+                        <i class="now-ui-icons shopping_cart-simple"></i> Semanal
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+                        <i class="now-ui-icons shopping_shop"></i> Decenal
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+                        <i class="now-ui-icons ui-2_settings-90"></i> Quincenal
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+                        <i class="now-ui-icons ui-2_settings-90"></i> Mensual
+                    </a>
+                </li>
+            </ul>
+
 
             <div class="flex border-b-2">
                 <div class="flex-1 font-bold pb-2">

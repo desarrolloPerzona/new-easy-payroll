@@ -5,16 +5,26 @@
             <span style="display: inline-flex;">{{ __('Edit employer register') }}</span>
         </h2>
         {{--Nombre--------------}}
-<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+            <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
+            <label>
+                <select class="w-full rounded dark:bg-dark dark:text-white my-2">
+                    <option value="001">Perzona</option>
+                    <option value="001">DSSD</option>
+                </select>
+            </label>
+
             <label class="font-bold" for="name">{{__('Name')}}</label>
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
                    placeholder="Registro patronal CDMX">
             {{--Prima de riesgo--------------}}
             <label class="font-bold" for="name">{{__('Risk premium')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="3">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                   placeholder="3">
             {{--Clave subdelegacional IMSS--------------}}
             <label class="font-bold" for="name">{{__('IMSS subdelegational key')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="123658">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                   placeholder="123658">
             {{--ACCORDION--}}
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
                 <div class="accordion" id="newItem">
@@ -30,10 +40,12 @@
                                 </div>
 
                             </button>
-                            <label class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
+                            <label
+                                class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
 
                         </div>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
                             <div class="accordion-body text-dark dark:bg-dark dark:text-white">
 
                                 <div class="flex flex-col flex-grow mb-3">
@@ -80,18 +92,21 @@
                                         </template>
 
                                     </div>
-                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text"
+                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
+                                           type="text"
                                            id="IMSScertificate"
                                            placeholder="IMSS123658.cer">
                                 </div>
                                 <div>
                                     <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                           type="text" id="name" name="Name"
                                            placeholder="IMSS23695">
                                 </div>
                                 <div>
                                     <label class="font-bold" for="name">{{__('IMSS certified password')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="password" id="name" name="Name"
+                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                           type="password" id="name" name="Name"
                                            placeholder="••••••••••">
                                 </div>
                             </div>
@@ -108,7 +123,8 @@
                                 </div>
 
                             </button>
-                            <label class="text-gray-800 dark:bg-dark dark:text-white" for="id">{{__('Send movements to the IMSS through FIEL')}}</label>
+                            <label class="text-gray-800 dark:bg-dark dark:text-white"
+                                   for="id">{{__('Send movements to the IMSS through FIEL')}}</label>
 
                         </div>
                         <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo"
@@ -160,7 +176,8 @@
                                         </template>
 
                                     </div>
-                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text"
+                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
+                                           type="text"
                                            id="IMSScertificate"
                                            placeholder="FIEL123658.cer">
                                 </div>
@@ -209,18 +226,21 @@
                                         </template>
 
                                     </div>
-                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text"
+                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
+                                           type="text"
                                            id="IMSScertificate"
                                            placeholder="FIEL123658.key">
                                 </div>
                                 <div>
                                     <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                           type="text" id="name" name="Name"
                                            placeholder="IMSS23695">
                                 </div>
                                 <div>
                                     <label class="font-bold" for="name">{{__('FIEL password')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="password" id="name" name="Name"
+                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                           type="password" id="name" name="Name"
                                            placeholder="••••••••••">
                                 </div>
 

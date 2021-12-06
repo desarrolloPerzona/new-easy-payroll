@@ -5,11 +5,23 @@
             <span style="display: inline-flex;">{{ __('Employer register') }}</span>
         </h2>
 
-        <div class="btn-top-holder my-3">
+        <div class="flex">
+        <div class="btn-top-holder my-3 flex-1">
             <a href="{{route('employer-register.create',1)}}" class="btn btn-dark">
                 <i class="fas fa-plus-circle"></i>
                 {{ __('New employer register') }}
             </a>
+        </div>
+            <div class="flex-1 my-3 text-right">
+                <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
+                <label>
+                    <select class="w-full rounded dark:bg-dark dark:text-white">
+                        <option value="001">Perzona</option>
+                        <option value="001">DSSD</option>
+                    </select>
+                </label>
+            </div>
+
         </div>
                 <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <table class="table">
@@ -17,6 +29,7 @@
                     <th>{{__('Name')}}</th>
                     <th class="text-center">{{__('risk premium')}}</th>
                     <th class="text-center">{{__('subdelegational key')}}</th>
+                    <th class="text-center">{{__('Business')}}</th>
                     <th colspan="3"></th>
                     <th></th>
                     <th></th>
@@ -37,6 +50,7 @@
                                 <td style="width: 30%">{{__('Registro CDMX')}}</td>
                                 <td style="width: 30%">{{__('3')}}</td>
                                 <td style="width: 30%">{{__('123658')}}</td>
+                                <td style="width: 30%">Perzona</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
                                     <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseCDMX"
@@ -97,6 +111,7 @@
                                 <td style="width: 30%">Registro MTY</td>
                                 <td style="width: 30%">3</td>
                                 <td style="width: 30%">326985</td>
+                                <td style="width: 30%">Perzona</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
                                     <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseMTY"
@@ -159,6 +174,7 @@
                                 <td style="width: 30%">Registro GDL</td>
                                 <td style="width: 30%">1</td>
                                 <td style="width: 30%">523695</td>
+                                <td style="width: 30%">Perzona</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
                                     <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseGDL"

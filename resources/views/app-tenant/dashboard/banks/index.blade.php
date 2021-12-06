@@ -5,11 +5,23 @@
             <span style="display: inline-flex;">{{ __('Bank accounts') }}</span>
         </h2>
 
-        <div class="btn-top-holder my-3">
-            <a href="{{route('banks.create',1)}}" class="btn btn-dark">
-                <i class="fas fa-plus-circle"></i>
-                {{ __('New bank account') }}
-            </a>
+        <div class="flex">
+            <div class="btn-top-holder my-3 flex-1">
+                <a href="{{route('banks.create',1)}}" class="btn btn-dark">
+                    <i class="fas fa-plus-circle"></i>
+                    {{ __('New bank account') }}
+                </a>
+            </div>
+            <div class="flex-1 my-3 text-right">
+                <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
+                <label>
+                    <select class="w-full rounded dark:bg-dark dark:text-white">
+                        <option value="001">Perzona</option>
+                        <option value="001">DSSD</option>
+                    </select>
+                </label>
+            </div>
+
         </div>
 
 
@@ -17,6 +29,14 @@
 
             <div class="border-bottom-1 border-gray-400 py-3">
                 <h2>Cuenta BBVA 1256 <a href="{{route('banks.edit',1)}}" class="text-gray-400 hover:text-gray-700" href="#"><i class="fas fa-edit"></i></a></h2>
+                <div class="flex pt-2">
+                    <div class="flex-1 text-gray-500">
+                        Empresa:
+                    </div>
+                    <div class="flex-1">
+                        Perzona
+                    </div>
+                </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
                         Número de cuenta:
@@ -71,6 +91,14 @@
                 <h2>Cuenta BBVA 6987 <i class="fas fa-edit text-gray-400"></i></h2>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
+                        Empresa:
+                    </div>
+                    <div class="flex-1">
+                        Perzona
+                    </div>
+                </div>
+                <div class="flex pt-2">
+                    <div class="flex-1 text-gray-500">
                         Número de cuenta:
                     </div>
                     <div class="flex-1">
@@ -121,6 +149,14 @@
 
             <div class="border-bottom-1 border-gray-400 py-3">
                 <h2>Cuenta Santander 4585 <i class="fas fa-edit text-gray-400"></i></h2>
+                <div class="flex pt-2">
+                    <div class="flex-1 text-gray-500">
+                        Empresa:
+                    </div>
+                    <div class="flex-1">
+                        Perzona
+                    </div>
+                </div>
                 <div class="flex pt-2">
                     <div class="flex-1 text-gray-500">
                         Número de cuenta:

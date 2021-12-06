@@ -89,7 +89,7 @@
             </li>
             <li class="nav-group">
                 <a class="nav-link nav-group-toggle" href="#">
-                    <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('Work estructure')}}
+                    <i class="nav-icon fas fa-sitemap mr-2"></i> {{__('Work estructure')}}
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
@@ -101,7 +101,7 @@
             </li>
             <li class="nav-group">
                 <a class="nav-link nav-group-toggle" href="#">
-                    <i class="nav-icon fad fa-user-cog mr-2"></i> {{__('Employees')}}
+                    <i class="nav-icon fad fa-users-cog mr-2"></i> {{__('Employees')}}
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">

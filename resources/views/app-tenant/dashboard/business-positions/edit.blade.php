@@ -67,10 +67,6 @@
         {{--Prestaciones--}}
         <div class="card bg-white shadow-sm rounded p-4 mb-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <h2 class="mb-4 font-bold">{{__('Benefits')}}</h2>
-            <label class="font-bold" for="name">{{__('Position name')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
-                   placeholder="Director MKT">
-
             <div class="flex">
                 <div class="flex-1 mr-3">
                     <label class="font-bold my-2" for="name">{{__('Area')}}</label>

@@ -676,6 +676,7 @@
     "New employer register": "Nuevo registro patronal",
     "Payroll": "Nóminas",
     "Policies": "Políticas",
+    "Policie": "Política",
     "New Policies": "Nueva política",
     "risk premium": "Prima de riesgo",
     "subdelegational key": "Clave subdelegacional IMSS",
@@ -841,7 +842,18 @@
     "Employees list": "Lista de empleados",
     "New business position": "Nueva posición de trabajo",
     "Seat": "Asiento",
-    "Job position": "Puesto de trabajo"
+    "Job position": "Puesto de trabajo",
+    "Position name": "Nombre del puesto",
+    "Type of contract": "Tipo de contrato",
+    "Employee type": "Tipo de empleado",
+    "Benefits": "Prestaciones",
+    "Payment method": "Métoodo de pago",
+    "Periodic perceptions": "Percepciones periodicas",
+    "Asign": "Asignado",
+    "Start": "Empieza",
+    "End": "Finaliza",
+    "Amount": "Monto",
+    "Number of periods": "Numero de periodos"
 }
 
 

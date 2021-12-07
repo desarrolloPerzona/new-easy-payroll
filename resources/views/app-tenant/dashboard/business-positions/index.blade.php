@@ -44,11 +44,11 @@
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
                 <div class="accordion" id="newItem">
 
-                    {{--Semanal 1--------------}}
+                    {{--JOB 1--------------}}
                     <table class="table">
                         <td style="width: 35%">Director MKT</td>
                         <td style="width: 20%">Juan Perez</td>
-                        <td style="width: 16%">MKT</td>
+                        <td style="width: 16%">Marketing</td>
                         <td style="width: 16%">CDMX</td>
                         <td style="width: 3%">
                             <a href="{{ route('business-positions.show',1) }}">
@@ -56,24 +56,24 @@
                         </td>
                         <td style="width: 3%"><a href="{{route('business-positions.edit',1)}}"> <i
                                     class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a></td>
-                        <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
 
                     </table>
 
-                    {{--Quincenal 2--------------}}
+                    {{--JOB 2--------------}}
                     <table class="table">
 
                         <td style="width: 35%">Diseñador Grafico</td>
                         <td style="width: 20%">Alberto Ortiz</td>
-                        <td style="width: 16%">MKT</td>
+                        <td style="width: 16%">Marketing</td>
                         <td style="width: 16%">CDMX</td>
                         <td style="width: 3%"><i class="fas fa-eye text-gray-400"></i></td>
                         <td style="width: 3%"><i class="fas fa-edit text-gray-400"></i></td>
-                        <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
 
                     </table>
 
-                    {{--Mensual 2--------------}}
+                    {{--JOB 3--------------}}
                     <table class="table">
                         <td style="width: 35%">Director Contabilidad</td>
                         <td style="width: 20%">Cesar Muñoz</td>
@@ -81,7 +81,32 @@
                         <td style="width: 16%">CDMX</td>
                         <td style="width: 3%"><i class="fas fa-eye text-gray-400"></i></td>
                         <td style="width: 3%"><i class="fas fa-edit text-gray-400"></i></td>
-                        <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+
+                    </table>
+
+                    {{--JOB 4--------------}}
+                    <table class="table">
+
+                        <td style="width: 35%">Comunicacion</td>
+                        <td style="width: 20%">Jose Cardenas</td>
+                        <td style="width: 16%">Marketing</td>
+                        <td style="width: 16%">CDMX</td>
+                        <td style="width: 3%"><i class="fas fa-eye text-gray-400"></i></td>
+                        <td style="width: 3%"><i class="fas fa-edit text-gray-400"></i></td>
+
+
+                    </table>
+
+                    {{--JOB 5--------------}}
+                    <table class="table">
+                        <td style="width: 35%">CEO</td>
+                        <td style="width: 20%">Alexo Boy</td>
+                        <td style="width: 16%">Direccion</td>
+                        <td style="width: 16%">CDMX</td>
+                        <td style="width: 3%"><i class="fas fa-eye text-gray-400"></i></td>
+                        <td style="width: 3%"><i class="fas fa-edit text-gray-400"></i></td>
+
 
                     </table>
 

@@ -16,7 +16,6 @@
     {{--CORE UI STYLES--}}
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
    {{--VENDOR CSS--}}
-
     {{--APP SCRIPTS--}}
     <script src="{{ mix('js/app.js') }}" defer></script>
     @livewireStyles

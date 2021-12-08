@@ -849,12 +849,20 @@
     "Benefits": "Prestaciones",
     "Payment method": "Métoodo de pago",
     "Periodic perceptions": "Percepciones periodicas",
-    "Asign": "Asignado",
+    "Assign": "Asignado",
     "Start": "Empieza",
     "End": "Finaliza",
     "Amount": "Monto",
     "Number of periods": "Numero de periodos",
-    "Job Position": "Puesto de trabajo"
+    "Job Position": "Puesto de trabajo",
+    "New periodic prestation": "Nueva prestación periodica",
+    "Start date": "Fecha de inicio",
+    "Finish date": "Fecha de finalización",
+    "Active provision": "Prestación activa",
+    "Period": "Periodo",
+    "Answers:": "Responde a",
+    "Gross monthly salary": "Sueldo bruto mensual",
+    "Base salary contribution": "Salario base cotización"
 }
 
 

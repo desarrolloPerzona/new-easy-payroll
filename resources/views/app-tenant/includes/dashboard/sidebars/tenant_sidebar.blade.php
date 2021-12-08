@@ -64,12 +64,12 @@
                             {{__('Policies')}}
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{--<li class="nav-item">
                         <a class="nav-link" href="{{route('area-positions.index')}}">
 
                             {{__('Areas and positions')}}
                         </a>
-                    </li>
+                    </li>--}}
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('working-day-holiday.index')}}">
 

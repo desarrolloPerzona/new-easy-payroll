@@ -5,16 +5,17 @@
             <span style="display: inline-flex;">{{ __('Edit areas and positions') }}</span>
         </h2>
 
-<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <h2 class="my-2 font-bold">{{__('Area')}}</h2>
             <label class="font-bold" for="name">{{__('Area name')}}</label>
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
                    placeholder="Dirección">
 
             <h2 class="my-2 font-bold">{{__('Positions')}}</h2>
-            <div class="flex">
-                <div class="flex-2 w-full mr-2">
-                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Director">
+            <div class="flex items-center">
+                <div class="flex-2 w-full mr-2 pt-2">
+                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name"
+                           name="Name" placeholder="Director">
                 </div>
                 <div class="felx-1 mt-2 p-0 w-full">
                     <label class="w-full">
@@ -28,10 +29,14 @@
                         </select>
                     </label>
                 </div>
+                <div class="items-center ml-2"><i
+                        class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
             </div>
-            <div class="flex">
-                <div class="flex-2 w-full mr-2">
-                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Sub Director">
+
+            <div class="flex items-center">
+                <div class="flex-2 w-full mr-2 pt-2">
+                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name"
+                           name="Name" placeholder="Sub Director">
                 </div>
                 <div class="felx-1 mt-2 p-0 w-full">
                     <label class="w-full">
@@ -46,10 +51,14 @@
                         </select>
                     </label>
                 </div>
+                <div class="items-center ml-2"><i
+                        class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
             </div>
-            <div class="flex">
-                <div class="flex-2 w-full mr-2">
-                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Secretaria Dirección">
+
+            <div class="flex items-center">
+                <div class="flex-2 w-full mr-2 pt-2">
+                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name"
+                           name="Name" placeholder="Secretaria Dirección">
                 </div>
                 <div class="felx-1 mt-2 p-0 w-full">
                     <label class="w-full">
@@ -64,10 +73,14 @@
                         </select>
                     </label>
                 </div>
+                <div class="items-center ml-2"><i
+                        class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
             </div>
-            <div class="flex">
-                <div class="flex-2 w-full mr-2">
-                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Supervisor general">
+
+            <div class="flex items-center">
+                <div class="flex-2 w-full mr-2 pt-2">
+                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name"
+                           name="Name" placeholder="Supervisor general">
                 </div>
                 <div class="felx-1 mt-2 p-0 w-full">
                     <label class="w-full">
@@ -82,10 +95,14 @@
                         </select>
                     </label>
                 </div>
+                <div class="items-center ml-2"><i
+                        class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
             </div>
-            <div class="flex">
-                <div class="flex-2 w-full mr-2">
-                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Jefe de oficina">
+
+            <div class="flex items-center">
+                <div class="flex-2 w-full mr-2 pt-2">
+                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name"
+                           name="Name" placeholder="Jefe de oficina">
                 </div>
                 <div class="felx-1 mt-2 p-0 w-full">
                     <label class="w-full">
@@ -100,6 +117,8 @@
                         </select>
                     </label>
                 </div>
+                <div class="items-center ml-2"><i
+                        class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
             </div>
 
             {{--Nueva puesto ----------------}}
@@ -125,7 +144,8 @@
                             <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
                                 <div class="flex">
                                     <div class="flex-2 w-full mr-2">
-                                        <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+                                        <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                               type="text" id="name" name="Name">
                                     </div>
                                     <div class="felx-1 mt-2 p-0 w-full">
                                         <label class="w-full">
@@ -163,8 +183,8 @@
                 </div>
 
 
+            </div>
         </div>
-    </div>
 
 
 </x-app-tenant>

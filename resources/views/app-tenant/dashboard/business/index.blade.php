@@ -226,13 +226,19 @@
                                                             type="text" id="name" name="Name">
                                                     </div>
                                                 </div>
-                                                <div>
-                                                    <div><label class="font-bold"
+                                                <div class="pb-4">
+                                                    <div class="my-2"><label class="font-bold"
                                                                 for="name">{{__('Employer registration')}}</label>
                                                     </div>
-                                                    <div><input
-                                                            class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                                            type="text" id="name" name="Name">
+                                                    <div><label class="w-full">
+                                                            <select class="rounded w-full dark:bg-dark dark:text-white">
+                                                                <option value="001">Registro CDMX</option>
+                                                                <option value="001">Registro MTY</option>
+                                                                <option value="001">Registro GDL</option>
+                                                                <option class="font-bold" value="001">Agregar Registro Patronal</option>
+
+                                                            </select>
+                                                        </label>
                                                     </div>
                                                 </div>
                                                 <div type="button" data-bs-toggle="collapse"

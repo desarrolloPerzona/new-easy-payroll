@@ -54,14 +54,7 @@
                                 </select>
                             </label>
 
-                            <div class="my-2 text-right" type="button" data-bs-toggle="collapse"
-                                 data-bs-target="#collapseS1" aria-expanded="false"
-                                 aria-controls="collapseP1">
-                                <a href="#" class="btn btn-dark">
-                                    <i class="fas fa-plus-circle"></i>
-                                    {{ __('Save') }}
-                                </a>
-                            </div>
+
                         </div>
 
                     </div>
@@ -107,18 +100,16 @@
                      </label>--}}
                     <label class="my-2 w-full" for="name">Director</label>
                 </div>
-                <div class="flex-1 mr-3">
+                <div class="flex-1">
                     <label class="font-bold my-2" for="name">{{__('Branch')}}</label>
 
-                    {{--<label class="w-full">
+                    <label class="w-full">
                         <select class="rounded w-full dark:bg-dark dark:text-white">
-                            <option value="001">CDMX</option>
-                            <option value="001">MTY</option>
-                            <option value="002">GDL</option>
-
+                            <option value="001">Sede CDMX</option>
+                            <option value="001">Sede MTY</option>
+                            <option value="002">Sede GDL</option>
                         </select>
-                    </label>--}}
-                    <label class="w-full" for="name">CDMX</label>
+                    </label>
                 </div>
             </div>
 
@@ -183,11 +174,7 @@
             </div>
 
 
-            <div class="btn-top-holder my-2 text-right">
-                <a href="#" class="btn btn-dark">
-                    {{ __('Save') }}
-                </a>
-            </div>
+
         </div>
 
         {{--Precepciones--}}
@@ -221,7 +208,7 @@
                 </div>
             </div>
 
-            <div class="border-b-2 border-gray-400 pb-4">
+            <div class="pb-2">
                 <label class="my-2 font-bold">{{__('Payroll')}}</label>
                 <div class="flex my-2">
                     <div class="flex-1 mr-3">
@@ -234,8 +221,13 @@
                     </div>
                 </div>
             </div>
+            <div class="btn-top-holder my-2 flow-root">
+                <a href="javascript: history.go(-1)" class="btn btn-dark float-right">
+                    {{ __('Save') }}
+                </a>
+            </div>
 
-            <div class="pb-4">
+            {{--<div class="pb-4">
                 <label class="my-2 font-bold">{{__('Periodic perceptions')}}</label>
                 <table class="table">
                     <tr>
@@ -271,7 +263,7 @@
                     <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
                 </table>
 
-                {{--Nueva percepción ----------------}}
+                --}}{{--Nueva percepción ----------------}}{{--
 
                 <div class="accordion btn-top-holder my-3 max-w-6xl m-auto" id="newPosition">
 
@@ -333,10 +325,10 @@
                                         </div>
                                     </div>
                                     <div class="flex my-2 m-auto">
-                                        {{--Date Picker---------------}}
+                                        --}}{{--Date Picker---------------}}{{--
                                         <div
                                             class="flex-1 items-center justify-center bg-gray-200 h-full dark:bg-dark dark:text-white">
-                                            {{--                                <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"/>--}}
+                                            --}}{{--                                <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"/>--}}{{--
                                             <script
                                                 src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
                                                 defer></script>
@@ -656,12 +648,12 @@
 
                 </div>
 
-            </div>
+            </div>--}}
 
         </div>
 
         {{--Deducciones--}}
-        <div class="card bg-white shadow-sm rounded p-4 mb-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+       {{-- <div class="card bg-white shadow-sm rounded p-4 mb-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
             <div class="pb-4">
                 <h2 class="font-bold my-2">{{__('Deductions')}}</h2>
@@ -688,7 +680,7 @@
                     </div>
                 </div>
 
-                {{--Nueva deducción ----------------}}
+                --}}{{--Nueva deducción ----------------}}{{--
 
                 <div class="accordion btn-top-holder my-3 max-w-6xl m-auto" id="NewDeduction">
 
@@ -781,7 +773,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
 
     </div>
 

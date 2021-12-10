@@ -30,11 +30,11 @@
                 <div class="accordion" id="newItem">
 
                     <div class="accordion-item">
-                        <div class="accordion-header mr-4" id="headingOne">
+                        <div class="bg-blueSteel mr-4 " id="headingOne">
                             <table class="table">
 
-                                <td style="width: 45%">PerZona</td>
-                                <td style="width: 50%">12/04/2020</td>
+                                <td class="text-white" style="width: 45%">PerZona</td>
+                                <td class="text-white" style="width: 50%">12/04/2020</td>
                                 <td style="width: 3%">
                                     <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseB1"
                                             aria-expanded="false" aria-controls="collapseB1">
@@ -253,63 +253,86 @@
 
 
                                 {{--Sede ----------------}}
-                                <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
-                                    <h2 class="py-3">{{__('Branches')}}</h2>
+                                <div class="my-2 text-dark bg-gray-200 dark:bg-dark dark:text-white">
+                                    <table class="table">
+                                        <tr>
+                                            <th style="width: 30%">{{__('Branch')}}</th>
+                                            <th style="width: 30%">{{__('IMSS employer register')}}</th>
+                                            <th style="width: 40%"></th>
 
-                                    <div class="border-b-2 border-gray-400 mb-2">
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('Name')}}</label>
+                                        </tr>
+
+                                    </table>
+                                    {{--ACCORDION--}}
+                                    <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
+                                        <div class="accordion text-dark bg-gray-200 dark:bg-dark dark:text-white" id="newItem">
+
+                                            {{--CDMX--------------}}
+                                            <div class="text-dark bg-gray-200 dark:bg-dark dark:text-white">
+                                                <div class="accordion-header mr-4 text-dark bg-gray-200 dark:bg-dark dark:text-white" id="headingOne">
+                                                    <table class="table">
+
+                                                        <td style="width: 30%">Sede CDMX</td>
+                                                        <td style="width: 30%">987654321</td>
+                                                        <td style="width: 31%"></td>
+                                                        <td style="width: 3%">
+                                                                <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                                        </td>
+                                                        <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                                                        <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                                                    </table>
+                                                </div>
                                             </div>
-                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Sede
-                                                    CDMX</label>
+
+                                            {{--MTY--------------}}
+                                            <div class="text-dark bg-gray-200 dark:bg-dark dark:text-white">
+                                                <div class="accordion-header mr-4 text-dark bg-gray-200 dark:bg-dark dark:text-white" id="headingFiel">
+
+                                                    <table class="table">
+
+                                                        <td style="width: 30%">Sede MTY</td>
+                                                        <td style="width: 30%">523695</td>
+                                                        <td style="width: 31%"></td>
+                                                        <td style="width: 3%">
+                                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                                        </td>
+                                                        <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                                                        <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                                                    </table>
+
+                                                </div>
+
                                             </div>
-                                        </div>
 
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('Description')}}</label></div>
-                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Tlatilco,
-                                                    02860 Ciudad de México, CDMX
-                                                </label></div>
-                                        </div>
+                                            {{--GDL--------------}}
+                                            <div class="text-dark bg-gray-200 dark:bg-dark dark:text-white">
+                                                <div class="accordion-header mr-4 text-dark bg-gray-200 dark:bg-dark dark:text-white" id="headingFiel">
 
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('IMSS employer register')}}</label></div>
-                                            <div class="flrx-2 text-left w-1/2"><label
-                                                    class="my-2 font-bold">987654321</label></div>
+                                                    <table class="table">
+
+                                                        <td style="width: 30%">Sede GDL</td>
+                                                        <td style="width: 30%">2365985</td>
+                                                        <td style="width: 31%"></td>
+                                                        <td style="width: 3%">
+                                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                                        </td>
+                                                        <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                                                        <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
+                                                    </table>
+
+
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
-
-                                    <div class="border-b-2 border-gray-400 mb-2">
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('Name')}}</label>
-                                            </div>
-                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Sede
-                                                    Monterey</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('Description')}}</label></div>
-                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Gustavo
-                                                    Díaz
-                                                    Ordaz 100, Santa María, 64650 Monterrey, N.L.
-                                                </label></div>
-                                        </div>
-
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('IMSS employer register')}}</label></div>
-                                            <div class="flrx-2 text-left w-1/2"><label
-                                                    class="my-2 font-bold">987654321</label></div>
-                                        </div>
-                                    </div>
+                                    {{--ACCORDION--}}
 
                                 </div>
+
                             </div>
                         </div>
 
@@ -321,19 +344,18 @@
                 <div class="accordion" id="newItem">
 
                     <div class="accordion-item">
-                        <div class="accordion-header mr-4" id="headingTwo">
+                        <div class="bg-blueSteel mr-4 " id="headingOne">
                             <table class="table">
 
-                                <td style="width: 45%">DSSD</td>
-                                <td style="width: 50%">15/09/1996</td>
+                                <td class="text-white" style="width: 45%">DSSD</td>
+                                <td class="text-white" style="width: 50%">15/09/1996</td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseB2"
-                                            aria-expanded="false" aria-controls="collapseB1">
+                                    <button>
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('business.edit',1)}}"> <i
-                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
+                                <td style="width: 3%"><i
+                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                 </td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 

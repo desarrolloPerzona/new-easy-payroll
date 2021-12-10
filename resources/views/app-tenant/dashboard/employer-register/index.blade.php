@@ -6,6 +6,7 @@
         </h2>
 
         <div class="flex">
+
         <div class="btn-top-holder my-3 flex-1">
             <a href="{{route('employer-register.create',1)}}" class="btn btn-dark">
                 <i class="fas fa-plus-circle"></i>

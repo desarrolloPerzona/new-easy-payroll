@@ -53,7 +53,7 @@
                     </div>
                 </template>
 
-                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"> type="text" id="IMSScertificate"
+                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text" id="IMSScertificate"
                        placeholder="logo.jpg">
             </div>
 
@@ -174,9 +174,9 @@
                     </div>
                 </template>
 
-                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"> type="text"
+                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text"
                        id="IMSScertificate"
-                       placeholder="docuemnt.cer">
+                       placeholder="document.cer">
             </div>
 
             <div class="flex-1 text-left py-2"><label class="font-bold"
@@ -220,7 +220,7 @@
                     </div>
                 </template>
 
-                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"> type="text"
+                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text"
                        id="IMSScertificate"
                        placeholder="document.key">
             </div>

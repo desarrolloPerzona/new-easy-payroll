@@ -60,20 +60,29 @@
                 </li>
             </ul>
         </li>
-        @endhasrole
+
         <li class="nav-group">
             <a class="nav-link nav-group-toggle" href="#">
                 <i class="nav-icon fad fa-tools mr-2"></i> {{__('User Administration')}}
             </a>
             <ul class="nav-group-items">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{route('admin.users.index')}}">
+                        <i class="nav-icon fad fa-users mr-2"></i>
+                        {{__('Users')}}
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav-group-items">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('admin.tenants.index')}}">
                         <i class="nav-icon fad fa-users mr-2"></i>
                         {{__('Tenants')}}
                     </a>
                 </li>
             </ul>
         </li>
+        @endhasrole
     </ul>
     <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
 </div>

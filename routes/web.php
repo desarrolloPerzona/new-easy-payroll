@@ -9,6 +9,8 @@ use App\Http\Controllers\FiscalRegimeController;
 use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\TenantController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ZipCodeController;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
@@ -50,6 +52,10 @@ Route::group(['middleware' =>  'web'], function () {
         route::resource('/industries', IndustryController::class);
 
         route::resource('/zipcodes', ZipCodeController::class);
+
+        route::resource('/users', UserController::class);
+
+        route::resource('/tenants', TenantController::class);
 
 
     });

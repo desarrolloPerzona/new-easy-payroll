@@ -13,6 +13,7 @@ class Breadcrumb extends Component
      * Children as an array of the url (without the slash /): ['create','']
      */
 
+
     public $icon, $parent , $children;
 
     public function mount($parent, $children){

@@ -12,7 +12,7 @@
             </a>
         </div>
 
-<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <table class="table">
                 <tr>
                     <th>{{__('Name')}}</th>
@@ -36,18 +36,31 @@
                                 <td style="width: 90%">Política 1</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseP1" aria-expanded="false" aria-controls="collapseP1">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseP1"
+                                            aria-expanded="false" aria-controls="collapseP1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('policies.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a></td>
+                                <td style="width: 3%"><a href="{{route('policies.edit',1)}}"> <i
+                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
+                                </td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
                             </table>
                         </div>
-                        <div id="collapseP1" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
+                        <div id="collapseP1" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
+                                <div class="border-bottom-1 border-gray-400 pb-3">
+                                <div class="flex pt-2">
+                                    <div class="flex-1 text-gray-500">
+                                        {{__('Vacation days')}}
+                                    </div>
+                                    <div class="flex-1">
+                                        6 días
+                                    </div>
+                                </div>
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
                                         {{__('Economic days:')}}
@@ -56,6 +69,24 @@
                                         5 días
                                     </div>
                                 </div>
+                                <div class="flex pt-2">
+                                    <div class="flex-1 text-gray-500">
+                                        {{__('Vacation premium')}}
+                                    </div>
+                                    <div class="flex-1">
+                                        0.25
+                                    </div>
+                                </div>
+                                <div class="flex pt-2">
+                                    <div class="flex-1 text-gray-500">
+                                        {{__('Bonus days')}}
+                                    </div>
+                                    <div class="flex-1">
+                                        15 días
+                                    </div>
+                                </div>
+                                </div>
+
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
                                         {{__('Pantry vouchers:')}}
@@ -158,7 +189,8 @@
                                 <td style="width: 90%">Política 2</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseP2" aria-expanded="false" aria-controls="collapseP1">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseP2"
+                                            aria-expanded="false" aria-controls="collapseP1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
@@ -172,14 +204,41 @@
                              data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
-                                <div class="flex pt-2">
-                                    <div class="flex-1 text-gray-500">
-                                        {{__('Economic days:')}}
+                                <div class="border-bottom-1 border-gray-400 pb-3">
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Vacation days')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            6 días
+                                        </div>
                                     </div>
-                                    <div class="flex-1">
-                                        5 días
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Economic days:')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            5 días
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Vacation premium')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            0.25
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Bonus days')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            15 días
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
                                         {{__('Pantry vouchers:')}}
@@ -282,7 +341,8 @@
                                 <td style="width: 90%">Política 3</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseP3" aria-expanded="false" aria-controls="collapseP1">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseP3"
+                                            aria-expanded="false" aria-controls="collapseP1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
@@ -296,14 +356,41 @@
                              data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
-                                <div class="flex pt-2">
-                                    <div class="flex-1 text-gray-500">
-                                        {{__('Economic days:')}}
+                                <div class="border-bottom-1 border-gray-400 pb-3">
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Vacation days')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            6 días
+                                        </div>
                                     </div>
-                                    <div class="flex-1">
-                                        7 días
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Economic days:')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            5 días
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Vacation premium')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            0.25
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Bonus days')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            15 días
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
                                         {{__('Pantry vouchers:')}}
@@ -393,7 +480,6 @@
                                     </div>
                                 </div>
 
-
                             </div>
                         </div>
                     </div>
@@ -407,7 +493,8 @@
                                 <td style="width: 90%">Política 4</td>
                                 <td style="width: 1%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseP4" aria-expanded="false" aria-controls="collapseP1">
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseP4"
+                                            aria-expanded="false" aria-controls="collapseP1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
@@ -421,14 +508,41 @@
                              data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
-                                <div class="flex pt-2">
-                                    <div class="flex-1 text-gray-500">
-                                        {{__('Economic days:')}}
+                                <div class="border-bottom-1 border-gray-400 pb-3">
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Vacation days')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            6 días
+                                        </div>
                                     </div>
-                                    <div class="flex-1">
-                                        4 días
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Economic days:')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            5 días
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Vacation premium')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            0.25
+                                        </div>
+                                    </div>
+                                    <div class="flex pt-2">
+                                        <div class="flex-1 text-gray-500">
+                                            {{__('Bonus days')}}
+                                        </div>
+                                        <div class="flex-1">
+                                            15 días
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="flex pt-2">
                                     <div class="flex-1 text-gray-500">
                                         {{__('Pantry vouchers:')}}
@@ -518,7 +632,6 @@
                                     </div>
                                 </div>
 
-
                             </div>
                         </div>
                     </div>
@@ -529,8 +642,6 @@
             {{--ACCORDION--}}
 
         </div>
-
-
 
 
     </div>

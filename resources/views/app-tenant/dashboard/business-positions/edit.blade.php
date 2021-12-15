@@ -2,7 +2,7 @@
     <div class="container mx-auto">
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
             <i class="nav-icon fas fa-sitemap mr-2"></i>
-            <span style="display: inline-flex;">Editar Director MKT</span>
+            <span style="display: inline-flex;">{{__('Business position edit')}}</span>
         </h2>
 
         {{--Seat--}}
@@ -10,27 +10,27 @@
 
             <h2 class="mb-2 font-bold">{{__('Seat')}}</h2>
 
-            <div class="accordion-item">
+            <div class="accordion-item dark:bg-dark dark:text-white">
                 <div class="accordion-header mr-4" id="headingOne">
                     <table class="table">
 
                         <td style="width: 90%">Juan Perez</td>
 
-                        <td style="width: 3%">
+                      {{--  <td style="width: 3%">
                             <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseS1"
                                     aria-expanded="false" aria-controls="collapseS1">
                                 <i class="fas fa-repeat-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                             </button>
-                        </td>
+                        </td>--}}
 
                         <td style="width: 3%">
                             <a href="#"></a>
-                            <i class="fas fa-user-times text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                            <i class="fas fa-user-alt-slash text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                             </a>
                         </td>
 
                     </table>
-                    <div id="collapseS1" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                   {{-- <div id="collapseS1" class="accordion-collapse collapse" aria-labelledby="headingOne"
                          data-bs-parent="#newItem">
                         <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
                             <label class="font-bold my-2" for="name">{{__('Assign')}}</label>
@@ -57,7 +57,7 @@
 
                         </div>
 
-                    </div>
+                    </div>--}}
 
 
                 </div>
@@ -102,14 +102,14 @@
                 </div>
                 <div class="flex-1">
                     <label class="font-bold my-2" for="name">{{__('Branch')}}</label>
-
-                    <label class="w-full">
+                    <label class="my-2 w-full" for="name">Sede CDMX</label>
+                    {{--<label class="w-full">
                         <select class="rounded w-full dark:bg-dark dark:text-white">
                             <option value="001">Sede CDMX</option>
                             <option value="001">Sede MTY</option>
                             <option value="002">Sede GDL</option>
                         </select>
-                    </label>
+                    </label>--}}
                 </div>
             </div>
 
@@ -213,7 +213,7 @@
                 <div class="flex my-2">
                     <div class="flex-1 mr-3">
                         <label class="my-2 mr-2" for="name">Sueldo bruto mensual:</label>
-                        <input type="text" class="rounded font-bold" placeholder="$65,000">
+                        <input type="text" class="rounded font-bold dark:bg-dark dark:text-white" placeholder="$65,000">
                     </div>
                     <div class="flex-1 mr-3">
                         <label class="my-2 mr-2" for="name">Salario base cotización:</label>

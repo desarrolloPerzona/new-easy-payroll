@@ -9,8 +9,17 @@
             <label class="font-bold" for="name">{{__('Policy name')}}</label>
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Política 1">
 
-            <label class="font-bold" for="name">{{__('Economic days')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="5">
+    <label class="font-bold my-2" for="name">{{__('Benefits')}}</label>
+
+    <label class="w-full my-2">
+        <select class="rounded w-full dark:bg-dark dark:text-white">
+            <option value="001">Tabla 1</option>
+            <option value="002">Tabla 2</option>
+            <option value="002">Tabla 3</option>
+
+        </select>
+    </label>
+
 
 {{--Vales despensa--}}
             <label class="font-bold my-2" for="name">{{__('Grocery coupon')}}</label>
@@ -87,7 +96,7 @@
                 <label class="text-gray-800 dark:text-white">{{__('Savings fund cap')}}</label>
             </div>
 
-            <label  class="font-bold my-2" for="name">{{__('New concept')}}</label>
+            <label class="font-bold my-2" for="name">{{__('New concept')}}</label>
             <div class="btn-top-holder my-3 pb-4">
                 <a href="{{route('concept.create',1)}}" class="btn btn-dark">
                     {{ __('Add concept') }}
@@ -126,11 +135,13 @@
                 <label>{{__('Contract start date')}}</label>
             </div>
 
-            <div class="btn-top-holder my-3 flow-root">
-                <a href="javascript: history.go(-1)" class="btn btn-dark float-right">
-                    {{ __('Save') }}
-                </a>
-            </div>
+
+
+    <div class="btn-top-holder my-3 text-right">
+        <a href="javascript: history.go(-1)" class="btn btn-dark">
+            {{ __('Save') }}
+        </a>
+    </div>
 
         </div>
     </div>

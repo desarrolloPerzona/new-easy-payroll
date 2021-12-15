@@ -30,7 +30,7 @@
                     </label>
                 </div>
                 <div class="items-center ml-2"><i
-                        class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
+                        class="fas fa-user-alt-slash text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
             </div>
 
             <div class="flex items-center">
@@ -52,7 +52,7 @@
                     </label>
                 </div>
                 <div class="items-center ml-2"><i
-                        class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
+                        class="fas fa-user-alt-slash text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
             </div>
 
             <div class="flex items-center">
@@ -74,7 +74,7 @@
                     </label>
                 </div>
                 <div class="items-center ml-2"><i
-                        class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
+                        class="fas fa-user-alt-slash text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
             </div>
 
             <div class="flex items-center">
@@ -96,7 +96,7 @@
                     </label>
                 </div>
                 <div class="items-center ml-2"><i
-                        class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
+                        class="fas fa-user-alt-slash text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
             </div>
 
             <div class="flex items-center">
@@ -117,8 +117,8 @@
                         </select>
                     </label>
                 </div>
-                <div class="items-center ml-2"><i
-                        class="fas fa-trash-alt text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
+                <div class="items-center ml-2">
+                    <i class="fas fa-user-alt-slash text-gray-400 hover:text-gray-700 cursor-pointer"></i></div>
             </div>
 
             {{--Nueva puesto ----------------}}
@@ -177,7 +177,7 @@
 
                 </div>
                 <div class="btn-top-holder my-3 flow-root">
-                    <a href="javascript: history.go(-1)" class="btn btn-dark float-right">
+                    <a href="{{route('business-positions.index',1)}}" class="btn btn-dark float-right">
                         {{ __('Save') }}
                     </a>
                 </div>
@@ -186,5 +186,5 @@
             </div>
         </div>
 
-
+    </div>
 </x-app-tenant>

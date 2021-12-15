@@ -230,12 +230,24 @@
                     <div id="collapseP1" class="accordion-collapse collapse"
                          aria-labelledby="headingTwo" data-bs-parent="#newPosition">
                         <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
-                            <div>
-                                <div><label class="font-bold" for="name">{{__('Area name')}}</label></div>
-                                <div><input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                            type="text" id="name" name="Name"></div>
-                            </div>
+                            <div class="flex">
+                                <div class="flex-1 mr-2">
+                                    <div><label class="font-bold" for="name">{{__('Area name')}}</label></div>
+                                    <div><input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                                type="text" id="name" name="Name"></div>
+                                </div>
+                                <div class="flex-2">
+                                    <label class="font-bold mb-2" for="name">{{__('Branch')}}</label>
 
+                                    <label class="w-full">
+                                        <select class="rounded w-full dark:bg-dark dark:text-white">
+                                            <option value="001">Sede CDMX</option>
+                                            <option value="001">Sede MTY</option>
+                                            <option value="002">Sede GDL</option>
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
                             <div type="button" data-bs-toggle="collapse"
                                  data-bs-target="#collapseP1" aria-expanded="false"
                                  aria-controls="collapseP1">
@@ -258,6 +270,23 @@
         {{--Lista de Posiciones-------}}
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+            <ul class="nav nav-tabs w-full mb-4" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
+                        <i class="now-ui-icons objects_umbrella-13"></i> Sede CDMX
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
+                        <i class="now-ui-icons shopping_cart-simple"></i> Sede MTY
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+                        <i class="now-ui-icons shopping_shop"></i> Sede GDL
+                    </a>
+                </li>
+            </ul>
 
             {{--Direccion-----------}}
             <div class="border-bottom-1 border-gray-400 py-3">

@@ -64,6 +64,13 @@
                             {{__('Policies')}}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+
+                            Tablas de beneficios
+                        </a>
+                    </li>
+
                     {{--<li class="nav-item">
                         <a class="nav-link" href="{{route('area-positions.index')}}">
 

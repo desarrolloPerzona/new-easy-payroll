@@ -87,23 +87,6 @@
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
-            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">Cuenta bancaria</label></div>
-            <label>
-                <select class="w-full rounded">
-                    <option value="001">{{__('Select')}}</option>
-                    <option value="001">Cuenta BBVA 1256</option>
-                    <option value="002">Cuenta BBVA 6987</option>
-                    <option value="002">Cuenta Santander 4585</option>
-
-                </select>
-            </label>
-
-            <div class="btn-top-holder my-3">
-                <a href="#" class="btn btn-dark">
-                    {{ __('Add account') }}
-                </a>
-            </div>
-
 
             <h2 class="py-3">{{__('Tax data')}}</h2>
 

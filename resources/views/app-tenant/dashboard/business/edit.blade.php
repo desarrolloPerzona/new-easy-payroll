@@ -11,7 +11,8 @@
             <h2 class="py-3">{{__('Business')}}</h2>
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Name')}}</label></div>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Perzona">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                   placeholder="Perzona">
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Logo')}}</label></div>
             <div x-data="{ files: null }" id="FileUpload"
@@ -53,12 +54,14 @@
                     </div>
                 </template>
 
-                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text" id="IMSScertificate"
+                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white" type="text"
+                       id="IMSScertificate"
                        placeholder="logo.jpg">
             </div>
 
             <div class="flex-1 text-lef py-2"><label class="font-bold" for="name">{{__('Industry')}}</label></div>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="RRHH">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                   placeholder="RRHH">
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Fiscal regime')}}</label></div>
             <label>
@@ -77,59 +80,35 @@
 
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('RFC')}}</label></div>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="PERZ02369856">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                   placeholder="PERZ02369856">
 
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Adress')}}</label></div>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Bosques de Tamarindos. 135 piso 2, Col. Aguabrav">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                   placeholder="Bosques de Tamarindos. 135 piso 2, Col. Aguabrav">
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('State')}}</label></div>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="CDMX">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                   placeholder="CDMX">
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('ZIP Code')}}</label></div>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="03695">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                   placeholder="03695">
 
             <h2 class="py-3">{{__('Accounts')}}</h2>
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="03695">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                   placeholder="03695">
 
-            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Bank account')}}</label></div>
-            <label>
-                <select class="w-full rounded dark:bg-dark dark:text-white">
-                    <option value="001">Cuenta BBVA 1256</option>
-                    <option value="002">Cuenta BBVA 6987</option>
-                    <option value="002">Cuenta Santander 4585</option>
+            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Bank accounts')}}</label></div>
+            <ul>
+                <li value="001">- Cuenta BBVA 1256</li>
+                <li value="002">- Cuenta BBVA 6987</li>
+                <li value="002">- Cuenta Santander 4585</li>
 
-                </select>
-            </label>
-
-            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Bank account')}}</label></div>
-            <label>
-                <select class="w-full rounded dark:bg-dark dark:text-white">
-                    <option value="002">Cuenta BBVA 6987</option>
-                    <option value="001">Cuenta BBVA 1256</option>
-                    <option value="002">Cuenta Santander 4585</option>
-
-                </select>
-            </label>
-
-            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Bank account')}}</label></div>
-            <label>
-                <select class="w-full rounded dark:bg-dark dark:text-white">
-                    <option value="002">Cuenta Santander 4585</option>
-                    <option value="002">Cuenta BBVA 6987</option>
-                    <option value="001">Cuenta BBVA 1256</option>
-
-                </select>
-            </label>
-
-            <div class="btn-top-holder my-3">
-                <a href="#" class="btn btn-dark">
-                    {{ __('Add account') }}
-                </a>
-            </div>
-
+            </ul>
 
             <h2 class="py-3">{{__('Tax data')}}</h2>
 
@@ -229,7 +208,8 @@
             <div class="flex-1 text-left py-2"><label class="font-bold"
                                                       for="name">{{__('Password for digital seal certificate')}}</label>
             </div>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="••••••••••">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
+                   placeholder="••••••••••">
 
             <div class="py-2"></div>
 

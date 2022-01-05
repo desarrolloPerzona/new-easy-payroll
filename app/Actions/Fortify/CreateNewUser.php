@@ -5,7 +5,7 @@ namespace App\Actions\Fortify;
 use App\Models\Tenant;
 use App\Models\Tenant\Branch;
 use App\Models\Tenant\Business;
-use App\Models\Tenant\BusinessBranch;
+use App\Models\Tenant\BranchBusiness;
 use App\Models\User;
 use App\Notifications\NewUserNotification;
 use Illuminate\Support\Facades\Hash;
@@ -124,7 +124,7 @@ class CreateNewUser implements CreatesNewUsers
                 'business_name' => $user->tenancy_company,
             ]);
 
-            BusinessBranch::create([
+            BranchBusiness::create([
                 'business_id' => 1,
                 'branch_id' => 1
             ]);

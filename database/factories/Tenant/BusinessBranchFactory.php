@@ -2,7 +2,7 @@
 
 namespace Database\Factories\Tenant;
 
-use App\Models\Tenant\BusinessBranch;
+use App\Models\Tenant\BranchBusiness;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BusinessBranchFactory extends Factory
@@ -12,7 +12,7 @@ class BusinessBranchFactory extends Factory
      *
      * @var string
      */
-    protected $model = BusinessBranch::class;
+    protected $model = BranchBusiness::class;
 
     /**
      * Define the model's default state.

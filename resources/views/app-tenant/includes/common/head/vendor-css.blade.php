@@ -14,3 +14,5 @@
 <link rel="stylesheet" href="{{asset('vendor/select2/css/select2.css')}}"  />
 {{--PIKADAY--}}
 <link rel="stylesheet" href="{{asset('vendor/pikaday/css/pikaday.css')}}"  />
+{{--FILEPOND--}}
+<link rel="stylesheet" href="{{asset('vendor/filepond/dist/filepond.css')}}"  />

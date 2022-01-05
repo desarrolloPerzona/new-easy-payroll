@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tenant\BusinessBranch;
+use App\Models\Tenant\BranchBusiness;
 use Illuminate\Http\Request;
 
 class BusinessBranchController extends Controller
@@ -41,10 +41,10 @@ class BusinessBranchController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tenant\BusinessBranch  $businessBranch
+     * @param  \App\Models\Tenant\BranchBusiness  $businessBranch
      * @return \Illuminate\Http\Response
      */
-    public function show(BusinessBranch $businessBranch)
+    public function show(BranchBusiness $businessBranch)
     {
         //
     }
@@ -52,10 +52,10 @@ class BusinessBranchController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tenant\BusinessBranch  $businessBranch
+     * @param  \App\Models\Tenant\BranchBusiness  $businessBranch
      * @return \Illuminate\Http\Response
      */
-    public function edit(BusinessBranch $businessBranch)
+    public function edit(BranchBusiness $businessBranch)
     {
         //
     }
@@ -64,10 +64,10 @@ class BusinessBranchController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tenant\BusinessBranch  $businessBranch
+     * @param  \App\Models\Tenant\BranchBusiness  $businessBranch
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BusinessBranch $businessBranch)
+    public function update(Request $request, BranchBusiness $businessBranch)
     {
         //
     }
@@ -75,10 +75,10 @@ class BusinessBranchController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tenant\BusinessBranch  $businessBranch
+     * @param  \App\Models\Tenant\BranchBusiness  $businessBranch
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BusinessBranch $businessBranch)
+    public function destroy(BranchBusiness $businessBranch)
     {
         //
     }

@@ -28,7 +28,10 @@
 
                 {{--PERZONA------------------------------------}}
                 <div class="accordion" id="newItem">
-
+                    @foreach($businesses as $business)
+                        <p class="text-gray-400">empresa: {{$business->name}}</p>
+                        <p class="text-gray-400">branches: @foreach($business->branches as $branch) {{$branch->name}} @endforeach</p>
+                    @endforeach
                     <div class="accordion-item">
                         <div class="bg-blueSteel mr-4 " id="headingOne">
                             <table class="table">
@@ -60,58 +63,58 @@
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Perzona</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Perzona</label>
                                     </div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Logo')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><img src="assets/images/logo.jpg" alt=""></div>
+                                    <div class="flex-2 text-left w-1/2"><img src="assets/images/image-polaroid.svg" alt="" width="150"></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Industry')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">RRHH</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">RRHH</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Fiscal regime')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Persona
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Persona
                                             Moral</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Business name')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Perzona S.A de
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Perzona S.A de
                                             C.V.</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('RFC')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">PERZ02369856</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Direction')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Bosques de
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Bosques de
                                             Tamarindos. 135 piso 2, Col. Aguabrava</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('State')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">CDMX</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">CDMX</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('ZIP Code')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">03695</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">03695</label>
                                     </div>
                                 </div>
 
@@ -120,25 +123,25 @@
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('STP account')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">03695</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">03695</label>
                                     </div>
                                 </div>
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta BBVA 1256</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">4523698531256</label></div>
                                 </div>
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta BBVA 6987</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">4523698536987</label></div>
                                 </div>
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta Santander
                                             4585</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">856932654585</label></div>
                                 </div>
 
@@ -147,21 +150,21 @@
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Digital Seal Certificate')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">docuemnt.cer</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Digital private certificate key')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">document.key</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Password for digital seal certificate')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">••••••••••</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">••••••••••</label>
                                     </div>
                                 </div>
                                 <div class="py-3"></div>
@@ -169,20 +172,20 @@
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Automatic moving average calculation')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Automatic STP payment')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('IMSS worker integrated IMSS employer to salary')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
                                 </div>
 
                             </div>
@@ -228,7 +231,7 @@
                                                 </div>
                                                 <div class="pb-4">
                                                     <div class="my-2"><label class="font-bold"
-                                                                for="name">{{__('Employer registration')}}</label>
+                                                                             for="name">{{__('Employer registration')}}</label>
                                                     </div>
                                                     <div><label class="w-full">
                                                             <select class="rounded w-full dark:bg-dark dark:text-white">
@@ -282,7 +285,7 @@
                                                         <td style="width: 30%">987654321</td>
                                                         <td style="width: 31%"></td>
                                                         <td style="width: 3%">
-                                                                <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                                         </td>
                                                         <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
                                                         <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
@@ -361,7 +364,7 @@
                                     </button>
                                 </td>
                                 <td style="width: 3%"><i
-                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                        class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                 </td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
@@ -379,44 +382,44 @@
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">DS Studio Design</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">DS Studio Design</label>
                                     </div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Logo')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><img src="assets/images/logo.jpg" alt=""></div>
+                                    <div class="flex-2 text-left w-1/2"><img src="assets/images/no_image.jpg" alt=""></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Industry')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Diseño</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Diseño</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Fiscal regime')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Persona
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Persona
                                             Moral</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Business name')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">DS Studio Deign S.A de C.V.</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">DS Studio Deign S.A de C.V.</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('RFC')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">DSSD253695369</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Direction')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">
                                             Muntecito 36 piso 6 oficna 13, Col. Napoles
                                         </label></div>
                                 </div>
@@ -424,13 +427,13 @@
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('State')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">CDMX</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">CDMX</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('ZIP Code')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">03810</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">03810</label>
                                     </div>
                                 </div>
 
@@ -439,25 +442,25 @@
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('STP account')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">03810</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">03810</label>
                                     </div>
                                 </div>
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta BBVA 3269</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">4523698533269</label></div>
                                 </div>
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta BBVA 3698</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">4523698533698</label></div>
                                 </div>
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta Santander
                                             2587</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">8556932652587</label></div>
                                 </div>
 
@@ -466,21 +469,21 @@
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Digital Seal Certificate')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">docuemnt.cer</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Digital private certificate key')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label
+                                    <div class="flex-2 text-left w-1/2"><label
                                             class="my-2 font-bold">document.key</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Password for digital seal certificate')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">••••••••••</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">••••••••••</label>
                                     </div>
                                 </div>
                                 <div class="py-3"></div>
@@ -488,20 +491,20 @@
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Automatic moving average calculation')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Automatic STP payment')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('IMSS worker integrated IMSS employer to salary')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
                                 </div>
 
                             </div>
@@ -580,7 +583,7 @@
                                             <div class="flex-1 text-left w-1/2"><label
                                                     class="my-2">{{__('Name')}}</label>
                                             </div>
-                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Sede
+                                            <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Sede
                                                     CDMX</label>
                                             </div>
                                         </div>
@@ -588,7 +591,7 @@
                                         <div class="flex">
                                             <div class="flex-1 text-left w-1/2"><label
                                                     class="my-2">{{__('Description')}}</label></div>
-                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Tlatilco,
+                                            <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Tlatilco,
                                                     02860 Ciudad de México, CDMX
                                                 </label></div>
                                         </div>
@@ -596,7 +599,7 @@
                                         <div class="flex">
                                             <div class="flex-1 text-left w-1/2"><label
                                                     class="my-2">{{__('IMSS employer register')}}</label></div>
-                                            <div class="flrx-2 text-left w-1/2"><label
+                                            <div class="flex-2 text-left w-1/2"><label
                                                     class="my-2 font-bold">987654321</label></div>
                                         </div>
                                     </div>
@@ -606,7 +609,7 @@
                                             <div class="flex-1 text-left w-1/2"><label
                                                     class="my-2">{{__('Name')}}</label>
                                             </div>
-                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Sede
+                                            <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Sede
                                                     Monterey</label>
                                             </div>
                                         </div>
@@ -614,7 +617,7 @@
                                         <div class="flex">
                                             <div class="flex-1 text-left w-1/2"><label
                                                     class="my-2">{{__('Description')}}</label></div>
-                                            <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Gustavo
+                                            <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Gustavo
                                                     Díaz
                                                     Ordaz 100, Santa María, 64650 Monterrey, N.L.
                                                 </label></div>
@@ -623,7 +626,7 @@
                                         <div class="flex">
                                             <div class="flex-1 text-left w-1/2"><label
                                                     class="my-2">{{__('IMSS employer register')}}</label></div>
-                                            <div class="flrx-2 text-left w-1/2"><label
+                                            <div class="flex-2 text-left w-1/2"><label
                                                     class="my-2 font-bold">987654321</label></div>
                                         </div>
                                     </div>

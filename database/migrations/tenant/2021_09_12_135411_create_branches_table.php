@@ -24,6 +24,7 @@ class CreateBranchesTable extends Migration
             $table->string('municipality',)->nullable();
             $table->string('state',)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

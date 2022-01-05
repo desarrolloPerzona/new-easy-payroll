@@ -110,7 +110,6 @@
 @push('modals')
     <div id="editModal" class="modal" tabindex="-1">
         <div class="modal-dialog">
-
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">{{ $modelToEdit ? 'Edit Product' : 'Add New Product' }}</h5>

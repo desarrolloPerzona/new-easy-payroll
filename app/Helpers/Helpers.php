@@ -3,6 +3,8 @@
 /**
  * HELPER FUNCTIONS
  */
+
+
 if (!function_exists('formatCartCurrency')) {
     function formatCartCurrency($price)
     {
@@ -10,6 +12,7 @@ if (!function_exists('formatCartCurrency')) {
         return numfmt_format_currency($fmt, $price / 100, 'USD');
     }
 }
+
 if (!function_exists('formatCurrency')) {
     function formatCurrency($price)
     {
@@ -35,6 +38,8 @@ if (!function_exists('formatDate')) {
         return strftime('%d %B %Y', strtotime($date));
     }
 }
+
+
 if (!function_exists('slugify')) {
     function slugify($text)
     {
@@ -63,3 +68,4 @@ if (!function_exists('slugify')) {
         return $text;
     }
 }
+

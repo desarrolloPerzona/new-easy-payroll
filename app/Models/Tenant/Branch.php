@@ -17,4 +17,8 @@ class Branch extends Model
     ];
 
 
+    public function Businesses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Business::class);
+    }
 }

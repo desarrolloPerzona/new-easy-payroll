@@ -15,7 +15,6 @@ class BusinessController extends Controller
      */
     public function index()
     {
-
         $businesses = Business::all();
         return view('app-tenant.dashboard.business.index',compact('businesses'));
     }

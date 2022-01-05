@@ -38,7 +38,7 @@ class Business extends Model
     ];
 
     public function branches(){
-        return $this->hasMany(BusinessBranch::class,'business_id','id');
+        return $this->belongsToMany(Branch::class);
     }
 
     public function banks(){

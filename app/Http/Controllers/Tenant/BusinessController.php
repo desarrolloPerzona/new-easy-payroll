@@ -64,7 +64,8 @@ class BusinessController extends Controller
      */
     public function edit(Business $business)
     {
-        return view('app-tenant.dashboard.business.edit');
+        $business = Business::find($business->id);
+        return view('app-tenant.dashboard.business.edit',compact('business'));
     }
 
     /**

@@ -59,7 +59,7 @@ class CreateNewUser implements CreatesNewUsers
          * ADD USER TO STRIPE
          */
 
-        $user->createAsStripeCustomer();
+
 
         /**
          * GIVE ROLE
@@ -109,10 +109,17 @@ class CreateNewUser implements CreatesNewUsers
          */
 
         $tenant->run(function ($user) {
-            Business::create([
+            $business = Business::create([
                 'name' => $user->tenancy_company,
             ]);
+
         });
+
+
+        /**
+         * ADD LOGO
+         */
+
 
         /**
          * ADD FIRST BUSINESS - BRANCH

@@ -27,12 +27,6 @@
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('business.index')}}">
-
-                            {{__('Businesses')}} / {{__('Headquarters')}}
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{route('employer-register.index')}}">
 
                             {{__('Employer register')}}
@@ -42,6 +36,12 @@
                         <a class="nav-link" href="{{route('banks.index')}}">
 
                             {{__('Bank accounts')}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('business.index')}}">
+
+                            {{__('Businesses')}} / {{__('Headquarters')}}
                         </a>
                     </li>
                 </ul>

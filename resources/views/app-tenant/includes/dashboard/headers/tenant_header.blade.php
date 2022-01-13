@@ -12,8 +12,8 @@
         </a>
         {{--MENU ITEMS--}}
         <ul class="header-nav d-none d-md-flex">
-            <li class="nav-item"><a class="nav-link" href="{{route('landingPage')}}">{{__('Home')}}</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Users</a></li>
+            <li class="nav-item"><a class="nav-link" href="/">{{__('Home')}}</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">{{__('Employess')}}</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
         </ul>
        {{--HEADER NAV DARK MODE COMPONENT--}}

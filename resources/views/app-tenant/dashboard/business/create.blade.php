@@ -1,6 +1,6 @@
 <x-app-tenant>
     <div class="container mx-auto">
-       <livewire:components.breadcrumb :parent='"Business"' :children="['Create']" :icon="'fak fa-empresa-perzona'"/>
+        <livewire:components.breadcrumb :parent='"Business"' :children="['Create']" :itemId="''" :icon="'fak fa-empresa-perzona'"/>
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
             <h2 class="py-3">{{__('Business')}}</h2>
 
@@ -8,51 +8,10 @@
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Logo')}}</label></div>
-            <div x-data="{ files: null }" id="FileUpload"
-                 class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray">
-                <input type="file" multiple
-                       class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
-                       x-on:change="files = $event.target.files; console.log($event.target.files);"
-                       x-on:dragover="$el.classList.add('active')"
-                       x-on:dragleave="$el.classList.remove('active')"
-                       x-on:drop="$el.classList.remove('active')"
-                >
-                <template x-if="files !== null">
-                    <div class="flex flex-col space-y-1">
-                        <template x-for="(_,index) in Array.from({ length: files.length })">
-                            <div class="flex flex-row items-center space-x-2">
-                                <template x-if="files[index].type.includes('audio/')"><i
-                                        class="far fa-file-audio fa-fw"></i></template>
-                                <template x-if="files[index].type.includes('application/')"><i
-                                        class="far fa-file-alt fa-fw"></i></template>
-                                <template x-if="files[index].type.includes('image/')"><i
-                                        class="far fa-file-image fa-fw"></i></template>
-                                <template x-if="files[index].type.includes('video/')"><i
-                                        class="far fa-file-video fa-fw"></i></template>
-                                <span class="font-medium text-gray-900"
-                                      x-text="files[index].name">Uploading</span>
-                                <span class="text-xs self-end text-gray-500"
-                                      x-text="filesize(files[index].size)">...</span>
-                            </div>
-                        </template>
-                    </div>
-                </template>
-                <template x-if="files === null">
-                    <div class="flex flex-col space-y-2 items-center justify-center">
-                        <i class="fas fa-cloud-upload-alt fa-3x text-currentColor"></i>
-                        <p class="text-gray-700">{{__('Drag your files here or click in this area.')}}</p>
-                        <a href="javascript:void(0)"
-                           class="flex items-center mx-auto py-2 px-4 text-white text-center font-medium no-underline border border-transparent rounded-md outline-none bg-gray-600">
-                            {{__('Select a file')}}</a>
-                    </div>
-                </template>
-
-                <input class="w-full text-gray-800 my-2 rounded flex-2" type="text" id="IMSScertificate"
-                       >
-            </div>
+            <livewire:components.content.file-upload-pquina :name="'logo'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'multiple'" :attributes="''"/>
 
             <div class="flex-1 text-lef py-2"><label class="font-bold" for="name">{{__('Industry')}}</label></div>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name" >
+            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Fiscal regime')}}</label></div>
             <label>
@@ -90,95 +49,11 @@
 
             <h2 class="py-3">{{__('Tax data')}}</h2>
 
-            <div class="flex-1 text-left py-2"><label class="font-bold"
-                                                      for="name">{{__('Digital Seal Certificate')}}</label></div>
-            <div x-data="{ files: null }" id="FileUpload"
-                 class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray">
-                <input type="file" multiple
-                       class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
-                       x-on:change="files = $event.target.files; console.log($event.target.files);"
-                       x-on:dragover="$el.classList.add('active')"
-                       x-on:dragleave="$el.classList.remove('active')"
-                       x-on:drop="$el.classList.remove('active')"
-                >
-                <template x-if="files !== null">
-                    <div class="flex flex-col space-y-1">
-                        <template x-for="(_,index) in Array.from({ length: files.length })">
-                            <div class="flex flex-row items-center space-x-2">
-                                <template x-if="files[index].type.includes('audio/')"><i
-                                        class="far fa-file-audio fa-fw"></i></template>
-                                <template x-if="files[index].type.includes('application/')"><i
-                                        class="far fa-file-alt fa-fw"></i></template>
-                                <template x-if="files[index].type.includes('image/')"><i
-                                        class="far fa-file-image fa-fw"></i></template>
-                                <template x-if="files[index].type.includes('video/')"><i
-                                        class="far fa-file-video fa-fw"></i></template>
-                                <span class="font-medium text-gray-900"
-                                      x-text="files[index].name">Uploading</span>
-                                <span class="text-xs self-end text-gray-500"
-                                      x-text="filesize(files[index].size)">...</span>
-                            </div>
-                        </template>
-                    </div>
-                </template>
-                <template x-if="files === null">
-                    <div class="flex flex-col space-y-2 items-center justify-center">
-                        <i class="fas fa-cloud-upload-alt fa-3x text-currentColor"></i>
-                        <p class="text-gray-700">{{__('Drag your files here or click in this area.')}}</p>
-                        <a href="javascript:void(0)"
-                           class="flex items-center mx-auto py-2 px-4 text-white text-center font-medium no-underline border border-transparent rounded-md outline-none bg-gray-600">
-                            {{__('Select a file')}}</a>
-                    </div>
-                </template>
+            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Digital Seal Certificate')}}</label></div>
+            <livewire:components.content.file-upload-pquina :name="'logo2'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'"/>
 
-                <input class="w-full text-gray-800 my-2 rounded flex-2" type="text"
-                       id="IMSScertificate">
-            </div>
-
-            <div class="flex-1 text-left py-2"><label class="font-bold"
-                                                      for="name">{{__('Digital private certificate key')}}</label></div>
-            <div x-data="{ files: null }" id="FileUpload"
-                 class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray">
-                <input type="file" multiple
-                       class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
-                       x-on:change="files = $event.target.files; console.log($event.target.files);"
-                       x-on:dragover="$el.classList.add('active')"
-                       x-on:dragleave="$el.classList.remove('active')"
-                       x-on:drop="$el.classList.remove('active')"
-                >
-                <template x-if="files !== null">
-                    <div class="flex flex-col space-y-1">
-                        <template x-for="(_,index) in Array.from({ length: files.length })">
-                            <div class="flex flex-row items-center space-x-2">
-                                <template x-if="files[index].type.includes('audio/')"><i
-                                        class="far fa-file-audio fa-fw"></i></template>
-                                <template x-if="files[index].type.includes('application/')"><i
-                                        class="far fa-file-alt fa-fw"></i></template>
-                                <template x-if="files[index].type.includes('image/')"><i
-                                        class="far fa-file-image fa-fw"></i></template>
-                                <template x-if="files[index].type.includes('video/')"><i
-                                        class="far fa-file-video fa-fw"></i></template>
-                                <span class="font-medium text-gray-900"
-                                      x-text="files[index].name">Uploading</span>
-                                <span class="text-xs self-end text-gray-500"
-                                      x-text="filesize(files[index].size)">...</span>
-                            </div>
-                        </template>
-                    </div>
-                </template>
-                <template x-if="files === null">
-                    <div class="flex flex-col space-y-2 items-center justify-center">
-                        <i class="fas fa-cloud-upload-alt fa-3x text-currentColor"></i>
-                        <p class="text-gray-700">{{__('Drag your files here or click in this area.')}}</p>
-                        <a href="javascript:void(0)"
-                           class="flex items-center mx-auto py-2 px-4 text-white text-center font-medium no-underline border border-transparent rounded-md outline-none bg-gray-600">
-                            {{__('Select a file')}}</a>
-                    </div>
-                </template>
-
-                <input class="w-full text-gray-800 my-2 rounded flex-2" type="text"
-                       id="IMSScertificate">
-            </div>
+            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Digital private certificate key')}}</label></div>
+            <livewire:components.content.file-upload-pquina :name="'logo3'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'"/>
 
 
             <div class="flex-1 text-left py-2"><label class="font-bold"

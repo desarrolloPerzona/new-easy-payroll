@@ -14,6 +14,7 @@ use App\Http\Controllers\Tenant\PolicyController;
 use App\Http\Controllers\Tenant\TableValueController;
 use App\Http\Controllers\Tenant\TenantDashboardController;
 use App\Http\Controllers\Tenant\TenantWelcomeController;
+use App\Http\Controllers\Tenant\UploadFilesController;
 use App\Http\Controllers\Tenant\WorkingDayHolidayController;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
@@ -53,5 +54,7 @@ Route::middleware([
     Route::resource('/working-day-holiday',WorkingDayHolidayController::class)->middleware('auth:web');
     Route::resource('/employer-register',EmployerRegisterController::class)->middleware('auth:web');
     Route::resource('/business-positions',BusinessPositionController::class)->middleware('auth:web');
+    // UPLOADS FILES
+    Route::post('/uploadFiles',[UploadFilesController::class,'uploadFiles'])->middleware('auth:web');
 
 });

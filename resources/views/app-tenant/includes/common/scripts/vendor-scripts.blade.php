@@ -17,5 +17,4 @@
 <script src="{{asset('/vendor/pikaday/pikaday.js')}}"></script>
 {{--STRIPE--}}
 <script src="https://js.stripe.com/v3/"></script>
-{{--FILEPOND--}}
-<script src="{{asset('/vendor/filepond/dist/filepond.js')}}"></script>
+

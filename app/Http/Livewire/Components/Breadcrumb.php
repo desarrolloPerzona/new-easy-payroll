@@ -14,11 +14,12 @@ class Breadcrumb extends Component
      */
 
 
-    public $icon, $parent , $children;
+    public $icon, $parent , $children, $itemId;
 
-    public function mount($parent, $children){
+    public function mount($parent, $children,$itemId){
         $this->parent = $parent;
         $this->children = $children;
+        $this->itemId = $itemId;
 
     }
 

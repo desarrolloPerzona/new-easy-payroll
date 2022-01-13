@@ -6,7 +6,7 @@
         </x-slot>
 
         {{--<x-jet-validation-errors class="mb-4" />--}}
-
+{{File::get('assets/images/tenant-logo.png')}}
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div>

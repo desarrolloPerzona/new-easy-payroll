@@ -15784,6 +15784,10 @@ h2 a:hover, .h2 a:hover {
   opacity: 0.8;
 }
 
+.from-app-color {
+  background: linear-gradient(90deg, #435779 0%, rgba(67, 87, 121, 0.8) 35%, rgba(67, 87, 121, 0) 100%);
+}
+
 .accordion-button:focus, .accordion-button:active {
   background-color: #435779;
 }

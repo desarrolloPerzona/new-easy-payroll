@@ -6,12 +6,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{--META--}}
     @include('app-tenant.includes.common.head.meta')
+
     {{--STYLES--}}
     @include('app-tenant.includes.common.head.vendor-css')
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     {{--CORE UI STYLES--}}
     <link href="/css/style.css" rel="stylesheet">
 @livewireStyles
+@stack('inline_css')
 <!-- Scripts -->
     <script src="/js/app.js" defer></script>
 
@@ -68,7 +70,7 @@
     }
 </script>
 {{--IN PAGE SCRIPTS--}}
-@stack('in_page_scripts')
+@stack('inline_scripts')
 
 </body>
 </html>

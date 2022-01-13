@@ -1,650 +1,98 @@
 <x-app-tenant>
     <div class="container mx-auto">
-        <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
-            <i class="fak fa-empresa-perzona mr-2"></i>
-            <span style="display: inline-flex;">{{ __('Business') }}</span>
-        </h2>
-
-        {{--Nueva Empresa ----------------}}
+        <livewire:components.breadcrumb :parent="'Business'" :children="[]" :item-id="''" :icon="'fak fa-empresa-perzona mr-2'"/>
+        {{--NEW BUSINESS BTN--}}
         <div class="btn-top-holder my-3">
-            <a href="{{route('business.create',1)}}" class="btn btn-dark">
+            <a href="{{route('business.create')}}" class="btn btn-dark">
                 <i class="fas fa-plus-circle"></i>
                 {{ __('New business') }}
             </a>
         </div>
-
-        <div class="card bg-white dark:bg-dark dark:text-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
-            <table class="table">
-                <tr>
-                <tr>
-                    <th>{{__('Name')}}</th>
-                    <th>{{__('Created at')}}</th>
-                    <th colspan="3"></th>
-                </tr>
-
-            </table>
-            {{--ACCORDION--}}
+        {{--BUSINESS HOLDER--}}
+        <div class="card bg-white dark:bg-dark dark:text-white shadow-sm rounded p-4  my-2 mx-auto">
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
-
-                {{--PERZONA------------------------------------}}
-                <div class="accordion" id="newItem">
-                    @foreach($businesses as $business)
-                        <p class="text-gray-400">empresa: {{$business->name}}</p>
-                        <p class="text-gray-400">branches: @foreach($business->branches as $branch) {{$branch->name}} @endforeach</p>
-                    @endforeach
-                    <div class="accordion-item">
-                        <div class="bg-blueSteel mr-4 " id="headingOne">
-                            <table class="table">
-
-                                <td class="text-white" style="width: 45%">PerZona</td>
-                                <td class="text-white" style="width: 50%">12/04/2020</td>
-                                <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseB1"
-                                            aria-expanded="false" aria-controls="collapseB1">
-                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                    </button>
-                                </td>
-                                <td style="width: 3%"><a href="{{route('business.edit',1)}}"> <i
-                                            class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
-                                </td>
-                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
-
-                            </table>
-                        </div>
-
-
-                        <div id="collapseB1" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#newItem">
-
-                            {{--Empresa ----------------}}
-
-                            <div class="accordion-body mb-3 text-dark bg-gray-200 dark:bg-dark dark:text-white">
-                                <h2 class="py-3">{{__('Business')}}</h2>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Perzona</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Logo')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><img src="assets/images/image-polaroid.svg" alt="" width="150"></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Industry')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">RRHH</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Fiscal regime')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Persona
-                                            Moral</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Business name')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Perzona S.A de
-                                            C.V.</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('RFC')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">PERZ02369856</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Direction')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Bosques de
-                                            Tamarindos. 135 piso 2, Col. Aguabrava</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('State')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">CDMX</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('ZIP Code')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">03695</label>
-                                    </div>
-                                </div>
-
-                                <h2 class="py-3">{{__('Accounts')}}</h2>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('STP account')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">03695</label>
-                                    </div>
-                                </div>
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta BBVA 1256</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">4523698531256</label></div>
-                                </div>
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta BBVA 6987</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">4523698536987</label></div>
-                                </div>
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta Santander
-                                            4585</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">856932654585</label></div>
-                                </div>
-
-                                <h2 class="py-3">{{__('Tax data')}}</h2>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Digital Seal Certificate')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">docuemnt.cer</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Digital private certificate key')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">document.key</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Password for digital seal certificate')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">••••••••••</label>
-                                    </div>
-                                </div>
-                                <div class="py-3"></div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Automatic moving average calculation')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Automatic STP payment')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('IMSS worker integrated IMSS employer to salary')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
-                                </div>
-
-                            </div>
-                            {{--Nueva Sede ----------------}}
-
-                            <div class="accordion" id="newBranch">
-
-                                <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
-                                    <div class="accordion-header mr-4" id="headingOne">
-
-                                        <div class="flex">
-                                            <div class="flex-1 pb-2">{{__('New branch')}}</div>
-                                            <div class="flex-2">
-                                                <button type="button" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapseP1" aria-expanded="false"
-                                                        aria-controls="collapseP1"><i class="fas fa-plus-circle"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-
-
-                                        <div id="collapseP1" class="accordion-collapse collapse"
-                                             aria-labelledby="headingTwo" data-bs-parent="#newBranch">
-                                            <div
-                                                class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
-                                                <div>
-                                                    <div><label class="font-bold"
-                                                                for="name">{{__('Name')}}</label></div>
-                                                    <div><input
-                                                            class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                                            type="text" id="name"
-                                                            name="Name">
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div><label class="font-bold"
-                                                                for="name">{{__('Description')}}</label>
-                                                    </div>
-                                                    <div><input
-                                                            class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                                            type="text" id="name" name="Name">
-                                                    </div>
-                                                </div>
-                                                <div class="pb-4">
-                                                    <div class="my-2"><label class="font-bold"
-                                                                             for="name">{{__('Employer registration')}}</label>
-                                                    </div>
-                                                    <div><label class="w-full">
-                                                            <select class="rounded w-full dark:bg-dark dark:text-white">
-                                                                <option value="001">Registro CDMX</option>
-                                                                <option value="001">Registro MTY</option>
-                                                                <option value="001">Registro GDL</option>
-                                                                <option class="font-bold" value="001">Agregar Registro Patronal</option>
-
-                                                            </select>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div type="button" data-bs-toggle="collapse"
-                                                     data-bs-target="#collapseP1" aria-expanded="false"
-                                                     aria-controls="collapseP1">
-                                                    <a href="#" class="btn btn-dark">
-                                                        <i class="fas fa-plus-circle"></i>
-                                                        {{ __('Save') }}
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-
-                                {{--Sede ----------------}}
-                                <div class="my-2 text-dark bg-gray-200 dark:bg-dark dark:text-white">
-                                    <table class="table">
-                                        <tr>
-                                            <th style="width: 30%">{{__('Branch')}}</th>
-                                            <th style="width: 30%">{{__('IMSS employer register')}}</th>
-                                            <th style="width: 40%"></th>
-
-                                        </tr>
-
-                                    </table>
-                                    {{--ACCORDION--}}
-                                    <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
-                                        <div class="accordion text-dark bg-gray-200 dark:bg-dark dark:text-white" id="newItem">
-
-                                            {{--CDMX--------------}}
-                                            <div class="text-dark bg-gray-200 dark:bg-dark dark:text-white">
-                                                <div class="accordion-header mr-4 text-dark bg-gray-200 dark:bg-dark dark:text-white" id="headingOne">
-                                                    <table class="table">
-
-                                                        <td style="width: 30%">Sede CDMX</td>
-                                                        <td style="width: 30%">987654321</td>
-                                                        <td style="width: 31%"></td>
-                                                        <td style="width: 3%">
-                                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                                        </td>
-                                                        <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                                                        <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
-
-                                                    </table>
-                                                </div>
-                                            </div>
-
-                                            {{--MTY--------------}}
-                                            <div class="text-dark bg-gray-200 dark:bg-dark dark:text-white">
-                                                <div class="accordion-header mr-4 text-dark bg-gray-200 dark:bg-dark dark:text-white" id="headingFiel">
-
-                                                    <table class="table">
-
-                                                        <td style="width: 30%">Sede MTY</td>
-                                                        <td style="width: 30%">523695</td>
-                                                        <td style="width: 31%"></td>
-                                                        <td style="width: 3%">
-                                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                                        </td>
-                                                        <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                                                        <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
-
-                                                    </table>
-
-                                                </div>
-
-                                            </div>
-
-                                            {{--GDL--------------}}
-                                            <div class="text-dark bg-gray-200 dark:bg-dark dark:text-white">
-                                                <div class="accordion-header mr-4 text-dark bg-gray-200 dark:bg-dark dark:text-white" id="headingFiel">
-
-                                                    <table class="table">
-
-                                                        <td style="width: 30%">Sede GDL</td>
-                                                        <td style="width: 30%">2365985</td>
-                                                        <td style="width: 31%"></td>
-                                                        <td style="width: 3%">
-                                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                                        </td>
-                                                        <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                                                        <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
-
-                                                    </table>
-
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    {{--ACCORDION--}}
-
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                {{--DSSD---------------------------------------}}
-                <div class="accordion" id="newItem">
-
-                    <div class="accordion-item">
-                        <div class="bg-blueSteel mr-4 " id="headingOne">
-                            <table class="table">
-
-                                <td class="text-white" style="width: 45%">DSSD</td>
-                                <td class="text-white" style="width: 50%">15/09/1996</td>
-                                <td style="width: 3%">
-                                    <button>
-                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                    </button>
-                                </td>
-                                <td style="width: 3%"><i
-                                        class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                </td>
-                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
-
-                            </table>
-                        </div>
-
-
-                        <div id="collapseB2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#newItem">
-
-                            {{--Empresa ----------------}}
-
-                            <div class="accordion-body mb-3 text-dark bg-gray-200 dark:bg-dark dark:text-white">
-                                <h2 class="py-3">{{__('Business')}}</h2>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">DS Studio Design</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Logo')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><img src="assets/images/no_image.jpg" alt=""></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Industry')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Diseño</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Fiscal regime')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Persona
-                                            Moral</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Business name')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">DS Studio Deign S.A de C.V.</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('RFC')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">DSSD253695369</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Direction')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">
-                                            Muntecito 36 piso 6 oficna 13, Col. Napoles
-                                        </label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('State')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">CDMX</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('ZIP Code')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">03810</label>
-                                    </div>
-                                </div>
-
-                                <h2 class="py-3">{{__('Accounts')}}</h2>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('STP account')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">03810</label>
-                                    </div>
-                                </div>
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta BBVA 3269</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">4523698533269</label></div>
-                                </div>
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta BBVA 3698</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">4523698533698</label></div>
-                                </div>
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">Cuenta Santander
-                                            2587</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">8556932652587</label></div>
-                                </div>
-
-                                <h2 class="py-3">{{__('Tax data')}}</h2>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Digital Seal Certificate')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">docuemnt.cer</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Digital private certificate key')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">document.key</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Password for digital seal certificate')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">••••••••••</label>
-                                    </div>
-                                </div>
-                                <div class="py-3"></div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Automatic moving average calculation')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Automatic STP payment')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('IMSS worker integrated IMSS employer to salary')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
-                                </div>
-
-                            </div>
-                            {{--Nueva Sede ----------------}}
-
-                            <div class="accordion" id="newBranch">
-
-                                <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
-                                    <div class="accordion-header mr-4" id="headingTwo">
-
-                                        <div class="flex">
-                                            <div class="flex-1 pb-2">{{__('New branch')}}</div>
-                                            <div class="flex-2">
-                                                <button type="button" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapseP1" aria-expanded="false"
-                                                        aria-controls="collapseP1"><i class="fas fa-plus-circle"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-
-
-                                        <div id="collapseP1" class="accordion-collapse collapse"
-                                             aria-labelledby="headingTwo" data-bs-parent="#newBranch">
-                                            <div
-                                                class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
-                                                <div>
-                                                    <div><label class="font-bold"
-                                                                for="name">{{__('Name')}}</label></div>
-                                                    <div><input
-                                                            class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                                            type="text" id="name"
-                                                            name="Name">
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div><label class="font-bold"
-                                                                for="name">{{__('Description')}}</label>
-                                                    </div>
-                                                    <div><input
-                                                            class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                                            type="text" id="name" name="Name">
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div><label class="font-bold"
-                                                                for="name">{{__('Employer registration')}}</label>
-                                                    </div>
-                                                    <div><input
-                                                            class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                                            type="text" id="name" name="Name">
-                                                    </div>
-                                                </div>
-                                                <div type="button" data-bs-toggle="collapse"
-                                                     data-bs-target="#collapseP1" aria-expanded="false"
-                                                     aria-controls="collapseP1">
-                                                    <a href="#" class="btn btn-dark">
-                                                        <i class="fas fa-plus-circle"></i>
-                                                        {{ __('Save') }}
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-
-                                {{--Sede ----------------}}
-                                <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
-                                    <h2 class="py-3">{{__('Branches')}}</h2>
-
-                                    <div class="border-b-2 border-gray-400 mb-2">
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('Name')}}</label>
-                                            </div>
-                                            <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Sede
-                                                    CDMX</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('Description')}}</label></div>
-                                            <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Tlatilco,
-                                                    02860 Ciudad de México, CDMX
-                                                </label></div>
-                                        </div>
-
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('IMSS employer register')}}</label></div>
-                                            <div class="flex-2 text-left w-1/2"><label
-                                                    class="my-2 font-bold">987654321</label></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="border-b-2 border-gray-400 mb-2">
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('Name')}}</label>
-                                            </div>
-                                            <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Sede
-                                                    Monterey</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('Description')}}</label></div>
-                                            <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Gustavo
-                                                    Díaz
-                                                    Ordaz 100, Santa María, 64650 Monterrey, N.L.
-                                                </label></div>
-                                        </div>
-
-                                        <div class="flex">
-                                            <div class="flex-1 text-left w-1/2"><label
-                                                    class="my-2">{{__('IMSS employer register')}}</label></div>
-                                            <div class="flex-2 text-left w-1/2"><label
-                                                    class="my-2 font-bold">987654321</label></div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
                 {{--ACCORDION--}}
+                <div class="accordion" id="businessAccordion">
+                    @foreach($businesses as $business)
+                        {{--ACCORDION ITEM--}}
+                        <div class="accordion-item">
+                            {{--ACCORDION HEADER--}}
+                            <div class="bg-blueSteel accordion-header" id="heading-{{$loop->iteration}}">
+                                <livewire:components.content.accordion-header :model-id="$business->id" :created-at="$business->created_at" :route="'business.edit'" :iteration="$loop->iteration" :name="$business->name"/>
+                            </div>
+                            {{--ACCORDION COLAPSE--}}
+                            <div id="collapse-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#businessAccordion">
+                                <div class="accordion-body mb-3 text-dark bg-gray-200 dark:bg-dark dark:text-white">
+                                    {{--CONTENT--}}
+                                    {{--CONTENT HEADER--}}
+                                    <livewire:components.content.content-header :title="'Business'"/>
+                                    {{--CONTENT TWO COLUMNS TEXT IMAGES AND ARRAYS--}}
+                                    <livewire:components.content.content-two-columns-text :title="'Name'" :field="$business->name ?? __('Fill data')"/>
+                                    <livewire:components.content.content-two-columns-images :title="'Logo'" :images="$business->getMedia('business')"/>
+                                    <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->industry ?? __('Fill data')"/>
+                                    <livewire:components.content.content-two-columns-text :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? __('Fill data')"/>
+                                    <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->business_name ?? __('Fill data')"/>
+                                    <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? __('Fill data')"/>
+                                    <livewire:components.content.content-header :title="'Bank Accounts'"/>
+                                    @if(count($business->banks) === 0)
+                                        <a href="{{route('banks.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
+                                    @else
+                                        @foreach($business->banks as $banks)
+                                            <livewire:components.content.content-two-columns-text :title="''" :field="''"/>
+                                        @endforeach
 
+                                    @endif
+                                    {{--NEW ITEM RELATION--}}
+                                    <livewire:components.content.new-item :model="$business" :relation="'branches'"/>
+                                    {{--BUSINESS BRANCHES HOLDER--}}
+                                    <table class="table table-stripe table-dark">
+                                        <tr>
+                                            <th>{{__('Branch')}}</th>
+                                            <th>{{__('Employer registration')}}</th>
+                                            <th>{{__('Created at')}}</th>
+                                            <th colspan="3"></th>
+                                        </tr>
+                                        @foreach($business->branches as $branch)
+                                            <tr>
+                                                <td><span class="uppercase">{{$branch->name}}</span></td>
+                                                <td>
+                                                    @if(empty($branch->imss_patronal_registry_id))
+                                                        <a href="{{route('employer-register.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
+                                                    @else
+                                                        {{$branch->patronalRegistry->name}}
+                                                    @endif
+                                                    {{$branch->imss_patronal_registry_id}}
+                                                </td>
+                                                <td>{{formatDate($branch->created_at)}}</td>
+
+                                                <td style="width: 3%">
+                                                    <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                                </td>
+                                                <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                                                <td style="width: 3%">
+                                                    @if($branch->id === 1)
+                                                    @else
+                                                        <form action="" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button onclick="return confirm('¿Desea eliminar este registro?')"><i class="fas fa-trash text-danger"></i></button>
+                                                        </form>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
+
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        {{--ACCORDION--}}
+                </div>
             </div>
         </div>
     </div>
 </x-app-tenant>
+
 
 

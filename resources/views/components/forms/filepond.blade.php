@@ -25,19 +25,21 @@
     <input type="file" x-ref="{{ $attributes->get('ref') ?? 'input' }}" />
 </div>
 
-@push('in_page_styles')
+@push('inline_styles')
     @once
-        <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+        {{--FILEPOND--}}
+        <link rel="stylesheet" href="{{asset('vendor/filepond/dist/filepond.css')}}"  />
         <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
     @endonce
 @endpush
 
-@push('in_page_scripts')
+@push('inline_scripts')
     @once
         <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
         <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
         <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
-        <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+        {{--FILEPOND--}}
+        <script src="{{asset('/vendor/filepond/dist/filepond.js')}}"></script>
         <script>
             FilePond.registerPlugin(FilePondPluginFileValidateType);
             FilePond.registerPlugin(FilePondPluginFileValidateSize);

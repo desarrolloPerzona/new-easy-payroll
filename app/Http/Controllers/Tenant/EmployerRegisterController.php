@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tenant\EmployerRegister;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EmployerRegisterController extends Controller
 {
@@ -35,7 +37,23 @@ class EmployerRegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('employer_register')->insert([
+            'business_branch_id' => 1,
+            'name' => $request->get('name'),
+            'risk_premium' => $request->get('risk_premium'),
+            'imss_sub_delegation_key' => $request->get('imss_sub_delegation_key'),
+            'business_id' => 1,
+        ]);
+
+//        $employerRegister->business_branch_id = 1;
+//        $employerRegister->name = $request->get('name');
+//        $employerRegister->risk_premium = $request->get('risk_premium');
+//        $employerRegister->imss_sub_delegation_key = $request->get('imss_sub_delegation_key');
+//
+//        $employerRegister->save();
+
+        return redirect()->route('employer-register.index');
+
     }
 
     /**

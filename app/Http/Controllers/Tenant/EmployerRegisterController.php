@@ -16,8 +16,8 @@ class EmployerRegisterController extends Controller
      */
     public function index()
     {
-        $registers = EmployerRegister::paginate(3);
-        return view('app-tenant.dashboard.employer-register.index', compact('registers'));
+//        $registers = EmployerRegister::paginate(3);
+        return view('app-tenant.dashboard.employer-register.index');
     }
 
     /**
@@ -38,6 +38,11 @@ class EmployerRegisterController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required|min:3'
+        ]);
+
         DB::table('employer_registers')->insert([
             'business_branch_id' => 1,
             'name' => $request->get('name'),

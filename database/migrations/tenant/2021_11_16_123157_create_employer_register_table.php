@@ -15,7 +15,7 @@ class CreateEmployerRegisterTable extends Migration
     public function up()
     {
 
-        Schema::create('employer_register', function (Blueprint $table) {
+        Schema::create('employer_registers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('business_branch_id');
             $table->string('name');

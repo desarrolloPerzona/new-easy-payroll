@@ -16,7 +16,8 @@ class EmployerRegisterController extends Controller
      */
     public function index()
     {
-        return view('app-tenant.dashboard.employer-register.index');
+        $registers = EmployerRegister::paginate(3);
+        return view('app-tenant.dashboard.employer-register.index', compact('registers'));
     }
 
     /**
@@ -33,24 +34,17 @@ class EmployerRegisterController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        DB::table('employer_register')->insert([
+        DB::table('employer_registers')->insert([
             'business_branch_id' => 1,
             'name' => $request->get('name'),
             'risk_premium' => $request->get('risk_premium'),
             'imss_sub_delegation_key' => $request->get('imss_sub_delegation_key'),
             'business_id' => 1,
         ]);
-
-//        $employerRegister->business_branch_id = 1;
-//        $employerRegister->name = $request->get('name');
-//        $employerRegister->risk_premium = $request->get('risk_premium');
-//        $employerRegister->imss_sub_delegation_key = $request->get('imss_sub_delegation_key');
-//
-//        $employerRegister->save();
 
         return redirect()->route('employer-register.index');
 

@@ -19,7 +19,7 @@
 
     <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
         <table class="table">
-            <x-jet-input wire:model="search" class="flex-1 mr-3" type="text" placeholder="Escriba lo que quiera buscar"></x-jet-input>
+{{--            <x-jet-input wire:model="search" class="flex-1 mr-3" type="text" placeholder="Escriba lo que quiera buscar"></x-jet-input>--}}
             <tr>
                 <th>{{__('Name')}}</th>
                 <th class="text-center">{{__('risk premium')}}</th>

@@ -12,8 +12,7 @@ class Show extends Component
 
     public function render()
     {
-            $registers = EmployerRegister::where('name', 'like' , '%' . $this->search . '%')
-            ->paginate(10);
+            $registers = EmployerRegister::all();
 //            ->orWhere('content', 'like' , '%' . $this->search . '%')
 //            ->paginate(10);
         return view('livewire.components.crud.employer-register.show', compact('registers'));

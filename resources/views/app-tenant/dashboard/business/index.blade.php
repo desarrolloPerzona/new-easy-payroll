@@ -57,7 +57,7 @@
                                                 <td><span class="uppercase">{{$branch->name}}</span></td>
                                                 <td>
                                                     @if(empty($branch->imss_patronal_registry_id))
-                                                        <a href="{{route('employer-register.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
+                                                        <a href="{{route('imss-employer-registers.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
                                                     @else
                                                         {{$branch->patronalRegistry->name}}
                                                     @endif

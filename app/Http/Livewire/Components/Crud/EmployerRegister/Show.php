@@ -3,18 +3,18 @@
 namespace App\Http\Livewire\Components\Crud\EmployerRegister;
 
 
-use App\Models\Tenant\Business;
+use App\Models\Tenant\Branch;
 use App\Models\Tenant\ImssPatronalRegister;
 use Livewire\Component;
 
 class Show extends Component
 {
 
-    public $search, $businesses;
+    public $search, $branches;
 
 
     public function mount(){
-        $this->businesses = Business::all();
+        $this->branches = Branch::all();
     }
 
     public function render()

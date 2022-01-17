@@ -12,8 +12,8 @@
                 <select class="w-full rounded dark:bg-dark dark:text-white">
                     <option value="0">{{__('Select one')}}</option>
 
-                  @foreach($businesses as $business)
-                        <option value="{{$business->id}}">{{$business->name}}</option>
+                  @foreach($branches as $branch)
+                        <option value="{{$branch->id}}">{{$branch->name}}</option>
                       @endforeach
                 </select>
             </div>

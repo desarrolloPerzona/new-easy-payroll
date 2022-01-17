@@ -111,7 +111,7 @@
                 </select>
             </label>
 
-            <form action="{{ route('employer-register.store') }}" method="POST">
+            <form action="{{ route('imss-employer-registers.store') }}" method="POST">
                 @csrf
 
                 <label class="font-bold" for="name">{{__('Name')}}</label>

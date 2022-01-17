@@ -1,7 +1,4 @@
 <div>
-    <div class="container mx-auto">
-
-        <livewire:components.breadcrumb :parent="'IMSS Employer Registers'" :children="[]" item-id="{{route('imss-employer-registers.index')}}" :icon="'fak fa-empresa-perzona mr-2'"/>
 
         {{--        Nombre--------------}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
@@ -263,5 +260,4 @@
         </div>
 
 
-    </div>
 </div>

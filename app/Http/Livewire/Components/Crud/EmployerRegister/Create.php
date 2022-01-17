@@ -6,10 +6,10 @@ use Livewire\Component;
 
 class Create extends Component
 {
-    public $title;
 
-    public function mount($title){
-        $this->title = $title;
+
+    public function mount(){
+
     }
 
     public function render()

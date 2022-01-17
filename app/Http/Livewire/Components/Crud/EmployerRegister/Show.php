@@ -10,11 +10,12 @@ use Livewire\Component;
 class Show extends Component
 {
 
-    public $search, $branches;
+    public $search, $branches, $firstBranch;
 
 
     public function mount(){
         $this->branches = Branch::all();
+        $this->firstBranch = Branch::findOrfail(1)->get();
     }
 
     public function render()

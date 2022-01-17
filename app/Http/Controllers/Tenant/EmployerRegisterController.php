@@ -16,7 +16,7 @@ class EmployerRegisterController extends Controller
     public function index()
     {
 //        $registers = EmployerRegister::paginate(3);
-        return view('app-tenant.dashboard.employer-register.index');
+        return view('app-tenant.dashboard.imss-employer-register.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class EmployerRegisterController extends Controller
      */
     public function create()
     {
-        return view('app-tenant.dashboard.employer-register.create');
+        return view('app-tenant.dashboard.imss-employer-register.create');
     }
 
     /**
@@ -73,7 +73,7 @@ class EmployerRegisterController extends Controller
      */
     public function edit($id)
     {
-        return view('app-tenant.dashboard.employer-register.edit');
+        return view('app-tenant.dashboard.imss-employer-register.edit');
     }
 
     /**

@@ -14,5 +14,8 @@ class ImssPatronalRegister extends Model
     ];
 
 
+    public function branch(){
+        return $this->hasOne(Branch::class,'id','branch_id');
+    }
 
 }

@@ -36,15 +36,14 @@ class ImssPatronalRegisterController extends Controller
             'name' => 'required|min:3'
         ]);
 
-        DB::table('employer_registers')->insert([
-            'business_branch_id' => 1,
+        DB::table('imss_patronal_registers')->insert([
+            'branch_id' => 1,
             'name' => $request->get('name'),
             'risk_premium' => $request->get('risk_premium'),
             'imss_sub_delegation_key' => $request->get('imss_sub_delegation_key'),
-            'business_id' => 1,
         ]);
 
-        return redirect()->route('imss-employer-register.index');
+        return redirect()->route('imss-employer-registers.index');
 
     }
 

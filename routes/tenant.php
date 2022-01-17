@@ -8,7 +8,8 @@ use App\Http\Controllers\Tenant\BankController;
 use App\Http\Controllers\Tenant\BusinessController;
 use App\Http\Controllers\Tenant\BusinessPositionController;
 use App\Http\Controllers\Tenant\ConceptController;
-use App\Http\Controllers\Tenant\EmployerRegisterController;
+
+use App\Http\Controllers\Tenant\ImssPatronalRegisterController;
 use App\Http\Controllers\Tenant\PayrollController;
 use App\Http\Controllers\Tenant\PolicyController;
 use App\Http\Controllers\Tenant\TableValueController;
@@ -52,7 +53,7 @@ Route::middleware([
     Route::resource('/concept',ConceptController::class)->middleware('auth:web');
     Route::resource('/table-value',TableValueController::class)->middleware('auth:web');
     Route::resource('/working-day-holiday',WorkingDayHolidayController::class)->middleware('auth:web');
-    Route::resource('/employer-register',EmployerRegisterController::class)->middleware('auth:web');
+    Route::resource('/imss-employer-registers',ImssPatronalRegisterController::class)->middleware('auth:web');
     Route::resource('/business-positions',BusinessPositionController::class)->middleware('auth:web');
     // UPLOADS FILES
     Route::post('/uploadFiles',[UploadFilesController::class,'uploadFiles'])->middleware('auth:web');

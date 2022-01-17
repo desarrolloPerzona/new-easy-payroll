@@ -5,12 +5,14 @@ namespace App\Models\Tenant;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EmployerRegister extends Model
+class ImssPatronalRegister extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name', 'business_branch_id', 'risk_premium',
+        'name', 'imss_sub_delegation_key', 'risk_premium','branch_id'
     ];
+
+
 
 }

@@ -1,25 +1,28 @@
 <div>
     <div class="flex">
         <div class="btn-top-holder my-3 flex-1">
-            <a href="{{route('employer-register.create')}}" class="btn btn-dark">
+            <a href="{{route('imss-employer-registers.create')}}" class="btn btn-dark">
                 <i class="fas fa-plus-circle"></i>
                 {{ __('New employer register') }}
             </a>
         </div>
         <div class="flex-1 my-3 text-right">
-            <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
-            <label>
+            <div class="form-group ">
+                <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
                 <select class="w-full rounded dark:bg-dark dark:text-white">
-                    <option value="001">Perzona</option>
-                    <option value="001">DSSD</option>
+                    <option value="0">{{__('Select one')}}</option>
+
+                  @foreach($businesses as $business)
+                        <option value="{{$business->id}}">{{$business->name}}</option>
+                      @endforeach
                 </select>
-            </label>
+            </div>
         </div>
     </div>
 
     <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
         <table class="table">
-{{--            <x-jet-input wire:model="search" class="flex-1 mr-3" type="text" placeholder="Escriba lo que quiera buscar"></x-jet-input>--}}
+            {{--            <x-jet-input wire:model="search" class="flex-1 mr-3" type="text" placeholder="Escriba lo que quiera buscar"></x-jet-input>--}}
             <tr>
                 <th>{{__('Name')}}</th>
                 <th class="text-center">{{__('risk premium')}}</th>
@@ -54,7 +57,7 @@
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a href="{{route('employer-register.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a></td>
+                                <td style="width: 3%"><a href="{{route('imss-employer-register.edit',1)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a></td>
                                 <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
 
                             </table>

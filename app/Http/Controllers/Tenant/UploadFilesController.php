@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UploadFilesController extends Controller
 {
-    public function uploadFiles(Request $request)
+    public function uploadFile(Request $request)
     {
         return $request;
 

@@ -60,6 +60,9 @@ Route::middleware([
     Route::resource('/imss-employer-registers',ImssPatronalRegisterController::class)->middleware('auth:web');
     Route::resource('/business-positions',BusinessPositionController::class)->middleware('auth:web');
     // UPLOADS FILES
-    Route::post('/uploadFiles',[UploadFilesController::class,'uploadFiles'])->middleware('auth:web');
+    Route::post('/uploadFiles',[UploadFilesController::class,'uploadFile'])->middleware('auth:web');
+    Route::get('/uploadFiles/{id}',[UploadFilesController::class,'getFile'])->middleware('auth:web');
 
 });
+
+

@@ -21,4 +21,8 @@ class Branch extends Model
     {
         return $this->belongsToMany(Business::class);
     }
+
+    public function ImssPatronalRegisters(){
+        return $this->hasMany(ImssPatronalRegister::class,'branch_id','id');
+    }
 }

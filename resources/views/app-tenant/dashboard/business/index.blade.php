@@ -48,7 +48,7 @@
                                     <table class="table table-stripe table-dark">
                                         <tr>
                                             <th>{{__('Branch')}}</th>
-                                            <th>{{__('Employer registration')}}</th>
+                                            <th>{{__('IMSS Employer Registers')}}</th>
                                             <th>{{__('Created at')}}</th>
                                             <th colspan="3"></th>
                                         </tr>
@@ -56,10 +56,13 @@
                                             <tr>
                                                 <td><span class="uppercase">{{$branch->name}}</span></td>
                                                 <td>
-                                                    @if(empty($branch->imss_patronal_registry_id))
+
+                                                    @if(empty($branch->ImssPatronalRegisters))
                                                         <a href="{{route('imss-employer-registers.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
                                                     @else
-                                                        {{$branch->patronalRegistry->name}}
+                                                      @foreach($branch->ImssPatronalRegisters as $imssPatronalRegister)
+                                                            <div class="bg-blueSteel p-2 inline-block mx-2 my-2 text-white rounded">{{$imssPatronalRegister->name}}</div>
+                                                        @endforeach
                                                     @endif
                                                     {{$branch->imss_patronal_registry_id}}
                                                 </td>

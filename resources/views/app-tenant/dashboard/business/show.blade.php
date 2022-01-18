@@ -7,7 +7,7 @@
                 {{$business->name}}
             </div>
             <div class="car-body bg-white shadow-sm rounded p-4 w-full dark:bg-light">
-                {{--SECTIONS--}}
+                {{--SECTION BANKS--}}
                 <div class="section py-2 border-b-2">
                     <table class="table table-borderless">
                         <tr>
@@ -65,7 +65,6 @@
             </div>
 
         </div>
-        {{--TODO: COMPLETAR AL DISEÑO https://getbootstrap.com/docs/5.0/components/accordion/--}}
         {{--SHOW CARD RELATED--}}
         <div class="card">
             <div class="card-header bg-blueSteel text-white">

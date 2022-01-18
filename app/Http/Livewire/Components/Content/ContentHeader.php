@@ -6,6 +6,10 @@ use Livewire\Component;
 
 class ContentHeader extends Component
 {
+    /**
+     * variables Title as text and Icon as Fontawesome
+     */
+
     public $title;
     public $icon;
 

@@ -7,7 +7,7 @@
                 {{ __('New employer register') }}
             </a>
         </div>
-        <livewire:components.crud.employer-register.show/>
+        <livewire:tenant.imms-patronal-register.show-table/>
     </div>
 </x-app-tenant>
 

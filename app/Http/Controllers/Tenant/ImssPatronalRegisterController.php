@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Tenant;
 
+use App\Models\Tenant\ImssPatronalRegister;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -36,12 +37,17 @@ class ImssPatronalRegisterController extends Controller
             'name' => 'required|min:3'
         ]);
 
-        DB::table('imss_patronal_registers')->insert([
-            'branch_id' => 1,
-            'name' => $request->get('name'),
-            'risk_premium' => $request->get('risk_premium'),
-            'imss_sub_delegation_key' => $request->get('imss_sub_delegation_key'),
-        ]);
+        $register = new ImssPatronalRegister;
+        $register->branch_id = 1;
+        $register->name = $request->get('name');
+        $register->risk_premium = $request->get('risk_premium');
+        $register->imss_sub_delegation_key = $request->get('imss_sub_delegation_key');
+
+//        if($register->){
+//
+//        }
+
+        $register->save();
 
         return redirect()->route('imss-employer-registers.index');
 

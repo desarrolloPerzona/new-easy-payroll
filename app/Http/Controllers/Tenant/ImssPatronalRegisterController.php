@@ -43,10 +43,6 @@ class ImssPatronalRegisterController extends Controller
         $register->risk_premium = $request->get('risk_premium');
         $register->imss_sub_delegation_key = $request->get('imss_sub_delegation_key');
 
-        if($request->hasFile('cert_imss_cert')){
-            $register->addMediaFromRequest('cert_imss_cert')->toMediaCollection();
-        }
-
         $register->save();
 
         return redirect()->route('imss-employer-registers.index');

@@ -32,7 +32,7 @@
                             <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                     aria-expanded="false" aria-controls="collapseTwo">
 
-                                <div class="my-3">
+                                <div class="my-3 mx-2">
                                     <input type="radio" id="id" name="drone" value="id">
                                 </div>
 
@@ -49,7 +49,7 @@
 
                                     <label class="my-2 font-bold">{{__('IMSS certificate')}}</label>
 
-                                    <div x-data="{ files: null }" id="FileUpload"
+<!--                                    <div x-data="{ files: null }" id="FileUpload"
                                          class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray dark:bg-dark dark:text-white">
                                         <input type="file" multiple name="cert_imss_cert"
                                                class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
@@ -88,7 +88,7 @@
                                             </div>
                                         </template>
 
-                                    </div>
+                                    </div>-->
                                     <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
                                            type="text"
                                            id="IMSScertificate">
@@ -113,7 +113,7 @@
                             <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel"
                                     aria-expanded="false" aria-controls="collapseTwo">
 
-                                <div class="my-3">
+                                <div class="my-3 mx-2">
                                     <input type="radio" id="id" name="drone" value="id">
                                 </div>
 
@@ -131,7 +131,7 @@
 
                                     <label class="my-2 font-bold">{{__('FIEL Certificate')}}</label>
 
-                                    <div x-data="{ files: null }" id="FileUpload"
+<!--                                    <div x-data="{ files: null }" id="FileUpload"
                                          class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray dark:bg-dark dark:text-white">
                                         <input type="file" multiple
                                                class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
@@ -170,7 +170,7 @@
                                             </div>
                                         </template>
 
-                                    </div>
+                                    </div>-->
                                     <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
                                            type="text"
                                            id="IMSScertificate">
@@ -180,7 +180,7 @@
 
                                     <label class="my-2 font-bold">{{__('Llave privada FIEL')}}</label>
 
-                                    <div x-data="{ files: null }" id="FileUpload"
+<!--                                    <div x-data="{ files: null }" id="FileUpload"
                                          class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray dark:bg-dark dark:text-white">
                                         <input type="file" multiple
                                                class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
@@ -219,7 +219,7 @@
                                             </div>
                                         </template>
 
-                                    </div>
+                                    </div>-->
                                     <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
                                            type="text"
                                            id="IMSScertificate">

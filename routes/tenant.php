@@ -9,7 +9,7 @@ use App\Http\Controllers\Tenant\BusinessController;
 use App\Http\Controllers\Tenant\BusinessPositionController;
 use App\Http\Controllers\Tenant\ConceptController;
 use App\Http\Controllers\Tenant\EmployeeListController;
-
+use App\Http\Controllers\Tenant\FielController;
 use App\Http\Controllers\Tenant\ImssPatronalRegisterController;
 use App\Http\Controllers\Tenant\PayrollController;
 use App\Http\Controllers\Tenant\PolicyController;
@@ -59,6 +59,7 @@ Route::middleware([
     Route::resource('/working-day-holiday',WorkingDayHolidayController::class)->middleware('auth:web');
     Route::resource('/imss-employer-registers',ImssPatronalRegisterController::class)->middleware('auth:web');
     Route::resource('/business-positions',BusinessPositionController::class)->middleware('auth:web');
+    Route::resource('/fiel',FielController::class)->middleware('auth:web');
     // UPLOADS FILES
     Route::post('/uploadFiles',[UploadFilesController::class,'uploadFile'])->middleware('auth:web');
     Route::get('/uploadFiles/{id}',[UploadFilesController::class,'getFile'])->middleware('auth:web');

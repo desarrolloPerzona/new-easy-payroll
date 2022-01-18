@@ -22,10 +22,8 @@ class CreateImssPatronalRegistersTable extends Migration
             $table->string('cert_imss_user')->unique()->nullable();
             $table->string('cert_imss_password')->unique()->nullable();
             $table->string('cert_imss_cert')->unique()->nullable();
-            $table->string('fiel_private_key')->unique()->nullable();
-            $table->string('fiel_cert')->unique()->nullable();
-            $table->string('fiel_password')->unique()->nullable();
             $table->unsignedBigInteger('branch_id');
+            $table->unsignedBigInteger('fiel_id');
             $table->timestamps();
             $table->softDeletes();
         });

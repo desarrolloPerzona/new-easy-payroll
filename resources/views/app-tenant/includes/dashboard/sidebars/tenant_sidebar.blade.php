@@ -27,6 +27,12 @@
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('fiel.index')}}">
+
+                            {{__('FIEL')}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('imss-employer-registers.index')}}">
 
                             {{__('Employer register')}}

@@ -7,10 +7,12 @@ use Livewire\Component;
 class ContentHeader extends Component
 {
     public $title;
+    public $icon;
 
-    public function mount($title)
+    public function mount($title, $icon)
     {
-     $this->title = $title;
+        $this->title = $title;
+        $this->icon = $icon;
     }
 
     public function render()

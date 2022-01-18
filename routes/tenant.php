@@ -8,6 +8,7 @@ use App\Http\Controllers\Tenant\BankController;
 use App\Http\Controllers\Tenant\BusinessController;
 use App\Http\Controllers\Tenant\BusinessPositionController;
 use App\Http\Controllers\Tenant\ConceptController;
+use App\Http\Controllers\Tenant\EmployeeListController;
 
 use App\Http\Controllers\Tenant\ImssPatronalRegisterController;
 use App\Http\Controllers\Tenant\PayrollController;
@@ -48,6 +49,7 @@ Route::middleware([
     /*TENANT BUSINESS*/
     Route::resource('/business',BusinessController::class)->middleware('auth:web');
     Route::resource('/banks',BankController::class)->middleware('auth:web');
+    Route::resource('/employee-list',EmployeeListController::class)->middleware('auth:web');
     Route::resource('/payroll',PayrollController::class)->middleware('auth:web');
     Route::resource('/policies',PolicyController::class)->middleware('auth:web');
     Route::resource('/area-positions',AreaPositionController::class)->middleware('auth:web');

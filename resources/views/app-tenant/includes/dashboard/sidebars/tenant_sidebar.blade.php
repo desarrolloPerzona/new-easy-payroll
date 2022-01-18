@@ -117,7 +117,7 @@
                 </a>
                 <ul class="nav-group-items">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('employee-list.index') }}">
                             {{__('Employees list')}}
                         </a>
                     </li>

@@ -6,8 +6,9 @@
             <livewire:components.content.content-header :title="'New FIEL'" :icon="'fas fa-plus-circle'"/>
 
             <div class="form-group">
-                <label for="" class="label">{{__('Name')}}</label>
-                <input class="form-control" type="text">
+{{--                <label for="" class="label">{{__('Name')}}</label>--}}
+{{--                <input class="form-control" type="text">--}}
+                <livewire:components.content.form-input :name="'name'" :type="'text'" :placeholder="'Ingresar nombre'" :classes="'form-control'" :identifier="'name'" :attributes="''" value=""/>
             </div>
         </div>
 
@@ -34,7 +35,6 @@
                             <p>{{__('No data')}}</p>
                         </td>
                 @endforelse
-            </table>
             </table>
         </div>
     </div>

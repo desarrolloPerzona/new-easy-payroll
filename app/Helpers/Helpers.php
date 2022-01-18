@@ -67,5 +67,12 @@ if (!function_exists('slugify')) {
 
         return $text;
     }
+
+    if(!function_exists('replaceUnderScore')){
+        // Function to separate text using spaces and replacing underscore
+        function replaceUnderScore($text){
+            return str_replace('_', ' ', ucfirst($text));
+        }
+    }
 }
 

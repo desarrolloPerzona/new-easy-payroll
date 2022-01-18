@@ -6,8 +6,15 @@ use Livewire\Component;
 
 class FormInput extends Component
 {
-    public function render()
-    {
-        return view('livewire.components.content.form-input');
+    public $name, $type, $placeholder, $classes, $identifier, $attributes, $value;
+
+    public function mount($name, $type, $placeholder, $classes, $identifier, $attributes, $value){
+        $this->name = $name;
+        $this->type = $type;
+        $this->placeholder = $placeholder;
+        $this->classes = $classes;
+        $this->identifier = $identifier;
+        $this->attributes = $attributes;
+        $this->value = $value;
     }
 }

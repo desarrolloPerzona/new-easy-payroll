@@ -12,6 +12,7 @@ use App\Http\Controllers\Tenant\ConceptController;
 use App\Http\Controllers\Tenant\ImssPatronalRegisterController;
 use App\Http\Controllers\Tenant\PayrollController;
 use App\Http\Controllers\Tenant\PolicyController;
+use App\Http\Controllers\Tenant\TableBenefitsController;
 use App\Http\Controllers\Tenant\TableValueController;
 use App\Http\Controllers\Tenant\TenantDashboardController;
 use App\Http\Controllers\Tenant\TenantWelcomeController;
@@ -52,6 +53,7 @@ Route::middleware([
     Route::resource('/area-positions',AreaPositionController::class)->middleware('auth:web');
     Route::resource('/concept',ConceptController::class)->middleware('auth:web');
     Route::resource('/table-value',TableValueController::class)->middleware('auth:web');
+    Route::resource('/table-benefits',TableBenefitsController::class)->middleware('auth:web');
     Route::resource('/working-day-holiday',WorkingDayHolidayController::class)->middleware('auth:web');
     Route::resource('/imss-employer-registers',ImssPatronalRegisterController::class)->middleware('auth:web');
     Route::resource('/business-positions',BusinessPositionController::class)->middleware('auth:web');

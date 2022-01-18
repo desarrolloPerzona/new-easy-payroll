@@ -65,9 +65,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('table-benefits.index') }}">
 
-                            Tablas de beneficios
+                            {{__('Benefits table')}}
                         </a>
                     </li>
 

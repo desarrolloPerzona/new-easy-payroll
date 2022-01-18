@@ -10,14 +10,14 @@
             </select>
         </label>
 
-        <form action="{{ route('imss-employer-registers.store') }}" method="POST">
+        <form action="{{ route('imss-employer-registers.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <label class="font-bold" for="name">{{__('Name')}}</label>
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white w-100" type="text" id="name" name="name" value="{{ old('name') }}">
             {{--            Prima de riesgo--------------}}
             <label class="font-bold " for="name">{{__('Risk premium')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white w-100" type="text" id="risk_premium" name="risk_premium" value="{{ old('risk_premium') }}">
+            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white w-100" type="number" step=".001" id="risk_premium" name="risk_premium" value="{{ old('risk_premium') }}">
             {{--            Clave subdelegacional IMSS--------------}}
             <label class="font-bold" for="name">{{__('IMSS subdelegational key')}}</label>
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white w-100" type="text" id="imss_sub_delegation_key" name="imss_sub_delegation_key" value="{{ old('imss_sub_delegation_key') }}">
@@ -51,7 +51,7 @@
 
                                     <div x-data="{ files: null }" id="FileUpload"
                                          class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray dark:bg-dark dark:text-white">
-                                        <input type="file" multiple
+                                        <input type="file" multiple name="cert_imss_cert"
                                                class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
                                                x-on:change="files = $event.target.files; console.log($event.target.files);"
                                                x-on:dragover="$el.classList.add('active')"

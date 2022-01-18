@@ -44,12 +44,12 @@
 
                             <div class="flex">
                                 <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('risk premium')}}</label></div>
-                                <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">3</label></div>
+                                <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">{{ $register->risk_premium }}</label></div>
                             </div>
 
                             <div class="flex">
                                 <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('subdelegational key')}}</label></div>
-                                <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">123658</label></div>
+                                <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">{{ $register->imss_sub_delegation_key }}</label></div>
                             </div>
 
                             <p class="my-2 font-bold">Enviar movimientos al IMSS mediante certificado IMSS</p>

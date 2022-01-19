@@ -9,13 +9,13 @@
             <label class="font-bold" for="name">{{__('Policy name')}}</label>
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="Política 1">
 
-    <label class="font-bold my-2" for="name">{{__('Benefits')}}</label>
+    <label class="font-bold my-2" for="name">{{__('Benefits table')}}</label>
 
     <label class="w-full my-2">
         <select class="rounded w-full dark:bg-dark dark:text-white">
-            <option value="001">Tabla 1</option>
-            <option value="002">Tabla 2</option>
-            <option value="002">Tabla 3</option>
+            <option value="001">Estandar</option>
+            <option value="002">Ejecutivos</option>
+            <option value="002">Directores</option>
 
         </select>
     </label>

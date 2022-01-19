@@ -245,7 +245,6 @@
     "Drag your files here or click in this area.": "Arrastre los archivos aquí o haga clic en esta área.",
     "E-Mail Address": "Correo Electrónico",
     "Economic days:": "Días económicos:",
-    "Economic days": "Días económicos",
     "Ecuador": "Ecuador",
     "Edit :resource": "Editar :resource",
     "Edit areas and positions": "Editar áreas y puestos",
@@ -867,11 +866,14 @@
     "Zipcode": "Código postal",
     "ZipCodes": "Código postales",
     "Zipcodes": "Código postales",
-
     ":amount Total": ":amount Total",
     ":resource Details: :title": "Detalles del :resource : :title",
     ":resource Details": "Detalles del :resource",
     "30 Days": "30 Días",
     "60 Days": "60 Días",
-    "90 Days": "90 Días"
+    "90 Days": "90 Días",
+    "New table of benefits": "Nueva tabla de beneficios",
+    "Years of antiguaty": "Años de antigüedad",
+    "Vacations": "Vacaciones",
+    "Economic days": "Días económicos"
 }

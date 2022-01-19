@@ -4,8 +4,19 @@ namespace App\Models\Tenant;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Fiel extends Model
+class Fiel extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
+
+    protected $fillable = [
+        'name', 'fiel_password'
+    ];
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('business')->useDisk('public');
+    }
 }

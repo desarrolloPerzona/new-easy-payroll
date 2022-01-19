@@ -33,7 +33,7 @@
             allowMultiple: false,
             labelFileLoadError: true,
             server: {
-                url: '/uploadFiles',
+                url: '/{{$uploadRoute}}',
                 headers: {
                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
                 }

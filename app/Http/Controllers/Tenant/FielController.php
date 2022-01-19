@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Tenant;
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\Fiel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class FielController extends Controller
 {
@@ -15,6 +17,7 @@ class FielController extends Controller
      */
     public function index()
     {
+
         $fiels = Fiel::all();
         return view('app-tenant.dashboard.fiel.index',compact('fiels'));
     }
@@ -33,11 +36,18 @@ class FielController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        dd($request);
+        $fiel = new Fiel;
+
+        $fiel->name = $request->get('name');
+        $fiel->fiel_password = Hash::make($request->get('fiel_password'));
+
+        $fiel->save();
+
+        return redirect()->route('fiel.index');
     }
 
     /**

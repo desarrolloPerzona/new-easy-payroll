@@ -14,15 +14,17 @@ class FileUploadPquina extends Component
         $label,
         $maxFiles,
         $fileType,
-        $allowMultiple;
+        $allowMultiple,
+        $uploadRoute;
 
-    public function mount($name, $maxFiles, $fileType, $allowMultiple,$label)
+    public function mount($name, $maxFiles, $fileType, $allowMultiple, $label, $uploadRoute)
     {
         $this->name = $name;
         $this->maxFiles = $maxFiles;
         $this->fileType = $fileType;
         $this->allowMultiple = $allowMultiple;
         $this->label = $label;
+        $this->uploadRoute = $uploadRoute;
     }
 
 

@@ -97,11 +97,91 @@
             </div>
 
             <label class="font-bold my-2" for="name">{{__('New concept')}}</label>
-            <div class="btn-top-holder my-3 pb-4">
-                <a href="{{route('concept.create',1)}}" class="btn btn-dark">
-                    {{ __('Add concept') }}
-                </a>
+
+    <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
+        <div class="accordion" id="newItem">
+
+            {{--J1--------------}}
+            <div class="accordion-item">
+                <div class="accordion-header mr-4" id="headingOne">
+                    <table class="table">
+
+                            <button class="mt-2 ml-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseS1"
+                                    aria-expanded="false" aria-controls="collapseS1">
+                                <div class="btn-top-holder">
+                                    <div class="btn-top-holder">
+                                        <a href="#}" class="btn btn-dark">
+                                            {{ __('Add concept') }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </button>
+
+                    </table>
+                </div>
+
+                <div id="collapseS1" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                     data-bs-parent="#newItem">
+                    <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
+
+                      <div class="row">
+                          <div class="col-md-5 pr-2 w-full">
+                              <label class="w-full">
+                                  <select class="rounded w-full dark:bg-dark dark:text-white">
+                                      <option value="001">{{__('Perception')}}</option>
+                                      <option value="002">{{__('Deduction')}}</option>
+
+                                  </select>
+                              </label>
+                          </div>
+                              <div class="col-md-5 pr-2 w-full">
+                                  <select class="rounded w-full dark:bg-dark dark:text-white">
+                                      <option value="001">004 Rembolso gastos médicos</option>
+                                      <option value="002">006 Caja de ahorro</option>
+                                      <option value="002">009 Contribuciones a cargo de trabajadores</option>
+                                      <option value="002">011 Prima de seguro de vida</option>
+                                      <option value="002">012 Seguro gastos médicos</option>
+                                      <option value="002">013 Cueotas sindicales patrón</option>
+                                      <option value="002">014 Subsidio incapacidades</option>
+                                      <option value="002">015 Becas a trabajadores y/o hijos de trabajadores</option>
+                                      <option value="002">023 Pagos por separación</option>
+                                      <option value="002">025 Indemnizaciones</option>
+                                      <option value="002">026 Rembolso de funeral</option>
+                                      <option value="002">027 Cuotas de Seguridad Social del patrón</option>
+                                      <option value="002">029 Vales de despensa en efectivo</option>
+                                      <option value="002">031 Vales de gasolina</option>
+                                      <option value="002">032 Vales de ropa</option>
+                                      <option value="002">033 Ayuda de renta</option>
+                                      <option value="002">034 Ayuda de articulos escolares</option>
+                                      <option value="002">035 Ayuda de adqusición de anteojos</option>
+                                      <option value="002">036 Ayuda al transporte</option>
+                                      <option value="002">037 Ayuda gastos funerarios</option>
+                                      <option value="002">038 Otros ingresos y salarios</option>
+                                      <option value="002">044 Jubilaciones y pensiones</option>
+                                      <option value="002">047 Alimentación </option>
+                                      <option value="002">048 Habitación </option>
+
+                                  </select>
+                              </label>
+                          </div>
+                          <div class="col-md-2 ">
+                              <i class="fas fa-plus-circle mt-3 cursor-pointer"></i>
+                          </div>
+                      </div>
+
+
+
+
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="btn-top-holder my-3 pb-4">
+        <a href="{{route('concept.index')}}" class="btn btn-dark">
+            {{ __('Create new concept') }}
+        </a>
+    </div>
 
             {{--Descuento faltas--}}
             <div class="my-3">

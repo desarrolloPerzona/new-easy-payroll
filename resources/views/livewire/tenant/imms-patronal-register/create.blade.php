@@ -2,16 +2,17 @@
     {{--        Nombre--------------}}
     <div class="card bg-white shadow-sm rounded p-4 my-2 mx-auto dark:bg-dark dark:text-white">
 
-        <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
-        <label>
-            <select class="w-full rounded dark:bg-dark dark:text-white my-2">
-                <option value="001">Perzona</option>
-                <option value="001">DSSD</option>
-            </select>
-        </label>
+
 
         <form action="{{ route('imss-employer-registers.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
+
+            <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
+            <select id="branch_id" class="w-full rounded dark:bg-dark dark:text-white my-2" name="branch_id">
+                @foreach($branches as $branch)
+                    <option value="{{ $branch->id }}">{{ $branch->name }}</option>
+                @endforeach
+            </select>
 
             <label class="font-bold" for="name">{{__('Name')}}</label>
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white w-100" type="text" id="name" name="name" value="{{ old('name') }}">
@@ -20,7 +21,7 @@
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white w-100" type="number" step=".001" id="risk_premium" name="risk_premium" value="{{ old('risk_premium') }}">
             {{--            Clave subdelegacional IMSS--------------}}
             <label class="font-bold" for="name">{{__('IMSS subdelegational key')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white w-100" type="text" id="imss_sub_delegation_key" name="imss_sub_delegation_key" value="{{ old('imss_sub_delegation_key') }}">
+            <input class="text-gray-800 rounded my-2 mb-4 dark:bg-dark dark:text-white w-100" type="text" id="imss_sub_delegation_key" name="imss_sub_delegation_key" value="{{ old('imss_sub_delegation_key') }}">
 
             {{--            ACCORDION--}}
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
@@ -33,7 +34,7 @@
                                     aria-expanded="false" aria-controls="collapseTwo">
 
                                 <div class="my-3 mx-2">
-                                    <input type="radio" id="id" name="drone" value="id">
+                                    <input type="radio" id="use_imss" name="use_imss" value="1">
                                 </div>
 
                             </button>
@@ -91,18 +92,18 @@
                                     </div>-->
                                     <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
                                            type="text"
-                                           id="IMSScertificate">
+                                           id="cert_imss_cert" name="cert_imss_cert">
                                 </div>
                                 <div>
                                     <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                           type="text" id="name" name="Name">
+                                           type="text" id="cert_imss_user" name="cert_imss_user">
                                 </div>
                                 <div>
                                     <label class="font-bold" for="name">{{__('IMSS certified password')}}</label>
                                     <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                           type="password" id="name"
-                                           name="Name">
+                                           type="password" id="cert_imss_password"
+                                           name="cert_imss_password">
                                 </div>
                             </div>
                         </div>
@@ -114,7 +115,7 @@
                                     aria-expanded="false" aria-controls="collapseTwo">
 
                                 <div class="my-3 mx-2">
-                                    <input type="radio" id="id" name="drone" value="id">
+                                    <input type="radio" id="use_fiel" name="use_imss" value="0">
                                 </div>
 
                             </button>

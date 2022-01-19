@@ -37,7 +37,7 @@ class BusinessController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

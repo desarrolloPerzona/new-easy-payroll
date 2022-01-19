@@ -17,4 +17,7 @@ class FormInput extends Component
         $this->attributes = $attributes;
         $this->value = $value;
     }
+    public function render(){
+        return view('livewire.components.content.form-input');
+    }
 }

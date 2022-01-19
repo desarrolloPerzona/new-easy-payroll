@@ -9,6 +9,7 @@ class UploadFilesController extends Controller
 {
     public function uploadFile(Request $request)
     {
+
         return $request;
 
     }

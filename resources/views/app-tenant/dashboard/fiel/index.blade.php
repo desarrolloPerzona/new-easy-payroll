@@ -2,18 +2,20 @@
     <div class="container mx-auto">
         <livewire:components.breadcrumb :parent="'Fiel'" :children="[]" :item-id="''" :icon="'fak fa-empresa-perzona mr-2'"/>
 
-        <div class="bg-white p-2 my-4 rounded shadow-md">
+        <div class="bg-white p-4 my-4 rounded shadow-md">
             <livewire:components.content.content-header :title="'New FIEL'" :icon="'fas fa-plus-circle'"/>
-
-            <div class="form-group">
-{{--                <label for="" class="label">{{__('Name')}}</label>--}}
-{{--                <input class="form-control" type="text">--}}
-                <livewire:components.content.form-input :name="'name'" :type="'text'" :placeholder="'Ingresar nombre'" :classes="'form-control'" :identifier="'name'" :attributes="''" value=""/>
-            </div>
+            <form action="{{route('fiel.store')}}" method="post">
+                @csrf
+                <livewire:components.content.form-input :name="'name'" :type="'text'" :placeholder="'Name'" :classes="''" :identifier="'name'" :attributes="''" value="{{old('name')}}" />
+                <livewire:components.content.file-upload-pquina :name="'fiel_private_key'" :max-files="1" :file-type="''" :allow-multiple="''" :attributes="''" :label="'fiel_private_key'"/>
+                <livewire:components.content.file-upload-pquina :name="'fiel_cert'" :max-files="1" :file-type="''" :allow-multiple="''" :attributes="''" :label="'fiel_cert'"/>
+                <livewire:components.content.form-input :name="'fiel_password'" :type="'password'" :placeholder="'Password'" :classes="''" :identifier="'fiel_password'" :attributes="''" value="{{old('fiel_password')}}"/>
+                <livewire:components.content.form-button :type="'submit'" :title="'Send'" :color="'primary'" :icon="'fad fa-paper-plane'" :classes="''"/>
+            </form>
         </div>
 
-
-        <div class="bg-white p-2 my-4 rounded shadow-md">
+        <div class="bg-white p-4 my-4 rounded shadow-md">
+            <livewire:components.content.content-header :title="'FIEL TABLE'" :icon="'fas fa-table'"/>
             <table class="table table-dark">
                 <tr>
                     <th>{{__('Name')}}</th>
@@ -24,7 +26,6 @@
                 </tr>
                 <tr>
                     @forelse($fiels as $fiel)
-
                         <td>{{ $fiel->name }}</td>
                         <td>{{ $fiel->fiel_private_key }}</td>
                         <td>{{ $fiel->fiel_cert }}</td>

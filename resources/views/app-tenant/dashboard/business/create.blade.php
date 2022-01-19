@@ -7,8 +7,8 @@
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Name')}}</label></div>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
-            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Logo')}}</label></div>
-            <livewire:components.content.file-upload-pquina :name="'logo'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'multiple'" :attributes="''"/>
+
+            <livewire:components.content.file-upload-pquina :name="'logo'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'multiple'" :attributes="''" :label="'Logo'"/>
 
             <div class="flex-1 text-lef py-2"><label class="font-bold" for="name">{{__('Industry')}}</label></div>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
@@ -49,11 +49,10 @@
 
             <h2 class="py-3">{{__('Tax data')}}</h2>
 
-            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Digital Seal Certificate')}}</label></div>
-            <livewire:components.content.file-upload-pquina :name="'logo2'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'"/>
+            <livewire:components.content.file-upload-pquina :name="'logo2'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'" :label="'Digital Seal Certificate'"/>
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Digital private certificate key')}}</label></div>
-            <livewire:components.content.file-upload-pquina :name="'logo3'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'"/>
+            <livewire:components.content.file-upload-pquina :name="'logo3'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'" :label="''"/>
 
 
             <div class="flex-1 text-left py-2"><label class="font-bold"

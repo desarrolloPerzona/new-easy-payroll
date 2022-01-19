@@ -1,7 +1,5 @@
-<div class="mb-3">
-    @if($type !== 'hidden')
-        <label for="{{ $identifier }}" class="form-label">{{ replaceUnderScore($name) }}</label>
-    @endif
-    <input class="{{ $classes }}" type="{{ $type }}" id="{{ $identifier }}" name="{{ $name }}" placeholder="{{ __($placeholder) }}" {{ $attributes }} value="{{ $value }}" />
+<div class="form-group mb-3">
+    <label  class="form-label font-bold"  for="{{ $identifier }}">{{ __(replaceUnderScore($name)) }}</label>
+    <input class=" form-control {{ $classes }} " type="{{ $type }}" id="{{ $identifier }}" name="{{ $name }}" placeholder="{{ __($placeholder) }}" {{ $attributes }} value="{{ $value }}"/>
 </div>
 

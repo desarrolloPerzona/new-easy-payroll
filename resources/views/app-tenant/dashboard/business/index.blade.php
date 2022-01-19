@@ -25,7 +25,7 @@
                                 <div class="accordion-body mb-3 text-dark bg-gray-200 dark:bg-dark dark:text-white">
                                     {{--CONTENT--}}
                                     {{--CONTENT HEADER--}}
-                                    <livewire:components.content.content-header :title="'Business'"/>
+                                    <livewire:components.content.content-header :title="'Business'" :icon="'fas fa-building'"/>
                                     {{--CONTENT TWO COLUMNS TEXT IMAGES AND ARRAYS--}}
                                     <livewire:components.content.content-two-columns-text :title="'Name'" :field="$business->name ?? __('Fill data')"/>
                                     <livewire:components.content.content-two-columns-images :title="'Logo'" :images="$business->getMedia('business')"/>
@@ -33,7 +33,7 @@
                                     <livewire:components.content.content-two-columns-text :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? __('Fill data')"/>
                                     <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->business_name ?? __('Fill data')"/>
                                     <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? __('Fill data')"/>
-                                    <livewire:components.content.content-header :title="'Bank Accounts'"/>
+                                    <livewire:components.content.content-header :title="'Bank Accounts'" :icon="'fas fa-bank'"/>
                                     @if(count($business->banks) === 0)
                                         <a href="{{route('banks.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
                                     @else

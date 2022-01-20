@@ -53,6 +53,8 @@
                                             <th>{{__('Created at')}}</th>
                                             <th colspan="3"></th>
                                         </tr>
+
+                                        @if(count($business->branches))
                                         @foreach($business->branches as $branch)
                                             <tr>
                                                 <td><span class="uppercase">{{$branch->name}}</span></td>
@@ -85,6 +87,11 @@
                                                 </td>
                                             </tr>
                                         @endforeach
+                                        @else
+                                            <tr>
+                                                <td colspan="6" class="text-center"><b>{{ __('No registers') }}</b></td>
+                                            </tr>
+                                        @endif
                                     </table>
 
                                 </div>

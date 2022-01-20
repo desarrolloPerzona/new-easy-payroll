@@ -1,7 +1,7 @@
 <div class="my-4">
     <div class="form-group">
         <label for="id-{{$name}}" class="label font-bold py-2">{{$label}}</label>
-        <input id="id-{{ $name }}" class="filepond" type="file">
+        <input id="id-{{ $name }}" class="filepond" type="file" {{$attributes}}>
         @error($name)
         <small class="mt-2 text-sm text-red-600">{{ $message }}</small>
         @enderror

@@ -55,34 +55,34 @@
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Jornada 1</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Jornada 1</label>
                                     </div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Type of shift')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Diurno</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Diurno</label>
                                     </div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Days')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Lunes, Martes,
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Lunes, Martes,
                                             Miercoles, Jueves, Viernes</label></div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label
                                             class="my-2">{{__('Working hours')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">8 horas</label>
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">8 horas</label>
                                     </div>
                                 </div>
 
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Meal hours')}}</label>
                                     </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">14:00 a
+                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">14:00 a
                                             15:00</label></div>
                                 </div>
 

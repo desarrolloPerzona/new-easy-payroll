@@ -24,7 +24,7 @@ class TableBenefitsController extends Controller
      */
     public function create()
     {
-        //
+        return view('app-tenant.dashboard.table-benefits.create');
     }
 
     /**
@@ -57,7 +57,7 @@ class TableBenefitsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('app-tenant.dashboard.table-benefits.edit');
     }
 
     /**

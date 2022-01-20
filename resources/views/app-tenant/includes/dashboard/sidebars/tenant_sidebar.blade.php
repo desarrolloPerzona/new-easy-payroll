@@ -58,18 +58,7 @@
                     <i class="nav-icon fak fa-admin-perzona mr-2"></i> {{__('Administration')}}
                 </a>
                 <ul class="nav-group-items">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('payroll.index')}}">
 
-                            {{__('Payroll')}}
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('policies.index')}}">
-
-                            {{__('Policies')}}
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('table-benefits.index') }}">
 
@@ -93,6 +82,18 @@
                         <a class="nav-link" href="{{route('concept.index')}}">
 
                             {{__('Concepts')}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('policies.index')}}">
+
+                            {{__('Policies')}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('payroll.index')}}">
+
+                            {{__('Payroll')}}
                         </a>
                     </li>
                     <li class="nav-item">

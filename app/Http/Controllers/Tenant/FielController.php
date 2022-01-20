@@ -40,6 +40,7 @@ class FielController extends Controller
      */
     public function store(Request $request)
     {
+
 //        Getting the name that filepond assing to the file
         $chunks = explode('<', $request->get('fiel_private_key'));
         $file = $chunks[0];
@@ -52,6 +53,18 @@ class FielController extends Controller
         $fiel->fiel_password = Hash::make($request->get('fiel_password'));
 
         $fiel->save();
+
+        $temporaryFile = TemporaryFile::where('folder', $file)->first();
+//        $allTemps = TemporaryFile::all();
+
+        if($temporaryFile){
+            $fiel->addMedia(storage_path('app/public/business/tmp/' . $file . '/' . $temporaryFile->filename))
+                ->toMediaCollection('fiel_private_key');
+
+//            Function to delete folder after save all data
+            rmdir(storage_path('app/public/business/tmp/' . $file));
+            $temporaryFile->delete();
+        }
 
         $allTemps = TemporaryFile::all();
 //            Loop to delete all items and folders of business_temp that create filepond by default

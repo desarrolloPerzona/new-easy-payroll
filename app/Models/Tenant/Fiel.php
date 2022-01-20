@@ -17,6 +17,6 @@ class Fiel extends Model implements HasMedia
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('business')->useDisk('public');
+        $this->addMediaCollection('fiel_private_key')->useDisk('public');
     }
 }

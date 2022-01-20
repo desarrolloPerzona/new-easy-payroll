@@ -7,8 +7,7 @@
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Name')}}</label></div>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
-
-            <livewire:components.content.file-upload-pquina :name="'logo'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'multiple'" :attributes="''" :label="'Logo'"/>
+            <livewire:components.content.file-upload-pquina :name="'logo'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'multiple'" :attributes="''" :label="'Logo'" :upload-route="'uploadFiles'"/>
 
             <div class="flex-1 text-lef py-2"><label class="font-bold" for="name">{{__('Industry')}}</label></div>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
@@ -19,7 +18,6 @@
                     <option value="001">Perona Fisica</option>
                     <option value="002">Persona Moral</option>
                     <option value="002">Sin fines de lucro</option>
-
                 </select>
             </label>
 
@@ -49,10 +47,10 @@
 
             <h2 class="py-3">{{__('Tax data')}}</h2>
 
-            <livewire:components.content.file-upload-pquina :name="'logo2'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'" :label="'Digital Seal Certificate'"/>
+            <livewire:components.content.file-upload-pquina :name="'logo2'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'" :label="'Digital Seal Certificate'" :upload-route="'uploadFiles'"/>
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Digital private certificate key')}}</label></div>
-            <livewire:components.content.file-upload-pquina :name="'logo3'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'" :label="''"/>
+            <livewire:components.content.file-upload-pquina :name="'logo3'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'" :label="''" :upload-route="'uploadFiles'"/>
 
 
             <div class="flex-1 text-left py-2"><label class="font-bold"

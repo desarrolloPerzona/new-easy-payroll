@@ -48,10 +48,17 @@ class FielController extends Controller
         $fiel = new Fiel;
 
         $fiel->name = $request->get('name');
-        $fiel->fiel_private_key = $request->get('fiel_private_key');
+        $fiel->fiel_private_key = $file;
         $fiel->fiel_password = Hash::make($request->get('fiel_password'));
 
         $fiel->save();
+
+        $allTemps = TemporaryFile::all();
+//            Loop to delete all items and folders of business_temp that create filepond by default
+        foreach ($allTemps as $item){
+            deleteDirectory(storage_path('app/public/business/tmp/' . $item->folder));
+            $item->delete();
+        }
 
         return redirect()->route('fiel.index');
     }

@@ -12,7 +12,7 @@ class Fiel extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
-        'name', 'fiel_password'
+        'name', 'fiel_password', 'fiel_private_key'
     ];
 
     public function registerMediaCollections(): void

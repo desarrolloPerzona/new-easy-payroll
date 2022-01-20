@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\Fiel;
+use App\Models\Tenant\TemporaryFile;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class FielController extends Controller
@@ -40,9 +40,15 @@ class FielController extends Controller
      */
     public function store(Request $request)
     {
+//        Getting the name that filepond assing to the file
+        $chunks = explode('<', $request->get('fiel_private_key'));
+        $file = $chunks[0];
+
+//        Saving data
         $fiel = new Fiel;
 
         $fiel->name = $request->get('name');
+        $fiel->fiel_private_key = $request->get('fiel_private_key');
         $fiel->fiel_password = Hash::make($request->get('fiel_password'));
 
         $fiel->save();

@@ -40,29 +40,34 @@ class FielController extends Controller
     public function store(Request $request)
     {
 
-//        Getting the name that filepond assing to the file
-        $chunks = explode('<', $request->get('fiel_private_key'));
-        $file = $chunks[0];
+//        Getting the name that filepond assing to the file input
+        $chunks_key = explode('<', $request->get('fiel_private_key'));
+        $chunks_cert = explode('<', $request->get('fiel_cert'));
+        $file_key = $chunks_key[0];
+        $file_cert = $chunks_cert[0];
 
 //        Saving data
         $fiel = new Fiel;
 
         $fiel->name = $request->get('name');
-        $fiel->fiel_private_key = $file;
+        $fiel->fiel_private_key = $file_key;
+        $fiel->fiel_cert = $file_cert;
         $fiel->fiel_password = Hash::make($request->get('fiel_password'));
 
         $fiel->save();
 
-        $temporaryFile = TemporaryFile::where('folder', $file)->first();
-//        $allTemps = TemporaryFile::all();
+//        Check if there is a temporary register
+        $temporaryFile = TemporaryFile::where('folder', $file_key)->first();
+        $temporaryFile_cert = TemporaryFile::where('folder', $file_cert)->first();
 
+//        Adding media specifying the path of file
         if($temporaryFile){
-            $fiel->addMedia(storage_path('app/public/business/tmp/' . $file . '/' . $temporaryFile->filename))
+            $fiel->addMedia(storage_path('app/public/business/tmp/' . $file_key . '/' . $temporaryFile->filename))
                 ->toMediaCollection('fiel_private_key');
-
-//            Function to delete folder after save all data
-            rmdir(storage_path('app/public/business/tmp/' . $file));
-            $temporaryFile->delete();
+        }
+        if($temporaryFile_cert){
+            $fiel->addMedia(storage_path('app/public/business/tmp/' . $file_cert . '/' . $temporaryFile_cert->filename))
+                ->toMediaCollection('fiel_cert');
         }
 
         $allTemps = TemporaryFile::all();

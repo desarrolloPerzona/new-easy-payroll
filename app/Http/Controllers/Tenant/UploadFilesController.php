@@ -28,6 +28,22 @@ class UploadFilesController extends Controller
             return $folder;
         }
 
+        //        Check if has file, this to store it in temporaryfiles db
+        if($request->hasFile('fiel_cert')){
+            $file = $request->file('fiel_cert');
+            $filename = $file->getClientOriginalName();
+            $folder = uniqid() . '-' . now()->timestamp;
+
+            $file->storeAs('public/business/tmp/' . $folder, $filename);
+
+            TemporaryFile::create([
+                'folder' => $folder,
+                'filename' => $filename
+            ]);
+
+            return $folder;
+        }
+
         return '';
 
     }

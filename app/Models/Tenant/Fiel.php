@@ -12,11 +12,12 @@ class Fiel extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
-        'name', 'fiel_password', 'fiel_private_key'
+        'name', 'fiel_password', 'fiel_private_key', 'fiel_cert'
     ];
 
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('fiel_private_key')->useDisk('public');
+        $this->addMediaCollection('fiel_cert')->useDisk('public');
     }
 }

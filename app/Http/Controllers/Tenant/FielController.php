@@ -17,7 +17,6 @@ class FielController extends Controller
      */
     public function index()
     {
-
         $fiels = Fiel::all();
         return view('app-tenant.dashboard.fiel.index',compact('fiels'));
     }

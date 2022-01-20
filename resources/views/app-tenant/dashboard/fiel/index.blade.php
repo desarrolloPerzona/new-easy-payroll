@@ -16,7 +16,8 @@
 
         <div class="bg-white p-4 my-4 rounded shadow-md">
             <livewire:components.content.content-header :title="'FIEL TABLE'" :icon="'fas fa-table'"/>
-            <table class="table table-dark">
+
+            <table class="table table-dark table-responsive">
                 <thead>
                 <tr>
                     <th>{{__('Name')}}</th>
@@ -30,12 +31,13 @@
                 <tbody>
                 @forelse($fiels as $fiel)
                     <tr>
-                        <td>{{ $fiel->name }}</td>
-                        <td>{{ Str::limit( $fiel->fiel_private_key, 20) }}</td>
-                        <td>{{ $fiel->fiel_cert }}</td>
-                        <td>{{ Str::limit($fiel->fiel_password, 20) }}</td>
+                        <td>{{ Str::limit($fiel->name, 20) }}</td>
+                        <td>{{ Str::limit( $fiel->fiel_private_key, 10) }}</td>
+                        <td>{{ Str::limit($fiel->fiel_cert, 10) }}</td>
+                        <td>********</td>
                         <td>{{ $fiel->created_at }}</td>
-                        <td>
+                        <td
+                        >
                             <div class="mx-2 inline-block">
                                 <button type="button" aria-expanded="false" >
                                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>

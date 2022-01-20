@@ -1,5 +1,5 @@
 <div>
-    <table class="table">
+    <table class="table my-0">
         <td class="text-white" style="width: 45%"><span class="uppercase">{{$name}}</span></td>
         <td class="text-white" style="width: 50%">{{formatDate($createdAt)}}</td>
         <td style="width: 3%">

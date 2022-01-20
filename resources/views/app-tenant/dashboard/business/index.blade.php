@@ -14,6 +14,7 @@
                 {{--ACCORDION--}}
                 <div class="accordion" id="businessAccordion">
                     @foreach($businesses as $business)
+                        {{ $business->name }}
                         {{--ACCORDION ITEM--}}
                         <div class="accordion-item">
                             {{--ACCORDION HEADER--}}
@@ -87,9 +88,10 @@
                                     </table>
 
                                 </div>
-                                @endforeach
+
                             </div>
                         </div>
+                    @endforeach
                         {{--ACCORDION--}}
                 </div>
             </div>

@@ -7,8 +7,8 @@
             <form action="{{route('fiel.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <livewire:components.content.form-input :name="'name'" :type="'text'" :placeholder="'Name'" :classes="''" :identifier="'name'" :attributes="''" value="{{old('name')}}" />
-                <livewire:components.content.file-upload-pquina :name="'fiel_private_key'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="''" :attributes="'required'" :label="'fiel_private_key'" :upload-route="'uploadFiles'"/>
-                <livewire:components.content.file-upload-pquina :name="'fiel_cert'" :max-files="1" :file-type="''" :allow-multiple="''" :attributes="'required'" :label="'fiel_cert'" :upload-route="'uploadFiles'"/>
+                <livewire:components.content.file-upload-pquina :name="'fiel_private_key'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="''" :attributes="'required'" :label="'Fiel Private Key'" :upload-route="'uploadFiles'"/>
+                <livewire:components.content.file-upload-pquina :name="'fiel_cert'" :max-files="1" :file-type="''" :allow-multiple="''" :attributes="'required'" :label="'Fiel Certificate'" :upload-route="'uploadFiles'"/>
                 <livewire:components.content.form-input :name="'fiel_password'" :type="'password'" :placeholder="'Password'" :classes="''" :identifier="'fiel_password'" :attributes="''" value="{{old('fiel_password')}}"/>
                 <livewire:components.content.form-button :type="'submit'" :title="'Send'" :color="'primary'" :icon="'fad fa-paper-plane'" :classes="''"/>
             </form>

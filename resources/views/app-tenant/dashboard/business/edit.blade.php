@@ -1,11 +1,12 @@
 <x-app-tenant>
     <div class="container mx-auto">
-        <livewire:components.breadcrumb :parent="'Business'" :children="['Edit']" item-id="{{'/'.$business->id}}" :icon="'fak fa-empresa-perzona mr-2'"/>
+        <livewire:components.breadcrumb :parent="'Business'" :children="['Edit']" item-id="{{'/'.$business->id}}"
+                                        :icon="'fak fa-empresa-perzona mr-2'"/>
 
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
-            <h2 class="py-3">{{__('Business')}}: <span class="uppercase font-bold">{{$business->name}}</span> </h2>
+            <h2 class="py-3">{{__('Business')}}: <span class="uppercase font-bold">{{$business->name}}</span></h2>
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Name')}}</label></div>
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
@@ -49,12 +50,42 @@
             <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
                    placeholder="03695">
 
+{{--            Accounts-----------------------}}
             <h2 class="py-3">{{__('Accounts')}}</h2>
-
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
-                   placeholder="03695">
+            <div><label class="font-bold my-2" for="name">Utilizar STP para disperión de nómina</label>
+                <div>
+                    <input type="radio" id="8" name="8" value="8" checked>
+                    <label for="1">{{__('Yes')}}</label>
+                </div>
 
+                <div>
+                    <input type="radio" id="9" name="9" value="9">
+                    <label for="2">{{__('No')}}</label>
+                </div>
+            </div>
+            <div class="flex">
+                <div class="w-5/12 w-full mr-2">
+                    <div class="text-left py-2"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
+                    <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                           name="Name" placeholder="03695">
+                </div>
+
+                <div class="w-5/12 w-full mr-2">
+                    <div class="flex-1 text-left py-2"><label class="font-bold"
+                                                              for="name">{{__('STP password')}}</label></div>
+                    <input class="w-full text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="••••••••">
+                </div>
+
+                <div class="w-2/12 mt-2">
+                    <div class="btn-top-holder mt-10 flow-root">
+                        <a class="cursor-pointer btn btn-dark float-right">
+                            {{ __('Save') }}
+                        </a>
+                    </div>
+                </div>
+
+            </div>
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Bank accounts')}}</label></div>
             <ul>
                 <li value="001">- Cuenta BBVA 1256</li>
@@ -62,6 +93,7 @@
                 <li value="002">- Cuenta Santander 4585</li>
 
             </ul>
+            {{--            END Accounts-----------------------}}
 
             <h2 class="py-3">{{__('Tax data')}}</h2>
 

@@ -39,10 +39,40 @@
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('ZIP Code')}}</label></div>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
+            {{--            Accounts-----------------------}}
             <h2 class="py-3">{{__('Accounts')}}</h2>
 
-            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
+            <div class="flex">
+
+                <div class="w-5/12 w-full mr-2">
+                    <div class="text-left py-2"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
+                    <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                           name="Name" placeholder="03695">
+                </div>
+
+                <div class="w-5/12 w-full mr-2">
+                    <div class="flex-1 text-left py-2"><label class="font-bold"
+                                                              for="name">{{__('STP password')}}</label></div>
+                    <input class="w-full text-gray-800 rounded my-2" type="text" id="name" name="Name" placeholder="••••••••">
+                </div>
+
+                <div class="w-2/12 mt-2">
+                    <div class="btn-top-holder mt-10 flow-root">
+                        <a href="" class="cursor-pointer btn btn-dark float-right">
+                            {{ __('Save') }}
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Bank accounts')}}</label></div>
+            <ul>
+                <li value="001">- Cuenta BBVA 1256</li>
+                <li value="002">- Cuenta BBVA 6987</li>
+                <li value="002">- Cuenta Santander 4585</li>
+
+            </ul>
+            {{--            END Accounts-----------------------}}
 
 
             <h2 class="py-3">{{__('Tax data')}}</h2>

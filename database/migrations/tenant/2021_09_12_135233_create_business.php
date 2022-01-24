@@ -29,10 +29,13 @@ class CreateBusiness extends Migration
             $table->string('fiscal_regime')->nullable();
             $table->boolean('stp_status')->nullable();
             $table->string('stp_account')->nullable();
-            $table->string('stp_clabe_account')->nullable();
-            $table->string('sat_key')->nullable();
-            $table->string('sat_cert')->nullable();
-            $table->string('sat_password')->nullable();
+            $table->string('stp_password')->nullable();
+            $table->string('sat_fiel_key')->nullable();
+            $table->string('sat_fiel_cert')->nullable();
+            $table->string('sat_fiel_password')->nullable();
+            $table->string('sat_seal_key')->nullable();
+            $table->string('sat_seal_cert')->nullable();
+            $table->string('sat_seal_password')->nullable();
             $table->boolean('extra_time')->nullable();
             $table->boolean('average_variable_calc')->nullable();
             $table->boolean('stp_payroll')->nullable();

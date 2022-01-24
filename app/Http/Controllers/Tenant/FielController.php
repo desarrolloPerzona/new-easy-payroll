@@ -40,6 +40,8 @@ class FielController extends Controller
     public function store(Request $request)
     {
 
+
+        dd($request);
 //        Getting the name that filepond assing to the file input
         $chunks_key = explode('<', $request->get('fiel_private_key'));
         $chunks_cert = explode('<', $request->get('fiel_cert'));

@@ -22,7 +22,7 @@
                                 <livewire:components.content.accordion-header :model-id="$business->id" :created-at="$business->created_at" :route="'business.edit'" :iteration="$loop->iteration" :name="$business->name"/>
                             </div>
                             {{--ACCORDION COLAPSE--}}
-                            <div id="collapse-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#businessAccordion">
+                            <div id="collapse-{{$loop->iteration}}" class="accordion-collapse {{--collapse--}}" aria-labelledby="headingTwo" data-bs-parent="#businessAccordion">
                                 <div class="accordion-body mb-3 text-dark bg-gray-200 dark:bg-dark dark:text-white">
                                     {{--CONTENT--}}
                                     {{--CONTENT HEADER--}}
@@ -34,6 +34,28 @@
                                     <livewire:components.content.content-two-columns-text :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? __('Fill data')"/>
                                     <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->business_name ?? __('Fill data')"/>
                                     <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? __('Fill data')"/>
+                                    {{--FISCAL DATA--}}
+                                    <livewire:components.content.content-header :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
+                                    <h2>{{_('STP Access')}}</h2>
+                                    @if($business->stp_status === 1)
+                                        <livewire:components.content.content-two-columns-text :title="'STP'" :field="$business->account ?? __('fill data')"/>
+                                    @else
+                                        <form action="">
+                                            <div class="accordion" id="stpAccountSelect-{{$loop->iteration}}">
+                                                <div class="accordion-item">
+                                                    <div class="accordion-header bg-secondary" id="stpAccountSelect-{{$loop->iteration}}">
+                                                        <button type="button" class="mx-4" data-bs-toggle="collapse" data-bs-target="#collapseStpSelect-{{$loop->iteration}}" aria-expanded="false" aria-controls="collapseStpSelect-{{$loop->iteration}}">
+                                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i> {{__('Do you requiere STP?')}}
+                                                        </button>
+                                                    </div>
+                                                    <div id="collapseStpSelect-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#businessAccordion">
+                                                        hola hola
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    @endif
+
                                     <livewire:components.content.content-header :title="'Bank Accounts'" :icon="'fas fa-bank'"/>
                                     @if(count($business->banks) === 0)
                                         <a href="{{route('banks.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
@@ -41,7 +63,6 @@
                                         @foreach($business->banks as $banks)
                                             <livewire:components.content.content-two-columns-text :title="''" :field="''"/>
                                         @endforeach
-
                                     @endif
                                     {{--NEW ITEM RELATION--}}
                                     <livewire:components.content.new-item :model="$business" :relation="'branches'"/>
@@ -55,38 +76,38 @@
                                         </tr>
 
                                         @if(count($business->branches))
-                                        @foreach($business->branches as $branch)
-                                            <tr>
-                                                <td><span class="uppercase">{{$branch->name}}</span></td>
-                                                <td>
+                                            @foreach($business->branches as $branch)
+                                                <tr>
+                                                    <td><span class="uppercase">{{$branch->name}}</span></td>
+                                                    <td>
 
-                                                    @if(empty($branch->ImssPatronalRegisters))
-                                                        <a href="{{route('imss-employer-registers.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
-                                                    @else
-                                                      @foreach($branch->ImssPatronalRegisters as $imssPatronalRegister)
-                                                            <div class="bg-blueSteel p-2 inline-block mx-2 my-2 text-white rounded">{{$imssPatronalRegister->name}}</div>
-                                                        @endforeach
-                                                    @endif
-                                                    {{$branch->imss_patronal_registry_id}}
-                                                </td>
-                                                <td>{{formatDate($branch->created_at)}}</td>
+                                                        @if(empty($branch->ImssPatronalRegisters))
+                                                            <a href="{{route('imss-employer-registers.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
+                                                        @else
+                                                            @foreach($branch->ImssPatronalRegisters as $imssPatronalRegister)
+                                                                <div class="bg-blueSteel p-2 inline-block mx-2 my-2 text-white rounded">{{$imssPatronalRegister->name}}</div>
+                                                            @endforeach
+                                                        @endif
+                                                        {{$branch->imss_patronal_registry_id}}
+                                                    </td>
+                                                    <td>{{formatDate($branch->created_at)}}</td>
 
-                                                <td style="width: 3%">
-                                                    <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                                </td>
-                                                <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                                                <td style="width: 3%">
-                                                    @if($branch->id === 1)
-                                                    @else
-                                                        <form action="" method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button onclick="return confirm('¿Desea eliminar este registro?')"><i class="fas fa-trash text-danger"></i></button>
-                                                        </form>
-                                                    @endif
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                                    <td style="width: 3%">
+                                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                                    </td>
+                                                    <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                                                    <td style="width: 3%">
+                                                        @if($branch->id === 1)
+                                                        @else
+                                                            <form action="" method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button onclick="return confirm('¿Desea eliminar este registro?')"><i class="fas fa-trash text-danger"></i></button>
+                                                            </form>
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         @else
                                             <tr>
                                                 <td colspan="6" class="text-center"><b>{{ __('No registers') }}</b></td>
@@ -99,7 +120,7 @@
                             </div>
                         </div>
                     @endforeach
-                        {{--ACCORDION--}}
+                    {{--ACCORDION--}}
                 </div>
             </div>
         </div>

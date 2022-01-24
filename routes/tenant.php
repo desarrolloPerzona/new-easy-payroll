@@ -66,4 +66,11 @@ Route::middleware([
 
 });
 
+Route::middleware(['api'])->prefix('api')->group(function () {
+    //
+    Route::get('test', function () {
+        return 'test!';
+    });
+});
+
 

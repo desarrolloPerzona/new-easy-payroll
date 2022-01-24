@@ -1,7 +1,6 @@
 <x-app-tenant>
     <div class="container mx-auto">
         <livewire:components.breadcrumb :parent="'Fiel'" :children="[]" :item-id="''" :icon="'fak fa-empresa-perzona mr-2'"/>
-
         <div class="bg-white p-4 my-4 rounded shadow-md">
             <livewire:components.content.content-header :title="'New FIEL'" :icon="'fas fa-plus-circle'"/>
             <form action="{{route('fiel.store')}}" method="POST" enctype="multipart/form-data">
@@ -13,10 +12,8 @@
                 <livewire:components.content.form-button :type="'submit'" :title="'Send'" :color="'primary'" :icon="'fad fa-paper-plane'" :classes="''"/>
             </form>
         </div>
-
         <div class="bg-white p-4 my-4 rounded shadow-md">
             <livewire:components.content.content-header :title="'FIEL TABLE'" :icon="'fas fa-table'"/>
-
             <table class="table table-dark table-responsive">
                 <thead>
                 <tr>
@@ -28,6 +25,7 @@
                 </tr>
                 </thead>
                 <tbody>
+               {{-- {{dd($fiels)}}--}}
                 @forelse($fiels as $fiel)
                     <tr>
                         <td>{{ Str::limit($fiel->name, 20) }}</td>
@@ -50,11 +48,10 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="4" class="text-center"><b>{{ __('No registers') }}</b></td>
+                        <td colspan="5" class="text-center"><b>{{ __('No registers') }}</b></td>
                     </tr>
                 @endforelse
                 </tbody>
-
             </table>
         </div>
     </div>

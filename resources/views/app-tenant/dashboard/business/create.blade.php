@@ -13,6 +13,7 @@
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Fiscal regime')}}</label></div>
+            {{$fiscal_regimes}}
             <label>
                 <select class="w-full rounded">
                     <option value="001">Perona Fisica</option>

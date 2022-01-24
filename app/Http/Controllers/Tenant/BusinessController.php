@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\Business;
+
+
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class BusinessController extends Controller
@@ -26,7 +29,12 @@ class BusinessController extends Controller
      */
     public function create()
     {
-        return view('app-tenant.dashboard.business.create');
+
+        $client = new Client();
+
+        $api_responseFR = $client->get('https://easy-payroll.test/api/fiscal-regimes-list');
+        $fiscal_regimes = json_encode($api_responseFR);
+        return view('app-tenant.dashboard.business.create',compact('fiscal_regimes'));
     }
 
     /**

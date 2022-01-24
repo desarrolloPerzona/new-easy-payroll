@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 // PROTECTED ROUTES
-Route::group(['middleware' => 'auth:sanctum'], function(){
+Route::group(['api' => 'api'], function(){
     Route::get('/zipcode',[GetZipcodeController::class,'getZipCode']);
     Route::get('/zipcode/search/{name}',[GetZipcodeController::class,'searchZipcode']);
     Route::get('/bank-list',[GetBanksController::class,'getBankList']);

@@ -1,12 +1,19 @@
 <div class="my-4">
     <div class="form-group">
         <label for="id-{{$name}}" class="label font-bold py-2">{{ __($label) }}</label>
-        <input id="id-{{ $name }}" class="filepond" type="file" {{$attributes}}>
+        <input id="id-{{ $name }}"
+               class="filepond"
+               type="file"
+               accept="file/.cer"
+               {{$attributes}}
+
+        />
         @error($name)
         <small class="mt-2 text-sm text-red-600">{{ $message }}</small>
         @enderror
     </div>
 </div>
+
 
 @push('inline_css')
     @once
@@ -27,17 +34,16 @@
 
         // Create a FilePond instance
         const pond{{$name}} = FilePond.create(inputElement{{$name}}, {
-            labelIdle: `arrastra <span class="filepond--label-action btn btn-primary">buscar</span>`,
-            credits: false,
-            name: '{{$name}}',
-            allowMultiple: false,
-            labelFileLoadError: true,
             server: {
                 url: '/{{$uploadRoute}}',
                 headers: {
                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
                 }
-            }
+            }, credits: false,
+            name: '{{$name}}',
+            allowMultiple: false,
+            labelFileLoadError: true,
+            //labelIdle: `arrastra <span class="filepond--label-action btn btn-primary"><i class="fas fa-search mr-2"></i>{{__('Upload')}}</span>`,
 
 
         });

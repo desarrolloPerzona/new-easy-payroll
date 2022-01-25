@@ -36,29 +36,64 @@
                                     <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? __('Fill data')"/>
                                     {{--FISCAL DATA--}}
                                     <livewire:components.content.content-header :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
-                                    <h2>{{_('STP Access')}}</h2>
+                                    {{--BANK DATA--}}
+                                    <livewire:components.content.content-header :title="'Bank Accounts'" :icon="'fas fa-bank'"/>
+                                    <h2 class="my-2">{{__('STP account')}}</h2>
                                     @if($business->stp_status === 0)
-                                        <div class="accordion" id="stpAccountSelect-{{$loop->iteration}}">
-                                        <div class="accordion-item">
-                                            <div class="accordion-header bg-secondary" id="stpAccountSelect-{{$loop->iteration}}">
-                                                <button type="button" class="mx-4" data-bs-toggle="collapse" data-bs-target="#collapseStpSelect-{{$loop->iteration}}" aria-expanded="false" aria-controls="collapseStpSelect-{{$loop->iteration}}">
-                                                    <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i> {{__('Do you requiere STP?')}}
-                                                </button>
-                                            </div>
-                                            <div id="collapseStpSelect-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#stpAccountSelect-{{$loop->iteration}}">
-                                                <div>
-                                                    <h2>HHHHHHHH</h2>
+                                        <div class="accordion mb-2" id="stpAccountSelect-{{$loop->iteration}}">
+                                            <div class="accordion-item">
+                                                <div class="accordion-header bg-secondary " id="stpAccountSelect-{{$loop->iteration}}">
+                                                    <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStpSelect-{{$loop->iteration}}" aria-expanded="false" aria-controls="collapseStpSelect-{{$loop->iteration}}">
+                                                        <i class="fas fa-eye text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Do you requiere STP?')}}
+                                                    </button>
+                                                </div>
+                                                <div id="collapseStpSelect-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#stpAccountSelect-{{$loop->iteration}}">
+                                                    <div class="p-2">
+                                                        <p>Si deseas que tu nómina se disperse de forma automática, necesitas una cuenta STP, solicitala en
+                                                            <a href="">stp@perzona.mx</a></p>
+                                                        <div><label class="font-bold my-2" for="name">Utilizar STP para disperión de nómina</label>
+                                                            <div>
+                                                                <input type="radio" id="8" name="8" value="8" checked>
+                                                                <label for="1">{{__('Yes')}}</label>
+                                                            </div>
+
+                                                            <div>
+                                                                <input type="radio" id="9" name="9" value="9">
+                                                                <label for="2">{{__('No')}}</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex">
+                                                            <div class="w-5/12 w-full mr-2">
+                                                                <div class="text-left py-1"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
+                                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                                                                       name="Name" placeholder="03695">
+                                                            </div>
+
+                                                            <div class="w-5/12 w-full mr-2">
+                                                                <div class="flex-1 text-left py-1"><label class="font-bold"
+                                                                                                          for="name">{{__('STP CLABE Interbancaria')}}</label></div>
+                                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="••••••••">
+                                                            </div>
+
+                                                            <div class="w-2/12">
+                                                                <div class="btn-top-holder mt-10 flow-root">
+                                                                    <a class="cursor-pointer btn btn-dark float-right">
+                                                                        {{ __('Save') }}
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                </div>
                                     @elseif($business->stp_status === 1)
-                                            pendiente
-                                        @elseif($business->stp_status === 2)
+                                        pendiente
+                                    @elseif($business->stp_status === 2)
                                         <livewire:components.content.content-two-columns-text :title="'STP'" :field="$business->account ?? __('fill data')"/>
                                     @endif
 
-                                    <livewire:components.content.content-header :title="'Bank Accounts'" :icon="'fas fa-bank'"/>
                                     @if(count($business->banks) === 0)
                                         <a href="{{route('banks.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
                                     @else

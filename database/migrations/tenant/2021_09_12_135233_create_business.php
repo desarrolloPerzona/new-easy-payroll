@@ -27,7 +27,7 @@ class CreateBusiness extends Migration
             $table->string('municipality',255)->nullable();
             $table->string('state',255)->nullable();
             $table->string('fiscal_regime')->nullable();
-            $table->boolean('stp_status')->nullable();
+            $table->tinyInteger('stp_status')->nullable()->default(0);
             $table->string('stp_account')->nullable();
             $table->string('stp_password')->nullable();
             $table->string('sat_fiel_key')->nullable();

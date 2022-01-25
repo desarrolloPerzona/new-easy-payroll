@@ -4,7 +4,7 @@
         <input id="id-{{ $name }}"
                class="filepond"
                type="file"
-               accept="file/.cer"
+               accept=".png"
                {{$attributes}}
 
         />
@@ -43,7 +43,8 @@
             name: '{{$name}}',
             allowMultiple: false,
             labelFileLoadError: true,
-            //labelIdle: `arrastra <span class="filepond--label-action btn btn-primary"><i class="fas fa-search mr-2"></i>{{__('Upload')}}</span>`,
+            labelIdle: `<span class="filepond--label-action btn btn-primary"><i class="fas fa-search mr-2"></i>{{__('Upload')}}</span>`,
+            acceptedFileTypes: ['image/png'],
 
 
         });

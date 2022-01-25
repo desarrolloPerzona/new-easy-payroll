@@ -31,9 +31,6 @@ class BusinessController extends Controller
      */
     public function create()
     {
-
-
-
         $api_responseFR = Http::get('https://perzona-dev.net/api/fiscal-regimes-list');
         $fiscal_regimes = json_decode($api_responseFR->body());
         $api_responseIL = Http::get('https://perzona-dev.net/api/fiscal-industries-list');

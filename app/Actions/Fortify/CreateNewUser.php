@@ -26,7 +26,6 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input)
     {
-
         /**
          * VALIDATE INPUTS
          */
@@ -104,22 +103,22 @@ class CreateNewUser implements CreatesNewUsers
             ]);
         });
 
+
+
         /**
          * ADD FIRST BUSINESS
          */
 
         $tenant->run(function ($user) {
-            $business = Business::create([
+            Business::create([
                 'name' => $user->tenancy_company,
             ]);
-
         });
 
 
         /**
          * ADD LOGO
          */
-
 
         /**
          * ADD FIRST BUSINESS - BRANCH

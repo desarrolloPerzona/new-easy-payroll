@@ -10,7 +10,7 @@ class UploadFilesController extends Controller
 {
 
     // Function to store in a temp folder files of business
-    public function uploadFile(Request $request){
+    public function store(Request $request){
 
 
         $allReq = $request->all();

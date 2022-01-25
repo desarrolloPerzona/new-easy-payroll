@@ -7,18 +7,31 @@
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Name')}}</label></div>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
-            <livewire:components.content.file-upload-pquina :name="'logo'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'multiple'" :attributes="''" :label="'Logo'" :upload-route="'uploadFiles'"/>
+            <livewire:components.content.file-upload-pquina :name="'logo'" :max-files="1"
+                                                            :file-type="'application/cer'"
+                                                            :allow-multiple="'multiple'"
+                                                            :accept-files="'.cer'"
+                                                            :attributes="''"
+                                                            :label="'Logo'"
+                                                            :upload-route="'uploadFiles'"
+                                                            :icon:="'fad fa-search'"
+            />
 
             <div class="flex-1 text-lef py-2"><label class="font-bold" for="name">{{__('Industry')}}</label></div>
-            <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
-
-            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Fiscal regime')}}</label></div>
-            {{$fiscal_regimes}}
             <label>
                 <select class="w-full rounded">
-                    <option value="001">Perona Fisica</option>
-                    <option value="002">Persona Moral</option>
-                    <option value="002">Sin fines de lucro</option>
+                    @foreach($fiscal_industries as $industry)
+                        <option value="{{$industry->id}}">{{$industry->name}}</option>
+                    @endforeach
+                </select>
+            </label>
+
+            <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Fiscal regime')}}</label></div>
+            <label>
+                <select class="w-full rounded">
+                    @foreach($fiscal_regimes as $regimes)
+                        <option value="{{$regimes->id}}">{{$regimes->name}}</option>
+                    @endforeach
                 </select>
             </label>
 
@@ -48,10 +61,7 @@
 
             <h2 class="py-3">{{__('Tax data')}}</h2>
 
-            <livewire:components.content.file-upload-pquina :name="'logo2'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'" :label="'Digital Seal Certificate'" :upload-route="'uploadFiles'" :attributes="''"/>
-
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Digital private certificate key')}}</label></div>
-            <livewire:components.content.file-upload-pquina :name="'logo3'" :max-files="1" :file-type="'image/png, image/jpeg, image/gif'" :allow-multiple="'true'" :label="''" :upload-route="'uploadFiles'" :attributes="''"/>
 
 
             <div class="flex-1 text-left py-2"><label class="font-bold"

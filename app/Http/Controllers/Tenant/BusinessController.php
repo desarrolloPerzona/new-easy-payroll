@@ -8,6 +8,8 @@ use App\Models\Tenant\Business;
 
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use function MongoDB\BSON\toJSON;
 
 class BusinessController extends Controller
 {
@@ -30,11 +32,13 @@ class BusinessController extends Controller
     public function create()
     {
 
-        $client = new Client();
 
-        $api_responseFR = $client->get('https://easy-payroll.test/api/fiscal-regimes-list');
-        $fiscal_regimes = json_encode($api_responseFR);
-        return view('app-tenant.dashboard.business.create',compact('fiscal_regimes'));
+
+        $api_responseFR = Http::get('https://perzona-dev.net/api/fiscal-regimes-list');
+        $fiscal_regimes = json_decode($api_responseFR->body());
+        $api_responseIL = Http::get('https://perzona-dev.net/api/fiscal-industries-list');
+        $fiscal_industries = json_decode($api_responseIL->body());
+        return view('app-tenant.dashboard.business.create',compact('fiscal_regimes','fiscal_industries'));
     }
 
     /**

@@ -61,16 +61,11 @@ Route::middleware([
     Route::resource('/business-positions',BusinessPositionController::class)->middleware('auth:web');
     Route::resource('/fiel',FielController::class)->middleware('auth:web');
     // UPLOADS FILES
-    Route::post('/uploadFiles',[UploadFilesController::class,'uploadFile'])->middleware('auth:web');
+    Route::post('/uploadFiles',[UploadFilesController::class,'store'])->middleware('auth:web');
     Route::get('/uploadFiles/{id}',[UploadFilesController::class,'getFile'])->middleware('auth:web');
 
 });
 
-Route::middleware(['api'])->prefix('api')->group(function () {
-    //
-    Route::get('test', function () {
-        return 'test!';
-    });
-});
+
 
 

@@ -105,6 +105,7 @@ class BusinessController extends Controller
         $business->update([
             'stp_status' => 1,
         ]);
-        dd($business);
+
+        return redirect()->route('business.index');
     }
 }

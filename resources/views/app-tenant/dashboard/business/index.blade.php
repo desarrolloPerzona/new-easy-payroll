@@ -36,15 +36,17 @@
                                     <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? __('Fill data')"/>
                                     {{--FISCAL DATA--}}
                                     <livewire:components.content.content-header :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
+
+{{--                                    Fiel Accordion--}}
                                     <h2 class="my-2">{{__('FIEL')}}</h2>
-                                    <div class="accordion mb-4" id="stpAccountSelect-stp">
+                                    <div class="accordion mb-4" id="fielAccordion">
                                         <div class="accordion-item">
-                                            <div class="accordion-header bg-secondary " id="headingStp">
-                                                <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStpSelect-fiel" aria-expanded="false" aria-controls="collapseStpSelect-fiel">
+                                            <div class="accordion-header bg-secondary " id="headingFiel">
+                                                <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseFiel" aria-expanded="false" aria-controls="collapseFiel">
                                                     <i class="fas fa-plus-circle text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Add FIEL data')}}
                                                 </button>
                                             </div>
-                                            <div id="collapseStpSelect-fiel" class="accordion-collapse collapse" aria-labelledby="headingStp" data-bs-parent="#stpAccountSelect-stp">
+                                            <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingFiel" data-bs-parent="#fielAccordion">
                                                 <div class="p-2">
 
                                                     <livewire:components.content.file-upload-pquina :name="'cer'" :max-files="1"

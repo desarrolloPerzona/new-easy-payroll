@@ -47,7 +47,7 @@
                                                 </button>
                                             </div>
                                             <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingFiel" data-bs-parent="#fielAccordion">
-                                                <div class="p-2">
+                                                <form class="p-2">
 
                                                     <livewire:components.content.file-upload-pquina :name="'cer'" :max-files="1"
                                                                                                     :file-type="'application/cer'"
@@ -67,19 +67,21 @@
                                                                                                     :upload-route="'uploadFiles'"
                                                                                                     :icon:="'fad fa-search'"
                                                     />
-                                                    <div class="text-left py-1"><label class="font-bold" for="name">{{__('Private Key Password:')}}</label></div>
-                                                    <input class="w-full text-gray-800 rounded mt-1 mb-4 dark:bg-dark dark:text-white" type="text" id="name"
-                                                           name="Name" placeholder="Contraseña">
+                                                    <div class="text-left py-1">
+                                                        <label class="font-bold" for="sat_fiel_password">{{__('Private Key Password:')}}</label>
+                                                        <input class="w-full text-gray-800 rounded mt-2 dark:bg-dark dark:text-white" type="text" id="sat_fiel_password"
+                                                               name="sat_fiel_password" placeholder="{{__('Password')}}">
+                                                    </div>
 
                                                     <div class="w-2/12">
                                                         <div class="btn-top-holder mt-4 flow-root">
-                                                            <a class="cursor-pointer btn btn-dark float-right">
+                                                            <button type="submit" class="cursor-pointer btn btn-dark float-right">
                                                                 {{ __('Save') }}
-                                                            </a>
+                                                            </button>
                                                         </div>
                                                     </div>
 
-                                                </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

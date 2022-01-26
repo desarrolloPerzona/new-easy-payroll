@@ -881,5 +881,8 @@
     "Edit benefits table": "Editar tabla de beneficios",
     "Benefit table name": "Nombre de tabla de beneficios",
     "Create new benefits table": "Crear nueva tabla de beneficios",
-    "Do you requiere STP?": "Utilizar cuenta STP para dispersión de nómina"
+    "Do you requiere STP?": "Utilizar cuenta STP para dispersión de nómina",
+    "Add FIEL data": "Agregar datos FIEL",
+    "Add digital seal data": "Agregar datos de sello digital",
+    "Private Key Password:": "Contraseña de clave privada:"
 }

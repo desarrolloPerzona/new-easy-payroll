@@ -37,14 +37,14 @@
                                     {{--FISCAL DATA--}}
                                     <livewire:components.content.content-header :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
                                     <h2 class="my-2">{{__('FIEL')}}</h2>
-                                    <div class="accordion mb-4" id="stpAccountSelect-{{$loop->iteration}}">
+                                    <div class="accordion mb-4" id="stpAccountSelect-stp">
                                         <div class="accordion-item">
-                                            <div class="accordion-header bg-secondary " id="stpAccountSelect-{{$loop->iteration}}">
-                                                <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStpSelect-{{$loop->iteration}}" aria-expanded="false" aria-controls="collapseStpSelect-{{$loop->iteration}}">
+                                            <div class="accordion-header bg-secondary " id="headingStp">
+                                                <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStpSelect-fiel" aria-expanded="false" aria-controls="collapseStpSelect-fiel">
                                                     <i class="fas fa-plus-circle text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Add FIEL data')}}
                                                 </button>
                                             </div>
-                                            <div id="collapseStpSelect-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#stpAccountSelect-{{$loop->iteration}}">
+                                            <div id="collapseStpSelect-fiel" class="accordion-collapse collapse" aria-labelledby="headingStp" data-bs-parent="#stpAccountSelect-stp">
                                                 <div class="p-2">
 
                                                     <livewire:components.content.file-upload-pquina :name="'cer'" :max-files="1"

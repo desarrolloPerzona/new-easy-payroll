@@ -188,7 +188,13 @@
                                             </div>
                                         </div>
                                     @elseif($business->stp_status === 1)
-                                        pendiente
+                                        <div class="mb-4">
+                                            <button class="btn btn-primary" disabled>
+                                                En proceso...
+                                            </button>
+                                        </div>
+                                        <hr>
+
                                     @elseif($business->stp_status === 2)
                                         <livewire:components.content.content-two-columns-text :title="'STP'" :field="$business->account ?? __('fill data')"/>
                                     @endif

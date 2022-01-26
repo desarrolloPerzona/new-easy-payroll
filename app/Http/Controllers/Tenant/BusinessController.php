@@ -29,8 +29,7 @@ class BusinessController extends Controller
 
     public function create()
     {
-
-        $appUrl = 'https://easy-payroll.test/';
+        $appUrl = 'https://perzona-dev.net/';
         $api_responseFR = Http::get($appUrl . 'api/fiscal-regimes-list');
         $fiscal_regimes = json_decode($api_responseFR->body());
         $api_responseIL = Http::get($appUrl . 'api/fiscal-industries-list');

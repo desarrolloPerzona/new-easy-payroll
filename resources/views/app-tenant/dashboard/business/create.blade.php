@@ -7,9 +7,10 @@
             <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Name')}}</label></div>
             <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
 
-            <livewire:components.content.file-upload-pquina :name="'logo'" :max-files="1"
+            <livewire:components.content.file-upload-pquina :name="'logo'"
+                                                            :max-files="3"
                                                             :file-type="'application/cer'"
-                                                            :allow-multiple="'multiple'"
+                                                            :allow-multiple="'true'"
                                                             :accept-files="'.cer'"
                                                             :attributes="''"
                                                             :label="'Logo'"

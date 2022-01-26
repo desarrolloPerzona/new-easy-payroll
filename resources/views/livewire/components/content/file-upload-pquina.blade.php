@@ -5,7 +5,7 @@
                class="filepond"
                type="file"
                accept=".png"
-               {{$attributes}}
+            {{$attributes}}
         />
         @error($name)
         <small class="mt-2 text-sm text-red-600">{{ $message }}</small>
@@ -27,8 +27,8 @@
         <!-- FILEPOND JS -->
         <script src="{{asset('/vendor/filepond/dist/filepond.js')}}"></script>
     @endonce
-    <script>
 
+    <script>
         const inputElement{{$name}} = document.getElementById('id-{{ $name }}');
 
         // Create a FilePond instance
@@ -37,17 +37,21 @@
                 url: '/{{$uploadRoute}}',
                 headers: {
                     'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                }
-            }, credits: false,
+                },
+            },
+            credits: false,
             name: '{{$name}}',
-            allowMultiple: false,
+            allowMultiple: {{$allowMultiple}},
+            maxFiles: 3,
             labelFileLoadError: true,
             labelIdle: `<span class="filepond--label-action btn btn-primary"><i class="fas fa-search mr-2"></i>{{__('Upload')}}</span>`,
-            acceptedFileTypes: ['image/png'],
+            acceptedFileTypes: ['image/png']
 
 
         });
-
+        pond.on('warning', (error, file) => {
+            console.log('Warning', error, file);
+        });
 
     </script>
 @endpush

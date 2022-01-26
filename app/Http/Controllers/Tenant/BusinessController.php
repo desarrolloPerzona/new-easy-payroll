@@ -4,13 +4,8 @@ namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\Business;
-
-
-use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use function Livewire\str;
-use function MongoDB\BSON\toJSON;
 
 class BusinessController extends Controller
 {
@@ -34,11 +29,13 @@ class BusinessController extends Controller
 
     public function create()
     {
+
         $appUrl = 'https://easy-payroll.test/';
         $api_responseFR = Http::get($appUrl . 'api/fiscal-regimes-list');
         $fiscal_regimes = json_decode($api_responseFR->body());
         $api_responseIL = Http::get($appUrl . 'api/fiscal-industries-list');
         $fiscal_industries = json_decode($api_responseIL->body());
+
         return view('app-tenant.dashboard.business.create', compact('fiscal_regimes', 'fiscal_industries'));
     }
 

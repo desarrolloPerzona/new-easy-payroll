@@ -114,8 +114,6 @@ class CreateNewUser implements CreatesNewUsers
             Business::create([
                 'name' => $user->tenancy_company,
             ]);
-
-
         });
 
 

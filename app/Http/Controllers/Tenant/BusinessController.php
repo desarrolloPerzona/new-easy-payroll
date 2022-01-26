@@ -9,6 +9,7 @@ use App\Models\Tenant\Business;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use function Livewire\str;
 use function MongoDB\BSON\toJSON;
 
 class BusinessController extends Controller
@@ -21,7 +22,7 @@ class BusinessController extends Controller
     public function index()
     {
         $businesses = Business::all();
-        return view('app-tenant.dashboard.business.index',compact('businesses'));
+        return view('app-tenant.dashboard.business.index', compact('businesses'));
     }
 
     /**
@@ -29,13 +30,16 @@ class BusinessController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
+
+
     public function create()
     {
-        $api_responseFR = Http::get('https://perzona-dev.net/api/fiscal-regimes-list');
+        $appUrl = 'https://easy-payroll.test/';
+        $api_responseFR = Http::get($appUrl . 'api/fiscal-regimes-list');
         $fiscal_regimes = json_decode($api_responseFR->body());
-        $api_responseIL = Http::get('https://perzona-dev.net/api/fiscal-industries-list');
+        $api_responseIL = Http::get($appUrl . 'api/fiscal-industries-list');
         $fiscal_industries = json_decode($api_responseIL->body());
-        return view('app-tenant.dashboard.business.create',compact('fiscal_regimes','fiscal_industries'));
+        return view('app-tenant.dashboard.business.create', compact('fiscal_regimes', 'fiscal_industries'));
     }
 
     /**
@@ -60,7 +64,7 @@ class BusinessController extends Controller
         $business = Business::find($business->id);
 
 
-        return view('app-tenant.dashboard.business.show',compact('business'));
+        return view('app-tenant.dashboard.business.show', compact('business'));
 
 
     }
@@ -74,7 +78,7 @@ class BusinessController extends Controller
     public function edit(Business $business)
     {
         $business = Business::find($business->id);
-        return view('app-tenant.dashboard.business.edit',compact('business'));
+        return view('app-tenant.dashboard.business.edit', compact('business'));
     }
 
     /**

@@ -9,6 +9,7 @@ use App\Models\Tenant\BranchBusiness;
 use App\Models\User;
 use App\Notifications\NewUserNotification;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
@@ -113,6 +114,8 @@ class CreateNewUser implements CreatesNewUsers
             Business::create([
                 'name' => $user->tenancy_company,
             ]);
+
+
         });
 
 

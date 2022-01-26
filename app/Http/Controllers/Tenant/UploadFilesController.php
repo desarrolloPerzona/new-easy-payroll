@@ -21,9 +21,7 @@ class UploadFilesController extends Controller
                 $file = $request->file($key);
                 $filename = $file->getClientOriginalName();
                 $folder = uniqid() . '-' . now()->timestamp;
-
                 $file->storeAs('tmp/' . $folder, $filename);
-
                 TemporaryFile::create([
                     'folder' => $folder,
                     'filename' => $filename

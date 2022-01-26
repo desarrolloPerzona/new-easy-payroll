@@ -6,7 +6,6 @@
                type="file"
                accept=".png"
                {{$attributes}}
-
         />
         @error($name)
         <small class="mt-2 text-sm text-red-600">{{ $message }}</small>

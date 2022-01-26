@@ -84,15 +84,16 @@
                                         </div>
                                     </div>
 
+{{--                                    Sello digital Accordion--}}
                                     <h2 class="my-2">{{__('Sello Digital')}}</h2>
-                                    <div class="accordion mb-4" id="stpAccountSelect-{{$loop->iteration}}">
+                                    <div class="accordion mb-4" id="stampAccordion">
                                         <div class="accordion-item">
-                                            <div class="accordion-header bg-secondary " id="stpAccountSelect-{{$loop->iteration}}">
-                                                <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStpSelect-{{$loop->iteration}}" aria-expanded="false" aria-controls="collapseStpSelect-{{$loop->iteration}}">
+                                            <div class="accordion-header bg-secondary " id="stampHeading">
+                                                <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStamp" aria-expanded="false" aria-controls="collapseStamp">
                                                     <i class="fas fa-plus-circle text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Add digital seal data')}}
                                                 </button>
                                             </div>
-                                            <div id="collapseStpSelect-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#stpAccountSelect-{{$loop->iteration}}">
+                                            <div id="collapseStamp" class="accordion-collapse collapse" aria-labelledby="stampHeading" data-bs-parent="#stampAccordion">
                                                 <div class="p-2">
 
                                                     <livewire:components.content.file-upload-pquina :name="'cer2'" :max-files="1"

@@ -202,7 +202,47 @@
                                         <hr>
 
                                     @elseif($business->stp_status === 2)
-                                        <livewire:components.content.content-two-columns-text :title="'STP'" :field="$business->account ?? __('fill data')"/>
+{{--                                        <livewire:components.content.content-two-columns-text :title="'STP'" :field="$business->account ?? __('fill data')"/>--}}
+
+                                    <div class="bg-white p-3 mb-3 rounded" x-data="data()">
+                                        <div><label class="font-bold my-2" for="name">Utilizar STP para disperión de nómina</label>
+                                            <button >
+                                                Click para alert
+                                            </button>
+                                            <div>
+                                                <input type="radio" id="stp_status" name="stp_status" value="stp_status" @click="hideFields()">
+                                                <label for="1">{{__('Yes')}}</label>
+                                            </div>
+
+                                            <div>
+                                                <input type="radio" id="stp_status" name="stp_status" value="stp_status" @click="showFields()">
+                                                <label for="2">{{__('No')}}</label>
+                                            </div>
+                                        </div>
+                                        <div class="flex" :class="{'d-none': isHidden}">
+                                            <div class="w-5/12 w-full mr-2">
+                                                <div class="text-left py-1"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
+                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                                                       name="Name" placeholder="03695">
+                                            </div>
+
+                                            <div class="w-5/12 w-full mr-2">
+                                                <div class="flex-1 text-left py-1"><label class="font-bold"
+                                                                                          for="name">{{__('STP CLABE Interbancaria')}}</label></div>
+                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="••••••••">
+                                            </div>
+
+                                            <div class="w-2/12">
+                                                <div class="btn-top-holder mt-10 flow-root">
+                                                    <a class="cursor-pointer btn btn-dark float-right">
+                                                        {{ __('Save') }}
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
                                     @endif
 
 {{--                                    Banks table--}}
@@ -274,6 +314,23 @@
             </div>
         </div>
     </div>
+
+    @push('inline_scripts')
+        <script>
+            function data(){
+                return{
+                    isHidden: true,
+                    hideFields(){
+                        this.isHidden = true
+                    },
+                    showFields(){
+                        this.isHidden = false
+                    }
+                }
+            }
+        </script>
+    @endpush
+
 </x-app-tenant>
 
 

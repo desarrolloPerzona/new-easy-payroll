@@ -133,16 +133,18 @@
 
                                     {{--BANK DATA--}}
                                     <livewire:components.content.content-header :title="'Bank Accounts'" :icon="'fas fa-bank'"/>
+
+{{--                                    STP Accordion--}}
                                     <h2 class="my-2">{{__('STP account')}}</h2>
                                     @if($business->stp_status === 0)
-                                        <div class="accordion mb-2" id="stpAccountSelect-{{$loop->iteration}}">
+                                        <div class="accordion mb-2" id="stpAccordion">
                                             <div class="accordion-item">
-                                                <div class="accordion-header bg-secondary " id="stpAccountSelect-{{$loop->iteration}}">
-                                                    <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStpSelect-{{$loop->iteration}}" aria-expanded="false" aria-controls="collapseStpSelect-{{$loop->iteration}}">
+                                                <div class="accordion-header bg-secondary " id="stpHeading">
+                                                    <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStp" aria-expanded="false" aria-controls="collapseStp">
                                                         <i class="fas fa-eye text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Do you requiere STP?')}}
                                                     </button>
                                                 </div>
-                                                <div id="collapseStpSelect-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#stpAccountSelect-{{$loop->iteration}}">
+                                                <div id="collapseStp" class="accordion-collapse collapse" aria-labelledby="stpHeading" data-bs-parent="#stpAccordion">
                                                     <div class="p-2">
                                                         <p>Si deseas que tu nómina se disperse de forma automática, necesitas una cuenta STP, solicitala en
                                                             <a href="">stp@perzona.mx</a></p>
@@ -189,6 +191,7 @@
                                         <livewire:components.content.content-two-columns-text :title="'STP'" :field="$business->account ?? __('fill data')"/>
                                     @endif
 
+{{--                                    Banks table--}}
                                     @if(count($business->banks) === 0)
                                         <a href="{{route('banks.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
                                     @else

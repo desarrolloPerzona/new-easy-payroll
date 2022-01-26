@@ -99,4 +99,12 @@ class BusinessController extends Controller
     {
         //
     }
+
+    public function updateStpStatus(Request $request, Business $business)
+    {
+        $business->update([
+            'stp_status' => 1,
+        ]);
+        dd($business);
+    }
 }

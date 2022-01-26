@@ -150,11 +150,11 @@
                                                     <div class="p-2">
                                                         <p>Si deseas que tu nómina se disperse de forma automática, necesitas una cuenta STP, solicitala en
                                                             <span class="underline">stp@perzona.mx</span></p>
-                                                        <div>
-                                                            <form action="">
+                                                            <form action="{{ route('business.stp', $business) }}" method="POST">
+                                                                @csrf
+                                                                @method('PATCH')
                                                                     <button type="submit" class="btn btn-primary" onclick="return confirm('¿Desea solicitar una cuenta STP?')">{{__('Solicitar')}}</button>
                                                             </form>
-                                                        </div>
 {{--                                                        <div><label class="font-bold my-2" for="name">Utilizar STP para disperión de nómina</label>--}}
 {{--                                                            <div>--}}
 {{--                                                                <input type="radio" id="8" name="8" value="8" checked>--}}

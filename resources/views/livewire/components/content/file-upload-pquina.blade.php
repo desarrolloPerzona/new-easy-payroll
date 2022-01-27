@@ -2,9 +2,11 @@
     <div class="form-group">
         <label for="id-{{$name}}" class="label font-bold py-2">{{ __($label) }}</label>
         <input id="id-{{ $name }}"
+               type="file"
+               accept="image/jpg"
                class="filepond"
                name="{{$name}}"
-               type="file"
+
                data-max-file-size="{{$maxSize}}"
             {{$attributes}}
 
@@ -25,14 +27,18 @@
 @push('inline_scripts')
     @once
         <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+        <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
         <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
         <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
     @endonce
 
     <script>
+
         FilePond.registerPlugin(
             FilePondPluginFileValidateSize,
-            FilePondPluginImagePreview
+            FilePondPluginFileValidateType,
+            FilePondPluginImagePreview,
+
         );
 
         const inputElement{{$name}} = document.getElementById('id-{{ $name }}');

@@ -4,9 +4,10 @@
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto">
             <h2 class="py-3">{{__('Business')}}</h2>
             <form action="">
-                <div class="flex-1 text-left py-2"><label class="font-bold" for="name">{{__('Name')}}</label></div>
-                <input class="text-gray-800 rounded my-2" type="text" id="name" name="Name">
-
+                <div class="form-group">
+                    <label class="label font-bold" for="name">{{__('Name')}}</label>
+                    <input class="form-control text-gray-800 rounded my-2" type="text" id="name" name="Name">
+                </div>
                 <livewire:components.content.file-upload-pquina :name="'logo'"
                                                                 :max-files="2"
                                                                 :max-size="'1MB'"
@@ -47,14 +48,12 @@
 
 
                 <div class="btn-top-holder my-3 flow-root">
-                    <a href="javascript: history.go(-1)" class="btn btn-dark float-right">
-                        {{ __('Save') }}
-                    </a>
+                    <button class="btn btn-primary">  {{ __('Save') }}</button>
                 </div>
-
 
             </form>
         </div>
+    </div>
 </x-app-tenant>
 
 

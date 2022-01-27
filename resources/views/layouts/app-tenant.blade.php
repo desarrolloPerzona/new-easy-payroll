@@ -14,6 +14,7 @@
     <link href="/css/style.css" rel="stylesheet">
 @livewireStyles
 @stack('inline_css')
+@stack('inline_styles')
 <!-- Scripts -->
     <script src="/js/app.js" defer></script>
 

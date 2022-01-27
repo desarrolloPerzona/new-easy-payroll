@@ -146,7 +146,16 @@
                                     <livewire:components.content.content-header :title="'Bank Accounts'" :icon="'fas fa-bank'"/>
 
 {{--                                    STP Accordion--}}
-                                    <h2 class="my-2">{{__('STP account')}}</h2>
+
+{{--                                    CONDITIONAL TO CHANGE STATUS IN VIEW--}}
+                                    <h2 class="my-2">{{__('STP account')}}
+                                        @if($business->stp_status !== 3)
+                                            <span  class="text-xs font-bold" style="color: orangered">INACTIVE</span>
+
+                                        @elseif($business->stp_status === 3)
+                                            <span  class="text-xs font-bold" style="color: green">ACTIVE</span>
+                                        @endif
+                                    </h2>
                                     @if($business->stp_status === 0)
                                         <div class="accordion mb-4" id="stpAccordion">
                                             <div class="accordion-item">
@@ -214,21 +223,19 @@
 {{--                                        <livewire:components.content.content-two-columns-text :title="'STP'" :field="$business->account ?? __('fill data')"/>--}}
 
                                     <div class="bg-white p-3 mb-3 rounded" x-data="data()">
-                                        <div><label class="font-bold my-2" for="name">Utilizar STP para disperión de nómina</label>
-                                            <button >
-                                                Click para alert
-                                            </button>
-                                            <div>
-                                                <input type="radio" id="stp_status" name="stp_status" value="stp_status" @click="hideFields()">
-                                                <label for="1">{{__('Yes')}}</label>
-                                            </div>
+                                        <div><label class="font-bold my-2" for="name">Agregar datos STP para disperión de nómina</label>
+                                            <hr>
+{{--                                            <div>--}}
+{{--                                                <input type="radio" id="stp_status" name="stp_status" value="stp_status" @click="hideFields()">--}}
+{{--                                                <label for="1">{{__('Yes')}}</label>--}}
+{{--                                            </div>--}}
 
-                                            <div>
-                                                <input type="radio" id="stp_status" name="stp_status" value="stp_status" @click="showFields()">
-                                                <label for="2">{{__('No')}}</label>
-                                            </div>
+{{--                                            <div>--}}
+{{--                                                <input type="radio" id="stp_status" name="stp_status" value="stp_status" @click="showFields()">--}}
+{{--                                                <label for="2">{{__('No')}}</label>--}}
+{{--                                            </div>--}}
                                         </div>
-                                        <div class="flex" :class="{'d-none': isHidden}">
+                                        <div class="flex" :class="{'d-none': false}">
                                             <div class="w-5/12 w-full mr-2">
                                                 <div class="text-left py-1"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
                                                 <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
@@ -251,6 +258,24 @@
 
                                         </div>
                                     </div>
+
+                                    @elseif($business->stp_status === 3)
+
+                                        <div class="bg-white p-3 mb-3 rounded" x-data="data()">
+                                            <p class="font-bold my-2" for="name">Datos STP para dispersión de nómina</p>
+                                            <hr>
+                                            <div class="flex">
+                                                <span>{{ __('STP account: ')}} <b>{{$business->stp_account}}</b></span>
+                                            </div>
+
+                                            <div class="w-2/12">
+                                                <div class="btn-top-holder flow-root">
+                                                    <button class="cursor-pointer btn btn-outline-danger float-right">
+                                                        {{ __('Unlink STP account') }}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     @endif
 

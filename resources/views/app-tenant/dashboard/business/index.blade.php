@@ -49,23 +49,27 @@
                                             <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingFiel" data-bs-parent="#fielAccordion">
                                                 <form class="p-2">
 
-                                                    <livewire:components.content.file-upload-pquina :name="'cer'" :max-files="1"
+                                                    <livewire:components.content.file-upload-pquina :name="'cer'"
+                                                                                                    :max-files="1"
+                                                                                                    :max-size="'1MB'"
                                                                                                     :file-type="'application/cer'"
-                                                                                                    :allow-multiple="'multiple'"
+                                                                                                    :allow-multiple="'false'"
                                                                                                     :accept-files="'.cer'"
                                                                                                     :attributes="''"
                                                                                                     :label="'Certificado (.cer):'"
                                                                                                     :upload-route="'uploadFiles'"
-                                                                                                    :icon:="'fad fa-search'"
+                                                                                                    :icon="'fad fa-search'"
                                                     />
-                                                    <livewire:components.content.file-upload-pquina :name="'key'" :max-files="1"
+                                                    <livewire:components.content.file-upload-pquina :name="'key'"
+                                                                                                    :max-files="1"
+                                                                                                    :max-size="'1MB'"
                                                                                                     :file-type="'application/cer'"
-                                                                                                    :allow-multiple="'multiple'"
-                                                                                                    :accept-files="'.cer'"
+                                                                                                    :allow-multiple="'false'"
+                                                                                                    :accept-files="'.key'"
                                                                                                     :attributes="''"
                                                                                                     :label="'Clave privada (.key):'"
                                                                                                     :upload-route="'uploadFiles'"
-                                                                                                    :icon:="'fad fa-search'"
+                                                                                                    :icon="'fad fa-search'"
                                                     />
                                                     <div class="text-left py-1">
                                                         <label class="font-bold" for="sat_fiel_password">{{__('Private Key Password:')}}</label>
@@ -98,18 +102,23 @@
                                             <div id="collapseStamp" class="accordion-collapse collapse" aria-labelledby="stampHeading" data-bs-parent="#stampAccordion">
                                                 <div class="p-2">
 
-                                                    <livewire:components.content.file-upload-pquina :name="'cer2'" :max-files="1"
+                                                    <livewire:components.content.file-upload-pquina
+                                                                                                    :name="'cer2'"
+                                                                                                    :max-files="1"
+                                                                                                    :max-size="'1MB'"
                                                                                                     :file-type="'application/cer'"
-                                                                                                    :allow-multiple="'multiple'"
+                                                                                                    :allow-multiple="'false'"
                                                                                                     :accept-files="'.cer'"
                                                                                                     :attributes="''"
                                                                                                     :label="'Certificado (.cer):'"
                                                                                                     :upload-route="'uploadFiles'"
                                                                                                     :icon:="'fad fa-search'"
                                                     />
-                                                    <livewire:components.content.file-upload-pquina :name="'key2'" :max-files="1"
+                                                    <livewire:components.content.file-upload-pquina :name="'key2'"
+                                                                                                    :max-files="1"
+                                                                                                    :max-size="'1MB'"
                                                                                                     :file-type="'application/cer'"
-                                                                                                    :allow-multiple="'multiple'"
+                                                                                                    :allow-multiple="'false'"
                                                                                                     :accept-files="'.cer'"
                                                                                                     :attributes="''"
                                                                                                     :label="'Clave privada (.key):'"

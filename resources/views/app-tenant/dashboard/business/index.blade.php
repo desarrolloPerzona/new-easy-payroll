@@ -53,23 +53,23 @@
                                                                                                     :max-files="1"
                                                                                                     :max-size="'1MB'"
                                                                                                     :file-type="'application/cer'"
-                                                                                                    :allow-multiple="'multiple'"
+                                                                                                    :allow-multiple="'false'"
                                                                                                     :accept-files="'.cer'"
                                                                                                     :attributes="''"
                                                                                                     :label="'Certificado (.cer):'"
                                                                                                     :upload-route="'uploadFiles'"
-                                                                                                    :icon:="'fad fa-search'"
+                                                                                                    :icon="'fad fa-search'"
                                                     />
                                                     <livewire:components.content.file-upload-pquina :name="'key'"
                                                                                                     :max-files="1"
                                                                                                     :max-size="'1MB'"
                                                                                                     :file-type="'application/cer'"
-                                                                                                    :allow-multiple="'multiple'"
-                                                                                                    :accept-files="'.cer'"
+                                                                                                    :allow-multiple="'false'"
+                                                                                                    :accept-files="'.key'"
                                                                                                     :attributes="''"
                                                                                                     :label="'Clave privada (.key):'"
                                                                                                     :upload-route="'uploadFiles'"
-                                                                                                    :icon:="'fad fa-search'"
+                                                                                                    :icon="'fad fa-search'"
                                                     />
                                                     <div class="text-left py-1">
                                                         <label class="font-bold" for="sat_fiel_password">{{__('Private Key Password:')}}</label>
@@ -102,11 +102,12 @@
                                             <div id="collapseStamp" class="accordion-collapse collapse" aria-labelledby="stampHeading" data-bs-parent="#stampAccordion">
                                                 <div class="p-2">
 
-                                                    <livewire:components.content.file-upload-pquina :name="'cer2'"
+                                                    <livewire:components.content.file-upload-pquina
+                                                                                                    :name="'cer2'"
                                                                                                     :max-files="1"
                                                                                                     :max-size="'1MB'"
                                                                                                     :file-type="'application/cer'"
-                                                                                                    :allow-multiple="'multiple'"
+                                                                                                    :allow-multiple="'false'"
                                                                                                     :accept-files="'.cer'"
                                                                                                     :attributes="''"
                                                                                                     :label="'Certificado (.cer):'"
@@ -117,7 +118,7 @@
                                                                                                     :max-files="1"
                                                                                                     :max-size="'1MB'"
                                                                                                     :file-type="'application/cer'"
-                                                                                                    :allow-multiple="'multiple'"
+                                                                                                    :allow-multiple="'false'"
                                                                                                     :accept-files="'.cer'"
                                                                                                     :attributes="''"
                                                                                                     :label="'Clave privada (.key):'"
@@ -145,7 +146,20 @@
                                     <livewire:components.content.content-header :title="'Bank Accounts'" :icon="'fas fa-bank'"/>
 
 {{--                                    STP Accordion--}}
-                                    <h2 class="my-2">{{__('STP account')}}</h2>
+
+{{--                                    CONDITIONAL TO CHANGE STATUS tag IN VIEW--}}
+                                    <h2 class="my-2">{{__('STP account')}}
+                                        @if($business->stp_status === 0)
+                                            <span  class="text-xs font-bold text-uppercase" style="color: orangered">{{ __('Inactive') }}</span>
+                                        @elseif($business->stp_status === 1)
+                                            <span  class="text-xs font-bold text-uppercase" style="color: coral">{{ __('In progress') }}</span>
+                                        @elseif($business->stp_status === 2)
+                                            <span  class="text-xs font-bold text-uppercase" style="color: dodgerblue">{{ __('Add stp account') }}</span>
+                                        @elseif($business->stp_status === 3)
+                                            <span  class="text-xs font-bold text-uppercase" style="color: green">{{ __('Active') }}</span>
+                                        @endif
+                                    </h2>
+
                                     @if($business->stp_status === 0)
                                         <div class="accordion mb-4" id="stpAccordion">
                                             <div class="accordion-item">
@@ -157,50 +171,19 @@
                                                 <div id="collapseStp" class="accordion-collapse collapse" aria-labelledby="stpHeading" data-bs-parent="#stpAccordion">
                                                     <div class="p-2">
                                                         <p>Si deseas que tu nómina se disperse de forma automática, necesitas una cuenta STP, solicitala en
-                                                            <span class="underline">stp@perzona.mx</span></p>
-                                                            <form action="{{ route('business.stp', $business) }}" method="POST">
-                                                                @csrf
-                                                                @method('PATCH')
-                                                                    <button type="submit" class="btn btn-primary" onclick="return confirm('¿Desea solicitar una cuenta STP?')">{{__('Solicitar')}}</button>
-                                                            </form>
-{{--                                                        <div><label class="font-bold my-2" for="name">Utilizar STP para disperión de nómina</label>--}}
-{{--                                                            <div>--}}
-{{--                                                                <input type="radio" id="8" name="8" value="8" checked>--}}
-{{--                                                                <label for="1">{{__('Yes')}}</label>--}}
-{{--                                                            </div>--}}
-
-{{--                                                            <div>--}}
-{{--                                                                <input type="radio" id="9" name="9" value="9">--}}
-{{--                                                                <label for="2">{{__('No')}}</label>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="flex">--}}
-{{--                                                            <div class="w-5/12 w-full mr-2">--}}
-{{--                                                                <div class="text-left py-1"><label class="font-bold" for="name">{{__('STP account')}}</label></div>--}}
-{{--                                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"--}}
-{{--                                                                       name="Name" placeholder="03695">--}}
-{{--                                                            </div>--}}
-
-{{--                                                            <div class="w-5/12 w-full mr-2">--}}
-{{--                                                                <div class="flex-1 text-left py-1"><label class="font-bold"--}}
-{{--                                                                                                          for="name">{{__('STP CLABE Interbancaria')}}</label></div>--}}
-{{--                                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="••••••••">--}}
-{{--                                                            </div>--}}
-
-{{--                                                            <div class="w-2/12">--}}
-{{--                                                                <div class="btn-top-holder mt-10 flow-root">--}}
-{{--                                                                    <a class="cursor-pointer btn btn-dark float-right">--}}
-{{--                                                                        {{ __('Save') }}--}}
-{{--                                                                    </a>--}}
-{{--                                                                </div>--}}
-{{--                                                            </div>--}}
-
-{{--                                                        </div>--}}
+                                                            <span class="underline">stp@perzona.mx</span>
+                                                        </p>
+                                                        <form action="{{ route('business.stp', $business) }}" method="POST">
+                                                            @csrf
+                                                            @method('PATCH')
+                                                            <button type="submit" class="btn btn-primary" onclick="return confirm('¿Desea solicitar una cuenta STP?')">{{__('Solicitar')}}</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <hr>
+
                                     @elseif($business->stp_status === 1)
                                         <div class="mb-4">
                                             <button class="btn btn-primary" disabled>
@@ -210,46 +193,79 @@
                                         <hr>
 
                                     @elseif($business->stp_status === 2)
-{{--                                        <livewire:components.content.content-two-columns-text :title="'STP'" :field="$business->account ?? __('fill data')"/>--}}
 
-                                    <div class="bg-white p-3 mb-3 rounded" x-data="data()">
-                                        <div><label class="font-bold my-2" for="name">Utilizar STP para disperión de nómina</label>
-                                            <button >
-                                                Click para alert
-                                            </button>
-                                            <div>
-                                                <input type="radio" id="stp_status" name="stp_status" value="stp_status" @click="hideFields()">
-                                                <label for="1">{{__('Yes')}}</label>
-                                            </div>
+                                        <div class="accordion mb-4" id="stpAccordion">
+                                            <div class="accordion-item">
+                                                <div class="accordion-header bg-secondary " id="stpHeading">
+                                                    <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStp" aria-expanded="false" aria-controls="collapseStp">
+                                                        <i class="fas fa-eye text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Do you requiere STP?')}}
+                                                    </button>
+                                                </div>
+                                                <div id="collapseStp" class="accordion-collapse collapse" aria-labelledby="stpHeading" data-bs-parent="#stpAccordion">
+                                                    <div class="p-2">
+                                                        <div class="bg-white mb-3 rounded">
+                                                            <label class="font-bold my-2" for="name">Agregar datos STP para disperión de nómina</label>
+                                                            <hr>
+                                                            <form class="flex" :class="{'d-none': false}">
 
-                                            <div>
-                                                <input type="radio" id="stp_status" name="stp_status" value="stp_status" @click="showFields()">
-                                                <label for="2">{{__('No')}}</label>
-                                            </div>
-                                        </div>
-                                        <div class="flex" :class="{'d-none': isHidden}">
-                                            <div class="w-5/12 w-full mr-2">
-                                                <div class="text-left py-1"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
-                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
-                                                       name="Name" placeholder="03695">
-                                            </div>
+                                                                <div class="w-5/12 w-full mr-2">
+                                                                    <div class="text-left py-1"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
+                                                                    <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                                                                           name="Name" placeholder="03695">
+                                                                </div>
+                                                                <div class="w-5/12 w-full mr-2">
+                                                                    <div class="flex-1 text-left py-1"><label class="font-bold"
+                                                                                                              for="name">{{__('STP CLABE Interbancaria')}}</label></div>
+                                                                    <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="••••••••">
+                                                                </div>
+                                                                <div class="w-2/12">
+                                                                    <div class="btn-top-holder mt-10 flow-root">
+                                                                        <a class="cursor-pointer btn btn-dark float-right">
+                                                                            {{ __('Save') }}
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
 
-                                            <div class="w-5/12 w-full mr-2">
-                                                <div class="flex-1 text-left py-1"><label class="font-bold"
-                                                                                          for="name">{{__('STP CLABE Interbancaria')}}</label></div>
-                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="••••••••">
-                                            </div>
-
-                                            <div class="w-2/12">
-                                                <div class="btn-top-holder mt-10 flow-root">
-                                                    <a class="cursor-pointer btn btn-dark float-right">
-                                                        {{ __('Save') }}
-                                                    </a>
+                                                            </form>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-
                                         </div>
-                                    </div>
+                                        <hr>
+
+                                    @elseif($business->stp_status === 3)
+
+                                        <div class="accordion mb-4" id="stpAccordion">
+                                            <div class="accordion-item">
+                                                <div class="accordion-header bg-secondary " id="stpHeading">
+                                                    <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStp" aria-expanded="false" aria-controls="collapseStp">
+                                                        <i class="fas fa-eye text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Do you requiere STP?')}}
+                                                    </button>
+                                                </div>
+                                                <div id="collapseStp" class="accordion-collapse collapse" aria-labelledby="stpHeading" data-bs-parent="#stpAccordion">
+                                                    <div class="p-2">
+                                                        <div class="bg-white mb-3 rounded" x-data="data()">
+                                                            <p class="font-bold my-2" for="name">Datos STP para dispersión de nómina</p>
+                                                            <hr>
+                                                            <div class="flex">
+                                                                <span>{{ __('STP account: ')}} <b>{{$business->stp_account}}</b></span>
+                                                            </div>
+
+                                                            <div class="w-2/12">
+                                                                <div class="btn-top-holder flow-root">
+                                                                    <button class="cursor-pointer btn btn-outline-danger float-right"
+                                                                            onclick="return confirm('¿Desea desvincular su cuenta STP?')">
+                                                                        {{ __('Unlink STP account') }}
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
 
                                     @endif
 

@@ -35,37 +35,72 @@
     @push('inline_scripts')
         <script>
 
-            var input = document.querySelector('input[type="file"]')
-
-            var data = new FormData()
-            data.append('file', input.files[0])
-            data.append('user', 'hubot')
-
-            const upload = (data) => {
-                var settings = {
-                    "url": "https://apisnet.col.gob.mx/wsSignGob/apiV1/Valida/Certificado",
-                    "method": "POST",
-                    "timeout": 0,
-                    "processData": false,
-                    "mimeType": "multipart/form-data",
-                    "contentType": false,
-                    "data": data
-                };
-                $.ajax(settings).done(function (response) {
-                    console.log(response);
-                });
-            }
-
-            upload()
+            // var input = document.querySelector('input[type="file"]')
+            // console.log(input)
+            //
+            // var data = new FormData()
+            // data.append('file', input.files[0])
+            // data.append('user', 'hubot')
+            //
+            // const upload = (data) => {
+            //     var settings = {
+            //         "url": "https://apisnet.col.gob.mx/wsSignGob/apiV1/Valida/Certificado",
+            //         "method": "POST",
+            //         "timeout": 0,
+            //         "processData": false,
+            //         "mimeType": "multipart/form-data",
+            //         "contentType": false,
+            //         "data": data
+            //     };
+            //     $.ajax(settings).done(function (response) {
+            //         console.log(response);
+            //     });
+            // }
+            //
+            // upload()
 
 
             // Event handler executed when a file is selected
-            const onSelectFile = () => upload(input.files[0]);
+            // const onSelectFile = () => upload(input.files[0]);
+            //
+            // // Add a listener on your input
+            // // It will be triggered when a file will be selected
+            // input.addEventListener('change', onSelectFile, false);
 
-            // Add a listener on your input
-            // It will be triggered when a file will be selected
-            input.addEventListener('change', onSelectFile, false);
+            // https://pokeapi.co/api/v2/pokemon/
+            const pokeUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
+            // const getPokemon = (pokemon) => {
+            //     let name = pokemon
+            //     fetch(pokeUrl . name, {
+            //
+            //     })
+            //         .then(response => response.json())
+            //         .then(data => {
+            //             console.log(data);
+            //         })
+            // }
+
+            const getAllPokemons = (pokemon) => {
+                fetch(pokeUrl + pokemon, {
+
+                })
+                .then(response => response.json())
+                .then(data => {
+                    return data.abilities[0]
+                })
+            }
+
+            getAllPokemons('bulbasaur')
+
+
+            // fetch('https://pokeapi.co/api/v2/pokemon/',  {
+            //
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log(data);
+            // })
 
 
         </script>

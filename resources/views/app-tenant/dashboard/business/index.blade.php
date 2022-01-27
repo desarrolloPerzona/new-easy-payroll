@@ -220,44 +220,47 @@
                                         <hr>
 
                                     @elseif($business->stp_status === 2)
-{{--                                        <livewire:components.content.content-two-columns-text :title="'STP'" :field="$business->account ?? __('fill data')"/>--}}
 
-                                    <div class="bg-white p-3 mb-3 rounded" x-data="data()">
-                                        <div><label class="font-bold my-2" for="name">Agregar datos STP para disperión de nómina</label>
-                                            <hr>
-{{--                                            <div>--}}
-{{--                                                <input type="radio" id="stp_status" name="stp_status" value="stp_status" @click="hideFields()">--}}
-{{--                                                <label for="1">{{__('Yes')}}</label>--}}
-{{--                                            </div>--}}
+                                        <div class="accordion mb-4" id="stpAccordion">
+                                            <div class="accordion-item">
+                                                <div class="accordion-header bg-secondary " id="stpHeading">
+                                                    <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStp" aria-expanded="false" aria-controls="collapseStp">
+                                                        <i class="fas fa-eye text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Do you requiere STP?')}}
+                                                    </button>
+                                                </div>
+                                                <div id="collapseStp" class="accordion-collapse collapse" aria-labelledby="stpHeading" data-bs-parent="#stpAccordion">
+                                                    <div class="p-2">
+                                                        <div class="bg-white mb-3 rounded">
+                                                            <label class="font-bold my-2" for="name">Agregar datos STP para disperión de nómina</label>
+                                                            <hr>
+                                                            <form class="flex" :class="{'d-none': false}">
+                                                                <div class="w-5/12 w-full mr-2">
+                                                                    <div class="text-left py-1"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
+                                                                    <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                                                                           name="Name" placeholder="03695">
+                                                                </div>
 
-{{--                                            <div>--}}
-{{--                                                <input type="radio" id="stp_status" name="stp_status" value="stp_status" @click="showFields()">--}}
-{{--                                                <label for="2">{{__('No')}}</label>--}}
-{{--                                            </div>--}}
-                                        </div>
-                                        <div class="flex" :class="{'d-none': false}">
-                                            <div class="w-5/12 w-full mr-2">
-                                                <div class="text-left py-1"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
-                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
-                                                       name="Name" placeholder="03695">
-                                            </div>
+                                                                <div class="w-5/12 w-full mr-2">
+                                                                    <div class="flex-1 text-left py-1"><label class="font-bold"
+                                                                                                              for="name">{{__('STP CLABE Interbancaria')}}</label></div>
+                                                                    <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="••••••••">
+                                                                </div>
 
-                                            <div class="w-5/12 w-full mr-2">
-                                                <div class="flex-1 text-left py-1"><label class="font-bold"
-                                                                                          for="name">{{__('STP CLABE Interbancaria')}}</label></div>
-                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="••••••••">
-                                            </div>
+                                                                <div class="w-2/12">
+                                                                    <div class="btn-top-holder mt-10 flow-root">
+                                                                        <a class="cursor-pointer btn btn-dark float-right">
+                                                                            {{ __('Save') }}
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
 
-                                            <div class="w-2/12">
-                                                <div class="btn-top-holder mt-10 flow-root">
-                                                    <a class="cursor-pointer btn btn-dark float-right">
-                                                        {{ __('Save') }}
-                                                    </a>
+                                                            </form>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-
                                         </div>
-                                    </div>
+                                        <hr>
 
                                     @elseif($business->stp_status === 3)
 

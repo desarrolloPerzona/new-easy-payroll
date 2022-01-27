@@ -34,7 +34,6 @@ class BusinessController extends Controller
         $fiscal_regimes = json_decode($api_responseFR->body());
         $api_responseIL = Http::get($appUrl . 'api/fiscal-industries-list');
         $fiscal_industries = json_decode($api_responseIL->body());
-
         return view('app-tenant.dashboard.business.create', compact('fiscal_regimes', 'fiscal_industries'));
     }
 
@@ -46,6 +45,13 @@ class BusinessController extends Controller
      */
     public function store(Request $request)
     {
+
+        dd($request);
+        $business = Business::create([
+            'name' => $request->name,
+        ]);
+
+        //$business->addMedia(storage_path('app/public/temp/'.$request->logo))
 
     }
 

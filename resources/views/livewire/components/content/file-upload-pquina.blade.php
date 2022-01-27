@@ -5,6 +5,7 @@
                class="filepond"
                type="file"
                accept=".png"
+               data-max-file-size="{{$maxFiles}}"
             {{$attributes}}
         />
         @error($name)
@@ -49,7 +50,7 @@
 
 
         });
-        pond.on('warning', (error, file) => {
+        pond{{$name}}.on('warning', (error, file) => {
             console.log('Warning', error, file);
         });
 

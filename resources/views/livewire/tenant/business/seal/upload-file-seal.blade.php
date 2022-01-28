@@ -21,6 +21,7 @@
                         :label="'Certificado (.cer):'"
                         :upload-route="'uploadFiles'"
                         :icon:="'fad fa-search'"
+                        :spec="''"
                     />
                     <livewire:components.content.file-upload-pquina :name="'key2'"
                                                                     :max-files="1"
@@ -32,6 +33,7 @@
                                                                     :label="'Clave privada (.key):'"
                                                                     :upload-route="'uploadFiles'"
                                                                     :icon:="'fad fa-search'"
+                                                                    :spec="''"
                     />
                     <div class="text-left py-1"><label class="font-bold" for="name">{{__('Private Key Password:')}}</label></div>
                     <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"

@@ -13,6 +13,7 @@ mimetypes application/x-x509-ca-cert
                data-max-file-size="{{$maxSize}}"
             {{$attributes}}
         />
+        <small>{{__($spec)}}</small>
         @error($name)
         <small class="mt-2 text-sm text-red-600">{{ $message }}</small>
         @enderror

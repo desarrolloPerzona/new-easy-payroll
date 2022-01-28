@@ -37,27 +37,27 @@
                                     {{--FISCAL DATA--}}
                                     <livewire:components.content.content-header :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
 
-{{--                                    Fiel Accordion--}}
+                                    {{-- Fiel Accordion--}}
                                     <livewire:tenant.business.fiel.upload-file-fiel :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
 
-{{--                                    Sello digital Accordion--}}
-                                    <livewire:tenant.business.seal.upload-file-seal :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
+                                    {{-- Sello digital Accordion--}}
+                                   {{-- <livewire:tenant.business.seal.upload-file-seal :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>--}}
 
                                     {{--BANK DATA--}}
                                     <livewire:components.content.content-header :title="'Bank Accounts'" :icon="'fas fa-bank'"/>
 
-{{--                                    STP Accordion--}}
+                                    {{-- STP Accordion--}}
 
-{{--                                    CONDITIONAL TO CHANGE STATUS tag IN VIEW--}}
+                                    {{-- CONDITIONAL TO CHANGE STATUS tag IN VIEW--}}
                                     <h2 class="my-2">{{__('STP account')}}
                                         @if($business->stp_status === 0)
-                                            <span  class="text-xs font-bold text-uppercase" style="color: orangered">{{ __('Inactive') }}</span>
+                                            <span class="text-xs font-bold text-uppercase" style="color: orangered">{{ __('Inactive') }}</span>
                                         @elseif($business->stp_status === 1)
-                                            <span  class="text-xs font-bold text-uppercase" style="color: coral">{{ __('In progress') }}</span>
+                                            <span class="text-xs font-bold text-uppercase" style="color: coral">{{ __('In progress') }}</span>
                                         @elseif($business->stp_status === 2)
-                                            <span  class="text-xs font-bold text-uppercase" style="color: dodgerblue">{{ __('Add stp account') }}</span>
+                                            <span class="text-xs font-bold text-uppercase" style="color: dodgerblue">{{ __('Add stp account') }}</span>
                                         @elseif($business->stp_status === 3)
-                                            <span  class="text-xs font-bold text-uppercase" style="color: green">{{ __('Active') }}</span>
+                                            <span class="text-xs font-bold text-uppercase" style="color: green">{{ __('Active') }}</span>
                                         @endif
                                     </h2>
 
@@ -170,7 +170,7 @@
 
                                     @endif
 
-{{--                                    Banks table--}}
+                                    {{--                                    Banks table--}}
                                     @if(count($business->banks) === 0)
                                         <a href="{{route('banks.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
                                     @else
@@ -242,13 +242,13 @@
 
     @push('inline_scripts')
         <script>
-            function data(){
-                return{
+            function data() {
+                return {
                     isHidden: true,
-                    hideFields(){
+                    hideFields() {
                         this.isHidden = true
                     },
-                    showFields(){
+                    showFields() {
                         this.isHidden = false
                     }
                 }

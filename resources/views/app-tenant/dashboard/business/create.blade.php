@@ -27,7 +27,8 @@
                                                                     :attributes="''"
                                                                     :label="'Logo'"
                                                                     :upload-route="'uploadFiles'"
-                                                                    :icon:="'fad fa-search'"
+                                                                    :icon="'fad fa-search'"
+                                                                    :spec="'Your image mus be 500 x 500 pixels'"
                     />
                 <div class="form-group">
                     <label class="form-label" for="industry">{{__('Industry')}}</label>

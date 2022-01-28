@@ -2,6 +2,7 @@
 
 <x-app-tenant>
     <div class="container mx-auto">
+        <livewire:components.breadcrumb :parent="'Business'" :children="['Show']" :item-id="$business->id" :icon="'fak fa-empresa-perzona mr-2'"/>
         {{--SHOW CARD--}}
 
         <div class="accordion" id="businessAccordion">
@@ -11,12 +12,12 @@
                 {{--CONTENT HEADER--}}
                 <livewire:components.content.content-header :title="'Business'" :icon="'fas fa-building'"/>
                 {{--CONTENT TWO COLUMNS TEXT IMAGES AND ARRAYS--}}
-                <livewire:components.content.content-two-columns-text :title="'Name'" :field="$business->name ?? __('Fill data')"/>
-                <livewire:components.content.content-two-columns-images :title="'Logo'" :images="$business->getMedia('business')"/>
-                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->industry ?? __('Fill data')"/>
-                <livewire:components.content.content-two-columns-text :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? __('Fill data')"/>
-                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->business_name ?? __('Fill data')"/>
-                <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? __('Fill data')"/>
+                <livewire:components.content.content-two-columns-text :title="'Name'" :field="$business->name ?? '' "/>
+                <livewire:components.content.content-two-columns-images :title="'Logo square'" :images="$business->getMedia('logo_url_sq')"/>
+                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->industry ?? ''"/>
+                <livewire:components.content.content-two-columns-text :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? ''"/>
+                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->business_name ?? ''"/>
+                <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? ''"/>
                 {{--FISCAL DATA--}}
                 <livewire:components.content.content-header :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
 

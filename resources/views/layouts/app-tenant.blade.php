@@ -69,6 +69,14 @@
         }
         document.body.dispatchEvent(event);
     }
+
+        tippy('.tool-tip', {
+        role: 'tooltip',
+        duration: 1,
+        theme: 'tomato',
+        trigger: 'mouseenter click',
+    });
+
 </script>
 {{--IN PAGE SCRIPTS--}}
 @stack('inline_scripts')

@@ -9,3 +9,17 @@
 .form-group{
     margin-bottom: 1rem !important;
 }
+
+
+table{
+    tr{
+        td{
+            border: none !important;
+        }
+    }
+}
+
+.tippy-box[data-theme~='tomato'] {
+    background-color: #313131;
+    color: white;
+}

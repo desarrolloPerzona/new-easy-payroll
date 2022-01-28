@@ -8,30 +8,12 @@
                 </button>
             </div>
             <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingFiel" data-bs-parent="#fielAccordion">
-                <form class="p-2">
+                <form class="p-2" enctype="multipart/form-data">
 
-                    <livewire:components.content.file-upload-pquina :name="'cer'"
-                                                                    :max-files="1"
-                                                                    :max-size="'1MB'"
-                                                                    :file-type="'application/x-x509-ca-cert'"
-                                                                    :allow-multiple="'false'"
-                                                                    :accept-files="''"
-                                                                    :attributes="''"
-                                                                    :label="'Certificado (.cer):'"
-                                                                    :upload-route="'uploadFiles'"
-                                                                    :icon="'fad fa-search'"
-                    />
-                    <livewire:components.content.file-upload-pquina :name="'key'"
-                                                                    :max-files="1"
-                                                                    :max-size="'1MB'"
-                                                                    :file-type="'application/cer'"
-                                                                    :allow-multiple="'false'"
-                                                                    :accept-files="'.key'"
-                                                                    :attributes="''"
-                                                                    :label="'Clave privada (.key):'"
-                                                                    :upload-route="'uploadFiles'"
-                                                                    :icon="'fad fa-search'"
-                    />
+                    <input id="fiel_cert" type="file" accept=".cer" name="sat_fiel_cert">
+
+                    <input id="sat_fiel_key" type="file" accept=".key" name="sat_fiel_key">
+
                     <div class="text-left py-1">
                         <label class="font-bold" for="sat_fiel_password">{{__('Private Key Password:')}}</label>
                         <input class="w-full text-gray-800 rounded mt-2 dark:bg-dark dark:text-white" type="text" id="sat_fiel_password"
@@ -50,4 +32,67 @@
             </div>
         </div>
     </div>
+    @push('inline_scripts')
+        <script>
+
+            // var input = document.querySelector('input[type="file"]')
+            // console.log(input)
+            //
+            // var data = new FormData()
+            // data.append('file', input.files[0])
+            // data.append('user', 'hubot')
+            //
+            // const upload = (data) => {
+            //     var settings = {
+            //         "url": "https://apisnet.col.gob.mx/wsSignGob/apiV1/Valida/Certificado",
+            //         "method": "POST",
+            //         "timeout": 0,
+            //         "processData": false,
+            //         "mimeType": "multipart/form-data",
+            //         "contentType": false,
+            //         "data": data
+            //     };
+            //     $.ajax(settings).done(function (response) {
+            //         console.log(response);
+            //     });
+            // }
+            //
+            // upload()
+
+
+            // Event handler executed when a file is selected
+            // const onSelectFile = () => upload(input.files[0]);
+            //
+            // // Add a listener on your input
+            // // It will be triggered when a file will be selected
+            // input.addEventListener('change', onSelectFile, false);
+
+            // https://pokeapi.co/api/v2/pokemon/
+            const pokeUrl = 'https://pokeapi.co/api/v2/pokemon/';
+
+            // const getPokemon = (pokemon) => {
+            //     let name = pokemon
+            //     fetch(pokeUrl . name, {
+            //
+            //     })
+            //         .then(response => response.json())
+            //         .then(data => {
+            //             console.log(data);
+            //         })
+            // }
+
+            const getAllPokemons = (pokemon) => {
+                fetch(pokeUrl + pokemon, {
+
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        return data.abilities[0]
+                    })
+            }
+
+            getAllPokemons('bulbasaur')
+
+        </script>
+    @endpush
 </div>

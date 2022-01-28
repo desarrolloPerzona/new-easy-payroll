@@ -1,153 +1,220 @@
 <x-app-tenant>
     <div class="container mx-auto">
-        <livewire:components.crud.show-page-header :fa-icon="'fa-building'" :model="$business" :title="'Business'" :titleUrl="route('business.index')" :editUrl="route('business.edit',$business->id)"/>
         {{--SHOW CARD--}}
-        <div class="card mx-auto my-2">
-            <div class="card-header bg-blueSteel text-white">
-                {{$business->name}}
-            </div>
-            <div class="car-body bg-white shadow-sm rounded p-4 w-full dark:bg-light">
-                {{--SECTION BANKS--}}
-                <div class="section py-2 border-b-2">
-                    <table class="table table-borderless">
-                        <tr>
-                            <td style="width: 15%;" class="text-right p-2 font-bold">Nombre:</td>
-                            <td style="width: 85%;" class="text-left p-2">{{$business->name}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 15%;" class="text-right p-2 font-bold">Logotipo:</td>
-                            <td style="width: 85%;" class="text-left p-2">
-                                <img src="{{$business->logo_url?? asset('images/image_icon.svg')}}" alt="image logo" width="150">
-                                <p class="text-xs">Usar en recibo: {{$business->logo_url === 1? 'Si':'No'}}</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="width: 15%;" class="text-right p-2 font-bold">Industria:</td>
-                            <td style="width: 85%;" class="text-left p-2">{{$business->industry?? 'Null'}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 15%;" class="text-right p-2 font-bold">Régimen fiscal:</td>
-                            <td style="width: 85%;" class="text-left p-2">{{$business->fiscal_regime?? 'Null'}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 15%;" class="text-right p-2 font-bold">RFC:</td>
-                            <td style="width: 85%;" class="text-left p-2">{{$business->rfc?? 'Null'}}</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 15%;" class="text-right p-2 font-bold">Razón Social:</td>
-                            <td style="width: 85%;" class="text-left p-2">{{$business->business_name?? 'Null'}}</td>
-                        </tr>
-                    </table>
-                </div>
-                {{--SECTIONS--}}
-                <div class="section py-2 border-b-2">
-                    <livewire:components.card-header :title="'Cuentas'"/>
 
-                    <table class="table table-borderless">
-                        <tr>
-                            <td style="width: 15%;" class="text-right p-2 font-bold">STP:</td>
-                            <td style="width: 85%;" class="text-left p-2">{{$business->stp_account?? 'Null'}}</td>
-                        </tr>
-                        <tr>
-                            @if(count($business->banks) <= 0)
-                                <td colspan="2">
-                                    <livewire:components.crud.empty-model-badge :description="'Please select from menu item'" :parentItem="''" :childItem="''"/>
-                                </td>
-                            @else
-                                <td>
-                                    {{--TODO: CREATE BANKS FOREACH--}}
-                                </td>
+        <div class="accordion" id="businessAccordion">
+
+                        <div class="accordion-body mb-3 text-dark bg-gray-200 dark:bg-dark dark:text-white">
+                            {{--CONTENT--}}
+                            {{--CONTENT HEADER--}}
+                            <livewire:components.content.content-header :title="'Business'" :icon="'fas fa-building'"/>
+                            {{--CONTENT TWO COLUMNS TEXT IMAGES AND ARRAYS--}}
+                            <livewire:components.content.content-two-columns-text :title="'Name'" :field="$business->name ?? __('Fill data')"/>
+                            <livewire:components.content.content-two-columns-images :title="'Logo'" :images="$business->getMedia('business')"/>
+                            <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->industry ?? __('Fill data')"/>
+                            <livewire:components.content.content-two-columns-text :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? __('Fill data')"/>
+                            <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->business_name ?? __('Fill data')"/>
+                            <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? __('Fill data')"/>
+                            {{--FISCAL DATA--}}
+                            <livewire:components.content.content-header :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
+
+                            {{--                                    Fiel Accordion--}}
+                            <livewire:tenant.business.fiel.upload-file-fiel :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
+
+                            {{--                                    Sello digital Accordion--}}
+                            <livewire:tenant.business.seal.upload-file-seal :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
+
+                            {{--BANK DATA--}}
+                            <livewire:components.content.content-header :title="'Bank Accounts'" :icon="'fas fa-bank'"/>
+
+                            {{--                                    STP Accordion--}}
+
+                            {{--                                    CONDITIONAL TO CHANGE STATUS tag IN VIEW--}}
+                            <h2 class="my-2">{{__('STP account')}}
+                                @if($business->stp_status === 0)
+                                    <span  class="text-xs font-bold text-uppercase text-danger">{{ __('Inactive') }}</span>
+                                @elseif($business->stp_status === 1)
+                                    <span  class="text-xs font-bold text-uppercase text-warning">{{ __('In progress') }}</span>
+                                @elseif($business->stp_status === 2)
+                                    <span  class="text-xs font-bold text-uppercase text-info">{{ __('Add stp account') }}</span>
+                                @elseif($business->stp_status === 3)
+                                    <span  class="text-xs font-bold text-uppercase text-success">{{ __('Active') }}</span>
+                                @endif
+                            </h2>
+
+                            @if($business->stp_status === 0)
+                                <div class="accordion mb-4" id="stpAccordion">
+                                    <div class="accordion-item">
+                                        <div class="accordion-header bg-secondary " id="stpHeading">
+                                            <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStp" aria-expanded="false" aria-controls="collapseStp">
+                                                <i class="fas fa-eye text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Do you requiere STP?')}}
+                                            </button>
+                                        </div>
+                                        <div id="collapseStp" class="accordion-collapse collapse" aria-labelledby="stpHeading" data-bs-parent="#stpAccordion">
+                                            <div class="p-2">
+                                                <p>Si deseas que tu nómina se disperse de forma automática, necesitas una cuenta STP, solicitala en
+                                                    <span class="underline">stp@perzona.mx</span>
+                                                </p>
+                                                <form action="{{ route('business.stp', $business) }}" method="POST">
+                                                    @csrf
+                                                    @method('PATCH')
+                                                    <button type="submit" class="btn btn-primary" onclick="return confirm('¿Desea solicitar una cuenta STP?')">{{__('Solicitar')}}</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                            @elseif($business->stp_status === 1)
+                                <div class="mb-4">
+                                    <button class="btn btn-primary" disabled>
+                                        En proceso...
+                                    </button>
+                                </div>
+                                <hr>
+
+                            @elseif($business->stp_status === 2)
+
+                                <div class="accordion mb-4" id="stpAccordion">
+                                    <div class="accordion-item">
+                                        <div class="accordion-header bg-secondary " id="stpHeading">
+                                            <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStp" aria-expanded="false" aria-controls="collapseStp">
+                                                <i class="fas fa-eye text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Do you requiere STP?')}}
+                                            </button>
+                                        </div>
+                                        <div id="collapseStp" class="accordion-collapse collapse" aria-labelledby="stpHeading" data-bs-parent="#stpAccordion">
+                                            <div class="p-2">
+                                                <div class="bg-white mb-3 rounded">
+                                                    <label class="font-bold my-2" for="name">Agregar datos STP para disperión de nómina</label>
+                                                    <hr>
+                                                    <form class="flex" :class="{'d-none': false}">
+
+                                                        <div class="w-5/12 w-full mr-2">
+                                                            <div class="text-left py-1"><label class="font-bold" for="name">{{__('STP account')}}</label></div>
+                                                            <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                                                                   name="Name" placeholder="03695">
+                                                        </div>
+                                                        <div class="w-5/12 w-full mr-2">
+                                                            <div class="flex-1 text-left py-1"><label class="font-bold"
+                                                                                                      for="name">{{__('STP CLABE Interbancaria')}}</label></div>
+                                                            <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="••••••••">
+                                                        </div>
+                                                        <div class="w-2/12">
+                                                            <div class="btn-top-holder mt-10 flow-root">
+                                                                <a class="cursor-pointer btn btn-dark float-right">
+                                                                    {{ __('Save') }}
+                                                                </a>
+                                                            </div>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                            @elseif($business->stp_status === 3)
+
+                                <div class="accordion mb-4" id="stpAccordion">
+                                    <div class="accordion-item">
+                                        <div class="accordion-header bg-secondary " id="stpHeading">
+                                            <button type="button" class="mx-2 py-2" data-bs-toggle="collapse" data-bs-target="#collapseStp" aria-expanded="false" aria-controls="collapseStp">
+                                                <i class="fas fa-eye text-gray-700 hover:text-gray-700 cursor-pointer"></i> {{__('Do you requiere STP?')}}
+                                            </button>
+                                        </div>
+                                        <div id="collapseStp" class="accordion-collapse collapse" aria-labelledby="stpHeading" data-bs-parent="#stpAccordion">
+                                            <div class="p-2">
+                                                <div class="bg-white mb-3 rounded" x-data="data()">
+                                                    <p class="font-bold my-2" for="name">Datos STP para dispersión de nómina</p>
+                                                    <hr>
+                                                    <div class="flex">
+                                                        <span>{{ __('STP account: ')}} <b>{{$business->stp_account}}</b></span>
+                                                    </div>
+
+                                                    <div class="w-2/12">
+                                                        <div class="btn-top-holder flow-root">
+                                                            <button class="cursor-pointer btn btn-outline-danger float-right"
+                                                                    onclick="return confirm('¿Desea desvincular su cuenta STP?')">
+                                                                {{ __('Unlink STP account') }}
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
 
                             @endif
-                        </tr>
-                    </table>
-                </div>
-            </div>
 
-        </div>
-        {{--SHOW CARD RELATED--}}
-        <div class="card">
-            <div class="card-header bg-blueSteel text-white">
-                {{__('Branches')}}
-            </div>
-            <div class="card-body dark:bg-light">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed bg-blueSteel text-white" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                <i class="fas fa-plus-circle mr-2"></i>
-                                {{ __('New branch') }}
-                            </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="card my-2">
-                                <div class="card-body">
-                                    <form action="">
-                                        <div class="form-group">
-                                            <lable>Nombre</lable>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <lable>Descripción</lable>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <lable>Registro Patronal</lable>
-                                            <select type="text" class="form-control">
-                                                <options></options>
-                                            </select>
-                                        </div>
-                                        <div class="my-2">
-                                            <button class="btn btn-primary"><i class="fad fa-paper-plane mr-2"></i></i>Enviar</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                            {{--                                    Banks table--}}
+                            @if(count($business->banks) === 0)
+                                <a href="{{route('banks.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
+                            @else
+                                @foreach($business->banks as $banks)
+                                    <livewire:components.content.content-two-columns-text :title="''" :field="''"/>
+                                @endforeach
+                            @endif
+                            {{--NEW ITEM RELATION--}}
+                            <livewire:components.content.new-item :model="$business" :relation="'branches'"/>
+                            {{--BUSINESS BRANCHES HOLDER--}}
+                            <table class="table table-stripe table-dark">
+                                <tr>
+                                    <th>{{__('Branch')}}</th>
+                                    <th>{{__('IMSS Employer Registers')}}</th>
+                                    <th>{{__('Created at')}}</th>
+                                    <th colspan="3"></th>
+                                </tr>
+
+                                @if(count($business->branches))
+                                    @foreach($business->branches as $branch)
+                                        <tr>
+                                            <td><span class="uppercase">{{$branch->name}}</span></td>
+                                            <td>
+
+                                                @if(empty($branch->ImssPatronalRegisters))
+                                                    <a href="{{route('imss-employer-registers.create')}}" class="btn btn-primary"><i class="fas fa-plus-circle mr-2"></i>{{__('Create')}}</a>
+                                                @else
+                                                    @foreach($branch->ImssPatronalRegisters as $imssPatronalRegister)
+                                                        <div class="bg-blueSteel p-2 inline-block mx-2 my-2 text-white rounded">{{$imssPatronalRegister->name}}</div>
+                                                    @endforeach
+                                                @endif
+                                                {{$branch->imss_patronal_registry_id}}
+                                            </td>
+                                            <td>{{formatDate($branch->created_at)}}</td>
+
+                                            <td style="width: 3%">
+                                                <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                            </td>
+                                            <td style="width: 3%"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
+                                            <td style="width: 3%">
+                                                @if($branch->id === 1)
+                                                @else
+                                                    <form action="" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button onclick="return confirm('¿Desea eliminar este registro?')"><i class="fas fa-trash text-danger"></i></button>
+                                                    </form>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
+                                    <tr>
+                                        <td colspan="6" class="text-center"><b>{{ __('No registers') }}</b></td>
+                                    </tr>
+                                @endif
+                            </table>
 
                         </div>
+
                     </div>
                 </div>
-
-                <div class="branch-holder">
-
-                    @if(count($business->branches) > 0)
-                        <td>
-                             @foreach($business->branches as $branch)
-                               {{-- {{ dd($branch)}}--}}
-                            <div class="branch-card p-2 my-2 border-b-2">
-                                <table class="table table-borderless">
-                                    <tr>
-                                        <td style="width: 15%;" class="text-right p-2 font-bold">Nombre:</td>
-                                        <td style="width: 85%;" class="text-left p-2">  {{$branch->name}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 15%;" class="text-right p-2 font-bold">Registro IMSS Patronall:</td>
-                                        <td style="width: 85%;" class="text-left p-2"> {{$branch->imss_patronal??'null'}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 15%;" class="text-right p-2 font-bold">Descripción:</td>
-                                        <td style="width: 85%;" class="text-left p-2">{{$business->description?? 'Null'}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 15%;" class="text-right p-2 font-bold">Industria:</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 15%;" class="text-right p-2 font-bold">Razón Social:</td>
-                                        <td style="width: 85%;" class="text-left p-2">{{$business->business_name?? 'Null'}}</td>
-                                    </tr>
-                                </table>
-                            </div>
-                        @endforeach
-                        </td>
-                    @else
-                        <td colspan="2">
-                        <livewire:components.crud.empty-model-badge :description="'Please select from menu item'" :parentItem="''" :childItem="''"/>
-                        </td>
-                    @endif
-
-                </div>
-            </div>
+            {{--ACCORDION--}}
         </div>
 
     </div>

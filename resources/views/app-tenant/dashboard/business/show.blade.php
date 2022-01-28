@@ -9,15 +9,14 @@
 
             <div class="accordion-body mb-3 text-dark bg-gray-200 dark:bg-dark dark:text-white">
                 {{--CONTENT--}}
-                {{--CONTENT HEADER--}}
                 <livewire:components.content.content-header :title="'Business'" :icon="'fas fa-building'"/>
                 {{--CONTENT TWO COLUMNS TEXT IMAGES AND ARRAYS--}}
-                <livewire:components.content.content-two-columns-text :title="'Name'" :field="$business->name ?? '' "/>
+                <livewire:components.content.content-two-columns-text :title="'Name'" :field="$business->name ?? ''" :modelId="$business->id" :modelRoute="'business.update'"/>
                 <livewire:components.content.content-two-columns-images :title="'Logo square'" :images="$business->getMedia('logo_url_sq')"/>
-                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->industry ?? ''"/>
-                <livewire:components.content.content-two-columns-text :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? ''"/>
-                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->business_name ?? ''"/>
-                <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? ''"/>
+                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->industry ?? ''" :modelId="$business->id" :modelRoute="'business.update'"/>
+                <livewire:components.content.content-two-columns-text :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? ''" :modelId="$business->id" :modelRoute="'business.update'"/>
+                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->business_name ?? ''" :modelId="$business->id" :modelRoute="'business.update'"/>
+                <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? ''" :modelId="$business->id" :modelRoute="'business.update'"/>
                 {{--FISCAL DATA--}}
                 <livewire:components.content.content-header :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
 

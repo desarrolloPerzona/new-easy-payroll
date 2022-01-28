@@ -6,13 +6,14 @@ use Livewire\Component;
 
 class ContentTwoColumnsText extends Component
 {
-    public string $title;
-    public string $field;
+    public $title, $field, $modelId, $modelRoute;
 
-    public function mount($title,$field){
+    public function mount($title,$field,$modelRoute,$modelId){
 
         $this->title = $title;
         $this->field = $field;
+        $this->modelId = $modelId;
+        $this->modelRoute = $modelRoute;
 
     }
     public function render()

@@ -48,8 +48,6 @@ class BusinessController extends Controller
     {
 
 
-
-
         $business = Business::create([
             'name' => $request->name,
         ]);
@@ -93,9 +91,13 @@ class BusinessController extends Controller
      * @param \App\Models\Tenant\Business $business
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Business $business)
+    public function update(Request $request)
     {
-        //
+
+        $business = Business::find($request->id);
+        $business->update([
+
+        ]);
     }
 
     /**
@@ -117,5 +119,13 @@ class BusinessController extends Controller
         ]);
 
         return redirect()->route('business.index');
+    }
+
+    public function updateByField(Request $request)
+    {
+        $business = Business::find($request->id);
+        $business->update([
+//TODO::terminar el metodo
+        ]);
     }
 }

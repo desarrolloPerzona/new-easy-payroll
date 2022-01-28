@@ -48,6 +48,7 @@ Route::middleware([
     Route::get('/dashboard',[TenantDashboardController::class,'dashboard'])->middleware('auth:web')->name('tenant.dashboard');
     /*TENANT BUSINESS*/
     Route::resource('/business',BusinessController::class)->middleware('auth:web');
+    Route::patch('/business',[BusinessController::class,'updateByField'])->middleware('auth:web')->name('business.update-by-field');
     Route::patch('/updateStpStatus/{business}', [BusinessController::class, 'updateStpStatus'])->name('business.stp');
 
     Route::resource('/banks',BankController::class)->middleware('auth:web');

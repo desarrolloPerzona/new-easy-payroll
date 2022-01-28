@@ -9,9 +9,9 @@
                     <input class="form-control text-gray-800 rounded my-2" type="text" id="name" name="Name">
                 </div>
                 <livewire:components.content.file-upload-pquina :name="'logo'"
-                                                                :max-files="2"
-                                                                :max-size="'1MB'"
-                                                                :file-type="'jpg'"
+                                                                :max-files="1"
+                                                                :max-size="'3MB'"
+                                                                :file-type="'application/x-x509-ca-cert'"
                                                                 :allow-multiple="'true'"
                                                                 :accept-files="''"
                                                                 :attributes="''"

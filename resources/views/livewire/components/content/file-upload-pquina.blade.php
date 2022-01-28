@@ -1,15 +1,17 @@
+{{--
+https://codepen.io/rikschennink/pen/NzRvbj
+mimetypes application/x-x509-ca-cert
+--}}
+
 <div class="my-4">
     <div class="form-group">
         <label for="id-{{$name}}" class="label font-bold py-2">{{ __($label) }}</label>
         <input id="id-{{ $name }}"
                type="file"
-               accept="image/jpg"
                class="filepond"
                name="{{$name}}"
-
                data-max-file-size="{{$maxSize}}"
             {{$attributes}}
-
         />
         @error($name)
         <small class="mt-2 text-sm text-red-600">{{ $message }}</small>
@@ -52,14 +54,13 @@
             },
             storeAsFile:true,
             credits: false,
+            acceptedFileTypes:["{{$fileType}}"],
             name: '{{$name}}',
             maxFiles:{{$maxFiles}},
             allowMultiple: {{$allowMultiple}},
             labelFileLoadError: true,
             labelIdle: `<span class="filepond--label-action btn btn-primary"><i class="fas fa-cloud-upload mx-2"></i></span>`,
             labelMaxFileSizeExceeded: `{{__("Maximum file size is")}} {{$maxSize}}`
-
-
         });
 
         pond{{$name}}.on('warning', (error, file) => {

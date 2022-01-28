@@ -33,5 +33,6 @@ Route::group(['api' => 'api'], function(){
     Route::get('/bank-list',[GetBanksController::class,'getBankList']);
     Route::get('/fiscal-regimes-list',[GetFiscalRegimesController::class,'getFiscalRegimesList']);
     Route::get('/fiscal-industries-list',[GetFiscalIndustriesController::class,'getFiscalIndustriesList']);
+
 });
 

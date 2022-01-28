@@ -18,9 +18,10 @@ class FileUploadPquina extends Component
         $allowMultiple,
         $uploadRoute,
         $attributes,
+        $spec,
         $acceptFiles;
 
-    public function mount($name, $maxFiles, $maxSize, $fileType, $allowMultiple, $label, $uploadRoute, $attributes, $acceptFiles)
+    public function mount($name, $maxFiles, $maxSize, $fileType, $allowMultiple, $label, $uploadRoute, $attributes, $acceptFiles,$spec)
     {
         $this->name = $name;
         $this->maxFiles = $maxFiles;
@@ -31,6 +32,7 @@ class FileUploadPquina extends Component
         $this->attributes = $attributes;
         $this->acceptFiles = $acceptFiles;
         $this->maxSize = $maxSize;
+        $this->spec = $spec;
     }
 
 

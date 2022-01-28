@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Tenant;
 use App\Http\Controllers\Controller;
 use App\Models\Tenant\Business;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Http;
 
 class BusinessController extends Controller
@@ -43,10 +44,12 @@ class BusinessController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Business $business, Request $request)
     {
 
-        dd($request);
+
+
+
         $business = Business::create([
             'name' => $request->name,
         ]);
@@ -101,9 +104,10 @@ class BusinessController extends Controller
      * @param \App\Models\Tenant\Business $business
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Business $business)
+    public function destroy($id)
     {
-        //
+        $business = Business::find($id);
+        $business->delete();
     }
 
     public function updateStpStatus(Request $request, Business $business)

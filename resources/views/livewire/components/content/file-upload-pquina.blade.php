@@ -5,7 +5,7 @@ mimetypes application/x-x509-ca-cert
 
 <div class="my-4">
     <div class="form-group">
-        <label for="id-{{$name}}" class="label font-bold py-2">{{ __($label) }}</label>
+        <label for="id-{{$name}}" class="form-label">{{ __($label) }}</label>
         <input id="id-{{ $name }}"
                type="file"
                class="filepond"

@@ -7,11 +7,11 @@
                 <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
             </button>
         </td>
-        <td style="width: 3%"><a href="{{route($route,$modelId)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a></td>
+        <td style="width: 3%"><a href="{{route($route.'.edit',$modelId)}}"> <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a></td>
         <td style="width: 3%">
             @if($modelId === 1)
             @else
-                <form action="{{ route($route,$modelId) }}" method="POST">
+                <form action="{{ route('business.destroy',$modelId) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button onclick="return confirm('¿Desea eliminar este registro?')"><i class="fas fa-trash text-danger"></i></button>

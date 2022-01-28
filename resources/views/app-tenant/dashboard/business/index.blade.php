@@ -19,7 +19,7 @@
                         <div class="accordion-item">
                             {{--ACCORDION HEADER--}}
                             <div class="bg-blueSteel accordion-header" id="heading-{{$loop->iteration}}">
-                                <livewire:components.content.accordion-header :model-id="$business->id" :created-at="$business->created_at" :route="'business.edit'" :iteration="$loop->iteration" :name="$business->name"/>
+                                <livewire:components.content.accordion-header :model-id="$business->id" :created-at="$business->created_at" :route="'business'" :iteration="$loop->iteration" :name="$business->name"/>
                             </div>
                             {{--ACCORDION COLAPSE--}}
                             <div id="collapse-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#businessAccordion">

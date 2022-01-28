@@ -10,9 +10,9 @@
             <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingFiel" data-bs-parent="#fielAccordion">
                 <form class="p-2" enctype="multipart/form-data">
 
-                    <input id="fiel_cert" type="file" accept=".cer" name="fiel_cert">
+                    <input id="fiel_cert" type="file" accept=".cer" name="sat_fiel_cert">
 
-{{--                    <input type="file" accept=".key">--}}
+                    <input type="file" accept=".key" name="sat_fiel_key">
 
                     <div class="text-left py-1">
                         <label class="font-bold" for="sat_fiel_password">{{__('Private Key Password:')}}</label>
@@ -92,16 +92,6 @@
             }
 
             getAllPokemons('bulbasaur')
-
-
-            // fetch('https://pokeapi.co/api/v2/pokemon/',  {
-            //
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log(data);
-            // })
-
 
         </script>
     @endpush

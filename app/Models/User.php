@@ -14,7 +14,6 @@ use Spatie\Permission\Traits\HasRoles;
 
 
 
-
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
@@ -24,6 +23,7 @@ class User extends Authenticatable implements MustVerifyEmail
     use TwoFactorAuthenticatable;
     use Billable;
     use HasRoles;
+
 
 
 

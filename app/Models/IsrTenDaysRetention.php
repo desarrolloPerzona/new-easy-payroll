@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class IsrTenDaysRetention extends Model
 {
     use HasFactory;
+
+    protected $table = "isr_ten_days_retentions";
+
 }

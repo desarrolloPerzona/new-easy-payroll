@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class IsrDailyRetention extends Model
 {
     use HasFactory;
+
+    protected $table = 'isr_daily_retentions';
 }

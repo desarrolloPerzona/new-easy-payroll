@@ -43,7 +43,5 @@ Route::group(['api' => 'api'], function(){
     Route::get('/isr-weekly-retentions',[GetIsrRetentionController::class,'weekly_retentions']);
     Route::get('/isr-weekly-retentions-subsidies',[GetIsrRetentionController::class,'weekly_retentions_subsidies']);
     Route::get('/reference-values',[GetIsrRetentionController::class,'reference_values']);
-
-
 });
 

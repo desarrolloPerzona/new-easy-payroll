@@ -94,10 +94,10 @@ class BusinessController extends Controller
     public function update(Request $request)
     {
 
-        $business = Business::find($request->id);
-        $business->update([
-
-        ]);
+//        $business = Business::find($request->id);
+//        $business->update([
+//
+//        ]);
     }
 
     /**
@@ -121,11 +121,11 @@ class BusinessController extends Controller
         return redirect()->route('business.index');
     }
 
-    public function updateByField(Request $request)
-    {
-        $business = Business::find($request->id);
-        $business->update([
-//TODO::terminar el metodo
-        ]);
-    }
+//    public function updateByField(Request $request)
+//    {
+//        $business = Business::find($request->id);
+//        $business->update([
+////TODO::terminar el metodo
+//        ]);
+//    }
 }

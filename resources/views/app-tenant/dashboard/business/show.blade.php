@@ -11,12 +11,12 @@
                 {{--CONTENT--}}
                 <livewire:components.content.content-header :title="'Business'" :icon="'fas fa-building'"/>
                 {{--CONTENT TWO COLUMNS TEXT IMAGES AND ARRAYS--}}
-                <livewire:components.content.content-two-columns-text :title="'Name'" :field="$business->name ?? ''" :modelId="$business->id" :modelRoute="'business.update'"/>
-                <livewire:components.content.content-two-columns-images :title="'Logo square'" :images="$business->getMedia('logo_url_sq')"/>
-                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->industry ?? ''" :modelId="$business->id" :modelRoute="'business.update'"/>
-                <livewire:components.content.content-two-columns-text :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? ''" :modelId="$business->id" :modelRoute="'business.update'"/>
-                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->business_name ?? ''" :modelId="$business->id" :modelRoute="'business.update'"/>
-                <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? ''" :modelId="$business->id" :modelRoute="'business.update'"/>
+                <livewire:components.content.content-two-columns-text :name="'name'" :title="'Name'" :field="$business->name ?? ''" :modelId="$business->id" :modelRoute="'business.update-by-field'"/>
+                <livewire:components.content.content-two-columns-images :name="'logo_url'" :title="'Logo square'" :images="$business->getMedia('logo_url_sq')"/>
+                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->industry ?? ''" :modelId="$business->id" :modelRoute="'business.update-by-field'"/>
+                <livewire:components.content.content-two-columns-text :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? ''" :modelId="$business->id" :modelRoute="'business.update-by-field'"/>
+                <livewire:components.content.content-two-columns-text :title="'Industry'" :field="$business->business_name ?? ''" :modelId="$business->id" :modelRoute="'business.update-by-field'"/>
+                <livewire:components.content.content-two-columns-text :title="'RFC'" :field="$business->rfc ?? ''" :modelId="$business->id" :modelRoute="'business.update-by-field'"/>
                 {{--FISCAL DATA--}}
                 <livewire:components.content.content-header :title="'Fiscal Data'" :icon="'fad fa-tasks-alt'"/>
 

@@ -25,6 +25,9 @@ use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Stancl\Tenancy\Middleware\ScopeSessions;
 
+//Livewire
+use App\Http\Livewire\Components\Content\ContentTwoColumnsText;
+
 /*
 |--------------------------------------------------------------------------
 | Tenant Routes
@@ -50,6 +53,8 @@ Route::middleware([
     Route::resource('/business',BusinessController::class)->middleware('auth:web');
     Route::patch('/business',[BusinessController::class,'updateByField'])->middleware('auth:web')->name('business.update-by-field');
     Route::patch('/updateStpStatus/{business}', [BusinessController::class, 'updateStpStatus'])->name('business.stp');
+    Route::patch('/updateByField/{field}', [ContentTwoColumnsText::class, 'saveFields'])->name('business.update-by-field');
+
 
     Route::resource('/banks',BankController::class)->middleware('auth:web');
     Route::resource('/employee-list',EmployeeListController::class)->middleware('auth:web');

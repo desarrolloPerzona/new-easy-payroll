@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Components\Content;
 
+use App\Models\Tenant\Business;
+use Illuminate\Http\Request;
 use Livewire\Component;
 
 class ContentTwoColumnsText extends Component
@@ -19,5 +21,12 @@ class ContentTwoColumnsText extends Component
     public function render()
     {
         return view('livewire.components.content.content-two-columns-text');
+    }
+
+    public function saveFields(Request $request){
+
+        $business = Business::find($this->modelId);
+//        $business->
+
     }
 }

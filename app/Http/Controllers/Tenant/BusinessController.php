@@ -121,11 +121,13 @@ class BusinessController extends Controller
         return redirect()->route('business.index');
     }
 
-//    public function updateByField(Request $request)
-//    {
-//        $business = Business::find($request->id);
-//        $business->update([
-////TODO::terminar el metodo
-//        ]);
-//    }
+    public function saveFields(Request $request ,$businessId, $field)
+    {
+        $business = Business::find($businessId);
+
+        $business->$field = $request->$field;
+        $business->save();
+
+        return redirect()->back();
+    }
 }

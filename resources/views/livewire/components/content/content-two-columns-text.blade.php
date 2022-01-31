@@ -6,10 +6,10 @@
                     <span class="uppercase">{{$field}}</span>
                 @else
                 {{-- <a href="{{route($modelRoute,$modelId)}}" class="text-warning"><i class="fa fa-edit mr-2"></i></a>--}}
-                    <form action="{{route($modelRoute, $modelId) }}" method="POST">
+                    <form action="{{route($modelRoute, [$modelId, $name]) }}" method="POST">
                         @csrf
                         @method('PATCH')
-                        <input type="text" name="{{$name}}">
+                        <input type="text" name="{{$name}}" id="Aqui">
                         <button>{{__('Send')}}</button>
                     </form>
             @endif</div>

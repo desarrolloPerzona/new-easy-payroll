@@ -8,25 +8,19 @@ use Livewire\Component;
 
 class ContentTwoColumnsText extends Component
 {
-    public $title, $field, $modelId, $modelRoute;
+    public $title, $field, $modelId, $modelRoute, $name;
 
-    public function mount($title,$field,$modelRoute,$modelId){
+    public function mount($title,$field,$modelRoute,$modelId, $name){
 
         $this->title = $title;
         $this->field = $field;
         $this->modelId = $modelId;
         $this->modelRoute = $modelRoute;
+        $this->name = $name;
 
     }
     public function render()
     {
         return view('livewire.components.content.content-two-columns-text');
-    }
-
-    public function saveFields(Request $request){
-
-        $business = Business::find($this->modelId);
-//        $business->
-
     }
 }

@@ -12,47 +12,47 @@
                 <div class="flex-2"><i class="fas fa-chevron-circle-up"></i></div>
             </div>
 
-            <p class="pt-1">{{__('Valor de descuento Infonavit 2021')}}</p>
+            <p class="pt-1">{{__($discount_infonavit->name)}}</p>
 
             <div class="flex border-b-2">
                 <div class="flex-1 pb-2 text-gray-500">
                     Valor:
                 </div>
                 <div class="flex-1">
-                    87.21
+                    {{ $discount_infonavit->value }}
                 </div>
             </div>
 
-            <p class="pt-1">{{__('UMA')}}</p>
+            <p class="pt-1 uppercase">{{__($uma->name)}}</p>
 
             <div class="flex border-b-2">
                 <div class="flex-1 pb-2 text-gray-500">
                     Valor:
                 </div>
                 <div class="flex-1">
-                    89.62
+                    {{ $uma->value }}
                 </div>
             </div>
 
-            <p class="pt-1">{{__('Salario mínimo área genera')}}</p>
+            <p class="pt-1">{{__($minimum_salary_general->name)}}</p>
 
             <div class="flex border-b-2">
                 <div class="flex-1 pb-2 text-gray-500">
                     Valor:
                 </div>
                 <div class="flex-1">
-                    141.7
+                    {{ $minimum_salary_general->value }}
                 </div>
             </div>
 
-            <p class="pt-1">{{__('Salario mínimo zona libre de la frontera')}}</p>
+            <p class="pt-1">{{__($minimum_salary_border->name)}}</p>
 
             <div class="flex border-b-2">
                 <div class="flex-1 pb-2 text-gray-500">
                     Valor:
                 </div>
                 <div class="flex-1">
-                    213.4
+                    {{ $minimum_salary_border->value }}
                 </div>
             </div>
 

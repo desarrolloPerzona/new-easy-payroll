@@ -5,13 +5,13 @@
             <span style="display: inline-flex;">{{ __('Table and value') }}</span>
         </h2>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white" x-data="data()">
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
 
             <div class="flex">
                 <div class="flex-1"><h2 class="pb-3">Valores de referencia</h2></div>
                 <div class="flex-2">
-                    <i class="fas fa-chevron-circle-down cursor-pointer" data-bs-toggle="collapse"
-                                x-bind:class:="{'fa-chevron-circle-down' : 'fa-chevron-circle-up'}" x-on:click="isOpen()" href="#collapse_reference" role="button" aria-expanded="false" aria-controls="collapse_reference"></i>
+                    <i id="myButton" class="cursor-pointer fas fa-chevron-circle-down"  data-bs-toggle="collapse"
+                       href="#collapse_reference" role="button" aria-expanded="false" aria-controls="collapse_reference" onclick="arrow()"></i>
                 </div>
             </div>
             <div class="collapse" id="collapse_reference" >
@@ -317,15 +317,32 @@
 
     @push('inline_scripts')
         <script>
-            function data(){
-                return{
-                    open: false,
-                    // arrow: up;
-                    isOpen(){
-                        this.open = !this.open
-                    }
+
+            function arrow(){
+                let arrowButton = document.getElementById('myButton')
+                if(arrowButton.classList.contains('fa-chevron-circle-down')){
+                    arrowButton.classList.remove('fa-chevron-circle-down')
+                    arrowButton.classList.add('fa-chevron-circle-up')
+                } else if(arrowButton.classList.contains('fa-chevron-circle-up')){
+                    arrowButton.classList.remove('fa-chevron-circle-up')
+                    arrowButton.classList.add('fa-chevron-circle-down')
                 }
             }
+            arrow()
+            // function data(){
+            //     return{
+            //         open: false,
+            //         arrow: 'fa-chevron-circle-down',
+            //         isOpen(){
+            //             this.open = !this.open
+            //             if(this.open === false ){
+            //                 this.arrow = 'fa-chevron-circle-down'
+            //             } else{
+            //                 this.arrow = 'fa-chevron-circle-up'
+            //             }
+            //         }
+            //     }
+            // }
         </script>
     @endpush
 

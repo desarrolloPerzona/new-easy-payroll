@@ -5,15 +5,16 @@
             <span style="display: inline-flex;">{{ __('Table and value') }}</span>
         </h2>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white" x-data="data()">
 
             <div class="flex">
                 <div class="flex-1"><h2 class="pb-3">Valores de referencia</h2></div>
                 <div class="flex-2">
-                    <i class="fas fa-chevron-circle-up cursor-pointer" data-bs-toggle="collapse" href="#collapse_reference" role="button" aria-expanded="false" aria-controls="collapse_reference"></i>
+                    <i class="fas fa-chevron-circle-down cursor-pointer" data-bs-toggle="collapse"
+                                x-bind:class:="{'fa-chevron-circle-down' : 'fa-chevron-circle-up'}" x-on:click="isOpen()" href="#collapse_reference" role="button" aria-expanded="false" aria-controls="collapse_reference"></i>
                 </div>
             </div>
-            <div class="collapse" id="collapse_reference">
+            <div class="collapse" id="collapse_reference" >
                 <p class="pt-1">{{__($discount_infonavit->name)}}</p>
 
                 <div class="flex border-b-2">
@@ -313,5 +314,19 @@
         </div>
 
     </div>
+
+    @push('inline_scripts')
+        <script>
+            function data(){
+                return{
+                    open: false,
+                    // arrow: up;
+                    isOpen(){
+                        this.open = !this.open
+                    }
+                }
+            }
+        </script>
+    @endpush
 
 </x-app-tenant>

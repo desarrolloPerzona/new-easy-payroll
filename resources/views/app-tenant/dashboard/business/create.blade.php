@@ -4,7 +4,7 @@
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto ">
             <h2 class="py-3">{{__('Business')}}</h2>
-            <form action="{{route('business.store')}}" method="post">
+            <form action="{{route('business.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label class="form-label" for="name">{{__('name')}}</label>
@@ -18,18 +18,26 @@
                     <label class="form-label" for="rfc">{{__('RFC')}}</label>
                     <input class="form-control" type="text" id="rfc" name="rfc">
                 </div>
-                    <livewire:components.content.file-upload-pquina :name="'logo_url'"
-                                                                    :max-files="1"
-                                                                    :max-size="'3MB'"
-                                                                    :file-type="'image/jpeg'"
-                                                                    :allow-multiple="'true'"
-                                                                    :accept-files="''"
-                                                                    :attributes="''"
-                                                                    :label="'Logo'"
-                                                                    :upload-route="'uploadFiles'"
-                                                                    :icon="'fad fa-search'"
-                                                                    :spec="'Your image mus be 500 x 500 pixels'"
-                    />
+                <div class="form-group">
+                    <label class="form-label" for="rfc">{{__('Logo cuadrado')}}</label>
+                    <input type="file" name="logo_square_url" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="rfc">{{__('Logo largo')}}</label>
+                    <input type="file" name="logo_long_url" class="form-control">
+                </div>
+                {{-- <livewire:components.content.file-upload-pquina :name="'logo_url'"
+                                                                 :max-files="1"
+                                                                 :max-size="'3MB'"
+                                                                 :file-type="'image/jpeg'"
+                                                                 :allow-multiple="'true'"
+                                                                 :accept-files="''"
+                                                                 :attributes="''"
+                                                                 :label="'Logo'"
+                                                                 :upload-route="'uploadFiles'"
+                                                                 :icon="'fad fa-search'"
+                                                                 :spec="'Your image mus be 500 x 500 pixels'"
+                 />--}}
                 <div class="form-group">
                     <label class="form-label" for="industry">{{__('Industry')}}</label>
                     <select class="form-select mb-2" name="industry">
@@ -51,10 +59,10 @@
                 </div>
 
 
-              {{--  <div class="form-group">
-                    <label class="form-label" for="name">{{__('Business name')}}</label>
-                    <input class="form-control" type="text" id="name" name="Name">
-                </div>--}}
+                {{--  <div class="form-group">
+                      <label class="form-label" for="name">{{__('Business name')}}</label>
+                      <input class="form-control" type="text" id="name" name="Name">
+                  </div>--}}
 
                 <div class="btn-top-holder my-3 flow-root">
                     <button class="btn btn-primary" type="submit">  {{ __('Save') }}</button>

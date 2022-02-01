@@ -14,7 +14,6 @@ class UploadFilesController extends Controller
     public function store(Request $request)
     {
 
-
         $allReq = $request->all();
 
         /*Loop to store in db file and save data in temporary table*/
@@ -24,8 +23,6 @@ class UploadFilesController extends Controller
                 $filename = $file->getClientOriginalName();
                 $folder = uniqid() . '-' . now()->timestamp;
                 $file->storeAs('temp/' . $folder, $filename);
-
-
                 TemporaryFile::create([
                     'folder' => $folder,
                     'filename' => $filename

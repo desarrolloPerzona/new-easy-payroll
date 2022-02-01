@@ -13,7 +13,9 @@
                 {{--CONTENT TWO COLUMNS TEXT IMAGES AND ARRAYS--}}
                 <livewire:components.content.content-two-columns-text :name="'name'" :title="'Name'" :field="$business->name ?? ''" :modelId="$business->id" :modelRoute="'update-by-field'"/>
                 <livewire:components.content.content-two-columns-images :name="'logo_url'" :title="'Logo square'" :images="$business->getMedia('logo_url_sq')"/>
-                <livewire:components.content.content-two-columns-text :name="'industry'" :title="'Industry'" :field="$business->industry ?? ''" :modelId="$business->id" :modelRoute="'update-by-field'"/>
+
+                <livewire:components.content.content-select :selected-option="$business->fiscal_regime" :api-url-name="'fiscal-regimes-list'" :label="'Fiscal Regime'"/>
+
                 <livewire:components.content.content-two-columns-text :name="'fiscal_regime'" :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? ''" :modelId="$business->id" :modelRoute="'update-by-field'"/>
                 <livewire:components.content.content-two-columns-text :name="'industry'" :title="'Industry'" :field="$business->business_name ?? ''" :modelId="$business->id" :modelRoute="'update-by-field'"/>
                 <livewire:components.content.content-two-columns-text :name="'rfc'" :title="'RFC'" :field="$business->rfc ?? ''" :modelId="$business->id" :modelRoute="'update-by-field'"/>

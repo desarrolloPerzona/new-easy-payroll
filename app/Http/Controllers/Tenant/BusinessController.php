@@ -46,6 +46,9 @@ class BusinessController extends Controller
      */
     public function store(Business $business, Request $request)
     {
+        if($request->hasFile())
+        $logo_long = $request->file('logo_long_url');
+        $logo_square = $request->file('logo_square_url');
 
 
         $business = Business::create([

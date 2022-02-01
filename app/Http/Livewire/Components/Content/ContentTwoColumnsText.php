@@ -10,14 +10,13 @@ class ContentTwoColumnsText extends Component
 {
     public $title, $field, $modelId, $modelRoute, $name;
 
-    public function mount($title,$field,$modelRoute,$modelId, $name){
-
+    public function mount($title,$field,$modelRoute,$modelId, $name)
+    {
         $this->title = $title;
         $this->field = $field;
         $this->modelId = $modelId;
         $this->modelRoute = $modelRoute;
         $this->name = $name;
-
     }
     public function render()
     {

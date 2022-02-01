@@ -84,230 +84,431 @@
                 </div>
             </div>
 
-            <div id="collapse_retentions">
+            <div id="collapse_retentions" x-data="data()">
                 <ul class="nav nav-tabs w-full mb-4" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
+                        <a class="nav-link active tab-retention" id="daily-button" data-toggle="tab" href="#home" role="tab" x-on:click="changeTab('daily')">
                             <i class="now-ui-icons objects_umbrella-13"></i> Diaria
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
+                        <a class="nav-link tab-retention" id="weekly-button" data-toggle="tab" href="#profile" role="tab" x-on:click="changeTab('weekly')">
                             <i class="now-ui-icons shopping_cart-simple"></i> Semanal
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
+                        <a class="nav-link tab-retention" id="ten-days-button" data-toggle="tab" href="#messages" role="tab" x-on:click="changeTab('ten-days')">
                             <i class="now-ui-icons shopping_shop"></i> Decenal
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+                        <a class="nav-link tab-retention" id="biweekly-button" data-toggle="tab" href="#settings" role="tab" x-on:click="changeTab('biweekly')">
                             <i class="now-ui-icons ui-2_settings-90"></i> Quincenal
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#settings" role="tab">
+                        <a class="nav-link tab-retention" id="monthly-button" data-toggle="tab" href="#settings" role="tab" x-on:click="changeTab('monthly')">
                             <i class="now-ui-icons ui-2_settings-90"></i> Mensual
                         </a>
                     </li>
                 </ul>
 
+{{--                Daily table--}}
+                <div class="d-none">
+                    <div class="flex border-b-2">
+                        <div class="flex-1 font-bold pb-2">
+                            Límite inferior
+                        </div>
+                        <div class="flex-1 font-bold">
+                            Límite superior
+                        </div>
+                        <div class="flex-1 font-bold">
+                            Cuota fija
+                        </div>
+                        <div class="flex-1 font-bold">
+                            Excedentes %
+                        </div>
+                    </div>
 
-                <div class="flex border-b-2">
-                    <div class="flex-1 font-bold pb-2">
-                        Límite inferior
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            0.01
+                        </div>
+                        <div class="flex-1">
+                            296.85
+                        </div>
+                        <div class="flex-1">
+                            0
+                        </div>
+                        <div class="flex-1">
+                            1.92
+                        </div>
                     </div>
-                    <div class="flex-1 font-bold">
-                        Límite superior
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            296,86
+                        </div>
+                        <div class="flex-1">
+                            2,519.5
+                        </div>
+                        <div class="flex-1">
+                            5.7
+                        </div>
+                        <div class="flex-1">
+                            6.7
+                        </div>
                     </div>
-                    <div class="flex-1 font-bold">
-                        Cuota fija
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            2,519,51
+                        </div>
+                        <div class="flex-1">
+                            4,427.8
+                        </div>
+                        <div class="flex-1">
+                            147.95
+                        </div>
+                        <div class="flex-1">
+                            10.88
+                        </div>
                     </div>
-                    <div class="flex-1 font-bold">
-                        Excedentes %
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            4,427.81
+                        </div>
+                        <div class="flex-1">
+                            5,147.13
+                        </div>
+                        <div class="flex-1">
+                            355.57
+                        </div>
+                        <div class="flex-1">
+                            16
+                        </div>
+                    </div>
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            5,147.14
+                        </div>
+                        <div class="flex-1">
+                            6,162.52
+                        </div>
+                        <div class="flex-1">
+                            470.66
+                        </div>
+                        <div class="flex-1">
+                            17.92
+                        </div>
+                    </div>
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            0.01
+                        </div>
+                        <div class="flex-1">
+                            296.85
+                        </div>
+                        <div class="flex-1">
+                            0
+                        </div>
+                        <div class="flex-1">
+                            1.92
+                        </div>
+                    </div>
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            6,162.53
+                        </div>
+                        <div class="flex-1">
+                            14,428.91
+                        </div>
+                        <div class="flex-1">
+                            625.62
+                        </div>
+                        <div class="flex-1">
+                            21.36
+                        </div>
+                    </div>
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            14,428.92
+                        </div>
+                        <div class="flex-1">
+                            19,589.68
+                        </div>
+                        <div class="flex-1">
+                            1,991.12
+                        </div>
+                        <div class="flex-1">
+                            23.52
+                        </div>
+                    </div>
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            19,589.69
+                        </div>
+                        <div class="flex-1">
+                            37,399.92
+                        </div>
+                        <div class="flex-1">
+                            3,675.34
+                        </div>
+                        <div class="flex-1">
+                            30
+                        </div>
+                    </div>
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            37,399.93
+                        </div>
+                        <div class="flex-1">
+                            49,866.26
+                        </div>
+                        <div class="flex-1">
+                            9,018.41
+                        </div>
+                        <div class="flex-1">
+                            32
+                        </div>
+                    </div>
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            49,866.27
+                        </div>
+                        <div class="flex-1">
+                            149,599.68
+                        </div>
+                        <div class="flex-1">
+                            13,007.73
+                        </div>
+                        <div class="flex-1">
+                            34
+                        </div>
+                    </div>
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            149,599.69
+                        </div>
+                        <div class="flex-1">
+                            En adelante
+                        </div>
+                        <div class="flex-1">
+                            46,916.99
+                        </div>
+                        <div class="flex-1">
+                            35
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
-                    <div class="flex-1">
-                        0.01
+{{--                Weekly table--}}
+                <div>
+                    <div class="flex border-b-2">
+                        <div class="flex-1 font-bold pb-2">
+                            Límite inferior semanal
+                        </div>
+                        <div class="flex-1 font-bold">
+                            Límite superior semanal
+                        </div>
+                        <div class="flex-1 font-bold">
+                            Cuota fija semanal
+                        </div>
+                        <div class="flex-1 font-bold">
+                            Excedentes % semanal
+                        </div>
                     </div>
-                    <div class="flex-1">
-                        296.85
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            0.01
+                        </div>
+                        <div class="flex-1">
+                            296.85
+                        </div>
+                        <div class="flex-1">
+                            0
+                        </div>
+                        <div class="flex-1">
+                            1.92
+                        </div>
                     </div>
-                    <div class="flex-1">
-                        0
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            296,86
+                        </div>
+                        <div class="flex-1">
+                            2,519.5
+                        </div>
+                        <div class="flex-1">
+                            5.7
+                        </div>
+                        <div class="flex-1">
+                            6.7
+                        </div>
                     </div>
-                    <div class="flex-1">
-                        1.92
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            2,519,51
+                        </div>
+                        <div class="flex-1">
+                            4,427.8
+                        </div>
+                        <div class="flex-1">
+                            147.95
+                        </div>
+                        <div class="flex-1">
+                            10.88
+                        </div>
+                    </div>
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            4,427.81
+                        </div>
+                        <div class="flex-1">
+                            5,147.13
+                        </div>
+                        <div class="flex-1">
+                            355.57
+                        </div>
+                        <div class="flex-1">
+                            16
+                        </div>
+                    </div>
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            5,147.14
+                        </div>
+                        <div class="flex-1">
+                            6,162.52
+                        </div>
+                        <div class="flex-1">
+                            470.66
+                        </div>
+                        <div class="flex-1">
+                            17.92
+                        </div>
+                    </div>
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            0.01
+                        </div>
+                        <div class="flex-1">
+                            296.85
+                        </div>
+                        <div class="flex-1">
+                            0
+                        </div>
+                        <div class="flex-1">
+                            1.92
+                        </div>
+                    </div>
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            6,162.53
+                        </div>
+                        <div class="flex-1">
+                            14,428.91
+                        </div>
+                        <div class="flex-1">
+                            625.62
+                        </div>
+                        <div class="flex-1">
+                            21.36
+                        </div>
+                    </div>
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            14,428.92
+                        </div>
+                        <div class="flex-1">
+                            19,589.68
+                        </div>
+                        <div class="flex-1">
+                            1,991.12
+                        </div>
+                        <div class="flex-1">
+                            23.52
+                        </div>
+                    </div>
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            19,589.69
+                        </div>
+                        <div class="flex-1">
+                            37,399.92
+                        </div>
+                        <div class="flex-1">
+                            3,675.34
+                        </div>
+                        <div class="flex-1">
+                            30
+                        </div>
+                    </div>
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            37,399.93
+                        </div>
+                        <div class="flex-1">
+                            49,866.26
+                        </div>
+                        <div class="flex-1">
+                            9,018.41
+                        </div>
+                        <div class="flex-1">
+                            32
+                        </div>
+                    </div>
+
+                    <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
+                        <div class="flex-1">
+                            49,866.27
+                        </div>
+                        <div class="flex-1">
+                            149,599.68
+                        </div>
+                        <div class="flex-1">
+                            13,007.73
+                        </div>
+                        <div class="flex-1">
+                            34
+                        </div>
+                    </div>
+
+                    <div class="flex p-1">
+                        <div class="flex-1">
+                            149,599.69
+                        </div>
+                        <div class="flex-1">
+                            En adelante
+                        </div>
+                        <div class="flex-1">
+                            46,916.99
+                        </div>
+                        <div class="flex-1">
+                            35
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex p-1">
-                    <div class="flex-1">
-                        296,86
-                    </div>
-                    <div class="flex-1">
-                        2,519.5
-                    </div>
-                    <div class="flex-1">
-                        5.7
-                    </div>
-                    <div class="flex-1">
-                        6.7
-                    </div>
-                </div>
-
-                <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
-                    <div class="flex-1">
-                        2,519,51
-                    </div>
-                    <div class="flex-1">
-                        4,427.8
-                    </div>
-                    <div class="flex-1">
-                        147.95
-                    </div>
-                    <div class="flex-1">
-                        10.88
-                    </div>
-                </div>
-
-                <div class="flex p-1">
-                    <div class="flex-1">
-                        4,427.81
-                    </div>
-                    <div class="flex-1">
-                        5,147.13
-                    </div>
-                    <div class="flex-1">
-                        355.57
-                    </div>
-                    <div class="flex-1">
-                        16
-                    </div>
-                </div>
-
-                <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
-                    <div class="flex-1">
-                        5,147.14
-                    </div>
-                    <div class="flex-1">
-                        6,162.52
-                    </div>
-                    <div class="flex-1">
-                        470.66
-                    </div>
-                    <div class="flex-1">
-                        17.92
-                    </div>
-                </div>
-
-                <div class="flex p-1">
-                    <div class="flex-1">
-                        0.01
-                    </div>
-                    <div class="flex-1">
-                        296.85
-                    </div>
-                    <div class="flex-1">
-                        0
-                    </div>
-                    <div class="flex-1">
-                        1.92
-                    </div>
-                </div>
-
-                <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
-                    <div class="flex-1">
-                        6,162.53
-                    </div>
-                    <div class="flex-1">
-                        14,428.91
-                    </div>
-                    <div class="flex-1">
-                        625.62
-                    </div>
-                    <div class="flex-1">
-                        21.36
-                    </div>
-                </div>
-
-                <div class="flex p-1">
-                    <div class="flex-1">
-                        14,428.92
-                    </div>
-                    <div class="flex-1">
-                        19,589.68
-                    </div>
-                    <div class="flex-1">
-                        1,991.12
-                    </div>
-                    <div class="flex-1">
-                        23.52
-                    </div>
-                </div>
-
-                <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
-                    <div class="flex-1">
-                        19,589.69
-                    </div>
-                    <div class="flex-1">
-                        37,399.92
-                    </div>
-                    <div class="flex-1">
-                        3,675.34
-                    </div>
-                    <div class="flex-1">
-                        30
-                    </div>
-                </div>
-
-                <div class="flex p-1">
-                    <div class="flex-1">
-                        37,399.93
-                    </div>
-                    <div class="flex-1">
-                        49,866.26
-                    </div>
-                    <div class="flex-1">
-                        9,018.41
-                    </div>
-                    <div class="flex-1">
-                        32
-                    </div>
-                </div>
-
-                <div class="flex bg-gray-200 p-1 dark:bg-dark dark:text-white">
-                    <div class="flex-1">
-                        49,866.27
-                    </div>
-                    <div class="flex-1">
-                        149,599.68
-                    </div>
-                    <div class="flex-1">
-                        13,007.73
-                    </div>
-                    <div class="flex-1">
-                        34
-                    </div>
-                </div>
-
-                <div class="flex p-1">
-                    <div class="flex-1">
-                        149,599.69
-                    </div>
-                    <div class="flex-1">
-                        En adelante
-                    </div>
-                    <div class="flex-1">
-                        46,916.99
-                    </div>
-                    <div class="flex-1">
-                        35
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -330,6 +531,8 @@
 
     @push('inline_scripts')
         <script>
+
+            // Function to collapse tables with effect
             $( "#reference_button" ).click(function() {
                 $( "#collapse_reference" ).slideToggle(function() {
                     let arrow1 = document.getElementById('reference_icon')
@@ -343,6 +546,7 @@
                 });
             });
 
+            // Function to collapse tables with effect
             $( "#retentions_button" ).click(function() {
                 $( "#collapse_retentions" ).slideToggle(function() {
                     let arrow1 = document.getElementById('retentions_icon')
@@ -356,6 +560,23 @@
                 });
             });
 
+            // Alpine function to change between tabs
+            function data(){
+                return{
+                    changeTab(button){
+                        let retentionsButton = document.getElementById(`${button}-button`);
+                        let retentionTabs = document.querySelectorAll('.tab-retention')
+
+                        // Change all active classes to the othew tabs and added only the clicked button, active class.
+                        if(!retentionsButton.classList.contains('active')){
+                            retentionTabs.forEach(item => {
+                                console.log(item.classList.remove('active'))
+                            })
+                            retentionsButton.classList.add('active')
+                        }
+                    }
+                }
+            }
 
         </script>
     @endpush

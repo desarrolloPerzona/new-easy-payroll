@@ -87,27 +87,27 @@
             <div id="collapse_retentions" x-data="data()">
                 <ul class="nav nav-tabs w-full mb-4" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active tab-retention" id="daily-button" data-toggle="tab" href="#home" role="tab" x-on:click="changeTab('daily')">
+                        <a class="nav-link active tab-retention cursor-pointer" id="daily-button" x-on:click="changeTab('daily')">
                             <i class="now-ui-icons objects_umbrella-13"></i> Diaria
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tab-retention" id="weekly-button" data-toggle="tab" href="#profile" role="tab" x-on:click="changeTab('weekly')">
+                        <a class="nav-link tab-retention cursor-pointer" id="weekly-button" x-on:click="changeTab('weekly')">
                             <i class="now-ui-icons shopping_cart-simple"></i> Semanal
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tab-retention" id="ten-days-button" data-toggle="tab" href="#messages" role="tab" x-on:click="changeTab('ten-days')">
+                        <a class="nav-link tab-retention cursor-pointer" id="ten-days-button" x-on:click="changeTab('ten-days')">
                             <i class="now-ui-icons shopping_shop"></i> Decenal
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tab-retention" id="biweekly-button" data-toggle="tab" href="#settings" role="tab" x-on:click="changeTab('biweekly')">
+                        <a class="nav-link tab-retention cursor-pointer" id="biweekly-button" x-on:click="changeTab('biweekly')">
                             <i class="now-ui-icons ui-2_settings-90"></i> Quincenal
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tab-retention" id="monthly-button" data-toggle="tab" href="#settings" role="tab" x-on:click="changeTab('monthly')">
+                        <a class="nav-link tab-retention cursor-pointer" id="monthly-button" x-on:click="changeTab('monthly')">
                             <i class="now-ui-icons ui-2_settings-90"></i> Mensual
                         </a>
                     </li>

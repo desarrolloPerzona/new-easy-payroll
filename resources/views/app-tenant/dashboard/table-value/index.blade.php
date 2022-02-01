@@ -8,51 +8,54 @@
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
                 <div class="flex-1"><h2 class="pb-3">Valores de referencia</h2></div>
-
-                <div class="flex-2"><i class="fas fa-chevron-circle-up"></i></div>
-            </div>
-
-            <p class="pt-1">{{__($discount_infonavit->name)}}</p>
-
-            <div class="flex border-b-2">
-                <div class="flex-1 pb-2 text-gray-500">
-                    Valor:
-                </div>
-                <div class="flex-1">
-                    {{ $discount_infonavit->value }}
+                <div class="flex-2">
+                    <i class="fas fa-chevron-circle-up cursor-pointer" data-bs-toggle="collapse" href="#collapse_reference" role="button" aria-expanded="false" aria-controls="collapse_reference"></i>
                 </div>
             </div>
 
-            <p class="pt-1 uppercase">{{__($uma->name)}}</p>
+            <div class="collapse" id="collapse_reference">
+                <p class="pt-1">{{__($discount_infonavit->name)}}</p>
 
-            <div class="flex border-b-2">
-                <div class="flex-1 pb-2 text-gray-500">
-                    Valor:
+                <div class="flex border-b-2">
+                    <div class="flex-1 pb-2 text-gray-500">
+                        Valor:
+                    </div>
+                    <div class="flex-1">
+                        {{ $discount_infonavit->value }}
+                    </div>
                 </div>
-                <div class="flex-1">
-                    {{ $uma->value }}
-                </div>
-            </div>
 
-            <p class="pt-1">{{__($minimum_salary_general->name)}}</p>
+                <p class="pt-1 uppercase">{{__($uma->name)}}</p>
 
-            <div class="flex border-b-2">
-                <div class="flex-1 pb-2 text-gray-500">
-                    Valor:
+                <div class="flex border-b-2">
+                    <div class="flex-1 pb-2 text-gray-500">
+                        Valor:
+                    </div>
+                    <div class="flex-1">
+                        {{ $uma->value }}
+                    </div>
                 </div>
-                <div class="flex-1">
-                    {{ $minimum_salary_general->value }}
-                </div>
-            </div>
 
-            <p class="pt-1">{{__($minimum_salary_border->name)}}</p>
+                <p class="pt-1">{{__($minimum_salary_general->name)}}</p>
 
-            <div class="flex border-b-2">
-                <div class="flex-1 pb-2 text-gray-500">
-                    Valor:
+                <div class="flex border-b-2">
+                    <div class="flex-1 pb-2 text-gray-500">
+                        Valor:
+                    </div>
+                    <div class="flex-1">
+                        {{ $minimum_salary_general->value }}
+                    </div>
                 </div>
-                <div class="flex-1">
-                    {{ $minimum_salary_border->value }}
+
+                <p class="pt-1">{{__($minimum_salary_border->name)}}</p>
+
+                <div class="flex border-b-2">
+                    <div class="flex-1 pb-2 text-gray-500">
+                        Valor:
+                    </div>
+                    <div class="flex-1">
+                        {{ $minimum_salary_border->value }}
+                    </div>
                 </div>
             </div>
 

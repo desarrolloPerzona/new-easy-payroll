@@ -64,7 +64,7 @@
             </div>
 
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Juan Perez</div>
                 <div class="w-2/12 w-full text-center">0236</div>
@@ -80,7 +80,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Oscar Fernandez</div>
                 <div class="w-2/12 w-full text-center">2369</div>
@@ -96,7 +96,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Alejandro Ortiz</div>
                 <div class="w-2/12 w-full text-center">0123</div>
@@ -112,7 +112,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Luis Ortiz</div>
                 <div class="w-2/12 w-full text-center">1523</div>
@@ -128,7 +128,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Hector Ponce</div>
                 <div class="w-2/12 w-full text-center">8963</div>
@@ -144,7 +144,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Fernando Augusto</div>
                 <div class="w-2/12 w-full text-center">1256</div>
@@ -160,7 +160,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Alex Vaught</div>
                 <div class="w-2/12 w-full text-center">0905</div>
@@ -176,7 +176,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Juan Perez</div>
                 <div class="w-2/12 w-full text-center">0236</div>
@@ -192,7 +192,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Elena Flores</div>
                 <div class="w-2/12 w-full text-center">0458</div>
@@ -208,7 +208,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Alejandra Gutierrez</div>
                 <div class="w-2/12 w-full text-center">2812</div>
@@ -224,7 +224,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Elena Perez</div>
                 <div class="w-2/12 w-full text-center">0362</div>
@@ -240,7 +240,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Pablo Bremea</div>
                 <div class="w-2/12 w-full text-center">0874</div>
@@ -256,7 +256,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Eduardo Ortega</div>
                 <div class="w-2/12 w-full text-center">1258</div>
@@ -272,7 +272,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Hector Gutierres</div>
                 <div class="w-2/12 w-full text-center">0852</div>
@@ -288,7 +288,7 @@
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>
             <div class=" my-2 flex">
-                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/user.png" alt="">
+                <div class="w-1/12 w-full text-center"><img class="w-8 m-auto" src="/assets/images/avatar/user.jpg" alt="">
                 </div>
                 <div class="w-2/12 w-full text-center">Juan Perez</div>
                 <div class="w-2/12 w-full text-center">0236</div>

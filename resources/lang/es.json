@@ -885,5 +885,10 @@
     "Do you requiere STP?": "Utilizar cuenta STP para dispersión de nómina",
     "Add FIEL data": "Agregar datos FIEL",
     "Add digital seal data": "Agregar datos de sello digital",
-    "Private Key Password:": "Contraseña de clave privada:"
+    "Private Key Password:": "Contraseña de clave privada:",
+    "Actives": "Activos",
+    "Inactives": "Bajas",
+    "Filter by area": "Filtrar por área",
+    "Filter by branch": "Filtrar por sede",
+    "Who do you want to look for": "A quien quieres buscar"
 }

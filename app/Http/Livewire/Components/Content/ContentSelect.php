@@ -7,11 +7,12 @@ use Livewire\Component;
 
 class ContentSelect extends Component
 {
-    public $selectedOption, $apiUrlName, $items, $label;
+    public $selectedOption, $apiUrlName, $items, $label, $name;
 
-    public function mount($selectedOption, $apiUrlName, $label)
+    public function mount($selectedOption, $apiUrlName, $label,$name)
     {
         $this->selectedOption = $selectedOption;
+        $this->name = $name;
         $this->label = $label;
         $client = new Client();
         $url = "https://perzona-dev.net/api/" . $apiUrlName;
@@ -22,6 +23,11 @@ class ContentSelect extends Component
 
     }
 
+
+    public function create(){
+dd('madres');
+
+    }
 
     public function render()
     {

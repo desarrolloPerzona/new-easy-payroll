@@ -17,6 +17,7 @@
             <span style="display: inline-flex;">{{ __('Table and value') }}</span>
         </h2>
 
+{{--        References values--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
 
             <div class="flex">
@@ -74,6 +75,7 @@
             </div>
         </div>
 
+{{--        Periodic retentions--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
                 <div class="flex-1">
@@ -1108,6 +1110,7 @@
             </div>
         </div>
 
+{{--        Periodic Tables--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
                 <div class="flex-1">  <h2 class="pb-3">Tablas periódicas a subsidio</h2></div>
@@ -1115,6 +1118,7 @@
             </div>
         </div>
 
+{{--        Taxes tables--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
                 <div class="flex-1">  <h2 class="pb-3">Tablas de impuesto sobre nómina</h2></div>

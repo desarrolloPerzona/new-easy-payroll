@@ -15,37 +15,54 @@ class ReferenceValueSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('reference_values')->insert(
-            array(
+        DB::table('reference_values')->insert([
+
+//            2021 Reference values
+            [
                 'name' => 'Valor de descuento Infonavit 2021',
                 'value' => '87.21',
                 'year' => 2021,
                 'created_at' => now()
-            )
-        );
-        DB::table('reference_values')->insert(
-            array(
+            ],[
                 'name' => 'UMA',
                 'value' => '89.62',
                 'year' => 2021,
                 'created_at' => now()
-            )
-        );
-        DB::table('reference_values')->insert(
-            array(
-                'name' => 'Salario mínimo área genera',
+            ],[
+                'name' => 'Salario mínimo área general',
                 'value' => '141.7',
                 'year' => 2021,
                 'created_at' => now()
-            )
-        );
-        DB::table('reference_values')->insert(
-            array(
+            ],[
                 'name' => 'Salario mínimo zona libre de la frontera',
                 'value' => '213.4',
                 'year' => 2021,
                 'created_at' => now()
-            )
-        );
+            ],
+
+//            2022 Reference values
+            [
+                'name' => 'Valor de descuento Infonavit 2022',
+                'value' => '91.56',
+                'year' => 2022,
+                'created_at' => now()
+            ],[
+                'name' => 'UMA',
+                'value' => '96.22',
+                'year' => 2022,
+                'created_at' => now()
+            ],[
+                'name' => 'Salario mínimo área general',
+                'value' => '172.87',
+                'year' => 2022,
+                'created_at' => now()
+            ],[
+                'name' => 'Salario mínimo zona libre de la frontera',
+                'value' => '260.34',
+                'year' => 2022,
+                'created_at' => now()
+            ]
+
+        ]);
     }
 }

@@ -1,10 +1,11 @@
 <x-app-tenant>
     @push('inline_css')
+
         <style>
-            #collapse_reference{
+            #collapse-reference{
                 display: none;
             }
-            #collapse_retentions{
+            #collapse-retentions{
                 display: none;
             }
 
@@ -12,6 +13,8 @@
 
     @endpush
     <div class="container">
+
+{{--        Values header--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
             <i class="fak fa-admin-perzona mr-2"></i>
             <span style="display: inline-flex;">{{ __('Table and value') }}</span>
@@ -22,13 +25,13 @@
 
             <div class="flex">
                 <div class="flex-1"><h2 class="pb-3">Valores de referencia</h2></div>
-                <div class="flex-2">
-                    <div id="reference_button">
-                        <i id="reference_icon" class="cursor-pointer fas fa-chevron-circle-down"></i>
+                <div class="flex-2" onclick="arrowClick('reference')">
+                    <div id="reference-button">
+                        <i id="reference-icon" class="cursor-pointer fas fa-chevron-circle-down"></i>
                     </div>
                 </div>
             </div>
-            <div class="prueba" id="collapse_reference">
+            <div class="prueba" id="collapse-reference">
                 <p class="pt-1">{{__($discount_infonavit->name)}}</p>
 
                 <div class="flex border-b-2">
@@ -82,13 +85,13 @@
                     <h2 class="pb-3">Retenciones periódicas de ISR:</h2>
                 </div>
                 <div class="flex-2">
-                    <div id="retentions_button">
-                        <i id="retentions_icon" class="fas fa-chevron-circle-down cursor-pointer"></i>
+                    <div id="retentions-button" onclick="arrowClick('retentions')">
+                        <i id="retentions-icon" class="fas fa-chevron-circle-down cursor-pointer"></i>
                     </div>
                 </div>
             </div>
 
-            <div id="collapse_retentions" x-data="data()">
+            <div id="collapse-retentions" x-data="data()">
                 <ul class="nav nav-tabs w-full mb-4" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active tab-retention cursor-pointer bg-primary text-white" id="daily-button" x-on:click="changeTab('daily')">
@@ -1132,33 +1135,19 @@
     @push('inline_scripts')
         <script>
 
-            // Function to collapse tables with effect
-            $( "#reference_button" ).click(function() {
-                $( "#collapse_reference" ).slideToggle(function() {
-                    let arrow1 = document.getElementById('reference_icon')
-                    if (document.getElementById('reference_icon').classList.contains('fa-chevron-circle-down')){
-                        arrow1.classList.remove('fa-chevron-circle-down')
-                        arrow1.classList.add('fa-chevron-circle-up')
+            // Function to collapse tables with effect and changeing arrow icon
+            const arrowClick = (name) => {
+                $("#collapse-" + name).slideToggle(function() {
+                    let arrowButton = document.getElementById(`${name}-icon`)
+                    if (arrowButton.classList.contains('fa-chevron-circle-down')){
+                        arrowButton.classList.remove('fa-chevron-circle-down')
+                        arrowButton.classList.add('fa-chevron-circle-up')
                     } else{
-                        arrow1.classList.remove('fa-chevron-circle-up')
-                        arrow1.classList.add('fa-chevron-circle-down')
+                        arrowButton.classList.remove('fa-chevron-circle-up')
+                        arrowButton.classList.add('fa-chevron-circle-down')
                     }
                 });
-            });
-
-            // Function to collapse tables with effect
-            $( "#retentions_button" ).click(function() {
-                $( "#collapse_retentions" ).slideToggle(function() {
-                    let arrow1 = document.getElementById('retentions_icon')
-                    if (document.getElementById('retentions_icon').classList.contains('fa-chevron-circle-down')){
-                        arrow1.classList.remove('fa-chevron-circle-down')
-                        arrow1.classList.add('fa-chevron-circle-up')
-                    } else{
-                        arrow1.classList.remove('fa-chevron-circle-up')
-                        arrow1.classList.add('fa-chevron-circle-down')
-                    }
-                });
-            });
+            }
 
             // Alpine function to change between tabs
             function data(){

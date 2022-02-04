@@ -28,8 +28,9 @@ class IsrMonthlyRetentionSeeder extends Seeder
             array(81211.26, 108281.67, 19582.83, 32.00),
             array(108281.68, 324845.01, 28245.36, 34.00),
             array(324845.02, 999999, 101876.90, 35.00),
-            
+
         );
+        //        2021
         // Inserting data for each element of weeklyArray
         foreach ($weeklyArray as $element) {
             DB::table('isr_monthly_retentions')->insert([
@@ -43,6 +44,21 @@ class IsrMonthlyRetentionSeeder extends Seeder
                     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
                 ]
             ]);
-        };
+        }
+        //        2022
+        // Inserting data for each element of weeklyArray
+        foreach ($weeklyArray as $element) {
+            DB::table('isr_monthly_retentions')->insert([
+                [
+                    'lower_limit' => $element[0],
+                    'upper_limit' => $element[1],
+                    'fixed_feed' => $element[2],
+                    'percentage_excess_to_lower_limit' => $element[3],
+                    'year' => 2022,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ]
+            ]);
+        }
     }
 }

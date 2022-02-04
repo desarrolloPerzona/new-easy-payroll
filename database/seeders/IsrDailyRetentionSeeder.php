@@ -16,6 +16,7 @@ class IsrDailyRetentionSeeder extends Seeder
     public function run()
     {
 
+        //        2021 && 2022 values
         // filling array with Monthly table data
         $dailyArray = array(
             array(0.01, 21.2, 0.00, 1.92),
@@ -31,6 +32,8 @@ class IsrDailyRetentionSeeder extends Seeder
             array(10685.70, 999999, 3351.21, 35.00),
 
         );
+
+        //        2021
         // Inserting data for each element of dailyArray
         foreach ($dailyArray as $element) {
             DB::table('isr_daily_retentions')->insert([
@@ -45,6 +48,7 @@ class IsrDailyRetentionSeeder extends Seeder
                 ]
             ]);
         }
+        //        2022
         // Inserting data for each element of dailyArray
         foreach ($dailyArray as $element) {
             DB::table('isr_daily_retentions')->insert([

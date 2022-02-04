@@ -15,107 +15,52 @@ class IsrWeeklyRetentionSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('isr_weekly_retentions')->insert([
-            [
-                'lower_limit' => 0.01,
-                'upper_limit' => 148.40,
-                'fixed_feed' => 0.00,
-                'percentage_excess_to_lower_limit' => 1.92,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'lower_limit' => 148.41,
-                'upper_limit' => 1259.72,
-                'fixed_feed' => 2.87,
-                'percentage_excess_to_lower_limit' => 6.40,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'lower_limit' => 1259.73,
-                'upper_limit' => 2213.89,
-                'fixed_feed' => 73.99,
-                'percentage_excess_to_lower_limit' => 10.88,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'lower_limit' => 2213.90,
-                'upper_limit' => 2573.55,
-                'fixed_feed' => 177.8,
-                'percentage_excess_to_lower_limit' => 16.00,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'lower_limit' => 2573.56,
-                'upper_limit' => 3081.26,
-                'fixed_feed' => 235.34,
-                'percentage_excess_to_lower_limit' => 17.92,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'lower_limit' => 3081.27,
-                'upper_limit' => 6214.46,
-                'fixed_feed' => 326.34,
-                'percentage_excess_to_lower_limit' => 21.36,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'lower_limit' => 6214.47,
-                'upper_limit' => 9794.82,
-                'fixed_feed' => 995.54,
-                'percentage_excess_to_lower_limit' => 23.52,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'lower_limit' => 9794.83,
-                'upper_limit' => 18699.94,
-                'fixed_feed' => 1837.64,
-                'percentage_excess_to_lower_limit' => 30.00,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'lower_limit' => 18699.95,
-                'upper_limit' => 24933.30,
-                'fixed_feed' => 4509.19,
-                'percentage_excess_to_lower_limit' => 32.00,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'lower_limit' => 24933.31,
-                'upper_limit' => 74799.83,
-                'fixed_feed' => 6503.84,
-                'percentage_excess_to_lower_limit' => 34.00,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
-            [
-                'lower_limit' => 74799.84,
-                'upper_limit' => 999999,
-                'fixed_feed' => 23458.47,
-                'percentage_excess_to_lower_limit' => 35.00,
-                'year' => 2021,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-            ],
+        //        2021 and 2022 values
+        // filling array with Weekly table data
+        $weeklyArray = array(
+            array(0.01, 148.4, 0.00, 1.92),
+            array(148.41, 1259.72, 2.87, 6.40),
+            array(1259.73, 2213.89, 73.99, 10.88),
+            array(2213.90, 2573.55, 177.8, 16.00),
+            array(2573.56, 3081.26, 235.34, 17.92),
+            array(3081.27, 6214.46, 326.34, 21.36),
+            array(6214.47, 9794.82, 995.54, 23.52),
+            array(9794.83, 18699.94, 1837.64, 30.00),
+            array(18699.95, 24933.30, 4509.19, 32.00),
+            array(24933.31, 74799.83, 6503.84, 34.00),
+            array(74799.84, 999999, 23458.47, 35.00),
+        );
 
-        ]);
+        //        2021
+        // Inserting data for each element of weeklyArray
+        foreach ($weeklyArray as $element) {
+            DB::table('isr_weekly_retentions')->insert([
+                [
+                    'lower_limit' => $element[0],
+                    'upper_limit' => $element[1],
+                    'fixed_feed' => $element[2],
+                    'percentage_excess_to_lower_limit' => $element[3],
+                    'year' => 2021,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ]
+            ]);
+        }
+
+        //        2022
+        // Inserting data for each element of weeklyArray
+        foreach ($weeklyArray as $element) {
+            DB::table('isr_weekly_retentions')->insert([
+                [
+                    'lower_limit' => $element[0],
+                    'upper_limit' => $element[1],
+                    'fixed_feed' => $element[2],
+                    'percentage_excess_to_lower_limit' => $element[3],
+                    'year' => 2022,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+                ]
+            ]);
+        }
     }
 }

@@ -38,8 +38,13 @@ class TableValueController extends Controller
         $api_responseWeeklyR = Http::get($appUrl . 'api/isr-weekly-retentions');
         $weeklyRetentions = json_decode($api_responseWeeklyR->body());
 
+
+//        Weekly Retentions ISR
+        $api_responseTenDaysR = Http::get($appUrl . 'api/isr-ten-days-retentions');
+        $tenDaysRetentions = json_decode($api_responseTenDaysR->body());
+
         return view('app-tenant.dashboard.table-value.index', compact('discount_infonavit', 'uma','minimum_salary_general', 'minimum_salary_border',
-                                                                            'dailyRetentions', 'weeklyRetentions'));
+                                                                            'dailyRetentions', 'weeklyRetentions', 'tenDaysRetentions'));
     }
 
     /**

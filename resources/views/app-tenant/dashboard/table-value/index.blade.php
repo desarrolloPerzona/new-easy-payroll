@@ -126,10 +126,10 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">{{__('Límite inferior Diaria')}}</th>
-                                <th scope="col">{{__('Límite superior Diaria')}}</th>
-                                <th scope="col">{{__('Cuota fija Diaria')}}</th>
-                                <th scope="col">{{__('Excedentes % Diaria')}}</th>
+                                <th scope="col">{{__('Límite inferior')}}</th>
+                                <th scope="col">{{__('Límite superior')}}</th>
+                                <th scope="col">{{__('Cuota fija')}}</th>
+                                <th scope="col">{{__('Excedentes %')}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -151,10 +151,10 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior Diaria')}}</th>
-                            <th scope="col">{{__('Límite superior Diaria')}}</th>
-                            <th scope="col">{{__('Cuota fija Diaria')}}</th>
-                            <th scope="col">{{__('Excedentes % Diaria')}}</th>
+                            <th scope="col">{{__('Límite inferior')}}</th>
+                            <th scope="col">{{__('Límite superior')}}</th>
+                            <th scope="col">{{__('Cuota fija')}}</th>
+                            <th scope="col">{{__('Excedentes %')}}</th>
                         </tr>
                         </thead>
                         <tbody>

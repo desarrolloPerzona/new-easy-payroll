@@ -29,6 +29,7 @@ class IsrBiWeeklyRetentionSeeder extends Seeder
             array(160285.36, 999999.00, 50268.15, 35.00),
 
         );
+        //        2021
         // Inserting data for each element of weeklyArray
         foreach ($biweeklyArray as $element) {
             DB::table('isr_bi_weekly_retentions')->insert([
@@ -42,6 +43,21 @@ class IsrBiWeeklyRetentionSeeder extends Seeder
                     'updated_at' => now(),
                 ]
             ]);
-        };
+        }
+        //        2022
+        // Inserting data for each element of weeklyArray
+        foreach ($biweeklyArray as $element) {
+            DB::table('isr_bi_weekly_retentions')->insert([
+                [
+                    'lower_limit' => $element[0],
+                    'upper_limit' => $element[1],
+                    'fixed_feed' => $element[2],
+                    'percentage_excess_to_lower_limit' => $element[3],
+                    'year' => 2022,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]
+            ]);
+        }
     }
 }

@@ -67,15 +67,11 @@ class TableValueController extends Controller
         /**
          * Monthly Retentions ISR
          */
-//        $api_responseMonthlyR = Http::get($appUrl . '/api/isr-monthly-retentions/'. $currentYear);
-//        $monthlyRetentions = json_decode($api_responseMonthlyR->body());
-
-
-
-
+        $api_responseMonthlyR = Http::withOptions(['verify' => false])->get($appUrl . '/api/isr-monthly-retentions/'. $currentYear);
+        $monthlyRetentions = json_decode($api_responseMonthlyR->body());
 
         return view('app-tenant.dashboard.table-value.index', compact('discount_infonavit', 'uma', 'minimum_salary_general', 'minimum_salary_border',
-            'dailyRetentions', 'weeklyRetentions', 'tenDaysRetentions', 'biweeklyRetentions'));
+            'dailyRetentions', 'weeklyRetentions', 'tenDaysRetentions', 'biweeklyRetentions', 'monthlyRetentions'));
     }
 
     /**

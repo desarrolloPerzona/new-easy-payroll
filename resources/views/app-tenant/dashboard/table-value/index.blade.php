@@ -219,28 +219,28 @@
                 </div>
 
                 {{--                Monthly table--}}
-{{--                <div id="monthly-table" class="d-none retentions-table">--}}
-{{--                    <table class="table table-striped">--}}
-{{--                        <thead>--}}
-{{--                        <tr>--}}
-{{--                            <th scope="col">{{__('Límite inferior')}}</th>--}}
-{{--                            <th scope="col">{{__('Límite superior')}}</th>--}}
-{{--                            <th scope="col">{{__('Cuota fija')}}</th>--}}
-{{--                            <th scope="col">{{__('Excedentes %')}}</th>--}}
-{{--                        </tr>--}}
-{{--                        </thead>--}}
-{{--                        <tbody>--}}
-{{--                        @foreach($monthlyRetentions as $monthlyValues)--}}
-{{--                            <tr>--}}
-{{--                                <td>{{$monthlyValues->lower_limit}}</td>--}}
-{{--                                <td>{{$monthlyValues->upper_limit}}</td>--}}
-{{--                                <td>{{$monthlyValues->fixed_feed}}</td>--}}
-{{--                                <td>{{$monthlyValues->percentage_excess_to_lower_limit}}</td>--}}
-{{--                            </tr>--}}
-{{--                        @endforeach--}}
-{{--                        </tbody>--}}
-{{--                    </table>--}}
-{{--                </div>--}}
+                <div id="monthly-table" class="d-none retentions-table">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">{{__('Límite inferior')}}</th>
+                            <th scope="col">{{__('Límite superior')}}</th>
+                            <th scope="col">{{__('Cuota fija')}}</th>
+                            <th scope="col">{{__('Excedentes %')}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($monthlyRetentions as $monthlyValues)
+                            <tr>
+                                <td>{{$monthlyValues->lower_limit}}</td>
+                                <td>{{$monthlyValues->upper_limit}}</td>
+                                <td>{{$monthlyValues->fixed_feed}}</td>
+                                <td>{{$monthlyValues->percentage_excess_to_lower_limit}}</td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
         </div>

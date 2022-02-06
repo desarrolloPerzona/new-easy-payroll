@@ -20,7 +20,7 @@ class TableValueController extends Controller
         $currentYear = date('Y');
 
         $appUrl = config('app.url');
-        $api_responseRV = Http::withOptions(['verify' => false])->get($appUrl . '/api/reference-values');
+        $api_responseRV = Http::withOptions(['verify' => false])->get($appUrl . '/api/reference-values/' . $currentYear);
         $reference_values = json_decode($api_responseRV->body());
 
         $discount_infonavit = $reference_values[0];

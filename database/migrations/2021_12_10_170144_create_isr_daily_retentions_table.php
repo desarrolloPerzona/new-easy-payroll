@@ -20,7 +20,6 @@ class CreateIsrDailyRetentionsTable extends Migration
             $table->decimal('fixed_feed');
             $table->decimal('percentage_excess_to_lower_limit');
             $table->smallInteger('year');
-
             $table->timestamps();
         });
     }

@@ -22,16 +22,6 @@ class DatabaseSeeder extends Seeder
             FiscalRegimeSeeder::class,
             BankSeeder::class,
             ReferenceValueSeeder::class,
-            IsrDailyRetentionSeeder::class,
-            IsrDailyRetentionSubsidySeeder::class,
-            IsrWeeklyRetentionSeeder::class,
-            IsrWeeklyRetentionSubsidySeeder::class,
-            IsrTenDaysRetentionSeeder::class,
-            IsrTenDaysRetentionSubsidySeeder::class,
-            IsrBiWeeklyRetentionSeeder::class,
-            IsrBiWeeklyRetentionSubsidySeeder::class,
-            IsrMonthlyRetentionSeeder::class,
-            IsrMonthlyRetentionSubsidySeeder::class
         ]);
 
     }

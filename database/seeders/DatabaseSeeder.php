@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             FiscalRegimeSeeder::class,
             BankSeeder::class,
             ReferenceValueSeeder::class,
+            IsrRetentionsSeeder::class
         ]);
 
     }

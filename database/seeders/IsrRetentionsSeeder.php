@@ -63,6 +63,22 @@ class IsrRetentionsSeeder extends Seeder
             array(35619.01, 106856.90, 9291.20, 34.00),
             array(106856.91, 999999, 33512.10, 35.00),
         );
+        //        2021 and 2022 values
+        // filling array with table data
+        $biweeklyArray = array(
+            array(0.01, 318.00, 0.00, 1.92),
+            array(318.01, 2699.40, 6.15, 6.40),
+            array(2699.41, 4744.05, 158.55, 10.88),
+            array(4744.06, 5514.75, 381.00, 16.00),
+            array(5514.76, 6602.70, 504.30, 17.92),
+            array(6602.71, 13316.70, 699.30, 21.36),
+            array(13316.71, 20988.90, 2133.30, 23.52),
+            array(20988.91, 40071.30, 3937.80, 30.00),
+            array(40071.31, 53428.50, 9662.55, 32.00),
+            array(53428.51, 160285.35, 13936.80, 34.00),
+            array(160285.36, 999999.00, 50268.15, 35.00),
+
+        );
 
         //        2021
         // Inserting data for each element of dailyArray
@@ -111,6 +127,23 @@ class IsrRetentionsSeeder extends Seeder
                     'isr_retention_type' => 'ten days',
                     'created_at' => now(),
                     'updated_at' => now()
+                ]
+            ]);
+        }
+
+        //        2022
+        // Inserting data for each element of weeklyArray
+        foreach ($biweeklyArray as $element) {
+            DB::table('isr_retentions')->insert([
+                [
+                    'lower_limit' => $element[0],
+                    'upper_limit' => $element[1],
+                    'fixed_feed' => $element[2],
+                    'percentage_excess_to_lower_limit' => $element[3],
+                    'year' => 2022,
+                    'isr_retention_type' => 'biweekly',
+                    'created_at' => now(),
+                    'updated_at' => now(),
                 ]
             ]);
         }

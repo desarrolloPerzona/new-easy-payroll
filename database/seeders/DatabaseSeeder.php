@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
             BankSeeder::class,
             ReferenceValueSeeder::class,
             IsrRetentionsSeeder::class,
-            IsrSubsidiesSeeder::class
+            IsrSubsidiesSeeder::class,
+            IsnPayrollTaxesSeeder::class
         ]);
 
     }

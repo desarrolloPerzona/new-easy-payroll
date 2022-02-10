@@ -15,12 +15,11 @@ class CreateIsrSubsidiesTable extends Migration
     {
         Schema::create('isr_subsidies', function (Blueprint $table) {
             $table->id();
-            $table->decimal('lower_limit');
-            $table->decimal('upper_limit');
-            $table->decimal('fixed_feed');
-            $table->decimal('percentage_excess_to_lower_limit');
+            $table->decimal('income_from');
+            $table->decimal('income_up_to');
+            $table->decimal('employment_subsidy');
             $table->smallInteger('year');
-            $table->string('isr_subsidie_type');
+            $table->string('subsidy_type');
             $table->softDeletes();
             $table->timestamps();
         });

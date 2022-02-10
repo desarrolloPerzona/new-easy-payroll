@@ -46,6 +46,8 @@ class IsrSubsidiesSeeder extends Seeder
             array(1699.89, 999999, 0),
         );
 
+        //        2021 && 2022 values
+        // filling array with Ten days table data
         $tenDaysArray = array(
             array(0.01, 581.9, 133.9),
             array(581.91, 872.8, 133.8),
@@ -58,6 +60,38 @@ class IsrSubsidiesSeeder extends Seeder
             array(2047.61, 2340.1, 83.4),
             array(2340.11, 2428.4, 71.6),
             array(2428.41, 999999, 0),
+        );
+
+        //        2021 && 2022 values
+        // filling array with Biweekly table data
+        $biWeeklyArray = array(
+            array(0.01, 872.85, 200.85),
+            array(872.86, 1309.20, 200.7),
+            array(1309.21, 1713.60, 200.7),
+            array(1713.61, 1745.70, 193.8),
+            array(1745.71, 2193.75, 188.7),
+            array(2193.76, 2327.55, 174.75),
+            array(2327.56, 2632.65, 160.35),
+            array(2632.66, 3071.40, 145.35),
+            array(3071.41, 3510.15, 125.1),
+            array(3510.16, 3642.60, 107.4),
+            array(3642.61, 999999, 0),
+        );
+
+        //        2021 && 2022 values
+        // filling array with Monthly table data
+        $monthlyArray = array(
+            array(0.01, 1768.96, 407.02),
+            array(1768.97, 2653.38, 406.83),
+            array(2653.39, 3472.840, 406.62),
+            array(3472.85, 3537.87, 392.77),
+            array(3537.88, 4446.15, 382.46),
+            array(4446.16, 4717.18, 354.23),
+            array(4717.19, 5335.42, 324.87),
+            array(5335.43, 6224.67, 294.63),
+            array(6224.68, 7113.90, 253.54),
+            array(7113.91, 7382.33, 217.61),
+            array(7382.34, 999999, 0),
         );
 
         //        2021
@@ -107,5 +141,38 @@ class IsrSubsidiesSeeder extends Seeder
                 ]
             ]);
         }
+
+        //        2022
+        // Inserting data for each element of the Array
+        foreach ($biWeeklyArray as $element) {
+            DB::table('isr_subsidies')->insert([
+                [
+                    'income_from' => $element[0],
+                    'income_up_to' => $element[1],
+                    'employment_subsidy' => $element[2],
+                    'year' => 2022,
+                    'subsidy_type' => 'biweekly',
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]
+            ]);
+        }
+
+        //        2022
+        // Inserting data for each element of the Array
+        foreach ($monthlyArray as $element) {
+            DB::table('isr_subsidies')->insert([
+                [
+                    'income_from' => $element[0],
+                    'income_up_to' => $element[1],
+                    'employment_subsidy' => $element[2],
+                    'year' => 2022,
+                    'subsidy_type' => 'monthly',
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ]
+            ]);
+        }
+
     }
 }

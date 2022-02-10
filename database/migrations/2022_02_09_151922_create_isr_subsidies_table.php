@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIsrTenDaysRetentionsTable extends Migration
+class CreateIsrSubsidiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateIsrTenDaysRetentionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('isr_ten_days_retentions', function (Blueprint $table) {
+        Schema::create('isr_subsidies', function (Blueprint $table) {
             $table->id();
-            $table->decimal('lower_limit');
-            $table->decimal('upper_limit');
-            $table->decimal('fixed_feed');
-            $table->decimal('percentage_excess_to_lower_limit');
+            $table->decimal('income_from');
+            $table->decimal('income_up_to');
+            $table->decimal('employment_subsidy');
             $table->smallInteger('year');
+            $table->string('subsidy_type');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ class CreateIsrTenDaysRetentionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('isr_ten_days_retentions');
+        Schema::dropIfExists('isr_subsidies');
     }
 }

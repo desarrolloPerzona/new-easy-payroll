@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTaxOnPayrollsTable extends Migration
+class CreateIsnPayrollTaxesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateTaxOnPayrollsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tax_on_payrolls', function (Blueprint $table) {
+        Schema::create('isn_payroll_taxes', function (Blueprint $table) {
             $table->id();
-            $table->string('state')->unique();
-            $table->decimal('value');
-            $table->decimal('year');
+            $table->string('state');
+            $table->decimal('lower_limit');
+            $table->decimal('upper_limit');
+            $table->decimal('fixed_fee');
+            $table->decimal('lower_limit_surplus_percentage');
+            $table->smallInteger('year');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +33,6 @@ class CreateTaxOnPayrollsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tax_on_payrolls');
+        Schema::dropIfExists('isn_payroll_taxes');
     }
 }

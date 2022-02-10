@@ -1,17 +1,53 @@
 <x-app-tenant>
     <div class="container mx-auto mb-6">
+
+{{--        Main Header--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
             <i class="fak fa-admin-perzona mr-2"></i>
             <span style="display: inline-flex;">{{ __('Working days') }}</span>
         </h2>
 
-        <div class="btn-top-holder my-3">
-            <a href="{{route('working-day-holiday.create',1)}}" class="btn btn-dark">
-                <i class="fas fa-plus-circle"></i>
-                {{ __('New working day') }}
-            </a>
+{{--        Jornada Accordion--}}
+        <div class="accordion" id="workingDayAccordion">
+            <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
+        {{--                Accordion header--}}
+                <div class="accordion-header mr-4" id="headingWorkingDay">
+                    <div class="flex">
+                        <div class="flex-1 pb-2">{{__('New working day')}}</div>
+                        <div class="flex-2">
+                            <button type="button" data-bs-toggle="collapse" data-bs-target="#workingDayCollapse"
+                                    aria-expanded="false" aria-controls="workingDayCollapse">
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        {{--                Accordion Body--}}
+                <div id="workingDayCollapse" class="accordion-collapse collapse" aria-labelledby="headingWorkingDay"
+                     data-bs-parent="#workingDayAccordion">
+                    <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
+                        <form action="" class="text-black rounded">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label font-bold">{{__('Name')}}</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label font-bold">{{__('Type of shift')}}</label>
+                                <select name="" id="workingDaySelect" class="form-control">
+                                    <option value="">{{__('Select')}}</option>
+                                    <option value="diurno">Diurno</option>
+                                    <option value="nocturno">Nocturno</option>
+                                    <option value="mixto">Mixto</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+
+        {{--Working day Table--}}
+        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <table class="table">
                 <tr>
                     <th>{{__('Working day')}}</th>
@@ -350,12 +386,14 @@
                             <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
                                 <div>
                                     <div><label class="font-bold" for="name">{{__('Name')}}</label></div>
-                                    <div><input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name"
+                                    <div><input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                                type="text" id="name"
                                                 name="Name"></div>
                                 </div>
                                 <div class="flex my-4 m-auto">
                                     {{--Date Picker---------------}}
-                                    <div class="flex-1 items-center justify-center bg-gray-200 h-full dark:bg-dark dark:text-white">
+                                    <div
+                                        class="flex-1 items-center justify-center bg-gray-200 h-full dark:bg-dark dark:text-white">
                                         {{--                                <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"/>--}}
                                         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
                                                 defer></script>
@@ -725,7 +763,7 @@
             </div>
 
 
-    <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+            <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
                 <div class="border-bottom-1 border-gray-400 py-3">
                     <h2>Festivos oficiales México</h2>

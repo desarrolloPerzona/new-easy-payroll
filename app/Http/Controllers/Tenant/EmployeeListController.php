@@ -46,7 +46,7 @@ class EmployeeListController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('app-tenant.dashboard.employees-list.show');
     }
 
     /**
@@ -57,7 +57,7 @@ class EmployeeListController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('app-tenant.dashboard.employees-list.edit');
     }
 
     /**

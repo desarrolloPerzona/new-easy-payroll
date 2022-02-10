@@ -74,7 +74,7 @@
                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="{{route('employee-list.show',1)}}">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -90,7 +90,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -106,7 +106,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -122,7 +122,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -138,7 +138,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -154,7 +154,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -170,7 +170,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -186,7 +186,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -202,7 +202,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -218,7 +218,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -234,7 +234,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -250,7 +250,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -266,7 +266,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -282,7 +282,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
@@ -298,7 +298,7 @@
                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('working-day-holiday.edit',1)}}">
+                    <a href="">
                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>

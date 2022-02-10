@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\IsrMonthlyRetention;
 use Illuminate\Http\Request;
 
-class IsrMonthlyRetentionController extends Controller
+class IsrSubsidyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +40,10 @@ class IsrMonthlyRetentionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\IsrMonthlyRetention  $isrMonthlyRetention
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(IsrMonthlyRetention $isrMonthlyRetention)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class IsrMonthlyRetentionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\IsrMonthlyRetention  $isrMonthlyRetention
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(IsrMonthlyRetention $isrMonthlyRetention)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class IsrMonthlyRetentionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\IsrMonthlyRetention  $isrMonthlyRetention
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, IsrMonthlyRetention $isrMonthlyRetention)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class IsrMonthlyRetentionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\IsrMonthlyRetention  $isrMonthlyRetention
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(IsrMonthlyRetention $isrMonthlyRetention)
+    public function destroy($id)
     {
         //
     }

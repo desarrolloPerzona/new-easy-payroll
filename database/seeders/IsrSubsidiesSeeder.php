@@ -103,7 +103,7 @@ class IsrSubsidiesSeeder extends Seeder
                     'income_up_to' => $element[1],
                     'employment_subsidy' => $element[2],
                     'year' => 2022,
-                    'subsidy_type' => 'daily',
+                    'isr_subsidy_type' => 'daily',
                     'created_at' => now(),
                     'updated_at' => now()
                 ]
@@ -119,7 +119,7 @@ class IsrSubsidiesSeeder extends Seeder
                     'income_up_to' => $element[1],
                     'employment_subsidy' => $element[2],
                     'year' => 2022,
-                    'subsidy_type' => 'weekly',
+                    'isr_subsidy_type' => 'weekly',
                     'created_at' => now(),
                     'updated_at' => now()
                 ]
@@ -135,7 +135,7 @@ class IsrSubsidiesSeeder extends Seeder
                     'income_up_to' => $element[1],
                     'employment_subsidy' => $element[2],
                     'year' => 2022,
-                    'subsidy_type' => 'ten days',
+                    'isr_subsidy_type' => 'ten days',
                     'created_at' => now(),
                     'updated_at' => now()
                 ]
@@ -151,7 +151,7 @@ class IsrSubsidiesSeeder extends Seeder
                     'income_up_to' => $element[1],
                     'employment_subsidy' => $element[2],
                     'year' => 2022,
-                    'subsidy_type' => 'biweekly',
+                    'isr_subsidy_type' => 'biweekly',
                     'created_at' => now(),
                     'updated_at' => now()
                 ]
@@ -167,7 +167,7 @@ class IsrSubsidiesSeeder extends Seeder
                     'income_up_to' => $element[1],
                     'employment_subsidy' => $element[2],
                     'year' => 2022,
-                    'subsidy_type' => 'monthly',
+                    'isr_subsidy_type' => 'monthly',
                     'created_at' => now(),
                     'updated_at' => now()
                 ]

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class IsrBiWeeklyRetentionSubsidy extends Model
+class IsrSubsidy extends Model
 {
     use HasFactory;
 }

@@ -19,7 +19,7 @@ class CreateIsrSubsidiesTable extends Migration
             $table->decimal('income_up_to');
             $table->decimal('employment_subsidy');
             $table->smallInteger('year');
-            $table->string('subsidy_type');
+            $table->string('isr_subsidy_type');
             $table->softDeletes();
             $table->timestamps();
         });

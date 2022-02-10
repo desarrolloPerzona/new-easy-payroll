@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\IsrTenDaysRetentionSubsidy;
 use Illuminate\Http\Request;
 
-class IsrTenDaysRetentionSubsidyController extends Controller
+class IsrRetentionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +40,10 @@ class IsrTenDaysRetentionSubsidyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\IsrTenDaysRetentionSubsidy  $isrTenDaysRetentionSubsidy
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(IsrTenDaysRetentionSubsidy $isrTenDaysRetentionSubsidy)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class IsrTenDaysRetentionSubsidyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\IsrTenDaysRetentionSubsidy  $isrTenDaysRetentionSubsidy
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(IsrTenDaysRetentionSubsidy $isrTenDaysRetentionSubsidy)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class IsrTenDaysRetentionSubsidyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\IsrTenDaysRetentionSubsidy  $isrTenDaysRetentionSubsidy
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, IsrTenDaysRetentionSubsidy $isrTenDaysRetentionSubsidy)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class IsrTenDaysRetentionSubsidyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\IsrTenDaysRetentionSubsidy  $isrTenDaysRetentionSubsidy
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(IsrTenDaysRetentionSubsidy $isrTenDaysRetentionSubsidy)
+    public function destroy($id)
     {
         //
     }

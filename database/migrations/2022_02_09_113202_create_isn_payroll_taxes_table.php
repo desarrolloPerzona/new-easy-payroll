@@ -16,8 +16,8 @@ class CreateIsnPayrollTaxesTable extends Migration
         Schema::create('isn_payroll_taxes', function (Blueprint $table) {
             $table->id();
             $table->string('state');
-            $table->decimal('lower_limit');
-            $table->decimal('upper_limit');
+            $table->decimal('lower_limit', 12, 2);
+            $table->decimal('upper_limit', 12, 2);
             $table->decimal('fixed_fee');
             $table->decimal('lower_limit_surplus_percentage');
             $table->smallInteger('year');

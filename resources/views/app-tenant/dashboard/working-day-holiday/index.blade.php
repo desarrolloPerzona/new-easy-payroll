@@ -58,14 +58,26 @@
                                     </div>
                                     <div class="col-3 d-flex">
                                         <select name="" id="" class="form-control mx-2">
-                                            <option value="">00:00</option>
-                                            <option value="">01:00</option>
-                                            <option value="">02:00</option>
+                                            @for($i = 0; $i < 24; $i++)
+                                                @if($i <= 9)
+                                                    <option value="">0{{$i}}:00</option>
+                                                    <option value="">0{{$i}}:30</option>
+                                                @else
+                                                    <option value="">{{$i}}:00</option>
+                                                    <option value="">{{$i}}:30</option>
+                                                @endif
+                                            @endfor
                                         </select>
                                         <select name="" id="" class="form-control mx-2">
-                                            <option value="">00:00</option>
-                                            <option value="">01:00</option>
-                                            <option value="">02:00</option>
+                                            @for($i = 0; $i < 24; $i++)
+                                                @if($i <= 9)
+                                                    <option value="">0{{$i}}:00</option>
+                                                    <option value="">0{{$i}}:30</option>
+                                                @else
+                                                    <option value="">{{$i}}:00</option>
+                                                    <option value="">{{$i}}:30</option>
+                                                @endif
+                                            @endfor
                                         </select>
                                     </div>
                                 </div>

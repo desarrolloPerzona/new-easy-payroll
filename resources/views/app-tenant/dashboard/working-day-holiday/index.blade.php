@@ -1,16 +1,16 @@
 <x-app-tenant>
     <div class="container mx-auto mb-6">
 
-{{--        Main Header--}}
+        {{--        Main Header--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
             <i class="fak fa-admin-perzona mr-2"></i>
             <span style="display: inline-flex;">{{ __('Working days') }}</span>
         </h2>
 
-{{--        Jornada Accordion--}}
-        <div class="accordion" id="workingDayAccordion">
+        {{--        Jornada Accordion--}}
+        <div class="accordion btn-top-holder my-3 max-w-6xl m-auto" id="workingDayAccordion">
             <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
-        {{--                Accordion header--}}
+                {{--                Accordion header New WorkingDay--}}
                 <div class="accordion-header mr-4" id="headingWorkingDay">
                     <div class="flex">
                         <div class="flex-1 pb-2">{{__('New working day')}}</div>
@@ -22,17 +22,20 @@
                         </div>
                     </div>
                 </div>
-        {{--                Accordion Body--}}
+                {{--                Accordion Body--}}
                 <div id="workingDayCollapse" class="accordion-collapse collapse" aria-labelledby="headingWorkingDay"
                      data-bs-parent="#workingDayAccordion">
                     <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
                         <form action="" class="text-black rounded">
                             <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label font-bold">{{__('Name')}}</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <label for="exampleFormControlInput1"
+                                       class="form-label font-bold">{{__('Name')}}</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                       placeholder="name@example.com">
                             </div>
                             <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label font-bold">{{__('Type of shift')}}</label>
+                                <label for="exampleFormControlTextarea1"
+                                       class="form-label font-bold">{{__('Type of shift')}}</label>
                                 <select name="" id="workingDaySelect" class="form-control">
                                     <option value="">{{__('Select')}}</option>
                                     <option value="diurno">Diurno</option>

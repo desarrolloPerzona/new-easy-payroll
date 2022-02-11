@@ -71,11 +71,12 @@
                 <div class="w-2/12 w-full text-center">Director de MKT</div>
                 <div class="w-2/12 w-full text-center">CDMX</div>
                 <div class="w-1/12 text-center">
-                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                    <a href="{{route('employee-list.show',1)}}">
+                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                 </div>
                 <div class="w-1/12 text-center">
-                    <a href="{{route('employee-list.show',1)}}">
-                        <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
+
+                        <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                 </div>
                 <div class="w-1/12 text-center"><i class="fas fa-trash-alt text-gray-400"></i></div>
             </div>

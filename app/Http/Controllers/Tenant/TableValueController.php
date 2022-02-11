@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
-use App\Models\IsrDailyRetention;
 use App\Models\Tenant\TableValue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;

@@ -27,21 +27,48 @@
                      data-bs-parent="#workingDayAccordion">
                     <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
                         <form action="" class="text-black rounded">
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1"
-                                       class="form-label font-bold">{{__('Name')}}</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1"
-                                       placeholder="name@example.com">
+                            <div class="d-flex col-12 justify-around">
+                                <div class="mb-3 pe-2 col-6">
+                                    <label for="name"
+                                           class="form-label font-bold">{{__('Name')}}</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                           placeholder="John Doe">
+                                </div>
+                                <div class="mb-3 ps-2 col-6">
+                                    <label for="workingDaySelect"
+                                           class="form-label font-bold">{{__('Type of shift')}}</label>
+                                    <select name="" id="workingDaySelect" class="form-control">
+                                        <option value="">{{__('Select')}}</option>
+                                        <option value="diurno">Diurno</option>
+                                        <option value="nocturno">Nocturno</option>
+                                        <option value="mixto">Mixto</option>
+                                    </select>
+                                </div>
                             </div>
+
                             <div class="mb-3">
-                                <label for="exampleFormControlTextarea1"
-                                       class="form-label font-bold">{{__('Type of shift')}}</label>
-                                <select name="" id="workingDaySelect" class="form-control">
-                                    <option value="">{{__('Select')}}</option>
-                                    <option value="diurno">Diurno</option>
-                                    <option value="nocturno">Nocturno</option>
-                                    <option value="mixto">Mixto</option>
-                                </select>
+                                <label class="font-bold mb-3" for="">Días de la semana</label>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="col-1">
+                                        <input type="checkbox" class="rounded">
+                                    </div>
+                                    <div class="col-2">
+                                        Lunes
+                                    </div>
+                                    <div class="col-3 d-flex">
+                                        <select name="" id="" class="form-control mx-2">
+                                            <option value="">00:00</option>
+                                            <option value="">01:00</option>
+                                            <option value="">02:00</option>
+                                        </select>
+                                        <select name="" id="" class="form-control mx-2">
+                                            <option value="">00:00</option>
+                                            <option value="">01:00</option>
+                                            <option value="">02:00</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>

@@ -42,32 +42,32 @@ class TableValueController extends Controller
         /**
          * Daily Retentions BY YEAR ISR
          */
-        $api_responseDailyR = Http::withOptions(['verify' => false])->get($appUrl . '/api/isr-daily-retentions/' . $currentYear);
+        $api_responseDailyR = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-retentions/' . $currentYear . '/daily');
         $dailyRetentions = json_decode($api_responseDailyR->body());
 
         /**
          * Weekly Retentions ISR
          */
 
-        $api_responseWeeklyR = Http::withOptions(['verify' => false])->get($appUrl . '/api/isr-weekly-retentions/' . $currentYear);
+        $api_responseWeeklyR = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-retentions/' . $currentYear . '/weekly');
         $weeklyRetentions = json_decode($api_responseWeeklyR->body());
 
         /**
          * Ten days Retentions ISR
          */
-        $api_responseTenDaysR = Http::withOptions(['verify' => false])->get($appUrl . '/api/isr-ten-days-retentions/' . $currentYear);
+        $api_responseTenDaysR = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-retentions/' . $currentYear . '/ten days');
         $tenDaysRetentions = json_decode($api_responseTenDaysR->body());
 
         /**
          * Biweekly Retentions ISR
          */
-        $api_responseBiWeeklyR = Http::withOptions(['verify' => false])->get($appUrl . '/api/isr-biweekly-retentions/' . $currentYear);
+        $api_responseBiWeeklyR = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-retentions/' . $currentYear . '/biweekly');
         $biweeklyRetentions = json_decode($api_responseBiWeeklyR->body());
 
         /**
          * Monthly Retentions ISR
          */
-        $api_responseMonthlyR = Http::withOptions(['verify' => false])->get($appUrl . '/api/isr-monthly-retentions/'. $currentYear);
+        $api_responseMonthlyR = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-retentions/' . $currentYear . '/monthly');
         $monthlyRetentions = json_decode($api_responseMonthlyR->body());
 
         return view('app-tenant.dashboard.table-value.index', compact('discount_infonavit', 'uma', 'minimum_salary_general', 'minimum_salary_border',

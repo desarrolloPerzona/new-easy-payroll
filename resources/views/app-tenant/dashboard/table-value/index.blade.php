@@ -10,6 +10,10 @@
                 display: none;
             }
 
+            #collapse-subsidies {
+                display: none;
+            }
+
         </style>
 
     @endpush
@@ -32,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="prueba" id="collapse-reference">
+            <div id="collapse-reference">
                 <p class="pt-1">{{__($discount_infonavit->name)}}</p>
 
                 <div class="flex border-b-2">
@@ -251,11 +255,18 @@
             </div>
         </div>
 
-        {{--        Periodic Tables--}}
+        {{--        Periodic Subsidies Table--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
                 <div class="flex-1"><h2 class="pb-3">Tablas periódicas a subsidio</h2></div>
-                <div class="flex-2"><i class="fas fa-chevron-circle-down"></i></div>
+                <div class="flex-2" onclick="arrowClick('subsidies')">
+                    <div id="subsidies-button">
+                        <i id="subsidies-icon" class="cursor-pointer fas fa-chevron-circle-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="collapse-subsidies">
+
             </div>
         </div>
 

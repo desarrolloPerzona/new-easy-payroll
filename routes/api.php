@@ -64,7 +64,7 @@ Route::group(['api' => 'api'], function () {
      * ISR PAYROLL TAXES
      */
     Route::get('/isn-payroll-taxes-all', [GetValuesAndTablesController::class, 'IsnPayrollTaxesAll']);
-    Route::get('/isn-payroll-taxes/{state}', [GetValuesAndTablesController::class, 'IsnPayrollTaxesByState']);
+    Route::get('/isn-payroll-taxes/{year}/{state}', [GetValuesAndTablesController::class, 'IsnPayrollTaxesByState']);
 
     /**
      * REFERENCE VALUES

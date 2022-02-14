@@ -265,11 +265,14 @@
                     </div>
                 </div>
             </div>
-{{--            Subsidies Tab Tables--}}
+            {{--            Subsidies Tab Tables--}}
             <div id="collapse-subsidies" x-data="subsidiesData()">
+
+                {{--                Subsidies Tabs--}}
                 <ul class="nav nav-tabs w-full mb-4" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active tab-subsidies cursor-pointer bg-primary text-white" id="dailySubsidies-button"
+                        <a class="nav-link active tab-subsidies cursor-pointer bg-primary text-white"
+                           id="dailySubsidies-button"
                            x-on:click="changeTab('dailySubsidies')">
                             <i class="now-ui-icons objects_umbrella-13"></i> Diaria
                         </a>
@@ -306,10 +309,9 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
-                            <th scope="col">{{__('Excedentes %')}}</th>
+                            <th scope="col">{{__('Para ingresos de $')}}</th>
+                            <th scope="col">{{__('Hasta ingresos de $')}}</th>
+                            <th scope="col">{{__('Cantidad de subsidio para el empleo diario en $')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -318,7 +320,6 @@
                                 <td>{{$dailyValues->lower_limit}}</td>
                                 <td>{{$dailyValues->upper_limit}}</td>
                                 <td>{{$dailyValues->fixed_feed}}</td>
-                                <td>{{$dailyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -331,10 +332,9 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
-                            <th scope="col">{{__('Excedentes %')}}</th>
+                            <th scope="col">{{__('Para ingresos de $')}}</th>
+                            <th scope="col">{{__('Hasta ingresos de $')}}</th>
+                            <th scope="col">{{__('Cantidad de subsidio para el empleo diario en $')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -343,7 +343,6 @@
                                 <td>{{$weeklyValues->lower_limit}}</td>
                                 <td>{{$weeklyValues->upper_limit}}</td>
                                 <td>{{$weeklyValues->fixed_feed}}</td>
-                                <td>{{$weeklyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -355,10 +354,9 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
-                            <th scope="col">{{__('Excedentes %')}}</th>
+                            <th scope="col">{{__('Para ingresos de $')}}</th>
+                            <th scope="col">{{__('Hasta ingresos de $')}}</th>
+                            <th scope="col">{{__('Cantidad de subsidio para el empleo diario en $')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -367,7 +365,6 @@
                                 <td>{{$tenDaysValues->lower_limit}}</td>
                                 <td>{{$tenDaysValues->upper_limit}}</td>
                                 <td>{{$tenDaysValues->fixed_feed}}</td>
-                                <td>{{$tenDaysValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -379,10 +376,9 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
-                            <th scope="col">{{__('Excedentes %')}}</th>
+                            <th scope="col">{{__('Para ingresos de $')}}</th>
+                            <th scope="col">{{__('Hasta ingresos de $')}}</th>
+                            <th scope="col">{{__('Cantidad de subsidio para el empleo diario en $')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -391,7 +387,6 @@
                                 <td>{{$biweeklyValues->lower_limit}}</td>
                                 <td>{{$biweeklyValues->upper_limit}}</td>
                                 <td>{{$biweeklyValues->fixed_feed}}</td>
-                                <td>{{$biweeklyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -403,10 +398,9 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
-                            <th scope="col">{{__('Excedentes %')}}</th>
+                            <th scope="col">{{__('Para ingresos de $')}}</th>
+                            <th scope="col">{{__('Hasta ingresos de $')}}</th>
+                            <th scope="col">{{__('Cantidad de subsidio para el empleo diario en $')}}</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -415,7 +409,6 @@
                                 <td>{{$monthlyValues->lower_limit}}</td>
                                 <td>{{$monthlyValues->upper_limit}}</td>
                                 <td>{{$monthlyValues->fixed_feed}}</td>
-                                <td>{{$monthlyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -461,7 +454,7 @@
                         let retentionsButton = document.getElementById(`${button}-button`);
                         let retentionTabs = document.querySelectorAll('.tab-retention')
                         let allRetentionTables = document.querySelectorAll('.retentions-table')
-                        let retentionTable = document.getElementById(`${button}Subsidy-table`)
+                        let retentionTable = document.getElementById(`${button}-table`)
 
                         // Change all active classes to the othew tabs and added only the clicked button, active class.
                         if (!retentionsButton.classList.contains('active')) {

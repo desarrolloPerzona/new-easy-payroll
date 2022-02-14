@@ -368,11 +368,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($tenDaysRetentions as $tenDaysValues)
+                        @foreach($tenDaysSubsidies as $tenDaysValue)
                             <tr>
-                                <td>{{$tenDaysValues->lower_limit}}</td>
-                                <td>{{$tenDaysValues->upper_limit}}</td>
-                                <td>{{$tenDaysValues->fixed_feed}}</td>
+                                <td>{{$tenDaysValue->income_from}}</td>
+                                @if($tenDaysValue->income_up_to == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$tenDaysValue->income_up_to}}</td>
+                                @endif
+                                <td>{{$tenDaysValue->employment_subsidy}}</td>
                             </tr>
                         @endforeach
                         </tbody>

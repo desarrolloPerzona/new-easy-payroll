@@ -315,11 +315,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($dailyRetentions as $dailyValues)
+                        @foreach($dailySubsidies as $dailyValues)
                             <tr>
-                                <td>{{$dailyValues->lower_limit}}</td>
-                                <td>{{$dailyValues->upper_limit}}</td>
-                                <td>{{$dailyValues->fixed_feed}}</td>
+                                <td>{{$dailyValues->income_from}}</td>
+                                @if($dailyValues->income_up_to == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$dailyValues->income_up_to}}</td>
+                                @endif
+                                <td>{{$dailyValues->employment_subsidy}}</td>
                             </tr>
                         @endforeach
                         </tbody>

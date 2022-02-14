@@ -394,11 +394,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($biweeklyRetentions as $biweeklyValues)
+                        @foreach($biweeklySubsidies as $biweeklyValue)
                             <tr>
-                                <td>{{$biweeklyValues->lower_limit}}</td>
-                                <td>{{$biweeklyValues->upper_limit}}</td>
-                                <td>{{$biweeklyValues->fixed_feed}}</td>
+                                <td>{{$biweeklyValue->income_from}}</td>
+                                @if($biweeklyValue->income_up_to == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$biweeklyValue->income_up_to}}</td>
+                                @endif
+                                <td>{{$biweeklyValue->employment_subsidy}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -416,11 +420,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($monthlyRetentions as $monthlyValues)
+                        @foreach($monthlySubsidies as $monthlyValue)
                             <tr>
-                                <td>{{$monthlyValues->lower_limit}}</td>
-                                <td>{{$monthlyValues->upper_limit}}</td>
-                                <td>{{$monthlyValues->fixed_feed}}</td>
+                                <td>{{$monthlyValue->income_from}}</td>
+                                @if($monthlyValue->income_up_to == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$monthlyValue->income_up_to}}</td>
+                                @endif
+                                <td>{{$monthlyValue->employment_subsidy}}</td>
                             </tr>
                         @endforeach
                         </tbody>

@@ -2,7 +2,7 @@
     @push('inline_css')
 
         <style>
-            .display-none{
+            .display-none {
                 display: none;
             }
 
@@ -462,67 +462,43 @@
                     </div>
                 </div>
             </div>
-            <div id="collapse-isn" class="display-none" x-data="data()">
-                <ul class="nav nav-tabs w-full mb-4" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active tab-retention cursor-pointer bg-primary text-white" id="daily-button"
-                           x-on:click="changeTab('daily')">
-                            <i class="now-ui-icons objects_umbrella-13"></i> Diaria
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tab-retention cursor-pointer" id="weekly-button"
-                           x-on:click="changeTab('weekly')">
-                            <i class="now-ui-icons shopping_cart-simple"></i> Semanal
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tab-retention cursor-pointer" id="ten-days-button"
-                           x-on:click="changeTab('ten-days')">
-                            <i class="now-ui-icons shopping_shop"></i> Decenal
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tab-retention cursor-pointer" id="biweekly-button"
-                           x-on:click="changeTab('biweekly')">
-                            <i class="now-ui-icons ui-2_settings-90"></i> Quincenal
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link tab-retention cursor-pointer" id="monthly-button"
-                           x-on:click="changeTab('monthly')">
-                            <i class="now-ui-icons ui-2_settings-90"></i> Mensual
-                        </a>
-                    </li>
-                </ul>
+
+            <div id="collapse-isn" class="display-none mt-5" x-data="data()">
 
                 {{--                Daily table--}}
                 <div id="daily-table" class="retentions-table">
 
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
-                            <th scope="col">{{__('Excedentes %')}}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($dailyRetentions as $dailyValues)
+                    @foreach($stateVariables as $key =>$name)
+                        <div>
+                            <h2>{{ $names[$key] }}</h2>
+                        </div>
+                        <hr>
+
+                        <table class="table table-striped mb-5">
+                            <thead>
                             <tr>
-                                <td>{{$dailyValues->lower_limit}}</td>
-                                @if($dailyValues->upper_limit == 999999.00)
-                                    <td>{{__('En adelante')}}</td>
-                                @else
-                                    <td>{{$dailyValues->upper_limit}}</td>
-                                @endif
-                                <td>{{$dailyValues->fixed_feed}}</td>
-                                <td>{{$dailyValues->percentage_excess_to_lower_limit}}</td>
+                                <th scope="col">{{__('Límite inferior')}}</th>
+                                <th scope="col">{{__('Límite superior')}}</th>
+                                <th scope="col">{{__('Cuota fija')}}</th>
+                                <th scope="col">{{__('Excedentes %')}}</th>
                             </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            @foreach(${"$name"} as $stateValue)
+                                <tr>
+                                    <td>{{$stateValue->lower_limit}}</td>
+                                    @if(!$stateValue->upper_limit == 999999.00)
+                                        <td>{{$stateValue->upper_limit}}</td>
+                                    @else
+                                        <td>{{__('En adelante')}}</td>
+                                    @endif
+                                    <td>{{$stateValue->fixed_fee}}</td>
+                                    <td>{{$stateValue->lower_limit_surplus_percentage}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    @endforeach
 
                 </div>
 

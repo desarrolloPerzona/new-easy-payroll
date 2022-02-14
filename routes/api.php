@@ -26,39 +26,50 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // PUBLIC API ROUTES
 
-Route::group(['api' => 'api'], function(){
+Route::group(['api' => 'api'], function () {
     /**
      * ZIP CODES
      */
-    Route::get('/zipcode',[GetZipcodeController::class,'getZipCode']);
-    Route::get('/zipcode/search/{name}',[GetZipcodeController::class,'searchZipcode']);
+    Route::get('/zipcode', [GetZipcodeController::class, 'getZipCode']);
+    Route::get('/zipcode/search/{name}', [GetZipcodeController::class, 'searchZipcode']);
+
     /**
      * BANKS
      */
-    Route::get('/bank-list',[GetBanksController::class,'getBankList']);
+    Route::get('/bank-list', [GetBanksController::class, 'getBankList']);
+
     /**
      * FISCAL REGIMES
      */
-    Route::get('/fiscal-regimes-list',[GetFiscalRegimesController::class,'getFiscalRegimesList']);
+    Route::get('/fiscal-regimes-list', [GetFiscalRegimesController::class, 'getFiscalRegimesList']);
+
     /**
      * FISCAL INDUSTRIES
      */
-    Route::get('/fiscal-industries-list',[GetFiscalIndustriesController::class,'getFiscalIndustriesList']);
+    Route::get('/fiscal-industries-list', [GetFiscalIndustriesController::class, 'getFiscalIndustriesList']);
+
     /**
      *  RETENTIONS
      */
-    Route::get('/isr-retentions-all',[GetValuesAndTablesController::class,'IsrRetentionsAll']);
-    Route::get('/isr-retentions/{year}/{type}',[GetValuesAndTablesController::class,'IsrRetentionsByYearAndType']);
+    Route::get('/isr-retentions-all', [GetValuesAndTablesController::class, 'IsrRetentionsAll']);
+    Route::get('/isr-retentions/{year}/{type}', [GetValuesAndTablesController::class, 'IsrRetentionsByYearAndType']);
+
     /**
      * SUBSIDIES
      */
-    Route::get('/isr-subsidies-all',[GetValuesAndTablesController::class,'IsrSubsidiesAll']);
-    Route::get('/isr-subsidies/{year}/{type}',[GetValuesAndTablesController::class,'IsrSubsidiesByYearAndType']);
+    Route::get('/isr-subsidies-all', [GetValuesAndTablesController::class, 'IsrSubsidiesAll']);
+    Route::get('/isr-subsidies/{year}/{type}', [GetValuesAndTablesController::class, 'IsrSubsidiesByYearAndType']);
 
     /**
-     * TEN REFERENCE VALUES
+     * ISR PAYROLL TAXES
      */
-    Route::get('/reference-values',[GetValuesAndTablesController::class,'reference_values']);
-    Route::get('/reference-values/{year}',[GetValuesAndTablesController::class,'reference_values_by_year']);
+    Route::get('/isn-payroll-taxes-all', [GetValuesAndTablesController::class, 'IsnPayrollTaxesAll']);
+    Route::get('/isn-payroll-taxes/{state}', [GetValuesAndTablesController::class, 'IsnPayrollTaxesByState']);
+
+    /**
+     * REFERENCE VALUES
+     */
+    Route::get('/reference-values', [GetValuesAndTablesController::class, 'reference_values']);
+    Route::get('/reference-values/{year}', [GetValuesAndTablesController::class, 'reference_values_by_year']);
 });
 

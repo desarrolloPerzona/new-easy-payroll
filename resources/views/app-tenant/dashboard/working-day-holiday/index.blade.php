@@ -49,38 +49,43 @@
                             <div class="mb-3">
                                 <label class="font-bold mb-3" for="">Días de la semana</label>
 
-                                <div class="d-flex align-items-center">
-                                    <div class="col-1">
-                                        <input type="checkbox" class="rounded">
+                                {{--                                WorkingDays Loop--}}
+                                @foreach($daysArray as $day)
+                                    <div class="d-flex align-items-center">
+                                        <div class="col-1">
+                                            <input type="checkbox" class="rounded">
+                                        </div>
+                                        <div class="col-2">
+                                            {{__($day)}}
+                                        </div>
+                                        {{--                                    Hours in working day--}}
+                                        <div class="col-3 d-flex mb-2">
+                                            <select name="" id="" class="form-control mx-2">
+                                                @for($i = 0; $i < 24; $i++)
+                                                    @if($i <= 9)
+                                                        <option value="">0{{$i}}:00</option>
+                                                        <option value="">0{{$i}}:30</option>
+                                                    @else
+                                                        <option value="">{{$i}}:00</option>
+                                                        <option value="">{{$i}}:30</option>
+                                                    @endif
+                                                @endfor
+                                            </select>
+                                            <select name="" id="" class="form-control mx-2">
+                                                @for($i = 0; $i < 24; $i++)
+                                                    @if($i <= 9)
+                                                        <option value="">0{{$i}}:00</option>
+                                                        <option value="">0{{$i}}:30</option>
+                                                    @else
+                                                        <option value="">{{$i}}:00</option>
+                                                        <option value="">{{$i}}:30</option>
+                                                    @endif
+                                                @endfor
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="col-2">
-                                        Lunes
-                                    </div>
-                                    <div class="col-3 d-flex">
-                                        <select name="" id="" class="form-control mx-2">
-                                            @for($i = 0; $i < 24; $i++)
-                                                @if($i <= 9)
-                                                    <option value="">0{{$i}}:00</option>
-                                                    <option value="">0{{$i}}:30</option>
-                                                @else
-                                                    <option value="">{{$i}}:00</option>
-                                                    <option value="">{{$i}}:30</option>
-                                                @endif
-                                            @endfor
-                                        </select>
-                                        <select name="" id="" class="form-control mx-2">
-                                            @for($i = 0; $i < 24; $i++)
-                                                @if($i <= 9)
-                                                    <option value="">0{{$i}}:00</option>
-                                                    <option value="">0{{$i}}:30</option>
-                                                @else
-                                                    <option value="">{{$i}}:00</option>
-                                                    <option value="">{{$i}}:30</option>
-                                                @endif
-                                            @endfor
-                                        </select>
-                                    </div>
-                                </div>
+                                @endforeach
+
                             </div>
                         </form>
                     </div>

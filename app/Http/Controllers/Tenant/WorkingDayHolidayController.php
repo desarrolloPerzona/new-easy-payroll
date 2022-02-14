@@ -15,7 +15,11 @@ class WorkingDayHolidayController extends Controller
      */
     public function index()
     {
-        return view('app-tenant.dashboard.working-day-holiday.index');
+        $daysArray = [
+            'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
+        ];
+
+        return view('app-tenant.dashboard.working-day-holiday.index', compact('daysArray'));
     }
 
     /**

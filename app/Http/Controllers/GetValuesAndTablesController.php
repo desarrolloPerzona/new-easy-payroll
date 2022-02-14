@@ -56,7 +56,7 @@ class GetValuesAndTablesController extends Controller
 
     public function IsnPayrollTaxesAll(): \Illuminate\Database\Eloquent\Collection|array
     {
-        return IsnPayrollTax::all()->sortBy('lower_limit');
+        return IsnPayrollTax::orderBy('state')->get();
     }
 
     public function IsnPayrollTaxesByState($year,$state): \Illuminate\Database\Eloquent\Collection|array

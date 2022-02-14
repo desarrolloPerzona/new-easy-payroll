@@ -146,7 +146,11 @@
                         @foreach($dailyRetentions as $dailyValues)
                             <tr>
                                 <td>{{$dailyValues->lower_limit}}</td>
-                                <td>{{$dailyValues->upper_limit}}</td>
+                                @if($dailyValues->upper_limit == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$dailyValues->upper_limit}}</td>
+                                @endif
                                 <td>{{$dailyValues->fixed_feed}}</td>
                                 <td>{{$dailyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
@@ -171,7 +175,11 @@
                         @foreach($weeklyRetentions as $weeklyValues)
                             <tr>
                                 <td>{{$weeklyValues->lower_limit}}</td>
-                                <td>{{$weeklyValues->upper_limit}}</td>
+                                @if($weeklyValues->upper_limit == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$weeklyValues->upper_limit}}</td>
+                                @endif
                                 <td>{{$weeklyValues->fixed_feed}}</td>
                                 <td>{{$weeklyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
@@ -195,7 +203,11 @@
                         @foreach($tenDaysRetentions as $tenDaysValues)
                             <tr>
                                 <td>{{$tenDaysValues->lower_limit}}</td>
-                                <td>{{$tenDaysValues->upper_limit}}</td>
+                                @if($tenDaysValues->upper_limit == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$tenDaysValues->upper_limit}}</td>
+                                @endif
                                 <td>{{$tenDaysValues->fixed_feed}}</td>
                                 <td>{{$tenDaysValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
@@ -219,7 +231,11 @@
                         @foreach($biweeklyRetentions as $biweeklyValues)
                             <tr>
                                 <td>{{$biweeklyValues->lower_limit}}</td>
-                                <td>{{$biweeklyValues->upper_limit}}</td>
+                                @if($biweeklyValues->upper_limit == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$biweeklyValues->upper_limit}}</td>
+                                @endif
                                 <td>{{$biweeklyValues->fixed_feed}}</td>
                                 <td>{{$biweeklyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
@@ -243,7 +259,11 @@
                         @foreach($monthlyRetentions as $monthlyValues)
                             <tr>
                                 <td>{{$monthlyValues->lower_limit}}</td>
-                                <td>{{$monthlyValues->upper_limit}}</td>
+                                @if($monthlyValues->upper_limit == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$monthlyValues->upper_limit}}</td>
+                                @endif
                                 <td>{{$monthlyValues->fixed_feed}}</td>
                                 <td>{{$monthlyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
@@ -368,11 +388,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($tenDaysRetentions as $tenDaysValues)
+                        @foreach($tenDaysSubsidies as $tenDaysValue)
                             <tr>
-                                <td>{{$tenDaysValues->lower_limit}}</td>
-                                <td>{{$tenDaysValues->upper_limit}}</td>
-                                <td>{{$tenDaysValues->fixed_feed}}</td>
+                                <td>{{$tenDaysValue->income_from}}</td>
+                                @if($tenDaysValue->income_up_to == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$tenDaysValue->income_up_to}}</td>
+                                @endif
+                                <td>{{$tenDaysValue->employment_subsidy}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -390,11 +414,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($biweeklyRetentions as $biweeklyValues)
+                        @foreach($biweeklySubsidies as $biweeklyValue)
                             <tr>
-                                <td>{{$biweeklyValues->lower_limit}}</td>
-                                <td>{{$biweeklyValues->upper_limit}}</td>
-                                <td>{{$biweeklyValues->fixed_feed}}</td>
+                                <td>{{$biweeklyValue->income_from}}</td>
+                                @if($biweeklyValue->income_up_to == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$biweeklyValue->income_up_to}}</td>
+                                @endif
+                                <td>{{$biweeklyValue->employment_subsidy}}</td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -412,11 +440,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($monthlyRetentions as $monthlyValues)
+                        @foreach($monthlySubsidies as $monthlyValue)
                             <tr>
-                                <td>{{$monthlyValues->lower_limit}}</td>
-                                <td>{{$monthlyValues->upper_limit}}</td>
-                                <td>{{$monthlyValues->fixed_feed}}</td>
+                                <td>{{$monthlyValue->income_from}}</td>
+                                @if($monthlyValue->income_up_to == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$monthlyValue->income_up_to}}</td>
+                                @endif
+                                <td>{{$monthlyValue->employment_subsidy}}</td>
                             </tr>
                         @endforeach
                         </tbody>

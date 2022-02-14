@@ -2,10 +2,11 @@
     @push('inline_css')
 
         <style>
-            #collapse-reference{
+            #collapse-reference {
                 display: none;
             }
-            #collapse-retentions{
+
+            #collapse-retentions {
                 display: none;
             }
 
@@ -14,13 +15,13 @@
     @endpush
     <div class="container">
 
-{{--        Values header--}}
+        {{--        Values header--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
             <i class="fak fa-admin-perzona mr-2"></i>
             <span style="display: inline-flex;">{{ __('Table and value') }}</span>
         </h2>
 
-{{--        References values--}}
+        {{--        References values--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
 
             <div class="flex">
@@ -78,7 +79,7 @@
             </div>
         </div>
 
-{{--        Periodic retentions--}}
+        {{--        Periodic retentions--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
                 <div class="flex-1">
@@ -94,27 +95,32 @@
             <div id="collapse-retentions" x-data="data()">
                 <ul class="nav nav-tabs w-full mb-4" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active tab-retention cursor-pointer bg-primary text-white" id="daily-button" x-on:click="changeTab('daily')">
+                        <a class="nav-link active tab-retention cursor-pointer bg-primary text-white" id="daily-button"
+                           x-on:click="changeTab('daily')">
                             <i class="now-ui-icons objects_umbrella-13"></i> Diaria
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tab-retention cursor-pointer" id="weekly-button" x-on:click="changeTab('weekly')">
+                        <a class="nav-link tab-retention cursor-pointer" id="weekly-button"
+                           x-on:click="changeTab('weekly')">
                             <i class="now-ui-icons shopping_cart-simple"></i> Semanal
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tab-retention cursor-pointer" id="ten-days-button" x-on:click="changeTab('ten-days')">
+                        <a class="nav-link tab-retention cursor-pointer" id="ten-days-button"
+                           x-on:click="changeTab('ten-days')">
                             <i class="now-ui-icons shopping_shop"></i> Decenal
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tab-retention cursor-pointer" id="biweekly-button" x-on:click="changeTab('biweekly')">
+                        <a class="nav-link tab-retention cursor-pointer" id="biweekly-button"
+                           x-on:click="changeTab('biweekly')">
                             <i class="now-ui-icons ui-2_settings-90"></i> Quincenal
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tab-retention cursor-pointer" id="monthly-button" x-on:click="changeTab('monthly')">
+                        <a class="nav-link tab-retention cursor-pointer" id="monthly-button"
+                           x-on:click="changeTab('monthly')">
                             <i class="now-ui-icons ui-2_settings-90"></i> Mensual
                         </a>
                     </li>
@@ -125,12 +131,12 @@
 
                     <table class="table table-striped">
                         <thead>
-                            <tr>
-                                <th scope="col">{{__('Límite inferior')}}</th>
-                                <th scope="col">{{__('Límite superior')}}</th>
-                                <th scope="col">{{__('Cuota fija')}}</th>
-                                <th scope="col">{{__('Excedentes %')}}</th>
-                            </tr>
+                        <tr>
+                            <th scope="col">{{__('Límite inferior')}}</th>
+                            <th scope="col">{{__('Límite superior')}}</th>
+                            <th scope="col">{{__('Cuota fija')}}</th>
+                            <th scope="col">{{__('Excedentes %')}}</th>
+                        </tr>
                         </thead>
                         <tbody>
                         @foreach($dailyRetentions as $dailyValues)
@@ -245,18 +251,18 @@
             </div>
         </div>
 
-{{--        Periodic Tables--}}
+        {{--        Periodic Tables--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
-                <div class="flex-1">  <h2 class="pb-3">Tablas periódicas a subsidio</h2></div>
+                <div class="flex-1"><h2 class="pb-3">Tablas periódicas a subsidio</h2></div>
                 <div class="flex-2"><i class="fas fa-chevron-circle-down"></i></div>
             </div>
         </div>
 
-{{--        Taxes tables--}}
+        {{--        Taxes tables--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">
             <div class="flex">
-                <div class="flex-1">  <h2 class="pb-3">Tablas de impuesto sobre nómina</h2></div>
+                <div class="flex-1"><h2 class="pb-3">Tablas de impuesto sobre nómina</h2></div>
                 <div class="flex-2"><i class="fas fa-chevron-circle-down"></i></div>
             </div>
 
@@ -269,12 +275,12 @@
 
             // Function to collapse tables with effect and changeing arrow icon
             const arrowClick = (name) => {
-                $("#collapse-" + name).slideToggle(function() {
+                $("#collapse-" + name).slideToggle(function () {
                     let arrowButton = document.getElementById(`${name}-icon`)
-                    if (arrowButton.classList.contains('fa-chevron-circle-down')){
+                    if (arrowButton.classList.contains('fa-chevron-circle-down')) {
                         arrowButton.classList.remove('fa-chevron-circle-down')
                         arrowButton.classList.add('fa-chevron-circle-up')
-                    } else{
+                    } else {
                         arrowButton.classList.remove('fa-chevron-circle-up')
                         arrowButton.classList.add('fa-chevron-circle-down')
                     }
@@ -282,16 +288,16 @@
             }
 
             // Alpine function to change between tabs
-            function data(){
-                return{
-                    changeTab(button){
+            function data() {
+                return {
+                    changeTab(button) {
                         let retentionsButton = document.getElementById(`${button}-button`);
                         let retentionTabs = document.querySelectorAll('.tab-retention')
                         let allRetentionTables = document.querySelectorAll('.retentions-table')
                         let retentionTable = document.getElementById(`${button}-table`)
 
                         // Change all active classes to the othew tabs and added only the clicked button, active class.
-                        if(!retentionsButton.classList.contains('active')){
+                        if (!retentionsButton.classList.contains('active')) {
                             retentionTabs.forEach(item => {
                                 item.classList.remove('active', 'bg-primary', 'text-white')
                             })

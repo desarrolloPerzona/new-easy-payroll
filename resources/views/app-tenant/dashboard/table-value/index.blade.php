@@ -342,11 +342,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($weeklyRetentions as $weeklyValues)
+                        @foreach($weeklySubsidies as $weeklyValues)
                             <tr>
-                                <td>{{$weeklyValues->lower_limit}}</td>
-                                <td>{{$weeklyValues->upper_limit}}</td>
-                                <td>{{$weeklyValues->fixed_feed}}</td>
+                                <td>{{$weeklyValues->income_from}}</td>
+                                @if($weeklyValues->income_up_to == 999999.00)
+                                    <td>{{__('En adelante')}}</td>
+                                @else
+                                    <td>{{$weeklyValues->income_up_to}}</td>
+                                @endif
+                                <td>{{$weeklyValues->employment_subsidy}}</td>
                             </tr>
                         @endforeach
                         </tbody>

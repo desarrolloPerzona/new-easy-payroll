@@ -128,22 +128,22 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
+                            <th scope="col">{{__('Límite inferior $')}}</th>
+                            <th scope="col">{{__('Límite superior $')}}</th>
+                            <th scope="col">{{__('Cuota fija $')}}</th>
                             <th scope="col">{{__('Excedentes %')}}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($dailyRetentions as $dailyValues)
                             <tr>
-                                <td>{{$dailyValues->lower_limit}}</td>
+                                <td>{{number_format($dailyValues->lower_limit, 2, '.')}}</td>
                                 @if($dailyValues->upper_limit == 999999.00)
                                     <td>{{__('En adelante')}}</td>
                                 @else
-                                    <td>{{$dailyValues->upper_limit}}</td>
+                                    <td>{{number_format($dailyValues->upper_limit, 2, '.')}}</td>
                                 @endif
-                                <td>{{$dailyValues->fixed_feed}}</td>
+                                <td>{{ number_format($dailyValues->fixed_feed, 2, '.')}}</td>
                                 <td>{{$dailyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
                         @endforeach
@@ -157,22 +157,22 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
+                            <th scope="col">{{__('Límite inferior $')}}</th>
+                            <th scope="col">{{__('Límite superior $')}}</th>
+                            <th scope="col">{{__('Cuota fija $')}}</th>
                             <th scope="col">{{__('Excedentes %')}}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($weeklyRetentions as $weeklyValues)
                             <tr>
-                                <td>{{$weeklyValues->lower_limit}}</td>
+                                <td>{{number_format($weeklyValues->lower_limit, 2, '.')}}</td>
                                 @if($weeklyValues->upper_limit == 999999.00)
                                     <td>{{__('En adelante')}}</td>
                                 @else
-                                    <td>{{$weeklyValues->upper_limit}}</td>
+                                    <td>{{number_format($weeklyValues->upper_limit, 2, '.')}}</td>
                                 @endif
-                                <td>{{$weeklyValues->fixed_feed}}</td>
+                                <td>{{number_format($weeklyValues->fixed_feed, 2, '.')}}</td>
                                 <td>{{$weeklyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
                         @endforeach
@@ -185,22 +185,22 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
+                            <th scope="col">{{__('Límite inferior $')}}</th>
+                            <th scope="col">{{__('Límite superior $')}}</th>
+                            <th scope="col">{{__('Cuota fija $')}}</th>
                             <th scope="col">{{__('Excedentes %')}}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($tenDaysRetentions as $tenDaysValues)
                             <tr>
-                                <td>{{$tenDaysValues->lower_limit}}</td>
+                                <td>{{number_format($tenDaysValues->lower_limit, 2, '.')}}</td>
                                 @if($tenDaysValues->upper_limit == 999999.00)
                                     <td>{{__('En adelante')}}</td>
                                 @else
-                                    <td>{{$tenDaysValues->upper_limit}}</td>
+                                    <td>{{number_format($tenDaysValues->upper_limit, 2, '.')}}</td>
                                 @endif
-                                <td>{{$tenDaysValues->fixed_feed}}</td>
+                                <td>{{number_format($tenDaysValues->fixed_feed, 2, '.')}}</td>
                                 <td>{{$tenDaysValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
                         @endforeach
@@ -213,22 +213,22 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
+                            <th scope="col">{{__('Límite inferior $')}}</th>
+                            <th scope="col">{{__('Límite superior $')}}</th>
+                            <th scope="col">{{__('Cuota fija $')}}</th>
                             <th scope="col">{{__('Excedentes %')}}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($biweeklyRetentions as $biweeklyValues)
                             <tr>
-                                <td>{{$biweeklyValues->lower_limit}}</td>
+                                <td>{{number_format($biweeklyValues->lower_limit, 2, '.')}}</td>
                                 @if($biweeklyValues->upper_limit == 999999.00)
                                     <td>{{__('En adelante')}}</td>
                                 @else
-                                    <td>{{$biweeklyValues->upper_limit}}</td>
+                                    <td>{{number_format($biweeklyValues->upper_limit, 2, '.')}}</td>
                                 @endif
-                                <td>{{$biweeklyValues->fixed_feed}}</td>
+                                <td>{{number_format($biweeklyValues->fixed_feed, 2, '.')}}</td>
                                 <td>{{$biweeklyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
                         @endforeach
@@ -241,22 +241,22 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
+                            <th scope="col">{{__('Límite inferior $')}}</th>
+                            <th scope="col">{{__('Límite superior $')}}</th>
+                            <th scope="col">{{__('Cuota fija $')}}</th>
                             <th scope="col">{{__('Excedentes %')}}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($monthlyRetentions as $monthlyValues)
                             <tr>
-                                <td>{{$monthlyValues->lower_limit}}</td>
+                                <td>{{number_format($monthlyValues->lower_limit, 2, '.')}}</td>
                                 @if($monthlyValues->upper_limit == 999999.00)
                                     <td>{{__('En adelante')}}</td>
                                 @else
-                                    <td>{{$monthlyValues->upper_limit}}</td>
+                                    <td>{{ number_format($monthlyValues->upper_limit, 2, '.')}}</td>
                                 @endif
-                                <td>{{$monthlyValues->fixed_feed}}</td>
+                                <td>{{ number_format($monthlyValues->fixed_feed, 2, '.')}}</td>
                                 <td>{{$monthlyValues->percentage_excess_to_lower_limit}}</td>
                             </tr>
                         @endforeach
@@ -356,11 +356,11 @@
                         <tbody>
                         @foreach($weeklySubsidies as $weeklyValues)
                             <tr>
-                                <td>{{$weeklyValues->income_from}}</td>
+                                <td>{{number_format($weeklyValues->income_from, 2, '.')}}</td>
                                 @if($weeklyValues->income_up_to == 999999.00)
                                     <td>{{__('En adelante')}}</td>
                                 @else
-                                    <td>{{$weeklyValues->income_up_to}}</td>
+                                    <td>{{number_format($weeklyValues->income_up_to, 2, '.')}}</td>
                                 @endif
                                 <td>{{$weeklyValues->employment_subsidy}}</td>
                             </tr>
@@ -382,11 +382,11 @@
                         <tbody>
                         @foreach($tenDaysSubsidies as $tenDaysValue)
                             <tr>
-                                <td>{{$tenDaysValue->income_from}}</td>
+                                <td>{{number_format($tenDaysValue->income_from, 2, '.')}}</td>
                                 @if($tenDaysValue->income_up_to == 999999.00)
                                     <td>{{__('En adelante')}}</td>
                                 @else
-                                    <td>{{$tenDaysValue->income_up_to}}</td>
+                                    <td>{{number_format($tenDaysValue->income_up_to, 2, '.')}}</td>
                                 @endif
                                 <td>{{$tenDaysValue->employment_subsidy}}</td>
                             </tr>
@@ -408,11 +408,11 @@
                         <tbody>
                         @foreach($biweeklySubsidies as $biweeklyValue)
                             <tr>
-                                <td>{{$biweeklyValue->income_from}}</td>
+                                <td>{{number_format($biweeklyValue->income_from, 2, '.')}}</td>
                                 @if($biweeklyValue->income_up_to == 999999.00)
                                     <td>{{__('En adelante')}}</td>
                                 @else
-                                    <td>{{$biweeklyValue->income_up_to}}</td>
+                                    <td>{{number_format($biweeklyValue->income_up_to, 2, '.')}}</td>
                                 @endif
                                 <td>{{$biweeklyValue->employment_subsidy}}</td>
                             </tr>
@@ -434,11 +434,11 @@
                         <tbody>
                         @foreach($monthlySubsidies as $monthlyValue)
                             <tr>
-                                <td>{{$monthlyValue->income_from}}</td>
+                                <td>{{number_format($monthlyValue->income_from, 2, '.')}}</td>
                                 @if($monthlyValue->income_up_to == 999999.00)
                                     <td>{{__('En adelante')}}</td>
                                 @else
-                                    <td>{{$monthlyValue->income_up_to}}</td>
+                                    <td>{{number_format($monthlyValue->income_up_to, 2, '.')}}</td>
                                 @endif
                                 <td>{{$monthlyValue->employment_subsidy}}</td>
                             </tr>
@@ -465,7 +465,7 @@
 
             <div id="collapse-isn" class="display-none mt-5" x-data="data()">
 
-                {{--                Daily table--}}
+                {{--                All tables for each state--}}
                 <div id="daily-table" class="retentions-table">
 
                     @foreach($stateVariables as $key =>$name)
@@ -477,22 +477,23 @@
                         <table class="table table-striped mb-5">
                             <thead>
                             <tr>
-                                <th scope="col">{{__('Límite inferior')}}</th>
-                                <th scope="col">{{__('Límite superior')}}</th>
-                                <th scope="col">{{__('Cuota fija')}}</th>
+                                <th scope="col">{{__('Límite inferior $')}}</th>
+                                <th scope="col">{{__('Límite superior $')}}</th>
+                                <th scope="col">{{__('Cuota fija $')}}</th>
                                 <th scope="col">{{__('Excedentes %')}}</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach(${"$name"} as $stateValue)
                                 <tr>
-                                    <td>{{$stateValue->lower_limit}}</td>
-                                    @if(!$stateValue->upper_limit == 999999.00)
-                                        <td>{{$stateValue->upper_limit}}</td>
-                                    @else
+                                    <td>{{number_format($stateValue->lower_limit, 2, '.')}}</td>
+                                    @if($stateValue->upper_limit == 999999.00)
+
                                         <td>{{__('En adelante')}}</td>
+                                    @else
+                                        <td>{{number_format($stateValue->upper_limit, 2, '.')}}</td>
                                     @endif
-                                    <td>{{$stateValue->fixed_fee}}</td>
+                                    <td>{{number_format($stateValue->fixed_fee, 2, '.')}}</td>
                                     <td>{{$stateValue->lower_limit_surplus_percentage}}</td>
                                 </tr>
                             @endforeach

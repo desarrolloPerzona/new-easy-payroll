@@ -22,17 +22,17 @@
                 <div class="w-1/5 w-full text-center mt-3">1</div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="15">
+                        id="name" name="Name" min="15" placeholder="15">
                 </div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="6"></div>
+                        id="name" name="Name" min="6" placeholder="6"></div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="0.25"></div>
+                        id="name" name="Name" min="0.25" placeholder="0.25"></div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="0"></div>
+                        id="name" name="Name"  placeholder="0"></div>
                 <div class="flex-1">
                     <i class="fas fa-circle text-white"></i>
                 </div>
@@ -42,14 +42,14 @@
                 <div class="w-1/5 w-full text-center mt-3">2</div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="15">
+                        id="name" name="Name" min="15" placeholder="15">
                 </div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="8"></div>
+                        id="name" name="Name" min="8" placeholder="8"></div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="0.25"></div>
+                        id="name" name="Name" min="0.25" placeholder="0.25"></div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
                         id="name" name="Name" placeholder="0"></div>
@@ -62,14 +62,14 @@
                 <div class="w-1/5 w-full text-center mt-3">3</div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="15">
+                        id="name" name="Name" min="15" placeholder="15">
                 </div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="10"></div>
+                        id="name" name="Name" min="10" placeholder="10"></div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="0.25"></div>
+                        id="name" name="Name" min="0.25" placeholder="0.25"></div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
                         id="name" name="Name" placeholder="0"></div>
@@ -82,14 +82,14 @@
                 <div class="w-1/5 w-full text-center mt-3">4</div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="15">
+                        id="name" name="Name" min="15" placeholder="15">
                 </div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="12"></div>
+                        id="name" name="Name" min="12" placeholder="12"></div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="0.25"></div>
+                        id="name" name="Name" min="0.25" placeholder="0.25"></div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
                         id="name" name="Name" placeholder="0"></div>
@@ -107,14 +107,14 @@
                             <div class="w-1/5 w-full text-center mt-3">5-9</div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                    type="number" id="name" name="Name" placeholder="15">
+                                    type="number" id="name" name="Name" min="15" placeholder="15">
                             </div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                    type="number" id="name" name="Name" placeholder="14"></div>
+                                    type="number" id="name" name="Name" min="14" placeholder="14"></div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                    type="number" id="name" name="Name" placeholder="0.25"></div>
+                                    type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                     type="number" id="name" name="Name" placeholder="0"></div>
@@ -137,14 +137,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">5</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="14"></div>
+                                        type="number" id="name" name="Name" min="14" placeholder="14"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -153,14 +153,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">6</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="14"></div>
+                                        type="number" id="name" name="Name" min="14" placeholder="14"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -169,14 +169,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">7</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="14"></div>
+                                        type="number" id="name" name="Name" min="14" placeholder="14"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -185,27 +185,27 @@
                                 <div class="w-1/5 w-full text-center mt-3">8</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="14"></div>
+                                        type="number" id="name" name="Name" min="14" placeholder="14"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0"></div>
                             </div>
                             <div class="flex items-center">
                                 <div class="w-1/5 w-full text-center mt-3">9</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="14"></div>
+                                        type="number" id="name" name="Name" min="14" placeholder="14"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0.25"></div>
@@ -228,7 +228,7 @@
                             <div class="w-1/5 w-full text-center mt-3">10-14</div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                    type="number" id="name" name="Name" placeholder="15">
+                                    type="number" id="name" name="Name" min="15" placeholder="15">
                             </div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
@@ -258,14 +258,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">10</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="16"></div>
+                                        type="number" id="name" name="Name" min="16" placeholder="16"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -274,14 +274,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">11</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="16"></div>
+                                        type="number" id="name" name="Name" min="16" placeholder="16"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -290,14 +290,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">12</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="16"></div>
+                                        type="number" id="name" name="Name" min="16" placeholder="16"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -306,14 +306,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">13</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="16"></div>
+                                        type="number" id="name" name="Name" min="16" placeholder="16"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -322,14 +322,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">14</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="16"></div>
+                                        type="number" id="name" name="Name" min="16" placeholder="16"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -349,14 +349,14 @@
                             <div class="w-1/5 w-full text-center mt-3">15-19</div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                    type="number" id="name" name="Name" placeholder="15">
+                                    type="number" id="name" name="Name" min="15" placeholder="15">
                             </div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                    type="number" id="name" name="Name" placeholder="18"></div>
+                                    type="number" id="name" name="Name" min="18" placeholder="18"></div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                    type="number" id="name" name="Name" placeholder="0.25"></div>
+                                    type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                     type="number" id="name" name="Name" placeholder="0"></div>
@@ -379,14 +379,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">15</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="18"></div>
+                                        type="number" id="name" name="Name" min="18" placeholder="18"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -395,14 +395,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">16</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="18"></div>
+                                        type="number" id="name" name="Name" min="18" placeholder="18"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -411,14 +411,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">17</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="18"></div>
+                                        type="number" id="name" name="Name" min="18" placeholder="18"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -427,14 +427,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">18</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="18"></div>
+                                        type="number" id="name" name="Name" min="18" placeholder="18"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -443,14 +443,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">19</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="18"></div>
+                                        type="number" id="name" name="Name" min="18" placeholder="18"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -470,14 +470,14 @@
                             <div class="w-1/5 w-full text-center mt-3">20-24</div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                    type="number" id="name" name="Name" placeholder="15">
+                                    type="number" id="name" name="Name" min="15" placeholder="15">
                             </div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                    type="number" id="name" name="Name" placeholder="20"></div>
+                                    type="number" id="name" name="Name" min="20" placeholder="20"></div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                    type="number" id="name" name="Name" placeholder="0.25"></div>
+                                    type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                             <div class="w-1/5 w-full"><input
                                     class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                     type="number" id="name" name="Name" placeholder="0"></div>
@@ -500,14 +500,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">20</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="20"></div>
+                                        type="number" id="name" name="Name" min="20" placeholder="20"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -516,14 +516,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">21</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="20"></div>
+                                        type="number" id="name" name="Name" min="20" placeholder="20"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -532,14 +532,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">22</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="20"></div>
+                                        type="number" id="name" name="Name" min="20" placeholder="20"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -548,14 +548,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">23</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="20"></div>
+                                        type="number" id="name" name="Name" min="20" placeholder="20"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -564,14 +564,14 @@
                                 <div class="w-1/5 w-full text-center mt-3">24</div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="15">
+                                        type="number" id="name" name="Name" min="15" placeholder="15">
                                 </div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="20"></div>
+                                        type="number" id="name" name="Name" min="20" placeholder="20"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                        type="number" id="name" name="Name" placeholder="0.25"></div>
+                                        type="number" id="name" name="Name" min="0.25" placeholder="0.25"></div>
                                 <div class="w-1/5 w-full"><input
                                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
                                         type="number" id="name" name="Name" placeholder="0"></div>
@@ -587,14 +587,14 @@
                 <div class="w-1/5 w-full text-center mt-3">25-*</div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="15">
+                        id="name" name="Name" min="15" placeholder="15">
                 </div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="22"></div>
+                        id="name" name="Name" min="22" placeholder="22"></div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
-                        id="name" name="Name" placeholder="0.25"></div>
+                        id="name" name="Name" min="0.25" placeholder="0.25"></div>
                 <div class="w-1/5 w-full"><input
                         class="text-center text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="number"
                         id="name" name="Name" placeholder="0"></div>

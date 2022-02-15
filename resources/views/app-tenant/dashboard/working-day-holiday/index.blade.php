@@ -97,7 +97,7 @@
                                 @endforeach
 
                                 {{--                                Meal Section--}}
-                                <label class="font-bold mb-3" for="">Hora de comida</label>
+                                <label class="font-bold my-3" for="">Hora de comida</label>
 
                                 <div class="d-flex align-items-center">
                                     <div class="col-1">

@@ -47,6 +47,8 @@
                             </div>
 
                             <div class="mb-3">
+
+                                {{--                                Working days section--}}
                                 <label class="font-bold mb-3" for="">Días de la semana</label>
 
                                 {{--                                WorkingDays Loop--}}
@@ -71,6 +73,10 @@
                                                     @endif
                                                 @endfor
                                             </select>
+                                            <div class="d-flex align-items-end">
+                                                <small>hrs</small>
+                                            </div>
+
                                             <select name="" id="" class="form-control mx-2">
                                                 @for($i = 0; $i < 24; $i++)
                                                     @if($i <= 9)
@@ -82,9 +88,62 @@
                                                     @endif
                                                 @endfor
                                             </select>
+                                            <div class="d-flex align-items-end">
+                                                <small>hrs</small>
+                                            </div>
+
                                         </div>
                                     </div>
                                 @endforeach
+
+                                {{--                                Meal Section--}}
+                                <label class="font-bold my-3" for="">Hora de comida</label>
+
+                                <div class="d-flex align-items-center">
+                                    <div class="col-1">
+                                        <input type="checkbox" class="rounded">
+                                    </div>
+                                    <div class="col-2">
+                                        {{__('Comida')}}
+                                    </div>
+                                    {{--                                    Hours in working day--}}
+                                    <div class="col-3 d-flex mb-2">
+                                        <select name="" id="" class="form-control mx-2">
+                                            @for($i = 0; $i < 24; $i++)
+                                                @if($i <= 9)
+                                                    <option value="">0{{$i}}:00</option>
+                                                    <option value="">0{{$i}}:30</option>
+                                                @else
+                                                    <option value="">{{$i}}:00</option>
+                                                    <option value="">{{$i}}:30</option>
+                                                @endif
+                                            @endfor
+                                        </select>
+                                        <div class="d-flex align-items-end">
+                                            <small>hrs</small>
+                                        </div>
+
+                                        <select name="" id="" class="form-control mx-2">
+                                            @for($i = 0; $i < 24; $i++)
+                                                @if($i <= 9)
+                                                    <option value="">0{{$i}}:00</option>
+                                                    <option value="">0{{$i}}:30</option>
+                                                @else
+                                                    <option value="">{{$i}}:00</option>
+                                                    <option value="">{{$i}}:30</option>
+                                                @endif
+                                            @endfor
+                                        </select>
+                                        <div class="d-flex align-items-end">
+                                            <small>hrs</small>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-end">
+                                    <button class="btn btn-primary" type="submit">{{__('Save')}}</button>
+                                </div>
 
                             </div>
                         </form>

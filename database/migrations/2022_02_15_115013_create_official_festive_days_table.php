@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBusinessBenefits extends Migration
+class CreateOfficialFestiveDaysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateBusinessBenefits extends Migration
      */
     public function up()
     {
-        Schema::create('business_benefits', function (Blueprint $table) {
+        Schema::create('official_festive_days', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
+            $table->date('date');
+            $table->boolean('working')->default(false);
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateBusinessBenefits extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('business_benefits');
+        Schema::dropIfExists('official_festive_days');
     }
 }

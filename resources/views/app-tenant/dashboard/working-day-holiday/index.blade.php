@@ -59,10 +59,17 @@
 
                                 {{--                                WorkingDays Loop--}}
                                 @foreach($daysArray as $day)
+
                                     <div class="d-flex align-items-center">
+                                        @php
+                                            $day = strtolower($day);
+                                        @endphp
                                         <div class="col-1">
-                                            <input type="checkbox" name="{{$day}}" id="{{$day}}" value="{{$day}}" class="rounded">
+                                            <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1" class="rounded">
                                         </div>
+                                        @php
+                                            $day = ucfirst($day);
+                                        @endphp
                                         <div class="col-2">
                                             {{__($day)}}
                                         </div>
@@ -111,21 +118,21 @@
 
                                 <div class="d-flex align-items-center">
                                     <div class="col-1">
-                                        <input type="checkbox" class="rounded">
+                                        <input name="meal_time" id="meal_time" value="1" type="checkbox" class="rounded">
                                     </div>
                                     <div class="col-2">
                                         {{__('Comida')}}
                                     </div>
                                     {{--                                    Hours in working day--}}
                                     <div class="col-3 d-flex mb-2">
-                                        <select name="" id="" class="form-control mx-2">
+                                        <select name="meal_time_from" id="meal_time_from" class="form-control mx-2">
                                             @for($i = 0; $i < 24; $i++)
                                                 @if($i <= 9)
-                                                    <option value="">0{{$i}}:00</option>
-                                                    <option value="">0{{$i}}:30</option>
+                                                    <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                    <option value="0{{$i}}:30">0{{$i}}:30</option>
                                                 @else
-                                                    <option value="">{{$i}}:00</option>
-                                                    <option value="">{{$i}}:30</option>
+                                                    <option value="{{$i}}:00">{{$i}}:00</option>
+                                                    <option value="{{$i}}:30">{{$i}}:30</option>
                                                 @endif
                                             @endfor
                                         </select>
@@ -133,14 +140,14 @@
                                             <small>hrs</small>
                                         </div>
 
-                                        <select name="" id="" class="form-control mx-2">
+                                        <select name="meal_time_to" id="meal_time_to" class="form-control mx-2">
                                             @for($i = 0; $i < 24; $i++)
                                                 @if($i <= 9)
-                                                    <option value="">0{{$i}}:00</option>
-                                                    <option value="">0{{$i}}:30</option>
+                                                    <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                    <option value="0{{$i}}:30">0{{$i}}:30</option>
                                                 @else
-                                                    <option value="">{{$i}}:00</option>
-                                                    <option value="">{{$i}}:30</option>
+                                                    <option value="{{$i}}:00">{{$i}}:00</option>
+                                                    <option value="{{$i}}:30">{{$i}}:30</option>
                                                 @endif
                                             @endfor
                                         </select>

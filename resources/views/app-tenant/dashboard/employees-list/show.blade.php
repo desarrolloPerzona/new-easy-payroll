@@ -36,7 +36,7 @@
         {{--        Tabs Menu--}}
         <div id="collapse-retentions" x-data="data()" class="px-2">
 
-            {{--            Header Tabs buttons--}}
+            {{--            Employee Tabs buttons--}}
             <ul class="nav nav-tabs w-full mb-2" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active tab-retention cursor-pointer bg-primary text-white" id="personal-button"
@@ -65,23 +65,23 @@
                 <li class="nav-item">
                     <a class="nav-link tab-retention cursor-pointer" id="documents-button"
                        x-on:click="changeTab('documents')">
-                        <i class="now-ui-icons ui-2_settings-90"></i> Documentos
+                        <i class="now-ui-icons shopping_shop"></i> Documentos
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link tab-retention cursor-pointer" id="kardex-button"
                        x-on:click="changeTab('kardex')">
-                        <i class="now-ui-icons ui-2_settings-90"></i> Kardex
+                        <i class="now-ui-icons shopping_shop"></i> Kardex
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link tab-retention cursor-pointer" id="notes-button" x-on:click="changeTab('notes')">
-                        <i class="now-ui-icons ui-2_settings-90"></i> Notas
+                        <i class="now-ui-icons shopping_shop"></i> Notas
                     </a>
                 </li>
             </ul>
 
-            {{--                Personal--}}
+            {{--                Personal-----------------------------------------------------}}
             <div id="personal-table" class="retentions-table">
                 <div class="card p-4 mb-2">
                     <h2>Información básica <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
@@ -183,7 +183,7 @@
 
             </div>
 
-            {{--                Empleo--}}
+            {{--                Empleo-----------------------------------------------------}}
             <div id="employee-table" class="retentions-table d-none">
                 <div class="card p-4 mb-2">
                     <h2>Detalles del empleo <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
@@ -239,7 +239,7 @@
                 </div>
             </div>
 
-            {{--            Pago--}}
+            {{--            Pago-----------------------------------------------------------}}
             <div id="payment-table" class="retentions-table d-none">
                 <div class="card p-4 mb-2">
                     <h2>Detalle de pago <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
@@ -449,7 +449,8 @@
                                         <div class="flex my-3">
                                             <div class="flex-1 w-1/3">
                                                 {{--Date Picker---------------}}
-                                                <div class="flex-1 items-center justify-center bg-gray-200 h-full dark:bg-dark dark:text-white">
+                                                <div
+                                                    class="flex-1 items-center justify-center bg-gray-200 h-full dark:bg-dark dark:text-white">
                                                     <script
                                                         src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
                                                         defer></script>
@@ -466,7 +467,8 @@
                                                             <div class="container mx-auto px-4 py-2 md:py-10">
                                                                 <div class="mb-5">
                                                                     <label for="datepicker"
-                                                                           class="font-bold mb-1 text-gray-700 block dark:text-white">Fecha de inicio de percepción</label
+                                                                           class="font-bold mb-1 text-gray-700 block dark:text-white">Fecha
+                                                                        de inicio de percepción</label
                                                                     >
                                                                     <div class="relative">
                                                                         <input type="hidden" name="date" x-ref="date"/>
@@ -738,30 +740,32 @@
                                             </div>
                                             <div class="flex-1 w-1/3 mx-2">
                                                 <label class="font-bold" for="name">Monto total de percecpción</label>
-                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                                       type="text" id="name" name="Name">
+                                                <input
+                                                    class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
+                                                    type="text" id="name" name="Name">
 
                                             </div>
                                             <div class="flex-1 w-1/3 mx-2">
                                                 <label class="font-bold" for="name">Numero de periodos</label>
-                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                                       type="text" id="name" name="Name">
+                                                <input
+                                                    class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
+                                                    type="text" id="name" name="Name">
 
                                             </div>
                                         </div>
 
-                                            <div class="text-left py-2">
-                                                <label class="font-bold"
-                                                       for="name">{{__('Accounting account')}}</label>
-                                            </div>
-                                            <label class="w-full">
-                                                <select class="w-full rounded dark:bg-dark dark:text-white">
-                                                    <option value="001">Cuenta BBVA 1256</option>
-                                                    <option value="002">Cuenta BBVA 6987</option>
-                                                    <option value="002">Cuenta Santander 4585</option>
+                                        <div class="text-left py-2">
+                                            <label class="font-bold"
+                                                   for="name">{{__('Accounting account')}}</label>
+                                        </div>
+                                        <label class="w-full">
+                                            <select class="w-full rounded dark:bg-dark dark:text-white">
+                                                <option value="001">Cuenta BBVA 1256</option>
+                                                <option value="002">Cuenta BBVA 6987</option>
+                                                <option value="002">Cuenta Santander 4585</option>
 
-                                                </select>
-                                            </label>
+                                            </select>
+                                        </label>
 
 
                                         <div class="btn-top-holder my-3 flow-root">
@@ -949,7 +953,8 @@
                                         <div class="flex my-3">
                                             <div class="flex-1 w-1/3">
                                                 {{--Date Picker---------------}}
-                                                <div class="flex-1 items-center justify-center bg-gray-200 h-full dark:bg-dark dark:text-white">
+                                                <div
+                                                    class="flex-1 items-center justify-center bg-gray-200 h-full dark:bg-dark dark:text-white">
                                                     <script
                                                         src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
                                                         defer></script>
@@ -966,7 +971,8 @@
                                                             <div class="container mx-auto px-4 py-2 md:py-10">
                                                                 <div class="mb-5">
                                                                     <label for="datepicker"
-                                                                           class="font-bold mb-1 text-gray-700 block dark:text-white">Fecha de inicio de deducción</label
+                                                                           class="font-bold mb-1 text-gray-700 block dark:text-white">Fecha
+                                                                        de inicio de deducción</label
                                                                     >
                                                                     <div class="relative">
                                                                         <input type="hidden" name="date" x-ref="date"/>
@@ -1238,14 +1244,16 @@
                                             </div>
                                             <div class="flex-1 w-1/3 mx-2">
                                                 <label class="font-bold" for="name">Monto total de deducción</label>
-                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                                       type="text" id="name" name="Name">
+                                                <input
+                                                    class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
+                                                    type="text" id="name" name="Name">
 
                                             </div>
                                             <div class="flex-1 w-1/3 mx-2">
                                                 <label class="font-bold" for="name">Numero de deducción</label>
-                                                <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
-                                                       type="text" id="name" name="Name">
+                                                <input
+                                                    class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
+                                                    type="text" id="name" name="Name">
 
                                             </div>
                                         </div>
@@ -1279,7 +1287,7 @@
 
             </div>
 
-            {{--            Eventos--}}
+            {{--            Eventos---------------------------------------------------------}}
             <div id="events-table" class="retentions-table d-none">
 
                 <div class="card p-4 mb-2">
@@ -1384,109 +1392,259 @@
                     </div>
 
                 </div>
+            </div>
 
+            {{--            Documents--}}
+            <div id="documents-table" class="retentions-table d-none">
 
-                {{--            Documents--}}
-                <div id="documents-table" class="retentions-table d-none">
+                {{--        Percepcion Accordion--}}
+                <div class="accordion" id="workingDayAccordion">
+                    <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
+                        {{--                Accordion header--}}
+                        <div class="accordion-header mr-4" id="headingWorkingDay">
+                            <div class="flex">
+                                <div class="flex-1">Subir documento</div>
+                                <div class="flex-2">
+                                    <button type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#workingDayCollapse"
+                                            aria-expanded="false" aria-controls="workingDayCollapse">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        {{--                Accordion Body--}}
+                        <div id="workingDayCollapse" class="accordion-collapse collapse"
+                             aria-labelledby="headingWorkingDay"
+                             data-bs-parent="#workingDayAccordion">
+                            <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
+                                <form action="" class="text-black rounded">
+                                    <label class="font-bold" for="name">Nombre</label>
+                                    <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
+                                           type="text" id="name" name="Name">
+                                    <input type="file" name="logo_square_url" class="form-control">
+                                    <div class="btn-top-holder my-3 flow-root">
+                                        <a href="javascript: history.go(-1)" class="btn btn-dark float-right">
+                                            {{ __('Upload') }}
+                                        </a>
+                                    </div>
 
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
-                            <th scope="col">{{__('Excedentes %')}}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Documentos</td>
-                            <td>Documentos</td>
-                            <td>Documentos</td>
-                            <td>Documentos</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="card p-4 mb-2">
 
-                {{--            Kardex--}}
-                <div id="kardex-table" class="retentions-table d-none">
+                    <div class="flex items-center mb-2">
+                        <div class="w-1/12"></div>
+                        <div class="w-3/12 font-bold">Nombre</div>
+                        <div class="w-3/12 font-bold">Fecha de subida</div>
+                        <div class="w-2/12 font-bold">Tipo</div>
+                        <div class="w-3/12 font-bold">Autor</div>
+                        <div class="w-1/12 font-bold"></div>
+                        <div class="w-1/12 font-bold"></div>
+                        <div class="w-1/12 font-bold"></div>
+                    </div>
 
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
-                            <th scope="col">{{__('Excedentes %')}}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Kardex</td>
-                            <td>Kardex</td>
-                            <td>Kardex</td>
-                            <td>Kardex</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <div class="flex items-center my-2">
+                        <div class="w-1/12"><i class="fa-solid fa-file-pdf ml-3 text-gray-500"></i></div>
+                        <div class="w-3/12">Acta de nacimiento</div>
+                        <div class="w-3/12">22/01/2021</div>
+                        <div class="w-2/12">PDF</div>
+                        <div class="w-3/12">Administrador</div>
+                        <div class="w-1/12"><i class="fa-solid fa-eye"></i></div>
+                        <div class="w-1/12"><i class="fa-solid fa-arrow-down-to-bracket"></i></div>
+                        <div class="w-1/12"><i class="fa-solid fa-trash-can"></i></div>
+                    </div>
 
+                    <div class="flex items-center my-2">
+                        <div class="w-1/12"><i class="fa-solid fa-file-pdf ml-3 text-gray-500"></i></div>
+                        <div class="w-3/12">CURP</div>
+                        <div class="w-3/12">22/01/2021</div>
+                        <div class="w-2/12">PDF</div>
+                        <div class="w-3/12">Administrador</div>
+                        <div class="w-1/12"><i class="fa-solid fa-eye"></i></div>
+                        <div class="w-1/12"><i class="fa-solid fa-arrow-down-to-bracket"></i></div>
+                        <div class="w-1/12"><i class="fa-solid fa-trash-can"></i></div>
+                    </div>
+
+                    <div class="flex items-center my-2">
+                        <div class="w-1/12"><i class="fa-solid fa-file-image ml-3 text-gray-500"></i></div>
+                        <div class="w-3/12">RFC</div>
+                        <div class="w-3/12">22/01/2021</div>
+                        <div class="w-2/12">JPG</div>
+                        <div class="w-3/12">Usuario</div>
+                        <div class="w-1/12"><i class="fa-solid fa-eye"></i></div>
+                        <div class="w-1/12"><i class="fa-solid fa-arrow-down-to-bracket"></i></div>
+                        <div class="w-1/12"><i class="fa-solid fa-trash-can"></i></div>
+                    </div>
+
+                    <div class="flex items-center my-2">
+                        <div class="w-1/12"><i class="fa-solid fa-file-pdf ml-3 text-gray-500"></i></div>
+                        <div class="w-3/12">Pasaporte</div>
+                        <div class="w-3/12">22/01/2021</div>
+                        <div class="w-2/12">PDF</div>
+                        <div class="w-3/12">Administrador</div>
+                        <div class="w-1/12"><i class="fa-solid fa-eye"></i></div>
+                        <div class="w-1/12"><i class="fa-solid fa-arrow-down-to-bracket"></i></div>
+                        <div class="w-1/12"><i class="fa-solid fa-trash-can"></i></div>
+                    </div>
                 </div>
+            </div>
 
-                {{--            Kardex--}}
-                <div id="notes-table" class="retentions-table d-none">
+            {{--            Kardex--}}
+            <div id="kardex-table" class="retentions-table d-none">
 
-                    <table class="table table-striped">
-                        <thead>
-                        <tr>
-                            <th scope="col">{{__('Límite inferior')}}</th>
-                            <th scope="col">{{__('Límite superior')}}</th>
-                            <th scope="col">{{__('Cuota fija')}}</th>
-                            <th scope="col">{{__('Excedentes %')}}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Notas</td>
-                            <td>Notas</td>
-                            <td>Notas</td>
-                            <td>Notas</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">{{__('Límite inferior')}}</th>
+                        <th scope="col">{{__('Límite superior')}}</th>
+                        <th scope="col">{{__('Cuota fija')}}</th>
+                        <th scope="col">{{__('Excedentes %')}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Kardex</td>
+                        <td>Kardex</td>
+                        <td>Kardex</td>
+                        <td>Kardex</td>
+                    </tr>
+                    </tbody>
+                </table>
 
-                </div>
+            </div>
+
+            {{--            Kardex--}}
+            <div id="notes-table" class="retentions-table d-none">
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">{{__('Límite inferior')}}</th>
+                        <th scope="col">{{__('Límite superior')}}</th>
+                        <th scope="col">{{__('Cuota fija')}}</th>
+                        <th scope="col">{{__('Excedentes %')}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Notas</td>
+                        <td>Notas</td>
+                        <td>Notas</td>
+                        <td>Notas</td>
+                    </tr>
+                    </tbody>
+                </table>
 
             </div>
 
         </div>
-        @push('inline_scripts')
-            <script>
-                // Alpine function to change between tabs
-                function data() {
-                    return {
-                        changeTab(button) {
-                            let retentionsButton = document.getElementById(`${button}-button`);
-                            let retentionTabs = document.querySelectorAll('.tab-retention')
-                            let allRetentionTables = document.querySelectorAll('.retentions-table')
-                            let retentionTable = document.getElementById(`${button}-table`)
 
-                            // Change all active classes to the othew tabs and added only the clicked button, active class.
-                            if (!retentionsButton.classList.contains('active')) {
-                                retentionTabs.forEach(item => {
-                                    item.classList.remove('active', 'bg-primary', 'text-white')
-                                })
-                                allRetentionTables.forEach(item => {
-                                    item.classList.add('d-none')
-                                })
-                                retentionsButton.classList.add('active', 'bg-primary', 'text-white')
-                                retentionTable.classList.remove('d-none')
-                            }
+        {{--            Documents---------------------------------------------------------}}
+
+        <div id="documents-table" class="retentions-table d-none">
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">{{__('Límite inferior')}}</th>
+                    <th scope="col">{{__('Límite superior')}}</th>
+                    <th scope="col">{{__('Cuota fija')}}</th>
+                    <th scope="col">{{__('Excedentes %')}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Documentos</td>
+                    <td>Documentos</td>
+                    <td>Documentos</td>
+                    <td>Documentos</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        {{--            Kardex--}}
+        <div id="kardex-table" class="retentions-table d-none">
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">{{__('Límite inferior')}}</th>
+                    <th scope="col">{{__('Límite superior')}}</th>
+                    <th scope="col">{{__('Cuota fija')}}</th>
+                    <th scope="col">{{__('Excedentes %')}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Kardex</td>
+                    <td>Kardex</td>
+                    <td>Kardex</td>
+                    <td>Kardex</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        {{--            Kardex--}}
+        <div id="notes-table" class="retentions-table d-none">
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">{{__('Límite inferior')}}</th>
+                    <th scope="col">{{__('Límite superior')}}</th>
+                    <th scope="col">{{__('Cuota fija')}}</th>
+                    <th scope="col">{{__('Excedentes %')}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Notas</td>
+                    <td>Notas</td>
+                    <td>Notas</td>
+                    <td>Notas</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+    </div>
+    @push('inline_scripts')
+        <script>
+            // Alpine function to change between tabs
+            function data() {
+                return {
+                    changeTab(button) {
+                        let retentionsButton = document.getElementById(`${button}-button`);
+                        let retentionTabs = document.querySelectorAll('.tab-retention')
+                        let allRetentionTables = document.querySelectorAll('.retentions-table')
+                        let retentionTable = document.getElementById(`${button}-table`)
+
+                        // Change all active classes to the othew tabs and added only the clicked button, active class.
+                        if (!retentionsButton.classList.contains('active')) {
+                            retentionTabs.forEach(item => {
+                                item.classList.remove('active', 'bg-primary', 'text-white')
+                            })
+                            allRetentionTables.forEach(item => {
+                                item.classList.add('d-none')
+                            })
+                            retentionsButton.classList.add('active', 'bg-primary', 'text-white')
+                            retentionTable.classList.remove('d-none')
                         }
                     }
                 }
+            }
 
-            </script>
+        </script>
     @endpush
 </x-app-tenant>

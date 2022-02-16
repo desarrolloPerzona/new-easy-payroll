@@ -296,14 +296,18 @@
                                             </div>
                                             <div class="flex-2 text-left w-1/2">
                                                 <label class="my-2 font-bold">
-                                                    {{--                                                Function to remove comma of the last element--}}
-                                                    @foreach($daysOfWork as $key => $day)
-                                                        @if(($key + 1) == count($daysOfWork))
-                                                            {{__($day)}}
-                                                        @else
-                                                            {{__($day)}},
-                                                        @endif
-                                                    @endforeach
+                                                    {{--Function to remove comma of the last element--}}
+                                                    @if(count($daysOfWork))
+                                                        @foreach($daysOfWork as $key => $day)
+                                                            @if(($key + 1) == count($daysOfWork))
+                                                                {{__($day)}}
+                                                            @else
+                                                                {{__($day)}},
+                                                            @endif
+                                                        @endforeach
+                                                    @else
+                                                        {{__('No records')}}
+                                                    @endif
                                                 </label>
                                             </div>
                                         </div>
@@ -321,28 +325,40 @@
                                         </div>
 
                                         {{--                                    Table to show Workdays and schedules--}}
+                                        @php
+                                            $lowerWorkDays = [];
+                                                foreach ($daysOfWork as $day){
+                                                    array_push($lowerWorkDays, strtolower($day));
+                                                }
+                                        @endphp
+
                                         <table class="table table-striped">
                                             <thead>
                                             <th>Días de trabajo</th>
                                             <th>Horario de entrada</th>
                                             <th>Horario de salida</th>
                                             </thead>
-                                            @php
-                                                $lowerWorkDays = [];
-                                                    foreach ($daysOfWork as $day){
-                                                        array_push($lowerWorkDays, strtolower($day));
-                                                    }
-                                            @endphp
 
-                                            @foreach($lowerWorkDays as $day)
+                                            @if(!count($lowerWorkDays))
                                                 <tbody>
-                                                <td>{{__($day)}}</td>
-                                                <td>{{substr($workday[$day . '_from'],0 , -3) }} <small>hrs</small></td>
-                                                <td>{{substr($workday[$day . '_to'],0 , -3) }} <small>hrs</small></td>
+                                                <td colspan="3" class="text-center py-4">
+                                                    <b>{{__('No records')}}</b>
+                                                </td>
                                                 </tbody>
-                                            @endforeach
+                                            @else
+                                                @foreach($lowerWorkDays as $day)
+                                                    <tbody>
+                                                    <td>{{__($day)}}</td>
+                                                    <td>{{substr($workday[$day . '_from'],0 , -3) }} <small>hrs</small>
+                                                    </td>
+                                                    <td>{{substr($workday[$day . '_to'],0 , -3) }} <small>hrs</small>
+                                                    </td>
+                                                    </tbody>
+                                                @endforeach
+                                            @endif
 
                                         </table>
+
                                     </div>
                                 </div>
                             </div>

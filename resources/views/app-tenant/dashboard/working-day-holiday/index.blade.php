@@ -188,7 +188,7 @@
                 <tr>
                     <th>{{__('Working day')}}</th>
                     <th class="text-center">{{__('Type of shift')}}</th>
-                    <th class="text-center">{{__('Working hours')}}</th>
+                    <th class="text-center">{{__('Worked days')}}</th>
                     <th colspan="3"></th>
                     <th></th>
                     <th></th>
@@ -201,13 +201,23 @@
 
                     @foreach($workDays as $workday)
                         {{--J1--------------}}
+                        @php
+                            $daysOfWork = [];
+                            foreach ($daysArray as $newDay){
+                                $newDay = strtolower($newDay);
+                                if($workday[strtolower($newDay)] == 1){
+                                    array_push($daysOfWork, ucfirst($newDay));
+                                }
+                            }
+                        @endphp
+
                         <div class="accordion-item">
                             <div class="accordion-header mr-4" id="headingOne">
                                 <table class="table">
 
                                     <td style="width: 30%">{{__($workday->name)}}</td>
                                     <td style="width: 35%">{{__($workday->workday_type)}}</td>
-                                    <td style="width: 25%">{{__($workday->workday_type)}}</td>
+                                    <td style="width: 25%">{{__(count($daysOfWork))}}</td>
                                     <td style="width: 2%" colspan="3"></td>
                                     <td style="width: 3%">
                                         <button type="button" data-bs-toggle="collapse"
@@ -244,24 +254,12 @@
                                         </div>
                                     </div>
 
-                                    {{--                                    Function to save days when work in a workday--}}
-                                    @php
-                                        $daysOfWork = [];
-                                        foreach ($daysArray as $newDay){
-                                            $newDay = strtolower($newDay);
-                                            if($workday[strtolower($newDay)] == 1){
-                                                array_push($daysOfWork, ucfirst($newDay));
-                                            }
-                                        }
-                                    @endphp
-
-                                    {{--                                    {{dd($daysOfWork)}}--}}
-
                                     <div class="flex">
                                         <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Days')}}</label>
                                         </div>
                                         <div class="flex-2 text-left w-1/2">
                                             <label class="my-2 font-bold">
+{{--                                                Function to remove comma of the last element--}}
                                                 @foreach($daysOfWork as $key => $day)
                                                     @if(($key + 1) == count($daysOfWork))
                                                         {{__($day)}}
@@ -270,14 +268,6 @@
                                                     @endif
                                                 @endforeach
                                             </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex">
-                                        <div class="flex-1 text-left w-1/2"><label
-                                                class="my-2">{{__('Working hours')}}</label></div>
-                                        <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">8
-                                                horas</label>
                                         </div>
                                     </div>
 
@@ -310,8 +300,8 @@
                                         @foreach($lowerWorkDays as $day)
                                             <tbody>
                                             <td>{{__($day)}}</td>
-                                            <td>9:00</td>
-                                            <td>18:00</td>
+                                            <td>{{substr($workday[$day . '_from'],0 , -3) }} <small>hrs</small></td>
+                                            <td>{{substr($workday[$day . '_to'],0 , -3) }} <small>hrs</small></td>
                                             </tbody>
                                         @endforeach
 

@@ -22,11 +22,16 @@
                         </div>
                     </div>
                 </div>
+
                 {{--                Accordion Body--}}
                 <div id="workingDayCollapse" class="accordion-collapse collapse" aria-labelledby="headingWorkingDay"
                      data-bs-parent="#workingDayAccordion">
                     <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
-                        <form action="" class="text-black rounded">
+
+                        {{--                        Working day Form--}}
+                        <form name="newForm" action="{{route('business-working-day.store')}}" method="POST"
+                              class="text-black rounded">
+                            @csrf
                             <div class="d-flex col-12 justify-around">
                                 <div class="mb-3 pe-2 col-6">
                                     <label for="name"
@@ -37,7 +42,8 @@
                                 <div class="mb-3 ps-2 col-6">
                                     <label for="workingDaySelect"
                                            class="form-label font-bold">{{__('Type of shift')}}</label>
-                                    <select name="" id="workingDaySelect" class="form-control">
+
+                                    <select name="workday_type" id="workday_type" class="form-control" required>
                                         <option value="">{{__('Select')}}</option>
                                         <option value="diurno">Diurno</option>
                                         <option value="nocturno">Nocturno</option>
@@ -55,21 +61,25 @@
                                 @foreach($daysArray as $day)
                                     <div class="d-flex align-items-center">
                                         <div class="col-1">
-                                            <input type="checkbox" class="rounded">
+                                            <input type="checkbox" name="{{$day}}" id="{{$day}}" value="{{$day}}" class="rounded">
                                         </div>
                                         <div class="col-2">
                                             {{__($day)}}
                                         </div>
+
+                                        @php
+                                            $day = strtolower($day);
+                                        @endphp
                                         {{--                                    Hours in working day--}}
                                         <div class="col-3 d-flex mb-2">
-                                            <select name="" id="" class="form-control mx-2">
+                                            <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2">
                                                 @for($i = 0; $i < 24; $i++)
                                                     @if($i <= 9)
-                                                        <option value="">0{{$i}}:00</option>
-                                                        <option value="">0{{$i}}:30</option>
+                                                        <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                        <option value="0{{$i}}:30">0{{$i}}:30</option>
                                                     @else
-                                                        <option value="">{{$i}}:00</option>
-                                                        <option value="">{{$i}}:30</option>
+                                                        <option value="{{$i}}:00">{{$i}}:00</option>
+                                                        <option value="{{$i}}:30">{{$i}}:30</option>
                                                     @endif
                                                 @endfor
                                             </select>
@@ -77,14 +87,14 @@
                                                 <small>hrs</small>
                                             </div>
 
-                                            <select name="" id="" class="form-control mx-2">
+                                            <select name="{{$day}}_to" id="{{$day}}_to" class="form-control mx-2">
                                                 @for($i = 0; $i < 24; $i++)
                                                     @if($i <= 9)
-                                                        <option value="">0{{$i}}:00</option>
-                                                        <option value="">0{{$i}}:30</option>
+                                                        <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                        <option value="0{{$i}}:30">0{{$i}}:30</option>
                                                     @else
-                                                        <option value="">{{$i}}:00</option>
-                                                        <option value="">{{$i}}:30</option>
+                                                        <option value="{{$i}}:00">{{$i}}:00</option>
+                                                        <option value="{{$i}}:30">{{$i}}:30</option>
                                                     @endif
                                                 @endfor
                                             </select>
@@ -147,6 +157,7 @@
 
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>

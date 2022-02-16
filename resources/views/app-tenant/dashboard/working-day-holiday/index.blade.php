@@ -199,18 +199,18 @@
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
                 <div class="accordion" id="newItem">
 
-
+                    @foreach($workDays as $workday)
                     {{--J1--------------}}
                     <div class="accordion-item">
                         <div class="accordion-header mr-4" id="headingOne">
                             <table class="table">
 
-                                <td style="width: 30%">{{__('Jornada 1')}}</td>
-                                <td style="width: 35%">{{__('Diurna')}}</td>
-                                <td style="width: 25%">{{__('8 horas')}}</td>
+                                <td style="width: 30%">{{__($workday->name)}}</td>
+                                <td style="width: 35%">{{__($workday->workday_type)}}</td>
+                                <td style="width: 25%">{{__($workday->workday_type)}}</td>
                                 <td style="width: 2%" colspan="3"></td>
                                 <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseS1"
+                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{$workday->id}}"
                                             aria-expanded="false" aria-controls="collapseS1">
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
@@ -222,7 +222,7 @@
 
                             </table>
                         </div>
-                        <div id="collapseS1" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        <div id="collapse-{{$workday->id}}" class="accordion-collapse collapse" aria-labelledby="headingOne"
                              data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
@@ -293,6 +293,7 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
 
                 </div>
             </div>

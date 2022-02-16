@@ -7,6 +7,7 @@ use App\Http\Controllers\Tenant\AreaPositionController;
 use App\Http\Controllers\Tenant\BankController;
 use App\Http\Controllers\Tenant\BusinessController;
 use App\Http\Controllers\Tenant\BusinessPositionController;
+use App\Http\Controllers\Tenant\BusinessWorkdayController;
 use App\Http\Controllers\Tenant\ConceptController;
 use App\Http\Controllers\Tenant\EmployeeListController;
 use App\Http\Controllers\Tenant\FielController;
@@ -45,32 +46,32 @@ Route::middleware([
 ])->group(function () {
     Route::get('/', [TenantWelcomeController::class, 'index'])->name('tenant.home');
     include('auth.php');
-    Route::get('/dashboard',[TenantDashboardController::class,'dashboard'])->middleware('auth:web')->name('tenant.dashboard');
+    Route::get('/dashboard', [TenantDashboardController::class, 'dashboard'])->middleware('auth:web')->name('tenant.dashboard');
     /*TENANT BUSINESS*/
-    Route::resource('/business',BusinessController::class)->middleware('auth:web');
-    Route::patch('/business',[BusinessController::class,'updateByField'])->middleware('auth:web')->name('business.update-by-field');
+    Route::resource('/business', BusinessController::class)->middleware('auth:web');
+    Route::patch('/business', [BusinessController::class, 'updateByField'])->middleware('auth:web')->name('business.update-by-field');
     Route::patch('/updateStpStatus/{business}', [BusinessController::class, 'updateStpStatus'])->name('business.stp');
     Route::patch('/updateByField/{id}/{field}', [BusinessController::class, 'saveFields'])->name('update-by-field');
 
 
-    Route::resource('/banks',BankController::class)->middleware('auth:web');
-    Route::resource('/employee-list',EmployeeListController::class)->middleware('auth:web');
-    Route::resource('/payroll',PayrollController::class)->middleware('auth:web');
-    Route::resource('/policies',PolicyController::class)->middleware('auth:web');
-    Route::resource('/area-positions',AreaPositionController::class)->middleware('auth:web');
-    Route::resource('/concept',ConceptController::class)->middleware('auth:web');
-    Route::resource('/table-value',TableValueController::class)->middleware('auth:web');
-    Route::resource('/table-benefits',TableBenefitsController::class)->middleware('auth:web');
-    Route::resource('/working-day-holiday',WorkingDayHolidayController::class)->middleware('auth:web');
-    Route::resource('/imss-employer-registers',ImssPatronalRegisterController::class)->middleware('auth:web');
-    Route::resource('/business-positions',BusinessPositionController::class)->middleware('auth:web');
-    Route::resource('/fiel',FielController::class)->middleware('auth:web');
+    Route::resource('/banks', BankController::class)->middleware('auth:web');
+    Route::resource('/employee-list', EmployeeListController::class)->middleware('auth:web');
+    Route::resource('/payroll', PayrollController::class)->middleware('auth:web');
+    Route::resource('/policies', PolicyController::class)->middleware('auth:web');
+    Route::resource('/area-positions', AreaPositionController::class)->middleware('auth:web');
+    Route::resource('/concept', ConceptController::class)->middleware('auth:web');
+    Route::resource('/table-value', TableValueController::class)->middleware('auth:web');
+    Route::resource('/table-benefits', TableBenefitsController::class)->middleware('auth:web');
+
+    //    Working day
+    Route::resource('/working-day-holiday', WorkingDayHolidayController::class)->middleware('auth:web');
+    Route::resource('/business-working-day', BusinessWorkdayController::class)->middleware('auth:web');
+
+    Route::resource('/imss-employer-registers', ImssPatronalRegisterController::class)->middleware('auth:web');
+    Route::resource('/business-positions', BusinessPositionController::class)->middleware('auth:web');
+    Route::resource('/fiel', FielController::class)->middleware('auth:web');
     // UPLOADS FILES
-    Route::post('/uploadFiles',[UploadFilesController::class,'store'])->middleware('auth:web');
-    Route::get('/uploadFiles/{id}',[UploadFilesController::class,'getFile'])->middleware('auth:web');
+    Route::post('/uploadFiles', [UploadFilesController::class, 'store'])->middleware('auth:web');
+    Route::get('/uploadFiles/{id}', [UploadFilesController::class, 'getFile'])->middleware('auth:web');
 
 });
-
-
-
-

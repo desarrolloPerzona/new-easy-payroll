@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tenant\BusinessWorkday;
 use App\Models\Tenant\WorkingDayHoliday;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class WorkingDayHolidayController extends Controller
@@ -19,7 +21,9 @@ class WorkingDayHolidayController extends Controller
             'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
         ];
 
-        return view('app-tenant.dashboard.working-day-holiday.index', compact('daysArray'));
+        $workDays = BusinessWorkday::all();
+
+        return view('app-tenant.dashboard.working-day-holiday.index', compact('daysArray', 'workDays'));
     }
 
     /**
@@ -35,7 +39,7 @@ class WorkingDayHolidayController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -46,7 +50,7 @@ class WorkingDayHolidayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tenant\WorkingDayHoliday  $workingDayHoliday
+     * @param \App\Models\Tenant\WorkingDayHoliday $workingDayHoliday
      * @return \Illuminate\Http\Response
      */
     public function show(WorkingDayHoliday $workingDayHoliday)
@@ -57,7 +61,7 @@ class WorkingDayHolidayController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tenant\WorkingDayHoliday  $workingDayHoliday
+     * @param \App\Models\Tenant\WorkingDayHoliday $workingDayHoliday
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,8 +72,8 @@ class WorkingDayHolidayController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tenant\WorkingDayHoliday  $workingDayHoliday
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Tenant\WorkingDayHoliday $workingDayHoliday
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, WorkingDayHoliday $workingDayHoliday)
@@ -80,7 +84,7 @@ class WorkingDayHolidayController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tenant\WorkingDayHoliday  $workingDayHoliday
+     * @param \App\Models\Tenant\WorkingDayHoliday $workingDayHoliday
      * @return \Illuminate\Http\Response
      */
     public function destroy(WorkingDayHoliday $workingDayHoliday)

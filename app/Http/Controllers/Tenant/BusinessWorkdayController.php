@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBusinessWorkdayRequest;
 use App\Http\Requests\UpdateBusinessWorkdayRequest;
 use App\Models\Tenant\BusinessWorkday;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BusinessWorkdayController extends Controller
 {
@@ -32,12 +34,31 @@ class BusinessWorkdayController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBusinessWorkdayRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBusinessWorkdayRequest $request)
+    public function store(Request $request)
     {
-        //
+        $daysArray = [
+            'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
+        ];
+
+        $workingDay = new BusinessWorkday;
+
+        $workingDay->name = $request->get('name');
+        $workingDay->workday_type = $request->get('workday_type');
+//        $workingDay->monday = true;
+
+
+        foreach ($daysArray as $key => $day){
+            $workingDay[$day] = true;
+//            $workingDay->{$day}= $request->get($day);
+//            $workingDay->{$day} = $request->get($day);
+        }
+
+        $workingDay->save();
+
+//        $nuevoTime = date("H:i:s", strtotime($request->get('monday_from')));
     }
 
     /**

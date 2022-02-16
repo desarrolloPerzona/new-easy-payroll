@@ -14,8 +14,8 @@
         {{--        Delete message--}}
         @if (session('deleteMessage'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('deleteMessage') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                {{ session('deleteMessage') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
 
@@ -195,151 +195,162 @@
 
                     </div>
                 </div>
+
             </div>
         </div>
 
         {{--    Working day Table--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
-            <table class="table">
-                <tr>
-                    <th>{{__('Working day')}}</th>
-                    <th class="text-center">{{__('Type of shift')}}</th>
-                    <th class="text-center">{{__('Worked days')}}</th>
-                    <th colspan="3"></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </table>
-            {{--ACCORDION--}}
-            <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
-                <div class="accordion" id="newItem">
 
-                    @foreach($workDays as $workday)
-                        {{--J1--------------}}
-                        @php
-                            $daysOfWork = [];
-                            foreach ($daysArray as $newDay){
-                                $newDay = strtolower($newDay);
-                                if($workday[strtolower($newDay)] == 1){
-                                    array_push($daysOfWork, ucfirst($newDay));
+            @if(!count($workDays))
+                <div class="col-12 text-center">
+                    {{__('No records')}}
+                </div>
+            @else
+                <table class="table">
+                    <tr>
+                        <th>{{__('Working day')}}</th>
+                        <th class="text-center">{{__('Type of shift')}}</th>
+                        <th class="text-center">{{__('Worked days')}}</th>
+                        <th colspan="3"></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+                {{--ACCORDION--}}
+                <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
+                    <div class="accordion" id="newItem">
+
+                        @foreach($workDays as $workday)
+
+                            {{--                        Creating array with worked days capitalizing names--}}
+                            @php
+                                $daysOfWork = [];
+                                foreach ($daysArray as $newDay){
+                                    $newDay = strtolower($newDay);
+                                    if($workday[strtolower($newDay)] == 1){
+                                        array_push($daysOfWork, ucfirst($newDay));
+                                    }
                                 }
-                            }
-                        @endphp
+                            @endphp
 
-                        <div class="accordion-item">
-                            <div class="accordion-header mr-4" id="headingOne">
-                                <table class="table">
+                            <div class="accordion-item">
+                                <div class="accordion-header mr-4" id="headingOne">
+                                    <table class="table">
 
-                                    <td style="width: 30%">{{__($workday->name)}}</td>
-                                    <td style="width: 35%">{{__($workday->workday_type)}}</td>
-                                    <td style="width: 25%">{{__(count($daysOfWork))}}</td>
-                                    <td style="width: 2%" colspan="3"></td>
-                                    <td style="width: 3%">
-                                        <button type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapse-{{$workday->id}}"
-                                                aria-expanded="false" aria-controls="collapseS1">
-                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                        </button>
-                                    </td>
-                                    <td style="width: 3%"><a href="{{route('working-day-holiday.edit',1)}}">
-                                            <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
-                                    </td>
-                                    <form action="{{route('business-working-day.destroy', $workday->id)}}"
-                                          method="POST">
-                                        @csrf
-                                        @method('DELETE')
+                                        <td style="width: 30%">{{__($workday->name)}}</td>
+                                        <td style="width: 35%">{{__($workday->workday_type)}}</td>
+                                        <td style="width: 25%">{{__(count($daysOfWork))}}</td>
+                                        <td style="width: 2%" colspan="3"></td>
                                         <td style="width: 3%">
-                                            <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este registro?')">
-                                                <i class="fas fa-trash-alt text-gray-400"></i>
+                                            <button type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse-{{$workday->id}}"
+                                                    aria-expanded="false" aria-controls="collapseS1">
+                                                <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                             </button>
                                         </td>
-                                    </form>
+                                        <td style="width: 3%"><a href="{{route('working-day-holiday.edit',1)}}">
+                                                <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
+                                        </td>
+                                        <form action="{{route('business-working-day.destroy', $workday->id)}}"
+                                              method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <td style="width: 3%">
+                                                <button type="submit"
+                                                        onclick="return confirm('¿Estás seguro de eliminar este registro?')">
+                                                    <i class="fas fa-trash-alt text-gray-400"></i>
+                                                </button>
+                                            </td>
+                                        </form>
 
-
-                                </table>
-                            </div>
-                            <div id="collapse-{{$workday->id}}" class="accordion-collapse collapse"
-                                 aria-labelledby="headingOne"
-                                 data-bs-parent="#newItem">
-                                <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
-
-                                    <div class="flex">
-                                        <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label>
-                                        </div>
-                                        <div class="flex-2 text-left w-1/2"><label
-                                                class="my-2 font-bold">{{$workday->name}}</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex">
-                                        <div class="flex-1 text-left w-1/2"><label
-                                                class="my-2">{{__('Type of shift')}}</label></div>
-                                        <div class="flex-2 text-left w-1/2"><label
-                                                class="my-2 font-bold">{{$workday->workday_type}}</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex">
-                                        <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Days')}}</label>
-                                        </div>
-                                        <div class="flex-2 text-left w-1/2">
-                                            <label class="my-2 font-bold">
-                                                {{--                                                Function to remove comma of the last element--}}
-                                                @foreach($daysOfWork as $key => $day)
-                                                    @if(($key + 1) == count($daysOfWork))
-                                                        {{__($day)}}
-                                                    @else
-                                                        {{__($day)}},
-                                                    @endif
-                                                @endforeach
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex mb-4">
-                                        <div class="flex-1 text-left w-1/2"><label
-                                                class="my-2">{{__('Meal hours')}}</label>
-                                        </div>
-                                        <div class="flex-2 text-left w-1/2">
-                                            <label class="my-2 font-bold">
-                                                {{substr($workday->meal_time_from, 0, -3)}} <small>hrs</small>
-                                                - {{ substr($workday->meal_time_to, 0, -3) }} <small>hrs</small>
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    {{--                                    Table to show Workdays and schedules--}}
-                                    <table class="table table-striped">
-                                        <thead>
-                                        <th>Días de trabajo</th>
-                                        <th>Horario de entrada</th>
-                                        <th>Horario de salida</th>
-                                        </thead>
-                                        @php
-                                            $lowerWorkDays = [];
-                                                foreach ($daysOfWork as $day){
-                                                    array_push($lowerWorkDays, strtolower($day));
-                                                }
-                                        @endphp
-
-                                        @foreach($lowerWorkDays as $day)
-                                            <tbody>
-                                            <td>{{__($day)}}</td>
-                                            <td>{{substr($workday[$day . '_from'],0 , -3) }} <small>hrs</small></td>
-                                            <td>{{substr($workday[$day . '_to'],0 , -3) }} <small>hrs</small></td>
-                                            </tbody>
-                                        @endforeach
 
                                     </table>
                                 </div>
-                            </div>
-                        </div>
-                    @endforeach
+                                <div id="collapse-{{$workday->id}}" class="accordion-collapse collapse"
+                                     aria-labelledby="headingOne"
+                                     data-bs-parent="#newItem">
+                                    <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
+                                        <div class="flex">
+                                            <div class="flex-1 text-left w-1/2"><label
+                                                    class="my-2">{{__('Name')}}</label>
+                                            </div>
+                                            <div class="flex-2 text-left w-1/2"><label
+                                                    class="my-2 font-bold">{{$workday->name}}</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex">
+                                            <div class="flex-1 text-left w-1/2"><label
+                                                    class="my-2">{{__('Type of shift')}}</label></div>
+                                            <div class="flex-2 text-left w-1/2"><label
+                                                    class="my-2 font-bold">{{$workday->workday_type}}</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex">
+                                            <div class="flex-1 text-left w-1/2"><label
+                                                    class="my-2">{{__('Days')}}</label>
+                                            </div>
+                                            <div class="flex-2 text-left w-1/2">
+                                                <label class="my-2 font-bold">
+                                                    {{--                                                Function to remove comma of the last element--}}
+                                                    @foreach($daysOfWork as $key => $day)
+                                                        @if(($key + 1) == count($daysOfWork))
+                                                            {{__($day)}}
+                                                        @else
+                                                            {{__($day)}},
+                                                        @endif
+                                                    @endforeach
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex mb-4">
+                                            <div class="flex-1 text-left w-1/2"><label
+                                                    class="my-2">{{__('Meal hours')}}</label>
+                                            </div>
+                                            <div class="flex-2 text-left w-1/2">
+                                                <label class="my-2 font-bold">
+                                                    {{substr($workday->meal_time_from, 0, -3)}} <small>hrs</small>
+                                                    - {{ substr($workday->meal_time_to, 0, -3) }} <small>hrs</small>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        {{--                                    Table to show Workdays and schedules--}}
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <th>Días de trabajo</th>
+                                            <th>Horario de entrada</th>
+                                            <th>Horario de salida</th>
+                                            </thead>
+                                            @php
+                                                $lowerWorkDays = [];
+                                                    foreach ($daysOfWork as $day){
+                                                        array_push($lowerWorkDays, strtolower($day));
+                                                    }
+                                            @endphp
+
+                                            @foreach($lowerWorkDays as $day)
+                                                <tbody>
+                                                <td>{{__($day)}}</td>
+                                                <td>{{substr($workday[$day . '_from'],0 , -3) }} <small>hrs</small></td>
+                                                <td>{{substr($workday[$day . '_to'],0 , -3) }} <small>hrs</small></td>
+                                                </tbody>
+                                            @endforeach
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
                 </div>
-            </div>
-            {{--ACCORDION--}}
+            @endif
 
         </div>
 

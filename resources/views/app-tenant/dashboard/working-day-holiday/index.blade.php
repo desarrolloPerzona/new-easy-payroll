@@ -47,7 +47,7 @@
                                     <label for="name"
                                            class="form-label font-bold">{{__('Name')}}</label>
                                     <input type="text" class="form-control" id="name" name="name"
-                                           placeholder="John Doe">
+                                           placeholder="John Doe" required>
                                 </div>
                                 <div class="mb-3 ps-2 col-6">
                                     <label for="workingDaySelect"
@@ -259,7 +259,7 @@
                                         </div>
                                         <div class="flex-2 text-left w-1/2">
                                             <label class="my-2 font-bold">
-{{--                                                Function to remove comma of the last element--}}
+                                                {{--                                                Function to remove comma of the last element--}}
                                                 @foreach($daysOfWork as $key => $day)
                                                     @if(($key + 1) == count($daysOfWork))
                                                         {{__($day)}}
@@ -291,10 +291,10 @@
                                         <th>Horario de salida</th>
                                         </thead>
                                         @php
-                                        $lowerWorkDays = [];
-                                            foreach ($daysOfWork as $day){
-                                                array_push($lowerWorkDays, strtolower($day));
-                                            }
+                                            $lowerWorkDays = [];
+                                                foreach ($daysOfWork as $day){
+                                                    array_push($lowerWorkDays, strtolower($day));
+                                                }
                                         @endphp
 
                                         @foreach($lowerWorkDays as $day)
@@ -351,7 +351,7 @@
                                     <div><label class="font-bold" for="name">{{__('Name')}}</label></div>
                                     <div><input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
                                                 type="text" id="name"
-                                                name="Name"></div>
+                                                name="name"></div>
                                 </div>
                                 <div class="flex my-4 m-auto">
                                     {{--Date Picker---------------}}

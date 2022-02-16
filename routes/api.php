@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\GetBanksController;
 use App\Http\Controllers\Api\GetFiscalIndustriesController;
 use App\Http\Controllers\Api\GetFiscalRegimesController;
 use App\Http\Controllers\Api\GetZipcodeController;
+use App\Http\Controllers\ApiLandlordController;
 use App\Http\Controllers\GetIsrRetentionController;
 use App\Http\Controllers\GetValuesAndTablesController;
 use Illuminate\Http\Request;
@@ -71,5 +72,11 @@ Route::group(['api' => 'api'], function () {
      */
     Route::get('/reference-values', [GetValuesAndTablesController::class, 'reference_values']);
     Route::get('/reference-values/{year}', [GetValuesAndTablesController::class, 'reference_values_by_year']);
+
+    /**
+     * OFFICIAL FESTIVE DAYS
+     */
+    Route::get('/official-festive-days', [ApiLandlordController::class, 'officialFestiveDays']);
+
 });
 

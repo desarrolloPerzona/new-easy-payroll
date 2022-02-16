@@ -1,13 +1,23 @@
 <x-app-tenant>
     <div class="container mx-auto mb-6">
 
+        {{--        Validation message--}}
+        @if ($errors->any())
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                @foreach ($errors->all() as $error)
+                    {{$error}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                @endforeach
+            </div>
+        @endif
+
         {{--        Main Header--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
             <i class="fak fa-admin-perzona mr-2"></i>
             <span style="display: inline-flex;">{{ __('Working days') }}</span>
         </h2>
 
-        {{--        Jornada Accordion--}}
+        {{--    New Working day Accordion--}}
         <div class="accordion btn-top-holder my-3 max-w-6xl m-auto" id="workingDayAccordion">
             <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
                 {{--                Accordion header New WorkingDay--}}
@@ -65,7 +75,8 @@
                                             $day = strtolower($day);
                                         @endphp
                                         <div class="col-1">
-                                            <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1" class="rounded">
+                                            <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1"
+                                                   class="rounded">
                                         </div>
                                         @php
                                             $day = ucfirst($day);
@@ -118,7 +129,8 @@
 
                                 <div class="d-flex align-items-center">
                                     <div class="col-1">
-                                        <input name="meal_time" id="meal_time" value="1" type="checkbox" class="rounded">
+                                        <input name="meal_time" id="meal_time" value="1" type="checkbox"
+                                               class="rounded">
                                     </div>
                                     <div class="col-2">
                                         {{__('Comida')}}
@@ -170,7 +182,7 @@
             </div>
         </div>
 
-        {{--Working day Table--}}
+        {{--    Working day Table--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             <table class="table">
                 <tr>
@@ -186,6 +198,7 @@
             {{--ACCORDION--}}
             <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
                 <div class="accordion" id="newItem">
+
 
                     {{--J1--------------}}
                     <div class="accordion-item">
@@ -281,204 +294,13 @@
                         </div>
                     </div>
 
-
-                    {{--J2--------------}}
-                    <div class="accordion-item">
-                        <div class="accordion-header mr-4" id="headingFiel">
-
-                            <table class="table">
-
-                                <td style="width: 30%">{{__('Jornada 2')}}</td>
-                                <td style="width: 35%">{{__('Nocturna')}}</td>
-                                <td style="width: 25%">{{__('8 horas')}}</td>
-                                <td style="width: 2%" colspan="3"></td>
-                                <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseS2"
-                                            aria-expanded="false" aria-controls="collapseS1">
-                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                    </button>
-                                </td>
-                                <td style="width: 3%"><i
-                                        class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
-
-                            </table>
-
-                        </div>
-                        <div id="collapseS2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Jornada 2</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Type of shift')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Nocturna</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Days')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Lunes, Martes,
-                                            Miercoles, Jueves, Viernes</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Working hours')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">8 horas</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Meal hours')}}</label>
-                                    </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">21:00 a
-                                            22:00</label></div>
-                                </div>
-
-                                <table class="table">
-                                    <th>Días de trabajo</th>
-                                    <th>Horario de entrada</th>
-                                    <th>Horario de salida</th>
-
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Lunes</td>
-                                    <td class="p-0" style="width: 30%">18:00</td>
-                                    <td class="p-0" style="width: 30%">2:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Martes</td>
-                                    <td class="p-0" style="width: 30%">18:00</td>
-                                    <td class="p-0" style="width: 30%">2:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Miercoles</td>
-                                    <td class="p-0" style="width: 30%">18:00</td>
-                                    <td class="p-0" style="width: 30%">2:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Jueves</td>
-                                    <td class="p-0" style="width: 30%">18:00</td>
-                                    <td class="p-0" style="width: 30%">2:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Viernes</td>
-                                    <td class="p-0" style="width: 30%">18:00</td>
-                                    <td class="p-0" style="width: 30%">2:00</td>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{--J3--------------}}
-                    <div class="accordion-item">
-                        <div class="accordion-header mr-4" id="headingFiel">
-
-                            <table class="table">
-
-                                <td style="width: 30%">{{__('Jornada 3')}}</td>
-                                <td style="width: 35%">{{__('Mixta')}}</td>
-                                <td style="width: 25%">{{__('6 horas')}}</td>
-                                <td style="width: 2%" colspan="3"></td>
-                                <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseS3"
-                                            aria-expanded="false" aria-controls="collapseS1">
-                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                    </button>
-                                </td>
-                                <td style="width: 3%"><i
-                                        class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></td>
-                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
-
-                            </table>
-
-                        </div>
-                        <div id="collapseS3" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Jornada 3</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Type of shift')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Mixta</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Days')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Lunes, Martes,
-                                            Miercoles, Jueves, Viernes</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Working hours')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">6 horas</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Meal hours')}}</label>
-                                    </div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">6:00 a
-                                            7:00</label></div>
-                                </div>
-
-                                <table class="table">
-                                    <th>Días de trabajo</th>
-                                    <th>Horario de entrada</th>
-                                    <th>Horario de salida</th>
-
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Lunes</td>
-                                    <td class="p-0" style="width: 30%">2:00</td>
-                                    <td class="p-0" style="width: 30%">8:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Martes</td>
-                                    <td class="p-0" style="width: 30%">2:00</td>
-                                    <td class="p-0" style="width: 30%">8:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Miercoles</td>
-                                    <td class="p-0" style="width: 30%">2:00</td>
-                                    <td class="p-0" style="width: 30%">8:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Jueves</td>
-                                    <td class="p-0" style="width: 30%">2:00</td>
-                                    <td class="p-0" style="width: 30%">8:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Viernes</td>
-                                    <td class="p-0" style="width: 30%">2:00</td>
-                                    <td class="p-0" style="width: 30%">8:00</td>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
             {{--ACCORDION--}}
 
         </div>
 
-
+        {{--    Festive day Section--}}
         <div class="container">
             <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
                 <i class="fak fa-admin-perzona mr-2"></i>

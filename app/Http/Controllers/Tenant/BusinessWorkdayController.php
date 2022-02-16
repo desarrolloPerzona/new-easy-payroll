@@ -34,11 +34,16 @@ class BusinessWorkdayController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required|unique:business_workdays'
+        ]);
+
         $daysArray = [
             'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
         ];
@@ -48,10 +53,11 @@ class BusinessWorkdayController extends Controller
         $workingDay->name = $request->get('name');
         $workingDay->workday_type = $request->get('workday_type');
 
-        foreach ($daysArray as $key => $day){
-            if($request->get($day)){
+//        Storing each value of days array in front
+        foreach ($daysArray as $key => $day) {
+            if ($request->get($day)) {
                 $workingDay[$day] = $request->get($day);
-            } else{
+            } else {
                 $workingDay[$day] = 0;
             }
 
@@ -59,9 +65,9 @@ class BusinessWorkdayController extends Controller
             $workingDay[$day . "_to"] = $request->get($day . "_to");
         }
 
-        if($request->get('meal_time')){
+        if ($request->get('meal_time')) {
             $workingDay->meal_time = $request->get('meal_time');
-        } else{
+        } else {
             $workingDay->meal_time = 0;
         }
 
@@ -76,7 +82,7 @@ class BusinessWorkdayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tenant\BusinessWorkday  $businessWorkday
+     * @param \App\Models\Tenant\BusinessWorkday $businessWorkday
      * @return \Illuminate\Http\Response
      */
     public function show(BusinessWorkday $businessWorkday)
@@ -87,7 +93,7 @@ class BusinessWorkdayController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tenant\BusinessWorkday  $businessWorkday
+     * @param \App\Models\Tenant\BusinessWorkday $businessWorkday
      * @return \Illuminate\Http\Response
      */
     public function edit(BusinessWorkday $businessWorkday)
@@ -98,8 +104,8 @@ class BusinessWorkdayController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBusinessWorkdayRequest  $request
-     * @param  \App\Models\Tenant\BusinessWorkday  $businessWorkday
+     * @param \App\Http\Requests\UpdateBusinessWorkdayRequest $request
+     * @param \App\Models\Tenant\BusinessWorkday $businessWorkday
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateBusinessWorkdayRequest $request, BusinessWorkday $businessWorkday)
@@ -110,7 +116,7 @@ class BusinessWorkdayController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tenant\BusinessWorkday  $businessWorkday
+     * @param \App\Models\Tenant\BusinessWorkday $businessWorkday
      * @return \Illuminate\Http\Response
      */
     public function destroy(BusinessWorkday $businessWorkday)

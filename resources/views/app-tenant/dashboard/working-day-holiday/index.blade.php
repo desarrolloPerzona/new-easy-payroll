@@ -287,7 +287,8 @@
                                         </div>
                                         <div class="flex-2 text-left w-1/2">
                                             <label class="my-2 font-bold">
-                                                {{substr($workday->meal_time_from, 0, -3)}} <small>hrs</small> - {{ substr($workday->meal_time_to, 0, -3) }} <small>hrs</small>
+                                                {{substr($workday->meal_time_from, 0, -3)}} <small>hrs</small>
+                                                - {{ substr($workday->meal_time_to, 0, -3) }} <small>hrs</small>
                                             </label>
                                         </div>
                                     </div>
@@ -295,15 +296,25 @@
                                     {{--                                    Table to show Workdays and schedules--}}
                                     <table class="table table-striped">
                                         <thead>
-                                            <th>Días de trabajo</th>
-                                            <th>Horario de entrada</th>
-                                            <th>Horario de salida</th>
+                                        <th>Días de trabajo</th>
+                                        <th>Horario de entrada</th>
+                                        <th>Horario de salida</th>
                                         </thead>
-                                        <tbody>
-                                            <td>Lunes</td>
+                                        @php
+                                        $lowerWorkDays = [];
+                                            foreach ($daysOfWork as $day){
+                                                array_push($lowerWorkDays, strtolower($day));
+                                            }
+                                        @endphp
+
+                                        @foreach($lowerWorkDays as $day)
+                                            <tbody>
+                                            <td>{{__($day)}}</td>
                                             <td>9:00</td>
                                             <td>18:00</td>
-                                        </tbody>
+                                            </tbody>
+                                        @endforeach
+
                                     </table>
                                 </div>
                             </div>

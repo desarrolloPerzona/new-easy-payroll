@@ -11,6 +11,22 @@
             </div>
         @endif
 
+        {{--        Delete message--}}
+        @if (session('deleteMessage'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('deleteMessage') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        {{--        Delete message--}}
+        @if (session('createMessage'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('createMessage') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         {{--        Main Header--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
             <i class="fak fa-admin-perzona mr-2"></i>
@@ -229,7 +245,17 @@
                                     <td style="width: 3%"><a href="{{route('working-day-holiday.edit',1)}}">
                                             <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                                     </td>
-                                    <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+                                    <form action="{{route('business-working-day.destroy', $workday->id)}}"
+                                          method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <td style="width: 3%">
+                                            <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este registro?')">
+                                                <i class="fas fa-trash-alt text-gray-400"></i>
+                                            </button>
+                                        </td>
+                                    </form>
+
 
                                 </table>
                             </div>

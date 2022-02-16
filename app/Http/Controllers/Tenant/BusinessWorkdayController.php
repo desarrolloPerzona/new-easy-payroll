@@ -76,7 +76,7 @@ class BusinessWorkdayController extends Controller
 
         $workingDay->save();
 
-        return redirect()->route('working-day-holiday.index');
+        return redirect()->route('working-day-holiday.index')->with('createMessage', 'Registro creado con éxito.');
     }
 
     /**
@@ -116,11 +116,15 @@ class BusinessWorkdayController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Tenant\BusinessWorkday $businessWorkday
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
+     *  @param \App\Models\Tenant\BusinessWorkday $businessWorkday
      */
-    public function destroy(BusinessWorkday $businessWorkday)
+    public function destroy(Request $request, $businessWorkday)
     {
-        //
+        $businessWorkday = BusinessWorkday::find($businessWorkday);
+        $businessWorkday->delete();
+
+        return redirect()->route('working-day-holiday.index')->with('deleteMessage', 'Registro eliminado exitosamente');
     }
 }

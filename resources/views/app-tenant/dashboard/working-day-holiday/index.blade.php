@@ -200,99 +200,113 @@
                 <div class="accordion" id="newItem">
 
                     @foreach($workDays as $workday)
-                    {{--J1--------------}}
-                    <div class="accordion-item">
-                        <div class="accordion-header mr-4" id="headingOne">
-                            <table class="table">
-
-                                <td style="width: 30%">{{__($workday->name)}}</td>
-                                <td style="width: 35%">{{__($workday->workday_type)}}</td>
-                                <td style="width: 25%">{{__($workday->workday_type)}}</td>
-                                <td style="width: 2%" colspan="3"></td>
-                                <td style="width: 3%">
-                                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{$workday->id}}"
-                                            aria-expanded="false" aria-controls="collapseS1">
-                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                    </button>
-                                </td>
-                                <td style="width: 3%"><a href="{{route('working-day-holiday.edit',1)}}">
-                                        <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
-                                </td>
-                                <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
-
-                            </table>
-                        </div>
-                        <div id="collapse-{{$workday->id}}" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                             data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Jornada 1</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Type of shift')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Diurno</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Days')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">Lunes, Martes,
-                                            Miercoles, Jueves, Viernes</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Working hours')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">8 horas</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Meal hours')}}</label>
-                                    </div>
-                                    <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">14:00 a
-                                            15:00</label></div>
-                                </div>
-
+                        {{--J1--------------}}
+                        <div class="accordion-item">
+                            <div class="accordion-header mr-4" id="headingOne">
                                 <table class="table">
-                                    <th>Días de trabajo</th>
-                                    <th>Horario de entrada</th>
-                                    <th>Horario de salida</th>
 
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Lunes</td>
-                                    <td class="p-0" style="width: 30%">9:00</td>
-                                    <td class="p-0" style="width: 30%">18:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Martes</td>
-                                    <td class="p-0" style="width: 30%">9:00</td>
-                                    <td class="p-0" style="width: 30%">18:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Miercoles</td>
-                                    <td class="p-0" style="width: 30%">9:00</td>
-                                    <td class="p-0" style="width: 30%">18:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Jueves</td>
-                                    <td class="p-0" style="width: 30%">9:00</td>
-                                    <td class="p-0" style="width: 30%">18:00</td>
-                                </table>
-                                <table class="table">
-                                    <td class="p-0" style="width: 30%">Viernes</td>
-                                    <td class="p-0" style="width: 30%">9:00</td>
-                                    <td class="p-0" style="width: 30%">18:00</td>
+                                    <td style="width: 30%">{{__($workday->name)}}</td>
+                                    <td style="width: 35%">{{__($workday->workday_type)}}</td>
+                                    <td style="width: 25%">{{__($workday->workday_type)}}</td>
+                                    <td style="width: 2%" colspan="3"></td>
+                                    <td style="width: 3%">
+                                        <button type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapse-{{$workday->id}}"
+                                                aria-expanded="false" aria-controls="collapseS1">
+                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                        </button>
+                                    </td>
+                                    <td style="width: 3%"><a href="{{route('working-day-holiday.edit',1)}}">
+                                            <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
+                                    </td>
+                                    <td style="width: 3%"><i class="fas fa-trash-alt text-gray-400"></i></td>
+
                                 </table>
                             </div>
+                            <div id="collapse-{{$workday->id}}" class="accordion-collapse collapse"
+                                 aria-labelledby="headingOne"
+                                 data-bs-parent="#newItem">
+                                <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
+
+                                    <div class="flex">
+                                        <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Name')}}</label>
+                                        </div>
+                                        <div class="flex-2 text-left w-1/2"><label
+                                                class="my-2 font-bold">{{$workday->name}}</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex">
+                                        <div class="flex-1 text-left w-1/2"><label
+                                                class="my-2">{{__('Type of shift')}}</label></div>
+                                        <div class="flex-2 text-left w-1/2"><label
+                                                class="my-2 font-bold">{{$workday->workday_type}}</label>
+                                        </div>
+                                    </div>
+
+                                    @php
+                                        $daysOfWork = [];
+                                        foreach ($daysArray as $newDay){
+                                            $newDay = strtolower($newDay);
+                                            if($workday[strtolower($newDay)] == 1){
+                                                array_push($daysOfWork, ucfirst($newDay));
+                                            }else{
+
+                                            }
+                                        }
+                                    @endphp
+
+                                    {{--                                    {{dd($daysOfWork)}}--}}
+
+                                    <div class="flex">
+                                        <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Days')}}</label>
+                                        </div>
+                                        <div class="flex-2 text-left w-1/2">
+                                            <label class="my-2 font-bold">
+                                                @foreach($daysOfWork as $key => $day)
+                                                    @if(($key + 1) == count($daysOfWork))
+                                                        {{__($day)}}
+                                                    @else
+                                                        {{__($day)}},
+                                                    @endif
+                                                @endforeach
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex">
+                                        <div class="flex-1 text-left w-1/2"><label
+                                                class="my-2">{{__('Working hours')}}</label></div>
+                                        <div class="flex-2 text-left w-1/2"><label class="my-2 font-bold">8
+                                                horas</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex mb-4">
+                                        <div class="flex-1 text-left w-1/2"><label
+                                                class="my-2">{{__('Meal hours')}}</label>
+                                        </div>
+                                        <div class="flex-2 text-left w-1/2"><label
+                                                class="my-2 font-bold">{{$workday->meal_time_from}} a
+                                                {{ $workday->meal_time_to}}</label></div>
+                                    </div>
+
+{{--                                    Table to show Workdays and schedules--}}
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <th>Días de trabajo</th>
+                                            <th>Horario de entrada</th>
+                                            <th>Horario de salida</th>
+                                        </thead>
+                                        <tbody>
+                                            <td >Lunes</td>
+                                            <td >9:00</td>
+                                            <td >18:00</td>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    </div>
                     @endforeach
 
                 </div>
@@ -303,7 +317,7 @@
 
         {{--    Festive day Section--}}
         <div class="container">
-            <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
+            <h2 class="bg-blueSteel py-2 px-3 mb-2 mt-3 rounded">
                 <i class="fak fa-admin-perzona mr-2"></i>
                 <span style="display: inline-flex;">{{ __('Holidays') }}</span>
             </h2>

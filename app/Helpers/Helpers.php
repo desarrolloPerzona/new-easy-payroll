@@ -35,7 +35,7 @@ if (!function_exists('formatDate')) {
     {
         setlocale(LC_ALL, "es_ES");
 
-        return strftime('%d %B %Y', strtotime($date));
+        return strftime('%d de %B %Y', strtotime($date));
     }
 }
 

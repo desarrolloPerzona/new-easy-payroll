@@ -57,22 +57,20 @@ class BusinessWorkdayController extends Controller
         foreach ($daysArray as $key => $day) {
             if ($request->get($day)) {
                 $workingDay[$day] = $request->get($day);
+                $workingDay[$day . "_from"] = $request->get($day . "_from");
+                $workingDay[$day . "_to"] = $request->get($day . "_to");
             } else {
                 $workingDay[$day] = 0;
             }
-
-            $workingDay[$day . "_from"] = $request->get($day . "_from");
-            $workingDay[$day . "_to"] = $request->get($day . "_to");
         }
 
         if ($request->get('meal_time')) {
             $workingDay->meal_time = $request->get('meal_time');
+            $workingDay->meal_time_from = $request->get('meal_time_from');
+            $workingDay->meal_time_to = $request->get('meal_time_to');
         } else {
             $workingDay->meal_time = 0;
         }
-
-        $workingDay->meal_time_from = $request->get('meal_time_from');
-        $workingDay->meal_time_to = $request->get('meal_time_to');
 
         $workingDay->save();
 

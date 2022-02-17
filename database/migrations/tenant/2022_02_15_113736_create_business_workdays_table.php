@@ -32,7 +32,6 @@ class CreateBusinessWorkdaysTable extends Migration
             $table->time('meal_time_from')->nullable();
             $table->time('meal_time_to')->nullable();
 
-
             $table->softDeletes();
             $table->timestamps();
         });

@@ -230,7 +230,7 @@
 
                         @foreach($workDays as $workday)
 
-                            {{--                        Creating array with worked days capitalizing names--}}
+                            {{--Creating array with worked days capitalizing names--}}
                             @php
                                 $daysOfWork = [];
                                 foreach ($daysArray as $newDay){
@@ -318,14 +318,19 @@
                                             </div>
                                         </div>
 
-                                        <div class="flex mb-4">
+
+                                        <div class="flex">
                                             <div class="flex-1 text-left w-1/2"><label
                                                     class="my-2">{{__('Meal hours')}}</label>
                                             </div>
                                             <div class="flex-2 text-left w-1/2">
                                                 <label class="my-2 font-bold">
+                                                    @if($workday->meal_time)
                                                     {{substr($workday->meal_time_from, 0, -3)}} <small>hrs</small>
                                                     - {{ substr($workday->meal_time_to, 0, -3) }} <small>hrs</small>
+                                                    @else
+                                                        {{__('No records')}}
+                                                    @endif
                                                 </label>
                                             </div>
                                         </div>
@@ -338,7 +343,7 @@
                                                 }
                                         @endphp
 
-                                        <table class="table table-striped">
+                                        <table class="table table-striped mt-4">
                                             <thead>
                                             <th>Días de trabajo</th>
                                             <th>Horario de entrada</th>
@@ -918,6 +923,7 @@
                         buttonFrom.toggleAttribute("disabled")
                         buttonTo.toggleAttribute("disabled")
                     },
+                    // Function to toggle in disabled attribute in meal select buttons
                     isMealTime(nameButton) {
                         let buttonFrom = document.getElementById(nameButton + '_from')
                         let buttonTo = document.getElementById(nameButton + '_to')

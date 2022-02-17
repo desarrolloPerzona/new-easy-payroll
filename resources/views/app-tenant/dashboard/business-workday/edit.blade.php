@@ -14,9 +14,10 @@
             <div class="accordion-body text-dark rounded dark:bg-dark dark:text-white">
 
                 {{--                        Working day Form--}}
-                <form name="newForm" action="{{route('business-working-day.store')}}" method="POST"
+                <form action="{{route('business-working-day.store')}}" method="POST"
                       class="text-black rounded">
                     @csrf
+                    @method('PATCH')
                     <div class="d-flex col-12 justify-around">
                         <div class="mb-3 pe-2 col-6">
                             <label for="name"
@@ -176,41 +177,98 @@
                             <div class="col-2">
                                 {{__('Comida')}}
                             </div>
-                            {{--                                    Hours in working day--}}
-                            <div class="col-3 d-flex mb-2">
-                                <select name="meal_time_from" id="meal_time_from" class="form-control mx-2"
-                                        disabled>
-                                    @for($i = 0; $i < 24; $i++)
-                                        @if($i <= 9)
-                                            <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                            <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                        @else
-                                            <option value="{{$i}}:00">{{$i}}:00</option>
-                                            <option value="{{$i}}:30">{{$i}}:30</option>
-                                        @endif
-                                    @endfor
-                                </select>
-                                <div class="d-flex align-items-end">
-                                    <small>hrs</small>
+
+                            {{--Hours in Meal day--}}
+                            @if($businessWorkday->meal_time)
+
+                                {{--Hours detail section--}}
+                                <div class="col-3 d-flex" id="hours-meal_time">
+                                    <div class="d-flex align-items-end">
+                                        {{__(substr($businessWorkday->meal_time_from, 0, -3))}}
+                                        <small class="ms-1">hrs</small>
+                                    </div>
+                                    <div class="mx-3">
+                                        |
+                                    </div>
+                                    <div class="d-flex align-items-end">
+                                        {{__(substr($businessWorkday->meal_time_to, 0, -3))}}
+                                        <small class="ms-1">hrs</small>
+                                    </div>
                                 </div>
 
-                                <select name="meal_time_to" id="meal_time_to" class="form-control mx-2"
-                                        disabled>
-                                    @for($i = 0; $i < 24; $i++)
-                                        @if($i <= 9)
-                                            <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                            <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                        @else
-                                            <option value="{{$i}}:00">{{$i}}:00</option>
-                                            <option value="{{$i}}:30">{{$i}}:30</option>
-                                        @endif
-                                    @endfor
-                                </select>
-                                <div class="d-flex align-items-end">
-                                    <small>hrs</small>
+                                {{--Select section--}}
+                                <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
+                                    <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2">
+                                        @for($i = 0; $i < 24; $i++)
+                                            @if($i <= 9)
+                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
+                                            @else
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                <option value="{{$i}}:30">{{$i}}:30</option>
+                                            @endif
+                                        @endfor
+                                    </select>
+                                    <div class="d-flex align-items-end">
+                                        <small>hrs</small>
+                                    </div>
+
+                                    <select name="{{$day}}_to" id="{{$day}}_to" class="form-control mx-2">
+                                        @for($i = 0; $i < 24; $i++)
+                                            @if($i <= 9)
+                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
+                                            @else
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                <option value="{{$i}}:30">{{$i}}:30</option>
+                                            @endif
+                                        @endfor
+                                    </select>
+                                    <div class="d-flex align-items-end">
+                                        <small>hrs</small>
+                                    </div>
+
                                 </div>
 
-                            </div>
+                            @else
+                                <p class="m-0" id="hours-{{$day}}">-</p>
+
+                                {{--Select section--}}
+                                <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">
+                                    <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2"
+                                            disabled>
+                                        @for($i = 0; $i < 24; $i++)
+                                            @if($i <= 9)
+                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
+                                            @else
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                <option value="{{$i}}:30">{{$i}}:30</option>
+                                            @endif
+                                        @endfor
+                                    </select>
+                                    <div class="d-flex align-items-end">
+                                        <small>hrs</small>
+                                    </div>
+
+                                    <select name="{{$day}}_to" id="{{$day}}_to" class="form-control mx-2"
+                                            disabled>
+                                        @for($i = 0; $i < 24; $i++)
+                                            @if($i <= 9)
+                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
+                                            @else
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                <option value="{{$i}}:30">{{$i}}:30</option>
+                                            @endif
+                                        @endfor
+                                    </select>
+                                    <div class="d-flex align-items-end">
+                                        <small>hrs</small>
+                                    </div>
+
+                                </div>
+                            @endif
                         </div>
 
                         <div class="d-flex justify-content-end">
@@ -229,7 +287,7 @@
         <script>
             function selectConditionals() {
                 return {
-                    // Function to toggle in disabled attribute in select hours button
+                    // Function to show and hide select inputs depending of checkbox WORKDAY
                     isDisabled(nameButton) {
                         let buttonFrom = document.getElementById(nameButton + '_from')
                         let buttonTo = document.getElementById(nameButton + '_to')
@@ -247,14 +305,19 @@
                             hoursSection.classList.remove('d-none')
                         }
                     },
-                    // Function to toggle in disabled attribute in meal select buttons
-                    // isMealTime(nameButton) {
-                    //     let buttonFrom = document.getElementById(nameButton + '_from')
-                    //     let buttonTo = document.getElementById(nameButton + '_to')
-                    //     buttonFrom.toggleAttribute("disabled")
-                    //     buttonTo.toggleAttribute("disabled")
-                    // }
+                    // Function to show and hide select inputs depending of checkbox MEAL TIME
+                    isMealTime(nameButton) {
+                        let mealSelect = document.getElementById('select-' + nameButton)
+                        let mealHours = document.getElementById('hours-' + nameButton)
 
+                        if(mealSelect.classList.contains('d-none')){
+                            mealSelect.classList.remove('d-none')
+                            mealHours.classList.add('d-none')
+                        } else{
+                            mealSelect.classList.add('d-none')
+                            mealHours.classList.remove('d-none')
+                        }
+                    }
                 }
             }
         </script>

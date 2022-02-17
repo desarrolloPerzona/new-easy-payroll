@@ -95,16 +95,11 @@
                                             <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1"
                                                    class="rounded" x-on:click="isDisabled(`{{$day}}`)">
                                         </div>
-                                        @php
-                                            $day = ucfirst($day);
-                                        @endphp
+
                                         <div class="col-2">
                                             {{__($day)}}
                                         </div>
 
-                                        @php
-                                            $day = strtolower($day);
-                                        @endphp
                                         {{--                                    Hours in working day--}}
                                         <div class="col-3 d-flex mb-2">
                                             <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2"
@@ -256,7 +251,8 @@
                                                 <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                             </button>
                                         </td>
-                                        <td style="width: 3%"><a href="{{route('business-working-day.edit', $workday->id)}}">
+                                        <td style="width: 3%"><a
+                                                href="{{route('business-working-day.edit', $workday->id)}}">
                                                 <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                                         </td>
                                         <form action="{{route('business-working-day.destroy', $workday->id)}}"

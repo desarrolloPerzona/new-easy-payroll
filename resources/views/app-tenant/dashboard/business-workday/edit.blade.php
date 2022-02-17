@@ -28,7 +28,8 @@
                             <label for="workingDaySelect" class="form-label font-bold">{{__('Type of shift')}}</label>
 
                             <select name="workday_type" id="workday_type" class="form-control" required>
-                                <option value="{{$businessWorkday->workday_type}}">{{ucfirst($businessWorkday->workday_type)}}</option>
+                                <option
+                                    value="{{$businessWorkday->workday_type}}">{{ucfirst($businessWorkday->workday_type)}}</option>
 
                                 {{--Loop to remove type option that contains our workday--}}
                                 @for($i = 0; $i < count($workdayTypes); $i++)
@@ -57,16 +58,11 @@
                                     <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1"
                                            class="rounded" x-on:click="isDisabled(`{{$day}}`)">
                                 </div>
-                                @php
-                                    $day = ucfirst($day);
-                                @endphp
+
                                 <div class="col-2">
                                     {{__($day)}}
                                 </div>
 
-                                @php
-                                    $day = strtolower($day);
-                                @endphp
                                 {{--                                    Hours in working day--}}
                                 <div class="col-3 d-flex mb-2">
                                     <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2"

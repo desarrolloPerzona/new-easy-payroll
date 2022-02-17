@@ -28,10 +28,7 @@
                             <label for="workingDaySelect" class="form-label font-bold">{{__('Type of shift')}}</label>
 
                             <select name="workday_type" id="workday_type" class="form-control" required>
-                                <option value="">{{ucfirst($businessWorkday->workday_type)}}</option>
-                                @php
-                                    $workdayTypes = ['diurno', 'nocturno', 'mixto'];
-                                @endphp
+                                <option value="{{$businessWorkday->workday_type}}">{{ucfirst($businessWorkday->workday_type)}}</option>
 
                                 {{--Loop to remove type option that contains our workday--}}
                                 @for($i = 0; $i < count($workdayTypes); $i++)

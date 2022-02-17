@@ -72,9 +72,9 @@
 
                                     <select name="workday_type" id="workday_type" class="form-control" required>
                                         <option value="">{{__('Select')}}</option>
-                                        <option value="diurno">Diurno</option>
-                                        <option value="nocturno">Nocturno</option>
-                                        <option value="mixto">Mixto</option>
+                                        @foreach($workdayTypes as $type)
+                                            <option value="{{$type}}">{{__(ucfirst($type))}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -292,7 +292,7 @@
                                             <div class="flex-1 text-left w-1/2"><label
                                                     class="my-2">{{__('Type of shift')}}</label></div>
                                             <div class="flex-2 text-left w-1/2"><label
-                                                    class="my-2 font-bold">{{$workday->workday_type}}</label>
+                                                    class="my-2 font-bold">{{ucfirst($workday->workday_type)}}</label>
                                             </div>
                                         </div>
 

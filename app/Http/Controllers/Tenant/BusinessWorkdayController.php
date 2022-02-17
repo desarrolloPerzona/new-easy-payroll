@@ -98,9 +98,11 @@ class BusinessWorkdayController extends Controller
     {
         $businessWorkday = BusinessWorkday::find($id);
 
+        $workdayTypes = ['diurno', 'nocturno', 'mixto'];
+
         $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-        return view('app-tenant.dashboard.business-workday.edit', compact('daysArray', 'businessWorkday'));
+        return view('app-tenant.dashboard.business-workday.edit', compact('daysArray', 'businessWorkday', 'workdayTypes'));
     }
 
     /**

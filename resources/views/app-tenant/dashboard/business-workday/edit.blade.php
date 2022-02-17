@@ -8,7 +8,8 @@
         </h2>
 
         {{--        Form to edit a workingday--}}
-        <div class="card bg-white shadow-sm rounded p-0 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+        <div class="card bg-white shadow-sm rounded p-0 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white"
+             x-data="selectConditionals()">
 
             <div class="accordion-body text-dark rounded dark:bg-dark dark:text-white">
 
@@ -50,7 +51,7 @@
                         {{--                                WorkingDays Loop--}}
                         @foreach($daysArray as $day)
 
-                            <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center py-3">
                                 @php
                                     $day = strtolower($day);
                                 @endphp
@@ -64,41 +65,27 @@
                                 </div>
 
                                 {{--                                    Hours in working day--}}
-                                <div class="col-3 d-flex mb-2">
-                                    <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2"
-                                            disabled>
-                                        @for($i = 0; $i < 24; $i++)
-                                            @if($i <= 9)
-                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                            @else
-                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                @if($businessWorkday[$day])
+                                    <div class="col-3 d-flex">
+                                        @if($businessWorkday[$day . '_from'])
 
-                                                <option value="{{$i}}:30">{{$i}}:30</option>
-                                            @endif
-                                        @endfor
-                                    </select>
-                                    <div class="d-flex align-items-end">
-                                        <small>hrs</small>
+                                            <div class="d-flex align-items-end">
+                                                {{__(substr($businessWorkday[$day . '_from'], 0, -3))}}
+                                                <small class="ms-1">hrs</small>
+                                            </div>
+                                            <div class="mx-3">
+                                                |
+                                            </div>
+                                            <div class="d-flex align-items-end">
+                                                {{__(substr($businessWorkday[$day . '_to'], 0, -3))}}
+                                                <small class="ms-1">hrs</small>
+                                            </div>
+                                        @endif
                                     </div>
+                                @else
+                                    -
+                                @endif
 
-                                    <select name="{{$day}}_to" id="{{$day}}_to" class="form-control mx-2"
-                                            disabled>
-                                        @for($i = 0; $i < 24; $i++)
-                                            @if($i <= 9)
-                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                            @else
-                                                <option value="{{$i}}:00">{{$i}}:00</option>
-                                                <option value="{{$i}}:30">{{$i}}:30</option>
-                                            @endif
-                                        @endfor
-                                    </select>
-                                    <div class="d-flex align-items-end">
-                                        <small>hrs</small>
-                                    </div>
-
-                                </div>
                             </div>
                         @endforeach
 
@@ -162,5 +149,26 @@
         </div>
     </div>
 
-
+    @push('inline_scripts')
+        <script>
+            function selectConditionals() {
+                return {
+                    // Function to toggle in disabled attribute in select hours button
+                    isDisabled(nameButton) {
+                        let buttonFrom = document.getElementById(nameButton + '_from')
+                        let buttonTo = document.getElementById(nameButton + '_to')
+                        buttonFrom.toggleAttribute("disabled")
+                        buttonTo.toggleAttribute("disabled")
+                    },
+                    // Function to toggle in disabled attribute in meal select buttons
+                    // isMealTime(nameButton) {
+                    //     let buttonFrom = document.getElementById(nameButton + '_from')
+                    //     let buttonTo = document.getElementById(nameButton + '_to')
+                    //     buttonFrom.toggleAttribute("disabled")
+                    //     buttonTo.toggleAttribute("disabled")
+                    // }
+                }
+            }
+        </script>
+    @endpush
 </x-app-tenant>

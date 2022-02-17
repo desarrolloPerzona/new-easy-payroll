@@ -256,7 +256,7 @@
                                                 <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                             </button>
                                         </td>
-                                        <td style="width: 3%"><a href="{{route('working-day-holiday.edit',1)}}">
+                                        <td style="width: 3%"><a href="{{route('business-working-day.edit', $workday->id)}}">
                                                 <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
                                         </td>
                                         <form action="{{route('business-working-day.destroy', $workday->id)}}"

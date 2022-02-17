@@ -91,12 +91,16 @@ class BusinessWorkdayController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Tenant\BusinessWorkday $businessWorkday
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function edit(BusinessWorkday $businessWorkday)
+    public function edit(Request $request, $id)
     {
-        //
+        $businessWorkday = BusinessWorkday::find($id);
+
+        $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+        return view('app-tenant.dashboard.business-workday.edit', compact('daysArray', 'businessWorkday'));
     }
 
     /**

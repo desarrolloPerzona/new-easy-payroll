@@ -125,6 +125,6 @@ class BusinessWorkdayController extends Controller
         $businessWorkday = BusinessWorkday::find($businessWorkday);
         $businessWorkday->delete();
 
-        return redirect()->route('working-day-holiday.index')->with('deleteMessage', 'Registro eliminado exitosamente');
+        return redirect()->route('working-day-holiday.index')->with('deleteMessage', 'Registro eliminado exitosamente.');
     }
 }

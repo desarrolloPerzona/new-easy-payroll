@@ -34,7 +34,8 @@
         </h2>
 
         {{--    New Working day Accordion--}}
-        <div class="accordion btn-top-holder my-3 max-w-6xl m-auto" id="workingDayAccordion">
+        <div class="accordion btn-top-holder my-3 max-w-6xl m-auto" id="workingDayAccordion"
+             x-data="selectConditionals()">
             <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
                 {{--                Accordion header New WorkingDay--}}
                 <div class="accordion-header mr-4" id="headingWorkingDay">
@@ -92,7 +93,7 @@
                                         @endphp
                                         <div class="col-1">
                                             <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1"
-                                                   class="rounded">
+                                                   class="rounded" x-on:click="isDisabled(`{{$day}}`)">
                                         </div>
                                         @php
                                             $day = ucfirst($day);
@@ -106,13 +107,15 @@
                                         @endphp
                                         {{--                                    Hours in working day--}}
                                         <div class="col-3 d-flex mb-2">
-                                            <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2">
+                                            <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2"
+                                                    disabled>
                                                 @for($i = 0; $i < 24; $i++)
                                                     @if($i <= 9)
                                                         <option value="0{{$i}}:00">0{{$i}}:00</option>
                                                         <option value="0{{$i}}:30">0{{$i}}:30</option>
                                                     @else
                                                         <option value="{{$i}}:00">{{$i}}:00</option>
+
                                                         <option value="{{$i}}:30">{{$i}}:30</option>
                                                     @endif
                                                 @endfor
@@ -121,7 +124,8 @@
                                                 <small>hrs</small>
                                             </div>
 
-                                            <select name="{{$day}}_to" id="{{$day}}_to" class="form-control mx-2">
+                                            <select name="{{$day}}_to" id="{{$day}}_to" class="form-control mx-2"
+                                                    disabled>
                                                 @for($i = 0; $i < 24; $i++)
                                                     @if($i <= 9)
                                                         <option value="0{{$i}}:00">0{{$i}}:00</option>
@@ -146,14 +150,15 @@
                                 <div class="d-flex align-items-center">
                                     <div class="col-1">
                                         <input name="meal_time" id="meal_time" value="1" type="checkbox"
-                                               class="rounded">
+                                               class="rounded" x-on:click="isMealTime('meal_time')">
                                     </div>
                                     <div class="col-2">
                                         {{__('Comida')}}
                                     </div>
                                     {{--                                    Hours in working day--}}
                                     <div class="col-3 d-flex mb-2">
-                                        <select name="meal_time_from" id="meal_time_from" class="form-control mx-2">
+                                        <select name="meal_time_from" id="meal_time_from" class="form-control mx-2"
+                                                disabled>
                                             @for($i = 0; $i < 24; $i++)
                                                 @if($i <= 9)
                                                     <option value="0{{$i}}:00">0{{$i}}:00</option>
@@ -168,7 +173,8 @@
                                             <small>hrs</small>
                                         </div>
 
-                                        <select name="meal_time_to" id="meal_time_to" class="form-control mx-2">
+                                        <select name="meal_time_to" id="meal_time_to" class="form-control mx-2"
+                                                disabled>
                                             @for($i = 0; $i < 24; $i++)
                                                 @if($i <= 9)
                                                     <option value="0{{$i}}:00">0{{$i}}:00</option>
@@ -897,9 +903,30 @@
 
             </div>
 
-
         </div>
+
     </div>
 
+    @push('inline_scripts')
+        <script>
+            function selectConditionals() {
+                return {
+                    // Function to toggle in disabled attribute in select hours button
+                    isDisabled(nameButton) {
+                        let buttonFrom = document.getElementById(nameButton + '_from')
+                        let buttonTo = document.getElementById(nameButton + '_to')
+                        buttonFrom.toggleAttribute("disabled")
+                        buttonTo.toggleAttribute("disabled")
+                    },
+                    isMealTime(nameButton) {
+                        let buttonFrom = document.getElementById(nameButton + '_from')
+                        let buttonTo = document.getElementById(nameButton + '_to')
+                        buttonFrom.toggleAttribute("disabled")
+                        buttonTo.toggleAttribute("disabled")
+                    }
+                }
+            }
+        </script>
+    @endpush
 </x-app-tenant>
 

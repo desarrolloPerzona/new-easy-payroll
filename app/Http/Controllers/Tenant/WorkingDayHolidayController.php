@@ -7,6 +7,7 @@ use App\Models\Tenant\BusinessWorkday;
 use App\Models\Tenant\WorkingDayHoliday;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class WorkingDayHolidayController extends Controller
 {
@@ -17,13 +18,19 @@ class WorkingDayHolidayController extends Controller
      */
     public function index()
     {
-        $daysArray = [
-            'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
-        ];
+        $appUrl = config('app.url');
+
+        $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+        $monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
         $workDays = BusinessWorkday::all();
 
-        return view('app-tenant.dashboard.working-day-holiday.index', compact('daysArray', 'workDays'));
+//        Get festive official days from API
+        $responseFestiveDays = Http::withOptions(['verify' => false])->get($appUrl .'/api/official-festive-days');
+        $festiveDays = json_decode($responseFestiveDays->body());
+
+        return view('app-tenant.dashboard.working-day-holiday.index', compact('daysArray', 'monthsArray', 'festiveDays', 'workDays'));
     }
 
     /**

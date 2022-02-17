@@ -326,8 +326,8 @@
                                             <div class="flex-2 text-left w-1/2">
                                                 <label class="my-2 font-bold">
                                                     @if($workday->meal_time)
-                                                    {{substr($workday->meal_time_from, 0, -3)}} <small>hrs</small>
-                                                    - {{ substr($workday->meal_time_to, 0, -3) }} <small>hrs</small>
+                                                        {{substr($workday->meal_time_from, 0, -3)}} <small>hrs</small>
+                                                        - {{ substr($workday->meal_time_to, 0, -3) }} <small>hrs</small>
                                                     @else
                                                         {{__('No records')}}
                                                     @endif
@@ -383,6 +383,8 @@
 
         {{--    Festive day Section--}}
         <div class="container">
+
+            {{--            Header--}}
             <h2 class="bg-blueSteel py-2 px-3 mb-2 mt-3 rounded">
                 <i class="fak fa-admin-perzona mr-2"></i>
                 <span style="display: inline-flex;">{{ __('Holidays') }}</span>
@@ -790,106 +792,30 @@
             </div>
 
 
+            {{--            Festive days table--}}
             <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
                 <div class="border-bottom-1 border-gray-400 py-3">
-                    <h2>Festivos oficiales México</h2>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            Enero
+
+                    <h2 class="mb-3">Festivos oficiales México</h2>
+                    {{--                    Loop to print each of a month from our monthsArray--}}
+                    @foreach($monthsArray as $month)
+                        <div class="flex pt-2">
+                            <div class="flex-1 text-gray-500">
+                                {{__($month)}}
+                            </div>
+                            @foreach($festiveDays as $festiveDay)
+                                {{--                            Conditional to know if exist a festive day in row month and print it, else print empty--}}
+                                @if(\Carbon\Carbon::create($festiveDay->date)->format('F') == $month)
+                                    <div class="flex-1">
+                                        {{__(\Carbon\Carbon::create($festiveDay->date)->format('l')) . ', ' . formatDate($festiveDay->date) }}
+                                        | <b>{{$festiveDay->name}}</b>
+                                    </div>
+                                @endif
+                            @endforeach
+
                         </div>
-                        <div class="flex-1">
-                            Viernes 1 de enero | Año Nuevo.
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            Febrero
-                        </div>
-                        <div class="flex-1">
-                            Lunes 1 de febrero | Por el 5 de febrero (Día de la Constitución mexicana).
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500 ">
-                            Marzo
-                        </div>
-                        <div class="flex-1">
-                            Lunes 15 de marzo | Por el 21 de marzo (Natalicio de Benito Juárez).
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            Abril
-                        </div>
-                        <div class="flex-1">
-                            --
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500 ">
-                            Mayo
-                        </div>
-                        <div class="flex-1">
-                            Sábado 1 de mayo | Día del Trabajo.
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            Junio
-                        </div>
-                        <div class="flex-1">
-                            --
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            Julio
-                        </div>
-                        <div class="flex-1">
-                            --
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            Agosto
-                        </div>
-                        <div class="flex-1">
-                            --
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            Septiembre
-                        </div>
-                        <div class="flex-1">
-                            Jueves 16 de septiembre | Día de la Independencia.
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            Octubre
-                        </div>
-                        <div class="flex-1">
-                            --
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            Noviembre
-                        </div>
-                        <div class="flex-1">
-                            Lunes 15 de noviembre | Por el 20 de noviembre (Día de la Revolución).
-                        </div>
-                    </div>
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            Diciembre
-                        </div>
-                        <div class="flex-1">
-                            Sábado 25 de diciembre | Navidad
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
 

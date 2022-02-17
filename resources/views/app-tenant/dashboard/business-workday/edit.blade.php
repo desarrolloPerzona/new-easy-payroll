@@ -310,10 +310,10 @@
                         let mealSelect = document.getElementById('select-' + nameButton)
                         let mealHours = document.getElementById('hours-' + nameButton)
 
-                        if(mealSelect.classList.contains('d-none')){
+                        if (mealSelect.classList.contains('d-none')) {
                             mealSelect.classList.remove('d-none')
                             mealHours.classList.add('d-none')
-                        } else{
+                        } else {
                             mealSelect.classList.add('d-none')
                             mealHours.classList.remove('d-none')
                         }

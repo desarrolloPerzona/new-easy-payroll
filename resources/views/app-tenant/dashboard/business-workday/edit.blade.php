@@ -14,7 +14,7 @@
             <div class="accordion-body text-dark rounded dark:bg-dark dark:text-white">
 
                 {{--                        Working day Form--}}
-                <form action="{{route('business-working-day.store')}}" method="POST"
+                <form action="{{route('business-working-day.update', $businessWorkday->id)}}" method="POST"
                       class="text-black rounded">
                     @csrf
                     @method('PATCH')
@@ -36,7 +36,7 @@
                                 {{--Loop to remove type option that contains our workday--}}
                                 @for($i = 0; $i < count($workdayTypes); $i++)
                                     @if($workdayTypes[$i] != $businessWorkday->workday_type)
-                                        <option value="$workdayTypes[$i]">{{__(ucfirst($workdayTypes[$i]))}}</option>
+                                        <option value="{{$workdayTypes[$i]}}">{{__(ucfirst($workdayTypes[$i]))}}</option>
                                     @endif
                                 @endfor
                             </select>

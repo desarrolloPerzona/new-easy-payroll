@@ -112,9 +112,16 @@ class BusinessWorkdayController extends Controller
      * @param \App\Models\Tenant\BusinessWorkday $businessWorkday
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBusinessWorkdayRequest $request, BusinessWorkday $businessWorkday)
+    public function update(Request $request, $id)
     {
-        //
+        $businessWorkday = BusinessWorkday::find($id);
+
+        $businessWorkday->name = $request->get('name');
+        $businessWorkday->workday_type = $request->get('workday_type');
+
+        $businessWorkday->save();
+
+        return redirect()->route('working-day-holiday.index');
     }
 
     /**

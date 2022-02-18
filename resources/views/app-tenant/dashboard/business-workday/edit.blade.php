@@ -1,6 +1,16 @@
 <x-app-tenant>
     <div class="container mx-auto">
 
+        {{--        Validation message--}}
+        @if ($errors->any())
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                @foreach ($errors->all() as $error)
+                    {{$error}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                @endforeach
+            </div>
+        @endif
+
         {{--        Header--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-4 rounded">
             <i class="fak fa-admin-perzona mr-2"></i>

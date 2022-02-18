@@ -116,20 +116,27 @@ class BusinessWorkdayController extends Controller
     {
         $businessWorkday = BusinessWorkday::find($id);
 
-        $businessWorkday->name = $request->get('name');
+//        Conditional to add a unique name validation and if it has change update field
+        if ($request->get('name') != $businessWorkday->name) {
+            $request->validate([
+                'name' => 'unique:business_workdays'
+            ]);
+            $businessWorkday->name = $request->get('name');
+        }
+
         $businessWorkday->workday_type = $request->get('workday_type');
 
         $businessWorkday->save();
 
-        return redirect()->route('working-day-holiday.index');
+        return redirect()->route('working-day-holiday.index')->with('editMessage', 'Registro editado exitosamente.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Tenant\BusinessWorkday $businessWorkday
      * @return \Illuminate\Http\Response
-     *  @param \App\Models\Tenant\BusinessWorkday $businessWorkday
      */
     public function destroy(Request $request, $businessWorkday)
     {

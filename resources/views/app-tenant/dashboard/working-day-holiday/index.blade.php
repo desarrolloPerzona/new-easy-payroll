@@ -27,6 +27,14 @@
             </div>
         @endif
 
+        {{--        Edit message--}}
+        @if (session('editMessage'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('editMessage') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         {{--        Main Header--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
             <i class="fak fa-admin-perzona mr-2"></i>

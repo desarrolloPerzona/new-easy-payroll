@@ -208,7 +208,7 @@
 
                                 {{--Select section--}}
                                 <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
-                                    <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2">
+                                    <select name="meal_time_from" id="meal_time_from" class="form-control mx-2">
                                         @for($i = 0; $i < 24; $i++)
                                             @if($i <= 9)
                                                 <option value="0{{$i}}:00">0{{$i}}:00</option>
@@ -223,7 +223,7 @@
                                         <small>hrs</small>
                                     </div>
 
-                                    <select name="{{$day}}_to" id="{{$day}}_to" class="form-control mx-2">
+                                    <select name="meal_time_to" id="meal_time_to" class="form-control mx-2">
                                         @for($i = 0; $i < 24; $i++)
                                             @if($i <= 9)
                                                 <option value="0{{$i}}:00">0{{$i}}:00</option>
@@ -244,40 +244,40 @@
                                 <p class="m-0" id="hours-{{$day}}">-</p>
 
                                 {{--Select section--}}
-                                <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">
-                                    <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2"
-                                            disabled>
-                                        @for($i = 0; $i < 24; $i++)
-                                            @if($i <= 9)
-                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                            @else
-                                                <option value="{{$i}}:00">{{$i}}:00</option>
-                                                <option value="{{$i}}:30">{{$i}}:30</option>
-                                            @endif
-                                        @endfor
-                                    </select>
-                                    <div class="d-flex align-items-end">
-                                        <small>hrs</small>
-                                    </div>
+{{--                                <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">--}}
+{{--                                    <select name="meal_time_from" id="meal_time_from" class="form-control mx-2"--}}
+{{--                                            disabled>--}}
+{{--                                        @for($i = 0; $i < 24; $i++)--}}
+{{--                                            @if($i <= 9)--}}
+{{--                                                <option value="0{{$i}}:00">0{{$i}}:00</option>--}}
+{{--                                                <option value="0{{$i}}:30">0{{$i}}:30</option>--}}
+{{--                                            @else--}}
+{{--                                                <option value="{{$i}}:00">{{$i}}:00</option>--}}
+{{--                                                <option value="{{$i}}:30">{{$i}}:30</option>--}}
+{{--                                            @endif--}}
+{{--                                        @endfor--}}
+{{--                                    </select>--}}
+{{--                                    <div class="d-flex align-items-end">--}}
+{{--                                        <small>hrs</small>--}}
+{{--                                    </div>--}}
 
-                                    <select name="{{$day}}_to" id="{{$day}}_to" class="form-control mx-2"
-                                            disabled>
-                                        @for($i = 0; $i < 24; $i++)
-                                            @if($i <= 9)
-                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                            @else
-                                                <option value="{{$i}}:00">{{$i}}:00</option>
-                                                <option value="{{$i}}:30">{{$i}}:30</option>
-                                            @endif
-                                        @endfor
-                                    </select>
-                                    <div class="d-flex align-items-end">
-                                        <small>hrs</small>
-                                    </div>
+{{--                                    <select name="meal_time_to" id="meal_time_to" class="form-control mx-2"--}}
+{{--                                            disabled>--}}
+{{--                                        @for($i = 0; $i < 24; $i++)--}}
+{{--                                            @if($i <= 9)--}}
+{{--                                                <option value="0{{$i}}:00">0{{$i}}:00</option>--}}
+{{--                                                <option value="0{{$i}}:30">0{{$i}}:30</option>--}}
+{{--                                            @else--}}
+{{--                                                <option value="{{$i}}:00">{{$i}}:00</option>--}}
+{{--                                                <option value="{{$i}}:30">{{$i}}:30</option>--}}
+{{--                                            @endif--}}
+{{--                                        @endfor--}}
+{{--                                    </select>--}}
+{{--                                    <div class="d-flex align-items-end">--}}
+{{--                                        <small>hrs</small>--}}
+{{--                                    </div>--}}
 
-                                </div>
+{{--                                </div>--}}
                             @endif
                         </div>
 

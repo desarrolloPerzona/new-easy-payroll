@@ -114,6 +114,10 @@ class BusinessWorkdayController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $daysArray = [
+            'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
+        ];
+
         $businessWorkday = BusinessWorkday::find($id);
 
 //        Conditional to add a unique name validation and if it has change update field
@@ -125,6 +129,23 @@ class BusinessWorkdayController extends Controller
         }
 
         $businessWorkday->workday_type = $request->get('workday_type');
+
+        //        Storing each value of days array in front
+        foreach ($daysArray as $key => $day) {
+            if ($request->get($day)) {
+                $businessWorkday[$day] = $request->get($day);
+                $businessWorkday[$day . "_from"] = $request->get($day . "_from");
+                $businessWorkday[$day . "_to"] = $request->get($day . "_to");
+            }
+        }
+
+        if ($request->get('meal_time')) {
+            $businessWorkday->meal_time = $request->get('meal_time');
+            $businessWorkday->meal_time_from = $request->get('meal_time_from');
+            $businessWorkday->meal_time_to = $request->get('meal_time_to');
+        } else {
+            $businessWorkday->meal_time = 0;
+        }
 
         $businessWorkday->save();
 

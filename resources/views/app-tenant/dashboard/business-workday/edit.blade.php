@@ -46,7 +46,8 @@
                                 {{--Loop to remove type option that contains our workday--}}
                                 @for($i = 0; $i < count($workdayTypes); $i++)
                                     @if($workdayTypes[$i] != $businessWorkday->workday_type)
-                                        <option value="{{$workdayTypes[$i]}}">{{__(ucfirst($workdayTypes[$i]))}}</option>
+                                        <option
+                                            value="{{$workdayTypes[$i]}}">{{__(ucfirst($workdayTypes[$i]))}}</option>
                                     @endif
                                 @endfor
                             </select>
@@ -204,6 +205,16 @@
                                         {{__(substr($businessWorkday->meal_time_to, 0, -3))}}
                                         <small class="ms-1">hrs</small>
                                     </div>
+
+                                    {{--Trash button--}}
+                                    <div class="ms-3">
+                                        <td style="width: 3%">
+                                            <a href="{{route('deleteHour', $businessWorkday->id)}}">
+                                                <i class="fas fa-trash-alt text-gray-400"></i>
+                                            </a>
+                                        </td>
+                                    </div>
+
                                 </div>
 
                                 {{--Select section--}}
@@ -237,11 +248,44 @@
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
-
                                 </div>
 
                             @else
-                                <p class="m-0" id="hours-{{$day}}">-</p>
+                                <p class="m-0" id="hours-meal_time">-</p>
+
+                                {{--                                Select section--}}
+                                <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
+                                    <select name="meal_time_from" id="meal_time_from" class="form-control mx-2">
+                                        @for($i = 0; $i < 24; $i++)
+                                            @if($i <= 9)
+                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
+                                            @else
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                <option value="{{$i}}:30">{{$i}}:30</option>
+                                            @endif
+                                        @endfor
+                                    </select>
+                                    <div class="d-flex align-items-end">
+                                        <small>hrs</small>
+                                    </div>
+
+                                    <select name="meal_time_to" id="meal_time_to" class="form-control mx-2">
+                                        @for($i = 0; $i < 24; $i++)
+                                            @if($i <= 9)
+                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
+                                            @else
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                <option value="{{$i}}:30">{{$i}}:30</option>
+                                            @endif
+                                        @endfor
+                                    </select>
+                                    <div class="d-flex align-items-end">
+                                        <small>hrs</small>
+                                    </div>
+
+                                </div>
                             @endif
                         </div>
 

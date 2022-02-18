@@ -166,4 +166,16 @@ class BusinessWorkdayController extends Controller
 
         return redirect()->route('working-day-holiday.index')->with('deleteMessage', 'Registro eliminado exitosamente.');
     }
+
+    public function deleteHour($id){
+        $businessWorkday = BusinessWorkday::find($id);
+
+        $businessWorkday->update([
+           'meal_time' => false,
+           'meal_time_from' => null,
+           'meal_time_to' => null
+        ]);
+
+        return redirect()->back();
+    }
 }

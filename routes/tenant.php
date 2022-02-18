@@ -66,6 +66,7 @@ Route::middleware([
     //    Working day
     Route::resource('/working-day-holiday', WorkingDayHolidayController::class)->middleware('auth:web');
     Route::resource('/business-working-day', BusinessWorkdayController::class)->middleware('auth:web');
+    Route::get('/deleteHour/{id}', [BusinessWorkdayController::class, 'deleteHour'])->name('deleteHour');
 
     Route::resource('/imss-employer-registers', ImssPatronalRegisterController::class)->middleware('auth:web');
     Route::resource('/business-positions', BusinessPositionController::class)->middleware('auth:web');

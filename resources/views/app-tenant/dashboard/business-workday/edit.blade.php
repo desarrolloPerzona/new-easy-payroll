@@ -94,6 +94,15 @@
                                                 {{__(substr($businessWorkday[$day . '_to'], 0, -3))}}
                                                 <small class="ms-1">hrs</small>
                                             </div>
+
+                                            {{--Trash button--}}
+                                            <div class="ms-3">
+                                                <td style="width: 3%">
+                                                    <a href="{{route('deleteWorkdayHour', [$businessWorkday->id, $day])}}">
+                                                        <i class="fas fa-trash-alt text-gray-400"></i>
+                                                    </a>
+                                                </td>
+                                            </div>
                                         </div>
 
                                         {{--Select section--}}

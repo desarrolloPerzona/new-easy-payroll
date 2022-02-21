@@ -422,7 +422,8 @@
                         <div id="collapseP1" class="accordion-collapse collapse p-0"
                              aria-labelledby="headingTwo" data-bs-parent="#newPosition">
                             <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
-                                <form action="">
+                                <form action="{{route('business-festive-days.store')}}" method="POST">
+                                    @csrf
                                     <div>
                                         <label class="font-bold" for="name">{{__('Name')}}</label>
                                     </div>
@@ -434,17 +435,17 @@
                                     <div class="d-flex">
                                         <div class="col-3 d-flex flex-column pe-5">
                                             <label for="" class="my-2 font-bold">{{__('Date')}}</label>
-                                            <input type="date" class="form-control date-height">
+                                            <input type="date" name="date" id="date" class="form-control date-height">
                                         </div>
                                         <div class="col-3">
                                             <label for="" class="my-2 font-bold">Se labora</label>
                                             <div class="d-flex flex-column">
                                                 <div>
-                                                    <input type="radio" name="working" id="working">
+                                                    <input type="radio" name="working" id="working" value="1">
                                                     <label for="">Sí</label>
                                                 </div>
                                                 <div>
-                                                    <input type="radio" name="working" id="working">
+                                                    <input type="radio" name="working" id="working" value="0">
                                                     <label for="">No</label>
                                                 </div>
                                             </div>
@@ -453,27 +454,23 @@
                                             <label for="" class="my-2 font-bold">Todo el día</label>
                                             <div class="d-flex flex-column">
                                                 <div>
-                                                    <input type="radio">
-                                                    <label for="">Sí</label>
+                                                    <input type="radio" name="schedule_all_day" id="schedule_all_day" value="1">
+                                                    <label for="schedule_all_day">Sí</label>
                                                 </div>
                                                 <div>
-                                                    <input type="radio">
-                                                    <label for="">No</label>
+                                                    <input type="radio" name="schedule_all_day" id="schedule_all_day" value="0">
+                                                    <label for="schedule_all_day">No</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3 d-flex flex-column">
                                             <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
                                             <div>
-                                                <select name="festive_workday_from" id="festive_workday_from" class="rounded">
-                                                    <option value="">Primero</option>
-                                                    <option value="">Primero</option>
-                                                    <option value="">Primero</option>
+                                                <select name="schedule_from" id="schedule_from" class="rounded">
+                                                    <option value="00:00">Primero</option>
                                                 </select>
-                                                <select name="festive_workday_to" id="festive_workday_to" class="rounded">
-                                                    <option value="">Primero</option>
-                                                    <option value="">Primero</option>
-                                                    <option value="">Primero</option>
+                                                <select name="schedule_to" id="schedule_to" class="rounded">
+                                                    <option value="00:00">Primero</option>
                                                 </select>
                                             </div>
                                         </div>

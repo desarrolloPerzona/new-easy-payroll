@@ -25,6 +25,7 @@ use Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain;
 use Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 use Stancl\Tenancy\Middleware\ScopeSessions;
+use App\Http\Controllers\Tenant\BusinessFestiveDayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +67,7 @@ Route::middleware([
     //    Working day
     Route::resource('/working-day-holiday', WorkingDayHolidayController::class)->middleware('auth:web');
     Route::resource('/business-working-day', BusinessWorkdayController::class)->middleware('auth:web');
+    Route::resource('/business-festive-days', BusinessFestiveDayController::class)->middleware('auth:web');
     Route::get('/deleteHour/{id}', [BusinessWorkdayController::class, 'deleteHour'])->name('deleteHour');
     Route::get('/workday/{id}/{day}', [BusinessWorkdayController::class, 'deleteWorkdayHours'])->name('deleteWorkdayHour');
 

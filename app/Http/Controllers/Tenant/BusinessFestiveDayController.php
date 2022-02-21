@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreBusinessFestiveDayRequest;
 use App\Http\Requests\UpdateBusinessFestiveDayRequest;
 use App\Models\Tenant\BusinessFestiveDay;
+use Illuminate\Http\Request;
 
 class BusinessFestiveDayController extends Controller
 {
@@ -32,12 +33,24 @@ class BusinessFestiveDayController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBusinessFestiveDayRequest  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBusinessFestiveDayRequest $request)
+    public function store(Request $request)
     {
-        //
+        $businessFestiveday = new BusinessFestiveDay();
+        $businessFestiveday->name = $request->get('name');
+        $businessFestiveday->date = $request->get('date');
+        $businessFestiveday->working = $request->get('working');
+        $businessFestiveday->schedule_all_day = $request->get('schedule_all_day');
+        $businessFestiveday->schedule_from = $request->get('schedule_from');
+        $businessFestiveday->schedule_to = $request->get('schedule_to');
+        $businessFestiveday->created_at = now();
+        $businessFestiveday->updated_at = now();
+
+        $businessFestiveday->save();
+
+        return redirect()->back();
     }
 
     /**

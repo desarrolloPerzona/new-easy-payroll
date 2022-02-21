@@ -19,8 +19,8 @@ class CreateBusinessFestiveDaysTable extends Migration
             $table->date('date');
             $table->boolean('working')->default(false);
             $table->boolean('schedule_all_day')->default(false);
-            $table->time('schedule_from');
-            $table->time('schedule_to');
+            $table->time('schedule_from')->nullable();
+            $table->time('schedule_to')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

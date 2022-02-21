@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tenant\BusinessFestiveDay;
 use App\Models\Tenant\BusinessWorkday;
 use App\Models\Tenant\WorkingDayHoliday;
 use Carbon\Carbon;
@@ -32,8 +33,11 @@ class WorkingDayHolidayController extends Controller
         $responseFestiveDays = Http::withOptions(['verify' => false])->get($appUrl .'/api/official-festive-days');
         $festiveDays = json_decode($responseFestiveDays->body());
 
+        $festiveBusinessesDays = BusinessFestiveDay::all();
+
         return view('app-tenant.dashboard.working-day-holiday.index',
-                compact('daysArray', 'monthsArray', 'festiveDays', 'workDays', 'workdayTypes'));
+                compact('daysArray', 'monthsArray',
+                    'festiveDays', 'workDays', 'workdayTypes', 'festiveBusinessesDays'));
     }
 
     /**

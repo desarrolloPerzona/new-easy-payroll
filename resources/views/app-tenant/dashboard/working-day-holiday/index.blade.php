@@ -289,7 +289,6 @@
                                             </td>
                                         </form>
 
-
                                     </table>
                                 </div>
                                 <div id="collapse-{{$workday->id}}" class="accordion-collapse collapse"
@@ -335,7 +334,6 @@
                                                 </label>
                                             </div>
                                         </div>
-
 
                                         <div class="flex">
                                             <div class="flex-1 text-left w-1/2"><label
@@ -408,14 +406,12 @@
                 <span style="display: inline-flex;">{{ __('Holidays') }}</span>
             </h2>
 
-
             {{--Nuevo día festivo ----------------}}
 
             <div class="accordion btn-top-holder my-3 max-w-6xl m-auto" id="newPosition">
 
                 <div class="accordion-item bg-blueSteel py-2 ps-3 mb-2 rounded">
                     <div class="accordion-header mr-4" id="headingOne">
-
 
                         <div class="flex">
                             <div class="flex-1 pb-2">{{__('New holiday')}}</div>
@@ -455,7 +451,8 @@
                                                     <label for="working">{{__('Yes')}}</label>
                                                 </div>
                                                 <div>
-                                                    <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
+                                                    <input type="radio" name="working" id="working2" value="0"
+                                                           x-on:click="working('n')">
                                                     <label for="working2">{{__('No')}}</label>
                                                 </div>
                                             </div>
@@ -873,12 +870,9 @@
                         </div>
                     </div>
 
-
                 </div>
 
-
             </div>
-
 
             {{--            Festive days table--}}
             <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
@@ -908,16 +902,18 @@
                 </div>
 
                 <div class="border-bottom-1 border-gray-400 py-3">
-                    <h2>Festivos empresa <i class="fas fa-edit text-gray-400"></i></h2>
+                    <h2>{{__('Festivos empresa')}} <i class="fas fa-edit text-gray-400"></i></h2>
+                    @foreach($festiveBusinessesDays as $festiveDay)
                     <div class="flex pt-2">
                         <div class="flex-1 text-gray-500">
-                            Julio
+                            {{ __(\Carbon\Carbon::create($festiveDay->date)->format('F'))}}
                         </div>
                         <div class="flex-1">
-                            Lunes 5 de Julio | Aniversario de la empresa
+                            {{__(\Carbon\Carbon::create($festiveDay->date)->format('l')) . ', ' . formatDate($festiveDay->date) }}
+                            | <b>{{$festiveDay->name}}</b>
                         </div>
                     </div>
-
+                    @endforeach
                 </div>
 
             </div>
@@ -948,18 +944,17 @@
             }
 
             function festiveConditionals() {
-                return{
-                    working(res){
-                        if(res == 'y')
-                        {
+                return {
+                    working(res) {
+                        if (res == 'y') {
                             document.getElementById('all_day_buttons').classList.remove('d-none')
                             document.getElementById('schedule_buttons').classList.remove('d-none')
-                        } else if(res == 'n'){
+                        } else if (res == 'n') {
                             document.getElementById('all_day_buttons').classList.add('d-none')
                             document.getElementById('schedule_buttons').classList.add('d-none')
-                        } else if (res == 'all_day'){
+                        } else if (res == 'all_day') {
                             document.getElementById('schedule_buttons').classList.add('d-none')
-                        } else if(res == 'not_all_day'){
+                        } else if (res == 'not_all_day') {
                             document.getElementById('schedule_buttons').classList.remove('d-none')
                         }
                     }

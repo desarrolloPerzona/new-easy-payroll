@@ -19,7 +19,7 @@ class WorkingDayHolidayController extends Controller
      */
     public function index()
     {
-        $currentYear = 2022;
+        $currentYear = date('Y');
 
         $appUrl = config('app.url');
 

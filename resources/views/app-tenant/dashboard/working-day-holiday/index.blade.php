@@ -890,7 +890,8 @@
                                 {{--                            Conditional to know if exist a festive day in row month and print it, else print empty--}}
                                 @if(\Carbon\Carbon::create($festiveDay->date)->format('F') == $month)
                                     <div class="flex-1">
-                                        {{__(\Carbon\Carbon::create($festiveDay->date)->format('l')) . ', ' . formatDate($festiveDay->date) }}
+{{--                                        Function to print date with current year--}}
+                                        {{__(\Carbon\Carbon::create($currentYear . '-' . substr($festiveDay->date, 5, 5))->format('l')) . ', ' . substr(formatDate($festiveDay->date), 0, -4) . ' ' . $currentYear }}
                                         | <b>{{$festiveDay->name}}</b>
                                     </div>
                                 @endif
@@ -906,9 +907,10 @@
                     @foreach($festiveBusinessesDays as $festiveDay)
                         <div class="flex pt-2">
                             <div class="flex-1 text-gray-500">
-                                {{ __(\Carbon\Carbon::create($currentYear . '-' . substr($festiveDay->date, 5, 5))->format('F'))}}
+                                {{__(\Carbon\Carbon::create($festiveDay->date)->format('F') == $month)}}
                             </div>
                             <div class="flex-1">
+{{--                                        Function to print date with current year--}}
                                 {{__(\Carbon\Carbon::create($currentYear . '-' . substr($festiveDay->date, 5, 5))->format('l')) . ', ' . substr(formatDate($festiveDay->date), 0, -4) . ' ' . $currentYear }}
                                 | <b>{{$festiveDay->name}}</b>
                             </div>

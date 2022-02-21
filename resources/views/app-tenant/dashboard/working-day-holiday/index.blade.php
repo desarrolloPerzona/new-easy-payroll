@@ -904,15 +904,15 @@
                 <div class="border-bottom-1 border-gray-400 py-3">
                     <h2>{{__('Festivos empresa')}} <i class="fas fa-edit text-gray-400"></i></h2>
                     @foreach($festiveBusinessesDays as $festiveDay)
-                    <div class="flex pt-2">
-                        <div class="flex-1 text-gray-500">
-                            {{ __(\Carbon\Carbon::create($festiveDay->date)->format('F'))}}
+                        <div class="flex pt-2">
+                            <div class="flex-1 text-gray-500">
+                                {{ __(\Carbon\Carbon::create($festiveDay->date)->format('F'))}}
+                            </div>
+                            <div class="flex-1">
+                                {{__(\Carbon\Carbon::create($festiveDay->date)->format('l')) . ', ' . formatDate($festiveDay->date) }}
+                                | <b>{{$festiveDay->name}}</b>
+                            </div>
                         </div>
-                        <div class="flex-1">
-                            {{__(\Carbon\Carbon::create($festiveDay->date)->format('l')) . ', ' . formatDate($festiveDay->date) }}
-                            | <b>{{$festiveDay->name}}</b>
-                        </div>
-                    </div>
                     @endforeach
                 </div>
 

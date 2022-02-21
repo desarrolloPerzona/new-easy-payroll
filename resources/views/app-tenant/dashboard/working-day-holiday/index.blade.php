@@ -1,4 +1,11 @@
 <x-app-tenant>
+    @push('inline_css')
+        <style>
+            .date-height {
+                height: 42px !important;
+            }
+        </style>
+    @endpush
     <div class="container mx-auto mb-6">
 
         {{--        Validation message--}}
@@ -415,61 +422,67 @@
                         <div id="collapseP1" class="accordion-collapse collapse p-0"
                              aria-labelledby="headingTwo" data-bs-parent="#newPosition">
                             <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
-                                <div>
-                                    <label class="font-bold" for="name">{{__('Name')}}</label>
-                                </div>
-                                <div>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                           type="text" id="name"
-                                           name="name">
-                                </div>
-                                <div class="d-flex">
-                                    <div class="col-3 d-flex flex-column pe-5">
-                                        <label for="" class="my-2">{{__('Date')}}</label>
-                                        <input type="date" class="form-control" style="height: 42px !important;">
+                                <form action="">
+                                    <div>
+                                        <label class="font-bold" for="name">{{__('Name')}}</label>
                                     </div>
-                                    <div class="col-3">
-                                        <label for="" class="my-2">Se labora</label>
-                                        <div class="d-flex flex-column">
-                                            <div>
-                                                <input type="radio">
-                                                <label for="">Sí</label>
+                                    <div>
+                                        <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                               type="text" id="name"
+                                               name="name">
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="col-3 d-flex flex-column pe-5">
+                                            <label for="" class="my-2 font-bold">{{__('Date')}}</label>
+                                            <input type="date" class="form-control date-height">
+                                        </div>
+                                        <div class="col-3">
+                                            <label for="" class="my-2 font-bold">Se labora</label>
+                                            <div class="d-flex flex-column">
+                                                <div>
+                                                    <input type="radio" name="working" id="working">
+                                                    <label for="">Sí</label>
+                                                </div>
+                                                <div>
+                                                    <input type="radio" name="working" id="working">
+                                                    <label for="">No</label>
+                                                </div>
                                             </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <label for="" class="my-2 font-bold">Todo el día</label>
+                                            <div class="d-flex flex-column">
+                                                <div>
+                                                    <input type="radio">
+                                                    <label for="">Sí</label>
+                                                </div>
+                                                <div>
+                                                    <input type="radio">
+                                                    <label for="">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3 d-flex flex-column">
+                                            <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
                                             <div>
-                                                <input type="radio">
-                                                <label for="">No</label>
+                                                <select name="festive_workday_from" id="festive_workday_from" class="rounded">
+                                                    <option value="">Primero</option>
+                                                    <option value="">Primero</option>
+                                                    <option value="">Primero</option>
+                                                </select>
+                                                <select name="festive_workday_to" id="festive_workday_to" class="rounded">
+                                                    <option value="">Primero</option>
+                                                    <option value="">Primero</option>
+                                                    <option value="">Primero</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3">
-                                        <label for="" class="my-2">Todo el día</label>
-                                        <div class="d-flex flex-column">
-                                            <div>
-                                                <input type="radio">
-                                                <label for="">Sí</label>
-                                            </div>
-                                            <div>
-                                                <input type="radio">
-                                                <label for="">No</label>
-                                            </div>
-                                        </div>
+                                    <div class="col-12 mt-3">
+                                        <button type="submit" class="btn btn-primary">{{__('Save')}}</button>
                                     </div>
-                                    <div class="col-3 d-flex flex-column">
-                                        <label for="" class="my-2">{{__('Horario')}}</label>
-                                        <div>
-                                            <select name="" id="" class="rounded">
-                                                <option value="">Primero</option>
-                                                <option value="">Primero</option>
-                                                <option value="">Primero</option>
-                                            </select>
-                                            <select name="" id="" class="rounded">
-                                                <option value="">Primero</option>
-                                                <option value="">Primero</option>
-                                                <option value="">Primero</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                                </form>
+
                                 {{--                                </div>--}}
                                 {{--                                <div class="flex my-4 m-auto">--}}
                                 {{--                                    --}}{{--Date Picker---------------}}

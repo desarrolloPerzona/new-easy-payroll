@@ -906,10 +906,10 @@
                     @foreach($festiveBusinessesDays as $festiveDay)
                         <div class="flex pt-2">
                             <div class="flex-1 text-gray-500">
-                                {{ __(\Carbon\Carbon::create($festiveDay->date)->format('F'))}}
+                                {{ __(\Carbon\Carbon::create($currentYear . '-' . substr($festiveDay->date, 5, 5))->format('F'))}}
                             </div>
                             <div class="flex-1">
-                                {{__(\Carbon\Carbon::create($festiveDay->date)->format('l')) . ', ' . formatDate($festiveDay->date) }}
+                                {{__(\Carbon\Carbon::create($currentYear . '-' . substr($festiveDay->date, 5, 5))->format('l')) . ', ' . substr(formatDate($festiveDay->date), 0, -4) . ' ' . $currentYear }}
                                 | <b>{{$festiveDay->name}}</b>
                             </div>
                         </div>

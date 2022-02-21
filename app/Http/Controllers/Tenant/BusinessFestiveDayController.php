@@ -41,10 +41,16 @@ class BusinessFestiveDayController extends Controller
         $businessFestiveday = new BusinessFestiveDay();
         $businessFestiveday->name = $request->get('name');
         $businessFestiveday->date = $request->get('date');
-        $businessFestiveday->working = $request->get('working');
-        $businessFestiveday->schedule_all_day = $request->get('schedule_all_day');
-        $businessFestiveday->schedule_from = $request->get('schedule_from');
-        $businessFestiveday->schedule_to = $request->get('schedule_to');
+
+        if($request->get('working') == 1){
+            $businessFestiveday->working = $request->get('working');
+            if($request->get('schedule_all_day') == 0){
+                $businessFestiveday->schedule_from = $request->get('schedule_from');
+                $businessFestiveday->schedule_to = $request->get('schedule_to');
+            }
+            $businessFestiveday->schedule_all_day = $request->get('schedule_all_day');
+        }
+
         $businessFestiveday->created_at = now();
         $businessFestiveday->updated_at = now();
 

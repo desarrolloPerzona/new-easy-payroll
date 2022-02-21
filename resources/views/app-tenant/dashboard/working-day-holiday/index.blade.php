@@ -392,7 +392,7 @@
         </div>
 
         {{--    Festive day Section--}}
-        <div class="container">
+        <div class="container" x-data="festiveConditionals()">
 
             {{--            Header--}}
             <h2 class="bg-blueSteel py-2 px-3 mb-2 mt-3 rounded">
@@ -430,49 +430,67 @@
                                     <div>
                                         <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
                                                type="text" id="name"
-                                               name="name">
+                                               name="name" required>
                                     </div>
                                     <div class="d-flex">
                                         <div class="col-3 d-flex flex-column pe-5">
                                             <label for="" class="my-2 font-bold">{{__('Date')}}</label>
-                                            <input type="date" name="date" id="date" class="form-control date-height">
+                                            <input type="date" name="date" id="date" class="form-control date-height"
+                                                   required>
                                         </div>
                                         <div class="col-3">
-                                            <label for="" class="my-2 font-bold">Se labora</label>
+                                            <label for="" class="my-2 font-bold">{{__('Se labora')}}</label>
                                             <div class="d-flex flex-column">
                                                 <div>
-                                                    <input type="radio" name="working" id="working" value="1">
-                                                    <label for="">Sí</label>
+                                                    <input type="radio" name="working" id="working" value="1"
+                                                           x-on:click="working('y')" checked>
+                                                    <label for="working">{{__('Yes')}}</label>
                                                 </div>
                                                 <div>
-                                                    <input type="radio" name="working" id="working" value="0">
-                                                    <label for="">No</label>
+                                                    <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
+                                                    <label for="working2">{{__('No')}}</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3">
-                                            <label for="" class="my-2 font-bold">Todo el día</label>
+                                        <div class="col-2" id="all_day_buttons">
+                                            <label for="" class="my-2 font-bold">{{__('All day')}}</label>
                                             <div class="d-flex flex-column">
                                                 <div>
                                                     <input type="radio" name="schedule_all_day" id="schedule_all_day"
-                                                           value="1">
-                                                    <label for="schedule_all_day">Sí</label>
+                                                           value="1" x-on:click="working('all_day')">
+                                                    <label for="schedule_all_day">{{__('Yes')}}</label>
                                                 </div>
                                                 <div>
-                                                    <input type="radio" name="schedule_all_day" id="schedule_all_day"
-                                                           value="0">
-                                                    <label for="schedule_all_day">No</label>
+                                                    <input type="radio" name="schedule_all_day" id="schedule_all_day_2"
+                                                           value="0" checked x-on:click="working('not_all_day')">
+                                                    <label for="schedule_all_day_2">{{__('No')}}</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-3 d-flex flex-column">
+                                        <div class="col-4 d-flex flex-column" id="schedule_buttons">
                                             <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
                                             <div>
                                                 <select name="schedule_from" id="schedule_from" class="rounded">
-                                                    <option value="00:00">Primero</option>
+                                                    @for($i = 0; $i < 24; $i++)
+                                                        @if($i <= 9)
+                                                            <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                            <option value="0{{$i}}:30">0{{$i}}:30</option>
+                                                        @else
+                                                            <option value="{{$i}}:00">{{$i}}:00</option>
+                                                            <option value="{{$i}}:30">{{$i}}:30</option>
+                                                        @endif
+                                                    @endfor
                                                 </select>
-                                                <select name="schedule_to" id="schedule_to" class="rounded">
-                                                    <option value="00:00">Primero</option>
+                                                <select name="schedule_to" id="schedule_to" class="rounded mx-3">
+                                                    @for($i = 0; $i < 24; $i++)
+                                                        @if($i <= 9)
+                                                            <option value="0{{$i}}:00">0{{$i}}:00</option>
+                                                            <option value="0{{$i}}:30">0{{$i}}:30</option>
+                                                        @else
+                                                            <option value="{{$i}}:00">{{$i}}:00</option>
+                                                            <option value="{{$i}}:30">{{$i}}:30</option>
+                                                        @endif
+                                                    @endfor
                                                 </select>
                                             </div>
                                         </div>
@@ -524,41 +542,41 @@
                                                                                                     text-gray-600
                                                                                                     font-medium"
                                                             placeholder={{__('Select Date')}}
-                                                        />
+                                />
 
-                                                        <div class="absolute top-0 right-0 px-3 py-2">
-                                                            <svg
-                                                                class="h-6 w-6 text-gray-400"
-                                                                fill="none"
-                                                                viewBox="0 0 24 24"
-                                                                stroke="currentColor"
-                                                            >
-                                                                <path
-                                                                    stroke-linecap="round"
-                                                                    stroke-linejoin="round"
-                                                                    stroke-width="2"
-                                                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                                                                />
-                                                            </svg>
-                                                        </div>
+                                <div class="absolute top-0 right-0 px-3 py-2">
+                                    <svg
+                                        class="h-6 w-6 text-gray-400"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                        />
+                                    </svg>
+                                </div>
 
-                                                        <div
-                                                            class="bg-white
-                                                                                                    mt-12
-                                                                                                    rounded-lg
-                                                                                                    shadow
-                                                                                                    p-4
-                                                                                                    absolute
-                                                                                                    top-0
-                                                                                                    left-0"
-                                                            style="width: 17rem"
-                                                            x-show.transition="showDatepicker"
-                                                            @click.away="showDatepicker = false"
-                                                        >
-                                                            <div class="flex justify-between items-center mb-2">
-                                                                <div>
-                                                  <span
-                                                      x-text="MONTH_NAMES[month]"
+                                <div
+                                    class="bg-white
+                                                                            mt-12
+                                                                            rounded-lg
+                                                                            shadow
+                                                                            p-4
+                                                                            absolute
+                                                                            top-0
+                                                                            left-0"
+                                    style="width: 17rem"
+                                    x-show.transition="showDatepicker"
+                                    @click.away="showDatepicker = false"
+                                >
+                                    <div class="flex justify-between items-center mb-2">
+                                        <div>
+                          <span
+                              x-text="MONTH_NAMES[month]"
                                                       class="text-lg font-bold text-gray-800"
                                                   ></span>
                                                                     <span
@@ -843,60 +861,60 @@
                             </div>
                             -->
 
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
 
 
             </div>
 
 
-        </div>
+            {{--            Festive days table--}}
+            <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
+                <div class="border-bottom-1 border-gray-400 py-3">
 
-        {{--            Festive days table--}}
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+                    <h2 class="mb-3">Festivos oficiales México</h2>
+                    {{--                    Loop to print each of a month from our monthsArray--}}
+                    @foreach($monthsArray as $month)
+                        <div class="flex pt-2">
+                            <div class="flex-1 text-gray-500">
+                                {{__($month)}}
+                            </div>
+                            @foreach($festiveDays as $festiveDay)
+                                {{--                            Conditional to know if exist a festive day in row month and print it, else print empty--}}
+                                @if(\Carbon\Carbon::create($festiveDay->date)->format('F') == $month)
+                                    <div class="flex-1">
+                                        {{__(\Carbon\Carbon::create($festiveDay->date)->format('l')) . ', ' . formatDate($festiveDay->date) }}
+                                        | <b>{{$festiveDay->name}}</b>
+                                    </div>
+                                @endif
+                            @endforeach
 
-            <div class="border-bottom-1 border-gray-400 py-3">
+                        </div>
+                    @endforeach
 
-                <h2 class="mb-3">Festivos oficiales México</h2>
-                {{--                    Loop to print each of a month from our monthsArray--}}
-                @foreach($monthsArray as $month)
+                </div>
+
+                <div class="border-bottom-1 border-gray-400 py-3">
+                    <h2>Festivos empresa <i class="fas fa-edit text-gray-400"></i></h2>
                     <div class="flex pt-2">
                         <div class="flex-1 text-gray-500">
-                            {{__($month)}}
+                            Julio
                         </div>
-                        @foreach($festiveDays as $festiveDay)
-                            {{--                            Conditional to know if exist a festive day in row month and print it, else print empty--}}
-                            @if(\Carbon\Carbon::create($festiveDay->date)->format('F') == $month)
-                                <div class="flex-1">
-                                    {{__(\Carbon\Carbon::create($festiveDay->date)->format('l')) . ', ' . formatDate($festiveDay->date) }}
-                                    | <b>{{$festiveDay->name}}</b>
-                                </div>
-                            @endif
-                        @endforeach
-
+                        <div class="flex-1">
+                            Lunes 5 de Julio | Aniversario de la empresa
+                        </div>
                     </div>
-                @endforeach
 
-            </div>
-
-            <div class="border-bottom-1 border-gray-400 py-3">
-                <h2>Festivos empresa <i class="fas fa-edit text-gray-400"></i></h2>
-                <div class="flex pt-2">
-                    <div class="flex-1 text-gray-500">
-                        Julio
-                    </div>
-                    <div class="flex-1">
-                        Lunes 5 de Julio | Aniversario de la empresa
-                    </div>
                 </div>
 
             </div>
 
         </div>
-
-    </div>
 
     </div>
 
@@ -920,6 +938,26 @@
                     }
                 }
             }
+
+            function festiveConditionals() {
+                return{
+                    working(res){
+                        if(res == 'y')
+                        {
+                            document.getElementById('all_day_buttons').classList.remove('d-none')
+                            document.getElementById('schedule_buttons').classList.remove('d-none')
+                        } else if(res == 'n'){
+                            document.getElementById('all_day_buttons').classList.add('d-none')
+                            document.getElementById('schedule_buttons').classList.add('d-none')
+                        } else if (res == 'all_day'){
+                            document.getElementById('schedule_buttons').classList.add('d-none')
+                        } else if(res == 'not_all_day'){
+                            document.getElementById('schedule_buttons').classList.remove('d-none')
+                        }
+                    }
+                }
+            }
+
         </script>
     @endpush
 </x-app-tenant>

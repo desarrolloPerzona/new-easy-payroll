@@ -38,6 +38,10 @@ class BusinessFestiveDayController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+           'name' => 'required|unique:business_festive_days'
+        ]);
+
         $businessFestiveday = new BusinessFestiveDay();
         $businessFestiveday->name = $request->get('name');
         $businessFestiveday->date = $request->get('date');
@@ -56,7 +60,7 @@ class BusinessFestiveDayController extends Controller
 
         $businessFestiveday->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('festiveMessage', 'Registro creado exitosamente.');
     }
 
     /**

@@ -26,7 +26,7 @@
             </div>
         @endif
 
-        {{--        Delete message--}}
+        {{--        Create message--}}
         @if (session('createMessage'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('createMessage') }}
@@ -38,6 +38,14 @@
         @if (session('editMessage'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('editMessage') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        {{--        Create Festive day --}}
+        @if (session('festiveMessage'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('festiveMessage') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif

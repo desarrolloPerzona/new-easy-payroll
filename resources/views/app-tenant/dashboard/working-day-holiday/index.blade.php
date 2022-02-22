@@ -1,11 +1,4 @@
 <x-app-tenant>
-    @push('inline_css')
-        <style>
-            .date-height {
-                height: 42px !important;
-            }
-        </style>
-    @endpush
     <div class="container mx-auto mb-6">
         {{-- Validation message--}}
         @if ($errors->any())

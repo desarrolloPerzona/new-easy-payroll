@@ -26,7 +26,7 @@
     </div>
 
     <div class="border-bottom-1 border-gray-400 py-3">
-        <h2>{{__('Festivos empresa')}} <i class="fas fa-edit text-gray-400"></i></h2>
+        <h2 class="mb-3">{{__('Festivos empresa')}} <i class="fas fa-edit text-gray-400"></i></h2>
         @foreach($festiveBusinessesDays as $festiveDay)
             <div class="flex pt-2">
                 <div class="flex-1 text-gray-500">

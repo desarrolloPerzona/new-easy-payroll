@@ -1,14 +1,7 @@
 <x-app-tenant>
     <div class="container mx-auto mb-6">
-        {{-- Validation message--}}
-        @if ($errors->any())
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                @foreach ($errors->all() as $error)
-                    {{$error}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                @endforeach
-            </div>
-        @endif
+        {{-- error validation message--}}
+        <x-forms.error-validation-message/>
 
         {{-- Delete message--}}
         @if (session('deleteMessage'))
@@ -30,14 +23,6 @@
         @if (session('editMessage'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('editMessage') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-
-        {{--        Create Festive day --}}
-        @if (session('festiveMessage'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('festiveMessage') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif

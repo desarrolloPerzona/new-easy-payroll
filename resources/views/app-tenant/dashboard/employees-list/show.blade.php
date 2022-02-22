@@ -84,7 +84,7 @@
             {{--                Personal-----------------------------------------------------}}
             <div id="personal-table" class="retentions-table">
                 <div class="card p-4 mb-2">
-                    <h2>Información básica <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
+                    <h2 class="mb-2">Información básica <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
                     <div class="flex px-4 my-1">
                         <div class="w-1/2">Nombre</div>
                         <div class="w-1/2 font-bold">Juan</div>
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="card p-4 mb-2">
-                    <h2>Información básica adicional <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
+                    <h2 class="mb-2">Información básica adicional <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
                     <div class="flex px-4 my-1">
                         <div class="w-1/2">Nacionalidad</div>
                         <div class="w-1/2 font-bold">5554134695</div>
@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="card p-4 mb-2">
-                    <h2>Contacto de emergencia <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
+                    <h2 class="mb-2">Contacto de emergencia <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
                     <div class="flex px-4 my-1">
                         <div class="w-1/2">Nombre</div>
                         <div class="w-1/2 font-bold">Alejandra</div>
@@ -183,10 +183,10 @@
 
             </div>
 
-            {{--                Empleo-----------------------------------------------------}}
+            {{--                Empleo-------------------------------------------------------}}
             <div id="employee-table" class="retentions-table d-none">
                 <div class="card p-4 mb-2">
-                    <h2>Detalles del empleo <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
+                    <h2 class="mb-2">Detalles del empleo <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
                     <div class="flex px-4 my-1">
                         <div class="w-1/2">Área</div>
                         <div class="w-1/2 font-bold">MKT</div>
@@ -239,19 +239,39 @@
                 </div>
             </div>
 
-            {{--            Pago-----------------------------------------------------------}}
+            {{--            Pago-------------------------------------------------------------}}
             <div id="payment-table" class="retentions-table d-none">
                 <div class="card p-4 mb-2">
-                    <h2>Detalle de pago <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
+                    <h2 class="mb-2">Detalle de pago <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
                     <div class="flex px-4 my-1">
                         <div class="w-1/2">Metodo de pago</div>
-                        <div class="w-1/2 font-bold">Efectivo</div>
+                        <div class="w-1/2 font-bold">Dispersión de nómina</div>
                     </div>
+                    <div class="flex px-4 my-1">
+                        <div class="w-1/2">Banco</div>
+                        <div class="w-1/2 font-bold">Santander</div>
+                    </div>
+                    <div class="flex px-4 my-1">
+                        <div class="w-1/2">Número de cuenta</div>
+                        <div class="w-1/2 font-bold">023695698</div>
+                    </div>
+                    <div class="flex px-4 my-1">
+                        <div class="w-1/2">Número de sucursal</div>
+                        <div class="w-1/2 font-bold">-</div>
+                    </div>
+
+                    <div class="flex px-4 my-1">
+                        <div class="w-1/2">CLABE</div>
+                        <div class="w-1/2 font-bold">203169856321023</div>
+                    </div>
+
+
+
 
                 </div>
 
                 <div class="card p-4 mb-2">
-                    <h2>Detalle de compensación <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
+                    <h2 class="mb-2">Detalle de compensación <i class="fa-solid fa-pen-to-square cursor-pointer"></i></h2>
                     <div class="flex px-4 my-1">
                         <div class="w-1/2">Grupo de nómina</div>
                         <div class="w-1/2 font-bold">Grupo 2 (Quincenal)</div>
@@ -1287,11 +1307,11 @@
 
             </div>
 
-            {{--            Eventos---------------------------------------------------------}}
+            {{--            Eventos----------------------------------------------------------}}
             <div id="events-table" class="retentions-table d-none">
 
                 <div class="card p-4 mb-2">
-                    <h2>Solicitudes pendientes</h2>
+                    <h2 class="mb-2">Solicitudes pendientes</h2>
                     <div class="flex px-4 my-4">
                         <div class="w-4/12 w-full">4 días vacaciones</div>
                         <div class="w-4/12 w-full font-bold">24/05/2022 - 28/05/2022</div>
@@ -1304,43 +1324,43 @@
                 <div class="card p-4 mb-2">
                     <div class="flex mb-4">
                         <div class="w-1/4">
-                            <h2><i class="fa-solid fa-brightness"></i> Vacaciones</h2>
+                            <h2 class="mb-2"><i class="fa-solid fa-brightness"></i> Vacaciones</h2>
                         </div>
                         <div class="w-1/4">
-                            <h2><i class="fa-solid fa-truck-medical"></i> Incapacidades</h2>
+                            <h2 class="mb-2"><i class="fa-solid fa-truck-medical"></i> Incapacidades</h2>
                         </div>
                         <div class="w-1/4">
-                            <h2><i class="fa-solid fa-timer"></i> Horas extras</h2>
+                            <h2 class="mb-2"><i class="fa-solid fa-timer"></i> Horas extras</h2>
                         </div>
                         <div class="w-1/4">
-                            <h2><i class="fa-solid fa-calendar-day"></i> Días económicos</h2>
+                            <h2 class="mb-2"><i class="fa-solid fa-calendar-day"></i> Días económicos</h2>
                         </div>
                     </div>
 
                     <div class="flex">
                         <div class="w-1/4 ml-6">
                             <p>0 días utilizados</p>
-                            <p>0 días utilizados</p>
-                            <p>0 días utilizados</p>
-                            <p>0 días utilizados</p>
+                            <p>0 días aprobados</p>
+                            <p>8 días disponibles</p>
+                            <p>0 días pendientes</p>
                         </div>
                         <div class="w-1/4 ml-6">
                             <p>0 días utilizados</p>
-                            <p>0 días utilizados</p>
-                            <p>0 días utilizados</p>
-                            <p>0 días utilizados</p>
+                            <p>0 días aprobados</p>
+                            <p>0 días rechazados</p>
+                            <p>0 días pendientes</p>
                         </div>
                         <div class="w-1/4 ml-6">
                             <p>0 horas utilizados</p>
-                            <p>0 horas utilizados</p>
-                            <p>0 horas utilizados</p>
-                            <p>0 horas utilizados</p>
+                            <p>0 horas aprobados</p>
+                            <p>0 horas rechazados</p>
+                            <p>0 horas pendientes</p>
                         </div>
                         <div class="w-1/4 ml-6">
                             <p>0 días utilizados</p>
-                            <p>0 días utilizados</p>
-                            <p>0 días utilizados</p>
-                            <p>0 días utilizados</p>
+                            <p>0 días aprobados</p>
+                            <p>0 días rechazados</p>
+                            <p>0 días pendientes</p>
                         </div>
                     </div>
                 </div>
@@ -1394,7 +1414,7 @@
                 </div>
             </div>
 
-            {{--            Documents--}}
+            {{--            Documents--------------------------------------------------------}}
             <div id="documents-table" class="retentions-table d-none">
 
                 {{--        Percepcion Accordion--}}
@@ -1449,7 +1469,7 @@
 
                     <div class="flex items-center my-2">
                         <div class="w-1/12"><i class="fa-solid fa-file-pdf ml-3 text-gray-500"></i></div>
-                        <div class="w-3/12">Acta de nacimiento</div>
+                        <div class="w-3/12">Acta de nacimiento <i class="fa-solid fa-pen-to-square text-gray-400 cursor-pointer"></i></div>
                         <div class="w-3/12">22/01/2021</div>
                         <div class="w-2/12">PDF</div>
                         <div class="w-3/12">Administrador</div>
@@ -1460,7 +1480,7 @@
 
                     <div class="flex items-center my-2">
                         <div class="w-1/12"><i class="fa-solid fa-file-pdf ml-3 text-gray-500"></i></div>
-                        <div class="w-3/12">CURP</div>
+                        <div class="w-3/12">CURP <i class="fa-solid fa-pen-to-square text-gray-400 cursor-pointer"></i></div>
                         <div class="w-3/12">22/01/2021</div>
                         <div class="w-2/12">PDF</div>
                         <div class="w-3/12">Administrador</div>
@@ -1471,7 +1491,7 @@
 
                     <div class="flex items-center my-2">
                         <div class="w-1/12"><i class="fa-solid fa-file-image ml-3 text-gray-500"></i></div>
-                        <div class="w-3/12">RFC</div>
+                        <div class="w-3/12">RFC <i class="fa-solid fa-pen-to-square text-gray-400 cursor-pointer"></i></div>
                         <div class="w-3/12">22/01/2021</div>
                         <div class="w-2/12">JPG</div>
                         <div class="w-3/12">Usuario</div>
@@ -1482,7 +1502,7 @@
 
                     <div class="flex items-center my-2">
                         <div class="w-1/12"><i class="fa-solid fa-file-pdf ml-3 text-gray-500"></i></div>
-                        <div class="w-3/12">Pasaporte</div>
+                        <div class="w-3/12">Pasaporte <i class="fa-solid fa-pen-to-square text-gray-400 cursor-pointer"></i></div>
                         <div class="w-3/12">22/01/2021</div>
                         <div class="w-2/12">PDF</div>
                         <div class="w-3/12">Administrador</div>
@@ -1493,128 +1513,73 @@
                 </div>
             </div>
 
-            {{--            Kardex--}}
+            {{--            Kardex-----------------------------------------------------------}}
             <div id="kardex-table" class="retentions-table d-none">
 
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th scope="col">{{__('Límite inferior')}}</th>
-                        <th scope="col">{{__('Límite superior')}}</th>
-                        <th scope="col">{{__('Cuota fija')}}</th>
-                        <th scope="col">{{__('Excedentes %')}}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Kardex</td>
-                        <td>Kardex</td>
-                        <td>Kardex</td>
-                        <td>Kardex</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="card p-4 mb-4">
+                    <h2 class="mb-4">Movimientos del empleado</h2>
+
+                    <div class="flex items-center mb-2">
+                        <div class="w-3/12 font-bold">Fecha del movimiento</div>
+                        <div class="w-2/12 font-bold">Fecha IMSS</div>
+                        <div class="w-2/12 font-bold">Registro patronal</div>
+                        <div class="w-4/12 font-bold">Tipo de movimiento</div>
+                        <div class="w-1/12 font-bold"></div>
+                    </div>
+
+                    <div class="flex items-center my-2">
+                        <div class="w-3/12">02/05/2009</div>
+                        <div class="w-2/12">02/05/2009</div>
+                        <div class="w-2/12">23695369</div>
+                        <div class="w-4/12">Modificación salarial</div>
+                        <div class="w-1/12"><i class="fa-solid fa-eye"></i></div>
+                    </div>
+
+                    <div class="flex items-center my-2">
+                        <div class="w-3/12">07/04/2020</div>
+                        <div class="w-2/12">10/04/2020</div>
+                        <div class="w-2/12">23695369</div>
+                        <div class="w-4/12">Promoción empleado</div>
+                        <div class="w-1/12"><i class="fa-solid fa-eye"></i></div>
+                    </div>
+
+                </div>
 
             </div>
 
-            {{--            Kardex--}}
+            {{--            Notas-----------------------------------------------------------}}
             <div id="notes-table" class="retentions-table d-none">
 
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th scope="col">{{__('Límite inferior')}}</th>
-                        <th scope="col">{{__('Límite superior')}}</th>
-                        <th scope="col">{{__('Cuota fija')}}</th>
-                        <th scope="col">{{__('Excedentes %')}}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Notas</td>
-                        <td>Notas</td>
-                        <td>Notas</td>
-                        <td>Notas</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="card p-4 mb-4">
+                    <h2 class="mb-4">Notas</h2>
+                    <textarea name="nota" id="nota" cols="100%" rows="10"></textarea>
+                    <div class="btn-top-holder my-3 flow-root">
+                        <a  class="btn btn-dark float-right cursor-pointer">
+                            {{ __('Save') }}
+                        </a>
+                    </div>
+
+                    <div class="p-4 border border-gray-600 ">
+                        <div class="flex mb-4">
+                            <div class="w-5/12 font-bold">05/04/2021</div>
+                            <div class="w-5/12 font-bold">Administrador</div>
+                            <div class="w-1/12 cursor-pointer flow-root"><i class="fa-solid fa-pen-to-square"></i></div>
+                            <div class="w-1/12 cursor-pointer flow-root"><i class="fa-solid fa-trash-can"></i></div>
+                        </div>
+
+                        <div class="flex items-center my-2">
+                            <div class="w-full">El empleado tiene a consignacion una laptop Dell numero de serie DU25636936</div>
+
+                        </div>
+                    </div>
+
+
+                </div>
 
             </div>
 
         </div>
 
-        {{--            Documents---------------------------------------------------------}}
-
-        <div id="documents-table" class="retentions-table d-none">
-
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">{{__('Límite inferior')}}</th>
-                    <th scope="col">{{__('Límite superior')}}</th>
-                    <th scope="col">{{__('Cuota fija')}}</th>
-                    <th scope="col">{{__('Excedentes %')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Documentos</td>
-                    <td>Documentos</td>
-                    <td>Documentos</td>
-                    <td>Documentos</td>
-                </tr>
-                </tbody>
-            </table>
-
-        </div>
-
-        {{--            Kardex--}}
-        <div id="kardex-table" class="retentions-table d-none">
-
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">{{__('Límite inferior')}}</th>
-                    <th scope="col">{{__('Límite superior')}}</th>
-                    <th scope="col">{{__('Cuota fija')}}</th>
-                    <th scope="col">{{__('Excedentes %')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Kardex</td>
-                    <td>Kardex</td>
-                    <td>Kardex</td>
-                    <td>Kardex</td>
-                </tr>
-                </tbody>
-            </table>
-
-        </div>
-
-        {{--            Kardex--}}
-        <div id="notes-table" class="retentions-table d-none">
-
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">{{__('Límite inferior')}}</th>
-                    <th scope="col">{{__('Límite superior')}}</th>
-                    <th scope="col">{{__('Cuota fija')}}</th>
-                    <th scope="col">{{__('Excedentes %')}}</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Notas</td>
-                    <td>Notas</td>
-                    <td>Notas</td>
-                    <td>Notas</td>
-                </tr>
-                </tbody>
-            </table>
-
-        </div>
 
     </div>
 

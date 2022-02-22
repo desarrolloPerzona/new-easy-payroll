@@ -30,7 +30,7 @@
                                 <input type="date" name="date" id="date" class="form-control date-button-h" required>
                             </div>
                             <div class="col-3">
-                                <label for="" class="my-2 font-bold">{{__('Se labora')}}</label>
+                                <label for="" class="my-2 font-bold">{{__('Do you work')}}</label>
                                 <div class="form-group margin-b-0">
                                     <input type="radio" name="working" id="working" value="1"
                                            x-on:click="working('y')" checked>

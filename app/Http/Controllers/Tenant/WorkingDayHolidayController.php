@@ -19,25 +19,7 @@ class WorkingDayHolidayController extends Controller
      */
     public function index()
     {
-        $currentYear = date('Y');
-
-        $appUrl = config('app.url');
-
-//        $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
-        $monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-        $workDays = BusinessWorkday::all();
-
-//        Get festive official days from API
-        $responseFestiveDays = Http::withOptions(['verify' => false])->get($appUrl .'/api/official-festive-days');
-        $festiveDays = json_decode($responseFestiveDays->body());
-
-        $festiveBusinessesDays = BusinessFestiveDay::all();
-
-        return view('app-tenant.dashboard.working-day-holiday.index',
-                compact( 'monthsArray', 'festiveDays',
-                        'workDays', 'festiveBusinessesDays', 'currentYear'));
+        return view('app-tenant.dashboard.working-day-holiday.index');
     }
 
     /**

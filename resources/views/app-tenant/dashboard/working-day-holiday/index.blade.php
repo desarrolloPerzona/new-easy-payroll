@@ -907,12 +907,21 @@
                     @foreach($festiveBusinessesDays as $festiveDay)
                         <div class="flex pt-2">
                             <div class="flex-1 text-gray-500">
-                                {{__(\Carbon\Carbon::create($festiveDay->date)->format('F') == $month)}}
+                                {{__(\Carbon\Carbon::create($festiveDay->date)->format('F'))}}
                             </div>
                             <div class="flex-1">
 {{--                                        Function to print date with current year--}}
                                 {{__(\Carbon\Carbon::create($currentYear . '-' . substr($festiveDay->date, 5, 5))->format('l')) . ', ' . substr(formatDate($festiveDay->date), 0, -4) . ' ' . $currentYear }}
-                                | <b>{{$festiveDay->name}}</b>
+                                | <b>{{$festiveDay->name}}</b> |
+                                @if(!$festiveDay->working)
+                                    {{__('Descanso')}}
+                                @elseif($festiveDay->working)
+                                    @if($festiveDay->schedule_all_day)
+                                        {{__('Horario laboral: Regular')}}
+                                    @else
+                                        {{__('Horario laboral: ' . substr($festiveDay->schedule_from, 0, 5) . ' - ' . substr($festiveDay->schedule_to, 0, 5))}} <small>hrs</small>
+                                    @endif
+                                @endif
                             </div>
                         </div>
                     @endforeach

@@ -1,29 +1,22 @@
 <x-app-tenant>
     <div class="container mx-auto">
 
-        {{--        Validation message--}}
-        @if ($errors->any())
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                @foreach ($errors->all() as $error)
-                    {{$error}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                @endforeach
-            </div>
-        @endif
+        {{-- Error Validation message--}}
+        <x-forms.error-validation-message/>
 
-        {{--        Header--}}
+        {{--Header--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-4 rounded">
             <i class="fak fa-admin-perzona mr-2"></i>
             <span style="display: inline-flex;">{{ __('Edit working day') }}</span>
         </h2>
 
-        {{--        Form to edit a workingday--}}
+        {{--Form to edit a workingday--}}
         <div class="card bg-white shadow-sm rounded p-0 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white"
              x-data="selectConditionals()">
 
             <div class="accordion-body text-dark rounded dark:bg-dark dark:text-white">
 
-                {{--                        Working day Form--}}
+                {{--Working day Form--}}
                 <form action="{{route('business-working-day.update', $businessWorkday->id)}}" method="POST"
                       class="text-black rounded">
                     @csrf
@@ -57,10 +50,10 @@
 
                     <div class="mb-3">
 
-                        {{--                                Working days section--}}
+                        {{--Working days section--}}
                         <label class="font-bold mb-3" for="">Días de la semana</label>
 
-                        {{--                                WorkingDays Loop--}}
+                        {{--WorkingDays Loop--}}
                         @foreach($daysArray as $day)
 
                             <div class="d-flex align-items-center py-3">

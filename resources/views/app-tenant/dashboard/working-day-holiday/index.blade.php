@@ -1,31 +1,16 @@
 <x-app-tenant>
     <div class="container mx-auto mb-6">
-        {{-- error validation message--}}
+        {{-- Error validation message--}}
         <x-forms.error-validation-message/>
 
         {{-- Delete message--}}
-        @if (session('deleteMessage'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('deleteMessage') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
+        <x-forms.alert-message message="delete"/>
 
         {{-- Create message --}}
-        @if (session('createMessage'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('createMessage') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
+        <x-forms.alert-message message="create"/>
 
         {{-- Edit message --}}
-        @if (session('editMessage'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('editMessage') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
+        <x-forms.alert-message message="edit"/>
 
         {{--        Main Header--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded max-w-6xl m-auto">

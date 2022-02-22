@@ -74,7 +74,7 @@ class BusinessWorkdayController extends Controller
 
         $workingDay->save();
 
-        return redirect()->route('working-day-holiday.index')->with('createMessage', 'Registro creado con éxito.');
+        return redirect()->route('working-day-holiday.index')->with('create', 'Record created successfully');
     }
 
     /**
@@ -149,7 +149,7 @@ class BusinessWorkdayController extends Controller
 
         $businessWorkday->save();
 
-        return redirect()->route('working-day-holiday.index')->with('editMessage', 'Registro editado exitosamente.');
+        return redirect()->route('working-day-holiday.index')->with('edit', 'Record updated successfully');
     }
 
     /**
@@ -164,7 +164,7 @@ class BusinessWorkdayController extends Controller
         $businessWorkday = BusinessWorkday::find($businessWorkday);
         $businessWorkday->delete();
 
-        return redirect()->route('working-day-holiday.index')->with('deleteMessage', 'Registro eliminado exitosamente.');
+        return redirect()->route('working-day-holiday.index')->with('delete', 'Record deleted successfully');
     }
 
 //    Function to delete hours in workday from edit view

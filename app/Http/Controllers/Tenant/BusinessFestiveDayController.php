@@ -60,7 +60,7 @@ class BusinessFestiveDayController extends Controller
 
         $businessFestiveday->save();
 
-        return redirect()->back()->with('createMessage', 'Registro creado exitosamente.');
+        return redirect()->back()->with('create', 'Record created successfully');
     }
 
     /**

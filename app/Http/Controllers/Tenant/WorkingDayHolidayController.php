@@ -23,7 +23,7 @@ class WorkingDayHolidayController extends Controller
 
         $appUrl = config('app.url');
 
-        $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+//        $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
         $monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
@@ -36,7 +36,7 @@ class WorkingDayHolidayController extends Controller
         $festiveBusinessesDays = BusinessFestiveDay::all();
 
         return view('app-tenant.dashboard.working-day-holiday.index',
-                compact('daysArray', 'monthsArray', 'festiveDays',
+                compact( 'monthsArray', 'festiveDays',
                         'workDays', 'festiveBusinessesDays', 'currentYear'));
     }
 

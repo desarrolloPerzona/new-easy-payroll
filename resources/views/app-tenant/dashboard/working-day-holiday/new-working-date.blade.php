@@ -1,4 +1,3 @@
-{{--TODO: MAKE COMPONENT--}}
 <div id="collapseP1" class="accordion-collapse collapse p-0"
      aria-labelledby="headingTwo" data-bs-parent="#newPosition">
     <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">

@@ -27,8 +27,6 @@ class WorkingDayHolidayController extends Controller
 
         $monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-        $workdayTypes = ['diurno', 'nocturno', 'mixto'];
-
         $workDays = BusinessWorkday::all();
 
 //        Get festive official days from API
@@ -39,7 +37,7 @@ class WorkingDayHolidayController extends Controller
 
         return view('app-tenant.dashboard.working-day-holiday.index',
                 compact('daysArray', 'monthsArray', 'festiveDays',
-                        'workDays', 'workdayTypes', 'festiveBusinessesDays', 'currentYear'));
+                        'workDays', 'festiveBusinessesDays', 'currentYear'));
     }
 
     /**

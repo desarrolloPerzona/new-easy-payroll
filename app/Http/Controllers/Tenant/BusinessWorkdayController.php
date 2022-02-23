@@ -120,7 +120,7 @@ class BusinessWorkdayController extends Controller
 
         $businessWorkday = BusinessWorkday::find($id);
 
-//        Conditional to add a unique name validation and if it has change update field
+        //        Conditional to add a unique name validation and if it has change update field
         if ($request->get('name') != $businessWorkday->name) {
             $request->validate([
                 'name' => 'unique:business_workdays'
@@ -143,8 +143,6 @@ class BusinessWorkdayController extends Controller
             $businessWorkday->meal_time = $request->get('meal_time');
             $businessWorkday->meal_time_from = $request->get('meal_time_from');
             $businessWorkday->meal_time_to = $request->get('meal_time_to');
-        } else {
-            $businessWorkday->meal_time = 0;
         }
 
         $businessWorkday->save();

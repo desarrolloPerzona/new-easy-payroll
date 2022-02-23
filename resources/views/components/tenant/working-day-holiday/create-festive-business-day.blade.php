@@ -53,32 +53,13 @@
                                     <label for="schedule_all_day_2">{{__('No')}}</label>
                                 </div>
                             </div>
-                            {{--TODO: MAKE COMPONENT --}}
+
+                            {{--Hours Component--}}
                             <div class="col-4 d-flex flex-column" id="schedule_buttons">
                                 <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
-                                <div>
-                                    <select name="schedule_from" id="schedule_from" class="rounded">
-                                        @for($i = 0; $i < 24; $i++)
-                                            @if($i <= 9)
-                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                            @else
-                                                <option value="{{$i}}:00">{{$i}}:00</option>
-                                                <option value="{{$i}}:30">{{$i}}:30</option>
-                                            @endif
-                                        @endfor
-                                    </select>
-                                    <select name="schedule_to" id="schedule_to" class="rounded mx-3">
-                                        @for($i = 0; $i < 24; $i++)
-                                            @if($i <= 9)
-                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                            @else
-                                                <option value="{{$i}}:00">{{$i}}:00</option>
-                                                <option value="{{$i}}:30">{{$i}}:30</option>
-                                            @endif
-                                        @endfor
-                                    </select>
+                                <div class="d-flex">
+                                    <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3"/>
+                                    <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes=""/>
                                 </div>
                             </div>
                         </div>

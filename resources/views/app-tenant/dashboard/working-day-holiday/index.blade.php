@@ -13,6 +13,8 @@
         {{-- Edit message --}}
         <x-forms.alert-message message="edit"/>
 
+        {{--Working days Section *****--}}
+
         {{--Working days Header--}}
         <x-utilities.section-header title="Working days" classes=""/>
 
@@ -25,7 +27,7 @@
         {{--Festive days Header--}}
         <x-utilities.section-header title="Holidays" classes="mt-3"/>
 
-        {{--Festive day Section--}}
+        {{--Festive day Section *****--}}
 
         {{--New festive day Component ----------------}}
         <x-tenant.working-day-holiday.create-festive-business-day/>

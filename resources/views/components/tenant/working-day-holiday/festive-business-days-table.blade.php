@@ -26,15 +26,15 @@
 
     </div>
 
-        <hr>
+    <hr>
 
-        {{--Company Holidays--}}
-        <div class="mt-4 pb-2" x-data="data()">
-            <h2 class="mb-3">{{__('Company holidays')}}
-                <i x-on:click="isOpen()" class="fas fa-edit text-gray-400 cursor-pointer hover:text-gray-700 ms-2"></i>
-            </h2>
+    {{--Company Holidays--}}
+    <div class="mt-4 pb-2" x-data="data()">
+        <h2 class="mb-3">{{__('Company holidays')}}
+            <i x-on:click="isOpen()" class="fas fa-edit text-gray-400 cursor-pointer hover:text-gray-700 ms-2"></i>
+        </h2>
 
-            @if(count($festiveBusinessesDays))
+        @if(count($festiveBusinessesDays))
 
             @foreach($festiveBusinessesDays as $festiveDay)
                 <div class="flex py-2">
@@ -72,14 +72,12 @@
                 </div>
             @endforeach
 
-            @else
-                <div class="w-full text-center py-4 my-2 bg-gray-100 rounded">
-                    <b>{{__('No records')}}</b>
-                </div>
-            @endif
-        </div>
-
-
+        @else
+            <div class="w-full text-center py-4 my-2 bg-gray-100 rounded">
+                <b>{{__('No records')}}</b>
+            </div>
+        @endif
+    </div>
 
 </div>
 

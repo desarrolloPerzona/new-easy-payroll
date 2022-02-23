@@ -4,11 +4,8 @@
         {{-- Error Validation message--}}
         <x-forms.error-validation-message/>
 
-        {{--Header--}}
-        <h2 class="bg-blueSteel py-2 px-3 mb-4 rounded">
-            <i class="fak fa-admin-perzona mr-2"></i>
-            <span style="display: inline-flex;">{{ __('Edit working day') }}</span>
-        </h2>
+        {{--Edit Header--}}
+        <x-utilities.section-header title="Edit working day" classes="mb-4"/>
 
         {{--Form to edit a workingday--}}
         <div class="card bg-white shadow-sm rounded p-0 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white"

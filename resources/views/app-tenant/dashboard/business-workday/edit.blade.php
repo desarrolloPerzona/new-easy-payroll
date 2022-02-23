@@ -1,29 +1,19 @@
 <x-app-tenant>
     <div class="container mx-auto">
 
-        {{--        Validation message--}}
-        @if ($errors->any())
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                @foreach ($errors->all() as $error)
-                    {{$error}}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                @endforeach
-            </div>
-        @endif
+        {{-- Error Validation message--}}
+        <x-forms.error-validation-message/>
 
-        {{--        Header--}}
-        <h2 class="bg-blueSteel py-2 px-3 mb-4 rounded">
-            <i class="fak fa-admin-perzona mr-2"></i>
-            <span style="display: inline-flex;">{{ __('Edit working day') }}</span>
-        </h2>
+        {{--Edit Header--}}
+        <x-utilities.section-header title="Edit working day" classes="mb-4"/>
 
-        {{--        Form to edit a workingday--}}
+        {{--Form to edit a workingday--}}
         <div class="card bg-white shadow-sm rounded p-0 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white"
              x-data="selectConditionals()">
 
             <div class="accordion-body text-dark rounded dark:bg-dark dark:text-white">
 
-                {{--                        Working day Form--}}
+                {{--Working day Form--}}
                 <form action="{{route('business-working-day.update', $businessWorkday->id)}}" method="POST"
                       class="text-black rounded">
                     @csrf
@@ -57,10 +47,10 @@
 
                     <div class="mb-3">
 
-                        {{--                                Working days section--}}
+                        {{--Working days section--}}
                         <label class="font-bold mb-3" for="">Días de la semana</label>
 
-                        {{--                                WorkingDays Loop--}}
+                        {{--WorkingDays Loop--}}
                         @foreach($daysArray as $day)
 
                             <div class="d-flex align-items-center py-3">
@@ -68,8 +58,7 @@
                                     $day = strtolower($day);
                                 @endphp
                                 <div class="col-1">
-                                    <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1"
-                                           class="rounded" x-on:click="isDisabled(`{{$day}}`)">
+                                    <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1" class="rounded" x-on:click="isDisabled(`{{$day}}`)">
                                 </div>
 
                                 <div class="col-2">
@@ -107,34 +96,14 @@
 
                                         {{--Select section--}}
                                         <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">
-                                            <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2"
-                                                    disabled>
-                                                @for($i = 0; $i < 24; $i++)
-                                                    @if($i <= 9)
-                                                        <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                        <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                                    @else
-                                                        <option value="{{$i}}:00">{{$i}}:00</option>
-                                                        <option value="{{$i}}:30">{{$i}}:30</option>
-                                                    @endif
-                                                @endfor
-                                            </select>
+
+                                            <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled"/>
+
                                             <div class="d-flex align-items-end">
                                                 <small>hrs</small>
                                             </div>
 
-                                            <select name="{{$day}}_to" id="{{$day}}_to" class="form-control mx-2"
-                                                    disabled>
-                                                @for($i = 0; $i < 24; $i++)
-                                                    @if($i <= 9)
-                                                        <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                        <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                                    @else
-                                                        <option value="{{$i}}:00">{{$i}}:00</option>
-                                                        <option value="{{$i}}:30">{{$i}}:30</option>
-                                                    @endif
-                                                @endfor
-                                            </select>
+                                            <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled"/>
                                             <div class="d-flex align-items-end">
                                                 <small>hrs</small>
                                             </div>
@@ -148,34 +117,13 @@
 
                                     {{--Select section--}}
                                     <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">
-                                        <select name="{{$day}}_from" id="{{$day}}_from" class="form-control mx-2"
-                                                disabled>
-                                            @for($i = 0; $i < 24; $i++)
-                                                @if($i <= 9)
-                                                    <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                    <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                                @else
-                                                    <option value="{{$i}}:00">{{$i}}:00</option>
-                                                    <option value="{{$i}}:30">{{$i}}:30</option>
-                                                @endif
-                                            @endfor
-                                        </select>
+
+                                        <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled"/>
                                         <div class="d-flex align-items-end">
                                             <small>hrs</small>
                                         </div>
 
-                                        <select name="{{$day}}_to" id="{{$day}}_to" class="form-control mx-2"
-                                                disabled>
-                                            @for($i = 0; $i < 24; $i++)
-                                                @if($i <= 9)
-                                                    <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                    <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                                @else
-                                                    <option value="{{$i}}:00">{{$i}}:00</option>
-                                                    <option value="{{$i}}:30">{{$i}}:30</option>
-                                                @endif
-                                            @endfor
-                                        </select>
+                                        <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled"/>
                                         <div class="d-flex align-items-end">
                                             <small>hrs</small>
                                         </div>
@@ -228,32 +176,12 @@
 
                                 {{--Select section--}}
                                 <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
-                                    <select name="meal_time_from" id="meal_time_from" class="form-control mx-2">
-                                        @for($i = 0; $i < 24; $i++)
-                                            @if($i <= 9)
-                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                            @else
-                                                <option value="{{$i}}:00">{{$i}}:00</option>
-                                                <option value="{{$i}}:30">{{$i}}:30</option>
-                                            @endif
-                                        @endfor
-                                    </select>
+                                    <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs=""/>
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
 
-                                    <select name="meal_time_to" id="meal_time_to" class="form-control mx-2">
-                                        @for($i = 0; $i < 24; $i++)
-                                            @if($i <= 9)
-                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                            @else
-                                                <option value="{{$i}}:00">{{$i}}:00</option>
-                                                <option value="{{$i}}:30">{{$i}}:30</option>
-                                            @endif
-                                        @endfor
-                                    </select>
+                                    <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs=""/>
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
@@ -264,32 +192,13 @@
 
                                 {{--                                Select section--}}
                                 <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
-                                    <select name="meal_time_from" id="meal_time_from" class="form-control mx-2">
-                                        @for($i = 0; $i < 24; $i++)
-                                            @if($i <= 9)
-                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                            @else
-                                                <option value="{{$i}}:00">{{$i}}:00</option>
-                                                <option value="{{$i}}:30">{{$i}}:30</option>
-                                            @endif
-                                        @endfor
-                                    </select>
+
+                                    <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs=""/>
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
 
-                                    <select name="meal_time_to" id="meal_time_to" class="form-control mx-2">
-                                        @for($i = 0; $i < 24; $i++)
-                                            @if($i <= 9)
-                                                <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                            @else
-                                                <option value="{{$i}}:00">{{$i}}:00</option>
-                                                <option value="{{$i}}:30">{{$i}}:30</option>
-                                            @endif
-                                        @endfor
-                                    </select>
+                                    <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs=""/>
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
@@ -332,7 +241,7 @@
                             hoursSection.classList.remove('d-none')
                         }
                     },
-                    // Function to show and hide select inputs depending of checkbox MEAL TIME
+                    // Function to show and hide select inputs according to checkbox MEAL TIME
                     isMealTime(nameButton) {
                         let mealSelect = document.getElementById('select-' + nameButton)
                         let mealHours = document.getElementById('hours-' + nameButton)

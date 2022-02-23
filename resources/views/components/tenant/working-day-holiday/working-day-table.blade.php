@@ -60,7 +60,7 @@
                                     <td style="width: 3%">
                                         <button type="submit"
                                                 onclick="return confirm('¿Estás seguro de eliminar este registro?')">
-                                            <i class="fas fa-trash-alt text-gray-400"></i>
+                                            <i class="fas fa-trash-alt text-gray-400 hover:text-red-500"></i>
                                         </button>
                                     </td>
                                 </form>

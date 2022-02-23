@@ -60,7 +60,7 @@ class BusinessFestiveDayController extends Controller
 
         $businessFestiveday->save();
 
-        return redirect()->back()->with('festiveMessage', 'Registro creado exitosamente.');
+        return redirect()->back()->with('create', 'Record created successfully');
     }
 
     /**
@@ -82,7 +82,8 @@ class BusinessFestiveDayController extends Controller
      */
     public function edit(BusinessFestiveDay $businessFestiveDay)
     {
-        //
+        $festiveDay = $businessFestiveDay;
+        return view('app-tenant.dashboard.working-day-holiday.edit', compact('festiveDay'));
     }
 
     /**
@@ -105,6 +106,7 @@ class BusinessFestiveDayController extends Controller
      */
     public function destroy(BusinessFestiveDay $businessFestiveDay)
     {
-        //
+        $businessFestiveDay->delete();
+        return redirect()->route('working-day-holiday.index')->with('delete', 'Record deleted successfully');
     }
 }

@@ -22,7 +22,7 @@
                         @csrf
                         <div class="form-group margin-b-0">
                             <label class="font-bold" for="name">{{__('Name')}}</label>
-                            <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white" type="text" id="name" name="name" required>
+                            <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white form-control" type="text" id="name" name="name" required>
                         </div>
                         <div class="d-flex">
                             <div class="col-3 d-flex flex-column pe-5">

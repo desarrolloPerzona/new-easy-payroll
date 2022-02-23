@@ -11,7 +11,7 @@
                 <th>{{__('Working day')}}</th>
                 <th class="text-center">{{__('Type of shift')}}</th>
                 <th class="text-center">{{__('Worked days')}}</th>
-                <th colspan="3"></th>
+                <th colspan="6"></th>
                 <th></th>
                 <th></th>
                 <th></th>

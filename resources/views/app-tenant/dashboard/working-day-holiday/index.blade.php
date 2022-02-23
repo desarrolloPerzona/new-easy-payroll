@@ -1,4 +1,5 @@
 <x-app-tenant>
+
     <div class="container mx-auto mb-6">
         {{-- Error validation message--}}
         <x-forms.error-validation-message/>
@@ -18,10 +19,10 @@
             <span style="display: inline-flex;">{{ __('Working days') }}</span>
         </h2>
 
-        {{--Component to create a workingday--}}
+        {{--New business working day Component--}}
         <x-tenant.working-day-holiday.create-working-day/>
 
-        {{--    Working day Table--}}
+        {{--    Working day Table Component--}}
         <x-tenant.working-day-holiday.working-day-table/>
 
         {{--            Header--}}
@@ -32,37 +33,13 @@
 
         {{--    Festive day Section--}}
 
-        {{--Nuevo día festivo ----------------}}
+        {{--New festive day Component ----------------}}
         <x-tenant.working-day-holiday.create-festive-business-day/>
 
-        {{--Festive days table--}}
+        {{--Festive days table Component--}}
         <x-tenant.working-day-holiday.festive-business-days-table/>
-
 
     </div>
 
-    @push('inline_scripts')
-        <script>
-
-            function festiveConditionals() {
-                return {
-                    working(res) {
-                        if (res == 'y') {
-                            document.getElementById('all_day_buttons').classList.remove('d-none')
-                            document.getElementById('schedule_buttons').classList.remove('d-none')
-                        } else if (res == 'n') {
-                            document.getElementById('all_day_buttons').classList.add('d-none')
-                            document.getElementById('schedule_buttons').classList.add('d-none')
-                        } else if (res == 'all_day') {
-                            document.getElementById('schedule_buttons').classList.add('d-none')
-                        } else if (res == 'not_all_day') {
-                            document.getElementById('schedule_buttons').classList.remove('d-none')
-                        }
-                    }
-                }
-            }
-
-        </script>
-    @endpush
 </x-app-tenant>
 

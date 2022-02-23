@@ -105,6 +105,7 @@ class BusinessFestiveDayController extends Controller
      */
     public function destroy(BusinessFestiveDay $businessFestiveDay)
     {
-        //
+        $businessFestiveDay->delete();
+        return redirect()->route('working-day-holiday.index')->with('delete', 'Record deleted successfully');
     }
 }

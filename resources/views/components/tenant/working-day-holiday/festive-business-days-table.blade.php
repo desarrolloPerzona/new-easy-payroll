@@ -35,7 +35,7 @@
             <div class="flex py-2">
                 <div class="flex-1 text-gray-500">
                     <div class="d-flex">
-                        <form method="POST" class="d-none holiday-button">
+                        <form class="d-none holiday-button" method="POST" action="{{route('business-festive-days.destroy', $festiveDay)}}">
                             @csrf
                             @method('DELETE')
                             <button type="submit"
@@ -70,9 +70,9 @@
 
 <script defer>
 
-    // Function to show and hide edit and delete icons in company holidays
     function data(){
         return{
+            // Function to show and hide edit and delete icons in company holidays
             isOpen(){
                 const holidayButtons = document.querySelectorAll('.holiday-button')
                 holidayButtons.forEach(button => {

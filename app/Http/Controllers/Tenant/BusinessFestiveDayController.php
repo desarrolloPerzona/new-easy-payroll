@@ -39,16 +39,16 @@ class BusinessFestiveDayController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'name' => 'required|unique:business_festive_days'
+            'name' => 'required|unique:business_festive_days'
         ]);
 
         $businessFestiveday = new BusinessFestiveDay();
         $businessFestiveday->name = $request->get('name');
         $businessFestiveday->date = $request->get('date');
 
-        if($request->get('working') == 1){
+        if ($request->get('working') == 1) {
             $businessFestiveday->working = $request->get('working');
-            if($request->get('schedule_all_day') == 0){
+            if ($request->get('schedule_all_day') == 0) {
                 $businessFestiveday->schedule_from = $request->get('schedule_from');
                 $businessFestiveday->schedule_to = $request->get('schedule_to');
             }
@@ -66,7 +66,7 @@ class BusinessFestiveDayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tenant\BusinessFestiveDay  $businessFestiveDay
+     * @param \App\Models\Tenant\BusinessFestiveDay $businessFestiveDay
      * @return \Illuminate\Http\Response
      */
     public function show(BusinessFestiveDay $businessFestiveDay)
@@ -77,7 +77,7 @@ class BusinessFestiveDayController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tenant\BusinessFestiveDay  $businessFestiveDay
+     * @param \App\Models\Tenant\BusinessFestiveDay $businessFestiveDay
      * @return \Illuminate\Http\Response
      */
     public function edit(BusinessFestiveDay $businessFestiveDay)
@@ -88,19 +88,53 @@ class BusinessFestiveDayController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBusinessFestiveDayRequest  $request
-     * @param  \App\Models\Tenant\BusinessFestiveDay  $businessFestiveDay
+     * @param \App\Http\Requests\UpdateBusinessFestiveDayRequest $request
+     * @param \App\Models\Tenant\BusinessFestiveDay $businessFestiveDay
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBusinessFestiveDayRequest $request, BusinessFestiveDay $businessFestiveDay)
+    public function update(BusinessFestiveDay $businessFestiveDay, Request $request)
     {
-        //
+        $businessFestiveDay->name = $request->get('name');
+
+        if ($request->get('working') != 0) {
+            $businessFestiveDay->working = $request->get('working');
+            if ($request->get('schedule_all_day') == 0) {
+                $businessFestiveDay->schedule_all_day = $request->get('schedule_all_day');
+                $businessFestiveDay->schedule_from = $request->get('schedule_from');
+                $businessFestiveDay->schedule_to = $request->get('schedule_to');
+            } else{
+                $businessFestiveDay->schedule_all_day = $request->get('schedule_all_day');
+            }
+
+        } else {
+            $businessFestiveDay->working = $request->get('working');
+            $businessFestiveDay->schedule_all_day = 0;
+            $businessFestiveDay->schedule_from = null;
+            $businessFestiveDay->schedule_to = null;
+        }
+
+        $businessFestiveDay->save();
+
+//        if(){
+//
+//        }
+//
+//        $businessFestiveDay->update([
+//            'name' =>
+//            'working' => $request->get('working'),
+//            'schedule_all_day' => $request->get('schedule_all_day'),
+//            'schedule_from' => $request->get('schedule_from'),
+//            'schedule_to' => $request->get('schedule_to'),
+//        ]);
+
+        return redirect()->route('working-day-holiday.index')->with('edit', 'Record updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tenant\BusinessFestiveDay  $businessFestiveDay
+     * @param \App\Models\Tenant\BusinessFestiveDay $businessFestiveDay
      * @return \Illuminate\Http\Response
      */
     public function destroy(BusinessFestiveDay $businessFestiveDay)

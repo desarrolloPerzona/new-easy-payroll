@@ -27,34 +27,38 @@
                         <div class="col-3">
                             <label for="" class="my-2 font-bold">{{__('Do you work')}}</label>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" checked>
+                                <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" {{$businessFestiveDay->working != 0 ? 'checked' : ''}}>
                                 <label for="working">{{__('Yes')}}</label>
                             </div>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
+                                <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')" {{$businessFestiveDay->working == 0 ? 'checked' : ''}}>
                                 <label for="working2">{{__('No')}}</label>
                             </div>
                         </div>
-                        <div class="col-2" id="all_day_buttons">
+                        <div class="col-2 {{$businessFestiveDay->working != 0 ? '' : 'd-none'}}" id="all_day_buttons">
                             <label for="" class="my-2 font-bold">{{__('All day')}}</label>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="schedule_all_day" id="schedule_all_day" value="1" x-on:click="working('all_day')">
+                                <input type="radio" name="schedule_all_day" id="schedule_all_day" value="1" x-on:click="working('all_day')" {{$businessFestiveDay->schedule_all_day != 0 ? 'checked' : ''}}>
                                 <label for="schedule_all_day">{{__('Yes')}}</label>
                             </div>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="schedule_all_day" id="schedule_all_day_2" value="0" checked x-on:click="working('not_all_day')">
+                                <input type="radio" name="schedule_all_day" id="schedule_all_day_2" value="0" x-on:click="working('not_all_day')" {{$businessFestiveDay->schedule_all_day == 0 ? 'checked' : ''}}>
                                 <label for="schedule_all_day_2">{{__('No')}}</label>
                             </div>
                         </div>
 
                         {{--Hours Component--}}
-                        <div class="col-4 d-flex flex-column" id="schedule_buttons">
-                            <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
-                            <div class="d-flex">
-                                <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3" attribs=""/>
-                                <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes="" attribs=""/>
+{{--                        @if()--}}
+                            <div class="col-4 d-flex flex-column {{$businessFestiveDay->working != 0  && $businessFestiveDay->schedule_all_day != 1 ? '' : 'd-none'}}" id="schedule_buttons">
+                                <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
+                                <div class="d-flex">
+
+                                    <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3" attribs="" value="{{$businessFestiveDay->schedule_from}}"/>
+                                    <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes="" attribs="" value="{{$businessFestiveDay->schedule_to}}"/>
+                                </div>
                             </div>
-                        </div>
+{{--                        @endif--}}
+
                     </div>
                     <div class="col-12 mt-3">
                         <button type="submit" class="btn btn-primary">{{__('Save')}}</button>

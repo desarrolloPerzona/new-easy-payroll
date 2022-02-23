@@ -1,4 +1,8 @@
 <select name="{{$name}}" id="{{$id}}" class="rounded {{$classes}}" {{$attribs}}>
+    @if($value)
+        <option value="{{$value}}">{{substr($value, 0, 5)}}</option>
+    @endif
+
     @for($i = 0; $i < 24; $i++)
         @if($i <= 9)
             <option value="0{{$i}}:00">0{{$i}}:00</option>

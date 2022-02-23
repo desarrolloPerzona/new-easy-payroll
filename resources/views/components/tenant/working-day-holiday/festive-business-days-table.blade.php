@@ -1,8 +1,8 @@
 <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
-    <div class="border-bottom-1 border-gray-400 py-3">
+    <div class="border-bottom-1 border-gray-400 pt-3 pb-4">
 
-        <h2 class="mb-3">Festivos oficiales México</h2>
+        <h2 class="mb-3">{{__('Official holidays in Mexico')}}</h2>
         {{--Loop to print each of a month from our monthsArray--}}
         @foreach($monthsArray as $month)
             <div class="flex pt-2">
@@ -25,8 +25,8 @@
 
     </div>
 
-    <div class="border-bottom-1 border-gray-400 py-3">
-        <h2 class="mb-3">{{__('Festivos empresa')}} <i class="fas fa-edit text-gray-400"></i></h2>
+    <div class="mt-4 py-2">
+        <h2 class="mb-3">{{__('Company holidays')}} <i class="fas fa-edit text-gray-400"></i></h2>
         @foreach($festiveBusinessesDays as $festiveDay)
             <div class="flex pt-2">
                 <div class="flex-1 text-gray-500">

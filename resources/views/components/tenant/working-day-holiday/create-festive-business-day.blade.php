@@ -58,8 +58,8 @@
                             <div class="col-4 d-flex flex-column" id="schedule_buttons">
                                 <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
                                 <div class="d-flex">
-                                    <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3"/>
-                                    <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes=""/>
+                                    <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3" attribs=""/>
+                                    <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes="" attribs=""/>
                                 </div>
                             </div>
                         </div>

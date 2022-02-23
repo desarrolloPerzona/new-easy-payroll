@@ -6,17 +6,18 @@ use Illuminate\View\Component;
 
 class HoursSelectButton extends Component
 {
-    public $name, $id, $classes;
+    public $name, $id, $classes, $attribs;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $id, $classes)
+    public function __construct($name, $id, $classes, $attribs)
     {
         $this->name = $name;
         $this->id = $id;
         $this->classes = $classes;
+        $this->attribs = $attribs;
     }
 
     /**

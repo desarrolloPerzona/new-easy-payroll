@@ -82,7 +82,8 @@ class BusinessFestiveDayController extends Controller
      */
     public function edit(BusinessFestiveDay $businessFestiveDay)
     {
-        //
+        $festiveDay = $businessFestiveDay;
+        return view('app-tenant.dashboard.working-day-holiday.edit', compact('festiveDay'));
     }
 
     /**

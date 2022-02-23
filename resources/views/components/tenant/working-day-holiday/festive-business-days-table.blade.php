@@ -49,8 +49,9 @@
                                     <i class="fas fa-trash-alt hover:text-red-500 text-gray-400 me-3"></i>
                                 </button>
                             </form>
-                            <a class="d-none holiday-button"><i
-                                    class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer me-3"></i></a>
+                            <a href="{{route('business-festive-days.edit', $festiveDay)}}" class="d-none holiday-button">
+                                <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer me-3"></i>
+                            </a>
                             {{__(\Carbon\Carbon::create($festiveDay->date)->format('F'))}}
                         </div>
                     </div>

@@ -95,6 +95,10 @@ class BusinessFestiveDayController extends Controller
      */
     public function update(BusinessFestiveDay $businessFestiveDay, Request $request)
     {
+        $request->validate([
+           'name' => 'unique:business_festive_days'
+        ]);
+
         $businessFestiveDay->name = $request->get('name');
 
         if ($request->get('working') != 0) {

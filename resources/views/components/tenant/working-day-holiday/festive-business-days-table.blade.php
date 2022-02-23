@@ -1,5 +1,6 @@
 <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
+    {{--Oficial Holidays--}}
     <div class="border-bottom-1 border-gray-400 pt-3 pb-4">
 
         <h2 class="mb-3">{{__('Official holidays in Mexico')}}</h2>
@@ -25,12 +26,26 @@
 
     </div>
 
-    <div class="mt-4 py-2">
-        <h2 class="mb-3">{{__('Company holidays')}} <i class="fas fa-edit text-gray-400"></i></h2>
+    {{--Company Holidays--}}
+    <div class="mt-4 py-2" x-data="data()">
+        <h2 class="mb-3">{{__('Company holidays')}}
+            <i x-on:click="isOpen()" class="fas fa-edit text-gray-400 cursor-pointer hover:text-gray-700 ms-2"></i>
+        </h2>
         @foreach($festiveBusinessesDays as $festiveDay)
-            <div class="flex pt-2">
+            <div class="flex py-2">
                 <div class="flex-1 text-gray-500">
-                    {{__(\Carbon\Carbon::create($festiveDay->date)->format('F'))}}
+                    <div class="d-flex">
+                        <form method="POST" class="d-none holiday-button">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"
+                                    onclick="return confirm('¿Estás seguro de eliminar este registro?')">
+                                <i class="fas fa-trash-alt hover:text-red-500 text-gray-400 me-3"></i>
+                            </button>
+                        </form>
+                        <a class="d-none holiday-button"><i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer me-3"></i></a>
+                        {{__(\Carbon\Carbon::create($festiveDay->date)->format('F'))}}
+                    </div>
                 </div>
                 <div class="flex-1">
                     {{--Function to print date with current year--}}
@@ -52,3 +67,23 @@
     </div>
 
 </div>
+
+<script defer>
+
+    // Function to show and hide edit and delete icons in company holidays
+    function data(){
+        return{
+            isOpen(){
+                const holidayButtons = document.querySelectorAll('.holiday-button')
+                holidayButtons.forEach(button => {
+                    if(button.classList.contains('d-none')){
+                        button.classList.remove('d-none')
+                    } else{
+                        button.classList.add('d-none')
+                    }
+                })
+            }
+        }
+    }
+
+</script>

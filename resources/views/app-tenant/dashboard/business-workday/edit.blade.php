@@ -241,7 +241,7 @@
                             hoursSection.classList.remove('d-none')
                         }
                     },
-                    // Function to show and hide select inputs depending of checkbox MEAL TIME
+                    // Function to show and hide select inputs according to checkbox MEAL TIME
                     isMealTime(nameButton) {
                         let mealSelect = document.getElementById('select-' + nameButton)
                         let mealHours = document.getElementById('hours-' + nameButton)

@@ -4,7 +4,7 @@
 
         {{--        Header User profile--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
-            <i class="fak fa-admin-perzona mr-2"></i>
+            <i class="fak fa-empleados-perzona mr-2"></i>
             <span style="display: inline-flex;">Juan Perez</span>
         </h2>
 
@@ -169,6 +169,10 @@
                     <div class="flex px-4 my-1">
                         <div class="w-1/2">Apellido materno</div>
                         <div class="w-1/2 font-bold">Zapata</div>
+                    </div>
+                    <div class="flex px-4 my-1">
+                        <div class="w-1/2">Parentesco</div>
+                        <div class="w-1/2 font-bold">Hermana</div>
                     </div>
                     <div class="flex px-4 my-1">
                         <div class="w-1/2">Correo electrónico</div>
@@ -1547,7 +1551,7 @@
 
             </div>
 
-            {{--            Notas-----------------------------------------------------------}}
+            {{--            Notas------------------------------------------------------------}}
             <div id="notes-table" class="retentions-table d-none">
 
                 <div class="card p-4 mb-4">
@@ -1559,21 +1563,21 @@
                         </a>
                     </div>
 
-                    <div class="p-4 border border-gray-600 ">
-                        <div class="flex mb-4">
-                            <div class="w-5/12 font-bold">05/04/2021</div>
-                            <div class="w-5/12 font-bold">Administrador</div>
-                            <div class="w-1/12 cursor-pointer flow-root"><i class="fa-solid fa-pen-to-square"></i></div>
-                            <div class="w-1/12 cursor-pointer flow-root"><i class="fa-solid fa-trash-can"></i></div>
-                        </div>
+                  </div>
 
-                        <div class="flex items-center my-2">
-                            <div class="w-full">El empleado tiene a consignacion una laptop Dell numero de serie DU25636936</div>
-
-                        </div>
+                <div class="card p-4 mb-4">
+                    <div class="flex mb-4">
+                        <div class="mr-4 font-bold">05/04/2021</div>
+                        <div class="mr-4 cursor-pointer"><i class="fa-solid fa-pen-to-square"></i></div>
+                        <div class="mr-4 cursor-pointer"><i class="fa-solid fa-trash-can"></i></div>
                     </div>
 
+                    <div class="flex items-center my-2">
+                        <div class="w-full">
+                            El empleado tiene a consignación una laptop Dell número de serie DU25636936
+                        </div>
 
+                    </div>
                 </div>
 
             </div>

@@ -122,6 +122,11 @@
                             {{__('Employees list')}}
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('employee-list.create') }}">
+                            {{__('To register')}}
+                        </a>
+                    </li>
                 </ul>
             </li>
 

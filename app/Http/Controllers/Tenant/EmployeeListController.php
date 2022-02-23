@@ -24,7 +24,7 @@ class EmployeeListController extends Controller
      */
     public function create()
     {
-        //
+        return view('app-tenant.dashboard.employees-list.create');
     }
 
     /**

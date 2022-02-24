@@ -60,7 +60,13 @@ class BusinessFestiveDayController extends Controller
 
         $businessFestiveday->save();
 
-        return redirect()->back()->with('create', 'Record created successfully');
+        /**
+         *  The way to send alert message
+         *  return redirect()->back()->with('message', 'choose between: "edit", "create" or "delete" alert message');
+         */
+
+
+        return redirect()->back()->with('message', 'create');
     }
 
     /**
@@ -125,7 +131,11 @@ class BusinessFestiveDayController extends Controller
 
         $businessFestiveDay->save();
 
-        return redirect()->route('working-day-holiday.index')->with('edit', 'Record updated successfully');
+        /**
+         *  The way to send alert message
+         *  return redirect()->back()->with('message', 'choose between: "edit", "create" or "delete" alert message');
+         */
+        return redirect()->route('working-day-holiday.index')->with('message', 'edit');
     }
 
     /**
@@ -137,6 +147,10 @@ class BusinessFestiveDayController extends Controller
     public function destroy(BusinessFestiveDay $businessFestiveDay)
     {
         $businessFestiveDay->delete();
-        return redirect()->route('working-day-holiday.index')->with('delete', 'Record deleted successfully');
+        /**
+         *  The way to send alert message
+         *  return redirect()->back()->with('message', 'choose between: "edit", "create" or "delete" alert message');
+         */
+        return redirect()->route('working-day-holiday.index')->with('message', 'delete');
     }
 }

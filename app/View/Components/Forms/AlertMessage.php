@@ -6,15 +6,14 @@ use Illuminate\View\Component;
 
 class AlertMessage extends Component
 {
-    public $message;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct()
     {
-        $this->message = $message;
+        //
     }
 
     /**

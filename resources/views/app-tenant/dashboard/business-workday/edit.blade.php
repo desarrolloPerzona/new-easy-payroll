@@ -97,13 +97,13 @@
                                         {{--Select section--}}
                                         <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">
 
-                                            <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled"/>
+                                            <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled" value=""/>
 
                                             <div class="d-flex align-items-end">
                                                 <small>hrs</small>
                                             </div>
 
-                                            <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled"/>
+                                            <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled" value=""/>
                                             <div class="d-flex align-items-end">
                                                 <small>hrs</small>
                                             </div>
@@ -118,12 +118,12 @@
                                     {{--Select section--}}
                                     <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">
 
-                                        <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled"/>
+                                        <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled" value=""/>
                                         <div class="d-flex align-items-end">
                                             <small>hrs</small>
                                         </div>
 
-                                        <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled"/>
+                                        <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled" value=""/>
                                         <div class="d-flex align-items-end">
                                             <small>hrs</small>
                                         </div>
@@ -176,12 +176,12 @@
 
                                 {{--Select section--}}
                                 <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
-                                    <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs=""/>
+                                    <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs="" value=""/>
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
 
-                                    <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs=""/>
+                                    <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs="" value=""/>
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
@@ -193,12 +193,12 @@
                                 {{--                                Select section--}}
                                 <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
 
-                                    <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs=""/>
+                                    <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs="" value=""/>
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
 
-                                    <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs=""/>
+                                    <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs="" value=""/>
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>

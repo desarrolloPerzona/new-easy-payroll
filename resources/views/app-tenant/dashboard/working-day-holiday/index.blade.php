@@ -4,14 +4,8 @@
         {{-- Error validation message--}}
         <x-forms.error-validation-message/>
 
-        {{-- Delete message--}}
-        <x-forms.alert-message message="delete"/>
-
-        {{-- Create message --}}
-        <x-forms.alert-message message="create"/>
-
-        {{-- Edit message --}}
-        <x-forms.alert-message message="edit"/>
+        {{-- Alert message (edit, create or delete record)--}}
+        <x-forms.alert-message/>
 
         {{--Working days Section *****--}}
 

@@ -7,14 +7,12 @@
             <div class="flex">
                 <div class="flex-1 pb-2">{{__('New holiday')}}</div>
                 <div class="flex-2">
-                    <button type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseP1" aria-expanded="false"
-                            aria-controls="collapseP1"><i class="fas fa-plus-circle mr-3"></i>
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseP1" aria-expanded="false" aria-controls="collapseP1">
+                        <i class="fas fa-plus-circle mr-3"></i>
                     </button>
                 </div>
             </div>
-            <div id="collapseP1" class="accordion-collapse collapse p-0"
-                 aria-labelledby="headingTwo" data-bs-parent="#newPosition">
+            <div id="collapseP1" class="accordion-collapse collapse p-0" aria-labelledby="headingTwo" data-bs-parent="#newPosition">
                 <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
 
                     {{--Form--}}
@@ -32,13 +30,11 @@
                             <div class="col-3">
                                 <label for="" class="my-2 font-bold">{{__('Do you work')}}</label>
                                 <div class="form-group margin-b-0">
-                                    <input type="radio" name="working" id="working" value="1"
-                                           x-on:click="working('y')" checked>
+                                    <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" checked>
                                     <label for="working">{{__('Yes')}}</label>
                                 </div>
                                 <div class="form-group margin-b-0">
-                                    <input type="radio" name="working" id="working2" value="0"
-                                           x-on:click="working('n')">
+                                    <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
                                     <label for="working2">{{__('No')}}</label>
                                 </div>
                             </div>

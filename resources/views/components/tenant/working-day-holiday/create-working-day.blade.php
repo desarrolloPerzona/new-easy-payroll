@@ -7,33 +7,27 @@
             <div class="flex">
                 <div class="flex-1 pb-2">{{__('New working day')}}</div>
                 <div class="flex-2">
-                    <button type="button" data-bs-toggle="collapse" data-bs-target="#workingDayCollapse"
-                            aria-expanded="false" aria-controls="workingDayCollapse">
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#workingDayCollapse" aria-expanded="false" aria-controls="workingDayCollapse">
                         <i class="fas fa-plus-circle"></i>
                     </button>
                 </div>
             </div>
         </div>
         {{-- Accordion Body --}}
-        <div id="workingDayCollapse" class="accordion-collapse collapse" aria-labelledby="headingWorkingDay"
-             data-bs-parent="#workingDayAccordion">
+        <div id="workingDayCollapse" class="accordion-collapse collapse" aria-labelledby="headingWorkingDay" data-bs-parent="#workingDayAccordion">
             <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
 
                 {{--Working day Form--}}
-                <form name="newForm" action="{{route('business-working-day.store')}}" method="POST"
-                      class="text-black rounded">
+                <form name="newForm" action="{{route('business-working-day.store')}}" method="POST" class="text-black rounded">
                     @csrf
                     <div class="d-flex col-12 justify-around">
                         <div class="mb-3 pe-2 col-6">
-                            <label for="name"
-                                   class="form-label font-bold">{{__('Name')}}</label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                   placeholder="John Doe" required>
+                            <label for="name" class="form-label font-bold">{{__('Name')}}</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
                         </div>
-                        <div class="mb-3 ps-2 col-6">
-                            <label for="workingDaySelect"
-                                   class="form-label font-bold">{{__('Type of shift')}}</label>
 
+                        <div class="mb-3 ps-2 col-6">
+                            <label for="workingDaySelect" class="form-label font-bold">{{__('Type of shift')}}</label>
                             <select name="workday_type" id="workday_type" class="form-control" required>
                                 <option value="">{{__('Select')}}</option>
                                 @foreach($workdayTypes as $type)
@@ -41,6 +35,7 @@
                                 @endforeach
                             </select>
                         </div>
+
                     </div>
 
                     <div class="mb-3">
@@ -56,8 +51,7 @@
                                     $day = strtolower($day);
                                 @endphp
                                 <div class="col-1">
-                                    <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1"
-                                           class="rounded" x-on:click="isDisabled(`{{$day}}`)">
+                                    <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1" class="rounded" x-on:click="isDisabled(`{{$day}}`)">
                                 </div>
 
                                 <div class="col-2">

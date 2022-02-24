@@ -176,7 +176,7 @@ class BusinessWorkdayController extends Controller
             'meal_time_to' => null
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'edit');
     }
 
     //    Function to delete hours in workday from edit view
@@ -191,6 +191,6 @@ class BusinessWorkdayController extends Controller
             $day . '_to' => null
         ]);
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'edit');
     }
 }

@@ -4,6 +4,9 @@
         {{-- Error Validation message--}}
         <x-forms.error-validation-message/>
 
+        {{-- Alert Message--}}
+        <x-forms.alert-message/>
+
         {{--Edit Header--}}
         <x-utilities.section-header title="Edit working day" classes="mb-4"/>
 
@@ -20,24 +23,23 @@
                     @method('PATCH')
                     <div class="d-flex col-12 justify-around">
                         <div class="mb-3 pe-2 col-6">
-                            <label for="name"
-                                   class="form-label font-bold">{{__('Name')}}</label>
-                            <input type="text" class="form-control" id="name" name="name"
-                                   value="{{$businessWorkday->name}}" required>
+                            <label for="name" class="form-label font-bold">{{__('Name')}}</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{$businessWorkday->name}}" required>
                         </div>
                         <div class="mb-3 ps-2 col-6">
 
                             <label for="workingDaySelect" class="form-label font-bold">{{__('Type of shift')}}</label>
 
                             <select name="workday_type" id="workday_type" class="form-control" required>
-                                <option
-                                    value="{{$businessWorkday->workday_type}}">{{ucfirst($businessWorkday->workday_type)}}</option>
-
+                                <option value="{{$businessWorkday->workday_type}}">
+                                    {{ucfirst($businessWorkday->workday_type)}}
+                                </option>
                                 {{--Loop to remove type option that contains our workday--}}
                                 @for($i = 0; $i < count($workdayTypes); $i++)
                                     @if($workdayTypes[$i] != $businessWorkday->workday_type)
-                                        <option
-                                            value="{{$workdayTypes[$i]}}">{{__(ucfirst($workdayTypes[$i]))}}</option>
+                                        <option value="{{$workdayTypes[$i]}}">
+                                            {{__(ucfirst($workdayTypes[$i]))}}
+                                        </option>
                                     @endif
                                 @endfor
                             </select>
@@ -163,7 +165,7 @@
                                         <small class="ms-1">hrs</small>
                                     </div>
 
-                                    {{--Trash button--}}
+                                    {{--Trash button meal_time--}}
                                     <div class="ms-3">
                                         <td style="width: 3%">
                                             <a href="{{route('deleteHour', $businessWorkday->id)}}">

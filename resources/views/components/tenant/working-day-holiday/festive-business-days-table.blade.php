@@ -40,12 +40,10 @@
                 <div class="flex py-2">
                     <div class="flex-1 text-gray-500">
                         <div class="d-flex">
-                            <form class="d-none holiday-button" method="POST"
-                                  action="{{route('business-festive-days.destroy', $festiveDay)}}">
+                            <form class="d-none holiday-button" method="POST" action="{{route('business-festive-days.destroy', $festiveDay)}}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit"
-                                        onclick="return confirm('¿Estás seguro de eliminar este registro?')">
+                                <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este registro?')">
                                     <i class="fas fa-trash-alt hover:text-red-500 text-gray-400 me-3"></i>
                                 </button>
                             </form>

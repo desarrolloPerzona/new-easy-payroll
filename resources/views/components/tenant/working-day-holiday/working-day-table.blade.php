@@ -37,7 +37,6 @@
                     <div class="accordion-item">
                         <div class="accordion-header mr-4" id="headingOne">
                             <table class="table">
-
                                 <td style="width: 30%">{{__($workday->name)}}</td>
                                 <td style="width: 35%">{{__($workday->workday_type)}}</td>
                                 <td style="width: 25%">{{__(count($daysOfWork))}}</td>
@@ -49,49 +48,45 @@
                                         <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </button>
                                 </td>
-                                <td style="width: 3%"><a
-                                        href="{{route('business-working-day.edit', $workday->id)}}">
-                                        <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i></a>
+                                <td style="width: 3%">
+                                    <a href="{{route('business-working-day.edit', $workday->id)}}">
+                                        <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                    </a>
                                 </td>
-                                <form action="{{route('business-working-day.destroy', $workday->id)}}"
-                                      method="POST">
+                                <form action="{{route('business-working-day.destroy', $workday->id)}}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <td style="width: 3%">
-                                        <button type="submit"
-                                                onclick="return confirm('¿Estás seguro de eliminar este registro?')">
+                                        <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este registro?')">
                                             <i class="fas fa-trash-alt text-gray-400 hover:text-red-500"></i>
                                         </button>
                                     </td>
                                 </form>
-
                             </table>
                         </div>
-                        <div id="collapse-{{$workday->id}}" class="accordion-collapse collapse"
-                             aria-labelledby="headingOne"
-                             data-bs-parent="#newItem">
+                        <div id="collapse-{{$workday->id}}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#newItem">
                             <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Name')}}</label>
+                                    <div class="flex-1 text-left w-1/2">
+                                        <label class="my-2">{{__('Name')}}</label>
                                     </div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">{{$workday->name}}</label>
-                                    </div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Type of shift')}}</label></div>
-                                    <div class="flex-2 text-left w-1/2"><label
-                                            class="my-2 font-bold">{{ucfirst($workday->workday_type)}}</label>
+                                    <div class="flex-2 text-left w-1/2">
+                                        <label class="my-2 font-bold">{{$workday->name}}</label>
                                     </div>
                                 </div>
 
                                 <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Days')}}</label>
+                                    <div class="flex-1 text-left w-1/2">
+                                        <label class="my-2">{{__('Type of shift')}}</label></div>
+                                    <div class="flex-2 text-left w-1/2">
+                                        <label class="my-2 font-bold">{{ucfirst($workday->workday_type)}}</label>
+                                    </div>
+                                </div>
+
+                                <div class="flex">
+                                    <div class="flex-1 text-left w-1/2">
+                                        <label class="my-2">{{__('Days')}}</label>
                                     </div>
                                     <div class="flex-2 text-left w-1/2">
                                         <label class="my-2 font-bold">
@@ -112,8 +107,8 @@
                                 </div>
 
                                 <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label
-                                            class="my-2">{{__('Meal hours')}}</label>
+                                    <div class="flex-1 text-left w-1/2">
+                                        <label class="my-2">{{__('Meal hours')}}</label>
                                     </div>
                                     <div class="flex-2 text-left w-1/2">
                                         <label class="my-2 font-bold">
@@ -127,7 +122,7 @@
                                     </div>
                                 </div>
 
-                                {{--                                    Table to show Workdays and schedules--}}
+                                {{--Table to show Workdays and schedules--}}
                                 @php
                                     $lowerWorkDays = [];
                                         foreach ($daysOfWork as $day){
@@ -152,10 +147,8 @@
                                         @foreach($lowerWorkDays as $day)
                                             <tbody>
                                             <td>{{__($day)}}</td>
-                                            <td>{{substr($workday[$day . '_from'],0 , -3) }} <small>hrs</small>
-                                            </td>
-                                            <td>{{substr($workday[$day . '_to'],0 , -3) }} <small>hrs</small>
-                                            </td>
+                                            <td>{{substr($workday[$day . '_from'],0 , -3) }} <small>hrs</small></td>
+                                            <td>{{substr($workday[$day . '_to'],0 , -3) }} <small>hrs</small></td>
                                             </tbody>
                                         @endforeach
                                     @endif

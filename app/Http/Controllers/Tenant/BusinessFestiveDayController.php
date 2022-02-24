@@ -95,42 +95,35 @@ class BusinessFestiveDayController extends Controller
      */
     public function update(BusinessFestiveDay $businessFestiveDay, Request $request)
     {
-        $request->validate([
-           'name' => 'unique:business_festive_days'
-        ]);
 
-        $businessFestiveDay->name = $request->get('name');
+        if ($request->get('name') != $businessFestiveDay->name) {
 
-        if ($request->get('working') != 0) {
-            $businessFestiveDay->working = $request->get('working');
+            $request->validate([
+                'name' => 'unique:business_festive_days'
+            ]);
+            $businessFestiveDay->name = $request->get('name');
+        }
+
+        $businessFestiveDay->date = $request->get('date');
+        if ($request->get('working') == 1) {
+            $businessFestiveDay->working = 1;
             if ($request->get('schedule_all_day') == 0) {
-                $businessFestiveDay->schedule_all_day = $request->get('schedule_all_day');
                 $businessFestiveDay->schedule_from = $request->get('schedule_from');
                 $businessFestiveDay->schedule_to = $request->get('schedule_to');
-            } else{
-                $businessFestiveDay->schedule_all_day = $request->get('schedule_all_day');
             }
-
-        } else {
-            $businessFestiveDay->working = $request->get('working');
+            $businessFestiveDay->schedule_all_day = $request->get('schedule_all_day');
+        } else{
+            $businessFestiveDay->working = 0;
             $businessFestiveDay->schedule_all_day = 0;
             $businessFestiveDay->schedule_from = null;
             $businessFestiveDay->schedule_to = null;
         }
 
-        $businessFestiveDay->save();
+        $businessFestiveDay->created_at = now();
+        $businessFestiveDay->updated_at = now();
 
-//        if(){
-//
-//        }
-//
-//        $businessFestiveDay->update([
-//            'name' =>
-//            'working' => $request->get('working'),
-//            'schedule_all_day' => $request->get('schedule_all_day'),
-//            'schedule_from' => $request->get('schedule_from'),
-//            'schedule_to' => $request->get('schedule_to'),
-//        ]);
+
+        $businessFestiveDay->save();
 
         return redirect()->route('working-day-holiday.index')->with('edit', 'Record updated successfully');
     }

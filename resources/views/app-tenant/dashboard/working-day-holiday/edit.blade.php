@@ -27,29 +27,29 @@
                         <div class="col-3">
                             <label for="" class="my-2 font-bold">{{__('Do you work')}}</label>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" {{$businessFestiveDay->working != 0 ? 'checked' : ''}}>
+                                <input type="radio" name="working" id="working" value="1" x-on:click="working('y')">
                                 <label for="working">{{__('Yes')}}</label>
                             </div>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')" {{$businessFestiveDay->working == 0 ? 'checked' : ''}}>
+                                <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
                                 <label for="working2">{{__('No')}}</label>
                             </div>
                         </div>
-                        <div class="col-2 {{$businessFestiveDay->working != 0 ? '' : 'd-none'}}" id="all_day_buttons">
+                        <div class="col-2 d-none" id="all_day_buttons">
                             <label for="" class="my-2 font-bold">{{__('All day')}}</label>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="schedule_all_day" id="schedule_all_day" value="1" x-on:click="working('all_day')" {{$businessFestiveDay->schedule_all_day != 0 ? 'checked' : ''}}>
+                                <input type="radio" name="schedule_all_day" id="schedule_all_day" value="1" x-on:click="working('all_day')">
                                 <label for="schedule_all_day">{{__('Yes')}}</label>
                             </div>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="schedule_all_day" id="schedule_all_day_2" value="0" x-on:click="working('not_all_day')" {{$businessFestiveDay->schedule_all_day == 0 ? 'checked' : ''}}>
+                                <input type="radio" name="schedule_all_day" id="schedule_all_day_2" value="0" x-on:click="working('not_all_day')">
                                 <label for="schedule_all_day_2">{{__('No')}}</label>
                             </div>
                         </div>
 
                         {{--Hours Component--}}
 {{--                        @if()--}}
-                            <div class="col-4 d-flex flex-column {{$businessFestiveDay->working != 0  && $businessFestiveDay->schedule_all_day != 1 ? '' : 'd-none'}}" id="schedule_buttons">
+                            <div class="col-4 d-flex flex-column d-none" id="schedule_buttons">
                                 <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
                                 <div class="d-flex">
 

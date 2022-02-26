@@ -1,5 +1,4 @@
 <x-app-tenant>
-
     <div class="container mx-auto mb-6">
         {{-- Error validation message--}}
         <x-forms.error-validation-message/>

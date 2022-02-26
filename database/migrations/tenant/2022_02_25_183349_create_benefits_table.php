@@ -15,6 +15,7 @@ class CreateBenefitsTable extends Migration
     {
         Schema::create('benefits', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }

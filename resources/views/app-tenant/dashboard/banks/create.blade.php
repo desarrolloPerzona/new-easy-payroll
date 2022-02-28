@@ -3,51 +3,73 @@
 
         <x-utilities.section-header title="Create bank accounts" classes="mb-3"/>
 
-        <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
-            <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
-            <label>
-                <select class="w-full rounded dark:bg-dark dark:text-white my-2">
-                    @foreach($businesses as $business)
-                        <option value="{{$business->id}}">{{$business->name}}</option>
-                    @endforeach
-                </select>
-            </label>
+        <x-forms.error-validation-message/>
 
-            <label class="font-bold" for="name">{{__('Account name')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+        <div class="card bg-white shadow-sm rounded p-4 pb-2 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
-            <label class="font-bold" for="name">{{__('Account number')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+            <form class="form-group" action="{{route('banks.store')}}" method="POST">
+                @csrf
 
-            <label class="font-bold" for="name">{{__('Description')}}</label>
-            <textarea class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
-                      name="Name"></textarea>
+                <div class="form-group d-flex justify-content-between">
+                    <div class="w-75 mr-2">
+                        <label for="branch" class="font-bold">{{__('Business')}} <span class="text-danger">*</span></label>
+                        <select id="branch" name="branch" class="w-full rounded dark:bg-dark dark:text-white my-2 form-control" required>
+                            <option value="">{{__('Select')}}</option>
+                            @foreach($businesses as $business)
+                                <option value="{{$business->id}}">{{$business->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="w-100 ml-2">
+                        <label for="name" class="font-bold mb-2">{{__('Account name')}} <span class="text-danger">*</span></label>
+                        <input type="text" id="name" name="name" class="form-control form-main-input"
+                               placeholder="Perzona Capital" required
+                               value="{{old('name')}}">
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-between">
+                    <div class="w-50 mr-2">
+                        <label for="account_number" class="font-bold mb-2">{{__('Account number')}} <span class="text-danger">*</span></label>
+                        <input type="text" id="account_number" name="account_number" class="form-control form-main-input"
+                               placeholder="Enter business name" required
+                               value="{{old('account_number')}}">
+                    </div>
+                    <div class="w-50 ms-2">
+                        <label for="institutional_key" class="font-bold">{{__('Bank')}} <span class="text-danger">*</span></label>
+                        <select id="institutional_key" name="institutional_key" class="w-full rounded dark:bg-dark dark:text-white my-2 form-control">
+                            <option value="">{{__('Select')}}</option>
+                            @foreach($banks as $bank)
+                                <option value="{{$bank->institutional_key}}">{{$bank->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-between">
+                    <div class="w-100 mb-2">
+                        <label for="description" class="font-bold mb-2">{{__('Description')}} <span class="text-danger">*</span></label>
+                        <textarea type="text" id="description" name="description" class="form-control form-main-input"
+                                  placeholder="Enter business name" required
+                                  value="{{old('description')}}"></textarea>
+                    </div>
+                </div>
+                <div class="form-group d-flex justify-content-between">
+                    <div class="w-1/3 pe-2">
+                        <label for="information_number" class="font-bold mb-2">{{__('Information number')}} <span class="text-danger">*</span></label>
+                        <input id="information_number" name="information_number" class="w-100 form-control" type="text">
+                    </div>
+                    <div class="w-1/3 px-2">
+                        <label for="branch_number" class="font-bold mb-2">{{__('Branch number')}} <span class="text-danger">*</span></label>
+                        <input id="branch_number" class="w-100 form-control" type="text" value="{{old('branch_number')}}">
+                    </div>
+                    <div class="w-1/3 ps-2">
+                        <label for="account_clabe" class="font-bold mb-2">{{__('CLABE account')}} <span class="text-danger">*</span></label>
+                        <input id="account_clabe" name="account_clabe" class="w-100 form-control" type="text" value="{{old('account_clabe')}}">
+                    </div>
+                </div>
 
+                <button type="submit" class="btn btn-primary mt-2">{{__('Send')}}</button>
 
-            <label class="font-bold my-2" for="name">{{__('Bank')}}</label>
-            <label>
-                <select class="w-full rounded dark:bg-dark dark:text-white">
-                    <option value="">{{__('Select')}}</option>
-                    @foreach($banks as $bank)
-                        <option value="{{$bank->institutional_key}}">{{$bank->name}}</option>
-                    @endforeach
-                </select>
-            </label>
-
-            <label class="font-bold" for="name">{{__('Information number')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
-
-            <label class="font-bold" for="name">{{__('Branch number')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
-
-            <label class="font-bold" for="name">{{__('CLABE account')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
-
-            <div class="btn-top-holder my-3">
-                <a href="javascript: history.go(-1)" class="btn btn-dark">
-                    {{ __('Save') }}
-                </a>
-            </div>
+            </form>
 
         </div>
     </div>

@@ -49,7 +49,6 @@ class BankController extends Controller
             'name' => 'required|unique:banks|max:50',
             'account_number' => 'required|unique:banks|max:24',
             'branch' => 'required',
-            'business' => 'required',
             'description' => 'required|max:254',
             'information_number' => 'required|max:12',
             'branch_number' => 'required|max:12',

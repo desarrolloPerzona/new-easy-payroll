@@ -16,10 +16,10 @@ class CreateBanksTable extends Migration
         Schema::create('banks', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('institutional_key');
+            $table->string('institutional_key');
             $table->integer('branch');
             $table->string('account_number');
-            $table->integer('branch_number');
+            $table->string('branch_number');
             $table->string('account_clabe')->nullable();
             $table->string('information_number')->nullable();
             $table->mediumText('description')->nullable();

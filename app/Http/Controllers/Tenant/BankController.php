@@ -45,6 +45,17 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:banks|max:50',
+            'account_number' => 'required|unique:banks|max:24',
+            'branch' => 'required',
+            'business' => 'required',
+            'description' => 'required|max:254',
+            'information_number' => 'required|max:12',
+            'branch_number' => 'required|max:12',
+            'account_clabe' => 'required|unique:banks|max:18'
+        ]);
+
         $bank = new Bank;
 
         $bank->name = $request->get('name');

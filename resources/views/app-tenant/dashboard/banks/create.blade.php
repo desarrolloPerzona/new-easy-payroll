@@ -15,7 +15,7 @@
                         <label for="branch" class="font-bold">{{__('Business')}} <span
                                 class="text-danger">*</span></label>
                         <select id="branch" name="branch"
-                                class="w-full rounded dark:bg-dark dark:text-white my-2 form-control" required>
+                                class="w-full rounded dark:bg-dark dark:text-white my-2 form-control">
                             <option value="">{{__('Select')}}</option>
                             @foreach($businesses as $business)
                                 <option value="{{$business->id}}">{{$business->name}}</option>
@@ -26,7 +26,7 @@
                         <label for="name" class="font-bold mb-2">{{__('Account name')}} <span
                                 class="text-danger">*</span></label>
                         <input type="text" id="name" name="name" class="form-control form-main-input"
-                               placeholder="Perzona Capital" required
+                               placeholder="Perzona Capital"
                                value="{{old('name')}}">
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                                 class="text-danger">*</span></label>
                         <input type="number" id="account_number" name="account_number"
                                class="form-control form-main-input"
-                               placeholder="Enter business name" required
+                               placeholder="Enter business name"
                                value="{{old('account_number')}}">
                     </div>
                     <div class="w-50 ms-2">
@@ -55,7 +55,7 @@
                     <div class="w-100 mb-2">
                         <label for="description" class="font-bold mb-2">{{__('Description')}} <span class="text-danger">*</span></label>
                         <textarea type="text" id="description" name="description" class="form-control form-main-input"
-                                  placeholder="{{__('Enter a description')}}" required
+                                  placeholder="{{__('Enter a description')}}"
                                   value="{{old('description')}}" rows="3"></textarea>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                         <label for="information_number" class="font-bold mb-2">{{__('Information number')}} <span
                                 class="text-danger">*</span></label>
                         <input id="information_number" name="information_number" class="w-100 form-control"
-                               type="number" placeholder="009273">
+                               type="number" placeholder="009273" value="{{old('information_number')}}">
                     </div>
                     <div class="w-1/3 px-2">
                         <label for="branch_number" class="font-bold mb-2">{{__('Branch number')}} <span

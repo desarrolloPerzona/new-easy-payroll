@@ -3,7 +3,7 @@
 
         <x-utilities.section-header title="Bank accounts" classes="mb-3"/>
 
-        <div class="flex">
+        <div class="flex max-w-6xl mx-auto">
             <div class="btn-top-holder my-3 flex-1">
                 <a href="{{route('banks.create',1)}}" class="btn btn-dark">
                     <i class="fas fa-plus-circle"></i>

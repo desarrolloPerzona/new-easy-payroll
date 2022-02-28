@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
+use App\Models\Bank;
 use App\Models\Tenant\Business;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -44,7 +45,22 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bank = new Bank;
+
+        $bank->name = $request->get('name');
+        $bank->institutional_key = $request->get('institutional_key');
+        $bank->branch = $request->get('branch');
+        $bank->account_number = $request->get('account_number');
+        $bank->account_number = $request->get('account_number');
+        $bank->branch_number = $request->get('branch_number');
+        $bank->account_clabe = $request->get('account_clabe');
+        $bank->account_clabe = $request->get('account_clabe');
+        $bank->information_number = $request->get('information_number');
+        $bank->description = $request->get('description');
+
+        $bank->save();
+
+        return redirect()->route('banks.index')->with('message', 'create');
     }
 
     /**

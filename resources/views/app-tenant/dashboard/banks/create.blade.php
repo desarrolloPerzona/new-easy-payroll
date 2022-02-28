@@ -34,7 +34,7 @@
                     <div class="w-50 mr-2">
                         <label for="account_number" class="font-bold mb-2">{{__('Account number')}} <span
                                 class="text-danger">*</span></label>
-                        <input type="text" id="account_number" name="account_number"
+                        <input type="number" id="account_number" name="account_number"
                                class="form-control form-main-input"
                                placeholder="Enter business name" required
                                value="{{old('account_number')}}">

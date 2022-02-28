@@ -1,9 +1,9 @@
 <x-app-tenant>
     <div class="container">
 
-        <x-utilities.section-header title="Bank accounts" classes="mb-3"/>
-
         <x-forms.alert-message/>
+
+        <x-utilities.section-header title="Bank accounts" classes="mb-3"/>
 
         <div class="flex max-w-6xl mx-auto">
             <div class="btn-top-holder my-3 flex-1">

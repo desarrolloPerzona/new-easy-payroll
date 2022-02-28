@@ -16,35 +16,37 @@ class TenantBusinessBenefitSeeder extends Seeder
     public function run()
     {
         /**
-         * 1 year
+         * 1 to 2 year
          */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 1,
-                'antiquity_to' => 1,
+                'antiquity_to' => 2,
                 'bonus_days' => 15,
                 'vacation_days' => 6,
                 'vacation_prime' => .25,
-                'economical_days' => 0,
+                'year' => 2020,
                 'created_at' => now(),
             )
         );
+
         /**
-         * 2 year
+         * 2 to 3 year
          */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 2,
-                'antiquity_to' => 2,
+                'antiquity_to' => 3,
                 'bonus_days' => 15,
                 'vacation_days' => 8,
                 'vacation_prime' => .25,
-                'economical_days' => 0,
+                'year' => 2020,
                 'created_at' => now(),
             )
         );
+
         /**
-         * 3 year
+         * 3 to 4 year
          */
         DB::table('tenant_business_benefits')->insert(
             array(
@@ -53,24 +55,26 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'bonus_days' => 15,
                 'vacation_days' => 10,
                 'vacation_prime' => .25,
-                'economical_days' => 0,
+                'year' => 2020,
                 'created_at' => now(),
             )
         );
+
         /**
-         * 4 year
+         * 4  to 5 year
          */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 4,
                 'antiquity_to' => 4,
                 'bonus_days' => 15,
-                'vacation_days' => 14,
+                'vacation_days' => 12,
                 'vacation_prime' => .25,
-                'economical_days' => 0,
+                'year' => 2020,
                 'created_at' => now(),
             )
         );
+
         /**
          * 5 to 9 year
          */
@@ -81,10 +85,11 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'bonus_days' => 15,
                 'vacation_days' => 14,
                 'vacation_prime' => .25,
-                'economical_days' => 0,
+                'year' => 2020,
                 'created_at' => now(),
             )
         );
+
         /**
          * 10 to 14 year
          */
@@ -95,10 +100,11 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'bonus_days' => 15,
                 'vacation_days' => 16,
                 'vacation_prime' => .25,
-                'economical_days' => 0,
+                'year' => 2020,
                 'created_at' => now(),
             )
         );
+
         /**
          * 15 to 19 year
          */
@@ -109,10 +115,11 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'bonus_days' => 15,
                 'vacation_days' => 18,
                 'vacation_prime' => .25,
-                'economical_days' => 0,
+                'year' => 2020,
                 'created_at' => now(),
             )
         );
+
         /**
          * 20 to 24 year
          */
@@ -123,21 +130,22 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'bonus_days' => 15,
                 'vacation_days' => 20,
                 'vacation_prime' => .25,
-                'economical_days' => 0,
+                'year' => 2020,
                 'created_at' => now(),
             )
         );
+
         /**
          * 25 to 25 year
          */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 25,
-                'antiquity_to' => 25,
+                'antiquity_to' => null,
                 'bonus_days' => 15,
                 'vacation_days' => 22,
                 'vacation_prime' => .25,
-                'economical_days' => 0,
+                'year' => 2020,
                 'created_at' => now(),
             )
         );

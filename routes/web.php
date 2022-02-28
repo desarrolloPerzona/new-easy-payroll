@@ -9,6 +9,7 @@ use App\Http\Controllers\FiscalRegimeController;
 use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\TenantBusinessBenefitController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ZipCodeController;
@@ -56,6 +57,8 @@ Route::group(['middleware' =>  'web'], function () {
         route::resource('/users', UserController::class);
 
         route::resource('/tenants', TenantController::class);
+
+        route::resource('/tenant-business-benefits', TenantBusinessBenefitController::class);
 
 
     });

@@ -19,6 +19,7 @@ class CreateBanksTable extends Migration
             $table->integer('institutional_key');
             $table->integer('branch');
             $table->integer('account_number');
+            $table->integer('branch_number');
             $table->integer('account_clabe')->nullable();
             $table->integer('information_number')->nullable();
             $table->integer('description')->nullable();

@@ -16,11 +16,11 @@ class CreateTenantBusinessBenefitsTable extends Migration
         Schema::create('tenant_business_benefits', function (Blueprint $table) {
             $table->id();
             $table->integer('antiquity_from');
-            $table->integer('antiquity_to');
+            $table->integer('antiquity_to')->nullable();
             $table->integer('bonus_days');
             $table->integer('vacation_days');
             $table->decimal('vacation_prime');
-            $table->integer('economical_days');
+            $table->integer('year');
             $table->timestamps();
         });
     }

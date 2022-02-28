@@ -41,7 +41,6 @@
             </a>
             <ul class="nav-group-items">
                 <li class="nav-item">
-
                     <a class="nav-link" href="{{route('admin.banks.index')}}">
                         <i class="nav-icon fad fa-university mr-2"></i> {{__('Banks')}}
                     </a>
@@ -57,6 +56,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('admin.zipcodes.index')}} ">
                         <i class="nav-icon fad fa-map-marked-alt mr-2"></i> {{__('Zip codes')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('admin.tenant-business-benefits.index')}} ">
+                        <i class="nav-icon fad fa-map-marked-alt mr-2"></i> {{__('Tenant Business Benefits')}}</a>
                 </li>
             </ul>
         </li>

@@ -25,6 +25,10 @@
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
+
+            <livewire:tenant.banks.show-table/>
+
+
             <table class="table table-white">
                 <thead>
                 <tr class="colspan-2">

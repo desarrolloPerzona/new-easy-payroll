@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\TenantBusinessBenefit;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,6 +15,9 @@ class TenantBusinessBenefitSeeder extends Seeder
      */
     public function run()
     {
+        /**
+         * 1 year
+         */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 1,
@@ -25,7 +29,9 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'created_at' => now(),
             )
         );
-
+        /**
+         * 2 year
+         */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 2,
@@ -37,6 +43,9 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'created_at' => now(),
             )
         );
+        /**
+         * 3 year
+         */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 3,
@@ -48,6 +57,9 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'created_at' => now(),
             )
         );
+        /**
+         * 4 year
+         */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 4,
@@ -59,7 +71,9 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'created_at' => now(),
             )
         );
-
+        /**
+         * 5 to 9 year
+         */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 5,
@@ -71,7 +85,9 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'created_at' => now(),
             )
         );
-
+        /**
+         * 10 to 14 year
+         */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 10,
@@ -83,25 +99,43 @@ class TenantBusinessBenefitSeeder extends Seeder
                 'created_at' => now(),
             )
         );
-
+        /**
+         * 15 to 19 year
+         */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 15,
                 'antiquity_to' => 19,
                 'bonus_days' => 15,
-                'vacation_days' => 16,
+                'vacation_days' => 18,
                 'vacation_prime' => .25,
                 'economical_days' => 0,
                 'created_at' => now(),
             )
         );
-
+        /**
+         * 20 to 24 year
+         */
         DB::table('tenant_business_benefits')->insert(
             array(
                 'antiquity_from' => 15,
                 'antiquity_to' => 19,
-                'bonus_days' => 18,
-                'vacation_days' => 8,
+                'bonus_days' => 15,
+                'vacation_days' => 20,
+                'vacation_prime' => .25,
+                'economical_days' => 0,
+                'created_at' => now(),
+            )
+        );
+        /**
+         * 25 to 25 year
+         */
+        DB::table('tenant_business_benefits')->insert(
+            array(
+                'antiquity_from' => 25,
+                'antiquity_to' => 25,
+                'bonus_days' => 15,
+                'vacation_days' => 22,
                 'vacation_prime' => .25,
                 'economical_days' => 0,
                 'created_at' => now(),
@@ -109,4 +143,6 @@ class TenantBusinessBenefitSeeder extends Seeder
         );
 
     }
+
+
 }

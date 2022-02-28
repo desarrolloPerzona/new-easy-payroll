@@ -69,7 +69,7 @@
                     <div class="w-1/3 px-2">
                         <label for="branch_number" class="font-bold mb-2">{{__('Branch number')}} <span
                                 class="text-danger">*</span></label>
-                        <input id="branch_number" class="w-100 form-control" type="number"
+                        <input id="branch_number" name="branch_number" class="w-100 form-control" type="number"
                                value="{{old('branch_number')}}" placeholder="77384">
                     </div>
                     <div class="w-1/3 ps-2">

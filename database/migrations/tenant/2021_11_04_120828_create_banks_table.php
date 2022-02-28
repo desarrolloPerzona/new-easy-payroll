@@ -22,7 +22,7 @@ class CreateBanksTable extends Migration
             $table->integer('branch_number');
             $table->integer('account_clabe')->nullable();
             $table->integer('information_number')->nullable();
-            $table->integer('description')->nullable();
+            $table->mediumText('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

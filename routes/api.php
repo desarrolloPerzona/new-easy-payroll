@@ -37,7 +37,7 @@ Route::group(['api' => 'api'], function () {
     /**
      * BANKS
      */
-    Route::get('/bank-list', [GetBanksController::class, 'getBankList']);
+    Route::get('/bank-list', [GetBanksController::class, 'getBankList'])->name('bankList');
 
     /**
      * FISCAL REGIMES

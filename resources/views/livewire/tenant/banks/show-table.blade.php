@@ -37,7 +37,7 @@
                 <tbody>
                 <tr>
                     <td class="p-0 pb-1 col-6">Empresa:</td>
-                    <td class="p-0 pb-1 col-6">{{\App\Models\Tenant\Bank::where('id', $account->branch)->get('name')}}</td>
+                    <td class="p-0 pb-1 col-6">{{ $account->business->name }}</td>
                 </tr>
                 <tr>
                     <td class="p-0 pb-1 col-6">Número de cuenta:</td>

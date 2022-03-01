@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Bank extends Model
 {
     use HasFactory;
+
+    public function business(){
+        return $this->hasOne(Business::class, 'id', 'branch');
+    }
 }

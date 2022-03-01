@@ -13,12 +13,19 @@ class EditTable extends Component
     public $branch, $branch_id, $name, $account_number, $institutional_key, $description, $information_number, $branch_number, $account_clabe;
 
     protected $rules = [
-        'name' => 'required|min:6',
+        'branch_id' => 'required',
+        'name' => 'required|min:4',
+        'account_number' => 'required|max:24',
+        'institutional_key' => 'required',
+        'description' => 'required|max:40',
+        'information_number' => 'required|max:12',
+        'branch_number' => 'required|max:12',
+        'account_clabe' => 'required|max:18',
     ];
 
-    public function updated($name)
+    public function updated($propertyName)
     {
-        $this->validateOnly($name);
+        $this->validateOnly($propertyName);
     }
 
     public function mount($userId)

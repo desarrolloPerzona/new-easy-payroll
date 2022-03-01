@@ -13,7 +13,7 @@
         <div class="flex-1 my-3 text-right">
             <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
             <label>
-                <select class="w-full rounded dark:bg-dark dark:text-white" wire:model="message">
+                <select class="w-full rounded dark:bg-dark dark:text-white form-control" wire:model="message">
                     <option value="">{{__('All')}}</option>
                     @foreach($businesses as $business)
                         <option value="{{ $business->id }}">{{ $business->name }}</option>

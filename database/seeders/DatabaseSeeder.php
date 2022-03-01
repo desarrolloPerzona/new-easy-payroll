@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             IsrSubsidiesSeeder::class,
             IsnPayrollTaxesSeeder::class,
             OfficialFestiveDaySeeder::class,
-            TenantBusinessBenefitSeeder::class
+            ByLawBenefitSeeder::class
         ]);
 
     }

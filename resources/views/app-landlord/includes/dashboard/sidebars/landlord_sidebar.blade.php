@@ -58,8 +58,9 @@
                         <i class="nav-icon fad fa-map-marked-alt mr-2"></i> {{__('Zip codes')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('admin.tenant-business-benefits.index')}} ">
-                        <i class="nav-icon fad fa-map-marked-alt mr-2"></i> {{__('Tenant Business Benefits')}}</a>
+                    <a class="nav-link" href="{{route('admin.by-law-benefits.index')}} ">
+
+                        <i class="nav-icon fa-duotone fa-island-tropical mr-2"></i> {{__('By Law Benefits')}}</a>
                 </li>
             </ul>
         </li>

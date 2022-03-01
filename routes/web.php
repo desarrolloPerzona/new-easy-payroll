@@ -4,12 +4,12 @@ use App\Events\TenantHasSubscribe;
 use App\Http\Controllers\Admin\BankController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\BillingController;
+use App\Http\Controllers\ByLawBenefitController;
 use App\Http\Controllers\ClientDashboardController;
 use App\Http\Controllers\FiscalRegimeController;
 use App\Http\Controllers\IndustryController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
-use App\Http\Controllers\TenantBusinessBenefitController;
 use App\Http\Controllers\TenantController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ZipCodeController;
@@ -58,7 +58,7 @@ Route::group(['middleware' =>  'web'], function () {
 
         route::resource('/tenants', TenantController::class);
 
-        route::resource('/tenant-business-benefits', TenantBusinessBenefitController::class);
+        route::resource('/by-law-benefits', ByLawBenefitController::class);
 
 
     });

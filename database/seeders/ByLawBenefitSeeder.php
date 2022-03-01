@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\TenantBusinessBenefit;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class TenantBusinessBenefitSeeder extends Seeder
+class ByLawBenefitSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      *
@@ -18,7 +18,7 @@ class TenantBusinessBenefitSeeder extends Seeder
         /**
          * 1 to 2 year
          */
-        DB::table('tenant_business_benefits')->insert(
+        DB::table('by_law_benefits')->insert(
             array(
                 'antiquity_from' => 1,
                 'antiquity_to' => 2,
@@ -33,7 +33,7 @@ class TenantBusinessBenefitSeeder extends Seeder
         /**
          * 2 to 3 year
          */
-        DB::table('tenant_business_benefits')->insert(
+        DB::table('by_law_benefits')->insert(
             array(
                 'antiquity_from' => 2,
                 'antiquity_to' => 3,
@@ -48,7 +48,7 @@ class TenantBusinessBenefitSeeder extends Seeder
         /**
          * 3 to 4 year
          */
-        DB::table('tenant_business_benefits')->insert(
+        DB::table('by_law_benefits')->insert(
             array(
                 'antiquity_from' => 3,
                 'antiquity_to' => 3,
@@ -63,7 +63,7 @@ class TenantBusinessBenefitSeeder extends Seeder
         /**
          * 4  to 5 year
          */
-        DB::table('tenant_business_benefits')->insert(
+        DB::table('by_law_benefits')->insert(
             array(
                 'antiquity_from' => 4,
                 'antiquity_to' => 4,
@@ -78,7 +78,7 @@ class TenantBusinessBenefitSeeder extends Seeder
         /**
          * 5 to 9 year
          */
-        DB::table('tenant_business_benefits')->insert(
+        DB::table('by_law_benefits')->insert(
             array(
                 'antiquity_from' => 5,
                 'antiquity_to' => 9,
@@ -93,7 +93,7 @@ class TenantBusinessBenefitSeeder extends Seeder
         /**
          * 10 to 14 year
          */
-        DB::table('tenant_business_benefits')->insert(
+        DB::table('by_law_benefits')->insert(
             array(
                 'antiquity_from' => 10,
                 'antiquity_to' => 14,
@@ -108,7 +108,7 @@ class TenantBusinessBenefitSeeder extends Seeder
         /**
          * 15 to 19 year
          */
-        DB::table('tenant_business_benefits')->insert(
+        DB::table('by_law_benefits')->insert(
             array(
                 'antiquity_from' => 15,
                 'antiquity_to' => 19,
@@ -123,7 +123,7 @@ class TenantBusinessBenefitSeeder extends Seeder
         /**
          * 20 to 24 year
          */
-        DB::table('tenant_business_benefits')->insert(
+        DB::table('by_law_benefits')->insert(
             array(
                 'antiquity_from' => 15,
                 'antiquity_to' => 19,
@@ -138,7 +138,7 @@ class TenantBusinessBenefitSeeder extends Seeder
         /**
          * 25 to 25 year
          */
-        DB::table('tenant_business_benefits')->insert(
+        DB::table('by_law_benefits')->insert(
             array(
                 'antiquity_from' => 25,
                 'antiquity_to' => null,
@@ -151,6 +151,5 @@ class TenantBusinessBenefitSeeder extends Seeder
         );
 
     }
-
 
 }

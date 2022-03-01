@@ -14,7 +14,7 @@ class ModelIndexSearch extends Component
 
 
 // SET VARIABLES
-    public $sortColumn, $sortDirection = 'asc', $searchColumns, $modelName, $modelToView, $modelItems, $modelTitles, $validationFields, $modelToEdit, $erasable, $viewable, $editable;
+    public $sortColumn, $titleName, $sortDirection = 'asc', $searchColumns, $modelName, $modelToView, $modelItems, $modelTitles, $validationFields, $modelToEdit, $erasable, $viewable, $editable;
 
 // INITIALIZE VARIABLES
     /**
@@ -30,6 +30,7 @@ class ModelIndexSearch extends Component
         $this->searchColumns = $searchColumns;
         $this->sortColumn = $modelItems[0];
         $this->modelItemToEdit = collect();
+        $this->titleName = $this->splitCamelCase($modelName);
     }
 
 //
@@ -54,6 +55,9 @@ class ModelIndexSearch extends Component
         return $rules;
     }
 
+    public function splitCamelCase($str) {
+        return strtolower(implode(' ',preg_split('/(?<=\\w)(?=[A-Z])/', $str)));
+    }
 
     public function replaceStrToLowerCollect($collect)
     {
@@ -118,5 +122,7 @@ class ModelIndexSearch extends Component
             'model' => $models->paginate(15),
         ]);
     }
+
+
 
 }

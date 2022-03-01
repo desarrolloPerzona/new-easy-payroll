@@ -5,6 +5,4 @@
         <livewire:tenant.banks.edit-table :userId="$bankAccount"/>
 
     </div>
-
-
 </x-app-tenant>

@@ -1,5 +1,7 @@
 <div class="card bg-white shadow-sm rounded p-4 pb-2 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
 
+    <x-forms.alert-message/>
+
     <form class="form-group" wire:submit.prevent="update">
 
         <div class="form-group d-flex justify-content-between">
@@ -59,7 +61,8 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-2">{{__('Send')}}</button>
+        <button type="submit" class="btn btn-primary mt-3">{{__('Save')}}</button>
+        <a href="{{ route('banks.index') }}" class="btn btn-danger mt-3 ms-2 text-white">{{__('Go back')}}</a>
 
     </form>
 

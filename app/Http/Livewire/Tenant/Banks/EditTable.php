@@ -14,7 +14,7 @@ class EditTable extends Component
 
     protected $rules = [
         'branch_id' => 'required',
-        'name' => 'required|min:4',
+        'name' => 'required|min:4|max:50',
         'account_number' => 'required|max:24',
         'institutional_key' => 'required',
         'description' => 'required|max:40',
@@ -73,6 +73,6 @@ class EditTable extends Component
 
         $bankAccount->save();
 
-        return redirect()->route('banks.index')->with('message', 'edit');
+        session()->flash('message', 'edit');
     }
 }

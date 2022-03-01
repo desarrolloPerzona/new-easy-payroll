@@ -9,5 +9,4 @@
         <livewire:tenant.banks.show-table/>
 
     </div>
-
 </x-app-tenant>

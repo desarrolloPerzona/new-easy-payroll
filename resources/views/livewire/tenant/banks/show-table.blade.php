@@ -27,8 +27,8 @@
             <table class="table table-white">
                 <thead>
                 <tr class="colspan-2">
-                    <h2 class="mb-3">Cuenta BBVA 1256
-                        <a href="{{route('banks.edit',1)}}" class="text-gray-400 hover:text-gray-700">
+                    <h2 class="mb-3">Cuenta: {{ $account->name }}
+                        <a href="{{route('banks.edit', $account->id)}}" class="text-gray-400 hover:text-gray-700 ms-2">
                             <i class="fas fa-edit"></i>
                         </a>
                     </h2>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
-use App\Models\Bank;
+use App\Models\Tenant\Bank;
 use App\Models\Tenant\Business;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -92,7 +92,8 @@ class BankController extends Controller
      */
     public function edit($id)
     {
-        return view('app-tenant.dashboard.banks.edit');
+        $bankAccount = Bank::where('id', $id)->firstOrFail();
+        return view('app-tenant.dashboard.banks.edit', compact('bankAccount'));
     }
 
     /**

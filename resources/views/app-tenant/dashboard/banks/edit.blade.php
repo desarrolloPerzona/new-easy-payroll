@@ -1,95 +1,9 @@
 <x-app-tenant>
     <div class="container mx-auto">
-        <h2 class="bg-blueSteel py-2 px-3 mb-4 rounded">
-            <i class="fak fa-empresa-perzona mr-2"></i>
-            <span style="display: inline-flex;">{{ __('Edit bank accounts') }}</span>
-        </h2>
 
-<div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
-    <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
-    <label>
-        <select class="w-full rounded dark:bg-dark dark:text-white my-2">
-            <option value="001">Perzona</option>
-            <option value="001">DSSD</option>
-        </select>
-    </label>
+        <x-utilities.section-header title="Edit bank accounts" classes="mb-3"/>
+        <livewire:tenant.banks.edit-table :userId="$bankAccount"/>
 
-            <label class="font-bold" for="name">{{__('Account name')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name"
-                   placeholder="Cuenta BBVA 1256">
-
-            <label class="font-bold" for="name">{{__('Account number')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="2361256">
-
-            <label class="font-bold" for="name">{{__('Description')}}</label>
-            <textarea class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="BBVA 01"></textarea>
-
-            <label class="font-bold my-2" for="name">{{__('Bank')}}</label>
-            <label>
-                <select class="w-full rounded dark:bg-dark dark:text-white">
-                    <option value="40138">ABC CAPITAL</option>
-                    <option value="40102">ACENDO BANK</option>
-                    <option value="40133">ACTINVER</option>
-                    <option value="40062">AFIRME</option>
-                    <option value="40062">AKALA</option>
-                    <option value="40062">AMERICAN EXPRESS</option>
-                    <option value="40062">ASP INTEGRA OPC</option>
-                    <option value="40062">AZTECA</option>
-                    <option value="40062">BAJIO</option>
-                    <option value="40062">BANAMEX</option>
-                    <option value="40062">BANCO FINTERRA</option>
-                    <option value="40062">BANCO BANCOMEXT</option>
-                    <option value="40062">BANCOPPEL</option>
-                    <option value="40062">BANCO S3</option>
-                    <option value="40062">BANCREA</option>
-                    <option value="40062">BANJERCITO</option>
-                    <option value="40062">BANKAOOL</option>
-                    <option value="40062">BANKS OF AMERICA</option>
-                    <option value="40062">BANOBRAS</option>
-                    <option value="40062">BANORTE</option>
-                    <option value="40062">BANREGIO</option>
-                    <option value="40062">BANSEFI</option>
-                    <option value="40062">BANSI</option>
-                    <option value="40062">BANXICO</option>
-                    <option value="40062">BARCLAYS</option>
-                    <option value="40062">BBASE</option>
-                    <option value="40062">BBVA BANCOMER</option>
-                    <option value="40062">BMONEX</option>
-                    <option value="40062">CAJA POP MEXICA</option>
-                    <option value="40062">CAJA TELEFONIST</option>
-                    <option value="40062">CB INTERCAM</option>
-                    <option value="40062">CIBANCO</option>
-                    <option value="40062">CI BOLSA</option>
-                    <option value="40062">CLS</option>
-                    <option value="40062">CoDI VALIDA</option>
-                    <option value="40062">COMPARTAMOS</option>
-                    <option value="40062">CONSUBANCO</option>
-                    <option value="40062">CREDICAPITAL</option>
-                    <option value="40062">CREDIT SUISSE</option>
-                    <option value="40062">CRISTOBAL COLON</option>
-                    <option value="40062">DEUTSCHE</option>
-                    <option value="40062">DONDE</option>
-                    <option value="40062">ESTRUCTURADORES</option>
-                    <option value="40062">FINAMEX</option>
-                </select>
-            </label>
-
-            <label class="font-bold" for="name">{{__('Information number')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="-">
-
-            <label class="font-bold" for="name">{{__('Branch number')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="2369">
-
-            <label class="font-bold" for="name">{{__('CLABE account')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name" placeholder="4523698531256">
-
-            <div class="btn-top-holder my-3 flow-root">
-                <a href="javascript: history.go(-1)" class="btn btn-dark float-right">
-                    {{ __('Save') }}
-                </a>
-            </div>
-
-        </div>
     </div>
 
 

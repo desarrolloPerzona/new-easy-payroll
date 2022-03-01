@@ -56,7 +56,7 @@
                         <label for="description" class="font-bold mb-2">{{__('Description')}} <span class="text-danger">*</span></label>
                         <textarea type="text" id="description" name="description" class="form-control form-main-input"
                                   placeholder="{{__('Enter a description')}}"
-                                  value="{{old('description')}}" rows="3"></textarea>
+                                  value="{{old('description')}}" rows="1"></textarea>
                     </div>
                 </div>
                 <div class="form-group d-flex justify-content-between">

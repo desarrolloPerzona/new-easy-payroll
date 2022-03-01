@@ -49,7 +49,12 @@
                 </tr>
                 <tr>
                     <td class="p-0 pb-1 col-6">Banco:</td>
-                    <td class="p-0 pb-1 col-6">BBVA</td>
+                    @foreach($banksList as $bank)
+                        @if($bank->institutional_key == $account->institutional_key)
+                            <td class="p-0 pb-1 col-6">{{ $bank->name }}</td>
+                        @endif
+                    @endforeach
+
                 </tr>
                 <tr>
                     <td class="p-0 pb-1 col-6">Número de información:</td>

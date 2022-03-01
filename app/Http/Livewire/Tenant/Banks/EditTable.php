@@ -12,6 +12,15 @@ class EditTable extends Component
     //    Variables from our form
     public $branch, $branch_id, $name, $account_number, $institutional_key, $description, $information_number, $branch_number, $account_clabe;
 
+    protected $rules = [
+        'name' => 'required|min:6',
+    ];
+
+    public function updated($name)
+    {
+        $this->validateOnly($name);
+    }
+
     public function mount($userId)
     {
         $this->accountBank = Bank::find($userId);
@@ -42,16 +51,18 @@ class EditTable extends Component
 
     public function update()
     {
+        $this->validate();
+
         $bankAccount = Bank::find($this->userId);
 
         $bankAccount->name = $this->name;
+        $bankAccount->institutional_key = $this->institutional_key;
         $bankAccount->branch = $this->branch_id;
         $bankAccount->account_number = $this->account_number;
-        $bankAccount->institutional_key = $this->institutional_key;
-        $bankAccount->description = $this->description;
-        $bankAccount->information_number = $this->information_number;
         $bankAccount->branch_number = $this->branch_number;
         $bankAccount->account_clabe = $this->account_clabe;
+        $bankAccount->information_number = $this->information_number;
+        $bankAccount->description = $this->description;
 
         $bankAccount->save();
 

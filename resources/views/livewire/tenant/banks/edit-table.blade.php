@@ -13,14 +13,15 @@
                         <option value="{{$business->id}}" }}>{{$business->name}}</option>
                     @endforeach
                 </select>
-                @error('name') <span class="error">{{ $message }}</span> @enderror
             </div>
             <div class="w-100 ml-2">
                 <label for="name" class="font-bold mb-2">{{__('Account name')}} <span
                         class="text-danger">*</span></label>
                 <input type="text" id="name" name="name" class="form-control form-main-input"
-                       wire:model.defer="name">
+                       wire:model="name">
+                @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
+
         </div>
         <div class="form-group d-flex justify-content-between">
             <div class="w-50 mr-2">

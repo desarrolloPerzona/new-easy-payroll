@@ -7,7 +7,7 @@
     <div class="card">
         {{-- PAGE HEADER--}}
         <div class="card-header">
-            <h2 class="uppercase text-sm text-dark text-2xl"><i class="fal fa-table"></i> {{__($modelName)}}</h2>
+            <h2 class="uppercase text-sm text-dark text-2xl"><i class="fal fa-table"></i> {{__($titleName)}}</h2>
         </div>
         <div class="card-body">
             {{-- CREATE NEW ITEM --}}
@@ -16,7 +16,7 @@
                     <div class="accordion-item">
                         <div class="accordion-header  " id="headingTwo">
                             <button class="accordion-button collapsed bg-dark dark:bg-light  text-white dark:text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <span class="uppercase "><i class="fas fa-plus-circle"></i> {{__('New').' '.__($modelName)}}</span>
+                                <span class="uppercase "><i class="fas fa-plus-circle"></i> {{__('New').' '.__($titleName)}}</span>
                             </button>
                         </div>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
@@ -82,9 +82,7 @@
                         @endif
                         @if($erasable)
                             <td class="align-middle w-10">
-                                <button class="px-2 py-1 rounded text-white bg-red-400 hover:bg-red-600"
-                                        wire:click.prevent="destroy({{ $item->id}},'{{$item->first()}}')"
-                                        onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"><i class="fas fa-trash"></i></button>
+                                <button class="px-2 py-1 rounded text-white bg-red-400 hover:bg-red-600" wire:click.prevent="destroy({{ $item->id}},'{{$item->first()}}')" onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"><i class="fas fa-trash"></i></button>
                             </td>
                         @endif
                 </tr>

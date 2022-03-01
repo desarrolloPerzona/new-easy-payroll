@@ -6,8 +6,7 @@
 <link rel="stylesheet" href="{{asset('vendor/tippy/tippy.js/themes/material.css')}}">
 <link rel="stylesheet" href="{{asset('vendor/tippy/tippy.js/animations/scale.css')}}">
 {{--FONTAWESOME--}}
-{{--<link rel="stylesheet" href="{{asset('vendor/fontawesome/css/all.css')}}">--}}
-<script src="https://kit.fontawesome.com/1d35ce8399.js" crossorigin="anonymous"></script>
+
 {{--ANIMATE CSS--}}
 <link rel="stylesheet" href="{{asset('vendor/animate/animate.css')}}">
 {{--SELECT2--}}

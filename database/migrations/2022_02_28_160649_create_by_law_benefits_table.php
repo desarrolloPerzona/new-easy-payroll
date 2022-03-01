@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTenantBusinessBenefitsTable extends Migration
+class CreateByLawBenefitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTenantBusinessBenefitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tenant_business_benefits', function (Blueprint $table) {
+        Schema::create('by_law_benefits', function (Blueprint $table) {
             $table->id();
             $table->integer('antiquity_from');
             $table->integer('antiquity_to')->nullable();
@@ -32,6 +32,6 @@ class CreateTenantBusinessBenefitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tenant_business_benefits');
+        Schema::dropIfExists('by_law_benefits');
     }
 }

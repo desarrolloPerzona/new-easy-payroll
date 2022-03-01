@@ -27,4 +27,11 @@ class ShowTable extends Component
 
         return view('livewire.tenant.banks.show-table', compact('businesses', 'bankAccounts', 'banksList'));
     }
+
+    public function deleteRecord($bankAccount){
+        $bankRecord = Bank::find($bankAccount);
+        $bankRecord->delete();
+        session()->flash('message', 'delete');
+    }
+
 }

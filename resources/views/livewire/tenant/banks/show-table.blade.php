@@ -1,5 +1,7 @@
 <div>
 
+    <x-forms.alert-message/>
+
     {{--Header section--}}
     <div class="flex max-w-6xl mx-auto">
         <div class="btn-top-holder my-3 flex-1">
@@ -27,12 +29,21 @@
             <table class="table table-white">
                 <thead>
                 <tr class="colspan-2">
-                    <h2 class="mb-3">Cuenta: {{ $account->name }}
-                        <a href="{{route('banks.edit', $account->id)}}" class="text-gray-400 hover:text-gray-700 ms-2">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                    </h2>
+                    <div class="d-flex justify-between">
+                        <h2 class="mb-3">Cuenta: {{ $account->name }}
+                            <a href="{{route('banks.edit', $account->id)}}" class="text-gray-400 hover:text-gray-700 ms-2">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </h2>
+                        <div>
+                            <a href="#" onclick="return confirm('¿Estás seguro de eliminar este registro?')" wire:click="deleteRecord({{$account->id}})">
+                                <i class="fas fa-trash-alt text-gray-400 cursor-pointer hover:text-red-500"></i>
+                            </a>
+                        </div>
+                    </div>
+
                 </tr>
+
                 </thead>
                 <tbody>
                 <tr>

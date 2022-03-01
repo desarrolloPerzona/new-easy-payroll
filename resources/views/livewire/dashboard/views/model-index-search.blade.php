@@ -43,12 +43,12 @@
                 {{-- SEARCH AND ORDER--}}
                 <tr class="bg-gray-600 dark:bg-dark rounded">
                     <p class="uppercase text-sm dark:text-white my-2 p-4">{{__('Search and order column')}}</p>
-                    @foreach($modelTitles as $title)
+                    @foreach($searchColumns as $key => $title)
                         <th class="text-xs bg-red-500" colspan="1">
                             {{--SORT--}}
-                            <div wire:click="sortByColumn('{{str_replace(' ','_',strtolower($title))}}')" class="text-white">
-                                <span class="uppercase">{{__($title)}}</span>
-                                @if ($sortColumn == str_replace(' ','_',strtolower($title)))
+                            <div wire:click="sortByColumn('{{str_replace(' ','_',strtolower($key))}}')" class="text-white">
+                                <span class="uppercase">{{__($key)}}</span>
+                                @if ($sortColumn == str_replace(' ','_',strtolower($key)))
                                     <i class="fa fa-fw fa-sort-{{ $sortDirection == 'asc' ? 'up':'down' }} cursor-pointer"></i>
                                 @else
                                     <i class="fa fa-fw fa-sort cursor-pointer" style="color:#DCDCDC"></i>
@@ -56,7 +56,7 @@
                             </div>
                             {{--SEARCH--}}
                             <div class="form">
-                                <input id="search-item-{{$loop->iteration}}" class="form-control w-30 my-4" type="text" placeholder="{{__('Search').' '. __($title)}}" wire:model="searchColumns.{{str_replace(' ','_',strtolower($title))}}">
+                                <input id="search-item-{{$loop->iteration}}" class="form-control w-30 my-4" type="text" placeholder="{{__('Search').' '. __($key)}}" wire:model="searchColumns.{{str_replace(' ','_',strtolower($key))}}">
                             </div>
                         </th>
 

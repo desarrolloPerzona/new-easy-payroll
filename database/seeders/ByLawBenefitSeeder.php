@@ -125,8 +125,8 @@ class ByLawBenefitSeeder extends Seeder
          */
         DB::table('by_law_benefits')->insert(
             array(
-                'antiquity_from' => 15,
-                'antiquity_to' => 19,
+                'antiquity_from' => 20,
+                'antiquity_to' => 24,
                 'bonus_days' => 15,
                 'vacation_days' => 20,
                 'vacation_prime' => .25,

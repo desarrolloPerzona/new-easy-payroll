@@ -1,5 +1,5 @@
 <x-app-landlord>
-    @section('title') {{__('Tenant Business Benefits')}}@endsection
+    @section('title') {{__('By Law Benefits')}} @endsection
     <livewire:dashboard.views.model-index-search
         :modelName="'ByLawBenefit'"
         :modelItems="['antiquity_from','antiquity_to','bonus_days','vacation_days','vacation_prime','year']"

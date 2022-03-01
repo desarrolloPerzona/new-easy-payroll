@@ -14,7 +14,21 @@ class ModelIndexSearch extends Component
 
 
 // SET VARIABLES
-    public $sortColumn, $titleName, $sortDirection = 'asc', $searchColumns, $modelName, $modelToView, $modelItems, $modelTitles, $validationFields, $modelToEdit, $erasable, $viewable, $editable;
+    public
+        $modelName,
+        $titleName,
+        $searchColumns,
+        $searchableItems,
+        $sortColumn,
+        $modelTitles,
+        $sortDirection = 'asc',
+        $modelToView,
+        $modelItems,
+        $validationFields,
+        $modelToEdit,
+        $erasable,
+        $viewable,
+        $editable;
 
 // INITIALIZE VARIABLES
     /**
@@ -27,6 +41,9 @@ class ModelIndexSearch extends Component
         $this->modelToView = "App\Models\\" . $modelName;
         $this->modelItems = collect($modelItems);
         $this->modelTitles = $this->replaceStrToLowerCollect($this->modelItems);
+        $this->searchableItems = collect($searchColumns);
+       // dd($this->modelTitles);
+        //dd($this->searchableItems);
         $this->searchColumns = $searchColumns;
         $this->sortColumn = $modelItems[0];
         $this->modelItemToEdit = collect();
@@ -55,8 +72,9 @@ class ModelIndexSearch extends Component
         return $rules;
     }
 
-    public function splitCamelCase($str) {
-        return strtolower(implode(' ',preg_split('/(?<=\\w)(?=[A-Z])/', $str)));
+    public function splitCamelCase($str)
+    {
+        return strtolower(implode(' ', preg_split('/(?<=\\w)(?=[A-Z])/', $str)));
     }
 
     public function replaceStrToLowerCollect($collect)
@@ -122,7 +140,6 @@ class ModelIndexSearch extends Component
             'model' => $models->paginate(15),
         ]);
     }
-
 
 
 }

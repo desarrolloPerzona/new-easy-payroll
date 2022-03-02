@@ -73,6 +73,8 @@ class EditTable extends Component
 
         $bankAccount->save();
 
-        $this->emit('alert', 'Registro actualizado exitosamente!');
+        session()->flash('message', 'edit');
+
+        return redirect()->route('banks.index');
     }
 }

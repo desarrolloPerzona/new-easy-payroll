@@ -36,7 +36,7 @@
                             </a>
                         </h2>
                         <div>
-                            <a href="#" onclick="return confirm('¿Estás seguro de eliminar este registro?')" wire:click="deleteRecord({{$account->id}})">
+                            <a href="#" wire:click="$emit('deleteMessage', {{$account->id}})">
                                 <i class="fas fa-trash-alt text-gray-400 cursor-pointer hover:text-red-500"></i>
                             </a>
                         </div>

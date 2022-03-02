@@ -31,6 +31,8 @@
     @include('app-tenant.includes.dashboard.footers.tenant_footer')
 </div>
 
+{{--Sweet alert--}}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 {{--STACKS SCRIPTS & LIVEWIRE--}}
 @livewireScripts
 @include('app-tenant.includes.common.scripts.vendor-scripts')
@@ -38,6 +40,51 @@
 <script src="{{asset('vendor/@coreui/coreui-pro/js/coreui.bundle.min.js')}}"></script>
 <script src="{{asset('vendor/simplebar/js/simplebar.min.js')}}"></script>
 <script src="/js/main.js"></script>
+
+{{--Sweet Alert script--}}
+<script>
+
+    // Success message
+    Livewire.on('alert', function(message){
+
+        Livewire.emit('alert')
+
+        Swal.fire(
+            'Excelente!',
+            message,
+            'success'
+        )
+    });
+
+    // Delete message
+    Livewire.on('deleteMessage', recordId => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "No podrás revertir esta acción!",
+            icon: 'warning',
+            showCancelButton: true,
+            cancelButtonText: "Cancelar",
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                //Emit the delete event to catch it in our component
+                Livewire.emit('delete', recordId);
+
+                Swal.fire(
+                    'Eliminado!',
+                    'El registro ha sido eliminado.',
+                    'success'
+                )
+            }
+        })
+    })
+
+</script>
+
+{{--Delete message--}}
+
 {{--DARK MODE SCRIPT--}}
 <script>
     document.addEventListener("DOMContentLoaded", function (event) {

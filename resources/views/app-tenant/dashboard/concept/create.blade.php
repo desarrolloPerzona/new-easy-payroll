@@ -2,11 +2,11 @@
     <div class="container">
         <h2 class="bg-blueSteel py-2 px-3 mb-4 rounded">
             <i class="fak fa-admin-perzona mr-2"></i>
-            <span style="display: inline-flex;">{{ __('Create concept') }}</span>
+            <span style="display: inline-flex;">{{ __('Create perception') }}</span>
         </h2>
 
 <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
-    <label class="font-bold" for="name">{{__('Concept name')}}</label>
+    <label class="font-bold" for="name">{{__('Perception name')}}</label>
     <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
            type="text" id="name" name="Name">
 
@@ -140,21 +140,16 @@
             </div>
         </div>
     </div>
-    <div class="flex-1 text-left py-2"><label class="font-bold"
+<div class="flex-1 text-left py-2"><label class="font-bold"
                                               for="name">{{__('Accounting account')}}</label>
     </div>
-    <label>
-        <select class="w-full rounded dark:bg-dark dark:text-white">
-            <option value="001">Cuenta BBVA 1256</option>
-            <option value="002">Cuenta BBVA 6987</option>
-            <option value="002">Cuenta Santander 4585</option>
-
-        </select>
+    <input class="w-full text-gray-800 rounded my-2 dark:bg-dark dark:text-white"
+           type="text" id="name" name="Name">
     </label>
 
 
-    <div class="btn-top-holder my-3">
-        <a href="javascript: history.go(-1)" class="btn btn-dark">
+    <div class="btn-top-holder my-3 flow-root">
+        <a href="javascript: history.go(-1)" class="btn btn-dark float-right cursor-pointer">
             {{ __('Save') }}
         </a>
     </div>

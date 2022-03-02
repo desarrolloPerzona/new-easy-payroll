@@ -16,17 +16,20 @@
                 {{--            Employee Tabs buttons--}}
                 <ul class="nav nav-tabs w-full mb-2" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active tab-retention cursor-pointer bg-primary text-white"
+                       <a class="nav-link active tab-retention cursor-pointer bg-primary text-white"
                            id="personal-button"
                            x-on:click="changeTab('personal')">
                             <i class="now-ui-icons objects_umbrella-13"></i> Información personal
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link tab-retention cursor-pointer" id="employee-button"
-                           x-on:click="changeTab('employee')">
-                            <i class="now-ui-icons shopping_cart-simple"></i> Información empleado
-                        </a>
+                        <!--   <a class="nav-link tab-retention cursor-pointer" id="employee-button"
+                            x-on:click="changeTab('employee')">
+                             <i class="now-ui-icons shopping_cart-simple"></i> Información empleado
+                         </a>-->
+                        <a class="nav-link tab-retention cursor-pointer" id="employee-button">
+                            <i class="now-ui-icons shopping_cart-simple"></i> Información empleado</a>
+
                     </li>
 
                 </ul>
@@ -387,12 +390,12 @@
                             <div class="w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Correo electrónico personal</label>
                                 <input type="text" class="w-full rounded dark:bg-dark dark:text-white"
-                                       placeholder="CURP">
+                                       placeholder="correo electronico">
                             </div>
                             <div class="w-1/2">
                                 <label class="mb-2 font-bold">Correo electrónico corporativo</label>
                                 <input type="text" class="w-full rounded dark:bg-dark dark:text-white"
-                                       placeholder="RFC">
+                                       placeholder="correo electronico">
                             </div>
                         </div>
 
@@ -407,7 +410,7 @@
                         <div class="flex my-2">
                             <div class="my-2 flex-1 w-1/3 mr-2">
                                 <label class="mb-2 font-bold">Nacionalidad</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <select name="nacionalidad" id="nacionalidad" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="argentina">Argentina</option>
                                     <option value="">Afganistán</option>
@@ -619,7 +622,7 @@
                             </div>
                             <div class="my-2 flex-1 w-1/3 mr-2">
                                 <label class="mb-2 font-bold">Estado civil</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <select name="estadocivil" id="estadocivil" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Soltero</option>
                                     <option value="">Casado</option>
                                     <option value="">Divorciado</option>
@@ -633,7 +636,7 @@
                         <div class="my-2">
                             <label class="mb-2 font-bold">Dirección</label>
                             <div>
-                                <textarea name="textarea" rows="5" class="w-full">Dirección</textarea>
+                                <textarea name="textarea" rows="5" class="w-full rounded dark:bg-dark dark:text-white">Dirección</textarea>
                             </div>
                         </div>
 
@@ -703,8 +706,17 @@
                         </h2>
                         <div class="my-2 flex">
                             <div class="my-2 flex-1 w-1/2 mr-2">
+                                <label class="mb-2 font-bold">Sede</label>
+                                <select name="sede" id="sede" class="w-full rounded dark:bg-dark dark:text-white">
+                                    <option value="">CDMX</option>
+                                    <option value="">GDL</option>
+                                    <option value="">MTY</option>
+                                </select>
+                            </div>
+
+                            <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Área</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <select name="area" id="area" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Dirección</option>
                                     <option value="">Ventas</option>
@@ -715,85 +727,26 @@
                                 </select>
                             </div>
 
+
+                        </div>
+
+
+
+                        <div class="my-2 flex">
                             <div class="my-2 flex-1 w-1/2 mr-2">
-                                <label class="mb-2 font-bold">Puesto</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <label class="mb-2 font-bold">Puesto de trabajo</label>
+                                <select name="puesto" id="puesto" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Director</option>
                                     <option value="argentina">Gerente</option>
                                     <option value="">Supervisor</option>
                                 </select>
                             </div>
-                        </div>
 
-                        <div class="my-2 flex">
-                            <div class="my-2 flex-1 w-1/2 mr-2">
-                                <label class="mb-2 font-bold">Reporta a</label>
-                                <select name="cars" id="cars" class="w-full rounded">
-                                    <option value="">Seleccione</option>
-                                    <option value="">Juan Perez</option>
-                                    <option value="">Oscar Fernandez</option>
-                                    <option value="">Luis Ortiz</option>
-                                    <option value="">Hector Ponce</option>
-                                    <option value="">Fernando Augusto</option>
-                                    <option value="">Alex Vaught</option>
-                                </select>
-                            </div>
-
-                            <div class="my-2 flex-1 w-1/2 mr-2">
-                                <label class="mb-2 font-bold">Sede</label>
-                                <select name="cars" id="cars" class="w-full rounded">
-                                    <option value="">Seleccione</option>
-                                    <option value="">CDMX</option>
-                                    <option value="">GSL</option>
-                                    <option value="">MTY</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="my-2 flex">
-                            <div class="my-2 flex-1 w-1/2 mr-2">
-                                <label class="mb-2 font-bold">Estado de la Republica</label>
-                                <select name="cars" id="cars" class="w-full rounded">
-                                    <option value="no">Seleccione</option>
-                                    <option value="Aguascalientes">Aguascalientes</option>
-                                    <option value="Baja California">Baja California</option>
-                                    <option value="Baja California Sur">Baja California Sur</option>
-                                    <option value="Campeche">Campeche</option>
-                                    <option value="Chiapas">Chiapas</option>
-                                    <option value="Chihuahua">Chihuahua</option>
-                                    <option value="CDMX">Ciudad de México</option>
-                                    <option value="Coahuila">Coahuila</option>
-                                    <option value="Colima">Colima</option>
-                                    <option value="Durango">Durango</option>
-                                    <option value="Estado de México">Estado de México</option>
-                                    <option value="Guanajuato">Guanajuato</option>
-                                    <option value="Guerrero">Guerrero</option>
-                                    <option value="Hidalgo">Hidalgo</option>
-                                    <option value="Jalisco">Jalisco</option>
-                                    <option value="Michoacán">Michoacán</option>
-                                    <option value="Morelos">Morelos</option>
-                                    <option value="Nayarit">Nayarit</option>
-                                    <option value="Nuevo León">Nuevo León</option>
-                                    <option value="Oaxaca">Oaxaca</option>
-                                    <option value="Puebla">Puebla</option>
-                                    <option value="Querétaro">Querétaro</option>
-                                    <option value="Quintana Roo">Quintana Roo</option>
-                                    <option value="San Luis Potosí">San Luis Potosí</option>
-                                    <option value="Sinaloa">Sinaloa</option>
-                                    <option value="Sonora">Sonora</option>
-                                    <option value="Tabasco">Tabasco</option>
-                                    <option value="Tamaulipas">Tamaulipas</option>
-                                    <option value="Tlaxcala">Tlaxcala</option>
-                                    <option value="Veracruz">Veracruz</option>
-                                    <option value="Yucatán">Yucatán</option>
-                                    <option value="Zacatecas">Zacatecas</option>
-                                </select>
-                            </div>
 
                             <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Politicas</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <select name="politica" id="politica" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Política 1</option>
                                     <option value="">Política 1</option>
@@ -1112,7 +1065,7 @@
 
                             <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Tipo de contrato</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <select name="tipocontrato" id="tipocontrato" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Tiempo indeterminado</option>
                                     <option value="">Sujeto a prueba</option>
@@ -1415,7 +1368,7 @@
 
                             <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Tipo de empleado</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <select name="tipoempleado" id="tipoempleado" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Sueldo fijo</option>
                                     <option value="">Sueldo variable</option>
@@ -1427,7 +1380,7 @@
                         <div class="my-2 flex">
                             <div class="my-2 flex-1 w-1/2 mr-2">
                             <label class="mb-2 font-bold">Jornada</label>
-                            <select name="cars" id="cars" class="w-full rounded">
+                            <select name="joranda" id="joranda" class="w-full rounded dark:bg-dark dark:text-white">
                                 <option value="">Seleccione</option>
                                 <option value="">Matutina</option>
                                 <option value="">Vespertina</option>
@@ -1437,7 +1390,7 @@
                         </div>
                             <div class="my-2 flex-1 w-1/2">
                                 <label class="mb-2 font-bold">Área geográfica</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <select name="areageografica" id="areageografica" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Área general</option>
                                     <option value="">Área frontera</option>
@@ -1452,12 +1405,12 @@
                     </div>
 
                     <div class="card p-4 mb-2">
-                        <h2 class="mb-2">Compensación</i>
+                        <h2 class="mb-2">Compensación
                         </h2>
                         <div class="my-2 flex">
                             <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Grupo de nómina</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <select name="gruponomina" id="gruponomina" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Grupo 1 (Semanal)</option>
                                     <option value="">Grupo 2 (Quincenal)</option>
@@ -1467,7 +1420,7 @@
 
                             <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Tipo de compensacion</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <select name="compensacion" id="compensacion" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Directas</option>
                                     <option value="">Indirectas</option>
@@ -1481,8 +1434,9 @@
                                 <input type="text" class="w-full rounded dark:bg-dark dark:text-white">
                             </div>
                             <div class="my-2 flex-1 w-1/2 mr-2">
+
                                 <label class="mb-2 font-bold">Tabla de beneficios</label>
-                                <select name="cars" id="cars" class="w-full rounded">
+                                <select name="tablabeneficios" id="tablabeneficios" class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Directivos</option>
                                     <option value="">Gerentes</option>
@@ -1490,16 +1444,44 @@
                                 </select>
                             </div>
                         </div>
+
                         <div class="my-2 w-full mr-2">
                             <label class="mb-2 font-bold">Metodo de pago</label>
-                            <select name="cars" id="cars" class="w-full rounded">
+                            <select name="metodopago" id="metodopago" class="w-full rounded dark:bg-dark dark:text-white">
                                 <option value="">Seleccione</option>
-                                <option value="">Deposito bancario</option>
+                                <option selected value="">Deposito bancario</option>
                                 <option value="">Pago por cheque</option>
                                 <option value="">Pago en efectivo</option>
                             </select>
                         </div>
+                        <div class="card p-2 my-2 bg-gray-200">
+                            <h2 class="mb-2">Datos bancarios
+                            </h2>
+                        <label class="font-bold" for="name">{{__('Account name')}}</label>
+                        <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
 
+                        <label class="font-bold" for="name">{{__('Account number')}}</label>
+                        <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+
+
+
+                        <label class="font-bold my-2" for="name">{{__('Bank')}}</label>
+                        <label>
+                            <select class="w-full rounded dark:bg-dark dark:text-white">
+                                <option value="">{{__('Select')}}</option>
+
+                            </select>
+                        </label>
+
+                        <label class="font-bold" for="name">{{__('Information number')}}</label>
+                        <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+
+                        <label class="font-bold" for="name">{{__('Branch number')}}</label>
+                        <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+
+                        <label class="font-bold" for="name">{{__('CLABE account')}}</label>
+                        <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+                    </div>
                     </div>
 
                     <div class="btn-top-holder my-3 flow-root">

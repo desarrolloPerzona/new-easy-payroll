@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{asset('tenancy/assets/vendor/tippy/tippy.js/themes/material.css')}}">
 <link rel="stylesheet" href="{{asset('tenancy/assets/vendor/tippy/tippy.js/animations/scale.css')}}">
 {{--FONTAWESOME--}}
-<link rel="stylesheet" href="{{asset('tenancy/assets/vendor/fontawesome/css/all.css')}}">
+
 {{--ANIMATE CSS--}}
 <link rel="stylesheet" href="{{asset('tenancy/assets/vendor/animate/animate.css')}}">
 {{--SELECT2--}}

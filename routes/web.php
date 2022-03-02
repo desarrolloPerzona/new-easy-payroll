@@ -4,6 +4,7 @@ use App\Events\TenantHasSubscribe;
 use App\Http\Controllers\Admin\BankController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\BillingController;
+use App\Http\Controllers\ByLawBenefitController;
 use App\Http\Controllers\ClientDashboardController;
 use App\Http\Controllers\FiscalRegimeController;
 use App\Http\Controllers\IndustryController;
@@ -56,6 +57,8 @@ Route::group(['middleware' =>  'web'], function () {
         route::resource('/users', UserController::class);
 
         route::resource('/tenants', TenantController::class);
+
+        route::resource('/by-law-benefits', ByLawBenefitController::class);
 
 
     });

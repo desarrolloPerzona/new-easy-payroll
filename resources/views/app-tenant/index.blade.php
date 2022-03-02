@@ -21,6 +21,11 @@
                 {{--<p class="my-2">{{__('Please go to your dashboard')}}</p>
                 <a href="{{route('tenant.dashboard')}}" class="btn btn-primary">{{__('panel')}}</a>--}}
             @endif
+
+
+
+
         </div>
+
     </div>
 </x-app-tenant>

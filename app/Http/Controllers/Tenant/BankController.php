@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tenant\Bank;
 use App\Models\Tenant\Business;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -26,14 +27,7 @@ class BankController extends Controller
      */
     public function create()
     {
-        $appUrl = config('app.url');
-        $api_responseBanks = Http::withOptions(['verify' => false])->get($appUrl . '/api/bank-list/');
-        $reference_values = json_decode($api_responseBanks->body());
-
-        $banks = $reference_values;
-        $businesses = Business::all();
-
-        return view('app-tenant.dashboard.banks.create', compact('banks', 'businesses'));
+        return view('app-tenant.dashboard.banks.create');
     }
 
     /**
@@ -66,7 +60,8 @@ class BankController extends Controller
      */
     public function edit($id)
     {
-        return view('app-tenant.dashboard.banks.edit');
+        $bankAccount = Bank::where('id', $id)->firstOrFail();
+        return view('app-tenant.dashboard.banks.edit', compact('bankAccount'));
     }
 
     /**

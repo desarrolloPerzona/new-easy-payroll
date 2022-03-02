@@ -46,9 +46,6 @@
 
     // Success message
     Livewire.on('alert', function(message){
-
-        Livewire.emit('alert')
-
         Swal.fire(
             'Excelente!',
             message,

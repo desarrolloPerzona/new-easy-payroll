@@ -27,14 +27,7 @@ class BankController extends Controller
      */
     public function create()
     {
-        $appUrl = config('app.url');
-        $api_responseBanks = Http::withOptions(['verify' => false])->get($appUrl . '/api/bank-list/');
-        $reference_values = json_decode($api_responseBanks->body());
-
-        $banks = $reference_values;
-        $businesses = Business::all();
-
-        return view('app-tenant.dashboard.banks.create', compact('banks', 'businesses'));
+        return view('app-tenant.dashboard.banks.create');
     }
 
     /**
@@ -45,32 +38,7 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|unique:banks|max:50',
-            'account_number' => 'required|unique:banks|max:24',
-            'branch' => 'required',
-            'description' => 'required|max:254',
-            'information_number' => 'required|max:12',
-            'branch_number' => 'required|max:12',
-            'account_clabe' => 'required|unique:banks|max:18'
-        ]);
-
-        $bank = new Bank;
-
-        $bank->name = $request->get('name');
-        $bank->institutional_key = $request->get('institutional_key');
-        $bank->branch = $request->get('branch');
-        $bank->account_number = $request->get('account_number');
-        $bank->account_number = $request->get('account_number');
-        $bank->branch_number = $request->get('branch_number');
-        $bank->account_clabe = $request->get('account_clabe');
-        $bank->account_clabe = $request->get('account_clabe');
-        $bank->information_number = $request->get('information_number');
-        $bank->description = $request->get('description');
-
-        $bank->save();
-
-        return redirect()->route('banks.index')->with('message', 'create');
+        //
     }
 
     /**

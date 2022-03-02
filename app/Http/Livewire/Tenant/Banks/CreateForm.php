@@ -7,7 +7,7 @@ use App\Models\Tenant\Business;
 use Illuminate\Support\Facades\Http;
 use Livewire\Component;
 
-class EditTable extends Component
+class CreateForm extends Component
 {
     //    Variables from our form
     public $branch, $branch_id, $name, $account_number, $institutional_key, $description, $information_number, $branch_number, $account_clabe;
@@ -28,39 +28,22 @@ class EditTable extends Component
         $this->validateOnly($propertyName);
     }
 
-    public function mount($userId)
-    {
-        $this->accountBank = Bank::find($userId);
-        $this->userId = $userId->id;
-
-        $this->name = $userId->name;
-        $this->branch_id = $userId->branch;
-        $this->branch = $userId->business->name;
-        $this->account_number = $userId->account_number;
-        $this->institutional_key = $userId->institutional_key;
-        $this->description = $userId->description;
-        $this->information_number = $userId->information_number;
-        $this->branch_number = $userId->branch_number;
-        $this->account_clabe = $userId->account_clabe;
-    }
-
     public function render()
     {
-        $bankAccount = Bank::find($this->userId);
-
         $businesses = Business::all();
         $appUrl = config('app.url');
         $api_responseBanks = Http::withOptions(['verify' => false])->get($appUrl . '/api/bank-list/');
         $banks = json_decode($api_responseBanks->body());
 
-        return view('livewire.tenant.banks.edit-table', compact('businesses', 'banks', 'bankAccount'));
+        return view('livewire.tenant.banks.create-form', compact('businesses', 'banks'));
     }
 
-    public function update()
+    public function store()
     {
+
         $this->validate();
 
-        $bankAccount = Bank::find($this->userId);
+        $bankAccount = new Bank;
 
         $bankAccount->name = $this->name;
         $bankAccount->institutional_key = $this->institutional_key;
@@ -73,6 +56,8 @@ class EditTable extends Component
 
         $bankAccount->save();
 
-        $this->emit('alert', 'Registro actualizado exitosamente!');
+        session()->flash('message', 'create');
+
+        return redirect()->route('banks.index');
     }
 }

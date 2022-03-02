@@ -914,5 +914,8 @@
     "To register": "Dar de alta",
     "Male": "Masculino",
     "Female": "Femenino",
-    "Other": "Otro"
+    "Other": "Otro",
+    "Create perception": "Crear percepción",
+    "Perception name": "Nombre de percepción",
+    "Add": "Agregar"
 }

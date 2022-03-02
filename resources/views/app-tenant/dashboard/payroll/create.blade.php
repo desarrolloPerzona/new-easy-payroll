@@ -84,11 +84,11 @@
             </div>
 
 
-            <div class="btn-top-holder my-3">
-                <a href="javascript: history.go(-1)" class="btn btn-dark">
-                    {{ __('Save') }}
-                </a>
-            </div>
+    <div class="btn-top-holder my-3 flow-root">
+        <a href="javascript: history.go(-1)" class="btn btn-dark float-right cursor-pointer">
+            {{ __('Save') }}
+        </a>
+    </div>
 
         </div>
     </div>

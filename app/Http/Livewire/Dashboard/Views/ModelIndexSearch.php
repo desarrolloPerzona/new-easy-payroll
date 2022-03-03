@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Dashboard\Views;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Schema;
 use Redirect;
 
 class ModelIndexSearch extends Component
@@ -16,8 +17,10 @@ class ModelIndexSearch extends Component
 // SET VARIABLES
     public
         $modelName,
+        $modelTable,
         $titleName,
         $searchColumns,
+        $columns,
         $searchableItems,
         $sortColumn,
         $modelTitles,
@@ -36,21 +39,25 @@ class ModelIndexSearch extends Component
      */
     private $modelItemToEdit;
 
-    public function mount($modelName, $modelItems, $searchColumns)
+    public function mount($modelName, $modelItems, $searchColumns,$modelTable)
     {
         $this->modelToView = "App\Models\\" . $modelName;
         $this->modelItems = collect($modelItems);
         $this->modelTitles = $this->replaceStrToLowerCollect($this->modelItems);
         $this->searchableItems = collect($searchColumns);
-       // dd($this->modelTitles);
-        //dd($this->searchableItems);
+        //dd($modelTable);
+        $this->modelTable = $modelTable;
+        $accept_columns = Schema::getColumnListing($this->modelTable);
+        //dd( $accept_columns);
         $this->searchColumns = $searchColumns;
         $this->sortColumn = $modelItems[0];
         $this->modelItemToEdit = collect();
         $this->titleName = $this->splitCamelCase($modelName);
     }
 
-//
+    /**
+     * SORT BY COLUMN
+     */
     public function sortByColumn($column)
     {
         if ($this->sortColumn == $column) {
@@ -61,6 +68,9 @@ class ModelIndexSearch extends Component
         }
     }
 
+    /**
+     * RULES
+     */
     public function rules(): array
     {
         $rules = [];
@@ -72,20 +82,25 @@ class ModelIndexSearch extends Component
         return $rules;
     }
 
+    /**
+     * SPLIT CAMELCASE TO LOWERCASE
+     */
     public function splitCamelCase($str)
     {
         return strtolower(implode(' ', preg_split('/(?<=\\w)(?=[A-Z])/', $str)));
     }
 
+    /**
+     *  RETURN COLLECTION WITHOUT THE UNDERSCORE AND LOWERCASE
+     */
     public function replaceStrToLowerCollect($collect)
     {
         $collect = $collect->map(function ($item, $key) {
             return str_replace('_', ' ', strtolower($item));
         });
-
         return $collect;
-
     }
+
 
     public function updating($value, $name)
     {

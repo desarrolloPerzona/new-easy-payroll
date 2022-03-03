@@ -59,38 +59,15 @@
                                     </div>
                                 </div>
 
-                                {{--Hours Component--}}
+                                {{--Hours Components--}}
                                 <div class="col-4 d-flex flex-column" id="schedule_buttons">
                                     <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
                                     <div class="d-flex">
+
                                         <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3" attribs="" livewire="schedule_from" value=""/>
-{{--                                        <select name="schedule_from" id="schedule_from" class="rounded me-3" wire:model.defer="schedule_from">--}}
 
-{{--                                            @for($i = 0; $i < 24; $i++)--}}
-{{--                                                @if($i <= 9)--}}
-{{--                                                    <option value="0{{$i}}:00">0{{$i}}:00</option>--}}
-{{--                                                    <option value="0{{$i}}:30">0{{$i}}:30</option>--}}
-{{--                                                @else--}}
-{{--                                                    <option value="{{$i}}:00">{{$i}}:00</option>--}}
-{{--                                                    <option value="{{$i}}:30">{{$i}}:30</option>--}}
-{{--                                                @endif--}}
-{{--                                            @endfor--}}
-{{--                                        </select>--}}
+                                        <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes="me-3" attribs="" livewire="schedule_to" value=""/>
 
-                                        <select name="schedule_to" id="schedule_to" class="rounded me-3" wire:model.defer="schedule_to">
-
-                                            @for($i = 0; $i < 24; $i++)
-                                                @if($i <= 9)
-                                                    <option value="0{{$i}}:00">0{{$i}}:00</option>
-                                                    <option value="0{{$i}}:30">0{{$i}}:30</option>
-                                                @else
-                                                    <option value="{{$i}}:00">{{$i}}:00</option>
-                                                    <option value="{{$i}}:30">{{$i}}:30</option>
-                                                @endif
-                                            @endfor
-                                        </select>
-
-{{--                                        <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes="" attribs="" value=""/>--}}
                                     </div>
                                 </div>
                             </div>

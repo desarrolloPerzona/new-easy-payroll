@@ -1,6 +1,6 @@
 <div>
 
-    <x-forms.alert-message/>
+    <x-forms.alert-message classes=""/>
 
     {{--Header section--}}
     <div class="flex max-w-6xl mx-auto">

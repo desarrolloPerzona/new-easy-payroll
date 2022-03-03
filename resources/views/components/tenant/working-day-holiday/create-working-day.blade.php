@@ -62,13 +62,13 @@
                                 <div class="col-3 d-flex mb-2">
 
                                     {{--Hours select component--}}
-                                    <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled" value=""/>
+                                    <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
 
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
 
-                                    <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled" value=""/>
+                                    <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
 
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
@@ -93,13 +93,13 @@
                             {{--Hours in working day--}}
                             <div class="col-3 d-flex mb-2">
 
-                                <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs="disabled" value=""/>
+                                <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
 
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>
 
-                                <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs="disabled" value=""/>
+                                <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
 
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>

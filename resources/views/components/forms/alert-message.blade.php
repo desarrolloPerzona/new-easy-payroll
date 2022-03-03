@@ -1,7 +1,7 @@
 <div>
     {{-- delete, edit or create message--}}
     @if (session('message'))
-        <div class="alert alert-success alert-dismissible fade show max-w-6xl mx-auto" role="alert">
+        <div class="alert alert-success alert-dismissible fade show max-w-6xl mx-auto {{$classes}}" role="alert">
             @if(session('message') == 'edit')
                 {{__('Record updated successfully')}}
             @elseif(session('message') == 'create')

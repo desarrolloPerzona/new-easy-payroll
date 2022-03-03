@@ -1,4 +1,4 @@
-<select name="{{$name}}" id="{{$id}}" class="rounded {{$classes}}" {{$attribs}}>
+<select name="{{$name}}" id="{{$id}}" class="rounded {{$classes}}" {{$attribs}} @if($livewire) wire:model.defer="{{$livewire}}" @endif>
     @if($value)
         <option value="{{$value}}">{{substr($value, 0, 5)}}</option>
     @endif

@@ -39,7 +39,7 @@ class BusinessFestiveDayController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:business_festive_days'
+            'name' => 'required|unique:business_festive_days|min:3'
         ]);
 
         $businessFestiveday = new BusinessFestiveDay();
@@ -105,7 +105,7 @@ class BusinessFestiveDayController extends Controller
         if ($request->get('name') != $businessFestiveDay->name) {
 
             $request->validate([
-                'name' => 'unique:business_festive_days'
+                'name' => 'unique:business_festive_days|required|min:3'
             ]);
             $businessFestiveDay->name = $request->get('name');
         }

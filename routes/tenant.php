@@ -64,12 +64,15 @@ Route::middleware([
     Route::resource('/table-value', TableValueController::class)->middleware('auth:web');
     Route::resource('/table-benefits', TableBenefitsController::class)->middleware('auth:web');
 
+
+
     //    Working day
     Route::resource('/working-day-holiday', WorkingDayHolidayController::class)->middleware('auth:web');
     Route::resource('/business-working-day', BusinessWorkdayController::class)->middleware('auth:web');
     Route::resource('/business-festive-days', BusinessFestiveDayController::class)->middleware('auth:web');
     Route::get('/deleteHour/{id}', [BusinessWorkdayController::class, 'deleteHour'])->name('deleteHour');
     Route::get('/workday/{id}/{day}', [BusinessWorkdayController::class, 'deleteWorkdayHours'])->name('deleteWorkdayHour');
+
 
     Route::resource('/imss-employer-registers', ImssPatronalRegisterController::class)->middleware('auth:web');
     Route::resource('/business-positions', BusinessPositionController::class)->middleware('auth:web');
@@ -78,4 +81,9 @@ Route::middleware([
     Route::post('/uploadFiles', [UploadFilesController::class, 'store'])->middleware('auth:web');
     Route::get('/uploadFiles/{id}', [UploadFilesController::class, 'getFile'])->middleware('auth:web');
 
+    Route::get('/', function () {
+        return view('');
+    })->name('');
+
 });
+

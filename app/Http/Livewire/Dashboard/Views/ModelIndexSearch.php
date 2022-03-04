@@ -18,6 +18,7 @@ class ModelIndexSearch extends Component
     public
         $modelName,
         $modelTable,
+        $modelColumns,
         $titleName,
         $searchColumns,
         $columns,
@@ -45,14 +46,18 @@ class ModelIndexSearch extends Component
         $this->modelItems = collect($modelItems);
         $this->modelTitles = $this->replaceStrToLowerCollect($this->modelItems);
         $this->searchableItems = collect($searchColumns);
-        //dd($modelTable);
         $this->modelTable = $modelTable;
-        $accept_columns = Schema::getColumnListing($this->modelTable);
-        //dd( $accept_columns);
+        $this->modelColumns = $this->getColumnsFromTable($this->modelTable);
         $this->searchColumns = $searchColumns;
         $this->sortColumn = $modelItems[0];
         $this->modelItemToEdit = collect();
         $this->titleName = $this->splitCamelCase($modelName);
+    }
+
+    public function getColumnsFromTable($table){
+        $columns = Schema::getColumnListing($table);
+        return array_diff($columns,['id','created_at','updated_at']);
+
     }
 
     /**

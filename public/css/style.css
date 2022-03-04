@@ -15793,7 +15793,7 @@ h2 a:hover, .h2 a:hover {
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 table tr td {
@@ -15803,18 +15803,4 @@ table tr td {
 .tippy-box[data-theme~=tomato] {
   background-color: #313131;
   color: white;
-}
-
-/*Remove arrows in inputs type number*/
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-.margin-b-0{
-    margin-bottom: 0px !important;
 }

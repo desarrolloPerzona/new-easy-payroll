@@ -5,7 +5,7 @@
         <x-forms.error-validation-message/>
 
         {{-- Alert message (edit, create or delete record)--}}
-        <x-forms.alert-message/>
+        <x-forms.alert-message classes=""/>
 
         {{--Working days Section *****--}}
 

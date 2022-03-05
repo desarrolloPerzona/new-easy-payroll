@@ -81,9 +81,10 @@ Route::middleware([
     Route::post('/uploadFiles', [UploadFilesController::class, 'store'])->middleware('auth:web');
     Route::get('/uploadFiles/{id}', [UploadFilesController::class, 'getFile'])->middleware('auth:web');
 
-    Route::get('/', function () {
-        return view('');
-    })->name('');
+    // Unsubscribe rout
+    Route::get('/unsubscribe-user', function () {
+//        return view('');
+    })->name('unsubscribe-user');
 
 });
 

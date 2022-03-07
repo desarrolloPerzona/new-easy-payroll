@@ -1,6 +1,6 @@
 <div>
     @if ($errors->any())
-        <div class="alert alert-warning alert-dismissible fade show max-w-6xl mx-auto" role="alert">
+        <div class="alert alert-warning alert-dismissible fade show max-w-6xl mx-auto {{$classes}}" role="alert">
             <ul>
             @foreach ($errors->all() as $error)
                 <li>- {{$error}}</li>

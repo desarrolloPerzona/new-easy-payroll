@@ -3,7 +3,7 @@
     <div class="container mx-auto mb-6">
 
         {{-- Error validation message--}}
-        <x-forms.error-validation-message/>
+        <x-forms.error-validation-message classes=""/>
 
         {{-- Alert message (edit, create or delete record)--}}
         <x-forms.alert-message classes=""/>

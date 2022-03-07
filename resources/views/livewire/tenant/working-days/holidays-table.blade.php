@@ -1,7 +1,7 @@
 <div>
 
     {{-- Error validation message--}}
-    <x-forms.error-validation-message/>
+    <x-forms.error-validation-message classes="mt-3"/>
 
     {{-- Alert message (edit, create or delete record)--}}
     <x-forms.alert-message classes="mt-3"/>

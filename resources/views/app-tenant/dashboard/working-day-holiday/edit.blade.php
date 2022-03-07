@@ -61,6 +61,7 @@
                     </div>
                     <div class="col-12 mt-3">
                         <button type="submit" class="btn btn-primary">{{__('Save')}}</button>
+                        <a href="{{ route('working-day-holiday.index') }}" class="btn btn-danger ms-2 text-white">{{__('Go back')}}</a>
                     </div>
                 </form>
             </div>

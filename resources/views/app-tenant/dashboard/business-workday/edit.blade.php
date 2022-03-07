@@ -209,8 +209,9 @@
                             @endif
                         </div>
 
-                        <div class="d-flex justify-content-end">
+                        <div class="d-flex justify-content-center mt-5">
                             <button class="btn btn-primary" type="submit">{{__('Save')}}</button>
+                            <a href="{{ route('working-day-holiday.index') }}" class="btn btn-danger ms-2 text-white">{{__('Go back')}}</a>
                         </div>
 
                     </div>

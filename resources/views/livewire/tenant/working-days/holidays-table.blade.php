@@ -3,9 +3,6 @@
     {{-- Error validation message--}}
     <x-forms.error-validation-message classes="mt-3"/>
 
-    {{-- Alert message (edit, create or delete record)--}}
-    <x-forms.alert-message classes="mt-3"/>
-
     <x-utilities.section-header title="Holidays" classes="mt-3"/>
 
     {{--Create new holiday--}}

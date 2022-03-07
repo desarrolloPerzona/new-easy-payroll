@@ -2,7 +2,7 @@
     <div class="container mx-auto" x-data="festiveConditionals()">
 
         {{-- Error Validation message--}}
-        <x-forms.error-validation-message/>
+        <x-forms.error-validation-message classes=""/>
 
         {{--Edit Header--}}
         <x-utilities.section-header title="Edit working day holiday" classes="mb-4"/>
@@ -53,8 +53,8 @@
                                 <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
                                 <div class="d-flex">
 
-                                    <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3" attribs="" value="{{$businessFestiveDay->schedule_from}}"/>
-                                    <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes="" attribs="" value="{{$businessFestiveDay->schedule_to}}"/>
+                                    <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3" attribs="" value="{{$businessFestiveDay->schedule_from}}" livewire=""/>
+                                    <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes="" attribs="" value="{{$businessFestiveDay->schedule_to}}" livewire=""/>
                                 </div>
                             </div>
 {{--                        @endif--}}

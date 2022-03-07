@@ -35,24 +35,24 @@
                                 </div>
                                 <div class="col-3">
                                     <label for="" class="my-2 font-bold">{{__('Do you work')}}</label>
-                                    <div class="form-group margin-b-0">
-                                        <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" checked wire:model.defer="working">
-                                        <label for="working">{{__('Yes')}}</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="working" id="working" value="1" x-on:click="working('y')" checked wire:model.defer="working">
+                                        <label class="form-check-label" for="working">{{__('Yes')}}</label>
                                     </div>
                                     <div class="form-group margin-b-0">
-                                        <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')" wire:model.defer="working">
-                                        <label for="working2">{{__('No')}}</label>
+                                        <input class="form-check-input" type="radio" name="working" id="working2" value="0" x-on:click="working('n')" wire:model.defer="working">
+                                        <label class="form-check-label" for="working2">{{__('No')}}</label>
                                     </div>
                                 </div>
                                 <div class="col-2" id="all_day_buttons">
                                     <label for="" class="my-2 font-bold">{{__('All day')}}</label>
-                                    <div class="form-group margin-b-0">
-                                        <input type="radio" name="schedule_all_day" id="schedule_all_day" value="1" x-on:click="working('all_day')" wire:model.defer="schedule_all_day">
-                                        <label for="schedule_all_day">{{__('Yes')}}</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="schedule_all_day" id="schedule_all_day" class="form-check-input" value="1" x-on:click="working('all_day')" wire:model.defer="schedule_all_day">
+                                        <label class="form-check-label" for="schedule_all_day">{{__('Yes')}}</label>
                                     </div>
                                     <div class="form-group margin-b-0">
-                                        <input type="radio" name="schedule_all_day" id="schedule_all_day_2" value="0" checked x-on:click="working('not_all_day')" wire:model.defer="schedule_all_day">
-                                        <label for="schedule_all_day_2">{{__('No')}}</label>
+                                        <input class="form-check-input" type="radio" name="schedule_all_day" id="schedule_all_day_2" value="0" checked x-on:click="working('not_all_day')" wire:model.defer="schedule_all_day">
+                                        <label class="form-check-label" for="schedule_all_day_2">{{__('No')}}</label>
                                     </div>
                                 </div>
 

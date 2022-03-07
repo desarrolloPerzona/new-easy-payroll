@@ -101,6 +101,9 @@ class BusinessFestiveDayController extends Controller
      */
     public function update(BusinessFestiveDay $businessFestiveDay, Request $request)
     {
+        $request->validate([
+            'working' => 'required'
+        ]);
 
         if ($request->get('name') != $businessFestiveDay->name) {
 
@@ -112,6 +115,9 @@ class BusinessFestiveDayController extends Controller
 
         $businessFestiveDay->date = $request->get('date');
         if ($request->get('working') == 1) {
+            $request->validate([
+                'schedule_all_day' => 'required'
+            ]);
             $businessFestiveDay->working = 1;
             if ($request->get('schedule_all_day') == 0) {
                 $businessFestiveDay->schedule_from = $request->get('schedule_from');

@@ -27,37 +27,36 @@
                         <div class="col-3">
                             <label for="" class="my-2 font-bold">{{__('Do you work')}}</label>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="working" id="working" value="1" x-on:click="working('y')">
+                                <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" @if($businessFestiveDay->working == 1) checked @endif>
                                 <label for="working">{{__('Yes')}}</label>
                             </div>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
+                                <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')" @if($businessFestiveDay->working != 1) checked @endif>
                                 <label for="working2">{{__('No')}}</label>
                             </div>
                         </div>
-                        <div class="col-2 d-none" id="all_day_buttons">
+                        <div class="col-2 @if($businessFestiveDay->working != 1) d-none @endif" id="all_day_buttons">
                             <label for="" class="my-2 font-bold">{{__('All day')}}</label>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="schedule_all_day" id="schedule_all_day" value="1" x-on:click="working('all_day')">
+                                <input type="radio" name="schedule_all_day" id="schedule_all_day" value="1" x-on:click="working('all_day')" @if($businessFestiveDay->schedule_all_day == 1) checked @endif>
                                 <label for="schedule_all_day">{{__('Yes')}}</label>
                             </div>
                             <div class="form-group margin-b-0">
-                                <input type="radio" name="schedule_all_day" id="schedule_all_day_2" value="0" x-on:click="working('not_all_day')">
+                                <input type="radio" name="schedule_all_day" id="schedule_all_day_2" value="0" x-on:click="working('not_all_day')" @if($businessFestiveDay->schedule_all_day != 1) checked @endif>
                                 <label for="schedule_all_day_2">{{__('No')}}</label>
                             </div>
                         </div>
 
                         {{--Hours Component--}}
-{{--                        @if()--}}
-                            <div class="col-4 d-flex flex-column d-none" id="schedule_buttons">
-                                <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
-                                <div class="d-flex">
+                        <div class="col-4 d-flex flex-column @if($businessFestiveDay->schedule_all_day == 1) d-none @endif @if($businessFestiveDay->working != 1) d-none @endif" id="schedule_buttons">
+                            <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
+                            <div class="d-flex">
 
-                                    <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3" attribs="" value="{{$businessFestiveDay->schedule_from}}" livewire=""/>
-                                    <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes="" attribs="" value="{{$businessFestiveDay->schedule_to}}" livewire=""/>
-                                </div>
+                                <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3" attribs="" value="{{$businessFestiveDay->schedule_from}}" livewire=""/>
+                                <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes="" attribs="" value="{{$businessFestiveDay->schedule_to}}" livewire=""/>
+
                             </div>
-{{--                        @endif--}}
+                        </div>
 
                     </div>
                     <div class="col-12 mt-3">

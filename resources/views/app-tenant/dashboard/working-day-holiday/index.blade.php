@@ -24,9 +24,6 @@
         {{--New festive day Livewire Component ----------------}}
         <livewire:tenant.working-days.holidays-table/>
 
-        {{--Festive days table Component--}}
-{{--        <x-tenant.working-day-holiday.festive-business-days-table/>--}}
-
     </div>
 
 </x-app-tenant>

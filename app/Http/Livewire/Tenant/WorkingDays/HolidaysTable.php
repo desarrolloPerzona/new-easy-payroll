@@ -25,7 +25,7 @@ class HolidaysTable extends Component
         $responseFestiveDays = Http::withOptions(['verify' => false])->get($appUrl .'/api/official-festive-days');
         $festiveDays = json_decode($responseFestiveDays->body());
 
-        $festiveBusinessesDays = BusinessFestiveDay::all();
+        $festiveBusinessesDays = BusinessFestiveDay::orderBy('id', 'DESC')->get();
 
         return view('livewire.tenant.working-days.holidays-table',
                compact('monthsArray', 'festiveDays', 'currentYear', 'festiveBusinessesDays'));

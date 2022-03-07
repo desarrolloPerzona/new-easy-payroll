@@ -171,6 +171,8 @@
 </div>
 
 @push('inline_scripts')
+
+    {{--Working days function--}}
     <script>
         // Function to show or hide options into create festive day form
         function festiveConditionals() {
@@ -212,4 +214,5 @@
         }
 
     </script>
+
 @endpush

@@ -14,6 +14,8 @@ class HolidaysTable extends Component
         'name' => 'required|unique:business_festive_days|min:3'
     ];
 
+    protected $listeners = ['delete' => 'deleteRecord'];
+
     public function render()
     {
         $appUrl = config('app.url');
@@ -53,6 +55,10 @@ class HolidaysTable extends Component
 
         $this->reset();
 
-        session()->flash('message', 'create');
+        $this->emit('alert', 'Registro eliminado exitosamente!');
+    }
+
+    public function deleteRecord(BusinessFestiveDay $festiveDay){
+        $festiveDay->delete();
     }
 }

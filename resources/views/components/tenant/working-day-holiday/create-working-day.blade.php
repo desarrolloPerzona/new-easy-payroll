@@ -28,7 +28,7 @@
 
                         <div class="mb-3 ps-2 col-6">
                             <label for="workingDaySelect" class="form-label font-bold">{{__('Type of shift')}}</label>
-                            <select name="workday_type" id="workday_type" class="form-control" required>
+                            <select name="workday_type" id="workday_type" class="form-select" required>
                                 <option value="">{{__('Select')}}</option>
                                 @foreach($workdayTypes as $type)
                                     <option value="{{$type}}">{{__(ucfirst($type))}}</option>

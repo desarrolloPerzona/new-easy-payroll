@@ -30,7 +30,7 @@ class FestiveBusinessDaysTable extends Component
 
         $monthsArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-        //        Get festive official days from API
+        //Get festive official days from API
         $responseFestiveDays = Http::withOptions(['verify' => false])->get($appUrl .'/api/official-festive-days');
         $festiveDays = json_decode($responseFestiveDays->body());
 

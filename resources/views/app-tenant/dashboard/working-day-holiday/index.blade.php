@@ -1,4 +1,5 @@
 <x-app-tenant>
+
     <div class="container mx-auto mb-6">
 
         {{-- Error validation message--}}
@@ -24,7 +25,7 @@
         <livewire:tenant.working-days.holidays-table/>
 
         {{--Festive days table Component--}}
-        <x-tenant.working-day-holiday.festive-business-days-table/>
+{{--        <x-tenant.working-day-holiday.festive-business-days-table/>--}}
 
     </div>
 

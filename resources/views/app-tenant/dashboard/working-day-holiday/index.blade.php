@@ -21,6 +21,9 @@
 
         {{--Festive day Section *****--}}
 
+        {{--Create a new holiday--}}
+        <livewire:tenant.working-days.holidays-create-form/>
+
         {{--New festive day Livewire Component ----------------}}
         <livewire:tenant.working-days.holidays-table/>
 

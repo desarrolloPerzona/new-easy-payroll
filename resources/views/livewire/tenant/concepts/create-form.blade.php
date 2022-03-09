@@ -43,37 +43,37 @@
 
             <div class="form-group w-1/3">
                 <label for="name" class="font-bold form-label">{{__('Periodicity')}}</label>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" checked>
-                    <label for="working">{{__('Periodic')}}</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="working" id="working" value="1">
+                    <label for="working" class="form-check-label">{{__('Periodic')}}</label>
                 </div>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
-                    <label for="working2">{{__('Extraordinary')}}</label>
+                <div class="form-group">
+                    <input type="radio" class="form-check-input" name="working" id="working2" value="0">
+                    <label for="working2" class="form-check-label">{{__('Extraordinary')}}</label>
                 </div>
             </div>
 
             <div class="form-group w-1/3">
                 <label for="name" class="font-bold form-label">{{__('Type of perception')}}</label>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" checked>
-                    <label for="working">{{__('Ordinary')}}</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="working" id="working" value="1">
+                    <label for="working" class="form-check-label">{{__('Ordinary')}}</label>
                 </div>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
-                    <label for="working2">{{__('Extraordinary')}}</label>
+                <div class="form-check margin-b-0">
+                    <input type="radio" class="form-check-input" name="working" id="working2" value="0">
+                    <label for="working2" class="form-check-label">{{__('Extraordinary')}}</label>
                 </div>
             </div>
 
             <div class="form-group w-1/3">
                 <label for="name" class="font-bold form-label">{{__('Payment type')}}</label>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" checked>
-                    <label for="working">{{__('Ordinary')}}</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="working" id="working" value="1">
+                    <label for="working" class="form-check-label">{{__('Ordinary')}}</label>
                 </div>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
-                    <label for="working2">{{__('Species')}}</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="working" id="working2" value="0">
+                    <label for="working2" class="form-check-label">{{__('Species')}}</label>
                 </div>
             </div>
 
@@ -83,37 +83,37 @@
 
             <div class="form-group w-1/3">
                 <label for="name" class="font-bold form-label">{{__('Gravel ISR')}}</label>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" checked>
-                    <label for="working">{{__('Yes')}}</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="working" id="working" value="1">
+                    <label for="working" class="form-check-label">{{__('Yes')}}</label>
                 </div>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
-                    <label for="working2">{{__('No')}}</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="working" id="working2" value="0">
+                    <label for="working2" class="form-check-label">{{__('No')}}</label>
                 </div>
             </div>
 
             <div class="form-group w-1/3">
                 <label for="name" class="font-bold form-label">{{__('Gravel ISN')}}</label>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" checked>
-                    <label for="working">{{__('Yes')}}</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="working" id="working" value="1">
+                    <label for="working" class="form-check-label">{{__('Yes')}}</label>
                 </div>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
-                    <label for="working2">{{__('No')}}</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="working" id="working2" value="0">
+                    <label for="working2" class="form-check-label">{{__('No')}}</label>
                 </div>
             </div>
 
             <div class="form-group w-1/3">
                 <label for="name" class="font-bold form-label">{{__('IMSS integrate')}}</label>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working" value="1" x-on:click="working('y')" checked>
-                    <label for="working">{{__('Yes')}}</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="working" id="working" value="1">
+                    <label for="working" class="form-check-label">{{__('Yes')}}</label>
                 </div>
-                <div class="form-group margin-b-0">
-                    <input type="radio" name="working" id="working2" value="0" x-on:click="working('n')">
-                    <label for="working2">{{__('No')}}</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="working" id="working2" value="0">
+                    <label for="working2" class="form-check-label">{{__('No')}}</label>
                 </div>
             </div>
 

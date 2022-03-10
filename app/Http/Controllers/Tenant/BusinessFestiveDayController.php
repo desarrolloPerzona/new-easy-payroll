@@ -84,11 +84,6 @@ class BusinessFestiveDayController extends Controller
      */
     public function destroy(BusinessFestiveDay $businessFestiveDay)
     {
-        $businessFestiveDay->delete();
-        /**
-         *  The way to send alert message
-         *  return redirect()->back()->with('message', 'choose between: "edit", "create" or "delete" alert message');
-         */
-        return redirect()->route('working-day-holiday.index')->with('message', 'delete');
+        //
     }
 }

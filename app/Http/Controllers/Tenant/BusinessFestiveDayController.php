@@ -101,46 +101,7 @@ class BusinessFestiveDayController extends Controller
      */
     public function update(BusinessFestiveDay $businessFestiveDay, Request $request)
     {
-        $request->validate([
-            'working' => 'required'
-        ]);
-
-        if ($request->get('name') != $businessFestiveDay->name) {
-
-            $request->validate([
-                'name' => 'unique:business_festive_days|required|min:3'
-            ]);
-            $businessFestiveDay->name = $request->get('name');
-        }
-
-        $businessFestiveDay->date = $request->get('date');
-        if ($request->get('working') == 1) {
-            $request->validate([
-                'schedule_all_day' => 'required'
-            ]);
-            $businessFestiveDay->working = 1;
-            if ($request->get('schedule_all_day') == 0) {
-                $businessFestiveDay->schedule_from = $request->get('schedule_from');
-                $businessFestiveDay->schedule_to = $request->get('schedule_to');
-            }
-            $businessFestiveDay->schedule_all_day = $request->get('schedule_all_day');
-        } else{
-            $businessFestiveDay->working = 0;
-            $businessFestiveDay->schedule_all_day = 0;
-            $businessFestiveDay->schedule_from = null;
-            $businessFestiveDay->schedule_to = null;
-        }
-
-        $businessFestiveDay->updated_at = now();
-
-
-        $businessFestiveDay->save();
-
-        /**
-         *  The way to send alert message
-         *  return redirect()->back()->with('message', 'choose between: "edit", "create" or "delete" alert message');
-         */
-        return redirect()->route('working-day-holiday.index')->with('message', 'edit');
+        //
     }
 
     /**

@@ -38,35 +38,7 @@ class BusinessFestiveDayController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|unique:business_festive_days|min:3'
-        ]);
-
-        $businessFestiveday = new BusinessFestiveDay();
-        $businessFestiveday->name = $request->get('name');
-        $businessFestiveday->date = $request->get('date');
-
-        if ($request->get('working') == 1) {
-            $businessFestiveday->working = $request->get('working');
-            if ($request->get('schedule_all_day') == 0) {
-                $businessFestiveday->schedule_from = $request->get('schedule_from');
-                $businessFestiveday->schedule_to = $request->get('schedule_to');
-            }
-            $businessFestiveday->schedule_all_day = $request->get('schedule_all_day');
-        }
-
-        $businessFestiveday->created_at = now();
-        $businessFestiveday->updated_at = now();
-
-        $businessFestiveday->save();
-
-        /**
-         *  The way to send alert message
-         *  return redirect()->back()->with('message', 'choose between: "edit", "create" or "delete" alert message');
-         */
-
-
-        return redirect()->back()->with('message', 'create');
+        //
     }
 
     /**

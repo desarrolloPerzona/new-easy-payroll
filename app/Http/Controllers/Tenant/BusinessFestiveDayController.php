@@ -131,7 +131,6 @@ class BusinessFestiveDayController extends Controller
             $businessFestiveDay->schedule_to = null;
         }
 
-        $businessFestiveDay->created_at = now();
         $businessFestiveDay->updated_at = now();
 
 

@@ -11,14 +11,13 @@ class HolidaysEditForm extends Component
     public $name, $date, $working, $schedule_all_day, $schedule_from, $schedule_to;
 
     protected $rules = [
-        'name' => 'unique:business_festive_days|required|min:3',
-        'date' => 'required'
+        'name' => 'required|min:3',
+        'date' => 'required',
     ];
 
     public function mount($holiday)
     {
         $this->holiday = $holiday->id;
-
         $this->name = $holiday->name;
         $this->date = $holiday->date;
         $this->working = $holiday->working;
@@ -36,6 +35,46 @@ class HolidaysEditForm extends Component
     public function updated($propertyName)
     {
         $this->validateOnly($propertyName);
+    }
+
+    function updateHoliday()
+    {
+        $this->validate();
+
+        $newHoliday = BusinessFestiveDay::find($this->holiday);
+
+        if ($this->name != $newHoliday->name) {
+            $this->validate([
+                'name' => 'unique:business_festive_days|required|min:3'
+            ]);
+            $newHoliday->name = $this->name;
+        }
+
+        $newHoliday->date = $this->date;
+        if ($this->working == 1) {
+            $this->validate([
+                'schedule_all_day' => 'required'
+            ]);
+            $newHoliday->working = 1;
+            if ($this->schedule_all_day == 0) {
+                $newHoliday->schedule_from = $this->schedule_from;
+                $newHoliday->schedule_to = $this->schedule_to;
+            } else{
+                $newHoliday->schedule_from = null;
+                $newHoliday->schedule_to = null;
+            }
+            $newHoliday->schedule_all_day = $this->schedule_all_day;
+        } else{
+            $newHoliday->working = 0;
+            $newHoliday->schedule_all_day = 0;
+            $newHoliday->schedule_from = null;
+            $newHoliday->schedule_to = null;
+        }
+
+        $newHoliday->save();
+
+        session()->flash('message', 'edit');
+        return redirect()->route('working-day-holiday.index');
     }
 
 }

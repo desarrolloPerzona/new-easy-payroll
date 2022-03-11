@@ -54,7 +54,7 @@
                                     </a>
                                 </td>
                                 <td style="width: 3%">
-                                    <button wire:click="$emit('deleteMessage', {{$workday->id}})">
+                                    <button wire:click="$emit('deleteMessageSecond', {{$workday->id}})">
                                         <i class="fas fa-trash-alt text-gray-400 hover:text-red-500"></i>
                                     </button>
                                 </td>
@@ -161,3 +161,32 @@
     @endif
 
 </div>
+
+@push('inline_scripts')
+    <script>
+        // Second delete message
+        Livewire.on('deleteMessageSecond', recordId => {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "No podrás revertir esta acción!",
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: "Cancelar",
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    //Emit the delete event to catch it in our component
+                    Livewire.emit('deleteSecond', recordId);
+
+                    Swal.fire(
+                        'Eliminado!',
+                        'El registro ha sido eliminado.',
+                        'success'
+                    )
+                }
+            })
+        })
+    </script>
+@endpush

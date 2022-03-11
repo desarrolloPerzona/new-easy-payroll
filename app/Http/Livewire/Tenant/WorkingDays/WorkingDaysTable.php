@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class WorkingDaysTable extends Component
 {
-    protected $listeners = ['delete' => 'deleteRecord'];
+    protected $listeners = ['deleteSecond' => 'deleteRecord'];
 
     public function render()
     {

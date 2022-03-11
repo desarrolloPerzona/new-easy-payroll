@@ -17,7 +17,7 @@
         <x-tenant.working-day-holiday.create-working-day/>
 
         {{--Working day Table Component--}}
-        <x-tenant.working-day-holiday.working-day-table/>
+        <livewire:tenant.working-days.working-days-table/>
 
         {{--Festive day Section *****--}}
 

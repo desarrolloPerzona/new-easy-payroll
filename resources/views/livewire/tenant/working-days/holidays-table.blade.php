@@ -45,13 +45,9 @@
                     <div class="flex py-2">
                         <div class="flex-1 text-gray-500">
                             <div class="d-flex">
-{{--                                <form class="d-none holiday-button" method="POST" action="{{route('business-festive-days.destroy', $festiveDay)}}">--}}
-{{--                                    @csrf--}}
-{{--                                    @method('DELETE')--}}
-                                    <button class="d-none holiday-button" type="submit" wire:click="$emit('deleteMessage', {{$festiveDay->id}})">
-                                        <i class="fas fa-trash-alt hover:text-red-500 text-gray-400 me-3"></i>
-                                    </button>
-{{--                                </form>--}}
+                                <button class="d-none holiday-button" type="submit" wire:click="$emit('deleteMessage', {{$festiveDay->id}})">
+                                    <i class="fas fa-trash-alt hover:text-red-500 text-gray-400 me-3"></i>
+                                </button>
                                 <a href="{{route('business-festive-days.edit', $festiveDay)}}" class="d-none holiday-button">
                                     <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer me-3"></i>
                                 </a>

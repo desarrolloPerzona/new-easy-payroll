@@ -53,15 +53,11 @@
                                         <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                     </a>
                                 </td>
-                                <form action="{{route('business-working-day.destroy', $workday->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <td style="width: 3%">
-                                        <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este registro?')">
-                                            <i class="fas fa-trash-alt text-gray-400 hover:text-red-500"></i>
-                                        </button>
-                                    </td>
-                                </form>
+                                <td style="width: 3%">
+                                    <button wire:click="$emit('deleteMessage', {{$workday->id}})">
+                                        <i class="fas fa-trash-alt text-gray-400 hover:text-red-500"></i>
+                                    </button>
+                                </td>
                             </table>
                         </div>
                         <div id="collapse-{{$workday->id}}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#newItem">

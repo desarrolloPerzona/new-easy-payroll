@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class WorkingDaysTable extends Component
 {
+    protected $listeners = ['delete' => 'deleteRecord'];
+
     public function render()
     {
         $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -15,5 +17,9 @@ class WorkingDaysTable extends Component
 
         return view('livewire.tenant.working-days.working-days-table',
                     compact('daysArray', 'workDays'));
+    }
+
+    function deleteRecord(BusinessWorkday $workday){
+        $workday->delete();
     }
 }

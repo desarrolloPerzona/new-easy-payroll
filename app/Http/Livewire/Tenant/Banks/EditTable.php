@@ -17,7 +17,7 @@ class EditTable extends Component
         'name' => 'required|min:4|max:50',
         'account_number' => 'required|max:24',
         'institutional_key' => 'required',
-        'description' => 'required|max:40',
+        'description' => 'required|max:80',
         'information_number' => 'required|max:12',
         'branch_number' => 'required|max:12',
         'account_clabe' => 'required|max:18',

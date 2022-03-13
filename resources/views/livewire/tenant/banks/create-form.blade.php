@@ -5,11 +5,13 @@
         <div class="form-group d-flex justify-content-between">
             <div class="w-75 mr-2">
                 <label for="branch" class="font-bold">{{__('Business')}}<span class="text-danger">*</span></label>
-                <select id="branch" name="branch" class="w-full rounded dark:bg-dark dark:text-white my-2 form-control" wire:model="branch_id">
+                <select id="branch" name="branch" class="w-full rounded dark:bg-dark dark:text-white my-2 form-control" wire:model.defer="branch_id">
+                    <option value="">{{ __('Select') }}</option>
                     @foreach($businesses as $business)
                         <option value="{{$business->id}}" }}>{{$business->name}}</option>
                     @endforeach
                 </select>
+                @error('branch_id') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-100 ml-2">
                 <label for="name" class="font-bold mb-2">{{__('Account name')}} <span class="text-danger">*</span></label>
@@ -38,7 +40,7 @@
         <div class="form-group d-flex justify-content-between">
             <div class="w-100 mb-2">
                 <label for="description" class="font-bold mb-2">{{__('Description')}} <span class="text-danger">*</span></label>
-                <textarea type="text" id="description" name="description" class="form-control form-main-input" rows="1" wire:model="description">{{ $description }}</textarea>
+                <textarea type="text" id="description" name="description" class="form-control form-main-input" rows="1" wire:model.defer="description">{{ $description }}</textarea>
                 @error('description') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
         </div>

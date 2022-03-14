@@ -1,7 +1,5 @@
 <x-app-tenant>
-
     <div class="container">
-
         {{--        Header User profile--}}
         <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
             <i class="fak fa-empleados-perzona mr-2"></i>
@@ -16,7 +14,7 @@
                 {{--            Employee Tabs buttons--}}
                 <ul class="nav nav-tabs w-full mb-2" role="tablist">
                     <li class="nav-item">
-                       <a class="nav-link active tab-retention cursor-pointer bg-primary text-white"
+                        <a class="nav-link active tab-retention cursor-pointer bg-primary text-white"
                            id="personal-button"
                            x-on:click="changeTab('personal')">
                             <i class="now-ui-icons objects_umbrella-13"></i> Información personal
@@ -400,6 +398,79 @@
                         </div>
 
                         <div class="my-4">
+                            <h2 class="font-bold">Dirección</h2>
+                            <div class="flex my-2">
+                                <div class="my-2 flex-1 w-1/2 mr-2">
+                                    <label class="mb-2 font-bold">Código Postal</label>
+                                    <input type="text" class="w-full rounded dark:bg-dark dark:text-white">
+                                </div>
+
+                                <div class="my-2 flex-1 w-1/2 mr-2">
+                                    <label class="mb-2 font-bold">Estado</label>
+                                    <select name="area" id="area" class="w-full rounded dark:bg-dark dark:text-white">
+                                        <option value="no">Seleccione uno...</option>
+                                        <option value="Aguascalientes">Aguascalientes</option>
+                                        <option value="Baja California">Baja California</option>
+                                        <option value="Baja California Sur">Baja California Sur</option>
+                                        <option value="Campeche">Campeche</option>
+                                        <option value="Chiapas">Chiapas</option>
+                                        <option value="Chihuahua">Chihuahua</option>
+                                        <option value="CDMX">Ciudad de México</option>
+                                        <option value="Coahuila">Coahuila</option>
+                                        <option value="Colima">Colima</option>
+                                        <option value="Durango">Durango</option>
+                                        <option value="Estado de México">Estado de México</option>
+                                        <option value="Guanajuato">Guanajuato</option>
+                                        <option value="Guerrero">Guerrero</option>
+                                        <option value="Hidalgo">Hidalgo</option>
+                                        <option value="Jalisco">Jalisco</option>
+                                        <option value="Michoacán">Michoacán</option>
+                                        <option value="Morelos">Morelos</option>
+                                        <option value="Nayarit">Nayarit</option>
+                                        <option value="Nuevo León">Nuevo León</option>
+                                        <option value="Oaxaca">Oaxaca</option>
+                                        <option value="Puebla">Puebla</option>
+                                        <option value="Querétaro">Querétaro</option>
+                                        <option value="Quintana Roo">Quintana Roo</option>
+                                        <option value="San Luis Potosí">San Luis Potosí</option>
+                                        <option value="Sinaloa">Sinaloa</option>
+                                        <option value="Sonora">Sonora</option>
+                                        <option value="Tabasco">Tabasco</option>
+                                        <option value="Tamaulipas">Tamaulipas</option>
+                                        <option value="Tlaxcala">Tlaxcala</option>
+                                        <option value="Veracruz">Veracruz</option>
+                                        <option value="Yucatán">Yucatán</option>
+                                        <option value="Zacatecas">Zacatecas</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="flex my-2">
+                                <div class="my-2 flex-1 w-1/2 mr-2">
+                                    <label class="mb-2 font-bold">Ciudad</label>
+                                    <input type="text" class="w-full rounded dark:bg-dark dark:text-white">
+                                </div>
+
+                                <div class="my-2 flex-1 w-1/2 mr-2">
+                                    <label class="mb-2 font-bold">Calle</label>
+                                    <input type="text" class="w-full rounded dark:bg-dark dark:text-white">
+                                </div>
+                            </div>
+
+                            <div class="flex my-2">
+                                <div class="my-2 flex-1 w-1/2 mr-2">
+                                    <label class="mb-2 font-bold">Número exterior</label>
+                                    <input type="text" class="w-full rounded dark:bg-dark dark:text-white">
+                                </div>
+
+                                <div class="my-2 flex-1 w-1/2 mr-2">
+                                    <label class="mb-2 font-bold">Número interior</label>
+                                    <input type="text" class="w-full rounded dark:bg-dark dark:text-white">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-4">
                             <input type="checkbox"> Invitar al empleado a ingresar la información adicional
                         </div>
 
@@ -410,7 +481,8 @@
                         <div class="flex my-2">
                             <div class="my-2 flex-1 w-1/3 mr-2">
                                 <label class="mb-2 font-bold">Nacionalidad</label>
-                                <select name="nacionalidad" id="nacionalidad" class="w-full rounded dark:bg-dark dark:text-white">
+                                <select name="nacionalidad" id="nacionalidad"
+                                        class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="argentina">Argentina</option>
                                     <option value="">Afganistán</option>
@@ -622,7 +694,8 @@
                             </div>
                             <div class="my-2 flex-1 w-1/3 mr-2">
                                 <label class="mb-2 font-bold">Estado civil</label>
-                                <select name="estadocivil" id="estadocivil" class="w-full rounded dark:bg-dark dark:text-white">
+                                <select name="estadocivil" id="estadocivil"
+                                        class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Soltero</option>
                                     <option value="">Casado</option>
                                     <option value="">Divorciado</option>
@@ -633,12 +706,6 @@
                             </div>
                         </div>
 
-                        <div class="my-2">
-                            <label class="mb-2 font-bold">Dirección</label>
-                            <div>
-                                <textarea name="textarea" rows="5" class="w-full rounded dark:bg-dark dark:text-white">Dirección</textarea>
-                            </div>
-                        </div>
 
                         <div class="my-2">
                             <label class="mb-2 font-bold">¿Tiene hijos?</label>
@@ -702,7 +769,7 @@
                 {{--                Empleo-------------------------------------------------------}}
                 <div id="employee-table" class="retentions-table d-none">
                     <div class="card p-4 mb-2">
-                        <h2 class="mb-2">Información del puesto</i>
+                        <h2 class="mb-2">Información del puesto
                         </h2>
                         <div class="my-2 flex">
                             <div class="my-2 flex-1 w-1/2 mr-2">
@@ -714,6 +781,49 @@
                                 </select>
                             </div>
 
+                            <div class="my-2 flex-1 w-1/2 mr-2">
+                                <label class="mb-2 font-bold">Estado</label>
+                                <select name="area" id="area" class="w-full rounded dark:bg-dark dark:text-white">
+                                    <option value="no">Seleccione uno...</option>
+                                    <option value="Aguascalientes">Aguascalientes</option>
+                                    <option value="Baja California">Baja California</option>
+                                    <option value="Baja California Sur">Baja California Sur</option>
+                                    <option value="Campeche">Campeche</option>
+                                    <option value="Chiapas">Chiapas</option>
+                                    <option value="Chihuahua">Chihuahua</option>
+                                    <option value="CDMX">Ciudad de México</option>
+                                    <option value="Coahuila">Coahuila</option>
+                                    <option value="Colima">Colima</option>
+                                    <option value="Durango">Durango</option>
+                                    <option value="Estado de México">Estado de México</option>
+                                    <option value="Guanajuato">Guanajuato</option>
+                                    <option value="Guerrero">Guerrero</option>
+                                    <option value="Hidalgo">Hidalgo</option>
+                                    <option value="Jalisco">Jalisco</option>
+                                    <option value="Michoacán">Michoacán</option>
+                                    <option value="Morelos">Morelos</option>
+                                    <option value="Nayarit">Nayarit</option>
+                                    <option value="Nuevo León">Nuevo León</option>
+                                    <option value="Oaxaca">Oaxaca</option>
+                                    <option value="Puebla">Puebla</option>
+                                    <option value="Querétaro">Querétaro</option>
+                                    <option value="Quintana Roo">Quintana Roo</option>
+                                    <option value="San Luis Potosí">San Luis Potosí</option>
+                                    <option value="Sinaloa">Sinaloa</option>
+                                    <option value="Sonora">Sonora</option>
+                                    <option value="Tabasco">Tabasco</option>
+                                    <option value="Tamaulipas">Tamaulipas</option>
+                                    <option value="Tlaxcala">Tlaxcala</option>
+                                    <option value="Veracruz">Veracruz</option>
+                                    <option value="Yucatán">Yucatán</option>
+                                    <option value="Zacatecas">Zacatecas</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+
+                        <div class="my-2 flex">
                             <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Área</label>
                                 <select name="area" id="area" class="w-full rounded dark:bg-dark dark:text-white">
@@ -727,12 +837,6 @@
                                 </select>
                             </div>
 
-
-                        </div>
-
-
-
-                        <div class="my-2 flex">
                             <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Puesto de trabajo</label>
                                 <select name="puesto" id="puesto" class="w-full rounded dark:bg-dark dark:text-white">
@@ -743,16 +847,16 @@
                                 </select>
                             </div>
 
+                        </div>
 
-                            <div class="my-2 flex-1 w-1/2 mr-2">
-                                <label class="mb-2 font-bold">Politicas</label>
-                                <select name="politica" id="politica" class="w-full rounded dark:bg-dark dark:text-white">
-                                    <option value="">Seleccione</option>
-                                    <option value="">Política 1</option>
-                                    <option value="">Política 1</option>
-                                    <option value="">Política 1</option>
-                                </select>
-                            </div>
+                        <div class="my-2 w-full mr-2">
+                            <label class="mb-2 font-bold">Politicas</label>
+                            <select name="politica" id="politica" class="w-full rounded dark:bg-dark dark:text-white">
+                                <option value="">Seleccione</option>
+                                <option value="">Política 1</option>
+                                <option value="">Política 1</option>
+                                <option value="">Política 1</option>
+                            </select>
                         </div>
 
                         <div class="my-2">
@@ -769,7 +873,7 @@
                     </div>
 
                     <div class="card p-4 mb-2">
-                        <h2 class="mb-2">Información de contrato</i>
+                        <h2 class="mb-2">Información de contrato
                         </h2>
                         <div class="my-2 flex">
                             <div class="my-2 flex-1 w-1/2 mr-2">
@@ -1065,11 +1169,21 @@
 
                             <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Tipo de contrato</label>
-                                <select name="tipocontrato" id="tipocontrato" class="w-full rounded dark:bg-dark dark:text-white">
+                                <select name="tipocontrato" id="tipocontrato"
+                                        class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
-                                    <option value="">Tiempo indeterminado</option>
-                                    <option value="">Sujeto a prueba</option>
-                                    <option value="">Temporal</option>
+                                    <option value="">Contrato de trabajo por tiempo indeterminado</option>
+                                    <option value="">Contrato de trabajo para obra determinada</option>
+                                    <option value="">Contrato de trabajo por tiempo determinado</option>
+                                    <option value="">Contrato de trabajo por temporada</option>
+                                    <option value="">Contrato de trabajo sujeto a prueba</option>
+                                    <option value="">Contrato de trabajo con capacitación inicial</option>
+                                    <option value="">Modalidad de contratación por pago de hora laborada</option>
+                                    <option value="">Modalidad de trabajo por comisión laboral</option>
+                                    <option value="">Modalidades de contratación donde no existe relación de trabajo
+                                    </option>
+                                    <option value="">Jubilación, pensión, retiro</option>
+                                    <option value="">Otro contrato</option>
                                 </select>
                             </div>
                         </div>
@@ -1368,7 +1482,8 @@
 
                             <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Tipo de empleado</label>
-                                <select name="tipoempleado" id="tipoempleado" class="w-full rounded dark:bg-dark dark:text-white">
+                                <select name="tipoempleado" id="tipoempleado"
+                                        class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Sueldo fijo</option>
                                     <option value="">Sueldo variable</option>
@@ -1379,18 +1494,19 @@
 
                         <div class="my-2 flex">
                             <div class="my-2 flex-1 w-1/2 mr-2">
-                            <label class="mb-2 font-bold">Jornada</label>
-                            <select name="joranda" id="joranda" class="w-full rounded dark:bg-dark dark:text-white">
-                                <option value="">Seleccione</option>
-                                <option value="">Matutina</option>
-                                <option value="">Vespertina</option>
-                                <option value="">Nocturna</option>
-                                <option value="">Mixta</option>
-                            </select>
-                        </div>
+                                <label class="mb-2 font-bold">Jornada</label>
+                                <select name="joranda" id="joranda" class="w-full rounded dark:bg-dark dark:text-white">
+                                    <option value="">Seleccione</option>
+                                    <option value="">Matutina</option>
+                                    <option value="">Vespertina</option>
+                                    <option value="">Nocturna</option>
+                                    <option value="">Mixta</option>
+                                </select>
+                            </div>
                             <div class="my-2 flex-1 w-1/2">
                                 <label class="mb-2 font-bold">Área geográfica</label>
-                                <select name="areageografica" id="areageografica" class="w-full rounded dark:bg-dark dark:text-white">
+                                <select name="areageografica" id="areageografica"
+                                        class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Área general</option>
                                     <option value="">Área frontera</option>
@@ -1410,7 +1526,8 @@
                         <div class="my-2 flex">
                             <div class="my-2 flex-1 w-1/2 mr-2">
                                 <label class="mb-2 font-bold">Grupo de nómina</label>
-                                <select name="gruponomina" id="gruponomina" class="w-full rounded dark:bg-dark dark:text-white">
+                                <select name="gruponomina" id="gruponomina"
+                                        class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Grupo 1 (Semanal)</option>
                                     <option value="">Grupo 2 (Quincenal)</option>
@@ -1419,24 +1536,10 @@
                             </div>
 
                             <div class="my-2 flex-1 w-1/2 mr-2">
-                                <label class="mb-2 font-bold">Tipo de compensacion</label>
-                                <select name="compensacion" id="compensacion" class="w-full rounded dark:bg-dark dark:text-white">
-                                    <option value="">Seleccione</option>
-                                    <option value="">Directas</option>
-                                    <option value="">Indirectas</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="my-2 flex">
-                            <div class="my-2 flex-1 w-1/2 mr-2">
-                                <label class="mb-2 font-bold">Sueldo bruto mensual</label>
-                                <input type="text" class="w-full rounded dark:bg-dark dark:text-white">
-                            </div>
-                            <div class="my-2 flex-1 w-1/2 mr-2">
 
                                 <label class="mb-2 font-bold">Tabla de beneficios</label>
-                                <select name="tablabeneficios" id="tablabeneficios" class="w-full rounded dark:bg-dark dark:text-white">
+                                <select name="tablabeneficios" id="tablabeneficios"
+                                        class="w-full rounded dark:bg-dark dark:text-white">
                                     <option value="">Seleccione</option>
                                     <option value="">Directivos</option>
                                     <option value="">Gerentes</option>
@@ -1445,47 +1548,58 @@
                             </div>
                         </div>
 
+                            <div class="my-2 w-full">
+                                <label class="mb-2 font-bold">Sueldo bruto mensual</label>
+                                <input type="text" class="w-full rounded dark:bg-dark dark:text-white">
+                            </div>
+
+
                         <div class="my-2 w-full mr-2">
                             <label class="mb-2 font-bold">Metodo de pago</label>
-                            <select name="metodopago" id="metodopago" class="w-full rounded dark:bg-dark dark:text-white">
+                            <select name="metodopago" id="metodopago"
+                                    class="w-full rounded dark:bg-dark dark:text-white">
                                 <option value="">Seleccione</option>
                                 <option selected value="">Deposito bancario</option>
                                 <option value="">Pago por cheque</option>
                                 <option value="">Pago en efectivo</option>
                             </select>
                         </div>
-                        <div class="card p-2 my-2 bg-gray-200">
+                        <div class="rounded flex flex-col p-4 relative drop-shadow-sm bg-gray-200 p-2 my-2">
                             <h2 class="mb-2">Datos bancarios
                             </h2>
-                        <label class="font-bold" for="name">{{__('Account name')}}</label>
-                        <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+                            <label class="font-bold" for="name">{{__('Account name')}}</label>
+                            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                                   name="Name">
 
-                        <label class="font-bold" for="name">{{__('Account number')}}</label>
-                        <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+                            <label class="font-bold" for="name">{{__('Account number')}}</label>
+                            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                                   name="Name">
 
 
+                            <label class="font-bold my-2" for="name">{{__('Bank')}}</label>
+                            <label>
+                                <select class="w-full rounded dark:bg-dark dark:text-white">
+                                    <option value="">{{__('Select')}}</option>
 
-                        <label class="font-bold my-2" for="name">{{__('Bank')}}</label>
-                        <label>
-                            <select class="w-full rounded dark:bg-dark dark:text-white">
-                                <option value="">{{__('Select')}}</option>
+                                </select>
+                            </label>
 
-                            </select>
-                        </label>
+                            <label class="font-bold" for="name">{{__('Information number')}}</label>
+                            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                                   name="Name">
 
-                        <label class="font-bold" for="name">{{__('Information number')}}</label>
-                        <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
+                            <label class="font-bold" for="name">{{__('Branch number')}}</label>
+                            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                                   name="Name">
 
-                        <label class="font-bold" for="name">{{__('Branch number')}}</label>
-                        <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
-
-                        <label class="font-bold" for="name">{{__('CLABE account')}}</label>
-                        <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name" name="Name">
-                    </div>
+                            <label class="font-bold" for="name">{{__('CLABE account')}}</label>
+                            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white" type="text" id="name"
+                                   name="Name">
+                        </div>
                     </div>
 
                     <div class="btn-top-holder my-3 flow-root">
-                        <a  class="btn btn-dark float-right cursor-pointer">
+                        <a class="btn btn-dark float-right cursor-pointer">
                             {{ __('Save') }}
                         </a>
                     </div>

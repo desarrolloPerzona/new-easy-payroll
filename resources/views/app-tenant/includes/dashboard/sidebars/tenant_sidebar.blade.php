@@ -127,7 +127,7 @@
                             {{__('To register')}}
                         </a>
                     </li>
-                </ul>
+                 </ul>
             </li>
 
         @else

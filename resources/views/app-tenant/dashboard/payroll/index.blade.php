@@ -85,11 +85,6 @@
                                 </div>
 
                                 <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate employment subsidy in the following way:')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">30 Días</label></div>
-                                </div>
-
-                                <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate income tax for Christmas bonus applying regulation')}}</label></div>
                                     <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
                                 </div>
@@ -158,11 +153,6 @@
                                 </div>
 
                                 <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate employment subsidy in the following way:')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">15 Días</label></div>
-                                </div>
-
-                                <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate income tax for Christmas bonus applying regulation')}}</label></div>
                                     <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Si</label></div>
                                 </div>
@@ -228,11 +218,6 @@
                                 <div class="flex">
                                     <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate payroll period based on:')}}</label></div>
                                     <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">Periodica</label></div>
-                                </div>
-
-                                <div class="flex">
-                                    <div class="flex-1 text-left w-1/2"><label class="my-2">{{__('Calculate employment subsidy in the following way:')}}</label></div>
-                                    <div class="flrx-2 text-left w-1/2"><label class="my-2 font-bold">30.4 Días</label></div>
                                 </div>
 
                                 <div class="flex">

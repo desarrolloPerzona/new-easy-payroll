@@ -61,16 +61,6 @@
                 <div class="ml-2"><label>{{__('Calculate income tax for Christmas bonus applying regulation')}}</label></div>
             </div>
 
-            <label class="font-bold my-2" for="name">{{__('Calculate employment subsidy in the following way:')}}</label>
-            <div>
-                <input type="radio" id="Periodica" name="Periodica" value="Periodica" checked>
-                <label for="dewey">{{__('Periodic')}}</label>
-            </div>
-
-            <div>
-                <input type="radio" id="Diaria" name="Diaria" value="Diaria">
-                <label for="louie">{{__('Daily')}}</label>
-            </div>
 
             <label class="font-bold my-2" for="name">{{__('Nómina automática')}}</label>
             <div>

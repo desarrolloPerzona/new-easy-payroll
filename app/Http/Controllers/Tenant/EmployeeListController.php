@@ -38,6 +38,7 @@ class EmployeeListController extends Controller
         //
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -80,6 +81,7 @@ class EmployeeListController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
+
 }

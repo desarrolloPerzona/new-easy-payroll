@@ -14,7 +14,8 @@
         <x-utilities.section-header title="Working days" classes=""/>
 
         {{--New business working day Component--}}
-        <x-tenant.working-day-holiday.create-working-day/>
+<!--        <x-tenant.working-day-holiday.create-working-day/>-->
+        <livewire:tenant.working-days.working-days-create-form/>
 
         {{--Working day Table Component--}}
         <livewire:tenant.working-days.working-days-table/>

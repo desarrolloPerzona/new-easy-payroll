@@ -6,6 +6,13 @@ use Livewire\Component;
 
 class WorkingDaysCreateForm extends Component
 {
+    public $name, $workday_type;
+
+    protected $rules = [
+        'name' => 'required|min:3',
+        'workday_type' => 'required'
+    ];
+
     public function render()
     {
         $workdayTypes = ['diurno', 'nocturno', 'mixto'];

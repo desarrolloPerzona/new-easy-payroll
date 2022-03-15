@@ -22,12 +22,12 @@
                     <div class="d-flex col-12 justify-around">
                         <div class="mb-3 pe-2 col-6">
                             <label for="name" class="form-label font-bold">{{__('Name')}}</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" wire:model.defer="name">
                         </div>
 
                         <div class="mb-3 ps-2 col-6">
                             <label for="workingDaySelect" class="form-label font-bold">{{__('Type of shift')}}</label>
-                            <select name="workday_type" id="workday_type" class="form-select" required>
+                            <select name="workday_type" id="workday_type" class="form-select" wire:model.defer="workday_type">
                                 <option value="">{{__('Select')}}</option>
                                 @foreach($workdayTypes as $type)
                                     <option value="{{$type}}">{{__(ucfirst($type))}}</option>
@@ -108,7 +108,7 @@
                         </div>
 
                         <div class="d-flex justify-content-end">
-                            <button class="btn btn-primary" type="submit">{{__('Save')}}</button>
+                            <button class="btn btn-primary">{{__('Save')}}</button>
                         </div>
 
                     </div>

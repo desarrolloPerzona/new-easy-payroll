@@ -64,14 +64,13 @@
                                 {{--Hours in working day--}}
                                 <div class="col-3 d-flex mb-2">
 
-{{--                                    Hours select component--}}
-                                    <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled" value="" livewire="{{$day}}_from"/>
+                                    <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day . '_from'}}" name="{{$day . '_from'}}" disabled wire:model.defer="{{$day . '_from'}}">
 
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
 
-                                    <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled" value="" livewire="{{$day}}_to"/>
+                                    <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day . '_to'}}" name="{{$day . '_to'}}" disabled wire:model.defer="{{$day . '_to'}}">
 
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>

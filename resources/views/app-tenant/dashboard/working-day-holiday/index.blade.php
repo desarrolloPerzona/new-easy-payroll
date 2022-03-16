@@ -2,9 +2,6 @@
 
     <div class="container mx-auto mb-6">
 
-        {{-- Error validation message--}}
-        <x-forms.error-validation-message classes=""/>
-
         {{-- Alert message (edit, create or delete record)--}}
         <x-forms.alert-message classes=""/>
 
@@ -14,7 +11,6 @@
         <x-utilities.section-header title="Working days" classes=""/>
 
         {{--New business working day Component--}}
-<!--        <x-tenant.working-day-holiday.create-working-day/>-->
         <livewire:tenant.working-days.working-days-create-form/>
 
         {{--Working day Table Component--}}

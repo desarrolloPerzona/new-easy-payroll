@@ -59,15 +59,10 @@ class BusinessWorkdayController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
         $businessWorkday = BusinessWorkday::find($id);
-
-        $workdayTypes = ['diurno', 'nocturno', 'mixto'];
-
-        $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-
-        return view('app-tenant.dashboard.business-workday.edit', compact('daysArray', 'businessWorkday', 'workdayTypes'));
+        return view('app-tenant.dashboard.business-workday.edit', compact('businessWorkday'));
     }
 
     /**
@@ -122,40 +117,8 @@ class BusinessWorkdayController extends Controller
      * @param \App\Models\Tenant\BusinessWorkday $businessWorkday
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $businessWorkday)
+    public function destroy()
     {
-        $businessWorkday = BusinessWorkday::find($businessWorkday);
-        $businessWorkday->delete();
-
-        return redirect()->route('working-day-holiday.index')->with('message', 'delete');
-    }
-
-//    Function to delete hours in workday from edit view
-    public function deleteHour($id)
-    {
-        $businessWorkday = BusinessWorkday::find($id);
-
-        $businessWorkday->update([
-            'meal_time' => false,
-            'meal_time_from' => null,
-            'meal_time_to' => null
-        ]);
-
-        return redirect()->back()->with('message', 'edit');
-    }
-
-    //    Function to delete hours in workday from edit view
-    public function deleteWorkdayHours($id, $day)
-    {
-
-        $businessWorkday = BusinessWorkday::find($id);
-
-        $businessWorkday->update([
-            $day => false,
-            $day . '_from' => null,
-            $day . '_to' => null
-        ]);
-
-        return redirect()->back()->with('message', 'edit');
+        //
     }
 }

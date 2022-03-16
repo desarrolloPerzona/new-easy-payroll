@@ -50,4 +50,7 @@ class WorkingDaysEditForm extends Component
         $this->emit('alert', 'Registro actualizado exitosamente!');
         $this->emit('renderMine');
     }
+    public function update(){
+
+    }
 }

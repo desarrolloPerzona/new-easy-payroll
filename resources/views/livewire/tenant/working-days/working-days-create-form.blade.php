@@ -1,6 +1,10 @@
 {{--    New Working day Accordion--}}
 <div class="accordion btn-top-holder my-3 max-w-6xl m-auto" id="workingDayAccordion"
      x-data="selectConditionals()">
+
+    {{--Validation message--}}
+    <x-forms.error-validation-message classes="mt-3"/>
+
     <div class="accordion-item bg-blueSteel py-2 px-3 mb-2 rounded">
         {{-- Accordion header New WorkingDay --}}
         <div class="accordion-header mr-4" id="headingWorkingDay">
@@ -18,16 +22,16 @@
             <div class="accordion-body text-dark bg-gray-100 rounded dark:bg-dark dark:text-white">
 
                 {{--Working day Form--}}
-                <form name="newForm" class="text-black rounded">
+                <form name="newForm" class="text-black rounded" wire:submit.prevent="store">
                     <div class="d-flex col-12 justify-around">
                         <div class="mb-3 pe-2 col-6">
                             <label for="name" class="form-label font-bold">{{__('Name')}}</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" wire:model.defer="name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" wire:model.defer="name" required>
                         </div>
 
                         <div class="mb-3 ps-2 col-6">
                             <label for="workingDaySelect" class="form-label font-bold">{{__('Type of shift')}}</label>
-                            <select name="workday_type" id="workday_type" class="form-select" wire:model.defer="workday_type">
+                            <select name="workday_type" id="workday_type" class="form-select" wire:model.defer="workday_type" required>
                                 <option value="">{{__('Select')}}</option>
                                 @foreach($workdayTypes as $type)
                                     <option value="{{$type}}">{{__(ucfirst($type))}}</option>
@@ -50,7 +54,7 @@
                                     $day = strtolower($day);
                                 @endphp
                                 <div class="col-1">
-                                    <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1" class="rounded" x-on:click="isDisabled(`{{$day}}`)">
+                                    <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1" class="rounded" x-on:click="isDisabled(`{{$day}}`)" wire:model.defer="{{$day}}">
                                 </div>
 
                                 <div class="col-2">
@@ -60,14 +64,14 @@
                                 {{--Hours in working day--}}
                                 <div class="col-3 d-flex mb-2">
 
-                                    {{--Hours select component--}}
-                                    <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
+{{--                                    Hours select component--}}
+                                    <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled" value="" livewire="{{$day}}_from"/>
 
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
 
-                                    <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
+                                    <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled" value="" livewire="{{$day}}_to"/>
 
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
@@ -108,7 +112,7 @@
                         </div>
 
                         <div class="d-flex justify-content-end">
-                            <button class="btn btn-primary">{{__('Save')}}</button>
+                            <button type="submit" class="btn btn-primary">{{__('Save')}}</button>
                         </div>
 
                     </div>

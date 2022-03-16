@@ -44,7 +44,7 @@ class HolidaysCreateForm extends Component
 
         $this->reset();
 
-        $this->emit('alert', 'Registro eliminado exitosamente!');
+        $this->emit('alert', 'Registro creado exitosamente!');
         $this->emit('renderHolidaysTable');
     }
 }

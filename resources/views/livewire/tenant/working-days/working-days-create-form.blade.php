@@ -96,13 +96,11 @@
                             <div class="col-3 d-flex mb-2">
 
                                 <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_from" name="meal_time_from" disabled wire:model.defer="meal_time_from">
-
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>
 
                                 <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_to" name="meal_time_to" disabled wire:model.defer="meal_time_to">
-
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>

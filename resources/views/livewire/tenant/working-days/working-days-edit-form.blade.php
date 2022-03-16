@@ -95,16 +95,15 @@
                                         </div>
                                     </div>
 
-                                    {{--Select section--}}
+                                    {{--Select Hours section--}}
                                     <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">
 
-                                        <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
-
+                                        <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_from" name="{{$day}}_from" disabled wire:model.defer="{{$day}}_from">
                                         <div class="d-flex align-items-end">
                                             <small>hrs</small>
                                         </div>
 
-                                        <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
+                                        <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_to" name="{{$day}}_to" disabled wire:model.defer="{{$day}}_to">
                                         <div class="d-flex align-items-end">
                                             <small>hrs</small>
                                         </div>
@@ -119,12 +118,12 @@
                                 {{--Select section--}}
                                 <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">
 
-                                    <x-utilities.hours-select-button id="{{$day}}_from" name="{{$day}}_from" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
+                                    <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_from" name="{{$day}}_from" disabled wire:model.defer="{{$day}}_from">
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
 
-                                    <x-utilities.hours-select-button id="{{$day}}_to" name="{{$day}}_to" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
+                                    <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_to" name="{{$day}}_to" disabled wire:model.defer="{{$day}}_to">
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
@@ -177,12 +176,12 @@
 
                             {{--Select section--}}
                             <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
-                                <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs="" value="" livewire=""/>
+                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_from" name="meal_time_from" wire:model.defer="meal_time_from">
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>
 
-                                <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs="" value="" livewire=""/>
+                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_to" name="meal_time_to" wire:model.defer="meal_time_to">
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>
@@ -194,12 +193,12 @@
                             {{--                                Select section--}}
                             <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
 
-                                <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs="" value="" livewire=""/>
+                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_from" name="meal_time_from" wire:model.defer="meal_time_from">
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>
 
-                                <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs="" value="" livewire=""/>
+                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_to" name="meal_time_to" wire:model.defer="meal_time_to">
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>

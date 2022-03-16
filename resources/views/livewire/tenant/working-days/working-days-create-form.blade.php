@@ -87,7 +87,7 @@
                         <div class="d-flex align-items-center">
                             <div class="col-1">
                                 <input name="meal_time" id="meal_time" value="1" type="checkbox"
-                                       class="rounded" x-on:click="isMealTime('meal_time')">
+                                       class="rounded" x-on:click="isMealTime('meal_time')" wire:model.defer="meal_time">
                             </div>
                             <div class="col-2">
                                 {{__('Comida')}}
@@ -96,13 +96,13 @@
                             {{--Hours in working day--}}
                             <div class="col-3 d-flex mb-2">
 
-                                <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
+                                <x-utilities.hours-select-button id="meal_time_from" name="meal_time_from" classes="form-control mx-2" attribs="disabled" value="" livewire="meal_time_from"/>
 
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>
 
-                                <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs="disabled" value="" livewire=""/>
+                                <x-utilities.hours-select-button id="meal_time_to" name="meal_time_to" classes="form-control mx-2" attribs="disabled" value="" livewire="meal_time_to"/>
 
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>

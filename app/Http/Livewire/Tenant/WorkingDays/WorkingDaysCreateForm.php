@@ -8,7 +8,7 @@ use function Livewire\str;
 
 class WorkingDaysCreateForm extends Component
 {
-    public $name, $workday_type;
+    public $name, $workday_type, $meal_time, $meal_time_from, $meal_time_to;
 
     // Days variables
     public $monday, $monday_from, $monday_to,
@@ -90,6 +90,15 @@ class WorkingDaysCreateForm extends Component
             $workingDay['sunday' . "_to"] = $this->sunday_to;
         } else{
             $workingDay['sunday'] = 0;
+        }
+
+        // Meal time fields
+        if ($this->meal_time) {
+            $workingDay->meal_time = $this->meal_time;
+            $workingDay->meal_time_from = $this->meal_time_from;
+            $workingDay->meal_time_to = $this->meal_time_to;
+        } else {
+            $workingDay->meal_time = 0;
         }
 
         $workingDay->save();

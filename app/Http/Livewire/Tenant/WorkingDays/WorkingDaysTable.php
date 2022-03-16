@@ -13,7 +13,7 @@ class WorkingDaysTable extends Component
     {
         $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-        $workDays = BusinessWorkday::all();
+        $workDays = BusinessWorkday::orderBy('id', 'DESC')->get();
 
         return view('livewire.tenant.working-days.working-days-table',
                     compact('daysArray', 'workDays'));

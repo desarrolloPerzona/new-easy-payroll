@@ -52,7 +52,7 @@
                     <label class="font-bold mb-3" for="">Días de la semana</label>
 
                     {{--WorkingDays Loop--}}
-                    @foreach($daysArray as $day)
+                    @foreach($daysArray as $key => $day)
 
                         <div class="d-flex align-items-center py-3">
                             @php
@@ -88,7 +88,7 @@
                                         {{--Trash button--}}
                                         <div class="ms-3">
                                             <td style="width: 3%">
-                                                <a href="{{route('deleteWorkdayHour', [$businessWorkday->id, $day])}}">
+                                                <a class="cursor-pointer" wire:click="deleteHour( {{$businessWorkday}}, {{$key}} )">
                                                     <i class="fas fa-trash-alt text-gray-400"></i>
                                                 </a>
                                             </td>
@@ -167,7 +167,7 @@
                                 {{--Trash button meal_time--}}
                                 <div class="ms-3">
                                     <td style="width: 3%">
-                                        <a href="{{route('deleteHour', $businessWorkday->id)}}">
+                                        <a class="cursor-pointer" wire:click="deleteMealHour( {{$businessWorkday}} )">
                                             <i class="fas fa-trash-alt text-gray-400"></i>
                                         </a>
                                     </td>

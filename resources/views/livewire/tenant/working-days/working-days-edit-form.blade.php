@@ -166,7 +166,7 @@
                                 {{--Trash button meal_time--}}
                                 <div class="ms-3">
                                     <td style="width: 3%">
-                                        <a class="cursor-pointer" wire:click="deleteMealdeHour( {{$businessWorkday}} )">
+                                        <a class="cursor-pointer" wire:click="deleteMealHour( {{$businessWorkday}} )">
                                             <i class="fas fa-trash-alt text-gray-400"></i>
                                         </a>
                                     </td>

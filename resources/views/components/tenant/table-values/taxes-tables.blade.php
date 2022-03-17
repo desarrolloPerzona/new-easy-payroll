@@ -15,7 +15,7 @@
         {{--                All tables for each state--}}
         <div id="daily-table" class="retentions-table">
 
-            @foreach($names as $key => $stateVariable)
+            @foreach($stateVariables as $key => $stateVariable)
                 <div>
                     <h2>{{ $names[$key] }}</h2>
                 </div>
@@ -30,58 +30,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {{dd($stateVariables)}}
-{{--                    {{dd($'array'.$stateVariable)}}--}}
 
-{{--                    @foreach(${"$name"} as $stateValue)--}}
-{{--                        <tr>--}}
-{{--                            <td>{{number_format($stateValue->lower_limit, 2, '.')}}</td>--}}
-{{--                            @if($stateValue->upper_limit == 999999.00)--}}
+                    {{--We need to transform state variables in a variable.--}}
+                    @foreach(${"$stateVariable"} as $stateValue)
+                        <tr>
+                            <td>{{number_format($stateValue->lower_limit, 2, '.')}}</td>
+                            @if($stateValue->upper_limit == 999999.00)
 
-{{--                                <td>{{__('En adelante')}}</td>--}}
-{{--                            @else--}}
-{{--                                <td>{{number_format($stateValue->upper_limit, 2, '.')}}</td>--}}
-{{--                            @endif--}}
-{{--                            <td>{{number_format($stateValue->fixed_fee, 2, '.')}}</td>--}}
-{{--                            <td>{{$stateValue->lower_limit_surplus_percentage}}</td>--}}
-{{--                        </tr>--}}
-{{--                    @endforeach--}}
+                                <td>{{__('En adelante')}}</td>
+                            @else
+                                <td>{{number_format($stateValue->upper_limit, 2, '.')}}</td>
+                            @endif
+                            <td>{{number_format($stateValue->fixed_fee, 2, '.')}}</td>
+                            <td>{{$stateValue->lower_limit_surplus_percentage}}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             @endforeach
-
-            {{--            @foreach($stateVariables as $key =>$name)--}}
-            {{--                <div>--}}
-            {{--                    <h2>{{ $names[$key] }}</h2>--}}
-            {{--                </div>--}}
-            {{--                <hr>--}}
-
-            {{--                <table class="table table-striped mb-5">--}}
-            {{--                    <thead>--}}
-            {{--                    <tr>--}}
-            {{--                        <th scope="col">{{__('Límite inferior $')}}</th>--}}
-            {{--                        <th scope="col">{{__('Límite superior $')}}</th>--}}
-            {{--                        <th scope="col">{{__('Cuota fija $')}}</th>--}}
-            {{--                        <th scope="col">{{__('Excedentes %')}}</th>--}}
-            {{--                    </tr>--}}
-            {{--                    </thead>--}}
-            {{--                    <tbody>--}}
-            {{--                    @foreach(${"$name"} as $stateValue)--}}
-            {{--                        <tr>--}}
-            {{--                            <td>{{number_format($stateValue->lower_limit, 2, '.')}}</td>--}}
-            {{--                            @if($stateValue->upper_limit == 999999.00)--}}
-
-            {{--                                <td>{{__('En adelante')}}</td>--}}
-            {{--                            @else--}}
-            {{--                                <td>{{number_format($stateValue->upper_limit, 2, '.')}}</td>--}}
-            {{--                            @endif--}}
-            {{--                            <td>{{number_format($stateValue->fixed_fee, 2, '.')}}</td>--}}
-            {{--                            <td>{{$stateValue->lower_limit_surplus_percentage}}</td>--}}
-            {{--                        </tr>--}}
-            {{--                    @endforeach--}}
-            {{--                    </tbody>--}}
-            {{--                </table>--}}
-            {{--            @endforeach--}}
 
         </div>
 

@@ -25,7 +25,6 @@ class TaxesTables extends Component
     public function render()
     {
 
-//        $currentYear = date('Y');
         $appUrl = config('app.url');
 
         //        All
@@ -42,7 +41,6 @@ class TaxesTables extends Component
         $names = array();
         $stateNames = array();
         $stateVariables = array();
-        $finalArray = array();
 
         //        Getting state names
         foreach ($allIsn as $value){
@@ -69,24 +67,11 @@ class TaxesTables extends Component
             }
         }
 
-        foreach($stateNames as $stateVariable){
-            array_push($stateVariables, ('array' . $stateVariable));
+        //  Getting variables names to show them in view
+        foreach ($stateNames as $name){
+            array_push($stateVariables, ('array'. $name));
         }
 
-        //        Loop to create a response for each state in our array
-//        foreach ($stateNames as $key => $value){
-//            $response = Http::withOptions(['verify' => false])->get($appUrl .'/api/isn-payroll-taxes/' . $currentYear . '/' . $names[$key]);
-//            ${"array$value"} = json_decode($response->body());
-//
-//        }
-
-        //        Getting variables names to show them in view
-//        $stateVariables = array();
-//
-//        foreach ($stateNames as $name){
-//            array_push($stateVariables, ('array'. $name));
-//        }
-//        dd($arrayAguascalientes);
-        return view('components.tenant.table-values.taxes-tables', compact([ [$stateVariables], 'names']));
+        return view('components.tenant.table-values.taxes-tables', compact([ [$stateVariables], 'names', 'stateVariables']));
     }
 }

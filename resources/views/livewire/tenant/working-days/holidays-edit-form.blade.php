@@ -45,8 +45,8 @@
                     <label for="" class="my-2 font-bold">{{__('Horario')}}</label>
                     <div class="d-flex">
 
-                        <x-utilities.hours-select-button id="schedule_from" name="schedule_from" classes="me-3" attribs="" value="{{$schedule_from}}" livewire="schedule_from"/>
-                        <x-utilities.hours-select-button id="schedule_to" name="schedule_to" classes="" attribs="" value="{{$schedule_to}}" livewire="schedule_to"/>
+                        <input type="time" class="rounded w-full border-gray-300 " id="schedule_from" wire:model.defer="schedule_from">
+                        <input type="time" class="rounded w-full border-gray-300 ms-2" id="schedule_to" wire:model.defer="schedule_to">
 
                     </div>
                 </div>

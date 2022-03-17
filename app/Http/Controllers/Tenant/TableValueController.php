@@ -19,13 +19,13 @@ class TableValueController extends Controller
         $currentYear = date('Y');
 
         $appUrl = config('app.url');
-        $api_responseRV = Http::withOptions(['verify' => false])->get($appUrl . '/api/reference-values/' . $currentYear);
-        $reference_values = json_decode($api_responseRV->body());
-
-        $discount_infonavit = $reference_values[0];
-        $uma = $reference_values[1];
-        $minimum_salary_general = $reference_values[2];
-        $minimum_salary_border = $reference_values[3];
+//        $api_responseRV = Http::withOptions(['verify' => false])->get($appUrl . '/api/reference-values/' . $currentYear);
+//        $reference_values = json_decode($api_responseRV->body());
+//
+//        $discount_infonavit = $reference_values[0];
+//        $uma = $reference_values[1];
+//        $minimum_salary_general = $reference_values[2];
+//        $minimum_salary_border = $reference_values[3];
 
         /**
          * Retentions ISR
@@ -151,8 +151,6 @@ class TableValueController extends Controller
 
         return view('app-tenant.dashboard.table-value.index', compact(
             [
-                // Reference Values
-                'discount_infonavit', 'uma', 'minimum_salary_general', 'minimum_salary_border',
                 // ISR retentions Variables
                 'dailyRetentions', 'weeklyRetentions', 'tenDaysRetentions', 'biweeklyRetentions', 'monthlyRetentions',
                 // Subsidies Variables

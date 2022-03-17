@@ -20,40 +20,6 @@ class TableValueController extends Controller
         $appUrl = config('app.url');
 
         /**
-         * SUBSIDIES
-         */
-
-        /**
-         * Daily
-         */
-        $api_resSubsidyDaily = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-subsidies/' . $currentYear . '/daily');
-        $dailySubsidies = json_decode($api_resSubsidyDaily->body());
-
-        /**
-         * Weekly
-         */
-        $api_resSubsidyWeekly = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-subsidies/' . $currentYear . '/weekly');
-        $weeklySubsidies = json_decode($api_resSubsidyWeekly->body());
-
-        /**
-         * Ten days
-         */
-        $api_resSubsidyTenDays = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-subsidies/' . $currentYear . '/ten days');
-        $tenDaysSubsidies = json_decode($api_resSubsidyTenDays->body());
-
-        /**
-         * Biweekly
-         */
-        $api_resSubsidyBiweekly = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-subsidies/' . $currentYear . '/biweekly');
-        $biweeklySubsidies = json_decode($api_resSubsidyBiweekly->body());
-
-        /**
-         * Monthly
-         */
-        $api_resSubsidyMonthly = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-subsidies/' . $currentYear . '/monthly');
-        $monthlySubsidies = json_decode($api_resSubsidyMonthly->body());
-
-        /**
          * ISN
          */
 
@@ -101,8 +67,6 @@ class TableValueController extends Controller
 
         return view('app-tenant.dashboard.table-value.index', compact(
             [
-                // Subsidies Variables
-                'dailySubsidies', 'weeklySubsidies', 'tenDaysSubsidies', 'biweeklySubsidies', 'monthlySubsidies',
                 // ISN Variables
                 'stateVariables', 'stateNames', 'names'
             ],[

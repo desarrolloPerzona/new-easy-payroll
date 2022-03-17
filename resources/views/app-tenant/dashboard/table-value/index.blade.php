@@ -12,10 +12,7 @@
     <div class="container">
 
         {{--        Values header--}}
-        <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
-            <i class="fak fa-admin-perzona mr-2"></i>
-            <span style="display: inline-flex;">{{ __('Table and value') }}</span>
-        </h2>
+        <x-utilities.section-header title="Table and value" classes="mb-3"/>
 
         {{--        References values--}}
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-3 mx-auto dark:bg-dark dark:text-white">

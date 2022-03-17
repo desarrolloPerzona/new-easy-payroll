@@ -17,57 +17,7 @@ class TableValueController extends Controller
     public function index()
     {
         $currentYear = date('Y');
-
         $appUrl = config('app.url');
-//        $api_responseRV = Http::withOptions(['verify' => false])->get($appUrl . '/api/reference-values/' . $currentYear);
-//        $reference_values = json_decode($api_responseRV->body());
-//
-//        $discount_infonavit = $reference_values[0];
-//        $uma = $reference_values[1];
-//        $minimum_salary_general = $reference_values[2];
-//        $minimum_salary_border = $reference_values[3];
-
-        /**
-         * Retentions ISR
-         */
-
-        /**
-         * Daily Retentions ISR ALL
-         */
-
-        //$api_responseDailyR = Http::get($appUrl . 'api/isr-daily-retentions');
-        //$dailyRetentions = json_decode($api_responseDailyR->body());
-
-        /**
-         * Daily Retentions BY YEAR ISR
-         */
-        $api_responseDailyR = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-retentions/' . $currentYear . '/daily');
-        $dailyRetentions = json_decode($api_responseDailyR->body());
-
-        /**
-         * Weekly Retentions ISR
-         */
-
-        $api_responseWeeklyR = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-retentions/' . $currentYear . '/weekly');
-        $weeklyRetentions = json_decode($api_responseWeeklyR->body());
-
-        /**
-         * Ten days Retentions ISR
-         */
-        $api_responseTenDaysR = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-retentions/' . $currentYear . '/ten days');
-        $tenDaysRetentions = json_decode($api_responseTenDaysR->body());
-
-        /**
-         * Biweekly Retentions ISR
-         */
-        $api_responseBiWeeklyR = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-retentions/' . $currentYear . '/biweekly');
-        $biweeklyRetentions = json_decode($api_responseBiWeeklyR->body());
-
-        /**
-         * Monthly Retentions ISR
-         */
-        $api_responseMonthlyR = Http::withOptions(['verify' => false])->get($appUrl .'/api/isr-retentions/' . $currentYear . '/monthly');
-        $monthlyRetentions = json_decode($api_responseMonthlyR->body());
 
         /**
          * SUBSIDIES
@@ -151,8 +101,6 @@ class TableValueController extends Controller
 
         return view('app-tenant.dashboard.table-value.index', compact(
             [
-                // ISR retentions Variables
-                'dailyRetentions', 'weeklyRetentions', 'tenDaysRetentions', 'biweeklyRetentions', 'monthlyRetentions',
                 // Subsidies Variables
                 'dailySubsidies', 'weeklySubsidies', 'tenDaysSubsidies', 'biweeklySubsidies', 'monthlySubsidies',
                 // ISN Variables

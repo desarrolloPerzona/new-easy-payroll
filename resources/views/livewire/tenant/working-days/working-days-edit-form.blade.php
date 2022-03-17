@@ -3,9 +3,6 @@
     {{-- Error Validation message--}}
     <x-forms.error-validation-message classes=""/>
 
-    {{-- Alert Message--}}
-    <x-forms.alert-message classes=""/>
-
     {{--Edit Header--}}
     <x-utilities.section-header title="Edit working day" classes="mb-4"/>
 
@@ -15,20 +12,18 @@
         <div class="accordion-body text-dark rounded dark:bg-dark dark:text-white">
 
             {{--Working day Form--}}
-            <form action="{{route('business-working-day.update', $businessWorkday->id)}}" method="POST"
-                  class="text-black rounded">
-                @csrf
-                @method('PATCH')
+            <form class="text-black rounded" wire:submit.prevent="update( {{$businessWorkday}} )">
                 <div class="d-flex col-12 justify-around">
                     <div class="mb-3 pe-2 col-6">
                         <label for="name" class="form-label font-bold">{{__('Name')}}</label>
-                        <input type="text" class="form-control" id="name" name="name" value="{{$businessWorkday->name}}" required>
+                        <input type="text" class="form-control" id="name" wire:model="name">
+                        @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
                     </div>
                     <div class="mb-3 ps-2 col-6">
 
                         <label for="workingDaySelect" class="form-label font-bold">{{__('Type of shift')}}</label>
 
-                        <select name="workday_type" id="workday_type" class="form-control" required>
+                        <select id="workday_type" class="form-control" wire:model="workday_type">
                             <option value="{{$businessWorkday->workday_type}}">
                                 {{ucfirst($businessWorkday->workday_type)}}
                             </option>

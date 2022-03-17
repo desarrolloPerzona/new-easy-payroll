@@ -25,7 +25,7 @@ class TaxesTables extends Component
     public function render()
     {
 
-        $currentYear = date('Y');
+//        $currentYear = date('Y');
         $appUrl = config('app.url');
 
         //        All
@@ -41,6 +41,8 @@ class TaxesTables extends Component
 
         $names = array();
         $stateNames = array();
+        $stateVariables = array();
+        $finalArray = array();
 
         //        Getting state names
         foreach ($allIsn as $value){
@@ -56,27 +58,35 @@ class TaxesTables extends Component
             }
         }
 
-        //        Loop to create a response for each state in our array
-        foreach ($stateNames as $key => $value){
-            $response = Http::withOptions(['verify' => false])->get($appUrl .'/api/isn-payroll-taxes/' . $currentYear . '/' . $names[$key]);
-            ${"array$value"} = json_decode($response->body());
+        foreach($names as $state){
+            $newState = strtr(str_replace(' ', '', $state), $unwanted_array);
+            ${"array$newState"} = array();
 
+            foreach ($allIsn as $isnObject){
+                if($isnObject->state == $state){
+                    array_push(${"array$newState"}, $isnObject);
+                }
+            }
         }
+
+        foreach($stateNames as $stateVariable){
+            array_push($stateVariables, ('array' . $stateVariable));
+        }
+
+        //        Loop to create a response for each state in our array
+//        foreach ($stateNames as $key => $value){
+//            $response = Http::withOptions(['verify' => false])->get($appUrl .'/api/isn-payroll-taxes/' . $currentYear . '/' . $names[$key]);
+//            ${"array$value"} = json_decode($response->body());
+//
+//        }
 
         //        Getting variables names to show them in view
-        $stateVariables = array();
-
-        foreach ($stateNames as $name){
-            array_push($stateVariables, ('array'. $name));
-        }
-
-        return view('components.tenant.table-values.taxes-tables', compact(
-            [
-                // ISN Variables
-                'stateVariables', 'stateNames', 'names'
-            ],[
-                $stateVariables
-            ]
-        ));
+//        $stateVariables = array();
+//
+//        foreach ($stateNames as $name){
+//            array_push($stateVariables, ('array'. $name));
+//        }
+//        dd($arrayAguascalientes);
+        return view('components.tenant.table-values.taxes-tables', compact([ [$stateVariables], 'names']));
     }
 }

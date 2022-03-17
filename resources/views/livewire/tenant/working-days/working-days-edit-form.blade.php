@@ -12,7 +12,6 @@
     {{--Form to edit a workingday--}}
     <div class="card bg-white shadow-sm rounded p-0 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white"
          x-data="selectConditionals()">
-
         <div class="accordion-body text-dark rounded dark:bg-dark dark:text-white">
 
             {{--Working day Form--}}
@@ -216,7 +215,6 @@
             </form>
 
         </div>
-
     </div>
 </div>
 

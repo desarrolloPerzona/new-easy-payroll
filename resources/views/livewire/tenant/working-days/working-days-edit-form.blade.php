@@ -53,7 +53,7 @@
                                 $day = strtolower($day);
                             @endphp
                             <div class="col-1">
-                                <input type="checkbox" name="{{$day}}" id="{{$day}}" value="1" class="rounded" x-on:click="isDisabled(`{{$day}}`)">
+                                <input type="checkbox" id="{{$day}}" value="1" class="rounded" x-on:click="isDisabled(`{{$day}}`)" wire:model.defer="{{$day}}">
                             </div>
 
                             <div class="col-2">
@@ -92,12 +92,12 @@
                                     {{--Select Hours section--}}
                                     <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">
 
-                                        <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_from" name="{{$day}}_from" disabled wire:model.defer="{{$day}}_from">
+                                        <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_from" disabled wire:model.defer="{{$day}}_from">
                                         <div class="d-flex align-items-end">
                                             <small>hrs</small>
                                         </div>
 
-                                        <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_to" name="{{$day}}_to" disabled wire:model.defer="{{$day}}_to">
+                                        <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_to" disabled wire:model.defer="{{$day}}_to">
                                         <div class="d-flex align-items-end">
                                             <small>hrs</small>
                                         </div>
@@ -112,12 +112,12 @@
                                 {{--Select section--}}
                                 <div class="col-3 d-flex mb-2 d-none" id="select-{{$day}}">
 
-                                    <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_from" name="{{$day}}_from" disabled wire:model.defer="{{$day}}_from">
+                                    <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_from" disabled wire:model.defer="{{$day}}_from">
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
 
-                                    <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_to" name="{{$day}}_to" disabled wire:model.defer="{{$day}}_to">
+                                    <input type="time" class="rounded w-full border-gray-300 mx-2" id="{{$day}}_to" disabled wire:model.defer="{{$day}}_to">
                                     <div class="d-flex align-items-end">
                                         <small>hrs</small>
                                     </div>
@@ -133,8 +133,8 @@
 
                     <div class="d-flex align-items-center">
                         <div class="col-1">
-                            <input name="meal_time" id="meal_time" value="1" type="checkbox"
-                                   class="rounded" x-on:click="isMealTime('meal_time')">
+                            <input id="meal_time" value="1" type="checkbox"
+                                   class="rounded" x-on:click="isMealTime('meal_time')" wire:model.defer="meal_time">
                         </div>
                         <div class="col-2">
                             {{__('Comida')}}
@@ -170,12 +170,12 @@
 
                             {{--Select section--}}
                             <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
-                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_from" name="meal_time_from" wire:model.defer="meal_time_from">
+                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_from" wire:model.defer="meal_time_from">
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>
 
-                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_to" name="meal_time_to" wire:model.defer="meal_time_to">
+                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_to" wire:model.defer="meal_time_to">
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>
@@ -187,12 +187,12 @@
                             {{--                                Select section--}}
                             <div class="col-3 d-flex mb-2 d-none" id="select-meal_time">
 
-                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_from" name="meal_time_from" wire:model.defer="meal_time_from">
+                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_from" wire:model.defer="meal_time_from">
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>
 
-                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_to" name="meal_time_to" wire:model.defer="meal_time_to">
+                                <input type="time" class="rounded w-full border-gray-300 mx-2" id="meal_time_to" wire:model.defer="meal_time_to">
                                 <div class="d-flex align-items-end">
                                     <small>hrs</small>
                                 </div>

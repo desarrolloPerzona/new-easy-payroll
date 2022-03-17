@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class WorkingDaysEditForm extends Component
 {
-    public $businessWorkday, $name, $workday_type;
+    public $businessWorkday, $name, $workday_type, $meal_time, $meal_time_from, $meal_time_to;
     public $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     public $monday, $monday_from, $monday_to,
             $tuesday, $tuesday_from, $tuesday_to,
@@ -39,7 +39,6 @@ class WorkingDaysEditForm extends Component
     public function render()
     {
         $workdayTypes = ['diurno', 'nocturno', 'mixto'];
-//        $daysArray = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
         return view('livewire.tenant.working-days.working-days-edit-form',
                 compact('workdayTypes'));
     }
@@ -69,8 +68,10 @@ class WorkingDaysEditForm extends Component
 
         $this->emit('alert', 'Registro actualizado exitosamente!');
         $this->emit('renderMine');
+
     }
     public function update(BusinessWorkday $workday){
+
         $this->validate();
 
         $workday->name = $this->name;
@@ -113,18 +114,17 @@ class WorkingDaysEditForm extends Component
         }
 
         // Meal time fields
-//        if ($this->meal_time) {
-//            $workday->meal_time = $this->meal_time;
-//            $workday->meal_time_from = $this->meal_time_from;
-//            $workday->meal_time_to = $this->meal_time_to;
-//        } else {
-//            $workday->meal_time = 0;
-//        }
+        if ($this->meal_time) {
+            $workday->meal_time = $this->meal_time;
+            $workday->meal_time_from = $this->meal_time_from;
+            $workday->meal_time_to = $this->meal_time_to;
+        } else {
+            $workday->meal_time = 0;
+        }
 
         $workday->save();
 
-        $this->emit('alert', 'Registro actualizado exitosamente!');
-        $this->emit('renderMine');
-        $this->emit('turnOffCheckButtons');
+        return redirect()->route('working-day-holiday.index')->with('message', 'edit');
+
     }
 }

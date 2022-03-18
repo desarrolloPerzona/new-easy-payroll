@@ -1,12 +1,9 @@
 <x-app-tenant>
     <div class="container">
-        {{--        Header User profile--}}
-        <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
-            <i class="fak fa-empleados-perzona mr-2"></i>
-            <span style="display: inline-flex;">Alta empelados</span>
-        </h2>
 
-        <div class="card p-4 mb-2">
+        <x-utilities.section-header classes="mb-3" title="Registration of employees" />
+
+        <div class="card p-4 mb-2 max-w-6xl my-2 mx-auto">
 
             {{--        Tabs Menu--}}
             <div id="collapse-retentions" x-data="data()" class="px-2">

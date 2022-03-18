@@ -1,9 +1,7 @@
 <x-app-tenant>
     <div class="container">
-        <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
-            <i class="fak fa-empleados-perzona mr-2"></i>
-            <span style="display: inline-flex;">{{ __('Employees list') }}</span>
-        </h2>
+
+        <x-utilities.section-header classes="mb-3" title="Employees list" />
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
             {{--      Filtos      --}}

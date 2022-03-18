@@ -1,11 +1,9 @@
 <x-app-tenant>
     <div class="container">
-        <h2 class="bg-blueSteel py-2 px-3 mb-2 rounded">
-            <i class="fak fa-admin-perzona mr-2"></i>
-            <span style="display: inline-flex;">{{ __('Benefits table') }}</span>
-        </h2>
 
-        <div class="btn-top-holder my-3">
+        <x-utilities.section-header classes="" title="Benefits table" />
+
+        <div class="btn-top-holder my-3 max-w-6xl mx-auto">
             <a href="{{route('table-benefits.create',1)}}" class="btn btn-dark">
                 <i class="fas fa-plus-circle"></i>
                 {{ __('New table of benefits') }}

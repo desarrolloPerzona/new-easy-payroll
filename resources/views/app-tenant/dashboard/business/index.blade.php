@@ -1,13 +1,17 @@
 <x-app-tenant>
     <div class="container mx-auto">
-        <livewire:components.breadcrumb :parent="'Business'" :children="[]" :item-id="''" :icon="'fak fa-empresa-perzona mr-2'"/>
-        {{--NEW BUSINESS BTN--}}
+
+        <x-utilities.section-header title="Businesses" classes=""/>
+
         <div class="btn-top-holder my-3"  >
             <a href="{{route('business.create')}}" class="btn btn-dark tool-tip" data-tippy-content="{{__('Add a new business')}}" data-tippy-duration="0">
                 <i class="fas fa-plus-circle"></i>
                 {{ __('New business') }}
             </a>
         </div>
+
+
+
         {{--BUSINESS HOLDER--}}
         <div class="card bg-white dark:bg-gray-600 dark:text-white shadow-sm rounded p-4  my-2 mx-auto">
             @foreach($businesses as $business)

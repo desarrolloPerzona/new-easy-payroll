@@ -1,7 +1,7 @@
 <x-app-tenant>
     <div class="container">
 
-        <x-utilities.section-header title="Bank accounts" classes="mb-3"/>
+        <x-utilities.section-header title="Bank accounts" classes=""/>
 
         {{--Show account table component--}}
         <livewire:tenant.banks.show-table/>

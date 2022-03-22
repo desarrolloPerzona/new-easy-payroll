@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class GetFiscalRegimesController extends Controller
 {
-    public function getFiscalRegimesList($year){
+    public function getFiscalRegimesList(){
         return FiscalRegime::all();
     }
     public function getFiscalRegimesListByYear($year){

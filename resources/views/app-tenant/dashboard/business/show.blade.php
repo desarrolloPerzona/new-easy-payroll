@@ -14,7 +14,7 @@
                 <livewire:components.content.content-two-columns-text :name="'name'" :title="'Name'" :field="$business->name ?? ''" :modelId="$business->id" :modelRoute="'update-by-field'"/>
                 <livewire:components.content.content-two-columns-images :name="'logo_url'" :title="'Logo square'" :images="$business->getMedia('logo_url_sq')"/>
 
-                <livewire:components.content.content-select :selected-option="$business->fiscal_regime" :api-url-name="'fiscal-regimes-list'" :label="'Fiscal Regime'" :name="'business_regime'"/>
+               {{-- <livewire:components.content.content-select :selected-option="$business->fiscal_regime" :api-url-name="'fiscal-regimes-list'" :label="'Fiscal Regime'" :name="'business_regime'"/>--}}
 
                 {{--<livewire:components.content.content-two-columns-text :name="'fiscal_regime'" :title="'Fiscal Regime'" :field="$business->fiscal_regime ?? ''" :modelId="$business->id" :modelRoute="'update-by-field'"/>--}}
                 <livewire:components.content.content-two-columns-text :name="'industry'" :title="'Industry'" :field="$business->business_name ?? ''" :modelId="$business->id" :modelRoute="'update-by-field'"/>

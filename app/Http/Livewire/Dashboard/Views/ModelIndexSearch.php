@@ -40,7 +40,7 @@ class ModelIndexSearch extends Component
      */
     private $modelItemToEdit;
 
-    public function mount($modelName, $modelItems, $searchColumns,$modelTable)
+    public function mount($modelName, $modelItems, $searchColumns, $modelTable)
     {
         $this->modelToView = "App\Models\\" . $modelName;
         $this->modelItems = collect($modelItems);
@@ -54,9 +54,10 @@ class ModelIndexSearch extends Component
         $this->titleName = $this->splitCamelCase($modelName);
     }
 
-    public function getColumnsFromTable($table){
+    public function getColumnsFromTable($table): array
+    {
         $columns = Schema::getColumnListing($table);
-        return array_diff($columns,['id','created_at','updated_at']);
+        return array_diff($columns, ['id', 'created_at', 'updated_at']);
 
     }
 
@@ -107,31 +108,12 @@ class ModelIndexSearch extends Component
     }
 
 
-    public function updating($value, $name)
-    {
-        $this->resetPage();
-    }
+    /**
+     * CRUD OPERATIONS
+     */
 
 
-    public function view()
-    {
 
-    }
-
-    public function save()
-    {
-
-        $this->validate();
-
-    }
-
-
-    public function edit($id)
-    {
-
-        $this->modelToEdit = $this->modelToView::find($id);
-
-    }
 
     public function destroy($id, $item)
     {
@@ -140,7 +122,7 @@ class ModelIndexSearch extends Component
 
         if ($modelItem) {
             $modelItem->delete();
-            session()->flash('success', $item . ' ' . __('Item Deleted'));
+            session()->flash('success', __('Item Deleted'));
             $this->emit('alert_remove');
         }
     }

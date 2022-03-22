@@ -12,30 +12,7 @@
         <div class="card-body">
             {{-- CREATE NEW ITEM --}}
             <div class="p-4  mb-2 text-white shadow-sm dark:bg-dark rounded">
-                <div class="accordion" id="newItem">
-                    <div class="accordion-item">
-                        <div class="accordion-header  " id="headingTwo">
-                            <button class="accordion-button collapsed bg-dark dark:bg-light  text-white dark:text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <span class="uppercase "><i class="fas fa-plus-circle"></i> {{__('New').' '.__($titleName)}}</span>
-                            </button>
-                        </div>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#newItem">
-                            <div class="accordion-body">
-                                <form action="" class="form">
-                                    @foreach($modelTitles as $title)
-                                        <div class="form-group mx-sm-3 mb-2">
-                                            <label for="input-new-item{{$loop->iteration}}" class="sr-only">{{__($title)}}</label>
-                                            <input type="text" class="form-control input-group-sm" id="input-new-item{{$loop->iteration}}" placeholder="{{__($title)}}">
-                                        </div>
-                                    @endforeach
-                                    <div class="form-group">
-                                        <button class="btn btn-primary object-right">{{__('Send')}}</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a href="{{route('admin.banks.create')}}" class="btn btn-primary"> <span class="uppercase "><i class="fas fa-plus-circle"></i> {{__('New').' '.__($titleName)}}</span></a>
             </div>
             {{-- CREATE NEW ITEM --}}
             {{-- TABLE DATA--}}

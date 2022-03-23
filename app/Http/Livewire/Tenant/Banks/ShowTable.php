@@ -19,7 +19,6 @@ class ShowTable extends Component
         $api_responseBanks = Http::withOptions(['verify' => false])->get($appUrl . '/api/bank-list/');
         $banksList = json_decode($api_responseBanks->body());
 
-
         $businesses = Business::all();
         if ($this->message){
             $bankAccounts = Bank::where('branch', $this->message)->get();

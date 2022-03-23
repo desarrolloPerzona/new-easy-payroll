@@ -9,7 +9,8 @@ use Livewire\Component;
 class ShowTable extends Component
 {
 
-    public $search, $branches, $firstBranch;
+    protected $listeners = ['delete' => 'deleteRecord'];
+    public $search, $branches;
 
 
     public function mount(){
@@ -20,5 +21,8 @@ class ShowTable extends Component
     {
         $registers = ImssPatronalRegister::all();
         return view('livewire.tenant.imms-patronal-register.show-table', compact('registers'));
+    }
+    public function deleteRecord(ImssPatronalRegister $register){
+        $register->delete();
     }
 }

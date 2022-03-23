@@ -1,255 +1,147 @@
-<div>
-    {{--        Nombre--------------}}
-    <div class="card bg-white shadow-sm rounded p-4 my-2 mx-auto dark:bg-dark dark:text-white">
+<div class="card bg-white shadow-sm rounded p-4 my-2 mx-auto dark:bg-dark dark:text-white">
 
+    <form class="form-group" wire:submit.prevent="save">
 
+        <div class="form-group d-flex justify-content-between gap-3">
+            <div class="w-75">
+                <label for="branch" class="font-bold">{{__('Business')}} <span class="text-danger">*</span></label>
+                <select id="branch" name="branch"
+                        class="w-full rounded dark:bg-dark dark:text-white my-2 form-control"
+                        wire:model.defer="branch_id">
+                    <option value="">{{ __('Select') }}</option>
+                    @foreach($branches as $branch)
+                        <option value="{{ $branch->id }}">{{ $branch->name }}</option>
+                    @endforeach
+                </select>
+                @error('branch_id') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+            <div class="w-100">
+                <label for="name" class="font-bold mb-2">{{__('Name')}} <span class="text-danger">*</span></label>
+                <input type="text" id="name" class="form-control form-main-input" wire:model.defer="name">
+                @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
 
-        <form action="{{ route('imss-employer-registers.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
+        </div>
+        <div class="form-group d-flex justify-content-between gap-3">
+            <div class="w-50">
+                <label for="risk_premium" class="font-bold mb-2">{{__('Risk premium')}} <span
+                        class="text-danger">*</span></label>
+                <input type="number" step=".001" id="risk_premium" class="form-control form-main-input"
+                       wire:model.defer="risk_premium">
+                @error('risk_premium') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+            <div class="w-100">
+                <label for="imss_sub_delegation_key" class="font-bold mb-2">{{__('IMSS subdelegational key')}} <span
+                        class="text-danger">*</span></label>
+                <input type="text" id="imss_sub_delegation_key" class="form-control form-main-input"
+                       wire:model.defer="imss_sub_delegation_key">
+                @error('imss_sub_delegation_key') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+        </div>
 
-            <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
-            <select id="branch_id" class="w-full rounded dark:bg-dark dark:text-white my-2" name="branch_id">
-                @foreach($branches as $branch)
-                    <option value="{{ $branch->id }}">{{ $branch->name }}</option>
-                @endforeach
-            </select>
+        {{--            ACCORDION--}}
+        <div class="mb-2 text-white shadow-sm dark:bg-dark rounded mt-4">
+            <div class="accordion" id="newItem">
 
-            <label class="font-bold" for="name">{{__('Name')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white w-100" type="text" id="name" name="name" value="{{ old('name') }}">
-            {{--            Prima de riesgo--------------}}
-            <label class="font-bold " for="name">{{__('Risk premium')}}</label>
-            <input class="text-gray-800 rounded my-2 dark:bg-dark dark:text-white w-100" type="number" step=".001" id="risk_premium" name="risk_premium" value="{{ old('risk_premium') }}">
-            {{--            Clave subdelegacional IMSS--------------}}
-            <label class="font-bold" for="name">{{__('IMSS subdelegational key')}}</label>
-            <input class="text-gray-800 rounded my-2 mb-4 dark:bg-dark dark:text-white w-100" type="text" id="imss_sub_delegation_key" name="imss_sub_delegation_key" value="{{ old('imss_sub_delegation_key') }}">
+                {{--                    IMSS--------------}}
+                <div class="accordion-item">
+                    <div class="accordion-header mr-4" id="headingOne">
+                        <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo">
 
-            {{--            ACCORDION--}}
-            <div class="mb-2 text-white shadow-sm dark:bg-dark rounded">
-                <div class="accordion" id="newItem">
+                            <div class="my-3 mx-2">
+                                <input type="radio" id="use_imss" name="use_imss" value="1">
+                            </div>
 
-                    {{--                    IMSS--------------}}
-                    <div class="accordion-item">
-                        <div class="accordion-header mr-4" id="headingOne">
-                            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                    aria-expanded="false" aria-controls="collapseTwo">
+                        </button>
+                        <label
+                            class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
 
-                                <div class="my-3 mx-2">
-                                    <input type="radio" id="use_imss" name="use_imss" value="1">
-                                </div>
+                    </div>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#newItem">
+                        <div class="accordion-body text-dark dark:bg-dark dark:text-white">
 
-                            </button>
-                            <label
-                                class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
+                            <div class="flex flex-col flex-grow mb-3">
 
-                        </div>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark dark:bg-dark dark:text-white">
-
-                                <div class="flex flex-col flex-grow mb-3">
-
-                                    <label class="my-2 font-bold">{{__('IMSS certificate')}}</label>
-
-<!--                                    <div x-data="{ files: null }" id="FileUpload"
-                                         class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray dark:bg-dark dark:text-white">
-                                        <input type="file" multiple name="cert_imss_cert"
-                                               class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
-                                               x-on:change="files = $event.target.files; console.log($event.target.files);"
-                                               x-on:dragover="$el.classList.add('active')"
-                                               x-on:dragleave="$el.classList.remove('active')"
-                                               x-on:drop="$el.classList.remove('active')"
-                                        >
-                                        <template x-if="files !== null">
-                                            <div class="flex flex-col space-y-1">
-                                                <template x-for="(_,index) in Array.from({ length: files.length })">
-                                                    <div class="flex flex-row items-center space-x-2">
-                                                        <template x-if="files[index].type.includes('audio/')"><i
-                                                                class="far fa-file-audio fa-fw"></i></template>
-                                                        <template x-if="files[index].type.includes('application/')"><i
-                                                                class="far fa-file-alt fa-fw"></i></template>
-                                                        <template x-if="files[index].type.includes('image/')"><i
-                                                                class="far fa-file-image fa-fw"></i></template>
-                                                        <template x-if="files[index].type.includes('video/')"><i
-                                                                class="far fa-file-video fa-fw"></i></template>
-                                                        <span class="font-medium text-gray-900"
-                                                              x-text="files[index].name">Uploading</span>
-                                                        <span class="text-xs self-end text-gray-500"
-                                                              x-text="filesize(files[index].size)">...</span>
-                                                    </div>
-                                                </template>
-                                            </div>
-                                        </template>
-                                        <template x-if="files === null">
-                                            <div class="flex flex-col space-y-2 items-center justify-center">
-                                                <i class="fas fa-cloud-upload-alt fa-3x text-currentColor"></i>
-                                                <p class="text-gray-700">{{__('Drag your files here or click in this area.')}}</p>
-                                                <a href="javascript:void(0)"
-                                                   class="flex items-center mx-auto py-2 px-4 text-white text-center font-medium no-underline border border-transparent rounded-md outline-none bg-gray-600">
-                                                    {{__('Select a file')}}</a>
-                                            </div>
-                                        </template>
-
-                                    </div>-->
-                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
-                                           type="text"
-                                           id="cert_imss_cert" name="cert_imss_cert">
-                                </div>
-                                <div>
-                                    <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                           type="text" id="cert_imss_user" name="cert_imss_user">
-                                </div>
-                                <div>
-                                    <label class="font-bold" for="name">{{__('IMSS certified password')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                           type="password" id="cert_imss_password"
-                                           name="cert_imss_password">
-                                </div>
+                                <label class="my-2 font-bold">{{__('IMSS certificate')}}</label>
+                                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
+                                       type="text"
+                                       id="cert_imss_cert" name="cert_imss_cert">
+                            </div>
+                            <div>
+                                <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
+                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                       type="text" id="cert_imss_user" name="cert_imss_user">
+                            </div>
+                            <div>
+                                <label class="font-bold" for="name">{{__('IMSS certified password')}}</label>
+                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                       type="password" id="cert_imss_password"
+                                       name="cert_imss_password">
                             </div>
                         </div>
                     </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header mr-4" id="headingFiel">
-                            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel"
-                                    aria-expanded="false" aria-controls="collapseTwo">
-
-                                <div class="my-3 mx-2">
-                                    <input type="radio" id="use_fiel" name="use_imss" value="0">
-                                </div>
-
-                            </button>
-                            <label class="text-gray-800 dark:text-white"
-                                   for="id">{{__('Send movements to the IMSS through FIEL')}}</label>
-
-                        </div>
-                        <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#newItem">
-                            <div class="accordion-body text-dark dark:bg-dark dark:text-white">
-
-                                {{--                                            FIEL-------------------------------------}}
-                                <div class="flex flex-col flex-grow mb-3">
-
-                                    <label class="my-2 font-bold">{{__('FIEL Certificate')}}</label>
-
-<!--                                    <div x-data="{ files: null }" id="FileUpload"
-                                         class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray dark:bg-dark dark:text-white">
-                                        <input type="file" multiple
-                                               class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
-                                               x-on:change="files = $event.target.files; console.log($event.target.files);"
-                                               x-on:dragover="$el.classList.add('active')"
-                                               x-on:dragleave="$el.classList.remove('active')"
-                                               x-on:drop="$el.classList.remove('active')"
-                                        >
-                                        <template x-if="files !== null">
-                                            <div class="flex flex-col space-y-1">
-                                                <template x-for="(_,index) in Array.from({ length: files.length })">
-                                                    <div class="flex flex-row items-center space-x-2">
-                                                        <template x-if="files[index].type.includes('audio/')"><i
-                                                                class="far fa-file-audio fa-fw"></i></template>
-                                                        <template x-if="files[index].type.includes('application/')"><i
-                                                                class="far fa-file-alt fa-fw"></i></template>
-                                                        <template x-if="files[index].type.includes('image/')"><i
-                                                                class="far fa-file-image fa-fw"></i></template>
-                                                        <template x-if="files[index].type.includes('video/')"><i
-                                                                class="far fa-file-video fa-fw"></i></template>
-                                                        <span class="font-medium text-gray-900"
-                                                              x-text="files[index].name">Uploading</span>
-                                                        <span class="text-xs self-end text-gray-500"
-                                                              x-text="filesize(files[index].size)">...</span>
-                                                    </div>
-                                                </template>
-                                            </div>
-                                        </template>
-                                        <template x-if="files === null">
-                                            <div class="flex flex-col space-y-2 items-center justify-center">
-                                                <i class="fas fa-cloud-upload-alt fa-3x text-currentColor"></i>
-                                                <p class="text-gray-700">{{__('Drag your files here or click in this area.')}}</p>
-                                                <a href="javascript:void(0)"
-                                                   class="flex items-center mx-auto py-2 px-4 text-white text-center font-medium no-underline border border-transparent rounded-md outline-none bg-gray-600">
-                                                    {{__('Select a file')}}</a>
-                                            </div>
-                                        </template>
-
-                                    </div>-->
-                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
-                                           type="text"
-                                           id="IMSScertificate">
-                                </div>
-
-                                <div class="flex flex-col flex-grow mb-3">
-
-                                    <label class="my-2 font-bold">{{__('Llave privada FIEL')}}</label>
-
-<!--                                    <div x-data="{ files: null }" id="FileUpload"
-                                         class="block w-full py-2 px-3 relative bg-white appearance-none border-2 border-gray-300 border-solid rounded-md hover:shadow-outline-gray dark:bg-dark dark:text-white">
-                                        <input type="file" multiple
-                                               class="absolute inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
-                                               x-on:change="files = $event.target.files; console.log($event.target.files);"
-                                               x-on:dragover="$el.classList.add('active')"
-                                               x-on:dragleave="$el.classList.remove('active')"
-                                               x-on:drop="$el.classList.remove('active')"
-                                        >
-                                        <template x-if="files !== null">
-                                            <div class="flex flex-col space-y-1">
-                                                <template x-for="(_,index) in Array.from({ length: files.length })">
-                                                    <div class="flex flex-row items-center space-x-2">
-                                                        <template x-if="files[index].type.includes('audio/')"><i
-                                                                class="far fa-file-audio fa-fw"></i></template>
-                                                        <template x-if="files[index].type.includes('application/')"><i
-                                                                class="far fa-file-alt fa-fw"></i></template>
-                                                        <template x-if="files[index].type.includes('image/')"><i
-                                                                class="far fa-file-image fa-fw"></i></template>
-                                                        <template x-if="files[index].type.includes('video/')"><i
-                                                                class="far fa-file-video fa-fw"></i></template>
-                                                        <span class="font-medium text-gray-900"
-                                                              x-text="files[index].name">Uploading</span>
-                                                        <span class="text-xs self-end text-gray-500"
-                                                              x-text="filesize(files[index].size)">...</span>
-                                                    </div>
-                                                </template>
-                                            </div>
-                                        </template>
-                                        <template x-if="files === null">
-                                            <div class="flex flex-col space-y-2 items-center justify-center">
-                                                <i class="fas fa-cloud-upload-alt fa-3x text-currentColor"></i>
-                                                <p class="text-gray-700">{{__('Drag your files here or click in this area.')}}</p>
-                                                <a href="javascript:void(0)"
-                                                   class="flex items-center mx-auto py-2 px-4 text-white text-center font-medium no-underline border border-transparent rounded-md outline-none bg-gray-600">
-                                                    {{__('Select a file')}}</a>
-                                            </div>
-                                        </template>
-
-                                    </div>-->
-                                    <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
-                                           type="text"
-                                           id="IMSScertificate">
-                                </div>
-                                <div>
-                                    <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                           type="text" id="name" name="Name">
-                                </div>
-                                <div>
-                                    <label class="font-bold" for="name">{{__('FIEL password')}}</label>
-                                    <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                           type="password" id="name"
-                                           name="Name">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
-            {{--            ACCORDION--}}
 
-            <div class="btn-top-holder my-3">
-                <button type="submit" class="btn btn-dark">
-                    {{ __('Save') }}
-                </button>
+                <div class="accordion-item">
+                    <div class="accordion-header mr-4" id="headingFiel">
+                        <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel"
+                                aria-expanded="false" aria-controls="collapseTwo">
+
+                            <div class="my-3 mx-2">
+                                <input type="radio" id="use_fiel" name="use_imss" value="0">
+                            </div>
+
+                        </button>
+                        <label class="text-gray-800 dark:text-white"
+                               for="id">{{__('Send movements to the IMSS through FIEL')}}</label>
+
+                    </div>
+                    <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                         data-bs-parent="#newItem">
+                        <div class="accordion-body text-dark dark:bg-dark dark:text-white">
+
+                            {{--                                            FIEL-------------------------------------}}
+                            <div class="flex flex-col flex-grow mb-3">
+
+                                <label class="my-2 font-bold">{{__('FIEL Certificate')}}</label>
+                                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
+                                       type="text"
+                                       id="IMSScertificate">
+                            </div>
+
+                            <div class="flex flex-col flex-grow mb-3">
+
+                                <label class="my-2 font-bold">{{__('Llave privada FIEL')}}</label>
+                                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
+                                       type="text"
+                                       id="IMSScertificate">
+                            </div>
+                            <div>
+                                <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
+                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                       type="text" id="name" name="Name">
+                            </div>
+                            <div>
+                                <label class="font-bold" for="name">{{__('FIEL password')}}</label>
+                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                       type="password" id="name"
+                                       name="Name">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </form>
-    </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">{{__('Save')}}</button>
+        <a href="{{ route('imss-employer-registers.index') }}"
+           class="btn btn-danger mt-3 ms-2 text-white">{{__('Go back')}}</a>
+
+    </form>
+
 </div>
+

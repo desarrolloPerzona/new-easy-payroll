@@ -1,6 +1,9 @@
 <x-app-tenant>
     <div class="container mx-auto">
-        <livewire:components.breadcrumb :parent="'IMSS Employer Registers'" :children="[]" item-id="{{route('imss-employer-registers.index')}}" :icon="'fak fa-empresa-perzona mr-2'"/>
+
+        <x-utilities.header-section title="IMSS Employer Registers" classes="mb-3" maxSize=""/>
+
         <livewire:tenant.imms-patronal-register.create/>
+
     </div>
 </x-app-tenant>

@@ -1,7 +1,7 @@
 <x-app-tenant>
     <div class="container mx-auto">
 
-        <x-utilities.section-header title="Businesses" classes=""/>
+        <x-utilities.header-section title="Businesses" classes="mb-3" maxSize=""/>
 
         <div class="btn-top-holder my-3"  >
             <a href="{{route('business.create')}}" class="btn btn-dark tool-tip" data-tippy-content="{{__('Add a new business')}}" data-tippy-duration="0">

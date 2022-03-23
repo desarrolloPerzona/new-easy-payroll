@@ -2,7 +2,8 @@
 
 <x-app-tenant>
     <div class="container mx-auto">
-        <livewire:components.breadcrumb :parent="'Business'" :children="['Show']" :item-id="$business->id" :icon="'fak fa-empresa-perzona mr-2'"/>
+
+        <x-utilities.header-section title="Business" classes="mb-3" maxSize=""/>
         {{--SHOW CARD--}}
 
         <div class="accordion" id="businessAccordion">

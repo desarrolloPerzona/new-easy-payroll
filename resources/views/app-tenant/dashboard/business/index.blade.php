@@ -10,8 +10,6 @@
             </a>
         </div>
 
-
-
         {{--BUSINESS HOLDER--}}
         <div class="card bg-white dark:bg-gray-600 dark:text-white shadow-sm rounded p-4  my-2 mx-auto">
             @foreach($businesses as $business)

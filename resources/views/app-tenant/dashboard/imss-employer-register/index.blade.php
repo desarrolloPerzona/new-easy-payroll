@@ -10,4 +10,3 @@
 
     </div>
 </x-app-tenant>
-

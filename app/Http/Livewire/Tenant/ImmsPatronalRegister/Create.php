@@ -29,6 +29,8 @@ class Create extends Component
 
         $register->save();
 
+        session()->flash('message', 'create');
+
         return redirect()->route('imss-employer-registers.index');
     }
 }

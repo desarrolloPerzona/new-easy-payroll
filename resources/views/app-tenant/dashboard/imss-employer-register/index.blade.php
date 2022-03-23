@@ -1,6 +1,8 @@
 <x-app-tenant>
     <div class="container mx-auto">
 
+        <x-forms.alert-message classes=""/>
+
         <x-utilities.header-section title="Employer register" classes="mb-3" maxSize=""/>
 
         {{--Create Button--}}

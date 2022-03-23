@@ -14,7 +14,6 @@ class ShowTable extends Component
 
     public function mount(){
         $this->branches = Branch::all();
-        $this->firstBranch = Branch::findOrfail(1)->get();
     }
 
     public function render()

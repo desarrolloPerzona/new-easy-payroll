@@ -45,7 +45,14 @@ class Edit extends Component
         $register = $this->registerObjet;
 
         $register->branch_id = $this->branch_id;
-        $register->name = $this->name;
+
+        $trimName = trim($this->name);
+        if ($trimName != $register->name) {
+            $this->validate([
+                'name' => 'unique:imss_patronal_registers|min:4|max:50',
+            ]);
+            $register->name = $this->name;
+        }
         $register->risk_premium = $this->risk_premium;
         $register->imss_sub_delegation_key = $this->imss_sub_delegation_key;
 

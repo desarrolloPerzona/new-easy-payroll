@@ -11,7 +11,7 @@
                         </a>
                     </h2>
                     <div>
-                        <a href="#">
+                        <a href="#" wire:click="$emit('deleteMessage', {{$register->id}})">
                             <i class="fas fa-trash-alt text-gray-400 cursor-pointer hover:text-red-500"></i>
                         </a>
                     </div>
@@ -37,5 +37,9 @@
             </tr>
         </tbody>
     </table>
+
+    <div>
+        <a href="{{ route('banks.index') }}" class="btn btn-primary mt-3 ms-2 text-white">{{__('Go back')}}</a>
+    </div>
 
 </div>

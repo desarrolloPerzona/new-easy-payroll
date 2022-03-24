@@ -5,12 +5,10 @@
         <div class="form-group d-flex justify-content-between gap-3">
             <div class="w-75">
                 <label for="branch" class="font-bold">{{__('Business')}} <span class="text-danger">*</span></label>
-                <select id="branch" name="branch"
-                        class="w-full rounded dark:bg-dark dark:text-white my-2 form-control"
-                        wire:model.defer="branch_id">
-                    <option value="">{{ __('Select') }}</option>
+                <select id="branch" name="branch" class="w-full rounded dark:bg-dark dark:text-white my-2 form-control"
+                        wire:model="branch_id">
                     @foreach($branches as $branch)
-                        <option value="{{ $branch->id }}">{{ $branch->name }}</option>
+                        <option value="{{$branch->id}}" }}>{{$branch->name}}</option>
                     @endforeach
                 </select>
                 @error('branch_id') <small class="error text-danger">{{ $message }}</small> @enderror
@@ -20,7 +18,6 @@
                 <input type="text" id="name" class="form-control form-main-input" wire:model="name" placeholder="Alias">
                 @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
-
         </div>
         <div class="form-group d-flex justify-content-between gap-3">
             <div class="w-50">

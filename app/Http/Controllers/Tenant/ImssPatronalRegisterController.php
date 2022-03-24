@@ -78,7 +78,7 @@ class ImssPatronalRegisterController extends Controller
      */
     public function edit($id)
     {
-        return view('app-tenant.dashboard.imss-employer-register.edit');
+        return view('app-tenant.dashboard.imss-employer-register.edit', compact('id'));
     }
 
     /**

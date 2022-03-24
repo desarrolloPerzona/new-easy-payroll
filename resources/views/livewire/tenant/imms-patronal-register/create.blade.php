@@ -17,7 +17,7 @@
             </div>
             <div class="w-100">
                 <label for="name" class="font-bold mb-2">{{__('Name')}} <span class="text-danger">*</span></label>
-                <input type="text" id="name" class="form-control form-main-input" wire:model.defer="name">
+                <input type="text" id="name" class="form-control form-main-input" wire:model="name" placeholder="Alias">
                 @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
 
@@ -27,36 +27,35 @@
                 <label for="risk_premium" class="font-bold mb-2">{{__('Risk premium')}} <span
                         class="text-danger">*</span></label>
                 <input type="number" step=".001" id="risk_premium" class="form-control form-main-input"
-                       wire:model.defer="risk_premium" placeholder="1.3">
+                       wire:model="risk_premium" placeholder="1.3">
                 @error('risk_premium') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-100">
                 <label for="imss_sub_delegation_key" class="font-bold mb-2">{{__('IMSS subdelegational key')}} <span
                         class="text-danger">*</span></label>
                 <input type="text" id="imss_sub_delegation_key" class="form-control form-main-input"
-                       wire:model.defer="imss_sub_delegation_key">
+                       wire:model="imss_sub_delegation_key" placeholder="8826398826">
                 @error('imss_sub_delegation_key') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
         </div>
 
-        {{--            ACCORDION--}}
+        {{--ACCORDION--}}
         <div class="mb-2 text-white shadow-sm dark:bg-dark rounded mt-4">
             <div class="accordion" id="newItem">
 
-                {{--                    IMSS--------------}}
+                {{--IMSS--}}
                 <div class="accordion-item">
                     <div class="accordion-header mr-4" id="headingOne">
                         <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
                                 aria-expanded="false" aria-controls="collapseTwo">
 
                             <div class="my-3 mx-2">
-                                <input type="radio" id="use_imss" name="use_imss" value="1">
+                                <input type="radio" id="use_imss" name="use_imss" value="1" checked>
                             </div>
 
                         </button>
                         <label
                             class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
-
                     </div>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                          data-bs-parent="#newItem">
@@ -102,7 +101,7 @@
                          data-bs-parent="#newItem">
                         <div class="accordion-body text-dark dark:bg-dark dark:text-white">
 
-                            {{--                                            FIEL-------------------------------------}}
+                            {{--FIEL-------------------------------------}}
                             <div class="flex flex-col flex-grow mb-3">
 
                                 <label class="my-2 font-bold">{{__('FIEL Certificate')}}</label>

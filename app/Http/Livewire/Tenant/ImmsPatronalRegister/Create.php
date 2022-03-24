@@ -16,7 +16,20 @@ class Create extends Component
         return view('livewire.tenant.imms-patronal-register.create', compact('branches'));
     }
 
+    protected $rules = [
+        'name' => 'required|min:4|max:50',
+        'branch_id' => 'required',
+        'risk_premium' => 'required|max:5',
+        'imss_sub_delegation_key' => 'required|min:3|max:30'
+    ];
+
+    public function updated($propertyName){
+        $this->validateOnly($propertyName);
+    }
+
     public function save() {
+        $this->validate();
+
         $register = new ImssPatronalRegister;
 
         $register->name = $this->name;

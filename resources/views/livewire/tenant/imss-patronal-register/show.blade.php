@@ -24,15 +24,15 @@
                 <td class="col-6">{{$register->id}}</td>
             </tr>
             <tr>
-                <td class="pb-2 col-6"><b>{{__('Name')}}</b></td>
+                <td class="pb-2 col-6"><b>{{__('Name')}}:</b></td>
                 <td class="col-6">{{$register->name}}</td>
             </tr>
             <tr>
-                <td class="pb-2 col-6"><b>{{__('risk premium')}}</b></td>
+                <td class="pb-2 col-6"><b>{{__('risk premium')}}:</b></td>
                 <td class="col-6">{{$register->risk_premium}}</td>
             </tr>
             <tr>
-                <td class="pb-2 col-6"><b>{{__('IMSS subdelegational key')}}</b></td>
+                <td class="pb-2 col-6"><b>{{__('IMSS subdelegational key')}}:</b></td>
                 <td class="col-6">{{$register->imss_sub_delegation_key}}</td>
             </tr>
         </tbody>

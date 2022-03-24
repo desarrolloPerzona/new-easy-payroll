@@ -27,7 +27,7 @@
                 <label for="risk_premium" class="font-bold mb-2">{{__('Risk premium')}} <span
                         class="text-danger">*</span></label>
                 <input type="number" step=".001" id="risk_premium" class="form-control form-main-input"
-                       wire:model.defer="risk_premium">
+                       wire:model.defer="risk_premium" placeholder="1.3">
                 @error('risk_premium') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-100">

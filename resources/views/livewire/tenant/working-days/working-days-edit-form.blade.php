@@ -1,9 +1,5 @@
 <div class="container mx-auto">
 
-    {{-- Error Validation message--}}
-    <x-forms.error-validation-message classes=""/>
-
-    {{--Edit Header--}}
     <x-utilities.section-header title="Edit working day" classes="mb-4"/>
 
     {{--Form to edit a workingday--}}

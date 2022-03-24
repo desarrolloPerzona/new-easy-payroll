@@ -21,7 +21,7 @@ class WorkingDaysCreateForm extends Component
 
 
     protected $rules = [
-        'name' => 'required|min:3',
+        'name' => 'unique:business_workdays|required|min:3',
         'workday_type' => 'required'
     ];
 

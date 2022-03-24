@@ -74,7 +74,14 @@ class WorkingDaysEditForm extends Component
 
         $this->validate();
 
-        $workday->name = $this->name;
+        $trimName = trim($this->name);
+        if ($trimName != $workday->name) {
+            $this->validate([
+                'name' => 'unique:business_workdays|required|min:4|max:50'
+            ]);
+            $workday->name = $trimName;
+        }
+//        $workday->name = $this->name;
         $workday->workday_type = $this->workday_type;
 
         if($this->monday){

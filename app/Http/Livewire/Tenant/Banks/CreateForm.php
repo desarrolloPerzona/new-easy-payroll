@@ -14,7 +14,7 @@ class CreateForm extends Component
 
     protected $rules = [
         'branch_id' => 'required',
-        'name' => 'required|min:4|max:50',
+        'name' => 'unique:banks|required|min:4|max:50',
         'account_number' => 'required|max:24',
         'institutional_key' => 'required',
         'description' => 'required|max:80',

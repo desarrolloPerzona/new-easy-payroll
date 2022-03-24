@@ -51,7 +51,7 @@ class Edit extends Component
             $this->validate([
                 'name' => 'unique:imss_patronal_registers|min:4|max:50',
             ]);
-            $register->name = $this->name;
+            $register->name = $trimName;
         }
         $register->risk_premium = $this->risk_premium;
         $register->imss_sub_delegation_key = $this->imss_sub_delegation_key;

@@ -20,7 +20,7 @@ class Create extends Component
     }
 
     protected $rules = [
-        'name' => 'required|min:4|max:50',
+        'name' => 'unique:imss_patronal_registers|min:4|max:50',
         'branch_id' => 'required',
         'risk_premium' => 'required|max:5',
         'imss_sub_delegation_key' => 'required|min:3|max:30'

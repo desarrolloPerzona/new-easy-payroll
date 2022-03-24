@@ -106,27 +106,24 @@
 
                                 <label class="my-2 font-bold">{{__('FIEL Certificate')}}</label>
                                 <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
-                                       type="text"
-                                       id="IMSScertificate">
+                                       type="text">
                             </div>
 
                             <div class="flex flex-col flex-grow mb-3">
 
                                 <label class="my-2 font-bold">{{__('Llave privada FIEL')}}</label>
                                 <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
-                                       type="text"
-                                       id="IMSScertificate">
+                                       type="text">
                             </div>
                             <div>
                                 <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
                                 <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                       type="text" id="name" name="Name">
+                                       type="text" id="name">
                             </div>
                             <div>
                                 <label class="font-bold" for="name">{{__('FIEL password')}}</label>
                                 <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                       type="password" id="name"
-                                       name="Name">
+                                       type="password" name="Name">
                             </div>
 
                         </div>

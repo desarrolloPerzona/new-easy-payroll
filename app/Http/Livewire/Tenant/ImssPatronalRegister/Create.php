@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Http\Livewire\Tenant\ImmsPatronalRegister;
+namespace App\Http\Livewire\Tenant\ImssPatronalRegister;
 
 use App\Models\Tenant\Branch;
 use App\Models\Tenant\ImssPatronalRegister;
 use Livewire\Component;
+use function redirect;
+use function session;
+use function view;
 
 class Create extends Component
 {
@@ -13,7 +16,7 @@ class Create extends Component
     public function render()
     {
         $branches = Branch::all();
-        return view('livewire.tenant.imms-patronal-register.create', compact('branches'));
+        return view('livewire.tenant.imss-patronal-register.create', compact('branches'));
     }
 
     protected $rules = [

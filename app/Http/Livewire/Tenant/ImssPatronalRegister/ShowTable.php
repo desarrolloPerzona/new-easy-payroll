@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Livewire\Tenant\ImmsPatronalRegister;
+namespace App\Http\Livewire\Tenant\ImssPatronalRegister;
 
 use App\Models\Tenant\Branch;
 use App\Models\Tenant\ImssPatronalRegister;
 use Livewire\Component;
+use function view;
 
 class ShowTable extends Component
 {
@@ -20,7 +21,7 @@ class ShowTable extends Component
     public function render()
     {
         $registers = ImssPatronalRegister::orderBy('id', 'DESC')->get();
-        return view('livewire.tenant.imms-patronal-register.show-table', compact('registers'));
+        return view('livewire.tenant.imss-patronal-register.show-table', compact('registers'));
     }
     public function deleteRecord(ImssPatronalRegister $register){
         $register->delete();

@@ -8,7 +8,7 @@
         {{--Create Button--}}
         <x-utilities.create-button title="New employer register" route="imss-employer-registers.create" classes=""/>
 
-        <livewire:tenant.imms-patronal-register.show-table/>
+        <livewire:tenant.imss-patronal-register.show-table/>
 
     </div>
 </x-app-tenant>

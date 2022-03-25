@@ -1,6 +1,6 @@
 <div>
 
-    <x-forms.alert-message classes=""/>
+    <x-forms.alert-message classes="mt-3"/>
 
     <div class="flex max-w-6xl mx-auto">
 

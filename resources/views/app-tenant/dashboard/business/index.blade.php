@@ -3,12 +3,7 @@
 
         <x-utilities.header-section title="Businesses" classes="mb-3" maxSize=""/>
 
-        <div class="btn-top-holder my-3"  >
-            <a href="{{route('business.create')}}" class="btn btn-dark tool-tip" data-tippy-content="{{__('Add a new business')}}" data-tippy-duration="0">
-                <i class="fas fa-plus-circle"></i>
-                {{ __('New business') }}
-            </a>
-        </div>
+        <x-utilities.create-button route="business.create" classes="" title="New business"/>
 
         {{--BUSINESS HOLDER--}}
         <div class="card bg-white dark:bg-gray-600 dark:text-white shadow-sm rounded p-4  my-2 mx-auto">

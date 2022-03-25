@@ -4,12 +4,15 @@
 
     {{--Header section--}}
     <div class="flex max-w-6xl mx-auto">
-        <div class="btn-top-holder my-3 flex-1">
-            <a href="{{route('banks.create',1)}}" class="btn btn-dark">
-                <i class="fas fa-plus-circle"></i>
-                {{ __('New bank account') }}
-            </a>
-        </div>
+{{--        <div class="btn-top-holder my-3 flex-1">--}}
+{{--            <a href="{{route('banks.create',1)}}" class="btn btn-dark">--}}
+{{--                <i class="fas fa-plus-circle"></i>--}}
+{{--                {{ __('New bank account') }}--}}
+{{--            </a>--}}
+{{--        </div>--}}
+
+        <x-utilities.create-button classes="" route="banks.create" title="New bank account"/>
+
         <div class="flex-1 my-3 text-right">
             <label class="font-bold my-2 mr-3" for="name">{{__('Business')}}</label>
             <label>

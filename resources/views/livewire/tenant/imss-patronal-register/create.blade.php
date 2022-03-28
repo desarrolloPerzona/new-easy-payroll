@@ -54,8 +54,7 @@
                             </div>
 
                         </button>
-                        <label
-                            class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
+                        <label for="use_imss" class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
                     </div>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                          data-bs-parent="#newItem">
@@ -83,44 +82,26 @@
                     </div>
                 </div>
 
+                {{--FIEL-------------------------------------}}
                 <div class="accordion-item">
                     <div class="accordion-header mr-4" id="headingFiel">
-                        <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel"
-                                aria-expanded="false" aria-controls="collapseTwo">
+                        <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel" aria-expanded="false" aria-controls="collapseTwo">
 
                             <div class="my-3 mx-2">
                                 <input type="radio" id="use_fiel" name="use_imss" value="0">
                             </div>
 
                         </button>
-                        <label class="text-gray-800 dark:text-white"
-                               for="id">{{__('Send movements to the IMSS through FIEL')}}</label>
-
+                        <label for="use_fiel" class="text-gray-800 dark:text-white">{{__('Send movements to the IMSS through FIEL')}}</label>
                     </div>
+
+
                     <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                          data-bs-parent="#newItem">
                         <div class="accordion-body text-dark dark:bg-dark dark:text-white">
 
-                            {{--FIEL-------------------------------------}}
-                            <div class="flex flex-col flex-grow mb-3">
-
-                                <label class="my-2 font-bold">{{__('FIEL Certificate')}}</label>
-                                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
-                                       type="text">
-                            </div>
-
-                            <div class="flex flex-col flex-grow mb-3">
-
-                                <label class="my-2 font-bold">{{__('Llave privada FIEL')}}</label>
-                                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
-                                       type="text">
-                            </div>
-
-                            <div>
-                                <label class="my-2 font-bold" for="name">{{__('FIEL password')}}</label>
-                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                       type="password" name="Name">
-                            </div>
+                            <a href="{{route('business.index')}}" class="btn btn-primary mb-3">{{__('Add FIEL')}}</a><br>
+                            <small>{{__('There is no FIEL certificate yet')}}</small>
 
                         </div>
                     </div>

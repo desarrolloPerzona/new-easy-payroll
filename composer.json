@@ -26,10 +26,10 @@
         "spatie/laravel-medialibrary": "^9.0.0",
         "spatie/laravel-permission": "^4.2",
         "spatie/laravel-ray": "^1.29",
-        "stancl/tenancy": "^3.4",
+        "stancl/tenancy": "^3.5.1",
         "ext-http": "*",
         "ext-json": "*",
-      "ext-mysql_xdevapi": "*"
+        "ext-mysql_xdevapi": "*"
     },
 
     "require-dev": {

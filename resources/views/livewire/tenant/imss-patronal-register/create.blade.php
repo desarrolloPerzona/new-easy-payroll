@@ -69,8 +69,8 @@
                             </div>
                             <div class="mb-3">
                                 <label class=" my-2 font-bold" for="name">{{__('IMSS certified user')}}</label>
-                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                       type="text" id="cert_imss_user" name="cert_imss_user">
+                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white form-control"
+                                       type="file" id="cert_imss_user" name="cert_imss_user">
                             </div>
                             <div class="mb-3">
                                 <label class="my-2 font-bold" for="name">{{__('IMSS certified password')}}</label>

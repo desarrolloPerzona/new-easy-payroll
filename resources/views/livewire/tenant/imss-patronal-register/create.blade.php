@@ -68,13 +68,13 @@
                                        type="text"
                                        id="cert_imss_cert" name="cert_imss_cert">
                             </div>
-                            <div>
-                                <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
+                            <div class="mb-3">
+                                <label class=" my-2 font-bold" for="name">{{__('IMSS certified user')}}</label>
                                 <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
                                        type="text" id="cert_imss_user" name="cert_imss_user">
                             </div>
-                            <div>
-                                <label class="font-bold" for="name">{{__('IMSS certified password')}}</label>
+                            <div class="mb-3">
+                                <label class="my-2 font-bold" for="name">{{__('IMSS certified password')}}</label>
                                 <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
                                        type="password" id="cert_imss_password"
                                        name="cert_imss_password">
@@ -115,13 +115,9 @@
                                 <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
                                        type="text">
                             </div>
+
                             <div>
-                                <label class="font-bold" for="name">{{__('IMSS certified user')}}</label>
-                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
-                                       type="text" id="name">
-                            </div>
-                            <div>
-                                <label class="font-bold" for="name">{{__('FIEL password')}}</label>
+                                <label class="my-2 font-bold" for="name">{{__('FIEL password')}}</label>
                                 <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
                                        type="password" name="Name">
                             </div>

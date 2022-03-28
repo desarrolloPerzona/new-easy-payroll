@@ -48,6 +48,7 @@ class ModelIndexSearch extends Component
         $this->searchableItems = collect($searchColumns);
         $this->modelTable = $modelTable;
         $this->modelColumns = $this->getColumnsFromTable($this->modelTable);
+        //dd($this->modelColumns);
         $this->searchColumns = $searchColumns;
         $this->sortColumn = $modelItems[0];
         $this->modelItemToEdit = collect();

@@ -17,7 +17,6 @@ class CreateBranchesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->unsignedBigInteger('imss_patronal_registry_id')->nullable();
             $table->string('street',)->nullable();
             $table->string('zip_code',5)->nullable();
             $table->text('borough')->nullable();
@@ -25,6 +24,7 @@ class CreateBranchesTable extends Migration
             $table->string('state',)->nullable();
             $table->timestamps();
             $table->softDeletes();
+            $table->unsignedBigInteger('imss_patronal_registry_id')->nullable();
         });
     }
 

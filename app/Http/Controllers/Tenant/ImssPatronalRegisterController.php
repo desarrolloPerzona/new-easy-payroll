@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Tenant;
 
+use App\Models\Tenant\Branch;
 use App\Models\Tenant\ImssPatronalRegister;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,7 +23,8 @@ class ImssPatronalRegisterController extends Controller
      */
     public function create()
     {
-        return view('app-tenant.dashboard.imss-employer-register.create');
+        $branches = Branch::all();
+        return view('app-tenant.dashboard.imss-employer-register.create', compact('branches'));
     }
 
     /**

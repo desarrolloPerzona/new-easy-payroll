@@ -15,7 +15,16 @@ class Create extends Component
 
     use WithFileUploads;
 
-    public $imss_sub_delegation_key, $risk_premium, $name, $branch_id, $use_imss, $cert_imss_cert, $cert_imss_user, $cert_imss_password;
+    public $imss_sub_delegation_key,
+        $risk_premium,
+        $name,
+        $branch_id,
+        $use_imss,
+        $cert_imss_cert,
+        $cert_imss_user,
+        $cert_imss_password,
+        $business,
+        $business_fiel;
 
     public function render()
     {
@@ -23,18 +32,29 @@ class Create extends Component
         return view('livewire.tenant.imss-patronal-register.create', compact('branches'));
     }
 
+    public function business_fiel()
+    {
+        if ($this->branch_id != null) {
+            $this->business = Branch::find($this->branch_id)->businesses->firstOrFail();
+            $this->business_fiel = $this->business->sat_fiel_password;
+
+        }
+    }
+
     protected $rules = [
         'name' => 'unique:imss_patronal_registers|min:4|max:50',
-        'branch_id' => 'required',
+        'branch_id' => 'not_in:0|required',
         'risk_premium' => 'required|max:5',
         'imss_sub_delegation_key' => 'required|min:3|max:30'
     ];
 
-    public function updated($propertyName){
+    public function updated($propertyName)
+    {
         $this->validateOnly($propertyName);
     }
 
-    public function save() {
+    public function save()
+    {
 
         $this->validate();
 
@@ -47,7 +67,7 @@ class Create extends Component
 
 //        Proob data
 
-        if($this->use_imss == 1){
+        if ($this->use_imss == 1) {
 //            $register->cert_imss_cert = $this->cert_imss_cert->store('certificates');
             $register->cert_imss_user = $this->cert_imss_user;
             $register->cert_imss_password = $this->cert_imss_password;

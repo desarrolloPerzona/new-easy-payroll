@@ -23,8 +23,7 @@ class ImssPatronalRegisterController extends Controller
      */
     public function create()
     {
-        $branches = Branch::find(1)->businesses;
-
+        $branches = Branch::all();
         return view('app-tenant.dashboard.imss-employer-register.create', compact('branches',));
     }
 
@@ -37,7 +36,7 @@ class ImssPatronalRegisterController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
+      /*  $request->validate([
             'branch_id' => 'not_in:0|required',
             'name' => 'required|min:3',
             'risk_premium' => 'numeric|required',
@@ -59,7 +58,7 @@ class ImssPatronalRegisterController extends Controller
             $register->cert_imss_password = Hash::make($request->get('cert_imss_password'));
         }
 
-        $register->save();
+        $register->save();*/
 
         return redirect()->route('imss-employer-registers.index');
 

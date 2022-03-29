@@ -1,13 +1,16 @@
 <div class="card bg-white shadow-sm rounded p-4 my-2 mx-auto dark:bg-dark dark:text-white">
-
-    <form class="form-group" wire:submit.prevent="save">
-
+    <form class="form-group"
+          wire:submit.prevent="save"
+          enctype="multipart/form-data">
         <div class="form-group d-flex justify-content-between gap-3">
             <div class="w-75">
                 <label for="branch" class="font-bold">{{__('Business')}} <span class="text-danger">*</span></label>
-                <select id="branch" name="branch"
-                        class="w-full rounded dark:bg-dark dark:text-white my-2 form-control"
-                        wire:model.defer="branch_id">
+                <select
+                    id="branch"
+                    name="branch"
+                    wire:model="branch_id"
+                    wire:change="business_fiel"
+                    class="w-full rounded dark:bg-dark dark:text-white my-2 form-control">
                     <option value="">{{ __('Select') }}</option>
                     @foreach($branches as $branch)
                         <option value="{{ $branch->id }}">{{ $branch->name }}</option>
@@ -20,12 +23,10 @@
                 <input type="text" id="name" class="form-control form-main-input" wire:model="name" placeholder="Alias">
                 @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
-
         </div>
         <div class="form-group d-flex justify-content-between gap-3">
             <div class="w-50">
-                <label for="risk_premium" class="font-bold mb-2">{{__('Risk premium')}} <span
-                        class="text-danger">*</span></label>
+                <label for="risk_premium" class="font-bold mb-2">{{__('Risk premium')}} <span class="text-danger">*</span></label>
                 <input type="number" step=".001" id="risk_premium" class="form-control form-main-input"
                        wire:model="risk_premium" placeholder="1.3">
                 @error('risk_premium') <small class="error text-danger">{{ $message }}</small> @enderror
@@ -83,30 +84,27 @@
                 </div>
 
                 {{--FIEL-------------------------------------}}
-                <div class="accordion-item">
-                    <div class="accordion-header mr-4" id="headingFiel">
-                        <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel" aria-expanded="false" aria-controls="collapseTwo">
+                @if(!empty($business_fiel) || $business_fiel != null)
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingFiel">
+                            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel" aria-expanded="false" aria-controls="collapseTwo">
 
-                            <div class="my-3 mx-2">
-                                <input type="radio" id="use_fiel" name="use_imss" value="0" wire:model.defer="use_imss">
+                                <div class="my-3 mx-2">
+                                    <input type="radio" id="use_fiel" name="use_imss" value="0" wire:model.defer="use_imss">
+                                </div>
+
+                            </button>
+                            <label for="use_fiel" class="text-gray-800 dark:text-white">{{__('Send movements to the IMSS through FIEL')}}</label>
+                        </div>
+                        <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
+                            <div class="accordion-body text-dark dark:bg-dark dark:text-white">
+                                <a href="{{route('business.index')}}" class="btn btn-primary mb-3">{{__('Add FIEL')}}</a><br>
+                                <small>{{__('There is no FIEL certificate yet')}}</small>
                             </div>
-
-                        </button>
-                        <label for="use_fiel" class="text-gray-800 dark:text-white">{{__('Send movements to the IMSS through FIEL')}}</label>
-                    </div>
-
-
-                    <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                         data-bs-parent="#newItem">
-                        <div class="accordion-body text-dark dark:bg-dark dark:text-white">
-
-                            <a href="{{route('business.index')}}" class="btn btn-primary mb-3">{{__('Add FIEL')}}</a><br>
-                            <small>{{__('There is no FIEL certificate yet')}}</small>
-
                         </div>
                     </div>
-                </div>
-
+                @endif
             </div>
         </div>
 

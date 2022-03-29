@@ -753,6 +753,7 @@
     "The :resource was restored!": "¡El :resource fue restaurado!",
     "The :resource was updated!": "¡El :resource fue actualizado!",
     "The action ran successfully!": "¡La acción se ejecutó correctamente!",
+    "The FIEL belonging to the company will be used": "Se utilizará la FIEL de la empresa",
     "The file was deleted!": "¡El archivo fue eliminado!",
     "The government won't let us show you what's behind these doors": "El gobierno no nos permitirá mostrarle lo que hay detrás de estas puertas",
     "The HasOne relationship has already been filled.": "La relación HasOne ya fué completada.",

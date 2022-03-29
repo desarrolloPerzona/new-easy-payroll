@@ -8,10 +8,14 @@ use Livewire\Component;
 use function redirect;
 use function session;
 use function view;
+use Livewire\WithFileUploads;
 
 class Create extends Component
 {
-    public $imss_sub_delegation_key, $risk_premium, $name, $branch_id;
+
+    use WithFileUploads;
+
+    public $imss_sub_delegation_key, $risk_premium, $name, $branch_id, $use_imss, $cert_imss_cert, $cert_imss_user, $cert_imss_password;
 
     public function render()
     {
@@ -31,6 +35,7 @@ class Create extends Component
     }
 
     public function save() {
+
         $this->validate();
 
         $register = new ImssPatronalRegister;
@@ -41,7 +46,13 @@ class Create extends Component
         $register->branch_id = $this->branch_id;
 
 //        Proob data
-        $register->fiel_id = 1;
+
+        if($this->use_imss == 1){
+//            $register->cert_imss_cert = $this->cert_imss_cert->store('certificates');
+            $register->cert_imss_user = $this->cert_imss_user;
+            $register->cert_imss_password = $this->cert_imss_password;
+        }
+
 
         $register->save();
 

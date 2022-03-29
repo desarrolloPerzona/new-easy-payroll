@@ -50,7 +50,7 @@
                                 aria-expanded="false" aria-controls="collapseTwo">
 
                             <div class="my-3 mx-2">
-                                <input type="radio" id="use_imss" name="use_imss" value="1" checked>
+                                <input type="radio" id="use_imss" name="use_imss" value="1" wire:model.prevent="use_imss">
                             </div>
 
                         </button>
@@ -63,20 +63,20 @@
                             <div class="flex flex-col flex-grow mb-3">
 
                                 <label class="my-2 font-bold">{{__('IMSS certificate')}}</label>
-                                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white"
-                                       type="text"
-                                       id="cert_imss_cert" name="cert_imss_cert">
+                                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white form-control"
+                                       type="file"
+                                       id="cert_imss_cert" name="cert_imss_cert" wire:model.defer="cert_imss_cert">
                             </div>
                             <div class="mb-3">
                                 <label class=" my-2 font-bold" for="name">{{__('IMSS certified user')}}</label>
                                 <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white form-control"
-                                       type="file" id="cert_imss_user" name="cert_imss_user">
+                                       type="text" id="cert_imss_user" name="cert_imss_user" wire:model.defer="cert_imss_user">
                             </div>
                             <div class="mb-3">
                                 <label class="my-2 font-bold" for="name">{{__('IMSS certified password')}}</label>
-                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white"
+                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white form-control"
                                        type="password" id="cert_imss_password"
-                                       name="cert_imss_password">
+                                       name="cert_imss_password" wire:model.defer="cert_imss_password">
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel" aria-expanded="false" aria-controls="collapseTwo">
 
                             <div class="my-3 mx-2">
-                                <input type="radio" id="use_fiel" name="use_imss" value="0">
+                                <input type="radio" id="use_fiel" name="use_imss" value="0" wire:model.defer="use_imss">
                             </div>
 
                         </button>

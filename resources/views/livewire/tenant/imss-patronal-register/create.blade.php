@@ -26,7 +26,8 @@
         </div>
         <div class="form-group d-flex justify-content-between gap-3">
             <div class="w-50">
-                <label for="risk_premium" class="font-bold mb-2">{{__('Risk premium')}} <span class="text-danger">*</span></label>
+                <label for="risk_premium" class="font-bold mb-2">{{__('Risk premium')}} <span
+                        class="text-danger">*</span></label>
                 <input type="number" step=".001" id="risk_premium" class="form-control form-main-input"
                        wire:model="risk_premium" placeholder="1.3">
                 @error('risk_premium') <small class="error text-danger">{{ $message }}</small> @enderror
@@ -44,67 +45,86 @@
         <div class="mb-2 text-white shadow-sm dark:bg-dark rounded mt-4">
             <div class="accordion" id="newItem">
 
-                {{--IMSS--}}
-                <div class="accordion-item">
-                    <div class="accordion-header mr-4" id="headingOne">
-                        <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                aria-expanded="false" aria-controls="collapseTwo">
-
-                            <div class="my-3 mx-2">
-                                <input type="radio" id="use_imss" name="use_imss" value="1" wire:model.prevent="use_imss">
-                            </div>
-
-                        </button>
-                        <label for="use_imss" class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
-                    </div>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                         data-bs-parent="#newItem">
-                        <div class="accordion-body text-dark dark:bg-dark dark:text-white">
-
-                            <div class="flex flex-col flex-grow mb-3">
-
-                                <label class="my-2 font-bold">{{__('IMSS certificate')}}</label>
-                                <input class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white form-control"
-                                       type="file"
-                                       id="cert_imss_cert" name="cert_imss_cert" wire:model.defer="cert_imss_cert">
-                            </div>
-                            <div class="mb-3">
-                                <label class=" my-2 font-bold" for="name">{{__('IMSS certified user')}}</label>
-                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white form-control"
-                                       type="text" id="cert_imss_user" name="cert_imss_user" wire:model.defer="cert_imss_user">
-                            </div>
-                            <div class="mb-3">
-                                <label class="my-2 font-bold" for="name">{{__('IMSS certified password')}}</label>
-                                <input class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white form-control"
-                                       type="password" id="cert_imss_password"
-                                       name="cert_imss_password" wire:model.defer="cert_imss_password">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {{--FIEL-------------------------------------}}
-                @if(!empty($business_fiel) || $business_fiel != null)
+                @if($branch_id)
+                    {{--IMSS--}}
                     <div class="accordion-item">
-                        <div class="accordion-header mr-4" id="headingFiel">
-                            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel" aria-expanded="false" aria-controls="collapseTwo">
+                        <div class="accordion-header mr-4" id="headingOne">
+                            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
 
                                 <div class="my-3 mx-2">
-                                    <input type="radio" id="use_fiel" name="use_imss" value="0" wire:model.defer="use_imss">
+                                    <input type="radio" id="use_imss" name="use_imss" value="1"
+                                           wire:model.defer="use_imss">
                                 </div>
 
                             </button>
-                            <label for="use_fiel" class="text-gray-800 dark:text-white">{{__('Send movements to the IMSS through FIEL')}}</label>
+                            <label for="use_imss"
+                                   class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
                         </div>
-                        <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#newItem">
                             <div class="accordion-body text-dark dark:bg-dark dark:text-white">
-                                <a href="{{route('business.index')}}" class="btn btn-primary mb-3">{{__('Add FIEL')}}</a><br>
-                                <small>{{__('There is no FIEL certificate yet')}}</small>
+
+                                <div class="flex flex-col flex-grow mb-3">
+
+                                    <label class="my-2 font-bold">{{__('IMSS certificate')}}</label>
+                                    <input
+                                        class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white form-control"
+                                        type="file"
+                                        id="cert_imss_cert" name="cert_imss_cert" wire:model.defer="cert_imss_cert">
+                                </div>
+                                <div class="mb-3">
+                                    <label class=" my-2 font-bold" for="name">{{__('IMSS certified user')}}</label>
+                                    <input
+                                        class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white form-control"
+                                        type="text" id="cert_imss_user" name="cert_imss_user"
+                                        wire:model.defer="cert_imss_user">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="my-2 font-bold" for="name">{{__('IMSS certified password')}}</label>
+                                    <input
+                                        class="text-gray-800 rounded my-2 w-full dark:bg-dark dark:text-white form-control"
+                                        type="password" id="cert_imss_password"
+                                        name="cert_imss_password" wire:model.defer="cert_imss_password">
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
+                    {{--FIEL-------------------------------------}}
+
+                    <div class="accordion-item">
+                        <div class="accordion-header mr-4" id="headingFiel">
+                            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseFiel"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+
+                                <div class="my-3 mx-2">
+                                    <input type="radio" id="use_fiel" name="use_imss" value="0"
+                                           wire:model.defer="use_imss">
+                                </div>
+
+                            </button>
+                            <label for="use_fiel"
+                                   class="text-gray-800 dark:text-white">{{__('Send movements to the IMSS through FIEL')}}</label>
+                        </div>
+
+                        <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                             data-bs-parent="#newItem">
+                            <div class="accordion-body text-dark dark:bg-dark dark:text-white">
+                                @if($business_fiel)
+                                    <small>{{__('The FIEL belonging to the company will be used')}}</small>
+                                @else
+                                    <a href="{{route('business.index')}}"
+                                       class="btn btn-primary mb-3">{{__('Add FIEL')}}</a><br>
+                                    <small>{{__('There is no FIEL certificate yet')}}</small>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
                 @endif
+
             </div>
         </div>
 

@@ -13,13 +13,15 @@ class Branch extends Model
         'name',
         'business_id',
         'description',
-        'imss_patronal_id',
+        'imss_patronal_registry_id',
+        'business_id',
+
     ];
 
 
-    public function Businesses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function Business(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(Business::class);
+        return $this->belongsTo(Business::class);
     }
 
     public function ImssPatronalRegisters(){

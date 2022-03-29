@@ -115,7 +115,12 @@ class CreateNewUser implements CreatesNewUsers
                 'name' => $user->tenancy_company,
             ]);
         });
-
+        $tenant->run(function ($user) {
+            Business::create([
+                'name' => 'mi otra compañia',
+                'sat_fiel_password' => 'mipassword'
+            ]);
+        });
 
         /**
          * ADD LOGO
@@ -129,11 +134,14 @@ class CreateNewUser implements CreatesNewUsers
             Branch::create([
                 'name' => $user->tenancy_company,
                 'business_name' => $user->tenancy_company,
+                'business_id' => 1
             ]);
-
-            BranchBusiness::create([
-                'business_id' => 1,
-                'branch_id' => 1
+        });
+        $tenant->run(function ($user) {
+            Branch::create([
+                'name' => 'branch de otra compañia',
+                'business_name' => 'mi otra compañia',
+                'business_id' => 2
             ]);
         });
 

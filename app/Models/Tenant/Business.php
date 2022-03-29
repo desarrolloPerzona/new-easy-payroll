@@ -42,7 +42,7 @@ class Business extends Model implements HasMedia
     ];
 
     public function branches(){
-        return $this->belongsToMany(Branch::class);
+        return $this->hasMany(Branch::class,'business_id','id');
     }
 
     public function banks(){

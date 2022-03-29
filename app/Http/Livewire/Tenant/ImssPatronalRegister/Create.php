@@ -35,8 +35,8 @@ class Create extends Component
     public function business_fiel()
     {
         if ($this->branch_id != null) {
-            $this->business = Branch::find($this->branch_id)->businesses->firstOrFail();
-            $this->business_fiel = $this->business->sat_fiel_password;
+            $this->business = Branch::find($this->branch_id);
+            $this->business_fiel = $this->business->business_id;
 
         }
     }

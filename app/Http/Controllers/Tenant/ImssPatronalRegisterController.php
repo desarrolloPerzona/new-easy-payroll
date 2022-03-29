@@ -24,7 +24,6 @@ class ImssPatronalRegisterController extends Controller
     public function create()
     {
         $branches = Branch::find(1)->businesses;
-        dd($branches);
 
         return view('app-tenant.dashboard.imss-employer-register.create', compact('branches',));
     }

@@ -1,4 +1,4 @@
-<div class="card bg-white dark:bg-gray-600 dark:text-white shadow-sm rounded p-4  my-2 mx-auto">
+<div class="card bg-white dark:bg-gray-600 dark:text-white shadow-sm rounded p-4 my-2 mx-auto">
 
     @if(!count($businesses))
         <div class="col-12 text-center">
@@ -13,11 +13,8 @@
             <div class="col-2"><b>{{__('Created at')}}</b></div>
         </div>
 
-
         <div class="accordion" id="newItem">
-
             @foreach($businesses as $business)
-
                 <div class="accordion-item">
 
                     {{--Header Accordion--}}
@@ -41,9 +38,15 @@
                                    class="text-decoration-none">
                                     <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                 </a>
-                                <a wire:click="$emit('deleteMessageSecond', {{$business->id}})">
-                                    <i class="fas fa-trash-alt text-gray-400 hover:text-red-500 cursor-pointer"></i>
-                                </a>
+                                @if($business->id === 1)
+                                    <a href="#" class="tool-tip" data-tippy-content="{{__('You cannot delete the main business')}}" data-tippy-duration="0">
+                                        <i class="fas fa-trash-alt text-gray-200"></i>
+                                    </a>
+                                @else
+                                    <a wire:click="$emit('deleteMessageSecond', {{$business->id}})">
+                                        <i class="fas fa-trash-alt text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -61,7 +64,6 @@
                                     <th colspan="2">{{__('State')}}</th>
                                 </tr>
                                 </thead>
-
                                 @if(!count($businesses))
                                     <tbody>
                                     <td colspan="3" class="text-center py-4">
@@ -69,48 +71,43 @@
                                     </td>
                                     </tbody>
                                 @else
+                                    <tbody>
+                                    <tr>
+                                        <td>{{$business->name}}</td>
 
+                                        @if($business->municipality)
+                                            <td>{{$business->municipality}}</td>
+                                        @else
+                                            <td>{{__('No records')}}</td>
+                                        @endif
+
+                                        @if($business->state)
+                                            <td>{{$business->state}}</td>
+                                        @else
+                                            <td>{{__('No records')}}</td>
+                                        @endif
+
+                                        <td class="d-flex gap-3 justify-content-end pe-4">
+                                            <a href="{{route('business.edit', $business->id)}}" class="text-decoration-none">
+                                                <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                            </a>
+                                            <a href="{{route('business-working-day.edit', $business->id)}}"
+                                               class="text-decoration-none">
+                                                <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                            </a>
+                                            <a wire:click="$emit('deleteMessageSecond', {{$business->id}})">
+                                                <i class="fas fa-trash-alt text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
                                 @endif
-                                <tbody>
-                                <tr>
-
-                                    <td>{{$business->name}}</td>
-
-                                    @if($business->municipality)
-                                        <td>{{$business->municipality}}</td>
-                                    @else
-                                        <td>{{__('No records')}}</td>
-                                    @endif
-
-                                    @if($business->state)
-                                        <td>{{$business->state}}</td>
-                                    @else
-                                        <td>{{__('No records')}}</td>
-                                    @endif
-
-                                    <td class="d-flex gap-3 justify-content-end pe-4">
-                                        <a href="{{route('business.edit', $business->id)}}" class="text-decoration-none">
-                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                        </a>
-                                        <a href="{{route('business-working-day.edit', $business->id)}}"
-                                           class="text-decoration-none">
-                                            <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                        </a>
-                                        <a wire:click="$emit('deleteMessageSecond', {{$business->id}})">
-                                            <i class="fas fa-trash-alt text-gray-400 hover:text-red-500 cursor-pointer"></i>
-                                        </a>
-                                    </td>
-
-                                </tr>
-                                </tbody>
-
                             </table>
 
                         </div>
                     </div>
                 </div>
             @endforeach
-
         </div>
 
     @endif

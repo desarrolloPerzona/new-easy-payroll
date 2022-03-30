@@ -23,7 +23,7 @@ class Create extends Component
         $cert_imss_cert,
         $cert_imss_user,
         $cert_imss_password,
-        $business,
+        $branch,
         $business_fiel;
 
     public function render()
@@ -35,9 +35,8 @@ class Create extends Component
     public function business_fiel()
     {
         if ($this->branch_id != null) {
-            $this->business = Branch::find($this->branch_id);
-            $this->business_fiel = $this->business->business_id;
-
+            $this->branch = Branch::find($this->branch_id);
+            $this->business_fiel = $this->branch->business->sat_fiel_password;
         }
     }
 

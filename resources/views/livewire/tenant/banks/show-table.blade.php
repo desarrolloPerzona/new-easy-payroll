@@ -20,11 +20,11 @@
         </div>
     </div>
 
-    <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto dark:bg-dark dark:text-white">
+    <div class="card bg-white shadow-sm rounded p-4 max-w-6xl  mx-auto dark:bg-dark dark:text-white">
 
         @if(count($bankAccounts) < 1)
-            <div class="w-100 text-center font-bold ">
-                {{__('No records')}}
+            <div class="col-12 text-center py-3">
+                <b>{{__('No records')}}</b>
             </div>
         @else
             @foreach($bankAccounts as $account)

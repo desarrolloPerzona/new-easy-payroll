@@ -16,7 +16,6 @@
         <div class="accordion" id="newItem">
             @foreach($businesses as $business)
                 <div class="accordion-item">
-
                     {{--Header Accordion--}}
                     <div class="accordion-header" id="headingOne">
                         <div class="col-12 d-flex p-3">
@@ -43,7 +42,7 @@
                                         <i class="fas fa-trash-alt text-gray-200"></i>
                                     </a>
                                 @else
-                                    <a wire:click="$emit('deleteMessageSecond', {{$business->id}})">
+                                    <a wire:click="$emit('deleteMessage', {{$business->id}})">
                                         <i class="fas fa-trash-alt text-gray-400 hover:text-red-500 cursor-pointer"></i>
                                     </a>
                                 @endif
@@ -98,7 +97,7 @@
                                             </a>
 
                                             @if($key !== 0)
-                                                <a wire:click="$emit('deleteMessageSecond', {{$business->id}})">
+                                                <a wire:click="$emit('deleteMessageSecond', {{$branch->id}})">
                                                     <i class="fas fa-trash-alt text-gray-700 hover:text-red-500 cursor-pointer"></i>
                                                 </a>
                                             @else
@@ -123,3 +122,32 @@
     @endif
 
 </div>
+
+@push('inline_scripts')
+    <script>
+        // Second delete message
+        Livewire.on('deleteMessageSecond', recordId => {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "No podrás revertir esta acción!",
+                icon: 'warning',
+                showCancelButton: true,
+                cancelButtonText: "Cancelar",
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Sí, eliminar!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    //Emit the delete event to catch it in our component
+                    Livewire.emit('deleteSecond', recordId);
+
+                    Swal.fire(
+                        'Eliminado!',
+                        'El registro ha sido eliminado.',
+                        'success'
+                    )
+                }
+            })
+        })
+    </script>
+@endpush

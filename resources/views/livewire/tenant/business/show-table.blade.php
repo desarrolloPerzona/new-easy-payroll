@@ -64,7 +64,7 @@
                                     <th colspan="2">{{__('State')}}</th>
                                 </tr>
                                 </thead>
-                                @if(!count($businesses))
+                                @if(!count($business->branches))
                                     <tbody>
                                     <td colspan="3" class="text-center py-4">
                                         <b>{{__('No records')}}</b>
@@ -72,34 +72,44 @@
                                     </tbody>
                                 @else
                                     <tbody>
+                                    @foreach($business->branches as $key => $branch)
                                     <tr>
-                                        <td>{{$business->name}}</td>
+                                        <td>{{$branch->name}}</td>
 
-                                        @if($business->municipality)
-                                            <td>{{$business->municipality}}</td>
+                                        @if($branch->municipality)
+                                            <td>{{$branch->municipality}}</td>
                                         @else
                                             <td>{{__('No records')}}</td>
                                         @endif
 
-                                        @if($business->state)
-                                            <td>{{$business->state}}</td>
+                                        @if($branch->state)
+                                            <td>{{$branch->state}}</td>
                                         @else
                                             <td>{{__('No records')}}</td>
                                         @endif
 
                                         <td class="d-flex gap-3 justify-content-end pe-4">
-                                            <a href="{{route('business.edit', $business->id)}}" class="text-decoration-none">
-                                                <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                            <a href="{{route('business.edit', $branch->id)}}" class="text-decoration-none">
+                                                <i class="fas fa-eye text-gray-600 hover:text-gray-700 cursor-pointer"></i>
                                             </a>
-                                            <a href="{{route('business-working-day.edit', $business->id)}}"
+                                            <a href="{{route('business-working-day.edit', $branch->id)}}"
                                                class="text-decoration-none">
-                                                <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                                <i class="fas fa-edit text-gray-600 hover:text-gray-700 cursor-pointer"></i>
                                             </a>
-                                            <a wire:click="$emit('deleteMessageSecond', {{$business->id}})">
-                                                <i class="fas fa-trash-alt text-gray-400 hover:text-red-500 cursor-pointer"></i>
-                                            </a>
+
+                                            @if($key !== 0)
+                                                <a wire:click="$emit('deleteMessageSecond', {{$business->id}})">
+                                                    <i class="fas fa-trash-alt text-gray-700 hover:text-red-500 cursor-pointer"></i>
+                                                </a>
+                                            @else
+                                                <a href="#" class="tool-tip" data-tippy-content="{{__('You cannot delete the main branch')}}" data-tippy-duration="0">
+                                                    <i class="fas fa-trash-alt text-gray-400"></i>
+                                                </a>
+                                            @endif
+
                                         </td>
                                     </tr>
+                                    @endforeach
                                     </tbody>
                                 @endif
                             </table>

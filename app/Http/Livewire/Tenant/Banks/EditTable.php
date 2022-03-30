@@ -61,14 +61,13 @@ class EditTable extends Component
         $this->validate();
 
         $bankAccount = Bank::find($this->userId);
-
-        $trimName = trim($this->name);
-        if ($trimName == $bankAccount->name) {
+        if ($this->name == $bankAccount->name) {
             $this->validate([
                 'name' => 'unique:banks|required|min:4|max:50'
             ]);
-            $bankAccount->name = $trimName;
+            $bankAccount->name = $this->name;
         }
+        $bankAccount->name = $this->name;
         $bankAccount->institutional_key = $this->institutional_key;
         $bankAccount->branch = $this->branch_id;
         $bankAccount->account_number = $this->account_number;

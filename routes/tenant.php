@@ -5,6 +5,7 @@ declare(strict_types=1);
 
 use App\Http\Controllers\Tenant\AreaPositionController;
 use App\Http\Controllers\Tenant\BankController;
+use App\Http\Controllers\Tenant\BranchController;
 use App\Http\Controllers\Tenant\BusinessController;
 use App\Http\Controllers\Tenant\BusinessPositionController;
 use App\Http\Controllers\Tenant\BusinessWorkdayController;
@@ -50,6 +51,7 @@ Route::middleware([
     Route::get('/dashboard', [TenantDashboardController::class, 'dashboard'])->middleware('auth:web')->name('tenant.dashboard');
     /*TENANT BUSINESS*/
     Route::resource('/business', BusinessController::class)->middleware('auth:web');
+    Route::resource('/branches', BranchController::class)->middleware('auth:web');
     Route::patch('/business', [BusinessController::class, 'updateByField'])->middleware('auth:web')->name('business.update-by-field');
     Route::patch('/updateStpStatus/{business}', [BusinessController::class, 'updateStpStatus'])->name('business.stp');
     Route::patch('/updateByField/{id}/{field}', [BusinessController::class, 'saveFields'])->name('update-by-field');

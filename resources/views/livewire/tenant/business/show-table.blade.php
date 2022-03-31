@@ -33,7 +33,7 @@
                                 <a href="{{route('business.edit', $business->id)}}">
                                     <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                 </a>
-                                <a href="{{route('business-working-day.edit', $business->id)}}"
+                                <a href="{{route('business.edit', $business->id)}}"
                                    class="text-decoration-none">
                                     <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                 </a>
@@ -91,7 +91,7 @@
                                             <a href="{{route('business.edit', $branch->id)}}" class="text-decoration-none">
                                                 <i class="fas fa-eye text-gray-600 hover:text-gray-700 cursor-pointer"></i>
                                             </a>
-                                            <a href="{{route('business-working-day.edit', $branch->id)}}"
+                                            <a href="{{route('branches.edit', $branch->id)}}"
                                                class="text-decoration-none">
                                                 <i class="fas fa-edit text-gray-600 hover:text-gray-700 cursor-pointer"></i>
                                             </a>

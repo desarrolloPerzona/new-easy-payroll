@@ -3,7 +3,7 @@
 
         <x-utilities.section-header title="New branch" classes="mb-3"/>
 
-        <livewire:tenant.branches.create business="{{$business}}"/>
+        <livewire:tenant.branches.create-form business="{{$business->id}}"/>
 
     </div>
 </x-app-tenant>

@@ -57,7 +57,7 @@
                         <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                             <div class="btn-top-holder my-3 flex-1">
-                                <a href="{{route('branches.create', 2)}}" class="btn btn-dark float-right">
+                                <a href="{{route('branches.create', $business->id)}}" class="btn btn-dark float-right">
                                     <i class="fas fa-plus-circle"></i>
                                     {{ __('New branch') }}
                                 </a>

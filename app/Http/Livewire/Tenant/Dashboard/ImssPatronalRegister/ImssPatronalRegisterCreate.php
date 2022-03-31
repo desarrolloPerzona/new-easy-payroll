@@ -1,18 +1,14 @@
 <?php
 
-namespace App\Http\Livewire\Tenant\ImssPatronalRegister;
+namespace App\Http\Livewire\Tenant\Dashboard\ImssPatronalRegister;
 
 use App\Models\Tenant\Branch;
 use App\Models\Tenant\ImssPatronalRegister;
 use Livewire\Component;
-use function redirect;
-use function session;
-use function view;
 use Livewire\WithFileUploads;
 
-class Create extends Component
+class ImssPatronalRegisterCreate extends Component
 {
-
     use WithFileUploads;
 
     public $imss_sub_delegation_key,
@@ -26,11 +22,7 @@ class Create extends Component
         $branch,
         $business_fiel;
 
-    public function render()
-    {
-        $branches = Branch::all();
-        return view('livewire.tenant.imss-patronal-register.create', compact('branches'));
-    }
+
 
     public function business_fiel()
     {
@@ -40,22 +32,15 @@ class Create extends Component
         }
     }
 
-    protected $rules = [
-        'name' => 'unique:imss_patronal_registers|min:4|max:50',
-        'branch_id' => 'not_in:0|required',
-        'risk_premium' => 'required|max:5',
-        'imss_sub_delegation_key' => 'required|min:3|max:30'
-    ];
-
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-    }
-
     public function save()
     {
 
-        $this->validate();
+        $this->validate([
+            'name' => 'unique:imss_patronal_registers|min:4|max:50',
+            'branch_id' => 'required',
+            'risk_premium' => 'required|max:5',
+            'imss_sub_delegation_key' => 'required|min:3|max:30',
+        ]);
 
         $register = new ImssPatronalRegister;
 
@@ -64,10 +49,10 @@ class Create extends Component
         $register->imss_sub_delegation_key = $this->imss_sub_delegation_key;
         $register->branch_id = $this->branch_id;
 
-//        Proob data
+
 
         if ($this->use_imss == 1) {
-//            $register->cert_imss_cert = $this->cert_imss_cert->store('certificates');
+            //$register->cert_imss_cert = $this->cert_imss_cert->store('certificates');
             $register->cert_imss_user = $this->cert_imss_user;
             $register->cert_imss_password = $this->cert_imss_password;
         }
@@ -78,5 +63,12 @@ class Create extends Component
         session()->flash('message', 'create');
 
         return redirect()->route('imss-employer-registers.index');
+    }
+
+
+    public function render()
+    {
+        $branches = Branch::all();
+        return view('livewire.tenant.dashboard.imss-patronal-register.imss-patronal-register-create',compact('branches'));
     }
 }

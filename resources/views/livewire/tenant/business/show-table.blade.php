@@ -51,9 +51,18 @@
                     </div>
 
                     {{--Body info accordion--}}
+                    {{----------------------------BRANCHES SECTION-----------------}}
                     <div id="collapse-{{$business->id}}" class="accordion-collapse collapse"
                          aria-labelledby="headingOne" data-bs-parent="#newItem">
                         <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
+
+                            <div class="btn-top-holder my-3 flex-1">
+                                <a href="{{route('branches.create', 2)}}" class="btn btn-dark float-right">
+                                    <i class="fas fa-plus-circle"></i>
+                                    {{ __('New branch') }}
+                                </a>
+                            </div>
+
 
                             <table class="table table-striped mt-4">
                                 <thead>

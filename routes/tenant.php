@@ -52,6 +52,8 @@ Route::middleware([
     /*TENANT BUSINESS*/
     Route::resource('/business', BusinessController::class)->middleware('auth:web');
     Route::resource('/branches', BranchController::class)->middleware('auth:web');
+    //    Route to add a branch belonging to an specific business
+    Route::get('/branches/create/{business}', [BranchController::class, 'create'])->middleware('auth:web')->name('branches.create');
     Route::patch('/business', [BusinessController::class, 'updateByField'])->middleware('auth:web')->name('business.update-by-field');
     Route::patch('/updateStpStatus/{business}', [BusinessController::class, 'updateStpStatus'])->name('business.stp');
     Route::patch('/updateByField/{id}/{field}', [BusinessController::class, 'saveFields'])->name('update-by-field');

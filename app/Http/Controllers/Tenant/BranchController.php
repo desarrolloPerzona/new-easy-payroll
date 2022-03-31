@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Tenant;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tenant\Branch;
+use App\Models\Tenant\Business;
 use Illuminate\Http\Request;
 
 class BranchController extends Controller
@@ -22,9 +24,9 @@ class BranchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Business $business)
     {
-        //
+        return view('app-tenant.dashboard.branches.create', compact('business'));
     }
 
     /**

@@ -1,6 +1,8 @@
 <x-app-tenant>
     <div class="container mx-auto">
 
+        <x-forms.alert-message classes=""/>
+
         <x-utilities.header-section title="Businesses" classes="mb-3" maxSize=""/>
 
         <x-utilities.create-button route="business.create" classes="" title="New business"/>

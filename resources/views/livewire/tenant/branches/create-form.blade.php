@@ -2,22 +2,23 @@
 
     <form class="form-group" wire:submit.prevent="store">
 
+        <div class="mb-4 p-2 rounded bg-gray-200">
+            <h5 class="m-0"><b>{{__('General')}}</b></h5>
+        </div>
+
         <div class="form-group d-flex justify-content-between">
             <div class="w-75 mr-2">
-                <label for="branch" class="font-bold">{{__('Business')}}<span
+                <label for="business" class="font-bold">{{__('Business')}}<span
                         class="text-danger">*</span></label>
-                <select id="branch" name="branch" disabled
+                <select id="business" disabled
                         class="w-full rounded dark:bg-dark dark:text-white my-2 form-control"
-                        wire:model.defer="branch_id">
+                        wire:model.defer="business_id">
                     <option value="">{{ $business->name }}</option>
-                    @foreach($businesses as $business)
-                        <option value="{{$business->id}}" }}>{{$business->name}}</option>
-                    @endforeach
                 </select>
-                @error('branch_id') <small class="error text-danger">{{ $message }}</small> @enderror
+                @error('business') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-100 ml-2">
-                <label for="name" class="font-bold mb-2">{{__('Account name')}} <span
+                <label for="name" class="font-bold mb-2">{{__('Name')}} <span
                         class="text-danger">*</span></label>
                 <input type="text" id="name" name="name" class="form-control form-main-input" wire:model="name">
                 @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
@@ -25,55 +26,58 @@
 
         </div>
         <div class="form-group d-flex justify-content-between">
-            <div class="w-50 mr-2">
-                <label for="account_number" class="font-bold mb-2">{{__('Account number')}} <span
+            <div class="w-100 mr-2">
+                <label for="account_number" class="font-bold mb-2">{{__('Description')}} <span
                         class="text-danger">*</span></label>
-                <input type="number" id="account_number" name="account_number"
-                       class="form-control form-main-input" wire:model="account_number">
+                <textarea name="" id="" rows="2" class="w-100 form-control form-main-input" wire:model="description"></textarea>
+                @error('account_number') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+        </div>
+
+        <div class="mt-4 mb-4 p-2 rounded bg-gray-200">
+            <h5 class="m-0"><b>{{__('Address')}}</b></h5>
+        </div>
+
+        <div class="form-group d-flex justify-content-between">
+            <div class="w-100 mr-2">
+                <label for="account_number" class="font-bold mb-2">{{__('Street')}} <span
+                        class="text-danger">*</span></label>
+                <input type="text" id="account_number" name="account_number"
+                       class="form-control form-main-input" wire:model="street">
+                @error('account_number') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+        </div>
+
+        <div class="form-group d-flex gap-3">
+            <div class="w-50">
+                <label for="information_number" class="font-bold mb-2">{{__('ZIP code')}} <span
+                        class="text-danger">*</span></label>
+                <input id="information_number" name="information_number" class="w-100 form-control"
+                       type="number" wire:model="zip_code">
+                @error('information_number') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+            <div class="w-100">
+                <label for="borough" class="font-bold mb-2">{{__('City')}} <span
+                        class="text-danger">*</span></label>
+                <input id="borough" name="branch_number" class="w-100 form-control" type="text"
+                       wire:model="borough">
+                @error('branch_number') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+        </div>
+
+        <div class="form-group d-flex justify-content-between">
+            <div class="w-50 mr-2">
+                <label for="account_number" class="font-bold mb-2">{{__('Municipality')}} <span
+                        class="text-danger">*</span></label>
+                <input type="text" id="account_number" name="account_number"
+                       class="form-control form-main-input" wire:model="municipality">
                 @error('account_number') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-50 ms-2">
-                <label for="institutional_key" class="font-bold">{{__('Bank')}} <span
+                <label for="institutional_key" class="font-bold mb-2">{{__('State')}} <span
                         class="text-danger">*</span></label>
-                <select id="institutional_key" name="institutional_key"
-                        class="w-full rounded dark:bg-dark dark:text-white my-2 form-control"
-                        wire:model.defer="institutional_key">
-                    <option value="">{{__('Select')}}</option>
-                    {{--                    @foreach($banks as $bank)--}}
-                    {{--                        <option value="{{$bank->institutional_key}}">{{$bank->name}}</option>--}}
-                    {{--                    @endforeach--}}
-                </select>
-                @error('institutional_key') <small class="error text-danger">{{ $message }}</small> @enderror
-            </div>
-        </div>
-        <div class="form-group d-flex justify-content-between">
-            <div class="w-100 mb-2">
-                <label for="description" class="font-bold mb-2">{{__('Description')}} <span class="text-danger">*</span></label>
-                {{--                <textarea type="text" id="description" name="description" class="form-control form-main-input" rows="1" wire:model.defer="description">{{ $description }}</textarea>--}}
-                @error('description') <small class="error text-danger">{{ $message }}</small> @enderror
-            </div>
-        </div>
-        <div class="form-group d-flex justify-content-between">
-            <div class="w-1/3 pe-2">
-                <label for="information_number" class="font-bold mb-2">{{__('Information number')}} <span
-                        class="text-danger">*</span></label>
-                <input id="information_number" name="information_number" class="w-100 form-control"
-                       type="number" wire:model="information_number">
-                @error('information_number') <small class="error text-danger">{{ $message }}</small> @enderror
-            </div>
-            <div class="w-1/3 px-2">
-                <label for="branch_number" class="font-bold mb-2">{{__('Branch number')}} <span
-                        class="text-danger">*</span></label>
-                <input id="branch_number" name="branch_number" class="w-100 form-control" type="number"
-                       wire:model="branch_number">
-                @error('branch_number') <small class="error text-danger">{{ $message }}</small> @enderror
-            </div>
-            <div class="w-1/3 ps-2">
-                <label for="account_clabe" class="font-bold mb-2">{{__('CLABE account')}} <span
-                        class="text-danger">*</span></label>
-                <input id="account_clabe" name="account_clabe" class="w-100 form-control" type="number"
-                       wire:model="account_clabe">
-                @error('account_clabe') <small class="error text-danger">{{ $message }}</small> @enderror
+                <input type="text" class="form-control form-main-input" wire:model="state">
+                @error('state') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
         </div>
 

@@ -3,8 +3,8 @@
 
         <x-utilities.section-header title="Branches" classes=""/>
 
-        {{--Show account table component--}}
-{{--        <livewire:tenant.banks.show-table/>--}}
+        {{--Edit form--}}
+        <livewire:tenant.branches.edit-form branch="{{$branch->id}}"/>
 
     </div>
 </x-app-tenant>

@@ -59,7 +59,8 @@ class BranchController extends Controller
      */
     public function edit($id)
     {
-        return view('app-tenant.dashboard.branches.edit');
+        $branch = Branch::find($id);
+        return view('app-tenant.dashboard.branches.edit', compact('branch'));
     }
 
     /**

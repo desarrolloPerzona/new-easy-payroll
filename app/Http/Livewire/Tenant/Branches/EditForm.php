@@ -3,12 +3,11 @@
 namespace App\Http\Livewire\Tenant\Branches;
 
 use App\Models\Tenant\Branch;
-use App\Models\Tenant\Business;
 use Livewire\Component;
 
-class CreateForm extends Component
+class EditForm extends Component
 {
-    public $business, $business_id, $name, $description, $street, $zip_code, $borough, $municipality, $state;
+    public $branch, $busines_id, $name, $description, $street, $zip_code, $borough, $municipality, $state;
 
     protected $rules = [
         'name' => 'required|min:2',
@@ -24,21 +23,27 @@ class CreateForm extends Component
         $this->validateOnly($propertyName);
     }
 
-    public function mount(Business $business){
-        $this->business = $business;
-        $this->business_id = $business->id;
+    public function mount($branch)
+    {
+        $this->branch = Branch::find($branch);
+        $this->busines_id = $this->branch->business->id;
+        $this->name = $this->branch->name;
+        $this->description = $this->branch->description;
+        $this->street = $this->branch->street;
+        $this->zip_code = $this->branch->zip_code;
+        $this->borough = $this->branch->borough;
+        $this->municipality = $this->branch->municipality;
+        $this->state = $this->branch->state;
     }
 
     public function render()
     {
-        return view('livewire.tenant.branches.create-form');
+        return view('livewire.tenant.branches.edit-form');
     }
 
-    public function store(){
-
+    public function update(Branch $branch)
+    {
         $this->validate();
-
-        $branch = new Branch;
 
         $branch->name = $this->name;
         $branch->description = $this->description;
@@ -47,12 +52,10 @@ class CreateForm extends Component
         $branch->borough = $this->borough;
         $branch->municipality = $this->municipality;
         $branch->state = $this->state;
-        $branch->business_id = $this->business_id;
 
         $branch->save();
 
-        session()->flash('message', 'create');
-
+        session()->flash('messsage', 'edit');
         return redirect()->route('business.index');
     }
 }

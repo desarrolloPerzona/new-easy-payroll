@@ -25,6 +25,6 @@ class Branch extends Model
     }
 
     public function ImssPatronalRegisters(){
-        return $this->hasMany(ImssPatronalRegister::class,'branch_id','id');
+        return $this->hasOne(ImssPatronalRegister::class);
     }
 }

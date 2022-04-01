@@ -11,13 +11,15 @@ class ImssPatronalRegister extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
 
+    protected $table = 'imss_patronal_registers';
+
     protected $fillable = [
         'name', 'imss_sub_delegation_key', 'risk_premium','branch_id'
     ];
 
 
     public function branch(){
-        return $this->hasOne(Branch::class,'id','branch_id');
+        return $this->belongsToMany(Branch::class);
     }
 
 }

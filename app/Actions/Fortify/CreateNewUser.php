@@ -6,6 +6,7 @@ use App\Models\Tenant;
 use App\Models\Tenant\Branch;
 use App\Models\Tenant\Business;
 use App\Models\Tenant\BranchBusiness;
+use App\Models\Tenant\ImssPatronalRegister;
 use App\Models\User;
 use App\Notifications\NewUserNotification;
 use Illuminate\Support\Facades\Hash;
@@ -60,7 +61,6 @@ class CreateNewUser implements CreatesNewUsers
          */
 
 
-
         /**
          * GIVE ROLE
          */
@@ -105,7 +105,6 @@ class CreateNewUser implements CreatesNewUsers
         });
 
 
-
         /**
          * ADD FIRST BUSINESS
          */
@@ -135,8 +134,18 @@ class CreateNewUser implements CreatesNewUsers
                 'name' => $user->tenancy_company,
                 'business_name' => $user->tenancy_company,
                 'business_id' => 1
+
             ]);
         });
+
+        $tenant->run(function ($user) {
+            ImssPatronalRegister::create([
+                'name' => 'registro patronal 1',
+                'risk_premium' => '1.2',
+                'business_id' => 2
+            ]);
+        });
+
         $tenant->run(function ($user) {
             Branch::create([
                 'name' => 'branch de otra compañia',
@@ -144,6 +153,7 @@ class CreateNewUser implements CreatesNewUsers
                 'business_id' => 2
             ]);
         });
+
 
         /**
          *

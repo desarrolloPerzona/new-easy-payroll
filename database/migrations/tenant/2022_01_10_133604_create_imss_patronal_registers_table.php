@@ -16,15 +16,14 @@ class CreateImssPatronalRegistersTable extends Migration
         Schema::create('imss_patronal_registers', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->decimal('risk_premium');
-            $table->string('imss_sub_delegation_key')->unique();
+            $table->decimal('risk_premium')->nullable();
+            $table->string('imss_sub_delegation_key')->nullable()->unique();
             $table->boolean('use_fiel')->default(false);
             $table->string('cert_imss_user')->unique()->nullable();
             $table->string('cert_imss_password')->unique()->nullable();
             $table->string('cert_imss_cert')->unique()->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->unsignedBigInteger('branch_id');
         });
     }
 

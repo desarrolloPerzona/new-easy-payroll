@@ -21,6 +21,7 @@ class ShowTable extends Component
     public function render()
     {
         $registers = ImssPatronalRegister::orderBy('id', 'DESC')->get();
+
         return view('livewire.tenant.imss-patronal-register.show-table', compact('registers'));
     }
     public function deleteRecord(ImssPatronalRegister $register){

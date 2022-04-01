@@ -4,6 +4,7 @@ namespace App\Actions\Fortify;
 
 use App\Models\Tenant;
 use App\Models\Tenant\Branch;
+use App\Models\Tenant\BranchImssPatronalRegister;
 use App\Models\Tenant\Business;
 use App\Models\Tenant\BranchBusiness;
 use App\Models\Tenant\ImssPatronalRegister;
@@ -140,9 +141,16 @@ class CreateNewUser implements CreatesNewUsers
 
         $tenant->run(function ($user) {
             ImssPatronalRegister::create([
-                'name' => 'registro patronal 1',
+                'name' => 'Registro Patronal 1',
                 'risk_premium' => '1.2',
                 'business_id' => 2
+            ]);
+        });
+
+        $tenant->run(function ($user) {
+            BranchImssPatronalRegister::create([
+                'branch_id' => 2,
+                'imss_patronal_register_id' => 1,
             ]);
         });
 

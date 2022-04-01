@@ -11,7 +11,7 @@
                 <th scope="col">{{__('Name')}}</th>
                 <th scope="col">{{__('risk premium')}}</th>
                 {{--<th scope="col">{{__('subdelegational key')}}</th>--}}
-                <th scope="col">{{__('Business')}}</th>
+                <th scope="col">{{__('Branches')}}</th>
                 <th scope="col">{{__('Actions')}}</th>
             </tr>
             </thead>
@@ -21,7 +21,7 @@
                     <td>{{$register->name}}</td>
                     <td>{{$register->risk_premium . ' %'}}</td>
                     {{--<td>{{$register->imss_sub_delegation_key}}</td>--}}
-                    <td>{{$register->branch->name}}</td>
+                    <td>@foreach($register->branch as $branch) {{$branch->name}}@endforeach</td>
                     <td>
                         <a href="{{route('imss-employer-registers.show', $register->id)}}" class="text-decoration-none">
                             <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>

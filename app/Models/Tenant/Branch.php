@@ -24,7 +24,8 @@ class Branch extends Model
         return $this->belongsTo(Business::class);
     }
 
-    public function ImssPatronalRegisters(){
-        return $this->hasOne(ImssPatronalRegister::class);
+    public function imssPatronalRegister()
+    {
+        return $this->belongsTo(ImssPatronalRegister::class);
     }
 }

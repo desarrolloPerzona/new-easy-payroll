@@ -24,7 +24,6 @@ class CreateBranchesTable extends Migration
             $table->string('state',)->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->unsignedBigInteger('imss_patronal_registry_id')->nullable();
             $table->unsignedBigInteger('business_id')->nullable();
         });
     }

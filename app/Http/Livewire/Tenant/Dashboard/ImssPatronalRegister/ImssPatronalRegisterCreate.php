@@ -15,7 +15,7 @@ class ImssPatronalRegisterCreate extends Component
         $risk_premium,
         $name,
         $branch_id,
-        $use_imss,
+        $use_cert,
         $cert_imss_cert,
         $cert_imss_user,
         $cert_imss_password,
@@ -51,12 +51,15 @@ class ImssPatronalRegisterCreate extends Component
 
 
 
-        if ($this->use_imss == 1) {
-            //$register->cert_imss_cert = $this->cert_imss_cert->store('certificates');
+        if ($this->use_cert == 'imss') {
+            $this->validate([
+                'cert_imss_cert' => 'required',
+            ]);
             $register->cert_imss_user = $this->cert_imss_user;
             $register->cert_imss_password = $this->cert_imss_password;
-        }
+        } else if($this->use_cert == 'fiel'){
 
+        }
 
         $register->save();
 

@@ -55,7 +55,7 @@
                         <div class="accordion-header mr-4" id="headingOne">
                             <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 <div class="my-3 mx-2">
-                                    <input type="radio" id="use_imss" name="use_imss" value="1"  wire:model.defer="use_imss">
+                                    <input type="radio" id="use_imss" name="use_cert" value="imss" wire:model.defer="use_cert">
                                 </div>
 
                             </button>
@@ -71,8 +71,10 @@
                                     <input
                                         class="w-full text-gray-800 my-2 rounded flex-2 dark:bg-dark dark:text-white form-control"
                                         type="file"
-                                        id="cert_imss_cert" name="cert_imss_cert" wire:model.defer="cert_imss_cert" accept=".cer">
+                                        id="cert_imss_cert" name="cert_imss_cert"
+                                        accept=".cer" wire:model.defer="cert_imss_cert">
                                 </div>
+                                @error('cert_imss_cert') <small class="error text-danger">{{ $message }}</small> @enderror
                                 <div class="mb-3">
                                     <label class=" my-2 font-bold" for="name">{{__('IMSS certified user')}}</label>
                                     <input
@@ -99,8 +101,7 @@
                                     aria-expanded="false" aria-controls="collapseTwo">
 
                                 <div class="my-3 mx-2">
-                                    <input type="radio" id="use_fiel" name="use_imss" value="0"
-                                           wire:model.defer="use_imss">
+                                    <input type="radio" id="use_cert" name="use_cert" value="fiel" wire:model="use_cert">
                                 </div>
 
                             </button>

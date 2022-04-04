@@ -81,7 +81,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary mt-3">{{__('Save')}}</button>
-        <a href="{{ route('banks.index') }}" class="btn btn-danger mt-3 ms-2 text-white">{{__('Go back')}}</a>
+        <a href="{{ route('business.index') }}" class="btn btn-danger mt-3 ms-2 text-white">{{__('Go back')}}</a>
 
     </form>
 

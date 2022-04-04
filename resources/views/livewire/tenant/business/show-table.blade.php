@@ -97,7 +97,7 @@
                                         @endif
 
                                         <td class="d-flex gap-3 justify-content-end pe-4">
-                                            <a href="#" class="text-decoration-none">
+                                            <a href="{{route('branches.show', $branch->id)}}" class="text-decoration-none">
                                                 <i class="fas fa-eye text-gray-600 hover:text-gray-700 cursor-pointer"></i>
                                             </a>
                                             <a href="{{route('branches.edit', $branch->id)}}"

@@ -10,11 +10,17 @@
                         <i class="fas fa-edit"></i>
                     </a>
                 </h2>
+                @if($branches[0]->name != $branch->name)
                 <div>
-                    <a href="#" wire:click="$emit('deleteMessage')">
+                    <a href="#" wire:click="$emit('deleteMessage', {{$branch->id}})">
                         <i class="fas fa-trash-alt text-gray-400 cursor-pointer hover:text-red-500"></i>
                     </a>
                 </div>
+                @else
+                    <a href="#" class="tool-tip" data-tippy-content="{{__('You cannot delete the main branch')}}" data-tippy-duration="0">
+                        <i class="fas fa-trash-alt text-gray-200"></i>
+                    </a>
+                @endif
             </div>
         </tr>
         </thead>

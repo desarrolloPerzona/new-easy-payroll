@@ -43,7 +43,7 @@ use App\Http\Controllers\Tenant\BusinessFestiveDayController;
 Route::middleware([
     'web',
     InitializeTenancyBySubdomain::class,
-    //PreventAccessFromCentralDomains::class,
+    PreventAccessFromCentralDomains::class,
     ScopeSessions::class
 ])->group(function () {
     Route::get('/', [TenantWelcomeController::class, 'index'])->name('tenant.home');

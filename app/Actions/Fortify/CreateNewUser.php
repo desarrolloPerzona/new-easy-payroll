@@ -10,12 +10,15 @@ use App\Models\Tenant\BranchBusiness;
 use App\Models\Tenant\ImssPatronalRegister;
 use App\Models\User;
 use App\Notifications\NewUserNotification;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
+use App\jobs\CreateFrameworkDirectoriesForTenant;
+
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -78,6 +81,14 @@ class CreateNewUser implements CreatesNewUsers
                 'tenancy_company' => $user->tenancy_company,
                 'tenancy_domain' => $user->tenancy_domain,
             ]);
+
+        /**
+         * CREATE TENANT DIRECTORY
+         */
+        $tenant->run(function () {
+            $storage_path = storage_path();
+            mkdir("$storage_path/framework/cache", 0777, true);
+        });
 
         /**
          * CREATE THE TENANT DOMAIN

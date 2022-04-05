@@ -23,7 +23,6 @@ class ImssPatronalRegisterCreate extends Component
         $business_fiel;
 
 
-
     public function business_fiel()
     {
         if ($this->branch_id != null) {
@@ -50,21 +49,24 @@ class ImssPatronalRegisterCreate extends Component
         $register->branch_id = $this->branch_id;
 
 
-
         if ($this->use_cert == 'imss') {
             $this->validate([
                 'cert_imss_cert' => 'required',
+                'cert_imss_user' => 'required',
+                'cert_imss_password' => 'required',
             ]);
             $register->cert_imss_user = $this->cert_imss_user;
             $register->cert_imss_password = $this->cert_imss_password;
-        } else if($this->use_cert == 'fiel'){
-            dd('Entrando a fiel');
+        } else if ($this->use_cert == 'fiel') {
+            $register->use_fiel = 1;
         }
 
-        $register->save();
+
+        $branch = Branch::find($register->branch_id);
+        $branch->imssPatronalRegister()->attach($register->getKey());
 
         session()->flash('message', 'create');
-
+        $register->save();
         return redirect()->route('imss-employer-registers.index');
     }
 
@@ -72,6 +74,6 @@ class ImssPatronalRegisterCreate extends Component
     public function render()
     {
         $branches = Branch::all();
-        return view('livewire.tenant.dashboard.imss-patronal-register.imss-patronal-register-create',compact('branches'));
+        return view('livewire.tenant.dashboard.imss-patronal-register.imss-patronal-register-create', compact('branches'));
     }
 }

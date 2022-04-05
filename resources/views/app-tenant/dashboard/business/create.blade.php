@@ -1,6 +1,7 @@
 <x-app-tenant>
     <div class="container mx-auto">
-        <livewire:components.breadcrumb :parent='"Business"' :children="['Create']" :itemId="''" :icon="'fak fa-empresa-perzona'"/>
+
+        <x-utilities.section-header title="Create business" classes="mb-3"/>
 
         <div class="card bg-white shadow-sm rounded p-4 max-w-6xl my-2 mx-auto ">
             <h2 class="py-3">{{__('Business')}}</h2>

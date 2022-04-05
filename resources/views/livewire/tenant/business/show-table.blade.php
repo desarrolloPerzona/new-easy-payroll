@@ -17,8 +17,6 @@
 
     <div class="card bg-white dark:bg-gray-600 dark:text-white shadow-sm rounded p-4 my-2 mx-auto">
 
-
-
         @if(!count($businesses))
             <div class="col-12 p-3 text-center">
                 <b>
@@ -50,24 +48,39 @@
                                     </button>
                                 </div>
                                 <div class="col-2">{{formatDate($business->created_at)}}</div>
-                                <div class="col-2 gap-3 d-flex justify-content-end pe-3">
-                                    <a href="{{route('business.edit', $business->id)}}">
-                                        <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                    </a>
-                                    <a href="{{route('business.edit', $business->id)}}"
-                                       class="text-decoration-none">
-                                        <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
-                                    </a>
-                                    @if($business->id === 1)
-                                        <a href="#" class="tool-tip" data-tippy-content="{{__('You cannot delete the main business')}}" data-tippy-duration="0">
-                                            <i class="fas fa-trash-alt text-gray-200"></i>
+
+                                {{--Icons section--}}
+                                @if($business->deleted_at)
+                                    <div class="col-2 gap-3 d-flex justify-content-end pe-3">
+                                        <a href="#" class="underline-none tool-tip"
+                                           data-tippy-content="{{__('You cannot delete the main business')}}"
+                                           data-tippy-duration="0">
+                                            <i class="fas fa-trash-undo text-gray-400 hover:text-gray-800 cursor-pointer"></i>
                                         </a>
-                                    @else
-                                        <a wire:click="$emit('deleteMessage', {{$business->id}})">
-                                            <i class="fas fa-trash-alt text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                                    </div>
+                                @else
+                                    <div class="col-2 gap-3 d-flex justify-content-end pe-3">
+                                        <a href="{{route('business.edit', $business->id)}}">
+                                            <i class="fas fa-eye text-gray-400 hover:text-gray-700 cursor-pointer"></i>
                                         </a>
-                                    @endif
-                                </div>
+                                        <a href="{{route('business.edit', $business->id)}}"
+                                           class="text-decoration-none">
+                                            <i class="fas fa-edit text-gray-400 hover:text-gray-700 cursor-pointer"></i>
+                                        </a>
+                                        @if($business->id === 1)
+                                            <a href="#" class="tool-tip"
+                                               data-tippy-content="{{__('You cannot delete the main business')}}"
+                                               data-tippy-duration="0">
+                                                <i class="fas fa-trash-alt text-gray-200"></i>
+                                            </a>
+                                        @else
+                                            <a wire:click="$emit('deleteMessage', {{$business->id}})">
+                                                <i class="fas fa-trash-alt text-gray-400 hover:text-red-500 cursor-pointer"></i>
+                                            </a>
+                                        @endif
+                                    </div>
+                                @endif
+
                             </div>
                         </div>
 
@@ -78,7 +91,8 @@
                             <div class="accordion-body text-dark bg-gray-200 dark:bg-dark dark:text-white">
 
                                 <div class="btn-top-holder my-3 flex-1">
-                                    <a href="{{route('branches.create', $business->id)}}" class="btn btn-dark float-right">
+                                    <a href="{{route('branches.create', $business->id)}}"
+                                       class="btn btn-dark float-right">
                                         <i class="fas fa-plus-circle"></i>
                                         {{ __('New branch') }}
                                     </a>
@@ -118,7 +132,8 @@
                                                 @endif
 
                                                 <td class="d-flex gap-3 justify-content-end pe-4">
-                                                    <a href="{{route('branches.show', $branch->id)}}" class="text-decoration-none">
+                                                    <a href="{{route('branches.show', $branch->id)}}"
+                                                       class="text-decoration-none">
                                                         <i class="fas fa-eye text-gray-600 hover:text-gray-700 cursor-pointer"></i>
                                                     </a>
                                                     <a href="{{route('branches.edit', $branch->id)}}"
@@ -131,7 +146,9 @@
                                                             <i class="fas fa-trash-alt text-gray-700 hover:text-red-500 cursor-pointer"></i>
                                                         </a>
                                                     @else
-                                                        <a href="#" class="tool-tip" data-tippy-content="{{__('You cannot delete the main branch')}}" data-tippy-duration="0">
+                                                        <a href="#" class="tool-tip"
+                                                           data-tippy-content="{{__('You cannot delete the main branch')}}"
+                                                           data-tippy-duration="0">
                                                             <i class="fas fa-trash-alt text-gray-400"></i>
                                                         </a>
                                                     @endif

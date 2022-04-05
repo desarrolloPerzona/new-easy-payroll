@@ -52,11 +52,12 @@
                                 {{--Icons section--}}
                                 @if($business->deleted_at)
                                     <div class="col-2 gap-3 d-flex justify-content-end pe-3">
-                                        <a href="#" class="underline-none tool-tip"
+                                        <button class="underline-none tool-tip"
                                            data-tippy-content="{{__('You cannot delete the main business')}}"
-                                           data-tippy-duration="0">
+                                           data-tippy-duration="0"
+                                            wire:click="restore({{$business->id}})">
                                             <i class="fas fa-trash-undo text-gray-400 hover:text-gray-800 cursor-pointer"></i>
-                                        </a>
+                                        </button>
                                     </div>
                                 @else
                                     <div class="col-2 gap-3 d-flex justify-content-end pe-3">

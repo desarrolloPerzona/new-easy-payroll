@@ -34,4 +34,11 @@ class ShowTable extends Component
     public function deleteBranch(Branch $branch){
         $branch->delete();
     }
+
+    public function restore($business_id){
+        Business::withTrashed()->where('id', $business_id)->restore();
+        $this->typeOption = 0;
+        $this->emit('alert', 'Registro restablecido exitosamente!');
+    }
+
 }

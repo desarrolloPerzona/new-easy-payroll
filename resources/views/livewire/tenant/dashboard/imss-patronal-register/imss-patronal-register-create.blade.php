@@ -17,7 +17,7 @@
                 <select
                     id="branch"
                     name="branch"
-                    wire:model="branch_id"
+                    wire:model.defer="branch_id"
                     wire:change="business_fiel"
                     class="w-full rounded dark:bg-dark dark:text-white  form-control">
                     <option value="">{{ __('Select a branch') }}</option>

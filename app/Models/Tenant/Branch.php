@@ -26,6 +26,6 @@ class Branch extends Model
 
     public function imssPatronalRegister()
     {
-        return $this->belongsTo(ImssPatronalRegister::class);
+        return $this->belongsToMany(ImssPatronalRegister::class,'branch_imss_patronal_register');
     }
 }

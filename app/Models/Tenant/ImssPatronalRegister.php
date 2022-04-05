@@ -20,7 +20,7 @@ class ImssPatronalRegister extends Model implements HasMedia
 
   public function branch(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
   {
-      return $this->belongsToMany(Branch::class);
+      return $this->belongsToMany(Branch::class,'branch_imss_patronal_register');
   }
 
 }

@@ -4,10 +4,11 @@ namespace App\Models\Tenant;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Branch extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'name',
@@ -15,7 +16,6 @@ class Branch extends Model
         'description',
         'imss_patronal_registry_id',
         'business_id',
-
     ];
 
 

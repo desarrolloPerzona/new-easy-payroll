@@ -55,7 +55,7 @@ class EditForm extends Component
 
         $branch->save();
 
-        session()->flash('messsage', 'edit');
+        session()->flash('message', 'edit');
         return redirect()->route('business.index');
     }
 }

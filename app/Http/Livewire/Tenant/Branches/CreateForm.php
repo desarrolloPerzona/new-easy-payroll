@@ -14,7 +14,7 @@ class CreateForm extends Component
         'name' => 'required|min:2',
         'description' => 'max:100|min:2',
         'street' => 'max:40|min:2',
-        'zip_code' => 'max:6|min:4',
+        'zip_code' => 'min:4|max:5',
         'borough' => 'max:30|min:2',
         'municipality' => 'min:2|max:40',
         'state' => 'min:2|max:30'

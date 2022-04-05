@@ -2,8 +2,7 @@
 
     <form class="form-group"
           wire:submit.prevent="save"
-          enctype="multipart/form-data"
-    >
+          enctype="multipart/form-data">
 
        {{-- NAME AND BRANCH SECTION --}}
         <div class="form-group lg:flex-col md:flex-row">
@@ -48,12 +47,12 @@
 
         {{--ACCORDION--}}
         <div class="mb-2 text-white shadow-sm dark:bg-dark rounded mt-4">
-            <div class="accordion" id="newItem">
+            <div class="accordion" id="certAccordion">
                 @if($branch_id)
                     {{--IMSS--}}
                     <div class="accordion-item">
                         <div class="accordion-header mr-4" id="headingOne">
-                            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseImss" aria-expanded="true" aria-controls="collapseTwo">
                                 <div class="my-3 mx-2">
                                     <input type="radio" id="use_imss" name="use_cert" value="imss" wire:model.defer="use_cert">
                                 </div>
@@ -61,8 +60,8 @@
                             </button>
                             <label for="use_imss" class="text-gray-800 dark:text-white">{{__('Send movements through IMSS certificate')}}</label>
                         </div>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#newItem">
+                        <div id="collapseImss" class="accordion-collapse collapse show" aria-labelledby="headingTwo"
+                             data-bs-parent="#certAccordion">
                             <div class="accordion-body text-dark dark:bg-dark dark:text-white">
 
                                 <div class="flex flex-col flex-grow mb-3">
@@ -101,7 +100,7 @@
                                     aria-expanded="false" aria-controls="collapseTwo">
 
                                 <div class="my-3 mx-2">
-                                    <input type="radio" id="use_cert" name="use_cert" value="fiel" wire:model="use_cert">
+                                    <input type="radio" id="use_fiel" name="use_cert" value="fiel" wire:model.defer="use_cert">
                                 </div>
 
                             </button>
@@ -110,7 +109,7 @@
                         </div>
 
                         <div id="collapseFiel" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                             data-bs-parent="#newItem">
+                             data-bs-parent="#certAccordion">
                             <div class="accordion-body text-dark dark:bg-dark dark:text-white">
                                 @if($business_fiel)
                                     <small>{{__('The FIEL belonging to the company will be used')}}</small>

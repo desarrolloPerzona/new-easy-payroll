@@ -16,7 +16,7 @@ class ImssPatronalRegisterCreate extends Component
         $risk_premium,
         $name,
         $branch_id,
-        $use_cert,
+        $use_cert = 'imss',
         $cert_imss_cert,
         $cert_imss_user,
         $cert_imss_password,
@@ -48,8 +48,6 @@ class ImssPatronalRegisterCreate extends Component
         $register->risk_premium = $this->risk_premium;
         $register->imss_sub_delegation_key = $this->imss_sub_delegation_key;
 
-
-
         if ($this->use_cert == 'imss') {
 
             $this->validate([
@@ -63,8 +61,6 @@ class ImssPatronalRegisterCreate extends Component
             $register->cert_imss_password = $this->cert_imss_password;
             $register->use_fiel = 0;
 
-
-
         } else if ($this->use_cert == 'fiel') {
 
             $register->use_fiel = 1;
@@ -75,14 +71,11 @@ class ImssPatronalRegisterCreate extends Component
         $register->save();
         $register->branch()->attach($this->branch->id);
 
-
         if($this->cert_imss_cert){
             $this->cert_imss_cert->store('BRANCH-'.strtoupper(slugify($this->branch->name)).'/IMSS-PATRONAL-REGISTER-ID-'.$register->id,'s3');
         }
 
-
         return redirect()->route('imss-employer-registers.index');
-
 
     }
 

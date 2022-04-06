@@ -98,11 +98,88 @@
         </div>
 
         <div class="mt-4 mb-4 p-2 rounded bg-gray-200">
-            <h5 class="m-0"><b>{{__('Extras')}}</b></h5>
+            <h5 class="m-0"><b>{{__('Fiscal data')}}</b></h5>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3">{{__('Save')}}</button>
-        <a href="{{ route('business.index') }}" class="btn btn-danger mt-3 ms-2 text-white">{{__('Go back')}}</a>
+        <div class=" mt-4 mb-4 p-2 rounded bg-gray-100 text-center">
+            <h5 class="m-0"><b>{{__('FIEL')}}</b></h5>
+        </div>
+
+        <div class="form-group d-flex justify-content-between gap-3">
+
+            <div class="w-100">
+                <label for="name" class="font-bold mb-2">{{__('Certificate')}} <span
+                        class="text-danger">*</span></label>
+                <input type="file" id="name" name="name" class="form-control form-main-input" wire:model="name">
+                @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+            <div class="w-100">
+                <label for="name" class="font-bold mb-2">{{__('Key')}} <span
+                        class="text-danger">*</span></label>
+                <input type="file" id="name" name="name" class="form-control form-main-input" wire:model="name">
+                @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+
+        </div>
+
+        <div class="form-group d-flex justify-content-between">
+            <div class="w-100 mr-2">
+                <label for="municipality" class="font-bold mb-2">{{__('Password')}} <span
+                        class="text-danger">*</span></label>
+                <input type="text" id="municipality" name="account_number"
+                       class="form-control form-main-input" wire:model="municipality">
+                @error('municipality') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+        </div>
+
+        <div class="mt-4 mb-4 p-2 rounded bg-gray-100 text-center">
+            <h5 class="m-0"><b>{{__('Digital seal')}}</b></h5>
+        </div>
+
+        <div class="form-group d-flex justify-content-between gap-3">
+
+            <div class="w-100">
+                <label for="name" class="font-bold mb-2">{{__('Certificate')}} <span
+                        class="text-danger">*</span></label>
+                <input type="file" id="name" name="name" class="form-control form-main-input" wire:model="name">
+                @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+            <div class="w-100">
+                <label for="name" class="font-bold mb-2">{{__('Key')}} <span
+                        class="text-danger">*</span></label>
+                <input type="file" id="name" name="name" class="form-control form-main-input" wire:model="name">
+                @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+
+        </div>
+
+        <div class="form-group d-flex justify-content-between">
+            <div class="w-100 mr-2">
+                <label for="municipality" class="font-bold mb-2">{{__('Password')}} <span
+                        class="text-danger">*</span></label>
+                <input type="text" id="municipality" name="account_number"
+                       class="form-control form-main-input" wire:model="municipality">
+                @error('municipality') <small class="error text-danger">{{ $message }}</small> @enderror
+            </div>
+        </div>
+
+{{--        STP ACCOUNT--}}
+
+{{--        <div class="mt-4 mb-4 p-2 rounded bg-gray-200">--}}
+{{--            <h5 class="m-0"><b>{{__('Bank accounts')}}</b></h5>--}}
+{{--        </div>--}}
+
+{{--        <div class="form-group d-flex justify-content-between">--}}
+{{--            <div class="w-100 mr-2 border-gray-600 bg-gray-100 rounded p-4 text-center">--}}
+{{--                <p class="p-0 m-0">Si deseas que tu nómina se disperse de forma automática, necesitas una cuenta STP</p>--}}
+{{--                <button class="btn btn-primary mt-3">{{__('Request')}}</button>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
+        <div class="mt-5">
+            <button type="submit" class="btn btn-primary">{{__('Save')}}</button>
+            <a href="{{ route('business.index') }}" class="btn btn-danger ms-2 text-white">{{__('Go back')}}</a>
+        </div>
 
     </form>
 

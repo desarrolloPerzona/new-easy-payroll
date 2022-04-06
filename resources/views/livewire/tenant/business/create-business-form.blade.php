@@ -10,13 +10,13 @@
             <div class="w-100">
                 <label for="name" class="font-bold mb-2">{{__('Name')}} <span
                         class="text-danger">*</span></label>
-                <input type="text" id="name" name="name" class="form-control form-main-input" wire:model="name">
+                <input type="text" id="name" class="form-control form-main-input" wire:model="name">
                 @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-75">
-                <label for="name" class="font-bold mb-2">{{__('RFC')}} <span
+                <label for="rfc" class="font-bold mb-2">{{__('RFC')}} <span
                         class="text-danger">*</span></label>
-                <input type="text" id="name" name="name" class="form-control form-main-input" wire:model="rfc">
+                <input type="text" id="rfc" class="form-control form-main-input" wire:model="rfc">
                 @error('rfc') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
 
@@ -25,9 +25,9 @@
         <div class="form-group d-flex gap-3 justify-content-between">
 
             <div class="w-100">
-                <label for="name" class="font-bold mb-2">{{__('Business name')}} <span
+                <label for="business_name" class="font-bold mb-2">{{__('Business name')}} <span
                         class="text-danger">*</span></label>
-                <input type="text" id="name" name="name" class="form-control form-main-input" wire:model="business_name">
+                <input type="text" id="business_name" class="form-control form-main-input" wire:model="business_name">
                 @error('business_name') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
 
@@ -36,14 +36,14 @@
         <div class="form-group d-flex justify-content-between gap-3">
 
             <div class="w-100">
-                <label for="name" class="font-bold mb-2">{{__('Logo')}}</label>
-                <input type="file" id="name" name="name" class="form-control form-main-input">
-                @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
+                <label for="logo_on_receipt" class="font-bold mb-2">{{__('Logo')}}</label>
+                <input type="file" id="logo_on_receipt" class="form-control form-main-input">
+                @error('logo_on_receipt') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-100">
-                <label for="name" class="font-bold mb-2">{{__('Industry')}} <span
+                <label for="industry" class="font-bold mb-2">{{__('Industry')}} <span
                         class="text-danger">*</span></label>
-                <input type="text" id="name" name="name" class="form-control form-main-input" wire:model="industry">
+                <input type="text" id="industry" class="form-control form-main-input" wire:model="industry">
                 @error('industry') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
 
@@ -56,7 +56,7 @@
         <div class="form-group d-flex justify-content-between">
             <div class="w-100 mr-2">
                 <label for="street" class="font-bold mb-2">{{__('Street')}}</label>
-                <input type="text" id="street" name="account_number"
+                <input type="text" id="street"
                        class="form-control form-main-input" wire:model="street">
                 @error('street') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
@@ -71,7 +71,7 @@
             </div>
             <div class="w-50">
                 <label for="zip_code" class="font-bold mb-2">{{__('ZIP code')}}</label>
-                <input id="zip_code" name="information_number" class="w-100 form-control"
+                <input id="zip_code"class="w-100 form-control"
                        type="number" wire:model="zip_code">
                 @error('zip_code') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
@@ -80,7 +80,7 @@
         <div class="form-group d-flex justify-content-between">
             <div class="w-50 mr-2">
                 <label for="municipality" class="font-bold mb-2">{{__('Municipality')}}</label>
-                <input type="text" id="municipality" name="account_number"
+                <input type="text" id="municipality"
                        class="form-control form-main-input" wire:model="municipality">
                 @error('municipality') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
@@ -103,12 +103,12 @@
 
             <div class="w-100">
                 <label for="name" class="font-bold mb-2">{{__('Certificate')}}</label>
-                <input type="file" id="name" name="name" class="form-control form-main-input">
+                <input type="file" id="name" class="form-control form-main-input">
                 @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-100">
                 <label for="name" class="font-bold mb-2">{{__('Key')}}</label>
-                <input type="file" id="name" name="name" class="form-control form-main-input">
+                <input type="file" id="name" class="form-control form-main-input">
                 @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
 
@@ -117,7 +117,7 @@
         <div class="form-group d-flex justify-content-between">
             <div class="w-100 mr-2">
                 <label for="municipality" class="font-bold mb-2">{{__('Password')}}</label>
-                <input type="text" id="municipality" name="account_number"
+                <input type="text" id="municipality"
                        class="form-control form-main-input">
                 @error('municipality') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
@@ -131,12 +131,12 @@
 
             <div class="w-100">
                 <label for="name" class="font-bold mb-2">{{__('Certificate')}}</label>
-                <input type="file" id="name" name="name" class="form-control form-main-input">
+                <input type="file" id="name" class="form-control form-main-input">
                 @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-100">
                 <label for="name" class="font-bold mb-2">{{__('Key')}}</label>
-                <input type="file" id="name" name="name" class="form-control form-main-input">
+                <input type="file" id="name" class="form-control form-main-input">
                 @error('name') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
 
@@ -145,7 +145,7 @@
         <div class="form-group d-flex justify-content-between">
             <div class="w-100 mr-2">
                 <label for="municipality" class="font-bold mb-2">{{__('Password')}}</label>
-                <input type="text" id="municipality" name="account_number"
+                <input type="text" id="municipality"
                        class="form-control form-main-input">
                 @error('municipality') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>

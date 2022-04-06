@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Edit extends Component
 {
-    public $branch_id, $name, $risk_premium, $imss_sub_delegation_key, $registerObjet;
+    public $branch_id, $name, $risk_premium, $imss_sub_delegation_key, $registerObjet, $business_fiel;
 
     public function mount(ImssPatronalRegister $register){
         $this->registerObjet = $register;

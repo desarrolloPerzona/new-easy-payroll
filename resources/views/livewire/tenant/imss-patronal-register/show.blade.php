@@ -39,7 +39,7 @@
     </table>
 
     <div>
-        <a href="{{ route('banks.index') }}" class="btn btn-primary mt-3 ms-2 text-white">{{__('Go back')}}</a>
+        <a href="{{ route('imss-employer-registers.index') }}" class="btn btn-primary mt-3 ms-2 text-white">{{__('Go back')}}</a>
     </div>
 
 </div>

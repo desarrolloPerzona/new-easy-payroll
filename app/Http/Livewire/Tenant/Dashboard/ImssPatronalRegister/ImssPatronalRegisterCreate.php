@@ -7,6 +7,7 @@ use App\Models\Tenant\ImssPatronalRegister;
 use Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Hash;
 
 class ImssPatronalRegisterCreate extends Component
 {
@@ -57,15 +58,13 @@ class ImssPatronalRegisterCreate extends Component
 
 
             $register->cert_imss_user = $this->cert_imss_user;
-            $register->cert_imss_password = $this->cert_imss_password;
+            $register->cert_imss_password = Hash::make($this->cert_imss_password);
             $register->use_fiel = 0;
 
         } else if ($this->use_cert == 'fiel') {
 
             $register->use_fiel = 1;
         }
-
-        session()->flash('message', 'create');
 
         $register->save();
         $register->branch()->attach($this->branch->id);
@@ -74,10 +73,10 @@ class ImssPatronalRegisterCreate extends Component
             $this->cert_imss_cert->store('BRANCH-'.strtoupper(slugify($this->branch->name)).'/IMSS-PATRONAL-REGISTER-ID-'.$register->id,'local');
         }
 
+        session()->flash('message', 'create');
+
         return redirect()->route('imss-employer-registers.index');
-
     }
-
 
     public function render()
     {

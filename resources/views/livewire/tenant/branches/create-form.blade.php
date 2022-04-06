@@ -57,7 +57,7 @@
                 @error('zip_code') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-100">
-                <label for="borough" class="font-bold mb-2">{{__('City')}} <span
+                <label for="borough" class="font-bold mb-2">{{__('Borough')}} <span
                         class="text-danger">*</span></label>
                 <input id="borough" class="w-100 form-control" type="text"
                        wire:model="borough">
@@ -82,7 +82,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary mt-3">{{__('Save')}}</button>
-        <a href="{{ route('banks.index') }}" class="btn btn-danger mt-3 ms-2 text-white">{{__('Go back')}}</a>
+        <a href="{{ route('branches.index') }}" class="btn btn-danger mt-3 ms-2 text-white">{{__('Go back')}}</a>
 
     </form>
 

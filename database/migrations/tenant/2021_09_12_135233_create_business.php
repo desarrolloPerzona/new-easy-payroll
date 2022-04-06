@@ -18,6 +18,7 @@ class CreateBusiness extends Migration
             $table->string('name');
             $table->string('business_name')->nullable();
             $table->boolean('logo_on_receipt')->default(false);
+            $table->string('logo_url')->nullable();
             $table->string('industry')->nullable();
             $table->string('rfc', 13)->nullable();
             $table->string('street')->nullable();

@@ -36,9 +36,9 @@
         <div class="form-group d-flex justify-content-between gap-3">
 
             <div class="w-100">
-                <label for="logo_on_receipt" class="font-bold mb-2">{{__('Logo')}}</label>
-                <input type="file" id="logo_on_receipt" class="form-control form-main-input">
-                @error('logo_on_receipt') <small class="error text-danger">{{ $message }}</small> @enderror
+                <label for="logo_url" class="font-bold mb-2">{{__('Logo')}}</label>
+                <input type="file" id="logo_url" class="form-control form-main-input" wire:model="logo_url">
+                @error('logo_url') <small class="error text-danger">{{ $message }}</small> @enderror
             </div>
             <div class="w-100">
                 <label for="industry" class="font-bold mb-2">{{__('Industry')}} <span

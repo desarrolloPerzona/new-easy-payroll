@@ -3,7 +3,9 @@
 
     @if(!count($workDays))
         <div class="col-12 text-center">
-            {{__('No records')}}
+            <b>
+                {{__('No records')}}
+            </b>
         </div>
     @else
         <table class="table">

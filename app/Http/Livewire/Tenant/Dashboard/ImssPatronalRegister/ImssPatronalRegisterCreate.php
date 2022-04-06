@@ -23,7 +23,6 @@ class ImssPatronalRegisterCreate extends Component
         $branch,
         $business_fiel;
 
-
     public function business_fiel()
     {
         if ($this->branch_id != null) {

@@ -71,7 +71,7 @@ class ImssPatronalRegisterCreate extends Component
         $register->branch()->attach($this->branch->id);
 
         if($this->cert_imss_cert){
-            $this->cert_imss_cert->store('BRANCH-'.strtoupper(slugify($this->branch->name)).'/IMSS-PATRONAL-REGISTER-ID-'.$register->id,'s3');
+            $this->cert_imss_cert->store('BRANCH-'.strtoupper(slugify($this->branch->name)).'/IMSS-PATRONAL-REGISTER-ID-'.$register->id,'local');
         }
 
         return redirect()->route('imss-employer-registers.index');

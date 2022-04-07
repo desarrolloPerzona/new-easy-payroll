@@ -173,7 +173,6 @@
 
 </div>
 
-
 @push('inline_scripts')
     <script>
         // Second delete message
